@@ -120,10 +120,11 @@
       color: #dc2626 !important; font-weight: bold !important; border: 2px solid #dc2626 !important;
       border-radius: 14px !important; background-color: #fef2f2 !important; padding: 0 6px !important;
     }
-    .ans-slot { display: inline-block; min-width: 24px; text-align: center; color: transparent; font-weight: bold; }
-    .show-ans .ans-slot, .item-line.show-one .ans-slot, .qa-block.show-one .ans-slot { color: #dc2626 !important; }
-    .ans-word { color: transparent; font-weight: bold; border-bottom: 1.5px solid #333; padding: 0 6px; }
-    .show-ans .ans-word, .item-line.show-one .ans-word { color: #dc2626 !important; }
+    .ans-slot { display: inline-block; min-width: 20px; text-align: center; color: transparent; font-weight: bold; cursor: pointer; user-select: none; }
+    .show-ans .ans-slot, .item-line.show-one .ans-slot, .qa-block.show-one .ans-slot, .ans-slot.revealed { color: #dc2626 !important; }
+    .ans-word { color: transparent; font-weight: bold; border-bottom: 1.5px solid #333; padding: 0 4px; cursor: pointer; user-select: none; }
+    .show-ans .ans-word, .item-line.show-one .ans-word, .ans-word.revealed { color: #dc2626 !important; }
+    body:not(.pen-mode) .ans-word:hover, body:not(.pen-mode) .ans-slot:hover { background-color: #fee2e2; }
 
     /* 雙欄與單欄網格排版 */
     .grid-2col {
@@ -357,6 +358,27 @@
       }
     });
 
+    // 點擊填空字直接切換顯答，或點擊整題題目開合
+    document.addEventListener('click', function(e) {
+      if (document.body.classList.contains('pen-mode')) return;
+      var blank = e.target.closest('.ans-word, .ans-slot');
+      if (blank) {
+        e.stopPropagation();
+        blank.classList.toggle('revealed');
+        return;
+      }
+      var item = e.target.closest('.interactive-item, .qa-block, .item-line');
+      if (item) {
+        e.stopPropagation();
+        item.classList.toggle('show-one');
+        var isShow = item.classList.contains('show-one');
+        item.querySelectorAll('.ans-word, .ans-slot').forEach(function(b) {
+          if (isShow) b.classList.add('revealed');
+          else b.classList.remove('revealed');
+        });
+      }
+    });
+
     function toggleItemAnswer(el) {
       if (document.body.classList.contains('pen-mode')) return;
       el.classList.toggle('show-one');
@@ -372,6 +394,7 @@
       } else {
         container.classList.remove('show-ans'); btn.classList.remove('active'); btnIcon.textContent = '👁️';
         document.querySelectorAll('.item-line.show-one, .qa-block.show-one').forEach(function(item) { item.classList.remove('show-one'); });
+        document.querySelectorAll('.ans-word.revealed, .ans-slot.revealed').forEach(function(b) { b.classList.remove('revealed'); });
       }
     }
     var isPenMode = false;
