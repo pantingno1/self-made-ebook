@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>國一自然（上）第 3 章 生物體的營養 互動電子書</title>
+  <!-- 電子書目錄用身分標記 -->
+  <meta name="ebook:subject" content="science">
+  <meta name="ebook:grade" content="7">
+  <meta name="ebook:type" content="handout">
+  <meta name="ebook:pages" content="6">
+  <meta name="ebook:summary" content="國一自然第3章生物體的營養完整全章講義，含六大營養素、酵素、光合作用實驗與消化系統">
+  <meta name="ebook:level" content="std">
+  <style>
+    @page { size: A4 portrait; margin: 10mm 12mm; }
+    * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body {
+      margin: 0; padding: 0; background-color: #f1f5f9;
+      font-family: "Times New Roman", "標楷體", "DFKai-SB", "BiauKai", serif;
+      font-size: 13.5pt; line-height: 1.45; color: #1e293b;
+    }
+
+    /* 課堂懸浮工具列 */
+    .classroom-toolbar {
+      position: fixed; top: 12px; right: 20px; z-index: 9999;
+      display: flex; align-items: center; gap: 3px;
+      background: rgba(255, 255, 255, 0.96); backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 4px 8px; border-radius: 40px; border: 1px solid rgba(203, 213, 225, 0.9);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .tool-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 36px; height: 36px; font-size: 18px; color: #334155;
+      background: transparent; border: 1px solid transparent; border-radius: 50%;
+      cursor: pointer; transition: all 0.15s ease; padding: 0; user-select: none;
+      text-decoration: none;
+    }
+    .tool-btn:hover { background: #f1f5f9; transform: scale(1.08); }
+    .tool-btn.active { background: #0f172a; color: #ffffff; }
+    .btn-toggle-ans.active { background: #eff6ff; border-color: #3b82f6; }
+    .toolbar-divider { width: 1px; height: 18px; background: #cbd5e1; margin: 0 3px; }
+
+    /* 目錄跳轉選單 */
+    .toc-menu {
+      display: none; position: absolute; top: 46px; left: 0;
+      background: #ffffff; border: 1px solid #cbd5e1; border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.18); padding: 6px 0;
+      min-width: 270px; max-height: 420px; overflow-y: auto; z-index: 10000;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .toc-menu.show { display: block; animation: tocFadeIn 0.15s ease-out; }
+    @keyframes tocFadeIn {
+      from { opacity: 0; transform: translateY(-6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .toc-menu-title {
+      padding: 6px 16px 8px 16px; font-size: 13px; font-weight: bold;
+      color: #64748b; border-bottom: 1px solid #f1f5f9;
+    }
+    .toc-menu-item {
+      padding: 8px 16px; font-size: 14px; color: #334155; cursor: pointer;
+      display: flex; align-items: center; justify-content: space-between;
+      transition: background 0.12s, color 0.12s;
+    }
+    .toc-menu-item:hover { background: #eff6ff; color: #2563eb; font-weight: bold; }
+    .toc-page-badge { font-size: 12px; color: #94a3b8; font-weight: normal; }
+    .toc-menu-item:hover .toc-page-badge { color: #2563eb; }
+
+    /* 螢光筆選項盤 */
+    .pen-options {
+      display: none; align-items: center; gap: 6px; background: #f8fafc;
+      padding: 3px 8px; border-radius: 20px; border: 1px solid #e2e8f0;
+      margin-left: 2px;
+    }
+    .color-picker { display: flex; align-items: center; gap: 5px; }
+    .color-dot {
+      width: 16px; height: 16px; border-radius: 50%; cursor: pointer;
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,0.2);
+    }
+    .color-dot.active { transform: scale(1.2); box-shadow: 0 0 0 2px #0f172a; }
+    .size-picker { display: flex; align-items: center; gap: 3px; }
+    .size-btn {
+      border: 1px solid #cbd5e1; background: #fff; color: #475569; font-size: 11px;
+      font-weight: bold; padding: 2px 7px; border-radius: 10px; cursor: pointer;
+    }
+    .size-btn.active { background: #0f172a; color: #fff; border-color: #0f172a; }
+
+    /* A4 頁面容器 */
+    .pages-container { padding: 20px 0 40px 0; }
+    .page {
+      width: 210mm; min-height: 297mm; max-height: 297mm;
+      padding: 11mm 14mm 9mm 14mm; margin: 0 auto 25px auto;
+      background: #ffffff; box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+      page-break-after: always; break-after: page; position: relative;
+      box-sizing: border-box; display: flex; flex-direction: column;
+      justify-content: flex-start; overflow: hidden;
+    }
+    .drawing-canvas {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      z-index: 20; pointer-events: none;
+    }
+    body.pen-mode .drawing-canvas { pointer-events: auto; cursor: crosshair; }
+
+    /* 頁首與標題 */
+    .page-header {
+      display: flex; justify-content: space-between; align-items: center;
+      border-bottom: 2px solid #0e7490; padding-bottom: 4px; margin-bottom: 8px;
+      font-size: 11.5pt; font-weight: bold; color: #0e7490;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .main-title {
+      font-size: 17pt; font-weight: 900; text-align: center; margin: 2px 0 8px 0;
+      color: #083344; letter-spacing: 0.04em;
+    }
+    .section-title {
+      font-size: 13.5pt; font-weight: bold; background: #e0f2fe; color: #0369a1;
+      padding: 3px 8px; border-radius: 5px; margin: 6px 0 5px 0;
+      border-left: 5px solid #0284c7; display: flex; align-items: center; justify-content: space-between;
+    }
+    .task-title {
+      font-size: 12.5pt; font-weight: bold; margin: 5px 0 3px 0; color: #0f172a;
+    }
+
+    /* 內容排版組件 */
+    .tip-box {
+      border: 1px solid #bae6fd; background-color: #f0f9ff; border-radius: 6px;
+      padding: 6px 10px; margin: 4px 0 8px 0; font-size: 12.5pt; line-height: 1.4;
+    }
+    .item-line {
+      padding: 3px 5px; border-radius: 4px; line-height: 1.45; font-size: 13pt; margin-bottom: 3px;
+    }
+    body:not(.pen-mode) .interactive-item { cursor: pointer; }
+    body:not(.pen-mode) .interactive-item:hover { background-color: #f0fdf4; outline: 1px dashed #22c55e; }
+
+    /* 解答樣式：紅字填入與紅筆圈選 */
+    .ans-slot, .ans-word {
+      display: inline-block; min-width: 22px; text-align: center;
+      color: transparent; font-weight: bold; transition: color 0.15s ease;
+    }
+    .ans-word {
+      border-bottom: 1.5px solid #334155; padding: 0 4px;
+    }
+    .show-ans .ans-slot, .interactive-item.show-one .ans-slot,
+    .show-ans .ans-word, .interactive-item.show-one .ans-word {
+      color: #dc2626 !important;
+    }
+
+    /* 選擇題樣式 */
+    .qa-block {
+      display: flex; align-items: flex-start; gap: 8px; margin-bottom: 7px;
+      padding: 4px 6px; border-radius: 5px; transition: background 0.15s;
+    }
+    .qa-bracket {
+      flex-shrink: 0; width: 44px; text-align: center; font-weight: bold;
+      font-size: 13pt; color: #1e293b;
+    }
+    .show-ans .qa-bracket .ans-slot, .qa-block.show-one .qa-bracket .ans-slot {
+      color: #dc2626 !important;
+    }
+    .qa-content { flex: 1; font-size: 13pt; }
+    .qa-question { font-weight: normal; margin-bottom: 2px; }
+    .qa-options { display: flex; flex-wrap: wrap; gap: 4px 16px; margin-top: 2px; color: #334155; }
+    .qa-options.vertical { display: flex; flex-direction: column; gap: 2px; }
+
+    /* 表格 */
+    table.custom-table {
+      width: 100%; border-collapse: collapse; margin: 5px 0 7px 0; font-size: 12pt; line-height: 1.35;
+    }
+    table.custom-table th, table.custom-table td {
+      border: 1px solid #64748b; padding: 4px 6px; text-align: center; vertical-align: middle;
+    }
+    table.custom-table th { background-color: #f1f5f9; font-weight: bold; color: #0f172a; }
+    table.custom-table td.align-left { text-align: left; }
+
+    /* 圖片容器 */
+    .fig-row {
+      display: flex; align-items: center; justify-content: center; gap: 10px; margin: 4px 0 6px 0;
+    }
+    .fig-card {
+      display: flex; flex-direction: column; align-items: center; text-align: center;
+      background: #fafafa; border: 1px solid #e2e8f0; border-radius: 6px; padding: 4px;
+    }
+    .fig-card img { max-height: 72px; width: auto; object-fit: contain; }
+    .fig-caption { font-size: 11pt; color: #475569; margin-top: 2px; font-weight: bold; }
+
+    /* 頁尾 */
+    .page-footer {
+      margin-top: auto; padding-top: 4px; border-top: 1px solid #cbd5e1;
+      display: flex; justify-content: space-between; font-size: 10.5pt; color: #64748b;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    /* 列印強制隱藏解答與後台工具，還原白紙卷 */
+    @media print {
+      @page { size: A4 portrait; margin: 10mm 12mm; }
+      html, body {
+        width: 100% !important; height: auto !important; background: transparent !important;
+        padding: 0 !important; margin: 0 !important;
+      }
+      .no-print, .classroom-toolbar, .toc-menu, .drawing-canvas { display: none !important; }
+      .pages-container { display: block !important; padding: 0 !important; margin: 0 !important; }
+      .page {
+        box-sizing: border-box !important; margin: 0 !important; box-shadow: none !important;
+        width: 100% !important; height: 275mm !important; max-height: 275mm !important;
+        min-height: 0 !important; padding: 0 !important; page-break-after: always !important;
+        break-after: page !important; page-break-inside: avoid !important; break-inside: avoid !important;
+        display: flex !important; flex-direction: column !important; justify-content: flex-start !important;
+        overflow: hidden !important;
+      }
+      .page:last-child { page-break-after: avoid !important; break-after: avoid !important; }
+      .page-footer { margin-top: auto !important; padding-top: 4px !important; }
+      .correct-choice { color: inherit !important; font-weight: normal !important; border: none !important; background: transparent !important; padding: 0 !important; }
+      .ans-slot, .ans-word { color: transparent !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 課堂懸浮工具列 -->
+  <div class="classroom-toolbar no-print">
+    <!-- 回電子書目錄 -->
+    <a class="tool-btn" href="../index.html" title="回電子書目錄">🏠</a>
+    <!-- 目錄跳轉按鈕 -->
+    <div style="position: relative;">
+      <button class="tool-btn" id="tocBtn" onclick="toggleTocMenu(event)" title="單元章節目錄">📑</button>
+      <div class="toc-menu" id="tocMenu">
+        <div class="toc-menu-title">📖 第 3 章 單元章節目錄</div>
+        <div class="toc-menu-item" onclick="jumpTo('page1')"><span>3-1 食物中的養分與能量</span><span class="toc-page-badge">P.1</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page2')"><span>3-2 酵素與代謝作用</span><span class="toc-page-badge">P.2</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page3')"><span>3-3 植物如何製造養分(一)</span><span class="toc-page-badge">P.3</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page4')"><span>3-3 植物如何製造養分(二)</span><span class="toc-page-badge">P.4</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page5')"><span>3-4 人體如何獲得養分</span><span class="toc-page-badge">P.5</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page6')"><span>第 3 章 全章重點架構歸納</span><span class="toc-page-badge">P.6</span></div>
+      </div>
+    </div>
+
+    <!-- 答案切換按鈕 -->
+    <button class="tool-btn btn-toggle-ans" id="toggleAllAnsBtn" onclick="toggleAllAnswers()" title="一鍵全開/全隱答案">
+      <span id="ansIcon">👁️</span>
+    </button>
+    
+    <!-- 畫筆切換按鈕 -->
+    <button class="tool-btn" id="penBtn" onclick="togglePenMode()" title="螢光筆/板書筆">✏️</button>
+    
+    <!-- 畫筆選單 -->
+    <div class="pen-options" id="penOptions">
+      <div class="color-picker">
+        <span class="color-dot active" style="background:#facc15;" onclick="setPenColor('rgba(250, 204, 21, 0.45)', this)" title="螢光黃"></span>
+        <span class="color-dot" style="background:#ef4444;" onclick="setPenColor('rgba(239, 68, 68, 0.8)', this)" title="紅筆"></span>
+        <span class="color-dot" style="background:#3b82f6;" onclick="setPenColor('rgba(37, 99, 235, 0.8)', this)" title="藍筆"></span>
+        <span class="color-dot" style="background:#10b981;" onclick="setPenColor('rgba(16, 185, 129, 0.8)', this)" title="綠筆"></span>
+      </div>
+      <div class="sub-divider" style="width:1px; height:14px; background:#cbd5e1; margin:0 2px;"></div>
+      <div class="size-picker">
+        <button class="size-btn active" onclick="setPenSize(4, this)">細</button>
+        <button class="size-btn" onclick="setPenSize(10, this)">中</button>
+        <button class="size-btn" onclick="setPenSize(20, this)">粗</button>
+      </div>
+    </div>
+    
+    <!-- 清除畫跡 -->
+    <button class="tool-btn" onclick="clearAllDrawings()" title="清除全卷畫筆">🧹</button>
+    <div class="toolbar-divider"></div>
+    <!-- 列印按鈕 -->
+    <button class="tool-btn" onclick="window.print()" title="列印學生無答案作業卷">🖨️</button>
+  </div>
+
+  <div class="pages-container">
+
+    <!-- ==================== PAGE 1 ==================== -->
+    <div class="page" id="page1">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國中自然與生科（七上）</span>
+        <span>班級：_______ 座號：_______ 姓名：_____________</span>
+        <span>P. 1</span>
+      </div>
+
+      <div class="main-title">第 3 章 生物體的營養</div>
+
+      <div class="section-title">
+        <span>3-1 食物中的養分與能量</span>
+        <span style="font-size:11pt; font-weight:normal;">重點梳理 ＆ 隨堂小試</span>
+      </div>
+
+      <div class="task-title">一、六大營養素與能量功能</div>
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th style="width:18%;">營養素</th>
+            <th style="width:62%;">構成物質與主要生理功能</th>
+            <th style="width:20%;">產生能量</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="interactive-item" onclick="toggleItemAnswer(this, event)">
+            <td><b>醣類</b></td>
+            <td class="align-left">
+              1. <span class="ans-word">纖維素</span> 可構成植物細胞壁。<br>
+              2. 生物儲存能量之澱粉與動物肝糖。
+            </td>
+            <td><b>可產生能量</b><br><span style="font-size:11pt; color:#64748b;">(4 大卡/克)</span></td>
+          </tr>
+          <tr class="interactive-item" onclick="toggleItemAnswer(this, event)">
+            <td><b><span class="ans-word">蛋白質</span></b></td>
+            <td class="align-left">1. 組成動物的毛髮、指甲。<br>2. 組成肌肉組織與各類酵素主要原料。</td>
+            <td><b>可產生能量</b><br><span style="font-size:11pt; color:#64748b;">(4 大卡/克)</span></td>
+          </tr>
+          <tr class="interactive-item" onclick="toggleItemAnswer(this, event)">
+            <td><b>脂質</b></td>
+            <td class="align-left">分布在動物皮膚下層，防止熱量散失，具保溫與保護內臟之效果。</td>
+            <td><b>可產生能量</b><br><span style="font-size:11pt; color:#64748b;">(9 大卡/克)</span></td>
+          </tr>
+          <tr class="interactive-item" onclick="toggleItemAnswer(this, event)">
+            <td><b>水</b></td>
+            <td class="align-left">
+              1. 生物體內<b>含量最多</b>的物質。<br>
+              2. 細胞中多數物質需溶於水中才能進行各項生化代謝反應。
+            </td>
+            <td rowspan="3" style="background:#f8fafc; font-weight:bold; color:#0e7490;">
+              <b>無法產生能量</b><br>
+              <span style="font-size:10.5pt; font-weight:normal;">(維持與調節生理機能)</span>
+            </td>
+          </tr>
+          <tr class="interactive-item" onclick="toggleItemAnswer(this, event)">
+            <td><b>礦物質</b></td>
+            <td class="align-left">
+              1. 構成組織：<span class="ans-word">鈣</span> 和 <span class="ans-word">磷</span> 是骨骼和牙齒的重要成分。<br>
+              2. 調節機能：<span class="ans-word">鐵</span> 是人體血液紅血球造血的重要成分。
+            </td>
+          </tr>
+          <tr class="interactive-item" onclick="toggleItemAnswer(this, event)">
+            <td><b>維生素</b></td>
+            <td class="align-left">
+              1. 又稱為 <span class="ans-word">維他命</span>。<br>
+              2. 缺乏維生素 <span class="ans-word">A</span> 易患夜盲症；缺乏維生素 <span class="ans-word">C</span> 易造成壞血病與皮下出血。
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="task-title" style="margin-top:6px;">二、澱粉與葡萄糖的檢驗測定</div>
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th style="width:20%;">測定養分</th>
+            <th style="width:28%;">使用檢驗藥劑</th>
+            <th style="width:22%;">操作要點</th>
+            <th style="width:30%;">反應變色情形</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="interactive-item" onclick="toggleItemAnswer(this, event)">
+            <td><b>澱粉</b></td>
+            <td><span class="ans-word">碘液</span></td>
+            <td>常溫直接滴加</td>
+            <td>黃褐色 → <span class="ans-word">藍黑色</span>（或紫紅色）</td>
+          </tr>
+          <tr class="interactive-item" onclick="toggleItemAnswer(this, event)">
+            <td><b>葡萄糖</b></td>
+            <td><span class="ans-word">本氏液</span></td>
+            <td><b>隔水加熱</b></td>
+            <td>藍色 → 綠 → 黃 → 橙 → <span class="ans-word">紅色</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="task-title" style="margin-top:6px;">三、隨堂概念評量</div>
+      <div class="qa-block interactive-item" onclick="toggleItemAnswer(this, event)">
+        <div class="qa-bracket">（<span class="ans-slot">C</span>）</div>
+        <div class="qa-content">
+          <div class="qa-question">1. 下列有關維生素與礦物質對人體機能影響的敘述，何者正確？</div>
+          <div class="qa-options">
+            <div>(A) 維生素和礦物質均可產生熱量，提供人體生理活動所需</div>
+            <div>(B) 維生素的營養價值比礦物質高</div>
+            <div>(C) 缺乏維生素 A 可能導致夜盲症</div>
+            <div>(D) 鈣和鐵是骨骼最主要的成分</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item" onclick="toggleItemAnswer(this, event)">
+        <div class="qa-bracket">（<span class="ans-slot">B</span>）</div>
+        <div class="qa-content">
+          <div class="qa-question">2. 細胞利用養分的順序為：醣類 → 脂質 → 蛋白質，除非身體醣類和脂質消耗殆盡，否則不會輕易使用蛋白質產能，因此蛋白質有「細胞內的高貴能源」之稱。這主要是因為蛋白質具有何種性質？</div>
+          <div class="qa-options">
+            <div>(A) 蛋白質種類很多</div>
+            <div>(B) 是組成細胞與生物體的重要原料（例如肌肉與酵素）</div>
+            <div>(C) 是生物體隔絕熱量散失的主要保溫構造</div>
+            <div>(D) 蛋白質本身完全無法產生能量</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>七年級自然（上）講義</span>
+        <span>單元 3-1 食物中的養分與能量</span>
+        <span>第 1 頁 / 共 6 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== PAGE 2 ==================== -->
+    <div class="page" id="page2">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國中自然與生科（七上）</span>
+        <span>班級：_______ 座號：_______ 姓名：_____________</span>
+        <span>P. 2</span>
+      </div>
+
+      <div class="section-title">
+        <span>3-2 酵素與代謝作用</span>
+        <span style="font-size:11pt; font-weight:normal;">重點梳理 ＆ 實驗探究</span>
+      </div>
+
+      <div class="task-title">一、代謝作用與酵素（酶）</div>
+      <div class="tip-box">
+        1. 酵素是生物體內協助進行各項化學反應的<b>生物催化劑</b>，又稱為 <span class="ans-word">酶</span>。<br>
+        2. 生物體內物質的分解與合成，合稱為 <span class="ans-word">代謝作用</span>。
+        <ul style="margin:2px 0 0 20px; padding:0;">
+          <li><b>分解作用</b>：將較大分子物質轉變成較小分子（例如：澱粉分解為葡萄糖，釋出能量）。</li>
+          <li><b>合成作用</b>：將較小分子物質轉變成較大分子（例如：胺基酸合成為蛋白質，吸收能量）。</li>
+        </ul>
+      </div>
+
+      <div class="fig-row">
+        <div class="fig-card" style="width:48%;">
+          <img src="../images/science-7-3-handout/image007.png" alt="酵素分解作用示意圖">
+          <div class="fig-caption">【分解作用】酵素＋受質 → 產物＋酵素（不變）</div>
+        </div>
+        <div class="fig-card" style="width:48%;">
+          <img src="../images/science-7-3-handout/image008.png" alt="酵素合成作用示意圖">
+          <div class="fig-caption">【合成作用】小分子受質結合 → 大分子產物</div>
+        </div>
+      </div>
+
+      <div class="task-title">二、酵素的特性與影響活性的條件</div>
+      <div class="item-line interactive-item" onclick="toggleItemAnswer(this, event)">
+        1. <b>成分</b>：大部分酵素的主要成分為 <span class="ans-word">蛋白質</span>。<br>
+        2. <b>專一性</b>：與酵素作用的物質稱為 <span class="ans-word">受質</span>。一種酵素通常只能催化一種或特定一類反應。<br>
+        3. <b>重複使用</b>：酵素在反應前後<b>質量與性質均不改變</b>，故 <span class="ans-word">可以</span> 重複使用。<br>
+        4. <b>催化功能</b>：酵素僅能<b>加速</b>反應速率，但<b>無法增加生成物總量</b>！
+      </div>
+
+      <table class="custom-table" style="margin-top:4px;">
+        <thead>
+          <tr>
+            <th style="width:20%;">影響條件</th>
+            <th style="width:48%;">活性變化原理與特性</th>
+            <th style="width:32%;">曲線圖解與人體實例</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>溫度</b></td>
+            <td class="align-left">
+              • 溫度過低：活性受抑制減緩甚至停止，但酵素結構未破壞。<br>
+              • 溫度過高：超過最適溫度會使蛋白質變性，<b>永久失去活性</b>！<br>
+              • 人體內多數酵素最適作用溫度約為 <span class="ans-word">37</span> ℃。
+            </td>
+            <td>
+              <img src="../images/science-7-3-handout/image010.png" style="max-height:60px; width:auto;" alt="溫度對酵素活性影響">
+            </td>
+          </tr>
+          <tr>
+            <td><b>酸鹼度 (pH)</b></td>
+            <td class="align-left">
+              • 每種酵素各有特定最適酸鹼範圍。<br>
+              • 胃蛋白酶：適合在 <span class="ans-word">酸性</span> 環境中作用。<br>
+              • 唾液澱粉酶：接近中性；小腸內酵素：適合在 <span class="ans-word">弱鹼性</span> 環境作用。
+            </td>
+            <td>
+              <img src="../images/science-7-3-handout/image011.png" style="max-height:60px; width:auto;" alt="pH值對酵素活性影響">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="task-title">三、探究實驗：唾液中酵素的分解作用</div>
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>試管編號</th>
+            <th>反應溶液</th>
+            <th>添加物</th>
+            <th>水浴溫度條件</th>
+            <th>檢驗試劑</th>
+            <th>隔水加熱變色結果</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="interactive-item" onclick="toggleItemAnswer(this, event)">
+            <td><b>甲管</b></td>
+            <td>2 mL 澱粉液</td>
+            <td>2 mL 唾液</td>
+            <td>放入 37 ℃ 溫水</td>
+            <td>2 mL 本氏液</td>
+            <td><b><span class="ans-word">紅色（或橙色）</span></b> <span style="font-size:10.5pt; color:#64748b;">(澱粉被分解出葡萄糖)</span></td>
+          </tr>
+          <tr class="interactive-item" onclick="toggleItemAnswer(this, event)">
+            <td><b>乙管</b></td>
+            <td>2 mL 澱粉液</td>
+            <td>2 mL 水 (對照)</td>
+            <td>放入 37 ℃ 溫水</td>
+            <td>2 mL 本氏液</td>
+            <td><b><span class="ans-word">藍色</span></b> <span style="font-size:10.5pt; color:#64748b;">(無酵素，未產生葡萄糖)</span></td>
+          </tr>
+          <tr class="interactive-item" onclick="toggleItemAnswer(this, event)">
+            <td><b>丙管</b></td>
+            <td>2 mL 澱粉液</td>
+            <td>2 mL 唾液</td>
+            <td>放入 100 ℃ 沸水</td>
+            <td>2 mL 本氏液</td>
+            <td><b><span class="ans-word">藍色</span></b> <span style="font-size:10.5pt; color:#64748b;">(高溫使澱粉酶永久變性失效)</span></td>
+          </tr>
+          <tr class="interactive-item" onclick="toggleItemAnswer(this, event)">
+            <td><b>丁管</b></td>
+            <td>2 mL 澱粉液</td>
+            <td>2 mL 唾液</td>
+            <td>放在 25 ℃ 室溫</td>
+            <td>2 mL 本氏液</td>
+            <td><b><span class="ans-word">黃色/橙色</span></b> <span style="font-size:10.5pt; color:#64748b;">(活性較 37℃ 慢但仍有作用)</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="task-title" style="margin-top:4px;">四、隨堂小試</div>
+      <div class="qa-block interactive-item" onclick="toggleItemAnswer(this, event)">
+        <div class="qa-bracket">（<span class="ans-slot">D</span>）</div>
+        <div class="qa-content">
+          <div class="qa-question">1. 下列敘述何者不是酵素的特性或功能？</div>
+          <div class="qa-options">
+            <div>(A) 加速特定化學反應的進行</div>
+            <div>(B) 有酸鹼性範圍限制</div>
+            <div>(C) 有溫度範圍限制</div>
+            <div>(D) 可以增加反應最後的生成物總量</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item" onclick="toggleItemAnswer(this, event)">
+        <div class="qa-bracket">（<span class="ans-slot">D</span>）</div>
+        <div class="qa-content">
+          <div class="qa-question">2. 酵素具有「專一性」，請問何謂專一性？</div>
+          <div class="qa-options">
+            <div>(A) 一種酵素只能在某一段特定的消化道中發揮作用</div>
+            <div>(B) 一個酵素分子只能作用一次，反應結束後即破壞消失</div>
+            <div>(C) 一種酵素只能在某一酸鹼範圍內進行反應</div>
+            <div>(D) 一種酵素的受質結合部位只能促進特定反應進行</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>七年級自然（上）講義</span>
+        <span>單元 3-2 酵素與代謝作用</span>
+        <span>第 2 頁 / 共 6 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== PAGE 3 ==================== -->
+    <div class="page" id="page3">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國中自然與生科（七上）</span>
+        <span>班級：_______ 座號：_______ 姓名：_____________</span>
+        <span>P. 3</span>
+      </div>
+
+      <div class="section-title">
+        <span>3-3 植物如何製造養分（一）</span>
+        <span style="font-size:11pt; font-weight:normal;">葉片構造與光合作用機制</span>
+      </div>
+
+      <div class="task-title">一、植物葉片的細部構造與機能</div>
+      <div class="item-line interactive-item" onclick="toggleItemAnswer(this, event)">
+        <b>1. 表皮層</b>：
+        <ul style="margin:2px 0 0 20px; padding:0;">
+          <li><b>表皮細胞</b>：排列緊密無間隙，無色透明（無葉綠體），具有保護葉片內部組織之功能。</li>
+          <li><b>角質層</b>：覆蓋於表皮細胞外層的蠟質，能防止葉內 <span class="ans-word">水分</span> 蒸散散失。</li>
+          <li><b>保衛細胞</b>：成對半月形，細胞內<b>含有葉綠體</b>！兩個保衛細胞中央圍成 <span class="ans-word">氣孔</span>，為氣體與水氣進出主要通道。</li>
+        </ul>
+        <b>2. 葉肉組織</b>：介於上下表皮之間，細胞內含有大量顆粒狀的 <span class="ans-word">葉綠體</span>，是植物進行<b>光合作用的主要場所</b>。<br>
+        <b>3. 葉脈（維管束）</b>：分布於葉肉中，木質部輸送 <span class="ans-word">水分</span> 與礦物質；韌皮部輸送光合作用製造之 <span class="ans-word">養分</span>，並具支持葉片功能。
+      </div>
+
+      <div class="task-title" style="margin-top:6px;">二、光合作用的原理與化學歷程</div>
+      <div class="tip-box interactive-item" onclick="toggleItemAnswer(this, event)">
+        葉綠體內的<b>葉綠素</b>吸收 <span class="ans-word">光能</span>，將根部吸收的水分與氣孔進入的二氧化碳轉換成養分：
+        <div style="text-align:center; margin:6px 0; font-weight:bold; font-size:13pt; color:#0e7490;">
+          水 ＋ 二氧化碳 ＋ 光能 ──(葉綠體/葉綠素)──→ 葡萄糖 ＋ 氧氣 ＋ 水
+        </div>
+        <ul style="margin:2px 0 0 20px; padding:0; font-size:12pt;">
+          <li><b>光反應</b>：葉綠素吸收太陽光能，將<b>水分解產生氧氣</b>（釋放至大氣中），並將能量儲存。</li>
+          <li><b>碳反應（暗反應）</b>：利用光反應產生的能量與酵素催化，將<b>二氧化碳轉變為葡萄糖和水</b>。</li>
+          <li>葡萄糖可轉變成澱粉暫存於葉片，夜晚再轉變成蔗糖經由韌皮部運送至植物各部。</li>
+        </ul>
+      </div>
+
+      <div class="task-title" style="margin-top:6px;">三、隨堂概念評量</div>
+      <div class="qa-block interactive-item" onclick="toggleItemAnswer(this, event)">
+        <div class="qa-bracket">（<span class="ans-slot">A</span>）</div>
+        <div class="qa-content">
+          <div class="qa-question">1. 下列關於植物葉片構造的敘述，何者正確？</div>
+          <div class="qa-options">
+            <div>(A) 角質層能有效防止水分散失</div>
+            <div>(B) 葉脈為葉中的維管束，其作用僅為單向運送水分</div>
+            <div>(C) 氣孔是葉片行光合作用的最主要場所</div>
+            <div>(D) 葉肉中的細胞不含葉綠體，僅具有保護內部功能</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item" onclick="toggleItemAnswer(this, event)">
+        <div class="qa-bracket">（<span class="ans-slot">C</span>）</div>
+        <div class="qa-content">
+          <div class="qa-question">2. 有關植物葉片各細胞構造的敘述，下列何者<b>錯誤</b>？</div>
+          <div class="qa-options">
+            <div>(A) 表皮細胞具有保護葉片內部組織的功能</div>
+            <div>(B) 葉綠體是植物行光合作用的主要胞器</div>
+            <div>(C) 保衛細胞主要的功能是保護葉片，內部不具葉綠體</div>
+            <div>(D) 葉脈內部具有維管束，負責輸送養分與水分</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item" onclick="toggleItemAnswer(this, event)">
+        <div class="qa-bracket">（<span class="ans-slot">A</span>）</div>
+        <div class="qa-content">
+          <div class="qa-question">3. 關於綠色植物光合作用的敘述，下列何者<b>錯誤</b>？</div>
+          <div class="qa-options">
+            <div>(A) 反應原料是二氧化碳和氧氣，生成產物為葡萄糖和水</div>
+            <div>(B) 光合作用整體化學歷程在植物細胞的葉綠體裡進行</div>
+            <div>(C) 必須以陽光光能作為啟動反應的能量來源</div>
+            <div>(D) 光反應分解水分子時會產生氧氣釋放至空氣中</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item" onclick="toggleItemAnswer(this, event)">
+        <div class="qa-bracket">（<span class="ans-slot">D</span>）</div>
+        <div class="qa-content">
+          <div class="qa-question">4. 關於葉片氣孔的構造與調節，下列敘述何者正確？</div>
+          <div class="qa-options">
+            <div>(A) 一個氣孔由一對方形的表皮細胞組合而成</div>
+            <div>(B) 氣孔是吸收土壤中水分的主要通道</div>
+            <div>(C) 氣孔是存在於葉肉細胞間的微小空隙</div>
+            <div>(D) 氣孔開啟時可讓光合作用所需的二氧化碳擴散進入葉內</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>七年級自然（上）講義</span>
+        <span>單元 3-3 植物如何製造養分(一)</span>
+        <span>第 3 頁 / 共 6 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== PAGE 4 ==================== -->
+    <div class="page" id="page4">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國中自然與生科（七上）</span>
+        <span>班級：_______ 座號：_______ 姓名：_____________</span>
+        <span>P. 4</span>
+      </div>
+
+      <div class="section-title">
+        <span>3-3 植物如何製造養分（二）</span>
+        <span style="font-size:11pt; font-weight:normal;">光合作用探究實驗與題組檢測</span>
+      </div>
+
+      <div class="task-title">一、光與光合作用實驗探究（檢驗葉片是否製造澱粉）</div>
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th style="width:12%;">步驟</th>
+            <th style="width:20%;">操作圖解</th>
+            <th style="width:36%;">實驗操作過程</th>
+            <th style="width:32%;">實驗原理與關鍵意義</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>步驟 1</b></td>
+            <td><img src="../images/science-7-3-handout/image032.jpg" style="max-height:50px; width:auto;" alt="步驟1遮光"></td>
+            <td class="align-left">取盆栽綠色葉片，部分區域用<b>鋁箔雙面包裹</b>，移至陽光下一週。</td>
+            <td class="align-left">遮光處為<b>實驗組</b>，未遮光照光處為<b>對照組</b>，探討光照對光合作用之影響。</td>
+          </tr>
+          <tr>
+            <td><b>步驟 2</b></td>
+            <td><img src="../images/science-7-3-handout/image033.jpg" style="max-height:50px; width:auto;" alt="步驟2沸水加熱"></td>
+            <td class="align-left">取下葉片，投入<b>沸水</b>中加熱約 2~3 分鐘。</td>
+            <td class="align-left">高溫破壞葉片細胞膜，破壞並軟化表面的 <span class="ans-word">角質層</span>。</td>
+          </tr>
+          <tr>
+            <td><b>步驟 3</b></td>
+            <td><img src="../images/science-7-3-handout/image034.jpg" style="max-height:50px; width:auto;" alt="步驟3酒精脫色"></td>
+            <td class="align-left">取出葉片，放入內盛<b>酒精</b>的燒杯中進行<b>隔水加熱</b>。</td>
+            <td class="align-left">
+              1. 酒精可溶出綠色的<b>葉綠素</b>脫色，避免干擾觀察。<br>
+              2. 酒精易燃，隔水加熱可防止著火。
+            </td>
+          </tr>
+          <tr>
+            <td><b>步驟 4</b></td>
+            <td><img src="../images/science-7-3-handout/image035.jpg" style="max-height:50px; width:auto;" alt="步驟4滴加碘液"></td>
+            <td class="align-left">葉片在熱水中漂洗軟化，平鋪培養皿上，滴加 <span class="ans-word">碘液</span>。</td>
+            <td class="align-left">檢驗葉片細胞內是否儲存光合作用產物<b>澱粉</b>。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="interactive-item" onclick="toggleItemAnswer(this, event)" style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:6px; padding:4px 8px; margin:4px 0;">
+        <div style="display:flex; align-items:center; justify-content:space-between;">
+          <div style="font-size:12pt; line-height:1.4;">
+            <b>【實驗結果判定】</b><br>
+            • <b>照光部位（未包鋁箔）</b>：含澱粉，呈現 <span class="ans-word">藍黑色</span>。<br>
+            • <b>遮光部位（包覆鋁箔）</b>：無澱粉，呈現碘液原本之 <span class="ans-word">黃褐色</span>。
+          </div>
+          <img src="../images/science-7-3-handout/image036.png" style="max-height:56px; width:auto; border:1px solid #94a3b8; border-radius:4px;" alt="實驗結果圖">
+        </div>
+      </div>
+
+      <div class="task-title" style="margin-top:4px;">二、題組實戰檢測</div>
+
+      <!-- 題 5：橫切面 -->
+      <div class="qa-block interactive-item" onclick="toggleItemAnswer(this, event)">
+        <div class="qa-bracket">（<span class="ans-slot">B</span>）</div>
+        <div class="qa-content">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div>
+              <div class="qa-question">5. 右圖為植物葉片橫切面構造示意圖，光合作用中所需的反應物——水，是由圖中何處構造進入葉肉細胞？</div>
+              <div class="qa-options">
+                <div>(A) 甲處（上表皮）</div>
+                <div>(B) 乙處（葉脈木質部）</div>
+                <div>(C) 丙處（下表皮細胞）</div>
+                <div>(D) 丁處（氣孔）</div>
+              </div>
+            </div>
+            <img src="../images/science-7-3-handout/image043.jpg" style="max-height:75px; width:auto; border:1px solid #cbd5e1; border-radius:4px; margin-left:8px;" alt="葉片橫切面圖">
+          </div>
+        </div>
+      </div>
+
+      <!-- 題 6：下表皮細部圖 -->
+      <div class="qa-block interactive-item" onclick="toggleItemAnswer(this, event)">
+        <div class="qa-bracket">（<span class="ans-slot">A</span>）</div>
+        <div class="qa-content">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div>
+              <div class="qa-question">6. 右圖為植物葉片下表皮的顯微細部放大圖，則圖中標示的構造何者具有葉綠體可行光合作用？</div>
+              <div class="qa-options">
+                <div>(A) 只有甲（保衛細胞）</div>
+                <div>(B) 只有乙（氣孔）</div>
+                <div>(C) 只有丙（表皮細胞）</div>
+                <div>(D) 甲和丙皆可行光合作用</div>
+              </div>
+            </div>
+            <img src="../images/science-7-3-handout/image044.jpg" style="max-height:75px; width:auto; border:1px solid #cbd5e1; border-radius:4px; margin-left:8px;" alt="葉片下表皮氣孔圖">
+          </div>
+        </div>
+      </div>
+
+      <!-- 題 7 & 8 -->
+      <div class="qa-block interactive-item" onclick="toggleItemAnswer(this, event)">
+        <div class="qa-bracket">（<span class="ans-slot">A</span>）</div>
+        <div class="qa-content">
+          <div class="qa-question">7. 植物進行光合作用時，下列何種原料是由植物根毛從土壤中吸收並經由維管束輸送？</div>
+          <div class="qa-options">
+            <div>(A) 水</div>
+            <div>(B) 氧氣</div>
+            <div>(C) 葡萄糖</div>
+            <div>(D) 二氧化碳</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item" onclick="toggleItemAnswer(this, event)">
+        <div class="qa-bracket">（<span class="ans-slot">A</span>）</div>
+        <div class="qa-content">
+          <div class="qa-question">8. 小帆想探究植物在不同環境光照條件下，葉片行光合作用速率的快慢，他應根據下列哪一項數據進行測定推論最為合理？</div>
+          <div class="qa-options">
+            <div>(A) 單位時間內葉片釋放氧氣的量</div>
+            <div>(B) 單位時間內葉片消耗葉綠素的量</div>
+            <div>(C) 單位時間內葉片消耗葡萄糖的量</div>
+            <div>(D) 單位時間內葉片產生二氧化碳的量</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>七年級自然（上）講義</span>
+        <span>單元 3-3 植物如何製造養分(二)</span>
+        <span>第 4 頁 / 共 6 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== PAGE 5 ==================== -->
+    <div class="page" id="page5">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國中自然與生科（七上）</span>
+        <span>班級：_______ 座號：_______ 姓名：_____________</span>
+        <span>P. 5</span>
+      </div>
+
+      <div class="section-title">
+        <span>3-4 人體如何獲得養分</span>
+        <span style="font-size:11pt; font-weight:normal;">消化系統、消化液與吸收</span>
+      </div>
+
+      <div class="task-title">一、消化作用意義與大分子轉化</div>
+      <div class="tip-box interactive-item" onclick="toggleItemAnswer(this, event)">
+        <b>消化作用</b>：大分子養分經物理咀嚼與化學酵素分解，轉變為小分子養分才能通過細胞膜進入細胞：
+        <div style="display:flex; justify-content:space-around; margin-top:3px; font-weight:bold;">
+          <span>澱粉 ──→ <span class="ans-word">葡萄糖</span></span>
+          <span>蛋白質 ──→ <span class="ans-word">胺基酸</span></span>
+          <span>脂質 ──→ <span class="ans-word">脂肪酸 ＋ 甘油</span></span>
+        </div>
+      </div>
+
+      <div class="task-title">二、人體消化系統與各消化腺功能</div>
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th style="width:12%;">消化道</th>
+            <th style="width:14%;">消化腺</th>
+            <th style="width:14%;">分泌消化液</th>
+            <th style="width:38%;">消化酵素與作用功能</th>
+            <th style="width:22%;">主要吸收物質</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="interactive-item" onclick="toggleItemAnswer(this, event)">
+            <td><b><span class="ans-word">口腔</span></b></td>
+            <td>唾腺</td>
+            <td>唾液</td>
+            <td>唾液澱粉酶，初步分解 <span class="ans-word">澱粉</span> 為麥芽糖</td>
+            <td>×</td>
+          </tr>
+          <tr>
+            <td><b>咽、食道</b></td>
+            <td>×</td>
+            <td>×</td>
+            <td>肌肉蠕動推進食團，無消化作用</td>
+            <td>×</td>
+          </tr>
+          <tr class="interactive-item" onclick="toggleItemAnswer(this, event)">
+            <td><b><span class="ans-word">胃</span></b></td>
+            <td>胃腺</td>
+            <td>胃液</td>
+            <td>含鹽酸（強酸殺菌）與胃蛋白酶，初步分解 <span class="ans-word">蛋白質</span></td>
+            <td>少量酒精與水分</td>
+          </tr>
+          <tr class="interactive-item" onclick="toggleItemAnswer(this, event)">
+            <td rowspan="3"><b>小腸</b></td>
+            <td><span class="ans-word">肝臟</span></td>
+            <td><span class="ans-word">膽汁</span></td>
+            <td><b>不含酵素</b>！儲存於膽囊，注入十二指腸，<span class="ans-word">乳化</span> 脂質。</td>
+            <td rowspan="3">
+              <b>養分吸收最主要場所</b>！<br>
+              葡萄糖、胺基酸、脂肪酸、甘油、水分
+            </td>
+          </tr>
+          <tr class="interactive-item" onclick="toggleItemAnswer(this, event)">
+            <td>胰臟</td>
+            <td><span class="ans-word">胰液</span></td>
+            <td>注入小腸，含消化<b>醣類、蛋白質、脂質</b>的多種酵素</td>
+          </tr>
+          <tr class="interactive-item" onclick="toggleItemAnswer(this, event)">
+            <td><span class="ans-word">腸腺</span></td>
+            <td>腸液</td>
+            <td>含分解醣類和蛋白質之酵素，完成最終消化</td>
+          </tr>
+          <tr class="interactive-item" onclick="toggleItemAnswer(this, event)">
+            <td><b><span class="ans-word">大腸</span></b></td>
+            <td>×</td>
+            <td>×</td>
+            <td>吸收未消化的殘渣中多餘 <span class="ans-word">水分</span>，形成糞便</td>
+            <td>水分與無機鹽</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- 曲線圖 -->
+      <div class="interactive-item" onclick="toggleItemAnswer(this, event)" style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:6px; padding:4px 8px; margin:4px 0; display:flex; align-items:center; justify-content:space-between;">
+        <div style="font-size:11.5pt; line-height:1.4;">
+          <b>【營養素在消化道含量變化曲線圖解】</b><br>
+          • 曲線甲（口腔開始下降）：<span class="ans-word">澱粉</span>。<br>
+          • 曲線乙（胃部開始下降）：<span class="ans-word">蛋白質</span>。<br>
+          • 曲線丙（小腸才開始下降）：<span class="ans-word">脂質</span>。
+        </div>
+        <img src="../images/science-7-3-handout/image053.jpg" style="max-height:76px; width:auto; border-radius:4px;" alt="養分含量變化圖">
+      </div>
+
+      <div class="task-title" style="margin-top:4px;">三、隨堂概念評量</div>
+
+      <div class="qa-block interactive-item" onclick="toggleItemAnswer(this, event)">
+        <div class="qa-bracket">（<span class="ans-slot">C</span>）</div>
+        <div class="qa-content">
+          <div class="qa-question">1. 下列關於人體消化系統各器官的敘述，何者<b>錯誤</b>？</div>
+          <div class="qa-options">
+            <div>(A) 胃液內含鹽酸，環境為強酸性</div>
+            <div>(B) 消化道肌肉有節律地收縮與蠕動，能促進食物與消化液充分混合</div>
+            <div>(C) 膽汁含有豐富的消化酵素，能直接催化分解蛋白質</div>
+            <div>(D) 唾腺位於口腔周圍，分泌唾液能初步分解澱粉</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item" onclick="toggleItemAnswer(this, event)">
+        <div class="qa-bracket">（<span class="ans-slot">A</span>）</div>
+        <div class="qa-content">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div>
+              <div class="qa-question">2. 右圖為人體消化系統各構造示意圖，圖中標示的器官何者能分泌消化液注入消化管？</div>
+              <div class="qa-options">
+                <div>(A) 乙丙戊己（唾腺、胃、胰臟、小腸）</div>
+                <div>(B) 甲丙丁己</div>
+                <div>(C) 甲丁己庚</div>
+                <div>(D) 乙丙丁己</div>
+              </div>
+            </div>
+            <img src="../images/science-7-3-handout/image055.jpg" style="max-height:78px; width:auto; border:1px solid #cbd5e1; border-radius:4px; margin-left:8px;" alt="消化器官示意圖">
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item" onclick="toggleItemAnswer(this, event)">
+        <div class="qa-bracket">（<span class="ans-slot">D</span>）</div>
+        <div class="qa-content">
+          <div class="qa-question">3. 邱伯伯罹患胃癌切除部分胃部，請問其飲食應適度減少何種食物的攝取，避免造成消化負擔？</div>
+          <div class="qa-options">
+            <div>(A) 蔬菜水果類</div>
+            <div>(B) 食用油脂類</div>
+            <div>(C) 五穀雜糧米飯類</div>
+            <div>(D) 蛋豆魚肉及奶類（富含蛋白質）</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item" onclick="toggleItemAnswer(this, event)">
+        <div class="qa-bracket">（<span class="ans-slot">A</span>）</div>
+        <div class="qa-content">
+          <div class="qa-question">4. 某固體食物在人體消化器官平均停留時間為：口和食道 1 分鐘、胃 2 小時、小腸 8 小時、大腸 13 小時。推論食物入口後，蛋白質「開始」被分解與吸收的時間為何？</div>
+          <div class="qa-options">
+            <div>(A) 約 10 分鐘後開始分解；約 4 小時後在小腸進行吸收</div>
+            <div>(B) 約 15 秒鐘後開始分解；約 1 小時後進行吸收</div>
+            <div>(C) 約 2 小時後開始分解；約 10 小時後進行吸收</div>
+            <div>(D) 約 10 小時後開始分解；約 12 小時後進行吸收</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>七年級自然（上）講義</span>
+        <span>單元 3-4 人體如何獲得養分</span>
+        <span>第 5 頁 / 共 6 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== PAGE 6 ==================== -->
+    <div class="page" id="page6">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國中自然與生科（七上）</span>
+        <span>班級：_______ 座號：_______ 姓名：_____________</span>
+        <span>P. 6</span>
+      </div>
+
+      <div class="main-title" style="margin-bottom:6px;">第 3 章 生物體的營養 全章精華大歸納</div>
+
+      <div class="section-title">
+        <span>全章核心知識架構與心智地圖</span>
+        <span style="font-size:11pt; font-weight:normal;">重點盤點 ＆ 考前總複習</span>
+      </div>
+
+      <div class="fig-row" style="margin:4px 0 6px 0;">
+        <div class="fig-card" style="width:100%; padding:2px;">
+          <img src="../images/science-7-3-handout/image057.png" style="max-height:160px; width:auto;" alt="第3章重點整理心智架構圖">
+          <div class="fig-caption">【第 3 章 生物體的營養】核心概念心智地圖</div>
+        </div>
+      </div>
+
+      <div class="task-title" style="margin-top:4px;">全章必考重點總盤點</div>
+      <table class="custom-table" style="font-size:11.5pt;">
+        <thead>
+          <tr>
+            <th style="width:22%;">小節主題</th>
+            <th style="width:78%;">核心概念精華與常考盲點</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="interactive-item" onclick="toggleItemAnswer(this, event)">
+            <td><b>3-1 養分與能量</b></td>
+            <td class="align-left">
+              • 產能養分：醣類 (4)、蛋白質 (4)、脂質 (9)。不產能：水（含量最多）、礦物質、維生素。<br>
+              • 檢驗試劑：澱粉用 <span class="ans-word">碘液</span> 測（黃褐變藍黑）；葡萄糖用 <span class="ans-word">本氏液</span> 隔水加熱（藍變紅）。
+            </td>
+          </tr>
+          <tr class="interactive-item" onclick="toggleItemAnswer(this, event)">
+            <td><b>3-2 酵素與代謝</b></td>
+            <td class="align-left">
+              • 主要成分為 <span class="ans-word">蛋白質</span>，具 <span class="ans-word">專一性</span>，反應前後不變可重複使用。<br>
+              • 僅加速反應速率，不增加生成物質量！低溫抑制活性，高溫使酵素永久變性失效。<br>
+              • 胃蛋白酶在強酸環境活性最佳；唾液澱粉酶在中性；小腸酵素在弱鹼性。
+            </td>
+          </tr>
+          <tr class="interactive-item" onclick="toggleItemAnswer(this, event)">
+            <td><b>3-3 光合作用</b></td>
+            <td class="align-left">
+              • 原料：水分（根吸收）與二氧化碳（氣孔進入）。場所：葉肉與保衛細胞的 <span class="ans-word">葉綠體</span>。<br>
+              • 產物：葡萄糖、氧氣、水。實驗以沸水軟化、酒精隔水加熱脫去葉綠素、滴碘液呈藍黑色。
+            </td>
+          </tr>
+          <tr class="interactive-item" onclick="toggleItemAnswer(this, event)">
+            <td><b>3-4 人體消化</b></td>
+            <td class="align-left">
+              • 消化順序：口腔（澱粉）→ 胃（蛋白質）→ 小腸（醣類、蛋白質、脂質全部完成消化與吸收）。<br>
+              • <b>膽汁不含消化酵素</b>，由肝臟製造、膽囊儲存，能乳化脂質。<br>
+              • 小腸內壁有無數皺襞與 <span class="ans-word">絨毛</span>，能大幅增加吸收水分與養分的 <span class="ans-word">表面積</span>！
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="task-title" style="margin-top:6px;">課後學習自我檢核清單（課堂點擊訂正）</div>
+      <div class="item-line interactive-item" onclick="toggleItemAnswer(this, event)" style="font-size:12pt; line-height:1.5;">
+        <span class="ans-slot">☑</span> 1. 我能區分產能營養素與不產能營養素，並記住熱量計算原則。<br>
+        <span class="ans-slot">☑</span> 2. 我能正確說明酵素催化受質的專一性，並解釋溫度過高與過低對酵素的差別。<br>
+        <span class="ans-slot">☑</span> 3. 我能繪出光合作用光反應與暗反應流程，並說出檢驗葉片澱粉實驗中酒精脫色的原理。<br>
+        <span class="ans-slot">☑</span> 4. 我能指出葉片橫切面圖中角質層、表皮細胞、保衛細胞、葉肉與葉脈的功能。<br>
+        <span class="ans-slot">☑</span> 5. 我能完整說出人體消化系統各消化道順序，並指出膽汁不含酵素的特性。<br>
+        <span class="ans-slot">☑</span> 6. 我能說明小腸內壁絨毛構造對擴大吸收養分表面積的重要性。
+      </div>
+
+      <div class="page-footer">
+        <span>七年級自然（上）講義</span>
+        <span>單元 第 3 章 全章重點架構歸納</span>
+        <span>第 6 頁 / 共 6 頁</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 互動控制 JavaScript -->
+  <script>
+    // 0. 目錄選單切換與跳轉
+    function toggleTocMenu(e) {
+      if (e) e.stopPropagation();
+      const menu = document.getElementById('tocMenu');
+      if (menu) menu.classList.toggle('show');
+    }
+
+    function jumpTo(targetId) {
+      const el = document.getElementById(targetId);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const menu = document.getElementById('tocMenu');
+      if (menu) menu.classList.remove('show');
+    }
+
+    document.addEventListener('click', (e) => {
+      const menu = document.getElementById('tocMenu');
+      const btn = document.getElementById('tocBtn');
+      if (menu && menu.classList.contains('show') && !menu.contains(e.target) && e.target !== btn) {
+        menu.classList.remove('show');
+      }
+    });
+
+    // 1. 單題顯答切換 (點擊題目)
+    function toggleItemAnswer(el, e) {
+      if (document.body.classList.contains('pen-mode')) return;
+      if (e) e.stopPropagation();
+      el.classList.toggle('show-one');
+    }
+
+    // 2. 全卷答案一鍵切換
+    function toggleAllAnswers() {
+      const isShow = document.body.classList.toggle('show-ans');
+      const icon = document.getElementById('ansIcon');
+      const btn = document.getElementById('toggleAllAnsBtn');
+      if (isShow) {
+        icon.textContent = '🙈';
+        btn.classList.add('active');
+        btn.title = '點擊隱藏全卷答案';
+      } else {
+        icon.textContent = '👁️';
+        btn.classList.remove('active');
+        btn.title = '點擊揭曉全卷答案';
+        document.querySelectorAll('.show-one').forEach(item => item.classList.remove('show-one'));
+      }
+    }
+
+    // 3. 畫筆與橡皮擦控制
+    let currentPenColor = 'rgba(250, 204, 21, 0.45)';
+    let currentPenSize = 4;
+    let isDrawing = false;
+    let currentCtx = null;
+
+    function togglePenMode() {
+      const isPen = document.body.classList.toggle('pen-mode');
+      const penBtn = document.getElementById('penBtn');
+      const penOptions = document.getElementById('penOptions');
+      if (isPen) {
+        penBtn.classList.add('active');
+        penOptions.style.display = 'flex';
+      } else {
+        penBtn.classList.remove('active');
+        penOptions.style.display = 'none';
+      }
+    }
+
+    function setPenColor(color, el) {
+      currentPenColor = color;
+      document.querySelectorAll('.color-dot').forEach(d => d.classList.remove('active'));
+      el.classList.add('active');
+    }
+
+    function setPenSize(size, el) {
+      currentPenSize = size;
+      document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+      el.classList.add('active');
+    }
+
+    function clearAllDrawings() {
+      document.querySelectorAll('.drawing-canvas').forEach(canvas => {
+        const ctx = canvas.getContext('2d');
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+      });
+    }
+
+    // 初始化畫布監聽
+    function initCanvases() {
+      document.querySelectorAll('.page').forEach(page => {
+        const canvas = page.querySelector('.drawing-canvas');
+        if (!canvas) return;
+
+        function resize() {
+          canvas.width = page.clientWidth;
+          canvas.height = page.clientHeight;
+        }
+        resize();
+        window.addEventListener('resize', resize);
+
+        const ctx = canvas.getContext('2d');
+
+        canvas.addEventListener('mousedown', e => {
+          if (!document.body.classList.contains('pen-mode')) return;
+          isDrawing = true;
+          currentCtx = ctx;
+          ctx.beginPath();
+          ctx.moveTo(e.offsetX, e.offsetY);
+        });
+
+        canvas.addEventListener('mousemove', e => {
+          if (!isDrawing || currentCtx !== ctx) return;
+          ctx.strokeStyle = currentPenColor;
+          ctx.lineWidth = currentPenSize;
+          ctx.lineCap = 'round';
+          ctx.lineJoin = 'round';
+          ctx.lineTo(e.offsetX, e.offsetY);
+          ctx.stroke();
+        });
+
+        canvas.addEventListener('mouseup', () => { isDrawing = false; });
+        canvas.addEventListener('mouseleave', () => { isDrawing = false; });
+      });
+    }
+
+    window.addEventListener('DOMContentLoaded', initCanvases);
+  </script>
+</body>
+</html>
