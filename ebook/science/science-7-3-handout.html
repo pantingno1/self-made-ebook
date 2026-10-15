@@ -8,8 +8,8 @@
   <meta name="ebook:subject" content="science">
   <meta name="ebook:grade" content="7">
   <meta name="ebook:type" content="handout">
-  <meta name="ebook:pages" content="10">
-  <meta name="ebook:summary" content="國一自然第3章生物體的營養完整講義，每單元各兩頁呈現，含營養素、酵素、光合作用實驗與消化系統">
+  <meta name="ebook:pages" content="14">
+  <meta name="ebook:summary" content="國一自然第3章生物體的營養完整大字版講義，每單元2~3頁寬裕排版，絕不切斷試題與頁尾，含全彩圖解與填空顯答">
   <meta name="ebook:level" content="std">
   <style>
     @page { size: A4 portrait; margin: 10mm 12mm; }
@@ -46,8 +46,8 @@
     .toc-menu {
       display: none; position: absolute; top: 46px; left: 0;
       background: #ffffff; border: 1px solid #cbd5e1; border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18); padding: 6px 0;
-      min-width: 290px; max-height: 440px; overflow-y: auto; z-index: 10000;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.18); padding: 6px 0;
+      min-width: 300px; max-height: 480px; overflow-y: auto; z-index: 10000;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
     .toc-menu.show { display: block; animation: tocFadeIn 0.15s ease-out; }
@@ -60,12 +60,12 @@
       color: #64748b; border-bottom: 1px solid #f1f5f9;
     }
     .toc-menu-item {
-      padding: 7px 16px; font-size: 13.5px; color: #334155; cursor: pointer;
+      padding: 6px 16px; font-size: 13px; color: #334155; cursor: pointer;
       display: flex; align-items: center; justify-content: space-between;
       transition: background 0.12s, color 0.12s;
     }
     .toc-menu-item:hover { background: #eff6ff; color: #2563eb; font-weight: bold; }
-    .toc-page-badge { font-size: 12px; color: #94a3b8; font-weight: normal; }
+    .toc-page-badge { font-size: 11.5px; color: #94a3b8; font-weight: normal; }
     .toc-menu-item:hover .toc-page-badge { color: #2563eb; }
 
     /* 螢光筆選項盤 */
@@ -116,20 +116,20 @@
     }
     .section-title {
       font-size: 13.5pt; font-weight: bold; background: #e0f2fe; color: #0369a1;
-      padding: 4px 10px; border-radius: 6px; margin: 6px 0 8px 0;
+      padding: 4px 10px; border-radius: 6px; margin: 6px 0 10px 0;
       border-left: 5px solid #0284c7; display: flex; align-items: center; justify-content: space-between;
     }
     .task-title {
-      font-size: 13pt; font-weight: bold; margin: 7px 0 5px 0; color: #0f172a;
+      font-size: 13pt; font-weight: bold; margin: 8px 0 5px 0; color: #0f172a;
     }
 
     /* 內容排版組件 */
     .tip-box {
       border: 1px solid #bae6fd; background-color: #f0f9ff; border-radius: 6px;
-      padding: 8px 12px; margin: 6px 0 10px 0; font-size: 13pt; line-height: 1.5;
+      padding: 8px 12px; margin: 6px 0 10px 0; font-size: 13pt; line-height: 1.55;
     }
     .item-line {
-      padding: 4px 6px; border-radius: 5px; line-height: 1.5; font-size: 13pt; margin-bottom: 4px;
+      padding: 4px 6px; border-radius: 5px; line-height: 1.55; font-size: 13pt; margin-bottom: 4px;
     }
     body:not(.pen-mode) .interactive-item { cursor: pointer; }
     body:not(.pen-mode) .interactive-item:hover { background-color: #f0fdf4; outline: 1px dashed #22c55e; }
@@ -154,10 +154,10 @@
 
     /* 選擇題樣式：括號與題幹在同一行 */
     .qa-block {
-      margin-bottom: 9px; padding: 5px 8px; border-radius: 6px; transition: background 0.15s;
+      margin-bottom: 12px; padding: 6px 8px; border-radius: 6px; transition: background 0.15s;
     }
     .qa-question-line {
-      font-size: 13pt; line-height: 1.5; margin-bottom: 4px;
+      font-size: 13pt; line-height: 1.55; margin-bottom: 5px;
     }
     .qa-bracket {
       display: inline-block; font-weight: bold; margin-right: 4px;
@@ -169,10 +169,10 @@
       color: #dc2626 !important;
     }
     .qa-options {
-      display: flex; flex-wrap: wrap; gap: 4px 20px; margin-left: 10px; color: #334155; font-size: 12.5pt;
+      display: flex; flex-wrap: wrap; gap: 4px 22px; margin-left: 10px; color: #334155; font-size: 12.5pt;
     }
     .qa-options.vertical {
-      display: flex; flex-direction: column; gap: 3px;
+      display: flex; flex-direction: column; gap: 4px;
     }
     .qa-opt {
       display: inline-block;
@@ -180,28 +180,28 @@
 
     /* 表格 */
     table.custom-table {
-      width: 100%; border-collapse: collapse; margin: 6px 0 8px 0; font-size: 12pt; line-height: 1.4;
+      width: 100%; border-collapse: collapse; margin: 6px 0 10px 0; font-size: 12pt; line-height: 1.45;
     }
     table.custom-table th, table.custom-table td {
-      border: 1px solid #64748b; padding: 5px 8px; text-align: center; vertical-align: middle;
+      border: 1px solid #64748b; padding: 6px 8px; text-align: center; vertical-align: middle;
     }
     table.custom-table th { background-color: #f1f5f9; font-weight: bold; color: #0f172a; }
     table.custom-table td.align-left { text-align: left; }
 
     /* 圖片容器 */
     .fig-row {
-      display: flex; align-items: center; justify-content: center; gap: 12px; margin: 6px 0 8px 0;
+      display: flex; align-items: center; justify-content: center; gap: 14px; margin: 6px 0 10px 0;
     }
     .fig-card {
       display: flex; flex-direction: column; align-items: center; text-align: center;
       background: #fafafa; border: 1px solid #e2e8f0; border-radius: 6px; padding: 6px;
     }
-    .fig-card img { max-height: 90px; width: auto; object-fit: contain; }
-    .fig-caption { font-size: 11pt; color: #475569; margin-top: 3px; font-weight: bold; }
+    .fig-card img { max-height: 95px; width: auto; object-fit: contain; }
+    .fig-caption { font-size: 11pt; color: #475569; margin-top: 4px; font-weight: bold; }
 
-    /* 頁尾 */
+    /* 頁尾：絕對在最底端呈現 */
     .page-footer {
-      margin-top: auto; padding-top: 4px; border-top: 1px solid #cbd5e1;
+      margin-top: auto; padding-top: 6px; border-top: 1px solid #cbd5e1;
       display: flex; justify-content: space-between; font-size: 10.5pt; color: #64748b;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
@@ -240,17 +240,21 @@
     <div style="position: relative;">
       <button class="tool-btn" id="tocBtn" onclick="toggleTocMenu(event)" title="單元章節目錄">📑</button>
       <div class="toc-menu" id="tocMenu">
-        <div class="toc-menu-title">📖 第 3 章 單元章節目錄 (全 10 頁)</div>
-        <div class="toc-menu-item" onclick="jumpTo('page1')"><span>3-1 食物中的養分與能量 (一)</span><span class="toc-page-badge">P.1</span></div>
-        <div class="toc-menu-item" onclick="jumpTo('page2')"><span>3-1 食物中的養分與能量 (二)</span><span class="toc-page-badge">P.2</span></div>
-        <div class="toc-menu-item" onclick="jumpTo('page3')"><span>3-2 酵素與代謝作用 (一)</span><span class="toc-page-badge">P.3</span></div>
-        <div class="toc-menu-item" onclick="jumpTo('page4')"><span>3-2 酵素與代謝作用 (二)</span><span class="toc-page-badge">P.4</span></div>
-        <div class="toc-menu-item" onclick="jumpTo('page5')"><span>3-3 植物如何製造養分 (一)</span><span class="toc-page-badge">P.5</span></div>
-        <div class="toc-menu-item" onclick="jumpTo('page6')"><span>3-3 植物如何製造養分 (二)</span><span class="toc-page-badge">P.6</span></div>
-        <div class="toc-menu-item" onclick="jumpTo('page7')"><span>3-4 人體如何獲得養分 (一)</span><span class="toc-page-badge">P.7</span></div>
-        <div class="toc-menu-item" onclick="jumpTo('page8')"><span>3-4 人體如何獲得養分 (二)</span><span class="toc-page-badge">P.8</span></div>
-        <div class="toc-menu-item" onclick="jumpTo('page9')"><span>第 3 章 全章心智架構圖</span><span class="toc-page-badge">P.9</span></div>
-        <div class="toc-menu-item" onclick="jumpTo('page10')"><span>第 3 章 考前總複習與自評</span><span class="toc-page-badge">P.10</span></div>
+        <div class="toc-menu-title">📖 第 3 章 單元章節目錄 (全 14 頁)</div>
+        <div class="toc-menu-item" onclick="jumpTo('page1')"><span>3-1 六大營養素與能量</span><span class="toc-page-badge">P.1</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page2')"><span>3-1 養分測定與能量利用</span><span class="toc-page-badge">P.2</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page3')"><span>3-1 隨堂實戰評量</span><span class="toc-page-badge">P.3</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page4')"><span>3-2 代謝作用與酵素特性</span><span class="toc-page-badge">P.4</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page5')"><span>3-2 影響酵素條件與唾液實驗</span><span class="toc-page-badge">P.5</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page6')"><span>3-2 隨堂實戰評量</span><span class="toc-page-badge">P.6</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page7')"><span>3-3 葉片構造與光合作用</span><span class="toc-page-badge">P.7</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page8')"><span>3-3 光合作用實驗與檢測</span><span class="toc-page-badge">P.8</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page9')"><span>3-3 葉片橫切與下表皮圖解題</span><span class="toc-page-badge">P.9</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page10')"><span>3-4 消化系統與消化管器官</span><span class="toc-page-badge">P.10</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page11')"><span>3-4 消化液作用與養分吸收</span><span class="toc-page-badge">P.11</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page12')"><span>3-4 消化器官圖解與停留時間題</span><span class="toc-page-badge">P.12</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page13')"><span>第 3 章 全章心智架構圖</span><span class="toc-page-badge">P.13</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page14')"><span>第 3 章 考前重點盤點與自評</span><span class="toc-page-badge">P.14</span></div>
       </div>
     </div>
 
@@ -287,7 +291,7 @@
 
   <div class="pages-container">
 
-    <!-- ==================== PAGE 1: 3-1 Part 1 ==================== -->
+    <!-- ==================== PAGE 1 ==================== -->
     <div class="page" id="page1">
       <canvas class="drawing-canvas"></canvas>
       <div class="page-header">
@@ -300,15 +304,15 @@
 
       <div class="section-title">
         <span>3-1 食物中的養分與能量（一）</span>
-        <span style="font-size:11pt; font-weight:normal;">六大營養素與生理功能</span>
+        <span style="font-size:11pt; font-weight:normal;">六大營養素的分類與生理機能</span>
       </div>
 
       <div class="task-title">一、六大營養素的分類與能量特性</div>
       <div class="tip-box interactive-item">
-        生物維持生命活動必須從食物中攝取養分。養分依功能可分為兩大類：
+        生物維持正常生命運作必須從外界攝取食物，食物所含的養分依據能否產生能量分為兩大類：
         <ul style="margin:4px 0 0 18px; padding:0;">
           <li><b>產生能量的養分</b>：<span class="ans-word">醣類</span>（4 大卡/克）、<span class="ans-word">蛋白質</span>（4 大卡/克）、<span class="ans-word">脂質</span>（9 大卡/克）。</li>
-          <li><b>不產生能量的養分</b>：<span class="ans-word">水</span>、<span class="ans-word">礦物質</span>、<span class="ans-word">維生素</span>，主要負責維持與調節生理機能。</li>
+          <li><b>不產生能量的養分</b>：<span class="ans-word">水</span>、<span class="ans-word">礦物質</span>、<span class="ans-word">維生素</span>，主要負責維持與調節各項生理機能。</li>
         </ul>
       </div>
 
@@ -353,7 +357,7 @@
             </td>
             <td rowspan="3" style="background:#f8fafc; font-weight:bold; color:#0e7490;">
               <b>無法產生能量</b><br>
-              <span style="font-size:10pt; font-weight:normal;">(調節維持機能)</span>
+              <span style="font-size:10pt; font-weight:normal;">(維持調節機能)</span>
             </td>
           </tr>
           <tr class="interactive-item">
@@ -376,11 +380,11 @@
       <div class="page-footer">
         <span>七年級自然（上）講義</span>
         <span>單元 3-1 食物中的養分與能量 (一)</span>
-        <span>第 1 頁 / 共 10 頁</span>
+        <span>第 1 頁 / 共 14 頁</span>
       </div>
     </div>
 
-    <!-- ==================== PAGE 2: 3-1 Part 2 ==================== -->
+    <!-- ==================== PAGE 2 ==================== -->
     <div class="page" id="page2">
       <canvas class="drawing-canvas"></canvas>
       <div class="page-header">
@@ -391,17 +395,17 @@
 
       <div class="section-title">
         <span>3-1 食物中的養分與能量（二）</span>
-        <span style="font-size:11pt; font-weight:normal;">養分測定實驗 ＆ 觀念評量</span>
+        <span style="font-size:11pt; font-weight:normal;">養分測定實驗與細胞能量利用</span>
       </div>
 
       <div class="task-title">一、澱粉與葡萄糖的檢驗測定實驗</div>
       <table class="custom-table">
         <thead>
           <tr>
-            <th style="width:18%;">檢驗項目</th>
+            <th style="width:20%;">檢驗項目</th>
             <th style="width:25%;">使用試劑</th>
             <th style="width:25%;">操作要點與條件</th>
-            <th style="width:32%;">反應顏色變化判讀</th>
+            <th style="width:30%;">反應顏色變化判讀</th>
           </tr>
         </thead>
         <tbody>
@@ -423,16 +427,45 @@
         </tbody>
       </table>
 
-      <div class="task-title" style="margin-top:8px;">二、細胞利用能量的順序深入解析</div>
+      <div class="task-title" style="margin-top:12px;">二、細胞利用能量的先後順序解析</div>
       <div class="tip-box interactive-item">
         <b>細胞利用養分提供能量的先後順序為：</b><br>
-        <div style="text-align:center; font-size:14pt; font-weight:bold; color:#0e7490; margin:4px 0;">
+        <div style="text-align:center; font-size:14pt; font-weight:bold; color:#0e7490; margin:6px 0;">
           醣類 ──→ 脂質 ──→ 蛋白質
         </div>
         除非體內的醣類與脂質已經消耗殆盡，否則人體細胞絕不會輕易消耗蛋白質作為能量來源。這是因為蛋白質是建造細胞原生質、修補組織（如肌肉、內臟、酵素）最關鍵的建材，因此蛋白質被譽為<b>「細胞內的高貴能源」</b>。
       </div>
 
-      <div class="task-title" style="margin-top:8px;">三、單元實戰評量</div>
+      <div class="tip-box interactive-item" style="margin-top:10px;">
+        <b>【實驗操作關鍵叮嚀】</b>
+        <ul style="margin:4px 0 0 18px; padding:0;">
+          <li><b>碘液檢驗澱粉</b>：若樣本呈藍黑色，代表含有澱粉；若維持黃褐色，代表無澱粉。</li>
+          <li><b>本氏液隔水加熱</b>：本氏液含有銅離子，加熱後還原反應產生氧化亞銅沉澱，由藍色變為綠、黃、橙、紅色，顏色越紅代表含糖量越高。</li>
+        </ul>
+      </div>
+
+      <div class="page-footer">
+        <span>七年級自然（上）講義</span>
+        <span>單元 3-1 食物中的養分與能量 (二)</span>
+        <span>第 2 頁 / 共 14 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== PAGE 3 ==================== -->
+    <div class="page" id="page3">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國中自然與生科（七上）</span>
+        <span>班級：_______ 座號：_______ 姓名：_____________</span>
+        <span>P. 3</span>
+      </div>
+
+      <div class="section-title">
+        <span>3-1 食物中的養分與能量（三）</span>
+        <span style="font-size:11pt; font-weight:normal;">單元隨堂實戰評量</span>
+      </div>
+
+      <div class="task-title">單元核心觀念評量題組</div>
 
       <div class="qa-block interactive-item">
         <div class="qa-question-line">
@@ -475,63 +508,12 @@
 
       <div class="page-footer">
         <span>七年級自然（上）講義</span>
-        <span>單元 3-1 食物中的養分與能量 (二)</span>
-        <span>第 2 頁 / 共 10 頁</span>
+        <span>單元 3-1 隨堂實戰評量</span>
+        <span>第 3 頁 / 共 14 頁</span>
       </div>
     </div>
 
-    <!-- ==================== PAGE 3: 3-2 Part 1 ==================== -->
-    <div class="page" id="page3">
-      <canvas class="drawing-canvas"></canvas>
-      <div class="page-header">
-        <span>國中自然與生科（七上）</span>
-        <span>班級：_______ 座號：_______ 姓名：_____________</span>
-        <span>P. 3</span>
-      </div>
-
-      <div class="section-title">
-        <span>3-2 酵素與代謝作用（一）</span>
-        <span style="font-size:11pt; font-weight:normal;">代謝本質 ＆ 酵素特性</span>
-      </div>
-
-      <div class="task-title">一、代謝作用與酵素（酶）</div>
-      <div class="tip-box interactive-item">
-        1. <b>酵素</b>：生物體內協助進行各種化學反應的催化劑，又稱為 <span class="ans-word">酶</span>。<br>
-        2. <b>代謝作用</b>：生物體內所有化學反應（物質的分解與合成）之總稱。
-        <ul style="margin:4px 0 0 18px; padding:0;">
-          <li><b>分解作用</b>：將較大分子物質轉變成較小分子（例如：澱粉分解為葡萄糖），常釋出能量。</li>
-          <li><b>合成作用</b>：將較小分子物質轉變成較大分子（例如：胺基酸組合成蛋白質），常吸收能量。</li>
-        </ul>
-      </div>
-
-      <div class="task-title">二、酵素作用模式圖解</div>
-      <div class="fig-row">
-        <div class="fig-card" style="width:48%;">
-          <img src="../images/science-7-3-handout/image007.png" style="max-height:85px;" alt="酵素分解作用示意圖">
-          <div class="fig-caption">【分解作用】酵素結合大分子受質 → 分解產物＋酵素（不變）</div>
-        </div>
-        <div class="fig-card" style="width:48%;">
-          <img src="../images/science-7-3-handout/image008.png" style="max-height:85px;" alt="酵素合成作用示意圖">
-          <div class="fig-caption">【合成作用】酵素結合小分子受質 → 合成大分子產物</div>
-        </div>
-      </div>
-
-      <div class="task-title">三、酵素的四大核心特性</div>
-      <div class="item-line interactive-item">
-        <b>1. 主成分為蛋白質</b>：大部分酵素的主要化學成分為 <span class="ans-word">蛋白質</span>，易受極端溫度與酸鹼破壞。<br>
-        <b>2. 受質專一性</b>：與酵素結合反應的物質稱為 <span class="ans-word">受質</span>。一種酵素的活性部位只能與特定形狀的受質結合，催化特定反應（如唾液澱粉酶只能分解澱粉，無法分解蛋白質）。<br>
-        <b>3. 可重複使用</b>：酵素參與反應前後，本身的<b>質量與化學性質皆未改變</b>，故可以 <span class="ans-word">重複使用</span>。<br>
-        <b>4. 僅加速反應速率</b>：酵素能大幅降低反應所需活化能，<b>加速反應進行</b>，但<b>絕對無法增加生成物的總量</b>！
-      </div>
-
-      <div class="page-footer">
-        <span>七年級自然（上）講義</span>
-        <span>單元 3-2 酵素與代謝作用 (一)</span>
-        <span>第 3 頁 / 共 10 頁</span>
-      </div>
-    </div>
-
-    <!-- ==================== PAGE 4: 3-2 Part 2 ==================== -->
+    <!-- ==================== PAGE 4 ==================== -->
     <div class="page" id="page4">
       <canvas class="drawing-canvas"></canvas>
       <div class="page-header">
@@ -541,11 +523,62 @@
       </div>
 
       <div class="section-title">
-        <span>3-2 酵素與代謝作用（二）</span>
-        <span style="font-size:11pt; font-weight:normal;">影響活性條件 ＆ 唾液實驗</span>
+        <span>3-2 酵素與代謝作用（一）</span>
+        <span style="font-size:11pt; font-weight:normal;">代謝作用本質與酵素特性</span>
       </div>
 
-      <div class="task-title">一、影響酵素作用的環境條件</div>
+      <div class="task-title">一、代謝作用與酵素（酶）的定義</div>
+      <div class="tip-box interactive-item">
+        1. <b>酵素</b>：生物體內協助進行各項化學反應的生物催化劑，又稱為 <span class="ans-word">酶</span>。<br>
+        2. <b>代謝作用</b>：生物體內所有化學反應（物質的分解與合成）之總稱。
+        <ul style="margin:4px 0 0 18px; padding:0;">
+          <li><b>分解作用</b>：將較大分子物質轉變成較小分子（例如：澱粉分解為葡萄糖），伴隨能量釋放。</li>
+          <li><b>合成作用</b>：將較小分子物質轉變成較大分子（例如：胺基酸組合成蛋白質），需要吸收能量。</li>
+        </ul>
+      </div>
+
+      <div class="task-title">二、酵素參與作用模式圖解</div>
+      <div class="fig-row">
+        <div class="fig-card" style="width:48%;">
+          <img src="../images/science-7-3-handout/image007.png" style="max-height:95px;" alt="酵素分解作用示意圖">
+          <div class="fig-caption">【分解作用】酵素結合受質 → 分解產物＋酵素（不變）</div>
+        </div>
+        <div class="fig-card" style="width:48%;">
+          <img src="../images/science-7-3-handout/image008.png" style="max-height:95px;" alt="酵素合成作用示意圖">
+          <div class="fig-caption">【合成作用】酵素結合小受質 → 合成大分子產物</div>
+        </div>
+      </div>
+
+      <div class="task-title">三、酵素的四大核心特性</div>
+      <div class="item-line interactive-item">
+        <b>1. 主成分為蛋白質</b>：大部分酵素的主要化學成分為 <span class="ans-word">蛋白質</span>，受高溫或強酸強鹼會變性失效。<br>
+        <b>2. 受質專一性</b>：與酵素結合反應的物質稱為 <span class="ans-word">受質</span>。一種酵素的活性部位只能與特定形狀的受質結合，催化特定化學反應。<br>
+        <b>3. 可重複使用</b>：酵素參與反應前後，本身的<b>質量與化學性質皆未改變</b>，故可以 <span class="ans-word">重複使用</span>。<br>
+        <b>4. 僅加速反應速率</b>：酵素能大幅降低反應所需活化能，<b>加速反應進行</b>，但<b>絕對無法增加生成物的總量</b>！
+      </div>
+
+      <div class="page-footer">
+        <span>七年級自然（上）講義</span>
+        <span>單元 3-2 酵素與代謝作用 (一)</span>
+        <span>第 4 頁 / 共 14 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== PAGE 5 ==================== -->
+    <div class="page" id="page5">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國中自然與生科（七上）</span>
+        <span>班級：_______ 座號：_______ 姓名：_____________</span>
+        <span>P. 5</span>
+      </div>
+
+      <div class="section-title">
+        <span>3-2 酵素與代謝作用（二）</span>
+        <span style="font-size:11pt; font-weight:normal;">影響酵素活性條件與唾液實驗</span>
+      </div>
+
+      <div class="task-title">一、影響酵素活性的環境條件</div>
       <table class="custom-table">
         <thead>
           <tr>
@@ -558,12 +591,12 @@
           <tr class="interactive-item">
             <td><b>溫度</b></td>
             <td class="align-left">
-              • 溫度過低：酵素分子運動減慢，活性被抑制但<b>結構未破壞</b>。<br>
+              • 溫度過低：酵素分子運動減慢，活性被抑制但<b>蛋白質結構未破壞</b>。<br>
               • 溫度過高：超過最適溫度會使蛋白質變性，<b>永久失去活性</b>不可逆！<br>
               • 人體內多數酵素之最適溫度約在 <span class="ans-word">37</span> ℃ 左右。
             </td>
             <td>
-              <img src="../images/science-7-3-handout/image010.png" style="max-height:55px; width:auto;" alt="溫度對酵素活性影響">
+              <img src="../images/science-7-3-handout/image010.png" style="max-height:60px; width:auto;" alt="溫度對酵素活性影響">
             </td>
           </tr>
           <tr class="interactive-item">
@@ -574,7 +607,7 @@
               • 唾液澱粉酶接近中性；小腸內的多數酵素適合在 <span class="ans-word">弱鹼性</span> 環境作用。
             </td>
             <td>
-              <img src="../images/science-7-3-handout/image011.png" style="max-height:55px; width:auto;" alt="pH值對酵素活性影響">
+              <img src="../images/science-7-3-handout/image011.png" style="max-height:60px; width:auto;" alt="pH值對酵素活性影響">
             </td>
           </tr>
         </tbody>
@@ -628,7 +661,29 @@
         </tbody>
       </table>
 
-      <div class="task-title" style="margin-top:6px;">三、單元實戰評量</div>
+      <div class="page-footer">
+        <span>七年級自然（上）講義</span>
+        <span>單元 3-2 影響酵素條件與唾液實驗</span>
+        <span>第 5 頁 / 共 14 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== PAGE 6 ==================== -->
+    <div class="page" id="page6">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國中自然與生科（七上）</span>
+        <span>班級：_______ 座號：_______ 姓名：_____________</span>
+        <span>P. 6</span>
+      </div>
+
+      <div class="section-title">
+        <span>3-2 酵素與代謝作用（三）</span>
+        <span style="font-size:11pt; font-weight:normal;">單元隨堂實戰評量</span>
+      </div>
+
+      <div class="task-title">單元核心觀念評量題組</div>
+
       <div class="qa-block interactive-item">
         <div class="qa-question-line">
           <span class="qa-bracket">（ <span class="ans-slot">D</span> ）</span>
@@ -655,20 +710,33 @@
         </div>
       </div>
 
+      <div class="qa-block interactive-item">
+        <div class="qa-question-line">
+          <span class="qa-bracket">（ <span class="ans-slot">B</span> ）</span>
+          <b>3.</b> 下列有關人體唾液分解澱粉實驗的敘述，何者<b>錯誤</b>？
+        </div>
+        <div class="qa-options vertical">
+          <span class="qa-opt">(A) 放入 37 ℃ 溫水的甲管加入本氏液隔水加熱後會變為紅色</span>
+          <span class="qa-opt">(B) 放入 100 ℃ 沸水的丙管，若冷卻回 37 ℃ 後即可恢復活性分解澱粉</span>
+          <span class="qa-opt">(C) 乙試管加入等量水，目的是作為對照組證明分解是由唾液引起</span>
+          <span class="qa-opt">(D) 放在 25 ℃ 室溫的丁試管仍具活性，但反應速率比 37 ℃ 溫水組慢</span>
+        </div>
+      </div>
+
       <div class="page-footer">
         <span>七年級自然（上）講義</span>
-        <span>單元 3-2 酵素與代謝作用 (二)</span>
-        <span>第 4 頁 / 共 10 頁</span>
+        <span>單元 3-2 隨堂實戰評量</span>
+        <span>第 6 頁 / 共 14 頁</span>
       </div>
     </div>
 
-    <!-- ==================== PAGE 5: 3-3 Part 1 ==================== -->
-    <div class="page" id="page5">
+    <!-- ==================== PAGE 7 ==================== -->
+    <div class="page" id="page7">
       <canvas class="drawing-canvas"></canvas>
       <div class="page-header">
         <span>國中自然與生科（七上）</span>
         <span>班級：_______ 座號：_______ 姓名：_____________</span>
-        <span>P. 5</span>
+        <span>P. 7</span>
       </div>
 
       <div class="section-title">
@@ -681,7 +749,7 @@
         <b>1. 表皮層</b>：
         <ul style="margin:2px 0 0 18px; padding:0;">
           <li><b>表皮細胞</b>：無色透明、排列緊密無間隙（<b>不含葉綠體</b>），主要功能為保護葉片內部組織。</li>
-          <li><b>角質層</b>：覆蓋於表皮外側的蠟質，能防止葉內 <span class="ans-word">水分</span> 蒸散散失。</li>
+          <li><b>角質層</b>：覆蓋於表皮外側的蠟質，能防止葉內 <span class="ans-word">水分</span> 散失。</li>
           <li><b>保衛細胞</b>：成對半月形，細胞內<b>含有葉綠體</b>！兩個細胞中央形成 <span class="ans-word">氣孔</span>，是氣體進出葉片的門戶。</li>
         </ul>
         <b>2. 葉肉組織</b>：介於上、下表皮之間，細胞內含有大量顆粒狀的 <span class="ans-word">葉綠體</span>，是光合作用的主要場所。<br>
@@ -728,38 +796,25 @@
         </div>
       </div>
 
-      <div class="qa-block interactive-item">
-        <div class="qa-question-line">
-          <span class="qa-bracket">（ <span class="ans-slot">A</span> ）</span>
-          <b>3.</b> 關於光合作用的敘述，下列何者<b>錯誤</b>？
-        </div>
-        <div class="qa-options">
-          <span class="qa-opt">(A) 原料是二氧化碳和氧氣，產物為葡萄糖和水</span>
-          <span class="qa-opt">(B) 光合作用在葉綠體裡進行</span>
-          <span class="qa-opt">(C) 以陽光作為能源</span>
-          <span class="qa-opt">(D) 會產生氧氣</span>
-        </div>
-      </div>
-
       <div class="page-footer">
         <span>七年級自然（上）講義</span>
         <span>單元 3-3 植物如何製造養分 (一)</span>
-        <span>第 5 頁 / 共 10 頁</span>
+        <span>第 7 頁 / 共 14 頁</span>
       </div>
     </div>
 
-    <!-- ==================== PAGE 6: 3-3 Part 2 ==================== -->
-    <div class="page" id="page6">
+    <!-- ==================== PAGE 8 ==================== -->
+    <div class="page" id="page8">
       <canvas class="drawing-canvas"></canvas>
       <div class="page-header">
         <span>國中自然與生科（七上）</span>
         <span>班級：_______ 座號：_______ 姓名：_____________</span>
-        <span>P. 6</span>
+        <span>P. 8</span>
       </div>
 
       <div class="section-title">
         <span>3-3 植物如何製造養分（二）</span>
-        <span style="font-size:11pt; font-weight:normal;">光合作用探究實驗與圖解題組</span>
+        <span style="font-size:11pt; font-weight:normal;">光合作用探究實驗與結果分析</span>
       </div>
 
       <div class="task-title">一、光與光合作用實驗探究（檢驗葉片是否製造澱粉）</div>
@@ -775,19 +830,19 @@
         <tbody>
           <tr>
             <td><b>步驟 1</b></td>
-            <td><img src="../images/science-7-3-handout/image032.jpg" style="max-height:46px; width:auto;" alt="步驟1遮光"></td>
+            <td><img src="../images/science-7-3-handout/image032.jpg" style="max-height:48px; width:auto;" alt="步驟1遮光"></td>
             <td class="align-left">取盆栽綠色葉片，部分區域用<b>鋁箔雙面包裹</b>，移至陽光下一週。</td>
             <td class="align-left">遮光處為<b>實驗組</b>，未遮光照光處為<b>對照組</b>，探討光照之影響。</td>
           </tr>
           <tr>
             <td><b>步驟 2</b></td>
-            <td><img src="../images/science-7-3-handout/image033.jpg" style="max-height:46px; width:auto;" alt="步驟2沸水加熱"></td>
+            <td><img src="../images/science-7-3-handout/image033.jpg" style="max-height:48px; width:auto;" alt="步驟2沸水加熱"></td>
             <td class="align-left">取下葉片放入<b>沸水</b>中加熱 2~3 分鐘。</td>
             <td class="align-left">破壞細胞膜，使葉片表面 <span class="ans-word">角質層</span> 軟化。</td>
           </tr>
           <tr>
             <td><b>步驟 3</b></td>
-            <td><img src="../images/science-7-3-handout/image034.jpg" style="max-height:46px; width:auto;" alt="步驟3酒精脫色"></td>
+            <td><img src="../images/science-7-3-handout/image034.jpg" style="max-height:48px; width:auto;" alt="步驟3酒精脫色"></td>
             <td class="align-left">取出葉片放入盛有<b>酒精</b>的燒杯中進行<b>隔水加熱</b>。</td>
             <td class="align-left">
               1. 酒精溶出綠色<b>葉綠素</b>脫色，避免干擾觀察。<br>
@@ -796,29 +851,40 @@
           </tr>
           <tr>
             <td><b>步驟 4</b></td>
-            <td><img src="../images/science-7-3-handout/image035.jpg" style="max-height:46px; width:auto;" alt="步驟4滴加碘液"></td>
+            <td><img src="../images/science-7-3-handout/image035.jpg" style="max-height:48px; width:auto;" alt="步驟4滴加碘液"></td>
             <td class="align-left">熱水漂洗後平鋪培養皿上，滴加 <span class="ans-word">碘液</span> 檢驗。</td>
             <td class="align-left">檢驗葉片細胞內是否製造儲存光合作用產物<b>澱粉</b>。</td>
           </tr>
         </tbody>
       </table>
 
-      <div class="interactive-item" style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:6px; padding:4px 8px; margin:4px 0; display:flex; align-items:center; justify-content:space-between;">
-        <div style="font-size:12pt; line-height:1.4;">
+      <div class="interactive-item" style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:6px; padding:6px 12px; margin:8px 0; display:flex; align-items:center; justify-content:space-between;">
+        <div style="font-size:12.5pt; line-height:1.5;">
           <b>【實驗結果判定】</b><br>
           • <b>照光部位（未包鋁箔）</b>：含澱粉，呈現 <span class="ans-word">藍黑色</span>。<br>
           • <b>遮光部位（包覆鋁箔）</b>：無澱粉，呈現碘液原本之 <span class="ans-word">黃褐色</span>。
         </div>
-        <img src="../images/science-7-3-handout/image036.png" style="max-height:52px; width:auto; border:1px solid #94a3b8; border-radius:4px;" alt="實驗結果圖">
+        <img src="../images/science-7-3-handout/image036.png" style="max-height:58px; width:auto; border:1px solid #94a3b8; border-radius:4px;" alt="實驗結果圖">
       </div>
 
-      <div class="task-title" style="margin-top:4px;">二、實戰題組檢測</div>
+      <div class="task-title">二、隨堂核心檢測</div>
+      <div class="qa-block interactive-item">
+        <div class="qa-question-line">
+          <span class="qa-bracket">（ <span class="ans-slot">A</span> ）</span>
+          <b>1.</b> 關於光合作用的敘述，下列何者<b>錯誤</b>？
+        </div>
+        <div class="qa-options">
+          <span class="qa-opt">(A) 原料是二氧化碳和氧氣，產物為葡萄糖和水</span>
+          <span class="qa-opt">(B) 光合作用在葉綠體裡進行</span>
+          <span class="qa-opt">(C) 以陽光作為能源</span>
+          <span class="qa-opt">(D) 會產生氧氣</span>
+        </div>
+      </div>
 
-      <!-- 題 4：氣孔 -->
       <div class="qa-block interactive-item">
         <div class="qa-question-line">
           <span class="qa-bracket">（ <span class="ans-slot">D</span> ）</span>
-          <b>4.</b> 關於氣孔的敘述，下列何者正確？
+          <b>2.</b> 關於氣孔的敘述，下列何者正確？
         </div>
         <div class="qa-options">
           <span class="qa-opt">(A) 一個氣孔由一對方形保衛細胞組成</span>
@@ -828,41 +894,64 @@
         </div>
       </div>
 
+      <div class="page-footer">
+        <span>七年級自然（上）講義</span>
+        <span>單元 3-3 光合作用實驗與檢測</span>
+        <span>第 8 頁 / 共 14 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== PAGE 9 ==================== -->
+    <div class="page" id="page9">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國中自然與生科（七上）</span>
+        <span>班級：_______ 座號：_______ 姓名：_____________</span>
+        <span>P. 9</span>
+      </div>
+
+      <div class="section-title">
+        <span>3-3 植物如何製造養分（三）</span>
+        <span style="font-size:11pt; font-weight:normal;">顯微切面與圖解題組實戰</span>
+      </div>
+
+      <div class="task-title">圖解題組實戰專區</div>
+
       <!-- 題 5：橫切面 -->
-      <div class="qa-block interactive-item">
+      <div class="qa-block interactive-item" style="border:1px solid #e2e8f0; border-radius:6px; padding:10px; margin-bottom:14px;">
         <div style="display:flex; justify-content:space-between; align-items:flex-start;">
           <div>
             <div class="qa-question-line">
               <span class="qa-bracket">（ <span class="ans-slot">B</span> ）</span>
-              <b>5.</b> 右圖為植物葉片橫切面構造，光合作用中反應物——水，由圖中何者構造進入葉肉？
+              <b>1.</b> 右圖為植物葉片橫切面構造示意圖，光合作用中反應物——水，是由圖中何處構造進入葉肉？
             </div>
-            <div class="qa-options">
-              <span class="qa-opt">(A) 甲處（上表皮）</span>
-              <span class="qa-opt">(B) 乙處（葉脈）</span>
-              <span class="qa-opt">(C) 丙處（葉肉）</span>
-              <span class="qa-opt">(D) 丁處（氣孔）</span>
+            <div class="qa-options vertical">
+              <span class="qa-opt">(A) 甲處（上表皮保護細胞）</span>
+              <span class="qa-opt">(B) 乙處（葉脈內之維管束木質部）</span>
+              <span class="qa-opt">(C) 丙處（行光合作用之葉肉組織）</span>
+              <span class="qa-opt">(D) 丁處（氣體進出之氣孔）</span>
             </div>
           </div>
-          <img src="../images/science-7-3-handout/image043.jpg" style="max-height:68px; width:auto; border:1px solid #cbd5e1; border-radius:4px; margin-left:8px;" alt="葉片橫切面圖">
+          <img src="../images/science-7-3-handout/image043.jpg" style="max-height:85px; width:auto; border:1px solid #cbd5e1; border-radius:4px; margin-left:12px;" alt="葉片橫切面圖">
         </div>
       </div>
 
       <!-- 題 6：下表皮放大圖 -->
-      <div class="qa-block interactive-item">
+      <div class="qa-block interactive-item" style="border:1px solid #e2e8f0; border-radius:6px; padding:10px; margin-bottom:14px;">
         <div style="display:flex; justify-content:space-between; align-items:flex-start;">
           <div>
             <div class="qa-question-line">
               <span class="qa-bracket">（ <span class="ans-slot">A</span> ）</span>
-              <b>6.</b> 右圖為植物葉片下表皮細部放大圖，則圖中何者具有葉綠體可行光合作用？
+              <b>2.</b> 右圖為植物葉片下表皮細部放大圖，則圖中標示何者具有葉綠體可行光合作用？
             </div>
-            <div class="qa-options">
-              <span class="qa-opt">(A) 只有甲（保衛細胞）</span>
-              <span class="qa-opt">(B) 只有乙（氣孔）</span>
-              <span class="qa-opt">(C) 只有丙（表皮細胞）</span>
-              <span class="qa-opt">(D) 甲和丙皆可</span>
+            <div class="qa-options vertical">
+              <span class="qa-opt">(A) 只有甲（半月形保衛細胞）</span>
+              <span class="qa-opt">(B) 只有乙（氣孔開孔處）</span>
+              <span class="qa-opt">(C) 只有丙（無色表皮細胞）</span>
+              <span class="qa-opt">(D) 甲和丙皆可行光合作用</span>
             </div>
           </div>
-          <img src="../images/science-7-3-handout/image044.jpg" style="max-height:68px; width:auto; border:1px solid #cbd5e1; border-radius:4px; margin-left:8px;" alt="葉片下表皮氣孔圖">
+          <img src="../images/science-7-3-handout/image044.jpg" style="max-height:85px; width:auto; border:1px solid #cbd5e1; border-radius:4px; margin-left:12px;" alt="葉片下表皮氣孔圖">
         </div>
       </div>
 
@@ -870,7 +959,7 @@
       <div class="qa-block interactive-item">
         <div class="qa-question-line">
           <span class="qa-bracket">（ <span class="ans-slot">A</span> ）</span>
-          <b>7.</b> 光合作用中，何者是由根部吸收的原料？
+          <b>3.</b> 光合作用中，何者是由植物根部吸收的反應原料？
         </div>
         <div class="qa-options">
           <span class="qa-opt">(A) 水</span>
@@ -883,35 +972,35 @@
       <div class="qa-block interactive-item">
         <div class="qa-question-line">
           <span class="qa-bracket">（ <span class="ans-slot">A</span> ）</span>
-          <b>8.</b> 小帆想知道某一植株在不同環境條件下行光合作用速率快慢，依據下列哪一資料推測最為合理？
+          <b>4.</b> 小帆想知道某一植株在不同環境條件下行光合作用速率快慢，依據下列哪一資料推測最為合理？
         </div>
-        <div class="qa-options">
-          <span class="qa-opt">(A) 單位時間內產生氧氣的量</span>
-          <span class="qa-opt">(B) 單位時間內消耗葉綠素的量</span>
-          <span class="qa-opt">(C) 單位時間內消耗葡萄糖的量</span>
-          <span class="qa-opt">(D) 單位時間內產生二氧化碳的量</span>
+        <div class="qa-options vertical">
+          <span class="qa-opt">(A) 單位時間內葉片產生並釋出氧氣的量</span>
+          <span class="qa-opt">(B) 單位時間內葉片消耗葉綠素的量</span>
+          <span class="qa-opt">(C) 單位時間內葉片細胞消耗葡萄糖的量</span>
+          <span class="qa-opt">(D) 單位時間內葉片產生二氧化碳的量</span>
         </div>
       </div>
 
       <div class="page-footer">
         <span>七年級自然（上）講義</span>
-        <span>單元 3-3 植物如何製造養分 (二)</span>
-        <span>第 6 頁 / 共 10 頁</span>
+        <span>單元 3-3 葉片橫切與下表皮圖解題</span>
+        <span>第 9 頁 / 共 14 頁</span>
       </div>
     </div>
 
-    <!-- ==================== PAGE 7: 3-4 Part 1 ==================== -->
-    <div class="page" id="page7">
+    <!-- ==================== PAGE 10 ==================== -->
+    <div class="page" id="page10">
       <canvas class="drawing-canvas"></canvas>
       <div class="page-header">
         <span>國中自然與生科（七上）</span>
         <span>班級：_______ 座號：_______ 姓名：_____________</span>
-        <span>P. 7</span>
+        <span>P. 10</span>
       </div>
 
       <div class="section-title">
         <span>3-4 人體如何獲得養分（一）</span>
-        <span style="font-size:11pt; font-weight:normal;">消化系統與消化腺機能</span>
+        <span style="font-size:11pt; font-weight:normal;">消化系統與消化管器官機能</span>
       </div>
 
       <div class="task-title">一、消化作用意義與大分子小分子轉化</div>
@@ -987,67 +1076,40 @@
         </tbody>
       </table>
 
-      <!-- 曲線圖解 -->
-      <div class="interactive-item" style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:6px; padding:6px 10px; margin:6px 0; display:flex; align-items:center; justify-content:space-between;">
-        <div style="font-size:12pt; line-height:1.45;">
-          <b>【營養素在消化道各區含量變化曲線圖解】</b><br>
-          • 曲線甲（口腔開始分解下降）：<span class="ans-word">澱粉</span>。<br>
-          • 曲線乙（胃部開始分解下降）：<span class="ans-word">蛋白質</span>。<br>
-          • 曲線丙（小腸才開始分解下降）：<span class="ans-word">脂質</span>。
-        </div>
-        <img src="../images/science-7-3-handout/image053.jpg" style="max-height:85px; width:auto; border-radius:4px;" alt="養分含量變化圖">
-      </div>
-
-      <div class="task-title" style="margin-top:4px;">三、隨堂概念評量</div>
-
-      <div class="qa-block interactive-item">
-        <div class="qa-question-line">
-          <span class="qa-bracket">（ <span class="ans-slot">C</span> ）</span>
-          <b>1.</b> 下列關於消化系統的敘述，何者<b>錯誤</b>？
-        </div>
-        <div class="qa-options">
-          <span class="qa-opt">(A) 胃液為酸性的</span>
-          <span class="qa-opt">(B) 消化道收縮、蠕動可增加食物與消化液的混合</span>
-          <span class="qa-opt">(C) 膽汁中有豐富的消化酵素可分解蛋白質</span>
-          <span class="qa-opt">(D) 唾腺位於口中，可初步分解澱粉</span>
-        </div>
-      </div>
-
-      <div class="qa-block interactive-item">
-        <div class="qa-question-line">
-          <span class="qa-bracket">（ <span class="ans-slot">D</span> ）</span>
-          <b>2.</b> 邱伯伯罹患胃癌，必須切除部分的胃，請問邱伯伯的飲食應減少何種食物的攝取，以避免增加胃在消化養分上的負擔？
-        </div>
-        <div class="qa-options">
-          <span class="qa-opt">(A) 蔬果類</span>
-          <span class="qa-opt">(B) 油脂類</span>
-          <span class="qa-opt">(C) 五榖雜糧類</span>
-          <span class="qa-opt">(D) 蛋豆魚肉類</span>
-        </div>
-      </div>
-
       <div class="page-footer">
         <span>七年級自然（上）講義</span>
-        <span>單元 3-4 人體如何獲得養分 (一)</span>
-        <span>第 7 頁 / 共 10 頁</span>
+        <span>單元 3-4 消化系統與消化管器官</span>
+        <span>第 10 頁 / 共 14 頁</span>
       </div>
     </div>
 
-    <!-- ==================== PAGE 8: 3-4 Part 2 ==================== -->
-    <div class="page" id="page8">
+    <!-- ==================== PAGE 11 ==================== -->
+    <div class="page" id="page11">
       <canvas class="drawing-canvas"></canvas>
       <div class="page-header">
         <span>國中自然與生科（七上）</span>
         <span>班級：_______ 座號：_______ 姓名：_____________</span>
-        <span>P. 8</span>
+        <span>P. 11</span>
       </div>
 
       <div class="section-title">
         <span>3-4 人體如何獲得養分（二）</span>
-        <span style="font-size:11pt; font-weight:normal;">消化液分解總整 ＆ 題組探究</span>
+        <span style="font-size:11pt; font-weight:normal;">養分含量曲線 ＆ 消化液總整理</span>
       </div>
 
-      <div class="task-title">一、消化各種營養素的消化液總整理</div>
+      <div class="task-title">一、營養素在消化道含量變化曲線圖解</div>
+      <div class="interactive-item" style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:6px; padding:8px 12px; margin:6px 0; display:flex; align-items:center; justify-content:space-between;">
+        <div style="font-size:12.5pt; line-height:1.55;">
+          <b>【營養素在消化道各區段分解曲線解析】</b><br>
+          • <b>曲線甲（口腔開始分解下降）</b>：<span class="ans-word">澱粉</span>。<br>
+          • <b>曲線乙（胃部開始分解下降）</b>：<span class="ans-word">蛋白質</span>。<br>
+          • <b>曲線丙（小腸才開始分解下降）</b>：<span class="ans-word">脂質</span>。<br>
+          <span style="color:#64748b; font-size:11pt;">*食道與咽部均無酵素分解，各曲線含量皆維持平緩不變。</span>
+        </div>
+        <img src="../images/science-7-3-handout/image053.jpg" style="max-height:90px; width:auto; border-radius:4px;" alt="養分含量變化圖">
+      </div>
+
+      <div class="task-title" style="margin-top:8px;">二、消化各種營養素的消化液總整理</div>
       <table class="custom-table">
         <thead>
           <tr>
@@ -1099,39 +1161,88 @@
         </tbody>
       </table>
 
-      <div class="tip-box interactive-item" style="margin-top:6px;">
-        <b>【小腸吸收之關鍵機制：絨毛構造】</b><br>
-        小腸內壁布滿無數環狀皺襞，皺襞表面更密布微小指狀的 <span class="ans-word">絨毛</span>，能夠大幅增加吸收養分與水分的 <span class="ans-word">表面積</span>！小分子養分可由絨毛內的微血管或乳糜管吸收進入血液循環，運送至全身細胞。
+      <div class="task-title" style="margin-top:8px;">三、隨堂概念評量</div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-question-line">
+          <span class="qa-bracket">（ <span class="ans-slot">C</span> ）</span>
+          <b>1.</b> 下列關於消化系統的敘述，何者<b>錯誤</b>？
+        </div>
+        <div class="qa-options">
+          <span class="qa-opt">(A) 胃液為酸性的</span>
+          <span class="qa-opt">(B) 消化道收縮、蠕動可增加食物與消化液的混合</span>
+          <span class="qa-opt">(C) 膽汁中有豐富的消化酵素可分解蛋白質</span>
+          <span class="qa-opt">(D) 唾腺位於口中，可初步分解澱粉</span>
+        </div>
       </div>
 
-      <div class="task-title" style="margin-top:6px;">二、實戰題組檢測</div>
+      <div class="qa-block interactive-item">
+        <div class="qa-question-line">
+          <span class="qa-bracket">（ <span class="ans-slot">D</span> ）</span>
+          <b>2.</b> 邱伯伯罹患胃癌，必須切除部分的胃，請問邱伯伯的飲食應減少何種食物的攝取，以避免增加胃在消化養分上的負擔？
+        </div>
+        <div class="qa-options">
+          <span class="qa-opt">(A) 蔬果類</span>
+          <span class="qa-opt">(B) 油脂類</span>
+          <span class="qa-opt">(C) 五榖雜糧類</span>
+          <span class="qa-opt">(D) 蛋豆魚肉類</span>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>七年級自然（上）講義</span>
+        <span>單元 3-4 消化液作用與養分吸收</span>
+        <span>第 11 頁 / 共 14 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== PAGE 12 ==================== -->
+    <div class="page" id="page12">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國中自然與生科（七上）</span>
+        <span>班級：_______ 座號：_______ 姓名：_____________</span>
+        <span>P. 12</span>
+      </div>
+
+      <div class="section-title">
+        <span>3-4 人體如何獲得養分（三）</span>
+        <span style="font-size:11pt; font-weight:normal;">器官圖解 ＆ 食物停留時間題組</span>
+      </div>
+
+      <div class="tip-box interactive-item">
+        <b>【小腸吸收之關鍵構造：絨毛】</b><br>
+        小腸內壁布滿無數環狀皺襞，皺襞表面更密布微小指狀的 <span class="ans-word">絨毛</span>，能夠大幅增加吸收養分與水分的 <span class="ans-word">表面積</span>！小分子養分可由絨毛內的微血管與乳糜管吸收進入血液循環，運送至全身細胞。
+      </div>
+
+      <div class="task-title" style="margin-top:6px;">實戰題組檢測專區</div>
 
       <!-- 題 3：消化器官圖 -->
-      <div class="qa-block interactive-item">
+      <div class="qa-block interactive-item" style="border:1px solid #e2e8f0; border-radius:6px; padding:10px; margin-bottom:12px;">
         <div style="display:flex; justify-content:space-between; align-items:flex-start;">
           <div>
             <div class="qa-question-line">
               <span class="qa-bracket">（ <span class="ans-slot">A</span> ）</span>
-              <b>3.</b> 右圖的人體器官中，哪些可以分泌消化液注入消化管中？
+              <b>1.</b> 右圖的人體器官中，哪些可以分泌消化液注入消化管中？
             </div>
-            <div class="qa-options">
+            <div class="qa-options vertical">
               <span class="qa-opt">(A) 乙丙戊己（唾腺、胃、胰臟、小腸）</span>
               <span class="qa-opt">(B) 甲丙丁己</span>
               <span class="qa-opt">(C) 甲丁己庚</span>
               <span class="qa-opt">(D) 乙丙丁己</span>
             </div>
           </div>
-          <img src="../images/science-7-3-handout/image055.jpg" style="max-height:92px; width:auto; border:1px solid #cbd5e1; border-radius:4px; margin-left:8px;" alt="消化器官圖">
+          <img src="../images/science-7-3-handout/image055.jpg" style="max-height:100px; width:auto; border:1px solid #cbd5e1; border-radius:4px; margin-left:14px;" alt="消化器官圖">
         </div>
       </div>
 
       <!-- 題 4：停留時間表題 -->
-      <div class="qa-block interactive-item">
+      <div class="qa-block interactive-item" style="border:1px solid #e2e8f0; border-radius:6px; padding:10px; margin-bottom:10px;">
         <div class="qa-question-line">
           <span class="qa-bracket">（ <span class="ans-slot">A</span> ）</span>
-          <b>4.</b> 某含蛋白質的固體食物，在人體內不同消化器官中的平均停留時間如表。根據此表，推論食物入口後，蛋白質「開始」被分解及吸收的時間，下列何者最合理？
+          <b>2.</b> 某含蛋白質的固體食物，在人體內不同消化器官中的平均停留時間如表。根據此表，推論食物入口後，蛋白質「開始」被分解及吸收的時間，下列何者最合理？
         </div>
-        <table class="custom-table" style="width:72%; margin:4px auto;">
+        <table class="custom-table" style="width:75%; margin:6px auto;">
           <thead>
             <tr><th>消化器官</th><th>口和食道</th><th>胃</th><th>小腸</th><th>大腸</th></tr>
           </thead>
@@ -1149,18 +1260,18 @@
 
       <div class="page-footer">
         <span>七年級自然（上）講義</span>
-        <span>單元 3-4 人體如何獲得養分 (二)</span>
-        <span>第 8 頁 / 共 10 頁</span>
+        <span>單元 3-4 消化器官圖解與停留時間題</span>
+        <span>第 12 頁 / 共 14 頁</span>
       </div>
     </div>
 
-    <!-- ==================== PAGE 9: Summary Part 1 ==================== -->
-    <div class="page" id="page9">
+    <!-- ==================== PAGE 13 ==================== -->
+    <div class="page" id="page13">
       <canvas class="drawing-canvas"></canvas>
       <div class="page-header">
         <span>國中自然與生科（七上）</span>
         <span>班級：_______ 座號：_______ 姓名：_____________</span>
-        <span>P. 9</span>
+        <span>P. 13</span>
       </div>
 
       <div class="main-title" style="margin-bottom:6px;">第 3 章 生物體的營養 全章核心心智架構圖</div>
@@ -1170,16 +1281,16 @@
         <span style="font-size:11pt; font-weight:normal;">心智網絡 ＆ 系統梳理</span>
       </div>
 
-      <div class="fig-row" style="margin:10px 0;">
+      <div class="fig-row" style="margin:12px 0;">
         <div class="fig-card" style="width:100%; padding:8px;">
-          <img src="../images/science-7-3-handout/image057.png" style="max-height:220px; width:auto;" alt="第3章重點整理心智架構圖">
+          <img src="../images/science-7-3-handout/image057.png" style="max-height:230px; width:auto;" alt="第3章重點整理心智架構圖">
           <div class="fig-caption" style="font-size:12pt; margin-top:6px;">【第 3 章 生物體的營養】全章核心知識架構圖</div>
         </div>
       </div>
 
       <div class="tip-box interactive-item" style="margin-top:10px;">
         <b>【全章四大主題核心脈絡速查】</b>
-        <ol style="margin:4px 0 0 20px; padding:0; line-height:1.6;">
+        <ol style="margin:4px 0 0 20px; padding:0; line-height:1.65;">
           <li><b>3-1 食物中的養分</b>：掌握六大營養素的熱量計算（4, 4, 9），以及利用<b>碘液</b>檢驗澱粉、<b>本氏液隔水加熱</b>檢驗葡萄糖的變色反應。</li>
           <li><b>3-2 酵素</b>：認識生物催化劑的蛋白質本質、受質專一性與重複使用特性；熟記溫度過高會使酵素永久變性失效之原理。</li>
           <li><b>3-3 光合作用</b>：掌握葉片各細胞功能（保衛細胞有葉綠體）、光反應釋氧、碳反應合成葡萄糖；精熟酒精隔水加熱脫色實驗步驟。</li>
@@ -1190,20 +1301,20 @@
       <div class="page-footer">
         <span>七年級自然（上）講義</span>
         <span>單元 第 3 章 全章心智架構圖</span>
-        <span>第 9 頁 / 共 10 頁</span>
+        <span>第 13 頁 / 共 14 頁</span>
       </div>
     </div>
 
-    <!-- ==================== PAGE 10: Summary Part 2 ==================== -->
-    <div class="page" id="page10">
+    <!-- ==================== PAGE 14 ==================== -->
+    <div class="page" id="page14">
       <canvas class="drawing-canvas"></canvas>
       <div class="page-header">
         <span>國中自然與生科（七上）</span>
         <span>班級：_______ 座號：_______ 姓名：_____________</span>
-        <span>P. 10</span>
+        <span>P. 14</span>
       </div>
 
-      <div class="main-title" style="margin-bottom:6px;">第 3 章 生物體的營養 考前總複習與自評</div>
+      <div class="main-title" style="margin-bottom:6px;">第 3 章 生物體的營養 考前重點盤點與自評</div>
 
       <div class="section-title">
         <span>全章必考重點總盤點</span>
@@ -1263,8 +1374,8 @@
 
       <div class="page-footer">
         <span>七年級自然（上）講義</span>
-        <span>單元 第 3 章 考前總複習與自評</span>
-        <span>第 10 頁 / 共 10 頁</span>
+        <span>單元 第 3 章 考前重點盤點與自評</span>
+        <span>第 14 頁 / 共 14 頁</span>
       </div>
     </div>
 
