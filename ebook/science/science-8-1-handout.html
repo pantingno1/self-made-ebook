@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>國二理化（上）第 1 章 基本測量 互動電子書</title>
+  <!-- 電子書目錄身分標記（見 SKILL.md §11 與 AGENTS.md） -->
+  <meta name="ebook:subject" content="science">
+  <meta name="ebook:grade" content="8">
+  <meta name="ebook:type" content="handout">
+  <meta name="ebook:pages" content="10">
+  <meta name="ebook:level" content="std">
+  <meta name="ebook:summary" content="國二理化第1章基本測量完整講義，含長度質量時間、上皿天平歸零與操作、測量估計值、量筒與排水法、密度公式與正反比圖解及實戰評量。">
+  <style>
+    @page { size: A4 portrait; margin: 10mm 12mm; }
+    * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body {
+      margin: 0; padding: 0; background-color: #e2e8f0;
+      font-family: "Times New Roman", "標楷體", "DFKai-SB", "BiauKai", serif;
+      font-size: 14pt; line-height: 1.5; color: #111;
+    }
+
+    /* 課堂懸浮工具列 */
+    .classroom-toolbar {
+      position: fixed; top: 14px; right: 20px; z-index: 9999;
+      display: flex; align-items: center; gap: 4px;
+      background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 4px 10px; border-radius: 40px; border: 1px solid rgba(203, 213, 225, 0.9);
+      box-shadow: 0 4px 22px rgba(0, 0, 0, 0.15);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .tool-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 36px; height: 36px; font-size: 18px; color: #334155;
+      background: transparent; border: 1px solid transparent; border-radius: 50%;
+      cursor: pointer; transition: all 0.15s ease; padding: 0; user-select: none;
+      text-decoration: none;
+    }
+    .tool-btn:hover { background: #f1f5f9; transform: scale(1.1); }
+    .tool-btn.active { background: #0f172a; color: #ffffff; }
+    .btn-toggle-ans.active { background: #eff6ff; border-color: #3b82f6; }
+    .toolbar-divider { width: 1px; height: 20px; background: #cbd5e1; margin: 0 4px; }
+
+    /* 目錄跳轉選單 */
+    .toc-menu {
+      display: none; position: absolute; top: 46px; left: 0;
+      background: #ffffff; border: 1px solid #cbd5e1; border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.18); padding: 8px 0;
+      min-width: 270px; max-height: 440px; overflow-y: auto; z-index: 10000;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .toc-menu.show { display: block; animation: tocFadeIn 0.15s ease-out; }
+    @keyframes tocFadeIn {
+      from { opacity: 0; transform: translateY(-6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .toc-menu-title {
+      padding: 6px 16px 8px 16px; font-size: 13px; font-weight: bold;
+      color: #64748b; border-bottom: 1px solid #f1f5f9;
+    }
+    .toc-menu-item {
+      padding: 8px 16px; font-size: 13.5px; color: #334155; cursor: pointer;
+      display: flex; align-items: center; justify-content: space-between;
+      transition: background 0.12s, color 0.12s;
+    }
+    .toc-menu-item:hover { background: #eff6ff; color: #2563eb; font-weight: bold; }
+    .toc-page-badge { font-size: 12px; color: #94a3b8; font-weight: normal; }
+    .toc-menu-item:hover .toc-page-badge { color: #2563eb; }
+
+    /* 螢光筆選項 */
+    .pen-options {
+      display: none; align-items: center; gap: 6px; background: #f8fafc;
+      padding: 3px 8px; border-radius: 20px; border: 1px solid #e2e8f0; margin-left: 2px;
+    }
+    .color-picker { display: flex; align-items: center; gap: 5px; }
+    .color-dot {
+      width: 16px; height: 16px; border-radius: 50%; cursor: pointer;
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,0.2);
+    }
+    .color-dot.active { transform: scale(1.2); box-shadow: 0 0 0 2px #0f172a; }
+    .size-picker { display: flex; align-items: center; gap: 3px; }
+    .size-btn {
+      border: 1px solid #cbd5e1; background: #fff; color: #475569; font-size: 11px;
+      font-weight: bold; padding: 2px 7px; border-radius: 10px; cursor: pointer;
+    }
+    .size-btn.active { background: #0f172a; color: #fff; border-color: #0f172a; }
+
+    /* A4 頁面設計 */
+    .pages-container { padding: 20px 0 40px 0; }
+    .page {
+      box-sizing: border-box; width: 210mm; min-height: 297mm; max-height: 297mm;
+      padding: 10mm 15mm 8mm 15mm; margin: 0 auto 25px auto;
+      background: #ffffff; box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+      page-break-after: always; break-after: page; position: relative;
+      display: flex; flex-direction: column; justify-content: flex-start;
+      overflow: hidden;
+    }
+    .drawing-canvas {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      z-index: 20; pointer-events: none;
+    }
+    body.pen-mode .drawing-canvas { pointer-events: auto; cursor: crosshair; }
+
+    /* 頁首與頁尾 */
+    .page-header {
+      display: flex; justify-content: space-between; border-bottom: 2px solid #334155;
+      padding-bottom: 4px; margin-bottom: 8px; font-size: 12pt; font-weight: bold; color: #1e293b;
+    }
+    .page-footer {
+      margin-top: auto; padding-top: 6px; border-top: 1px solid #cbd5e1;
+      display: flex; justify-content: space-between; font-size: 10.5pt; color: #64748b;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    /* 標題與版面區塊 */
+    .main-title { font-size: 19pt; font-weight: 900; text-align: center; margin: 4px 0 8px 0; color: #0f172a; }
+    .section-title {
+      font-size: 14.5pt; font-weight: bold; background: #e2e8f0; padding: 4px 10px;
+      border-radius: 6px; margin: 8px 0 6px 0; border-left: 6px solid #2563eb; color: #0f172a;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .task-title { font-size: 13.5pt; font-weight: bold; margin: 6px 0 4px 0; color: #1e293b; }
+    .tip-box {
+      border: 1.5px solid #93c5fd; background-color: #f0fdf4; border-radius: 6px;
+      padding: 6px 10px; margin: 5px 0 8px 0; font-size: 13pt; line-height: 1.45;
+    }
+    .item-line { padding: 3px 6px; border-radius: 4px; line-height: 1.5; font-size: 13.5pt; }
+
+    /* 互動解答控制 */
+    body:not(.pen-mode) .interactive-item { cursor: pointer; }
+    body:not(.pen-mode) .interactive-item:hover { background-color: #f8fafc; outline: 1px dashed #93c5fd; }
+    .correct-choice { display: inline-block; padding: 0 4px; transition: all 0.2s; }
+    .show-ans .correct-choice, .item-line.show-one .correct-choice, .qa-block.show-one .correct-choice {
+      color: #dc2626 !important; font-weight: bold !important; border: 2px solid #dc2626 !important;
+      border-radius: 12px !important; background-color: #fef2f2 !important; padding: 0 5px !important;
+    }
+    .ans-slot { display: inline-block; min-width: 24px; text-align: center; color: transparent; font-weight: bold; cursor: pointer; user-select: none; }
+    .show-ans .ans-slot, .item-line.show-one .ans-slot, .qa-block.show-one .ans-slot, .ans-slot.revealed { color: #dc2626 !important; }
+    .ans-word { color: transparent; font-weight: bold; border-bottom: 1.5px solid #333; padding: 0 4px; cursor: pointer; user-select: none; }
+    .show-ans .ans-word, .item-line.show-one .ans-word, .ans-word.revealed { color: #dc2626 !important; }
+    body:not(.pen-mode) .ans-word:hover, body:not(.pen-mode) .ans-slot:hover { background-color: #fee2e2; }
+
+    /* 選擇題括號與題幹同一行排版 */
+    .qa-block {
+      margin-bottom: 8px; padding: 4px 6px; border-radius: 6px;
+      line-height: 1.45; font-size: 13.5pt;
+    }
+    .qa-header { font-weight: bold; display: flex; align-items: baseline; }
+    .qa-bracket { color: transparent; font-weight: bold; padding: 0 2px; }
+    .show-ans .qa-bracket, .qa-block.show-one .qa-bracket, .qa-bracket.revealed { color: #dc2626 !important; }
+    .qa-options {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 3px 12px;
+      margin-top: 4px; padding-left: 20px; font-size: 13pt;
+    }
+    .qa-options.stacked { display: flex; flex-direction: column; gap: 3px; }
+
+    /* 表格 */
+    table.custom-table { width: 100%; border-collapse: collapse; margin: 6px 0; font-size: 12.5pt; }
+    table.custom-table th, table.custom-table td { border: 1px solid #64748b; padding: 4px 8px; text-align: center; }
+    table.custom-table th { background-color: #f1f5f9; font-weight: bold; color: #0f172a; }
+    table.custom-table td.align-left { text-align: left; }
+
+    /* 圖表卡片 */
+    .fig-row { display: flex; justify-content: center; align-items: center; gap: 14px; margin: 6px 0; }
+    .fig-card {
+      display: flex; flex-direction: column; align-items: center; text-align: center;
+      background: #fafafa; border: 1px solid #e2e8f0; border-radius: 6px; padding: 6px 10px;
+    }
+    .fig-card img { max-height: 120px; width: auto; object-fit: contain; }
+    .fig-caption { font-size: 11pt; color: #475569; margin-top: 4px; font-weight: bold; }
+
+    /* 算式方框 */
+    .formula-box {
+      display: inline-flex; align-items: center; justify-content: center;
+      background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 8px;
+      padding: 6px 14px; font-weight: bold; color: #1e3a8a; font-size: 13.5pt;
+      margin: 4px 0;
+    }
+    .fraction {
+      display: inline-flex; flex-direction: column; vertical-align: middle;
+      text-align: center; padding: 0 4px;
+    }
+    .fraction-top { border-bottom: 1.5px solid currentColor; padding-bottom: 1px; }
+    .fraction-bottom { padding-top: 1px; }
+
+    /* 列印強制隱藏解答與後台工具，還原白紙卷 */
+    @media print {
+      @page { size: A4 portrait; margin: 10mm 12mm; }
+      html, body {
+        width: 100% !important; height: auto !important; background: transparent !important;
+        padding: 0 !important; margin: 0 !important;
+      }
+      .no-print, .classroom-toolbar, .toc-menu, .drawing-canvas { display: none !important; }
+      .pages-container { display: block !important; padding: 0 !important; margin: 0 !important; }
+      .page {
+        box-sizing: border-box !important; margin: 0 !important; box-shadow: none !important;
+        width: 100% !important; height: 275mm !important; max-height: 275mm !important;
+        min-height: 0 !important; padding: 0 !important; page-break-after: always !important;
+        break-after: page !important; page-break-inside: avoid !important; break-inside: avoid !important;
+        display: flex !important; flex-direction: column !important; justify-content: flex-start !important;
+        overflow: hidden !important;
+      }
+      .page:last-child { page-break-after: avoid !important; break-after: avoid !important; }
+      .page-footer { margin-top: auto !important; padding-top: 4px !important; }
+      .correct-choice { color: inherit !important; font-weight: normal !important; border: none !important; background: transparent !important; padding: 0 !important; }
+      .ans-slot, .ans-word, .qa-bracket { color: transparent !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 課堂懸浮工具列 -->
+  <div class="classroom-toolbar no-print">
+    <!-- 回電子書目錄 -->
+    <a class="tool-btn" href="../index.html" title="回電子書目錄">🏠</a>
+    <!-- 目錄跳轉按鈕 -->
+    <div style="position: relative;">
+      <button class="tool-btn" id="tocBtn" onclick="toggleTocMenu(event)" title="單元章節目錄">📑</button>
+      <div class="toc-menu" id="tocMenu">
+        <div class="toc-menu-title">📖 第 1 章 單元章節目錄 (全 10 頁)</div>
+        <div class="toc-menu-item" onclick="jumpTo('page1')"><span>1-1 物理量與長度單位換算</span><span class="toc-page-badge">P.1</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page2')"><span>1-1 質量定義、天平與時間</span><span class="toc-page-badge">P.2</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page3')"><span>1-2 上皿天平操作與歸零規則</span><span class="toc-page-badge">P.3</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page4')"><span>1-2 測量值表示、估計值與平均</span><span class="toc-page-badge">P.4</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page5')"><span>1-2 隨堂實戰評量 (Q1~Q6)</span><span class="toc-page-badge">P.5</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page6')"><span>1-3 體積測量、量筒與排水法</span><span class="toc-page-badge">P.6</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page7')"><span>1-3 密度公式與正反比圖解</span><span class="toc-page-badge">P.7</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page8')"><span>1-3 隨堂實戰評量 (Q1~Q6)</span><span class="toc-page-badge">P.8</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page9')"><span>第 1 章 全章核心知識心智圖</span><span class="toc-page-badge">P.9</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page10')"><span>第 1 章 考前盤點與自我檢核</span><span class="toc-page-badge">P.10</span></div>
+      </div>
+    </div>
+
+    <!-- 一鍵全開答案 -->
+    <button class="tool-btn btn-toggle-ans" id="toggleAllAnsBtn" onclick="toggleAllAnswers()" title="一鍵全開/全隱答案">
+      <span id="ansIcon">👁️</span>
+    </button>
+    
+    <!-- 畫筆切換按鈕 -->
+    <button class="tool-btn" id="penBtn" onclick="togglePenMode()" title="螢光筆/板書筆">✏️</button>
+    
+    <!-- 畫筆選單 -->
+    <div class="pen-options" id="penOptions">
+      <div class="color-picker">
+        <span class="color-dot active" style="background:#facc15;" onclick="setPenColor('rgba(250, 204, 21, 0.45)', this)" title="螢光黃"></span>
+        <span class="color-dot" style="background:#ef4444;" onclick="setPenColor('rgba(239, 68, 68, 0.8)', this)" title="紅筆"></span>
+        <span class="color-dot" style="background:#3b82f6;" onclick="setPenColor('rgba(37, 99, 235, 0.8)', this)" title="藍筆"></span>
+        <span class="color-dot" style="background:#10b981;" onclick="setPenColor('rgba(16, 185, 129, 0.8)', this)" title="綠筆"></span>
+      </div>
+      <div class="sub-divider" style="width:1px; height:14px; background:#cbd5e1; margin:0 2px;"></div>
+      <div class="size-picker">
+        <button class="size-btn active" onclick="setPenSize(4, this)">細</button>
+        <button class="size-btn" onclick="setPenSize(10, this)">中</button>
+        <button class="size-btn" onclick="setPenSize(20, this)">粗</button>
+      </div>
+    </div>
+    
+    <!-- 清除畫跡 -->
+    <button class="tool-btn" onclick="clearAllDrawings()" title="清除全卷畫筆">🧹</button>
+    <div class="toolbar-divider"></div>
+    <!-- 列印按鈕 -->
+    <button class="tool-btn" onclick="window.print()" title="列印學生無答案作業卷">🖨️</button>
+  </div>
+
+  <div class="pages-container">
+
+    <!-- ==================== PAGE 1 ==================== -->
+    <div class="page" id="page1">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國中自然與生科（八上）</span>
+        <span>班級：_______ 座號：_______ 姓名：_____________</span>
+        <span>P. 1</span>
+      </div>
+
+      <div class="main-title">第 1 章 基本測量</div>
+
+      <div class="section-title">
+        <span>1-1 長度、質量與時間（一）</span>
+        <span style="font-size:11pt; font-weight:normal;">物理量、SI 制與長度單位換算</span>
+      </div>
+
+      <div class="task-title">一、物理量與國際單位制（SI 制）</div>
+      <div class="tip-box interactive-item">
+        1. <b>物理量</b>：凡是可以用「數值」與「單位」來客觀表示測量結果的特殊屬性，稱為物理量。<br>
+        2. <b>國際單位制（SI 制）</b>：各國文化與計量習慣不同，為方便科學交流與貿易比較，國際度量衡大會制定了一套共同採用的標準計量單位制。
+      </div>
+
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th style="width:25%;">基本物理量</th>
+            <th style="width:25%;">國際標準單位（SI 制）</th>
+            <th style="width:25%;">英文單位符號</th>
+            <th style="width:25%;">常用測量工具</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="interactive-item">
+            <td><b>長度</b></td>
+            <td><span class="ans-word">公尺（米）</span></td>
+            <td><b>m</b></td>
+            <td>直尺、皮尺、游標卡尺</td>
+          </tr>
+          <tr class="interactive-item">
+            <td><b>質量</b></td>
+            <td><span class="ans-word">公斤（千克）</span></td>
+            <td><b>kg</b></td>
+            <td>上皿天平、電子天平、三梁天平</td>
+          </tr>
+          <tr class="interactive-item">
+            <td><b>時間</b></td>
+            <td><span class="ans-word">秒</span></td>
+            <td><b>s</b></td>
+            <td>秒錶、手錶、單擺計時器</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="task-title">二、長度的測量與單位換算</div>
+      <div class="item-line interactive-item">
+        • 長度的國際標準單位為 <span class="ans-word">公尺</span>（符號：<b>m</b>）。
+      </div>
+
+      <table class="custom-table" style="font-size:12pt;">
+        <thead>
+          <tr>
+            <th>長度單位</th>
+            <th>公里 (千米)</th>
+            <th>公尺 (米)</th>
+            <th>公寸</th>
+            <th>公分 (厘米)</th>
+            <th>毫米 (毫米)</th>
+            <th>微米</th>
+            <th>奈米</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="interactive-item">
+            <td><b>英文符號</b></td>
+            <td><b>km</b></td>
+            <td><b>m</b></td>
+            <td><b>dm</b></td>
+            <td><b>cm</b></td>
+            <td><b>mm</b></td>
+            <td><b>&mu;m</b></td>
+            <td><b>nm</b></td>
+          </tr>
+          <tr class="interactive-item">
+            <td><b>換算公尺 (m)</b></td>
+            <td><span class="ans-word">10<sup>3</sup></span> m</td>
+            <td><b>1</b> m</td>
+            <td><span class="ans-word">10<sup>-1</sup></span> m</td>
+            <td><span class="ans-word">10<sup>-2</sup></span> m</td>
+            <td><span class="ans-word">10<sup>-3</sup></span> m</td>
+            <td><span class="ans-word">10<sup>-6</sup></span> m</td>
+            <td><span class="ans-word">10<sup>-9</sup></span> m</td>
+          </tr>
+          <tr class="interactive-item">
+            <td><b>生活實例</b></td>
+            <td>兩地公路距離</td>
+            <td>跑道長度、身高</td>
+            <td>手掌跨距</td>
+            <td>原子筆長度</td>
+            <td>雨滴直徑、筆芯</td>
+            <td>細菌細胞大小</td>
+            <td>病毒直徑、DNA分子</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="tip-box interactive-item" style="margin-top:8px;">
+        💡 <b>長度單位記憶口訣與倍率關係</b>：<br>
+        1 km = 1000 m = 10<sup>3</sup> m ｜ 1 m = 100 cm = 1000 mm ｜ 1 mm = 1000 &mu;m = 10<sup>6</sup> nm。<br>
+        大單位化為小單位乘正次方（例：2.5 km = 2.5 &times; 10<sup>3</sup> m）；小單位化大單位乘負次方。
+      </div>
+
+      <div class="page-footer">
+        <span>八年級自然與生科（上）講義</span>
+        <span>單元 1-1 長度、質量與時間 (一)</span>
+        <span>第 1 頁 / 共 10 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== PAGE 2 ==================== -->
+    <div class="page" id="page2">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國中自然與生科（八上）</span>
+        <span>班級：_______ 座號：_______ 姓名：_____________</span>
+        <span>P. 2</span>
+      </div>
+
+      <div class="section-title">
+        <span>1-1 長度、質量與時間（二）</span>
+        <span style="font-size:11pt; font-weight:normal;">質量定義、測量天平與時間的測量</span>
+      </div>
+
+      <div class="task-title">一、質量的定義與測量工具</div>
+      <div class="tip-box interactive-item">
+        1. <b>質量的定義</b>：物體內所含 <span class="ans-word">物質的量</span> 稱為質量。質量是物體本身的固有屬性，不隨物體的位置、形狀、溫度或重力大小而改變。<br>
+        2. <b>質量的國際單位</b>：SI 制中質量的國際標準單位為 <span class="ans-word">公斤</span>（千克，符號：<b>kg</b>）。
+      </div>
+
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th style="width:25%;">質量單位名稱</th>
+            <th style="width:25%;">英文符號</th>
+            <th style="width:25%;">換算為公克 (g)</th>
+            <th style="width:25%;">科學記號表示</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="interactive-item">
+            <td><b>公斤（千克）</b></td>
+            <td><b>kg</b></td>
+            <td>1000 g</td>
+            <td><span class="ans-word">10<sup>3</sup></span> g</td>
+          </tr>
+          <tr class="interactive-item">
+            <td><b>公克（克）</b></td>
+            <td><b>g</b></td>
+            <td>1 g</td>
+            <td><b>1</b> g</td>
+          </tr>
+          <tr class="interactive-item">
+            <td><b>毫克</b></td>
+            <td><b>mg</b></td>
+            <td>0.001 g</td>
+            <td><span class="ans-word">10<sup>-3</sup></span> g</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="task-title">二、常見質量測量儀器對照</div>
+      <div class="item-line interactive-item">
+        • <b>上皿天平</b>：利用 <span class="ans-word">等臂槓桿原理</span> 比較兩端重力大小以求質量；若將天平移至月球，兩端受重力同等減弱，<b>仍能測出正確質量</b>。<br>
+        • <b>電子天平</b>：操作簡便、秤量靈敏精準，具備一鍵自動歸零（扣重）功能，為現代實驗室最廣泛採用的工具。
+      </div>
+
+      <div class="task-title" style="margin-top:10px;">三、時間的定義與測量原理</div>
+      <div class="tip-box interactive-item">
+        1. <b>時間測量原理</b>：凡具有 <span class="ans-word">規律性</span> 與 <span class="ans-word">週而復始</span> 特性的現象或器具，均可用於描述或測量時間間隔（如日出日落、月相盈虧、脈搏、石英震盪）。<br>
+        2. <b>時間的國際單位</b>：時間的 SI 制標準單位為 <span class="ans-word">秒</span>（符號：<b>s</b>）。<br>
+        3. 常見時間單位：1 日 = 24 小時 = 1440 分 = 86400 秒。
+      </div>
+
+      <div class="item-line interactive-item" style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:6px; margin-top:8px;">
+        💡 <b>重點思維檢核</b>：<br>
+        一塊 100 g 的黏土，無論搓成圓球、捏成薄餅，或壓扁成碎塊，其所含物質總量未變，因此質量始終 <span class="ans-word">相等</span>。
+      </div>
+
+      <div class="page-footer">
+        <span>八年級自然與生科（上）講義</span>
+        <span>單元 1-1 長度、質量與時間 (二)</span>
+        <span>第 2 頁 / 共 10 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== PAGE 3 ==================== -->
+    <div class="page" id="page3">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國中自然與生科（八上）</span>
+        <span>班級：_______ 座號：_______ 姓名：_____________</span>
+        <span>P. 3</span>
+      </div>
+
+      <div class="section-title">
+        <span>1-2 測量與估計（一）</span>
+        <span style="font-size:11pt; font-weight:normal;">上皿天平操作步驟、歸零原則與注意事項</span>
+      </div>
+
+      <div class="task-title">一、上皿天平的操作四步驟</div>
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th style="width:18%;">操作步驟</th>
+            <th style="width:42%;">操作重點與口訣</th>
+            <th style="width:40%;">關鍵原理說明</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="interactive-item">
+            <td><b>1. 歸零校準</b></td>
+            <td class="align-left">秤盤放妥，調整左右兩端 <span class="ans-word">校準螺絲</span>，使指針正指中央零位。</td>
+            <td class="align-left">指針偏左表示左盤較重，螺絲應往 <span class="ans-word">右</span> 旋調；偏右則往左旋調。</td>
+          </tr>
+          <tr class="interactive-item">
+            <td><b>2. 物體放置</b></td>
+            <td class="align-left">依習慣原則：<b><span class="ans-word">左盤放待測物</span></b>，<b><span class="ans-word">右盤放砝碼</span></b>。</td>
+            <td class="align-left">秤量藥品時，需先於兩盤放置 <span class="ans-word">秤量紙</span> 再重新歸零。</td>
+          </tr>
+          <tr class="interactive-item">
+            <td><b>3. 夾取砝碼</b></td>
+            <td class="align-left">必須使用 <span class="ans-word">砝碼夾</span>，由 <span class="ans-word">大</span> 至 <span class="ans-word">小</span> 依序夾放於秤盤中央。</td>
+            <td class="align-left">不可用手直接觸碰，以免汗垢腐蝕生鏽影響準確度。</td>
+          </tr>
+          <tr class="interactive-item">
+            <td><b>4. 讀數平衡</b></td>
+            <td class="align-left">指針停於中央或左右擺幅相等時，待測物質量等於 <span class="ans-word">砝碼總質量</span>。</td>
+            <td class="align-left">上皿天平兩臂等長，兩盤平衡時力矩相等，即重量與質量相等。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="task-title">二、上皿天平校準螺絲調整核心圖解</div>
+      <div class="fig-row">
+        <div class="fig-card">
+          <img src="../images/science-8-1-handout/image007.jpg" alt="天平指針偏左校準螺絲圖" style="max-height:100px;">
+          <div class="fig-caption">圖 1-1 上皿天平指針偏左示意圖</div>
+        </div>
+        <div class="tip-box" style="flex:1; margin:0; font-size:12.5pt;">
+          <b>【校準螺絲旋動法則：哪邊輕就往哪邊轉！】</b><br>
+          • <b>指針偏左</b>：表示左邊秤盤偏重、右邊偏輕 $implies$ 兩端螺絲甲、乙都必須向 <span class="ans-word">右</span> 旋動。<br>
+          • <b>指針偏右</b>：表示右邊秤盤偏重、左邊偏輕 $implies$ 兩端螺絲甲、乙都必須向 <span class="ans-word">左</span> 旋動。
+        </div>
+      </div>
+
+      <div class="task-title">三、天平測量的常考陷阱與注意事項</div>
+      <div class="item-line interactive-item">
+        1. <b>砝碼生鏽的影響</b>：生鏽是金屬與氧結合，使砝碼本身質量 <span class="ans-word">變大</span>。因此只需較少或較小標籤的砝碼即可平衡物體，導致測量記錄值將 <span class="ans-word">小於</span> 物品實際真實質量！<br>
+        2. <b>砝碼磨損的影響</b>：砝碼質量變輕，需更多砝碼才能平衡，測量值將 <span class="ans-word">大於</span> 物品實際質量。<br>
+        3. <b>水平平衡後更換秤盤</b>：若更換不同質量的秤盤，會破壞原先的校準平衡，直接導致測量結果產生誤差。
+      </div>
+
+      <div class="page-footer">
+        <span>八年級自然與生科（上）講義</span>
+        <span>單元 1-2 測量與估計 (一)</span>
+        <span>第 3 頁 / 共 10 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== PAGE 4 ==================== -->
+    <div class="page" id="page4">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國中自然與生科（八上）</span>
+        <span>班級：_______ 座號：_______ 姓名：_____________</span>
+        <span>P. 4</span>
+      </div>
+
+      <div class="section-title">
+        <span>1-2 測量與估計（二）</span>
+        <span style="font-size:11pt; font-weight:normal;">測量值結構、估計值判讀與多次測量平均</span>
+      </div>
+
+      <div class="task-title">一、測量值的完整表示法</div>
+      <div class="tip-box interactive-item">
+        任何物理測量值必須包含兩部分：<b>測量值 ＝【數值】＋【單位】</b>（缺單位則無物理意義！）。<br>
+        其中數值部分必定由兩項組成：<b>數值 ＝【一組準確值】＋【一位估計值】</b>。
+      </div>
+
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>測量記錄實例</th>
+            <th>準確值部分</th>
+            <th>估計值部分</th>
+            <th>測量工具的最小刻度</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="interactive-item">
+            <td><b>14.75 cm</b></td>
+            <td>14.7 cm</td>
+            <td><span class="ans-word">0.05 cm</span></td>
+            <td><span class="ans-word">0.1 cm (1 mm)</span></td>
+          </tr>
+          <tr class="interactive-item">
+            <td><b>3.00 cm</b></td>
+            <td>3.0 cm</td>
+            <td><span class="ans-word">0.00 cm</span></td>
+            <td><span class="ans-word">0.1 cm (1 mm)</span></td>
+          </tr>
+          <tr class="interactive-item">
+            <td><b>25.4 秒</b></td>
+            <td>25 秒</td>
+            <td><span class="ans-word">0.4 秒</span></td>
+            <td><span class="ans-word">1 秒</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="task-title">二、估計值的判讀原則</div>
+      <div class="item-line interactive-item">
+        1. <b>準確值</b>：記錄至測量工具所具備的 <span class="ans-word">最小刻度</span>。<br>
+        2. <b>估計值</b>：對於最小刻度以下無法精確讀取的長度，以肉眼估計一位，即最小刻度的 <span class="ans-word">下一位</span>。<br>
+        3. <b>對齊刻度線補零規則</b>：若待測物邊緣恰好落在最小刻度線上，仍必須在估計位補寫 <span class="ans-word">0</span>，表示曾進行該位數的估計（例如最小刻度為 mm，測得恰為 5 公分，應記為 <b>5.00 cm</b>）。
+      </div>
+
+      <div class="task-title">三、減少誤差的有效方法 —— 多次測量取平均值</div>
+      <div class="tip-box interactive-item">
+        凡測量必有誤差，計算多次測量的平均值可以有效減少個人主觀估計所產生的偶然誤差。<br>
+        <div style="text-align:center; margin:6px 0;">
+          <div class="formula-box">
+            平均值 ＝ 
+            <div class="fraction">
+              <span class="fraction-top">各次有效測量數值之總和</span>
+              <span class="fraction-bottom">有效測量次數</span>
+            </div>
+          </div>
+        </div>
+        • <b>平均值計算重要規則</b>：若數據中有明顯人為抄寫錯誤或嚴重離群值，應先 <span class="ans-word">剔除</span>；計算出的平均值，其小數位數應與原測量值的估計值位數保持一致（四捨五入）。
+      </div>
+
+      <div class="page-footer">
+        <span>八年級自然與生科（上）講義</span>
+        <span>單元 1-2 測量與估計 (二)</span>
+        <span>第 4 頁 / 共 10 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== PAGE 5 ==================== -->
+    <div class="page" id="page5">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國中自然與生科（八上）</span>
+        <span>班級：_______ 座號：_______ 姓名：_____________</span>
+        <span>P. 5</span>
+      </div>
+
+      <div class="section-title">
+        <span>1-2 隨堂實戰評量</span>
+        <span style="font-size:11pt; font-weight:normal;">單元核心觀念評量題組 (Q1～Q6)</span>
+      </div>
+
+      <!-- Q1 -->
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          （ <span class="qa-bracket">B</span> ） 1. 下列常用物理量的國際單位配對，何者<b>有誤</b>？
+        </div>
+        <div class="qa-options">
+          <div>(A) 時間：秒 (s)</div>
+          <div>(B) 長度：公分 (cm)</div>
+          <div>(C) 長度：公尺 (m)</div>
+          <div>(D) 質量：公斤 (kg)</div>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          （ <span class="qa-bracket">D</span> ） 2. 上皿天平為實驗時常用來測量質量的儀器，下列操作步驟何者<b>錯誤</b>？
+        </div>
+        <div class="qa-options stacked">
+          <div>(A) 測量前秤盤先放妥，須先調整校準螺絲歸零</div>
+          <div>(B) 砝碼與待測物應盡量放在秤盤的正中央</div>
+          <div>(C) 秤量化學藥品時，應在秤盤上放秤量紙後再重新歸零</div>
+          <div>(D) 放置砝碼時應由小至大依序放置</div>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          （ <span class="qa-bracket">B</span> ） 3. 如右圖，若取下物體與砝碼，發現天平指針偏向左方，此時應該要如何調整校準螺絲，方可使其重新歸零？
+        </div>
+        <div style="display:flex; align-items:center; gap:12px; margin-top:4px;">
+          <div class="qa-options stacked" style="flex:1;">
+            <div>(A) 甲、乙都向左旋動</div>
+            <div>(B) 甲、乙都向右旋動</div>
+            <div>(C) 甲向左旋，乙向右旋</div>
+            <div>(D) 甲向右旋，乙向左旋</div>
+          </div>
+          <img src="../images/science-8-1-handout/image007.jpg" alt="天平歸零圖" style="max-height:65px; border:1px solid #cbd5e1; border-radius:4px;">
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          （ <span class="qa-bracket">C</span> ） 4. 當上皿天平兩邊水平平衡後，請問下列哪個做法<b>可能會影響測量的結果</b>？
+        </div>
+        <div class="qa-options stacked">
+          <div>(A) 兩邊各放上等重的砝碼</div>
+          <div>(B) 將整個天平裝置移至高山上再測量</div>
+          <div>(C) 更換放置砝碼的秤盤</div>
+          <div>(D) 砝碼與待測物互換位置（上皿天平兩臂等長）</div>
+        </div>
+      </div>
+
+      <!-- Q5 -->
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          （ <span class="qa-bracket">B</span> ） 5. 測量免不了要估計，因此就會有誤差，請問下列對於一個測量結果的敘述，何者正確？
+        </div>
+        <div class="qa-options stacked">
+          <div>(A) 估計值位數估計愈多位，則測量結果愈準確</div>
+          <div>(B) 多次測量後再取平均值，通常可以得到較準確的測量結果</div>
+          <div>(C) 選擇不同的測量工具，不會影響測量的結果與最小刻度</div>
+          <div>(D) 使用相同的測量工具，測量同一個物品，測量的結果必定完全相同</div>
+        </div>
+      </div>
+
+      <!-- Q6 -->
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          （ <span class="qa-bracket">C</span> ） 6. 阿翰使用不同的尺測量同一枝鉛筆的長度，測量情形如右圖。下列關於這兩次測量結果敘述何者<b>錯誤</b>？
+        </div>
+        <div style="display:flex; align-items:center; gap:12px; margin-top:4px;">
+          <div class="qa-options stacked" style="flex:1;">
+            <div>(A) 甲尺測量值為 3.0 cm（最小刻度為 cm）</div>
+            <div>(B) 甲、乙兩把尺的最小刻度不同</div>
+            <div>(C) 乙尺測量值應記錄為 3.0 cm</div>
+            <div>(D) 使用乙尺可測得較準確的測量值</div>
+          </div>
+          <img src="../images/science-8-1-handout/image008.jpg" alt="甲乙兩尺測鉛筆圖" style="max-height:55px; border:1px solid #cbd5e1; border-radius:4px;">
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>八年級自然與生科（上）講義</span>
+        <span>單元 1-2 隨堂實戰評量</span>
+        <span>第 5 頁 / 共 10 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== PAGE 6 ==================== -->
+    <div class="page" id="page6">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國中自然與生科（八上）</span>
+        <span>班級：_______ 座號：_______ 姓名：_____________</span>
+        <span>P. 6</span>
+      </div>
+
+      <div class="section-title">
+        <span>1-3 體積與密度（一）</span>
+        <span style="font-size:11pt; font-weight:normal;">體積測量法、量筒視線讀數與沉體排水法</span>
+      </div>
+
+      <div class="task-title">一、固體與液體體積的測量方法</div>
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th style="width:25%;">待測物種類</th>
+            <th style="width:35%;">測量方式與工具</th>
+            <th style="width:40%;">操作要點與關鍵公式</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="interactive-item">
+            <td><b>規則形狀固體</b></td>
+            <td>以直尺測量邊長</td>
+            <td>以幾何公式計算（長方體 $V = a 	imes b 	imes c$）</td>
+          </tr>
+          <tr class="interactive-item">
+            <td><b>液體體積</b></td>
+            <td>量筒、滴定管、量瓶</td>
+            <td>平視量筒內凹液面之 <span class="ans-word">中央最低處</span> 讀數</td>
+          </tr>
+          <tr class="interactive-item">
+            <td><b>不規則沉體固體</b></td>
+            <td>量筒＋水（<span class="ans-word">排水法</span>）</td>
+            <td>固體體積 $V =$ <span class="ans-word">沒入後總體積 $V_2$ － 原水體積 $V_1$</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="task-title">二、量筒讀數視線與排水法圖解</div>
+      <div class="fig-row">
+        <div class="fig-card">
+          <img src="../images/science-8-1-handout/image011.jpg" alt="量筒視線平視圖" style="max-height:105px;">
+          <div class="fig-caption">圖 1-2 量筒視線平視中央最低處</div>
+        </div>
+        <div class="fig-card">
+          <img src="../images/science-8-1-handout/image013.jpg" alt="排水法實驗圖" style="max-height:105px;">
+          <div class="fig-caption">圖 1-3 沉體排水法：物體體積＝V<sub>2</sub>－V<sub>1</sub></div>
+        </div>
+      </div>
+
+      <div class="tip-box interactive-item">
+        💡 <b>排水法適用條件與特殊處理法</b>：<br>
+        1. <b>沉體且不溶於水</b>：可直接利用水進行排水法測量。<br>
+        2. <b>浮體（如軟木塞、保麗龍）</b>：需先綁附重物，使用「下墜沉體綑綁法」扣除重物體積。<br>
+        3. <b>易溶於水之固體（如砂糖、食鹽）</b>：<b>絕不可用水！</b>需改用固體不互溶的液體（如飽和食鹽水、酒精）。
+      </div>
+
+      <div class="task-title">三、體積與容積單位換算大對照</div>
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>體積單位</th>
+            <th>立方公尺 (m<sup>3</sup>)</th>
+            <th>立方公寸 (dm<sup>3</sup>)</th>
+            <th>立方公分 (cm<sup>3</sup>)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="interactive-item">
+            <td><b>對應容積單位</b></td>
+            <td><b>公秉（千升, kL）</b></td>
+            <td><b>公升 (L)</b></td>
+            <td><b>毫升 (mL / c.c.)</b></td>
+          </tr>
+          <tr class="interactive-item">
+            <td><b>換算公升 (L)</b></td>
+            <td><span class="ans-word">1000 L (10<sup>3</sup> L)</span></td>
+            <td><span class="ans-word">1 L</span></td>
+            <td><span class="ans-word">0.001 L (10<sup>-3</sup> L)</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="page-footer">
+        <span>八年級自然與生科（上）講義</span>
+        <span>單元 1-3 體積與密度 (一)</span>
+        <span>第 6 頁 / 共 10 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== PAGE 7 ==================== -->
+    <div class="page" id="page7">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國中自然與生科（八上）</span>
+        <span>班級：_______ 座號：_______ 姓名：_____________</span>
+        <span>P. 7</span>
+      </div>
+
+      <div class="section-title">
+        <span>1-3 體積與密度（二）</span>
+        <span style="font-size:11pt; font-weight:normal;">密度定義、計算公式與三大正反比圖解</span>
+      </div>
+
+      <div class="task-title">一、密度的定義與核心公式</div>
+      <div class="tip-box interactive-item">
+        1. <b>密度的定義</b>：單位 <span class="ans-word">體積</span> 內所含的 <span class="ans-word">質量</span> 多寡，反映物質組成分子的緻密程度。<br>
+        <div style="text-align:center; margin:4px 0;">
+          <div class="formula-box">
+            密度（D）＝ 
+            <div class="fraction">
+              <span class="fraction-top">質量（M）</span>
+              <span class="fraction-bottom">體積（V）</span>
+            </div>
+            &nbsp;&nbsp;&rArr;&nbsp;&nbsp; M ＝ D &times; V &nbsp;&nbsp;&rArr;&nbsp;&nbsp; V ＝ 
+            <div class="fraction">
+              <span class="fraction-top">M</span>
+              <span class="fraction-bottom">D</span>
+            </div>
+          </div>
+        </div>
+        2. <b>密度的單位</b>：$	ext{g/cm}^3$（公克/立方公分）或 $	ext{kg/m}^3$（公斤/立方公尺）。換算：$1	ext{ g/cm}^3 = 1000	ext{ kg/m}^3$。<br>
+        3. <b>特性</b>：在固定的溫度與壓力下，同一種均勻物質的密度為<b>定值</b>，可用來作為<b>判斷物質種類</b>之重要依據。
+      </div>
+
+      <div class="task-title">二、物質密度、體積與質量的三大關係與圖解</div>
+      <table class="custom-table" style="font-size:12pt;">
+        <thead>
+          <tr>
+            <th style="width:33%;">關係一：同種物質 (D 固定)</th>
+            <th style="width:33%;">關係二：同體積 (V 固定)</th>
+            <th style="width:34%;">關係三：同質量 (M 固定)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="interactive-item">
+            <td class="align-left">
+              • 體積愈大，質量愈 <span class="ans-word">大</span>。<br>
+              • <b>M 與 V 成正比</b>。<br>
+              • M-V 圖為過原點之斜直線，<b>斜率愈大，密度 D 愈大</b>。
+            </td>
+            <td class="align-left">
+              • 密度愈大，質量愈 <span class="ans-word">大</span>。<br>
+              • <b>M 與 D 成正比</b>。<br>
+              • M-D 圖為過原點之斜直線，<b>斜率代表體積 V</b>。
+            </td>
+            <td class="align-left">
+              • 密度愈大，體積愈 <span class="ans-word">小</span>。<br>
+              • <b>V 與 D 成反比</b>。<br>
+              • V-D 圖為平滑雙曲線，乘積 $M = D 	imes V$ 為定值。
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="fig-card" style="padding:2px;">
+                <img src="../images/science-8-1-handout/image017.jpg" alt="M-V 關係圖" style="max-height:85px;">
+                <div class="fig-caption">M 與 V 成正比 (D固定)</div>
+              </div>
+            </td>
+            <td>
+              <div class="fig-card" style="padding:2px;">
+                <img src="../images/science-8-1-handout/image020.jpg" alt="M-D 關係圖" style="max-height:85px;">
+                <div class="fig-caption">M 與 D 成正比 (V固定)</div>
+              </div>
+            </td>
+            <td>
+              <div class="fig-card" style="padding:2px;">
+                <img src="../images/science-8-1-handout/image023.jpg" alt="V-D 關係圖" style="max-height:85px;">
+                <div class="fig-caption">V 與 D 成反比 (M固定)</div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="page-footer">
+        <span>八年級自然與生科（上）講義</span>
+        <span>單元 1-3 體積與密度 (二)</span>
+        <span>第 7 頁 / 共 10 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== PAGE 8 ==================== -->
+    <div class="page" id="page8">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國中自然與生科（八上）</span>
+        <span>班級：_______ 座號：_______ 姓名：_____________</span>
+        <span>P. 8</span>
+      </div>
+
+      <div class="section-title">
+        <span>1-3 隨堂實戰評量</span>
+        <span style="font-size:11pt; font-weight:normal;">單元核心觀念評量題組 (Q1～Q6)</span>
+      </div>
+
+      <!-- Q1 -->
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          （ <span class="qa-bracket">C</span> ） 1. 下列的物品中，請問哪種物品<b>最不適合</b>使用排水法來測量體積？
+        </div>
+        <div class="qa-options">
+          <div>(A) 小鋼珠</div>
+          <div>(B) 鐵尺</div>
+          <div>(C) 黑糖（易溶於水）</div>
+          <div>(D) 橡皮擦</div>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          （ <span class="qa-bracket">B</span> ） 2. 阿翰將某液體倒入量筒中測出體積 V，再測出總質量 m，如下表所示，則該液體的密度為何？
+        </div>
+        <table class="custom-table" style="width:90%; margin:4px auto; font-size:12pt;">
+          <tr>
+            <th>次別</th>
+            <td>第 1 次</td>
+            <td>第 2 次</td>
+            <td>第 3 次</td>
+            <td>第 4 次</td>
+          </tr>
+          <tr>
+            <th>體積 V（立方公分）</th>
+            <td>10</td>
+            <td>20</td>
+            <td>30</td>
+            <td>40</td>
+          </tr>
+          <tr>
+            <th>總質量 m（公克）</th>
+            <td>30</td>
+            <td>38</td>
+            <td>46</td>
+            <td>54</td>
+          </tr>
+        </table>
+        <div class="qa-options" style="margin-top:2px;">
+          <div>(A) 0.3 公克∕立方公分</div>
+          <div>(B) 0.8 公克∕立方公分</div>
+          <div>(C) 1.0 公克∕立方公分</div>
+          <div>(D) 3.0 公克∕立方公分</div>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          （ <span class="qa-bracket">B</span> ） 3. 已知冰的密度為 0.93 g/cm<sup>3</sup>，常溫水的密度為 1.0 g/cm<sup>3</sup>。當質量 100 公克的冰完全熔化為水，其體積最接近多少 cm<sup>3</sup>？
+        </div>
+        <div class="qa-options">
+          <div>(A) 107.5 cm<sup>3</sup></div>
+          <div>(B) 100 cm<sup>3</sup>（質量守恆 M=100g，V=M/D=100/1=100）</div>
+          <div>(C) 93 cm<sup>3</sup></div>
+          <div>(D) 10 cm<sup>3</sup></div>
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          （ <span class="qa-bracket">D</span> ） 4. 將銅球投入量筒內完全沉入水面下，量筒內水面上升 10 cm<sup>3</sup>，已知銅球密度為 8.9 g/cm<sup>3</sup>，則下列何者正確？
+        </div>
+        <div class="qa-options">
+          <div>(A) 銅球體積為 89 cm<sup>3</sup></div>
+          <div>(B) 銅球質量為 10 g</div>
+          <div>(C) 量筒內水的體積為 89 cm<sup>3</sup></div>
+          <div>(D) 銅球的質量為 89 g（M＝D&times;V＝8.9&times;10＝89）</div>
+        </div>
+      </div>
+
+      <!-- Q5 -->
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          （ <span class="qa-bracket">D</span> ） 5. 琳琳想知道玻璃汽水瓶玻璃的總體積：(甲) 打碎放入裝水大量筒、(乙) 瓶口蓋緊放入水、(丙) 蓋緊放酒精、(丁) 蓋緊手壓入水、(戊) 瓶口打開完全沉入水中。哪些方法測量所得之值較準確？
+        </div>
+        <div class="qa-options">
+          <div>(A) 甲乙</div>
+          <div>(B) 乙丙</div>
+          <div>(C) 甲丁</div>
+          <div>(D) 甲戊（排除中空內部體積）</div>
+        </div>
+      </div>
+
+      <!-- Q6 -->
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          （ <span class="qa-bracket">A</span> ） 6. 宏泰把同一塊黏土捏成各種不同形狀，分別放在天平上測量質量，結果如右圖。請問 m<sub>1</sub>、m<sub>2</sub>、m<sub>3</sub>、m<sub>4</sub> 的大小關係為何？
+        </div>
+        <div style="display:flex; align-items:center; gap:12px; margin-top:2px;">
+          <div class="qa-options stacked" style="flex:1;">
+            <div>(A) m<sub>1</sub> ＝ m<sub>2</sub> ＝ m<sub>3</sub> ＝ m<sub>4</sub>（形狀改變質量不變）</div>
+            <div>(B) m<sub>1</sub> ＞ m<sub>2</sub> ＞ m<sub>3</sub> ＞ m<sub>4</sub></div>
+            <div>(C) m<sub>1</sub> ＜ m<sub>2</sub> ＜ m<sub>3</sub> ＜ m<sub>4</sub></div>
+            <div>(D) 形狀不同，無法比較質量的大小</div>
+          </div>
+          <img src="../images/science-8-1-handout/image026.png" alt="黏土捏形天平圖" style="max-height:65px; border:1px solid #cbd5e1; border-radius:4px;">
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>八年級自然與生科（上）講義</span>
+        <span>單元 1-3 隨堂實戰評量</span>
+        <span>第 8 頁 / 共 10 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== PAGE 9 ==================== -->
+    <div class="page" id="page9">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國中自然與生科（八上）</span>
+        <span>班級：_______ 座號：_______ 姓名：_____________</span>
+        <span>P. 9</span>
+      </div>
+
+      <div class="main-title">第 1 章 基本測量 全章知識體系心智圖</div>
+
+      <div class="section-title">
+        <span>全章知識地圖導覽</span>
+        <span style="font-size:11pt; font-weight:normal;">三大主題核心架構梳理</span>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:6px;">
+        <!-- 主題 1 -->
+        <div class="tip-box interactive-item" style="margin:0; background:#f0fdf4; border-color:#86efac;">
+          <div style="font-weight:bold; font-size:14pt; color:#166534; margin-bottom:4px;">📌 1-1 長度、質量與時間</div>
+          <ul style="margin:0; padding-left:18px; font-size:12.5pt; line-height:1.45;">
+            <li><b>物理量</b>：以數值與單位客觀表示結果。</li>
+            <li><b>SI 制三大基本量</b>：
+              <ul>
+                <li>長度：<b>公尺 (m)</b>（1 km = 10<sup>3</sup>m, 1 &mu;m = 10<sup>-6</sup>m, 1 nm = 10<sup>-9</sup>m）</li>
+                <li>質量：<b>公斤 (kg)</b>（物體所含物質總量，位置改變質量不變）</li>
+                <li>時間：<b>秒 (s)</b>（具規律週期性循環現象）</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 主題 2 -->
+        <div class="tip-box interactive-item" style="margin:0; background:#eff6ff; border-color:#93c5fd;">
+          <div style="font-weight:bold; font-size:14pt; color:#1e40af; margin-bottom:4px;">📌 1-2 測量、天平與估計</div>
+          <ul style="margin:0; padding-left:18px; font-size:12.5pt; line-height:1.45;">
+            <li><b>測量值組成</b>：準確值（到最小刻度）＋ 估計值（下一位，僅一位）。</li>
+            <li><b>上皿天平規則</b>：
+              <ul>
+                <li>歸零口訣：哪邊輕校準螺絲就往哪邊轉。</li>
+                <li>操作：左物右碼、砝碼夾由大至小取放。</li>
+                <li>生鏽陷阱：生鏽砝碼質量變重 $implies$ 測量值偏小。</li>
+              </ul>
+            </li>
+            <li><b>平均值</b>：剔除離群錯誤值後相加除以次數。</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 主題 3 -->
+      <div class="tip-box interactive-item" style="margin-top:10px; background:#faf5ff; border-color:#d8b4fe;">
+        <div style="font-weight:bold; font-size:14pt; color:#6b21a8; margin-bottom:4px;">📌 1-3 體積、容積與密度</div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; font-size:12.5pt; line-height:1.45;">
+          <div>
+            • <b>量筒讀數</b>：視線水平平視凹液面中央最低處。<br>
+            • <b>排水法</b>：沉體不溶於水，固體體積 $V = V_2 - V_1$。<br>
+            • <b>單位換算</b>：$1	ext{ m}^3 = 1000	ext{ L} = 1	ext{ kL}$ ｜ $1	ext{ cm}^3 = 1	ext{ mL} = 10^{-3}	ext{ L}$。
+          </div>
+          <div>
+            • <b>密度核心公式</b>：$D = rac{M}{V}$（定溫定壓下同種物質密度為定值）。<br>
+            • <b>三大正反比規律</b>：<br>
+            &nbsp;&nbsp;① 同種物質 ($D$ 定)：$M$ 與 $V$ 成正比（$M-V$ 斜直線，斜率即密度）<br>
+            &nbsp;&nbsp;② 同體積 ($V$ 定)：$M$ 與 $D$ 成正比 ｜ ③ 同質量 ($M$ 定)：$V$ 與 $D$ 成反比。
+          </div>
+        </div>
+      </div>
+
+      <!-- 計算金三角 -->
+      <div class="item-line interactive-item" style="background:#fffbeb; border:1px solid #fde68a; border-radius:6px; margin-top:8px; font-size:13pt;">
+        💡 <b>解題金三角口訣</b>：求密度除以體積（$D = M/V$）；求質量兩者相乘（$M = D 	imes V$）；求體積質量除以密度（$V = M/D$）。
+      </div>
+
+      <div class="page-footer">
+        <span>八年級自然與生科（上）講義</span>
+        <span>第 1 章 全章知識體系心智圖</span>
+        <span>第 9 頁 / 共 10 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== PAGE 10 ==================== -->
+    <div class="page" id="page10">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國中自然與生科（八上）</span>
+        <span>班級：_______ 座號：_______ 姓名：_____________</span>
+        <span>P. 10</span>
+      </div>
+
+      <div class="main-title">第 1 章 考前盤點與自我檢核</div>
+
+      <div class="section-title">
+        <span>全章常考盲點對照與自我檢核</span>
+        <span style="font-size:11pt; font-weight:normal;">重點梳理 ＆ 課後通關檢核</span>
+      </div>
+
+      <table class="custom-table" style="font-size:12pt; margin-top:6px;">
+        <thead>
+          <tr>
+            <th style="width:22%;">小節主題</th>
+            <th style="width:78%;">核心概念精華與常考盲點對照</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="interactive-item">
+            <td><b>1-1 單位換算</b></td>
+            <td class="align-left">
+              • <b>常考盲點</b>：微米與奈米混淆。記住：$1	ext{ mm} = 10^{-3}	ext{ m}$、$1 mu	ext{m} = 10^{-6}	ext{ m}$、$1	ext{ nm} = 10^{-9}	ext{ m}$。<br>
+              • 質量與重量不同：質量不隨地點改變（月球上天平仍可量質量，彈簧秤則量出 1/6 重量）。
+            </td>
+          </tr>
+          <tr class="interactive-item">
+            <td><b>1-2 天平與估計</b></td>
+            <td class="align-left">
+              • <b>天平螺絲口訣</b>：哪邊輕螺絲就往哪邊旋！（指針偏左向右調，偏右向左調）。<br>
+              • <b>砝碼生鏽</b>：砝碼變重 $implies$ 需更少砝碼 $implies$ 測量值偏小。<br>
+              • <b>估計位數</b>：剛好在刻度線上必須補 0，估計值僅有一位，多估無意義。
+            </td>
+          </tr>
+          <tr class="interactive-item">
+            <td><b>1-3 體積與密度</b></td>
+            <td class="align-left">
+              • <b>排水法限制</b>：易溶於水或浮體不可直接量；量筒讀數需看中央最低處。<br>
+              • <b>冰熔化成水</b>：質量守恆（100g 冰變 100g 水），體積因密度變大而縮小為 100 cm<sup>3</sup>。<br>
+              • <b>液體＋量筒作圖</b>：總質量對液體體積之圖形不通過原點，縱軸截距為「量筒空重」。
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="task-title" style="margin-top:10px;">二、課後 6 大能力通關檢核清單（點擊方框可自我檢視）</div>
+      <div class="tip-box interactive-item" style="font-size:13pt; line-height:1.6; margin:0;">
+        <span class="ans-word">☑</span> 1. 我能熟練換算長度（km 到 nm）與質量（kg 到 mg）的科學記號。<br>
+        <span class="ans-word">☑</span> 2. 我能正確說出上皿天平指針偏斜時校準螺絲的調整方向（朝較輕處旋）。<br>
+        <span class="ans-word">☑</span> 3. 我能正確寫出測量值，明確區分準確值與一位估計值（如 14.75 cm）。<br>
+        <span class="ans-word">☑</span> 4. 我能說明使用排水法測量固體體積的條件及量筒視線讀取原則。<br>
+        <span class="ans-word">☑</span> 5. 我能熟練運用密度公式 $D = M/V$ 進行質量、體積與密度的計算與換算。<br>
+        <span class="ans-word">☑</span> 6. 我能由 $M-V$ 坐標圖中直線的斜率判斷並比較不同物質密度的大小。
+      </div>
+
+      <div class="page-footer">
+        <span>八年級自然與生科（上）講義</span>
+        <span>第 1 章 考前盤點與自我檢核</span>
+        <span>第 10 頁 / 共 10 頁</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- JavaScript 核心功能腳本 -->
+  <script>
+    // 單題答案獨立開關與填空點擊切換
+    document.addEventListener('click', function(e) {
+      if (document.body.classList.contains('pen-mode')) return;
+
+      // 點擊個別答案單詞或括號：直接單獨切換顯示/隱藏
+      if (e.target.classList.contains('ans-word') || e.target.classList.contains('ans-slot') || e.target.classList.contains('qa-bracket')) {
+        e.stopPropagation();
+        e.target.classList.toggle('revealed');
+        return;
+      }
+
+      // 點擊整題/整行/表格列：開合該項目下的所有答案
+      const item = e.target.closest('.interactive-item, .qa-block, .item-line');
+      if (item) {
+        item.classList.toggle('show-one');
+      }
+    });
+
+    // 雙擊個別填空亦支援直接切換
+    document.addEventListener('dblclick', function(e) {
+      if (document.body.classList.contains('pen-mode')) return;
+      if (e.target.classList.contains('ans-word') || e.target.classList.contains('ans-slot') || e.target.classList.contains('qa-bracket')) {
+        e.stopPropagation();
+        e.target.classList.toggle('revealed');
+      }
+    });
+
+    // 一鍵全開 / 全關答案
+    let allAnsRevealed = false;
+    function toggleAllAnswers() {
+      allAnsRevealed = !allAnsRevealed;
+      document.body.classList.toggle('show-ans', allAnsRevealed);
+      const icon = document.getElementById('ansIcon');
+      const btn = document.getElementById('toggleAllAnsBtn');
+      if (allAnsRevealed) {
+        icon.textContent = '🙈';
+        btn.classList.add('active');
+      } else {
+        icon.textContent = '👁️';
+        btn.classList.remove('active');
+        // 同步清除個別已展開的樣式
+        document.querySelectorAll('.show-one').forEach(el => el.classList.remove('show-one'));
+        document.querySelectorAll('.revealed').forEach(el => el.classList.remove('revealed'));
+      }
+    }
+
+    // 目錄浮動選單跳轉
+    function toggleTocMenu(e) {
+      e.stopPropagation();
+      const menu = document.getElementById('tocMenu');
+      menu.classList.toggle('show');
+    }
+    document.addEventListener('click', function(e) {
+      const menu = document.getElementById('tocMenu');
+      if (menu && menu.classList.contains('show') && !e.target.closest('.toc-menu') && e.target.id !== 'tocBtn') {
+        menu.classList.remove('show');
+      }
+    });
+    function jumpTo(pageId) {
+      const target = document.getElementById(pageId);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const menu = document.getElementById('tocMenu');
+        if (menu) menu.classList.remove('show');
+      }
+    }
+
+    // 螢光筆與畫板系統
+    let isPenMode = false;
+    let currentColor = 'rgba(250, 204, 21, 0.45)';
+    let currentSize = 4;
+    const canvases = [];
+    const contexts = [];
+
+    function initCanvases() {
+      const pages = document.querySelectorAll('.page');
+      pages.forEach((page, index) => {
+        const canvas = page.querySelector('.drawing-canvas');
+        if (canvas) {
+          canvases.push(canvas);
+          const ctx = canvas.getContext('2d');
+          contexts.push(ctx);
+          resizeCanvas(canvas);
+
+          let drawing = false;
+          let lastX = 0, lastY = 0;
+
+          canvas.addEventListener('mousedown', (e) => {
+            if (!isPenMode) return;
+            drawing = true;
+            const rect = canvas.getBoundingClientRect();
+            lastX = e.clientX - rect.left;
+            lastY = e.clientY - rect.top;
+          });
+
+          canvas.addEventListener('mousemove', (e) => {
+            if (!drawing || !isPenMode) return;
+            const rect = canvas.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            ctx.strokeStyle = currentColor;
+            ctx.lineWidth = currentSize;
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+
+            ctx.beginPath();
+            ctx.moveTo(lastX, lastY);
+            ctx.lineTo(x, y);
+            ctx.stroke();
+
+            lastX = x;
+            lastY = y;
+          });
+
+          window.addEventListener('mouseup', () => { drawing = false; });
+          canvas.addEventListener('mouseleave', () => { drawing = false; });
+
+          // 觸控支援 (Touch screen / 大屏)
+          canvas.addEventListener('touchstart', (e) => {
+            if (!isPenMode) return;
+            drawing = true;
+            const rect = canvas.getBoundingClientRect();
+            const touch = e.touches[0];
+            lastX = touch.clientX - rect.left;
+            lastY = touch.clientY - rect.top;
+            e.preventDefault();
+          }, { passive: false });
+
+          canvas.addEventListener('touchmove', (e) => {
+            if (!drawing || !isPenMode) return;
+            const rect = canvas.getBoundingClientRect();
+            const touch = e.touches[0];
+            const x = touch.clientX - rect.left;
+            const y = touch.clientY - rect.top;
+
+            ctx.strokeStyle = currentColor;
+            ctx.lineWidth = currentSize;
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+
+            ctx.beginPath();
+            ctx.moveTo(lastX, lastY);
+            ctx.lineTo(x, y);
+            ctx.stroke();
+
+            lastX = x;
+            lastY = y;
+            e.preventDefault();
+          }, { passive: false });
+
+          canvas.addEventListener('touchend', () => { drawing = false; });
+        }
+      });
+    }
+
+    function resizeCanvas(canvas) {
+      canvas.width = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+    }
+
+    window.addEventListener('resize', () => {
+      canvases.forEach(canvas => resizeCanvas(canvas));
+    });
+
+    function togglePenMode() {
+      isPenMode = !isPenMode;
+      document.body.classList.toggle('pen-mode', isPenMode);
+      document.getElementById('penBtn').classList.toggle('active', isPenMode);
+      document.getElementById('penOptions').style.display = isPenMode ? 'flex' : 'none';
+    }
+
+    function setPenColor(color, el) {
+      currentColor = color;
+      document.querySelectorAll('.color-dot').forEach(dot => dot.classList.remove('active'));
+      el.classList.add('active');
+    }
+
+    function setPenSize(size, el) {
+      currentSize = size;
+      document.querySelectorAll('.size-btn').forEach(btn => btn.classList.remove('active'));
+      el.classList.add('active');
+    }
+
+    function clearAllDrawings() {
+      contexts.forEach((ctx, index) => {
+        ctx.clearRect(0, 0, canvases[index].width, canvases[index].height);
+      });
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      initCanvases();
+    });
+  </script>
+</body>
+</html>
