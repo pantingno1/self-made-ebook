@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>國二理化（上）第 2 章 認識物質 互動電子書</title>
+  <meta name="ebook:subject" content="science">
+  <meta name="ebook:grade" content="8">
+  <meta name="ebook:type" content="handout">
+  <meta name="ebook:pages" content="12">
+  <meta name="ebook:level" content="std">
+  <meta name="ebook:summary" content="國二理化第2章認識物質完整講義，含物質三態變化、物理化學性質、純物質混合物、空氣組成、溶液濃度計算（重量/體積/ppm）、溶解度、飽和溶液、混合物分離（過濾/結晶/色層分析）。">
+  <style>
+    @page { size: A4 portrait; margin: 10mm 12mm; }
+    * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body {
+      margin: 0; padding: 0; background-color: #e2e8f0;
+      font-family: "Times New Roman", "標楷體", "DFKai-SB", "BiauKai", serif;
+      font-size: 14pt; line-height: 1.5; color: #111;
+    }
+    .classroom-toolbar {
+      position: fixed; top: 14px; right: 20px; z-index: 9999;
+      display: flex; align-items: center; gap: 4px;
+      background: rgba(255,255,255,0.95); backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 4px 10px; border-radius: 40px; border: 1px solid rgba(203,213,225,0.9);
+      box-shadow: 0 4px 22px rgba(0,0,0,0.15);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .tool-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 36px; height: 36px; font-size: 18px; color: #334155;
+      background: transparent; border: 1px solid transparent; border-radius: 50%;
+      cursor: pointer; transition: all 0.15s ease; padding: 0; user-select: none;
+      text-decoration: none;
+    }
+    .tool-btn:hover { background: #f1f5f9; transform: scale(1.1); }
+    .tool-btn.active { background: #0f172a; color: #ffffff; }
+    .btn-toggle-ans.active { background: #eff6ff; border-color: #3b82f6; }
+    .toolbar-divider { width: 1px; height: 20px; background: #cbd5e1; margin: 0 4px; }
+    .toc-menu {
+      display: none; position: absolute; top: 46px; left: 0;
+      background: #fff; border: 1px solid #cbd5e1; border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.18); padding: 8px 0;
+      min-width: 280px; max-height: 440px; overflow-y: auto; z-index: 10000;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .toc-menu.show { display: block; animation: tocFadeIn 0.15s ease-out; }
+    @keyframes tocFadeIn { from { opacity:0; transform:translateY(-6px); } to { opacity:1; transform:translateY(0); } }
+    .toc-menu-title { padding: 6px 16px 8px; font-size: 13px; font-weight: bold; color: #64748b; border-bottom: 1px solid #f1f5f9; }
+    .toc-menu-item { padding: 8px 16px; font-size: 13.5px; color: #334155; cursor: pointer; display: flex; align-items: center; justify-content: space-between; transition: background 0.12s, color 0.12s; }
+    .toc-menu-item:hover { background: #eff6ff; color: #2563eb; font-weight: bold; }
+    .toc-page-badge { font-size: 12px; color: #94a3b8; font-weight: normal; }
+    .toc-menu-item:hover .toc-page-badge { color: #2563eb; }
+    .pen-options { display: none; align-items: center; gap: 6px; background: #f8fafc; padding: 3px 8px; border-radius: 20px; border: 1px solid #e2e8f0; margin-left: 2px; }
+    .color-picker { display: flex; align-items: center; gap: 5px; }
+    .color-dot { width: 16px; height: 16px; border-radius: 50%; cursor: pointer; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.2); }
+    .color-dot.active { transform: scale(1.2); box-shadow: 0 0 0 2px #0f172a; }
+    .size-picker { display: flex; align-items: center; gap: 3px; }
+    .size-btn { border: 1px solid #cbd5e1; background: #fff; color: #475569; font-size: 11px; font-weight: bold; padding: 2px 7px; border-radius: 10px; cursor: pointer; }
+    .size-btn.active { background: #0f172a; color: #fff; border-color: #0f172a; }
+    .pages-container { padding: 20px 0 40px; }
+    .page {
+      box-sizing: border-box; width: 210mm; min-height: 297mm; max-height: 297mm;
+      padding: 10mm 15mm 8mm; margin: 0 auto 25px;
+      background: #fff; box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+      page-break-after: always; break-after: page; position: relative;
+      display: flex; flex-direction: column; overflow: hidden;
+    }
+    .drawing-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 20; pointer-events: none; }
+    body.pen-mode .drawing-canvas { pointer-events: auto; cursor: crosshair; }
+    .page-header { display: flex; justify-content: space-between; border-bottom: 2px solid #334155; padding-bottom: 4px; margin-bottom: 8px; font-size: 12pt; font-weight: bold; color: #1e293b; }
+    .page-footer { margin-top: auto; padding-top: 5px; border-top: 1px solid #cbd5e1; display: flex; justify-content: space-between; font-size: 10.5pt; color: #64748b; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    .main-title { font-size: 19pt; font-weight: 900; text-align: center; margin: 4px 0 8px; color: #0f172a; }
+    .section-title { font-size: 14.5pt; font-weight: bold; background: #e2e8f0; padding: 4px 10px; border-radius: 6px; margin: 7px 0 5px; border-left: 6px solid #2563eb; color: #0f172a; display: flex; justify-content: space-between; align-items: center; }
+    .task-title { font-size: 13.5pt; font-weight: bold; margin: 5px 0 4px; color: #1e293b; }
+    .tip-box { border: 1.5px solid #93c5fd; background-color: #f0f9ff; border-radius: 6px; padding: 5px 10px; margin: 4px 0 7px; font-size: 13pt; line-height: 1.45; }
+    .warn-box { border: 1.5px solid #fca5a5; background-color: #fef2f2; border-radius: 6px; padding: 5px 10px; margin: 4px 0 7px; font-size: 13pt; line-height: 1.45; }
+    .green-box { border: 1.5px solid #86efac; background-color: #f0fdf4; border-radius: 6px; padding: 5px 10px; margin: 4px 0 7px; font-size: 13pt; line-height: 1.45; }
+    .item-line { padding: 2px 5px; border-radius: 4px; line-height: 1.5; font-size: 13.5pt; }
+    body:not(.pen-mode) .interactive-item { cursor: pointer; }
+    body:not(.pen-mode) .interactive-item:hover { background-color: #f8fafc; outline: 1px dashed #93c5fd; }
+    .correct-choice { display: inline-block; padding: 0 4px; transition: all 0.2s; }
+    .show-ans .correct-choice, .item-line.show-one .correct-choice, .qa-block.show-one .correct-choice { color: #dc2626 !important; font-weight: bold !important; border: 2px solid #dc2626 !important; border-radius: 12px !important; background-color: #fef2f2 !important; padding: 0 5px !important; }
+    .ans-slot { display: inline-block; min-width: 24px; text-align: center; color: transparent; font-weight: bold; cursor: pointer; user-select: none; }
+    .show-ans .ans-slot, .item-line.show-one .ans-slot, .qa-block.show-one .ans-slot, .ans-slot.revealed { color: #dc2626 !important; }
+    .ans-word { color: transparent; font-weight: bold; border-bottom: 1.5px solid #333; padding: 0 3px; cursor: pointer; user-select: none; }
+    .show-ans .ans-word, .item-line.show-one .ans-word, .ans-word.revealed { color: #dc2626 !important; }
+    body:not(.pen-mode) .ans-word:hover, body:not(.pen-mode) .ans-slot:hover { background-color: #fee2e2; }
+    .qa-block { margin-bottom: 8px; padding: 3px 6px; border-radius: 5px; font-size: 13.5pt; line-height: 1.4; }
+    .qa-header { font-weight: bold; }
+    .qa-bracket { color: transparent; font-weight: bold; padding: 0 2px; }
+    .show-ans .qa-bracket, .qa-block.show-one .qa-bracket, .qa-bracket.revealed { color: #dc2626 !important; }
+    .qa-options { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 10px; margin-top: 3px; padding-left: 18px; font-size: 12.5pt; }
+    .qa-options.stacked { display: flex; flex-direction: column; gap: 2px; }
+    table.custom-table { width: 100%; border-collapse: collapse; margin: 5px 0; font-size: 12.5pt; }
+    table.custom-table th, table.custom-table td { border: 1px solid #64748b; padding: 3px 7px; text-align: center; }
+    table.custom-table th { background-color: #f1f5f9; font-weight: bold; color: #0f172a; }
+    table.custom-table td.align-left { text-align: left; }
+    .fig-row { display: flex; justify-content: center; align-items: center; gap: 12px; margin: 5px 0; }
+    .fig-card { display: flex; flex-direction: column; align-items: center; text-align: center; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 6px; padding: 5px 8px; }
+    .fig-card img { max-height: 110px; width: auto; object-fit: contain; }
+    .fig-caption { font-size: 11pt; color: #475569; margin-top: 3px; font-weight: bold; }
+    .formula-box { display: inline-flex; align-items: center; justify-content: center; background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 8px; padding: 5px 12px; font-weight: bold; color: #1e3a8a; font-size: 13pt; margin: 3px 0; }
+    .fraction { display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center; padding: 0 3px; }
+    .fraction-top { border-bottom: 1.5px solid currentColor; padding-bottom: 1px; }
+    .fraction-bottom { padding-top: 1px; }
+    .grid-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    @media print {
+      @page { size: A4 portrait; margin: 10mm 12mm; }
+      html, body { width: 100% !important; height: auto !important; background: transparent !important; padding: 0 !important; margin: 0 !important; }
+      .no-print, .classroom-toolbar, .toc-menu, .drawing-canvas { display: none !important; }
+      .pages-container { display: block !important; padding: 0 !important; margin: 0 !important; }
+      .page { box-sizing: border-box !important; margin: 0 !important; box-shadow: none !important; width: 100% !important; height: 275mm !important; max-height: 275mm !important; min-height: 0 !important; padding: 0 !important; page-break-after: always !important; break-after: page !important; overflow: hidden !important; display: flex !important; flex-direction: column !important; }
+      .page:last-child { page-break-after: avoid !important; break-after: avoid !important; }
+      .page-footer { margin-top: auto !important; }
+      .correct-choice { color: inherit !important; font-weight: normal !important; border: none !important; background: transparent !important; padding: 0 !important; }
+      .ans-slot, .ans-word, .qa-bracket { color: transparent !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 課堂懸浮工具列 -->
+  <div class="classroom-toolbar no-print">
+    <a class="tool-btn" href="../index.html" title="回電子書目錄">🏠</a>
+    <div style="position: relative;">
+      <button class="tool-btn" id="tocBtn" onclick="toggleTocMenu(event)" title="單元章節目錄">📑</button>
+      <div class="toc-menu" id="tocMenu">
+        <div class="toc-menu-title">📖 第 2 章 單元章節目錄 (全 12 頁)</div>
+        <div class="toc-menu-item" onclick="jumpTo('page1')"><span>2-1 物質的分類與三態變化</span><span class="toc-page-badge">P.1</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page2')"><span>2-1 物理化學性質與空氣組成</span><span class="toc-page-badge">P.2</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page3')"><span>2-1 氣體製備與純物質混合物</span><span class="toc-page-badge">P.3</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page4')"><span>2-1 隨堂實戰評量 (Q1~Q7)</span><span class="toc-page-badge">P.4</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page5')"><span>2-2 溶液組成與濃度計算</span><span class="toc-page-badge">P.5</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page6')"><span>2-2 溶解度與飽和溶液</span><span class="toc-page-badge">P.6</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page7')"><span>2-2 隨堂實戰評量 (Q1~Q6)</span><span class="toc-page-badge">P.7</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page8')"><span>2-3 混合物分離方法與食鹽細砂實驗</span><span class="toc-page-badge">P.8</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page9')"><span>2-3 隨堂實戰評量 (Q1~Q2)</span><span class="toc-page-badge">P.9</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page10')"><span>第 2 章 全章核心知識心智圖</span><span class="toc-page-badge">P.10</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page11')"><span>第 2 章 考前盤點與自我檢核</span><span class="toc-page-badge">P.11</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page12')"><span>第 2 章 濃度計算練習專頁</span><span class="toc-page-badge">P.12</span></div>
+      </div>
+    </div>
+    <button class="tool-btn btn-toggle-ans" id="toggleAllAnsBtn" onclick="toggleAllAnswers()" title="一鍵全開/全隱答案"><span id="ansIcon">👁️</span></button>
+    <button class="tool-btn" id="penBtn" onclick="togglePenMode()" title="螢光筆/板書筆">✏️</button>
+    <div class="pen-options" id="penOptions">
+      <div class="color-picker">
+        <span class="color-dot active" style="background:#facc15;" onclick="setPenColor('rgba(250,204,21,0.45)',this)" title="螢光黃"></span>
+        <span class="color-dot" style="background:#ef4444;" onclick="setPenColor('rgba(239,68,68,0.8)',this)" title="紅筆"></span>
+        <span class="color-dot" style="background:#3b82f6;" onclick="setPenColor('rgba(37,99,235,0.8)',this)" title="藍筆"></span>
+        <span class="color-dot" style="background:#10b981;" onclick="setPenColor('rgba(16,185,129,0.8)',this)" title="綠筆"></span>
+      </div>
+      <div style="width:1px;height:14px;background:#cbd5e1;margin:0 2px;"></div>
+      <div class="size-picker">
+        <button class="size-btn active" onclick="setPenSize(4,this)">細</button>
+        <button class="size-btn" onclick="setPenSize(10,this)">中</button>
+        <button class="size-btn" onclick="setPenSize(20,this)">粗</button>
+      </div>
+    </div>
+    <button class="tool-btn" onclick="clearAllDrawings()" title="清除畫筆">🧹</button>
+    <div class="toolbar-divider"></div>
+    <button class="tool-btn" onclick="window.print()" title="列印">🖨️</button>
+  </div>
+
+  <div class="pages-container">
+
+    <!-- ==================== PAGE 1 ==================== -->
+    <div class="page" id="page1">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國中自然與生科（八上）</span>
+        <span>班級：_______ 座號：_______ 姓名：_____________</span>
+        <span>P. 1</span>
+      </div>
+      <div class="main-title">第 2 章 認識物質</div>
+      <div class="section-title">
+        <span>2-1 認識物質（一）</span>
+        <span style="font-size:11pt;font-weight:normal;">物質的三態與變化</span>
+      </div>
+
+      <div class="task-title">一、物質的三態與狀態變化</div>
+      <div class="tip-box interactive-item">
+        1. 物質通常以 <span class="ans-word">固態</span>、<span class="ans-word">液態</span>、<span class="ans-word">氣態</span> 三種狀態存在，當溫度改變至特定值時，狀態即發生改變（稱為三態變化）。<br>
+        2. 三態之間的粒子排列比較：固態粒子排列 <span class="ans-word">最緊密</span>，氣態粒子間距 <span class="ans-word">最大</span>，液態介於兩者之間。
+      </div>
+
+      <div class="task-title">二、物質三態變化全圖解</div>
+      <div class="fig-row">
+        <div class="fig-card" style="flex:1;">
+          <img src="../images/science-8-2-handout/image003.jpg" alt="物質三態變化圖" style="max-height:110px; max-width:100%;">
+          <div class="fig-caption">圖 2-1 物質三態變化（放熱向下、吸熱向上）</div>
+        </div>
+      </div>
+
+      <table class="custom-table" style="font-size:12pt; margin-top:5px;">
+        <thead>
+          <tr><th>變化名稱</th><th>方向</th><th>吸/放熱</th><th>典型生活實例</th></tr>
+        </thead>
+        <tbody>
+          <tr class="interactive-item"><td><b>熔化</b></td><td>固態 → 液態</td><td><span class="ans-word">吸熱</span></td><td>冰塊融化成水</td></tr>
+          <tr class="interactive-item"><td><b>凝固</b></td><td>液態 → 固態</td><td><span class="ans-word">放熱</span></td><td>水結成冰</td></tr>
+          <tr class="interactive-item"><td><b>汽化</b></td><td>液態 → 氣態</td><td><span class="ans-word">吸熱</span></td><td>水燒開變成水蒸氣；蒸發</td></tr>
+          <tr class="interactive-item"><td><b>凝結</b></td><td>氣態 → 液態</td><td><span class="ans-word">放熱</span></td><td>水蒸氣遇冷凝成小水珠（露）</td></tr>
+          <tr class="interactive-item"><td><b>昇華</b></td><td>固態 → 氣態</td><td><span class="ans-word">吸熱</span></td><td>乾冰直接消失、碘固體加熱</td></tr>
+          <tr class="interactive-item"><td><b>凝華</b></td><td>氣態 → 固態</td><td><span class="ans-word">放熱</span></td><td>水蒸氣遇極冷空氣直接結霜（霜）</td></tr>
+        </tbody>
+      </table>
+
+      <div class="tip-box interactive-item" style="margin-top:6px;">
+        💡 <b>口訣速記</b>：「吸熱向上（固→液→氣）、放熱向下（氣→液→固）」。昇華（固→氣）＆ 凝華（氣→固）為跨態直接變化，分別吸熱與放熱。
+      </div>
+
+      <div class="page-footer">
+        <span>八年級自然與生科（上）講義</span>
+        <span>單元 2-1 認識物質 (一)</span>
+        <span>第 1 頁 / 共 12 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== PAGE 2 ==================== -->
+    <div class="page" id="page2">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國中自然與生科（八上）</span>
+        <span>班級：_______ 座號：_______ 姓名：_____________</span>
+        <span>P. 2</span>
+      </div>
+      <div class="section-title">
+        <span>2-1 認識物質（二）</span>
+        <span style="font-size:11pt;font-weight:normal;">物理/化學性質與變化、空氣組成</span>
+      </div>
+
+      <div class="task-title">一、物理性質 vs. 化學性質</div>
+      <table class="custom-table">
+        <thead><tr><th style="width:20%;">類別</th><th style="width:40%;">定義</th><th style="width:40%;">常見實例</th></tr></thead>
+        <tbody>
+          <tr class="interactive-item">
+            <td><b>物理性質</b></td>
+            <td class="align-left">不需要透過 <span class="ans-word">化學變化</span>，可藉感官或儀器直接觀測的性質。</td>
+            <td class="align-left">顏色、氣味、光澤、硬度、熔點、沸點、溶解度、導電性、密度</td>
+          </tr>
+          <tr class="interactive-item">
+            <td><b>化學性質</b></td>
+            <td class="align-left">必須透過 <span class="ans-word">化學變化</span> 才能觀測到的性質。</td>
+            <td class="align-left">可燃性、助燃性、腐蝕性、酸鹼性、氧化還原性</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="task-title" style="margin-top:7px;">二、物理變化 vs. 化學變化</div>
+      <table class="custom-table">
+        <thead><tr><th style="width:20%;">類別</th><th style="width:45%;">定義</th><th style="width:35%;">常見實例</th></tr></thead>
+        <tbody>
+          <tr class="interactive-item">
+            <td><b>物理變化</b></td>
+            <td class="align-left">物質的 <span class="ans-word">組成與本質不變</span>，沒有產生新物質。</td>
+            <td class="align-left">水結冰、融冰、蒸發、物體切割</td>
+          </tr>
+          <tr class="interactive-item">
+            <td><b>化學變化</b></td>
+            <td class="align-left">物質的 <span class="ans-word">組成與本質改變</span>，產生新物質。</td>
+            <td class="align-left">燃燒、鐵生鏽、食物腐爛、光合作用</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="task-title" style="margin-top:7px;">三、空氣的組成與性質</div>
+      <div class="tip-box interactive-item">
+        空氣是一種 <span class="ans-word">混合物</span>，主要成分為氮氣（約 <span class="ans-word">78%</span>）和氧氣（約 <span class="ans-word">21%</span>）。
+      </div>
+      <table class="custom-table" style="font-size:12pt;">
+        <thead><tr><th>排名</th><th>含量</th><th>氣體</th><th>重要性質</th></tr></thead>
+        <tbody>
+          <tr class="interactive-item">
+            <td><b>1</b></td>
+            <td><span class="ans-word">78%</span></td>
+            <td><b>氮氣（N<sub>2</sub>）</b></td>
+            <td class="align-left">無色無味，<span class="ans-word">不可燃</span>也<span class="ans-word">不助燃</span>，性質穩定（惰性）</td>
+          </tr>
+          <tr class="interactive-item">
+            <td><b>2</b></td>
+            <td><span class="ans-word">21%</span></td>
+            <td><b>氧氣（O<sub>2</sub>）</b></td>
+            <td class="align-left">無色無味，性質活潑，具有 <span class="ans-word">助燃性</span>（本身不可燃）</td>
+          </tr>
+          <tr class="interactive-item">
+            <td><b>3</b></td>
+            <td>0.9%</td>
+            <td><b>氬氣（Ar）</b></td>
+            <td class="align-left">惰性氣體，性質極 <span class="ans-word">穩定</span>，不容易與其他物質反應</td>
+          </tr>
+          <tr class="interactive-item">
+            <td><b>其他</b></td>
+            <td>少量</td>
+            <td>二氧化碳（CO<sub>2</sub>）、水蒸氣等</td>
+            <td class="align-left">CO<sub>2</sub>無色無臭無味，不可燃也不助燃，能使澄清石灰水變 <span class="ans-word">混濁</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="page-footer">
+        <span>八年級自然與生科（上）講義</span>
+        <span>單元 2-1 認識物質 (二)</span>
+        <span>第 2 頁 / 共 12 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== PAGE 3 ==================== -->
+    <div class="page" id="page3">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國中自然與生科（八上）</span>
+        <span>班級：_______ 座號：_______ 姓名：_____________</span>
+        <span>P. 3</span>
+      </div>
+      <div class="section-title">
+        <span>2-1 認識物質（三）</span>
+        <span style="font-size:11pt;font-weight:normal;">氧氣製備、排水集氣法與純物質/混合物</span>
+      </div>
+
+      <div class="task-title">一、氧氣的製備實驗</div>
+      <div class="tip-box interactive-item">
+        <b>實驗原理</b>：以過氧化氫（雙氧水，H<sub>2</sub>O<sub>2</sub>）為原料，加入二氧化錳（MnO<sub>2</sub>）作為<b>催化劑</b>，可在常溫下快速分解產生氧氣。<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>2H<sub>2</sub>O<sub>2</sub> <span style="font-size:12pt;">(雙氧水)</span> —&rarr; 2H<sub>2</sub>O + O<sub>2</sub>&uarr;</b><br>
+        <b>收集方法</b>：<span class="ans-word">排水集氣法</span>（氧氣難溶於水，適合用此法收集）。<br>
+        <b>驗滿方法</b>：將<b>帶有火星的木條</b>靠近集氣瓶口，若木條復燃，表示瓶中充滿氧氣（助燃性）。
+      </div>
+
+      <div class="fig-row" style="margin-top:4px;">
+        <div class="fig-card" style="flex:1; max-width:280px;">
+          <img src="../images/science-8-2-handout/image004.jpg" alt="氧氣製備裝置圖" style="max-height:120px;">
+          <div class="fig-caption">圖 2-2 雙氧水製備氧氣裝置</div>
+        </div>
+        <div class="fig-card" style="flex:1; max-width:280px;">
+          <img src="../images/science-8-2-handout/image007.jpg" alt="排水集氣法示意圖" style="max-height:120px;">
+          <div class="fig-caption">圖 2-3 排水集氣法收集氧氣</div>
+        </div>
+      </div>
+
+      <div class="task-title" style="margin-top:7px;">二、純物質 vs. 混合物</div>
+      <table class="custom-table">
+        <thead><tr><th style="width:20%;">類別</th><th style="width:40%;">定義</th><th style="width:40%;">典型實例</th></tr></thead>
+        <tbody>
+          <tr class="interactive-item">
+            <td><b>純物質</b></td>
+            <td class="align-left">由 <span class="ans-word">單一物質</span> 組成，具有 <span class="ans-word">固定成分</span> 與特定物性（熔沸點固定）。可再分為元素與化合物。</td>
+            <td class="align-left">純水（H<sub>2</sub>O）、食鹽（NaCl）、氧氣（O<sub>2</sub>）、鐵（Fe）、二氧化碳（CO<sub>2</sub>）</td>
+          </tr>
+          <tr class="interactive-item">
+            <td><b>混合物</b></td>
+            <td class="align-left">由 <span class="ans-word">兩種以上純物質</span> 混合而成，<span class="ans-word">不具固定比例</span>與性質，可用物理方法分離。</td>
+            <td class="align-left">空氣、食鹽水、自來水、汽水、果汁、土壤</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="item-line interactive-item" style="background:#fffbeb; border:1px solid #fde68a; border-radius:6px; margin-top:6px; font-size:13pt;">
+        ⚠️ <b>常見易混淆辨別</b>：自來水（混合物，含礦物質等雜質）vs. 純水（純物質）｜空氣（混合物）vs. 氮氣（純物質）｜食鹽水（混合物）vs. 食鹽（純物質）
+      </div>
+
+      <div class="page-footer">
+        <span>八年級自然與生科（上）講義</span>
+        <span>單元 2-1 認識物質 (三)</span>
+        <span>第 3 頁 / 共 12 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== PAGE 4 ==================== -->
+    <div class="page" id="page4">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國中自然與生科（八上）</span>
+        <span>班級：_______ 座號：_______ 姓名：_____________</span>
+        <span>P. 4</span>
+      </div>
+      <div class="section-title">
+        <span>2-1 隨堂實戰評量</span>
+        <span style="font-size:11pt;font-weight:normal;">單元核心觀念評量題組 (Q1～Q7)</span>
+      </div>
+
+      <!-- Q1 -->
+      <div class="qa-block interactive-item">
+        <div class="qa-header">（ <span class="qa-bracket">D</span> ） 1. 以下哪一種現象屬於物理變化？</div>
+        <div class="qa-options">
+          <div>(A) 木材燃燒</div><div>(B) 食物腐敗</div>
+          <div>(C) 鐵釘生鏽</div><div>(D) 冰塊融化</div>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="qa-block interactive-item">
+        <div class="qa-header">（ <span class="qa-bracket">B</span> ） 2. 下列物質中哪一種屬於化學性質？</div>
+        <div class="qa-options">
+          <div>(A) 鐵的熔點為 1538℃</div><div>(B) 鐵在潮濕空氣中會生鏽</div>
+          <div>(C) 金有光澤</div><div>(D) 銅的密度約為 8.9 g/cm<sup>3</sup></div>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="qa-block interactive-item">
+        <div class="qa-header">（ <span class="qa-bracket">C</span> ） 3. 下列哪一項描述的是化學變化？</div>
+        <div class="qa-options">
+          <div>(A) 鹽溶於水</div><div>(B) 水蒸發成水蒸氣</div>
+          <div>(C) 汽油燃燒成二氧化碳和水</div><div>(D) 玻璃破碎</div>
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="qa-block interactive-item">
+        <div class="qa-header">（ <span class="qa-bracket">A</span> ） 4. 下列哪一種氣體在空氣中含量最多？</div>
+        <div class="qa-options">
+          <div>(A) 氮氣（78%）</div><div>(B) 氧氣（21%）</div>
+          <div>(C) 氬氣（0.9%）</div><div>(D) 二氧化碳（0.03%）</div>
+        </div>
+      </div>
+
+      <!-- Q5 -->
+      <div class="qa-block interactive-item">
+        <div class="qa-header">（ <span class="qa-bracket">C</span> ） 5. 下列物質中，哪一種屬於混合物？</div>
+        <div class="qa-options">
+          <div>(A) 純水（H<sub>2</sub>O）</div><div>(B) 食鹽（NaCl）</div>
+          <div>(C) 食鹽水</div><div>(D) 二氧化碳</div>
+        </div>
+      </div>
+
+      <!-- Q6 -->
+      <div class="qa-block interactive-item">
+        <div class="qa-header">（ <span class="qa-bracket">B</span> ） 6. 排水集氣法適合用來收集下列哪一種性質的氣體？</div>
+        <div class="qa-options">
+          <div>(A) 密度大於空氣的氣體</div><div>(B) 不易溶於水的氣體</div>
+          <div>(C) 有色且有臭味的氣體</div><div>(D) 質量輕、密度小的氣體</div>
+        </div>
+      </div>
+
+      <!-- Q7 -->
+      <div class="qa-block interactive-item">
+        <div class="qa-header">（ <span class="qa-bracket">B</span> ） 7. 自來水、食鹽水、二氧化碳、碳酸鈣、空氣、鐵，以上六種物質屬於純物質的組合何者正確？</div>
+        <div class="qa-options stacked">
+          <div>(A) 自來水、空氣</div>
+          <div>(B) 二氧化碳、碳酸鈣、鐵</div>
+          <div>(C) 自來水、食鹽水、二氧化碳</div>
+          <div>(D) 食鹽水、二氧化碳、碳酸鈣、空氣、鐵</div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>八年級自然與生科（上）講義</span>
+        <span>單元 2-1 隨堂實戰評量</span>
+        <span>第 4 頁 / 共 12 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== PAGE 5 ==================== -->
+    <div class="page" id="page5">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國中自然與生科（八上）</span>
+        <span>班級：_______ 座號：_______ 姓名：_____________</span>
+        <span>P. 5</span>
+      </div>
+      <div class="section-title">
+        <span>2-2 溶液與濃度（一）</span>
+        <span style="font-size:11pt;font-weight:normal;">溶液組成、三種濃度計算公式</span>
+      </div>
+
+      <div class="task-title">一、溶液的組成</div>
+      <table class="custom-table">
+        <thead><tr><th style="width:20%;">名稱</th><th style="width:40%;">定義</th><th style="width:40%;">實例（糖水）</th></tr></thead>
+        <tbody>
+          <tr class="interactive-item">
+            <td><b>水溶液</b></td>
+            <td class="align-left">以水為溶劑，物質均勻溶解於水中所形成的溶液。</td>
+            <td class="align-left">溶液外觀均勻透明，但不一定無色</td>
+          </tr>
+          <tr class="interactive-item">
+            <td><b>溶質</b></td>
+            <td class="align-left">被 <span class="ans-word">溶解</span> 在溶劑中的物質（通常量較少）。</td>
+            <td class="align-left">糖（固體溶質）</td>
+          </tr>
+          <tr class="interactive-item">
+            <td><b>溶劑</b></td>
+            <td class="align-left">用來 <span class="ans-word">溶解</span> 溶質的物質（通常量較多）。</td>
+            <td class="align-left">水（液體溶劑）</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="task-title" style="margin-top:7px;">二、三種濃度計算公式</div>
+      <table class="custom-table" style="font-size:12pt;">
+        <thead><tr><th style="width:22%;">濃度種類</th><th style="width:38%;">定義</th><th style="width:40%;">計算公式</th></tr></thead>
+        <tbody>
+          <tr class="interactive-item">
+            <td><b>重量百分率濃度 (%)</b></td>
+            <td class="align-left">每 <span class="ans-word">100 公克溶液</span> 中所含溶質的公克數。</td>
+            <td class="align-left">
+              <div class="formula-box" style="font-size:11.5pt;">
+                C<sub>w</sub>＝
+                <div class="fraction">
+                  <span class="fraction-top">溶質質量 (g)</span>
+                  <span class="fraction-bottom">溶液質量 (g)</span>
+                </div>
+                × 100%
+              </div>
+            </td>
+          </tr>
+          <tr class="interactive-item">
+            <td><b>體積百分率濃度 (%)</b></td>
+            <td class="align-left">每 <span class="ans-word">100 mL 溶液</span> 中所含溶質的毫升數。</td>
+            <td class="align-left">
+              <div class="formula-box" style="font-size:11.5pt;">
+                C<sub>v</sub>＝
+                <div class="fraction">
+                  <span class="fraction-top">溶質體積 (mL)</span>
+                  <span class="fraction-bottom">溶液體積 (mL)</span>
+                </div>
+                × 100%
+              </div>
+            </td>
+          </tr>
+          <tr class="interactive-item">
+            <td><b>百萬分點濃度 (ppm)</b></td>
+            <td class="align-left">一百萬單位溶液中含有多少單位的溶質。常用於極低濃度。</td>
+            <td class="align-left">
+              <div class="formula-box" style="font-size:11.5pt;">
+                1 ppm＝
+                <div class="fraction">
+                  <span class="fraction-top">1</span>
+                  <span class="fraction-bottom">1,000,000</span>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="tip-box interactive-item" style="margin-top:6px; font-size:12.5pt;">
+        💡 <b>計算重點提醒</b>：<br>
+        • 重量百分率：分母是 <b>溶液</b>（溶質＋溶劑）的總質量，而非只有溶劑！<br>
+        • 例：20 g 食鹽 ＋ 80 g 水 → 溶液總質量 = 100 g → 重量百分率 = 20/100 × 100% = <span class="ans-word">20%</span><br>
+        • ppm 換算：10 ppm 表示每 1,000,000 mL（1 m³）中含 10 mL（10 cm³）溶質。
+      </div>
+
+      <div class="page-footer">
+        <span>八年級自然與生科（上）講義</span>
+        <span>單元 2-2 溶液與濃度 (一)</span>
+        <span>第 5 頁 / 共 12 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== PAGE 6 ==================== -->
+    <div class="page" id="page6">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國中自然與生科（八上）</span>
+        <span>班級：_______ 座號：_______ 姓名：_____________</span>
+        <span>P. 6</span>
+      </div>
+      <div class="section-title">
+        <span>2-2 溶液與濃度（二）</span>
+        <span style="font-size:11pt;font-weight:normal;">溶解度、飽和與未飽和溶液</span>
+      </div>
+
+      <div class="task-title">一、溶解度的定義</div>
+      <div class="tip-box interactive-item">
+        <b>溶解度</b>：在 <span class="ans-word">定溫</span> 下，每 <span class="ans-word">100 公克溶劑</span> 中，溶質能溶解的 <span class="ans-word">最大量</span>（單位：g/100g 水）。<br>
+        例：20℃ 時食鹽的溶解度為 36 g/100g 水，表示 20℃ 時 100g 水最多可溶解 <span class="ans-word">36 g</span> 食鹽。
+      </div>
+
+      <div class="task-title">二、影響溶解度的因素：溫度</div>
+      <table class="custom-table" style="font-size:12pt;">
+        <thead><tr><th style="width:30%;">溶質種類</th><th style="width:35%;">溫度升高時的溶解度</th><th style="width:35%;">常見實例</th></tr></thead>
+        <tbody>
+          <tr class="interactive-item">
+            <td><b>大部分固體溶質</b></td>
+            <td>溶解度 <span class="ans-word">增大</span></td>
+            <td>食鹽、蔗糖、硝酸鉀</td>
+          </tr>
+          <tr class="interactive-item">
+            <td><b>少部分固體溶質</b></td>
+            <td>溶解度 <span class="ans-word">減小</span></td>
+            <td>碳酸鈣、氫氧化鈣</td>
+          </tr>
+          <tr class="interactive-item">
+            <td><b>氣體溶質</b></td>
+            <td>溶解度 <span class="ans-word">減小</span>（溫度升高氣體跑出）</td>
+            <td>CO<sub>2</sub>（汽水打嗝原理）、O<sub>2</sub></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="task-title" style="margin-top:7px;">三、飽和溶液 vs. 未飽和溶液</div>
+      <table class="custom-table">
+        <thead><tr><th style="width:20%;">名稱</th><th style="width:45%;">定義</th><th style="width:35%;">與溶解度的關係</th></tr></thead>
+        <tbody>
+          <tr class="interactive-item">
+            <td><b>飽和溶液</b></td>
+            <td class="align-left">在定溫定量溶劑下，溶質已溶解至 <span class="ans-word">最大量</span>，無法再溶解更多溶質。</td>
+            <td class="align-left">溶質量 = 溶解度</td>
+          </tr>
+          <tr class="interactive-item">
+            <td><b>未飽和溶液</b></td>
+            <td class="align-left">在定溫定量溶劑下，溶質尚 <span class="ans-word">未達最大量</span>，還可再溶解更多溶質。</td>
+            <td class="align-left">溶質量 &lt; 溶解度</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="tip-box interactive-item" style="margin-top:6px; font-size:12.5pt;">
+        💡 <b>溶解度曲線應用</b>：<br>
+        • 降低溫度或蒸發溶劑，可使未飽和溶液變成飽和溶液，甚至使溶質析出形成 <span class="ans-word">結晶</span>。<br>
+        • 升高溫度（多數固體），可使飽和溶液變回未飽和溶液（溶解度增大）。<br>
+        • 氣體溶質（如汽水中的 CO<sub>2</sub>）：升溫 → 溶解度 <span class="ans-word">減小</span> → 氣體逸出 → 打嗝。
+      </div>
+
+      <div class="page-footer">
+        <span>八年級自然與生科（上）講義</span>
+        <span>單元 2-2 溶液與濃度 (二)</span>
+        <span>第 6 頁 / 共 12 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== PAGE 7 ==================== -->
+    <div class="page" id="page7">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國中自然與生科（八上）</span>
+        <span>班級：_______ 座號：_______ 姓名：_____________</span>
+        <span>P. 7</span>
+      </div>
+      <div class="section-title">
+        <span>2-2 隨堂實戰評量</span>
+        <span style="font-size:11pt;font-weight:normal;">單元核心觀念評量題組 (Q1～Q6)</span>
+      </div>
+
+      <!-- Q1 -->
+      <div class="qa-block interactive-item">
+        <div class="qa-header">（ <span class="qa-bracket">C</span> ） 1. 已知在常溫下，100 公克水最多只能溶解 36 公克食鹽，小嬋秤取 20 公克食鹽置於杯內，再將 100 公克水加入攪拌至完全溶解，此杯食鹽水的重量百分率濃度為？</div>
+        <div class="qa-options">
+          <div>(A) 16.7%</div><div>(B) 18%</div>
+          <div>(C) 16.7%（20÷120×100%）</div><div>(D) 20%</div>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="qa-block interactive-item">
+        <div class="qa-header">（ <span class="qa-bracket">D</span> ） 2. 丹丹欲配製重量百分率濃度 8% 的食鹽水，下列方法何者最為適當？</div>
+        <div class="qa-options stacked">
+          <div>(A) 取 8 公克食鹽溶於 100 公克水中</div>
+          <div>(B) 取 8 公克食鹽溶於 108 公克水中</div>
+          <div>(C) 取 4 公克食鹽溶於 100 公克、濃度 4% 的食鹽水中</div>
+          <div>(D) 取 100 公克水，加入 100 公克、濃度 16% 的食鹽水中</div>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="qa-block interactive-item">
+        <div class="qa-header">（ <span class="qa-bracket">C</span> ） 3. 喝下汽水後，會產生打嗝的現象，這是因為下列何種原因造成？</div>
+        <div class="qa-options">
+          <div>(A) 溫度升高，氣體溶解度變大</div><div>(B) 溫度降低，氣體溶解度減小</div>
+          <div>(C) 溫度升高，氣體溶解度減小</div><div>(D) 壓力減小，氣體溶解度減小</div>
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="qa-block interactive-item">
+        <div class="qa-header">（ <span class="qa-bracket">C</span> ） 4. 若空氣中一氧化碳濃度為 10 ppm，代表每 1 立方公尺含有多少體積的一氧化碳？</div>
+        <div class="qa-options">
+          <div>(A) 10 m<sup>3</sup></div><div>(B) 100 cm<sup>3</sup></div>
+          <div>(C) 10 cm<sup>3</sup></div><div>(D) 100 m<sup>3</sup></div>
+        </div>
+      </div>
+
+      <!-- Q5 -->
+      <div class="qa-block interactive-item">
+        <div class="qa-header">（ <span class="qa-bracket">D</span> ） 5. 水是生活中最常見的溶劑，下列關於水溶液的敘述，何者正確？</div>
+        <div class="qa-options stacked">
+          <div>(A) 水溶液一定透明無色，若有顏色則表示混有其他溶劑</div>
+          <div>(B) 固體才能溶於水，液體和氣體則不能</div>
+          <div>(C) 飽和的蔗糖水溶液，溫度愈低喝起來愈甜</div>
+          <div>(D) 水是很好的溶劑，但仍有不少物質難溶於水</div>
+        </div>
+      </div>
+
+      <!-- Q6 -->
+      <div class="qa-block interactive-item">
+        <div class="qa-header">（ <span class="qa-bracket">B</span> ） 6. 若 20℃ 時糖的溶解度為 200 g/100g 水，今在 50 g 的水中加入 120 g 的糖，關於此溶液的敘述何者正確？</div>
+        <div class="qa-options stacked">
+          <div>(A) 一直攪拌，就可以溶解全部的糖</div>
+          <div>(B) 此溶液會有部分的糖沉澱（50g 水最多溶 100g 糖，120g 糖有 20g 析出）</div>
+          <div>(C) 此溶液為未飽和溶液</div>
+          <div>(D) 糖溶於水的過程稱為熔化</div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>八年級自然與生科（上）講義</span>
+        <span>單元 2-2 隨堂實戰評量</span>
+        <span>第 7 頁 / 共 12 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== PAGE 8 ==================== -->
+    <div class="page" id="page8">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國中自然與生科（八上）</span>
+        <span>班級：_______ 座號：_______ 姓名：_____________</span>
+        <span>P. 8</span>
+      </div>
+      <div class="section-title">
+        <span>2-3 混合物的分離（一）</span>
+        <span style="font-size:11pt;font-weight:normal;">三種分離方法與食鹽細砂分離實驗</span>
+      </div>
+
+      <div class="task-title">一、三種常見的混合物分離方法</div>
+      <table class="custom-table">
+        <thead><tr><th style="width:22%;">分離方法</th><th style="width:38%;">分離原理</th><th style="width:40%;">應用實例</th></tr></thead>
+        <tbody>
+          <tr class="interactive-item">
+            <td><b>過濾法</b></td>
+            <td class="align-left">利用物質的 <span class="ans-word">顆粒大小</span> 不同，以濾紙分離固液混合物。</td>
+            <td class="align-left">食鹽與細砂的分離（先溶鹽，過濾出砂）、淨水廠淨化水</td>
+          </tr>
+          <tr class="interactive-item">
+            <td><b>結晶法</b></td>
+            <td class="align-left">利用 <span class="ans-word">減少溶劑</span> 或 <span class="ans-word">改變溫度</span>，使溶質由飽和溶液析出形成結晶。</td>
+            <td class="align-left">海水曬鹽（蒸發結晶）、製備冰糖（降溫結晶）</td>
+          </tr>
+          <tr class="interactive-item">
+            <td><b>濾紙色層分析法</b></td>
+            <td class="align-left">利用物質在溶劑中對濾紙的 <span class="ans-word">吸附能力</span> 不同，使混合物分離。</td>
+            <td class="align-left">分析黑色墨水中的色素成分、植物葉片中的色素分析</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="task-title" style="margin-top:7px;">二、食鹽與細砂分離實驗（四步驟流程）</div>
+      <div class="fig-row">
+        <div class="fig-card" style="flex:1; max-width:280px;">
+          <img src="../images/science-8-2-handout/image030.jpg" alt="過濾實驗圖" style="max-height:100px;">
+          <div class="fig-caption">圖 2-4 過濾分離細砂</div>
+        </div>
+        <div class="green-box" style="flex:1; margin:0; font-size:12.5pt;">
+          <b>【實驗步驟順序】</b>（一定要照順序！）<br>
+          ① <span class="ans-word">溶解</span>：加水溶化食鹽，細砂不溶。<br>
+          ② <span class="ans-word">過濾</span>：利用顆粒大小差異，過濾出細砂（殘留在濾紙上）。<br>
+          ③ <span class="ans-word">蒸發</span>：加熱食鹽水，使水蒸發。<br>
+          ④ <span class="ans-word">結晶</span>：溶劑減少，食鹽析出成結晶。
+        </div>
+      </div>
+
+      <div class="tip-box interactive-item" style="margin-top:6px; font-size:12.5pt;">
+        💡 <b>分離方法判斷口訣</b>：<br>
+        • 固液混合、顆粒大小不同 → <span class="ans-word">過濾法</span><br>
+        • 想要取出溶質結晶 → <span class="ans-word">結晶法</span>（蒸發或降溫）<br>
+        • 同相混合物依吸附力分離 → <span class="ans-word">色層分析法</span><br>
+        • 物理方法可分離 → 該混合物屬於 <span class="ans-word">混合物</span>（純物質無法用物理方法分離成不同成分）
+      </div>
+
+      <div class="page-footer">
+        <span>八年級自然與生科（上）講義</span>
+        <span>單元 2-3 混合物的分離 (一)</span>
+        <span>第 8 頁 / 共 12 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== PAGE 9 ==================== -->
+    <div class="page" id="page9">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國中自然與生科（八上）</span>
+        <span>班級：_______ 座號：_______ 姓名：_____________</span>
+        <span>P. 9</span>
+      </div>
+      <div class="section-title">
+        <span>2-3 隨堂實戰評量</span>
+        <span style="font-size:11pt;font-weight:normal;">單元核心觀念評量題組 (Q1～Q2)</span>
+      </div>
+
+      <!-- Q1 -->
+      <div class="qa-block interactive-item">
+        <div class="qa-header">（ <span class="qa-bracket">C</span> ） 1. 有關食鹽與細砂分離的實驗過程中，下列哪一個實驗步驟的順序是正確的？</div>
+        <div class="qa-options stacked">
+          <div>(A) 過濾 → 溶解 → 蒸發 → 結晶</div>
+          <div>(B) 過濾 → 蒸發 → 溶解 → 結晶</div>
+          <div>(C) 溶解 → 過濾 → 蒸發 → 結晶（正確順序：先溶解使食鹽進入水中，再過濾去除細砂，最後蒸發結晶取得食鹽）</div>
+          <div>(D) 溶解 → 過濾 → 結晶 → 蒸發</div>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="qa-block interactive-item">
+        <div class="qa-header">（ <span class="qa-bracket">C</span> ） 2. 承上題，哪一步驟是利用物質的顆粒大小不同，來達到分離物質的目的？</div>
+        <div class="qa-options">
+          <div>(A) 溶解</div><div>(B) 結晶</div>
+          <div>(C) 過濾</div><div>(D) 蒸發</div>
+        </div>
+      </div>
+
+      <div class="task-title" style="margin-top:14px;">補充題：濃度計算綜合練習</div>
+
+      <!-- Q3 補充 -->
+      <div class="qa-block interactive-item">
+        <div class="qa-header">（　　） 甲、取 30 公克食鹽溶於 270 公克水中，請計算此食鹽水的重量百分率濃度？</div>
+        <div class="qa-options stacked">
+          <div>(A) 10%</div><div>(B) 11.1%</div>
+          <div class="ans-word">(A) 30÷(30+270)×100%＝30÷300×100%＝<b>10%</b></div><div></div>
+        </div>
+      </div>
+
+      <!-- Q4 補充 -->
+      <div class="qa-block interactive-item">
+        <div class="qa-header">（　　） 乙、若酒精的體積百分率濃度為 75%，代表每 100 mL 溶液中含有多少 mL 酒精？</div>
+        <div class="qa-options stacked">
+          <div>(A) 7.5 mL</div><div>(B) 25 mL</div>
+          <div class="ans-word">(C) 75 mL（體積百分率 75% 表示每 100 mL 溶液含 75 mL 溶質）</div><div></div>
+        </div>
+      </div>
+
+      <!-- Q5 補充 -->
+      <div class="qa-block interactive-item">
+        <div class="qa-header">（　　） 丙、若某河川水中鉛含量為 50 ppm，代表每 1,000,000 mL 水中含有多少 mL 的鉛？</div>
+        <div class="qa-options stacked">
+          <div>(A) 0.5 mL</div><div>(B) 5 mL</div>
+          <div class="ans-word">(C) 50 mL（50 ppm 即每百萬分之 50，也就是每 1,000,000 mL 含 50 mL）</div><div></div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>八年級自然與生科（上）講義</span>
+        <span>單元 2-3 隨堂實戰評量</span>
+        <span>第 9 頁 / 共 12 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== PAGE 10 ==================== -->
+    <div class="page" id="page10">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國中自然與生科（八上）</span>
+        <span>班級：_______ 座號：_______ 姓名：_____________</span>
+        <span>P. 10</span>
+      </div>
+      <div class="main-title">第 2 章 認識物質 全章知識體系心智圖</div>
+      <div class="section-title">
+        <span>全章知識地圖導覽</span>
+        <span style="font-size:11pt;font-weight:normal;">三大主題核心架構梳理</span>
+      </div>
+
+      <div class="grid-2col" style="margin-top:6px;">
+        <div class="tip-box interactive-item" style="margin:0; background:#f0fdf4; border-color:#86efac;">
+          <div style="font-weight:bold;font-size:14pt;color:#166534;margin-bottom:4px;">📌 2-1 認識物質</div>
+          <ul style="margin:0;padding-left:16px;font-size:12pt;line-height:1.5;">
+            <li><b>三態變化</b>：固↔液↔氣（熔化/凝固/汽化/凝結/昇華/凝華）；吸熱向上、放熱向下。</li>
+            <li><b>物理變化</b>：本質不變，無新物質；<b>化學變化</b>：本質改變，有新物質。</li>
+            <li><b>物理性質</b>：不需化學變化可觀測（熔點、密度）；<b>化學性質</b>：需化學變化才能觀測（可燃性）。</li>
+            <li><b>空氣組成</b>：N<sub>2</sub>(78%) &gt; O<sub>2</sub>(21%) &gt; Ar(0.9%)</li>
+            <li><b>純物質</b>：固定成分、固定熔沸點；<b>混合物</b>：無固定比例，可物理分離。</li>
+          </ul>
+        </div>
+        <div class="tip-box interactive-item" style="margin:0; background:#eff6ff; border-color:#93c5fd;">
+          <div style="font-weight:bold;font-size:14pt;color:#1e40af;margin-bottom:4px;">📌 2-2 溶液與濃度</div>
+          <ul style="margin:0;padding-left:16px;font-size:12pt;line-height:1.5;">
+            <li><b>溶液</b>：溶質＋溶劑；以水為溶劑稱水溶液。</li>
+            <li><b>重量%</b> = 溶質(g)÷溶液(g)×100%</li>
+            <li><b>體積%</b> = 溶質(mL)÷溶液(mL)×100%</li>
+            <li><b>ppm</b> = 溶質÷溶液 ÷ 1,000,000</li>
+            <li><b>溶解度</b>：定溫下 100g 溶劑可溶最大溶質量。固體多數↑溫溶解度↑；氣體↑溫溶解度↓。</li>
+            <li><b>飽和溶液</b>：已達最大溶解量；<b>未飽和</b>：尚未達最大量。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tip-box interactive-item" style="margin-top:8px; background:#faf5ff; border-color:#d8b4fe;">
+        <div style="font-weight:bold;font-size:14pt;color:#6b21a8;margin-bottom:4px;">📌 2-3 混合物的分離</div>
+        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; font-size:12pt;">
+          <div><b>過濾法</b><br>原理：顆粒大小<br>應用：食鹽水過濾細砂</div>
+          <div><b>結晶法</b><br>原理：減少溶劑/改變溫度<br>應用：蒸發結晶取食鹽、降溫結晶製冰糖</div>
+          <div><b>色層分析法</b><br>原理：吸附能力不同<br>應用：分析墨水色素成分</div>
+        </div>
+        <div style="margin-top:5px; font-size:12pt;">
+          <b>食鹽＆細砂分離四步驟</b>：<span class="ans-word">溶解</span> → <span class="ans-word">過濾</span> → <span class="ans-word">蒸發</span> → <span class="ans-word">結晶</span>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>八年級自然與生科（上）講義</span>
+        <span>第 2 章 全章知識體系心智圖</span>
+        <span>第 10 頁 / 共 12 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== PAGE 11 ==================== -->
+    <div class="page" id="page11">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國中自然與生科（八上）</span>
+        <span>班級：_______ 座號：_______ 姓名：_____________</span>
+        <span>P. 11</span>
+      </div>
+      <div class="main-title">第 2 章 考前盤點與自我檢核</div>
+      <div class="section-title">
+        <span>全章常考盲點對照與自我檢核</span>
+        <span style="font-size:11pt;font-weight:normal;">重點梳理 ＆ 課後通關檢核</span>
+      </div>
+
+      <table class="custom-table" style="font-size:12pt; margin-top:5px;">
+        <thead><tr><th style="width:22%;">小節主題</th><th style="width:78%;">核心概念精華與常考盲點對照</th></tr></thead>
+        <tbody>
+          <tr class="interactive-item">
+            <td><b>2-1 物質三態</b></td>
+            <td class="align-left">
+              • <b>昇華 vs. 凝華</b>：昇華（固→氣，吸熱）；凝華（氣→固，放熱）。結霜是<b>凝華</b>，不是凝固！<br>
+              • <b>物理 vs. 化學</b>：有無新物質產生是關鍵。水沸騰是物理變化；鐵燃燒是化學變化。<br>
+              • <b>空氣主成分</b>：氮氣 78%（最多）＞ 氧氣 21%；氧氣<b>助燃</b>但本身<b>不可燃</b>。
+            </td>
+          </tr>
+          <tr class="interactive-item">
+            <td><b>2-2 溶液濃度</b></td>
+            <td class="align-left">
+              • <b>重量%分母</b>：是「溶液」質量（＝溶質＋溶劑），<b>不是</b>溶劑單獨的質量！<br>
+              • <b>打嗝原理</b>：溫度升高 → CO<sub>2</sub>（氣體）溶解度 <b>下降</b> → 氣體逸出 → 打嗝。<br>
+              • <b>飽和溶液加熱</b>：溫度升高多數固體溶解度增大 → 飽和變未飽和（溶質全溶）。
+            </td>
+          </tr>
+          <tr class="interactive-item">
+            <td><b>2-3 混合物分離</b></td>
+            <td class="align-left">
+              • <b>食鹽細砂步驟順序</b>：溶解→過濾→蒸發→結晶（<b>不可先過濾</b>，因食鹽顆粒也大於濾紙孔隙！）<br>
+              • <b>過濾</b>：分離顆粒大小不同的固液混合物；<b>結晶</b>：使溶質析出。<br>
+              • <b>色層分析</b>：吸附力弱的色素移動距離<b>較長</b>（跑得快）。
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="task-title" style="margin-top:10px;">二、課後 6 大能力通關檢核清單</div>
+      <div class="tip-box interactive-item" style="font-size:12.5pt;line-height:1.6;margin:0;">
+        <span class="ans-word">☑</span> 1. 我能完整說出物質六種三態變化的名稱，並區分吸熱/放熱。<br>
+        <span class="ans-word">☑</span> 2. 我能舉例說明物理性質/化學性質、物理變化/化學變化的差別。<br>
+        <span class="ans-word">☑</span> 3. 我能熟練計算重量百分率濃度（特別記住分母是溶液而非溶劑）。<br>
+        <span class="ans-word">☑</span> 4. 我能解釋打嗝原理，以及固體/氣體溶質溶解度與溫度的關係。<br>
+        <span class="ans-word">☑</span> 5. 我能說出食鹽與細砂分離實驗的四步驟順序及每步驟的分離原理。<br>
+        <span class="ans-word">☑</span> 6. 我能判斷某物質屬於純物質還是混合物，並選出合適的分離方法。
+      </div>
+
+      <div class="page-footer">
+        <span>八年級自然與生科（上）講義</span>
+        <span>第 2 章 考前盤點與自我檢核</span>
+        <span>第 11 頁 / 共 12 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== PAGE 12 ==================== -->
+    <div class="page" id="page12">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國中自然與生科（八上）</span>
+        <span>班級：_______ 座號：_______ 姓名：_____________</span>
+        <span>P. 12</span>
+      </div>
+      <div class="section-title">
+        <span>第 2 章 濃度計算專頁</span>
+        <span style="font-size:11pt;font-weight:normal;">課堂實作練習（大屏點擊顯解答）</span>
+      </div>
+
+      <div class="task-title">一、重量百分率濃度計算（計算框，可直接書寫）</div>
+
+      <div class="qa-block interactive-item" style="margin-bottom:10px;">
+        <div class="qa-header">甲、將 15 公克糖溶於 85 公克水中，請計算此糖水的重量百分率濃度。</div>
+        <div style="min-height:65px; border:1px dashed #cbd5e1; border-radius:6px; padding:6px 10px; background:#f8fafc; margin-top:5px;">
+          <span class="ans-word">解：C<sub>w</sub> = 15g ÷ (15+85)g × 100% = 15÷100 × 100% = 15%</span>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item" style="margin-bottom:10px;">
+        <div class="qa-header">乙、配製 16% 食鹽水 200 公克，需食鹽幾公克？水幾公克？</div>
+        <div style="min-height:65px; border:1px dashed #cbd5e1; border-radius:6px; padding:6px 10px; background:#f8fafc; margin-top:5px;">
+          <span class="ans-word">解：食鹽 = 200g × 16% = 32g；水 = 200 - 32 = 168g</span>
+        </div>
+      </div>
+
+      <div class="task-title">二、ppm 濃度計算</div>
+
+      <div class="qa-block interactive-item" style="margin-bottom:10px;">
+        <div class="qa-header">丙、飲用水標準規定砷含量不得超過 10 ppm，若 1 公升（1000 mL）飲用水中最多含有多少 mL 的砷？</div>
+        <div style="min-height:55px; border:1px dashed #cbd5e1; border-radius:6px; padding:6px 10px; background:#f8fafc; margin-top:5px;">
+          <span class="ans-word">解：10 ppm = 10÷1,000,000；1,000 mL × (10÷1,000,000) = 0.01 mL 砷</span>
+        </div>
+      </div>
+
+      <div class="task-title">三、溶解度判斷（飽和/未飽和）</div>
+
+      <div class="qa-block interactive-item" style="margin-bottom:10px;">
+        <div class="qa-header">丁、已知 30℃ 時硝酸鉀的溶解度為 45 g/100g 水。若在 100g 水中加入 50g 硝酸鉀，此溶液是飽和還是未飽和？最終溶質有多少公克析出？</div>
+        <div style="min-height:65px; border:1px dashed #cbd5e1; border-radius:6px; padding:6px 10px; background:#f8fafc; margin-top:5px;">
+          <span class="ans-word">解：溶解度 45g ＜ 加入 50g → 飽和溶液，析出 50 - 45 = 5g 硝酸鉀結晶</span>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>八年級自然與生科（上）講義</span>
+        <span>第 2 章 濃度計算練習專頁</span>
+        <span>第 12 頁 / 共 12 頁</span>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    document.addEventListener('click', function(e) {
+      if (document.body.classList.contains('pen-mode')) return;
+      if (e.target.classList.contains('ans-word') || e.target.classList.contains('ans-slot') || e.target.classList.contains('qa-bracket')) {
+        e.stopPropagation();
+        e.target.classList.toggle('revealed');
+        return;
+      }
+      const item = e.target.closest('.interactive-item, .qa-block, .item-line');
+      if (item) item.classList.toggle('show-one');
+    });
+    document.addEventListener('dblclick', function(e) {
+      if (document.body.classList.contains('pen-mode')) return;
+      if (e.target.classList.contains('ans-word') || e.target.classList.contains('ans-slot') || e.target.classList.contains('qa-bracket')) {
+        e.stopPropagation();
+        e.target.classList.toggle('revealed');
+      }
+    });
+    let allAnsRevealed = false;
+    function toggleAllAnswers() {
+      allAnsRevealed = !allAnsRevealed;
+      document.body.classList.toggle('show-ans', allAnsRevealed);
+      const icon = document.getElementById('ansIcon');
+      const btn = document.getElementById('toggleAllAnsBtn');
+      if (allAnsRevealed) { icon.textContent = '🙈'; btn.classList.add('active'); }
+      else {
+        icon.textContent = '👁️'; btn.classList.remove('active');
+        document.querySelectorAll('.show-one').forEach(el => el.classList.remove('show-one'));
+        document.querySelectorAll('.revealed').forEach(el => el.classList.remove('revealed'));
+      }
+    }
+    function toggleTocMenu(e) {
+      e.stopPropagation();
+      document.getElementById('tocMenu').classList.toggle('show');
+    }
+    document.addEventListener('click', function(e) {
+      const menu = document.getElementById('tocMenu');
+      if (menu && menu.classList.contains('show') && !e.target.closest('.toc-menu') && e.target.id !== 'tocBtn') {
+        menu.classList.remove('show');
+      }
+    });
+    function jumpTo(pageId) {
+      const target = document.getElementById(pageId);
+      if (target) { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); document.getElementById('tocMenu').classList.remove('show'); }
+    }
+    let isPenMode = false, currentColor = 'rgba(250,204,21,0.45)', currentSize = 4;
+    const canvases = [], contexts = [];
+    function initCanvases() {
+      document.querySelectorAll('.page').forEach(page => {
+        const canvas = page.querySelector('.drawing-canvas');
+        if (!canvas) return;
+        canvases.push(canvas); const ctx = canvas.getContext('2d'); contexts.push(ctx);
+        canvas.width = canvas.offsetWidth; canvas.height = canvas.offsetHeight;
+        let drawing = false, lastX = 0, lastY = 0;
+        canvas.addEventListener('mousedown', e => { if (!isPenMode) return; drawing = true; const r = canvas.getBoundingClientRect(); lastX = e.clientX - r.left; lastY = e.clientY - r.top; });
+        canvas.addEventListener('mousemove', e => { if (!drawing || !isPenMode) return; const r = canvas.getBoundingClientRect(); const x = e.clientX - r.left, y = e.clientY - r.top; ctx.strokeStyle = currentColor; ctx.lineWidth = currentSize; ctx.lineCap = 'round'; ctx.beginPath(); ctx.moveTo(lastX, lastY); ctx.lineTo(x, y); ctx.stroke(); lastX = x; lastY = y; });
+        window.addEventListener('mouseup', () => { drawing = false; });
+        canvas.addEventListener('touchstart', e => { if (!isPenMode) return; drawing = true; const r = canvas.getBoundingClientRect(); lastX = e.touches[0].clientX - r.left; lastY = e.touches[0].clientY - r.top; e.preventDefault(); }, { passive: false });
+        canvas.addEventListener('touchmove', e => { if (!drawing || !isPenMode) return; const r = canvas.getBoundingClientRect(); const x = e.touches[0].clientX - r.left, y = e.touches[0].clientY - r.top; ctx.strokeStyle = currentColor; ctx.lineWidth = currentSize; ctx.lineCap = 'round'; ctx.beginPath(); ctx.moveTo(lastX, lastY); ctx.lineTo(x, y); ctx.stroke(); lastX = x; lastY = y; e.preventDefault(); }, { passive: false });
+        canvas.addEventListener('touchend', () => { drawing = false; });
+      });
+    }
+    window.addEventListener('resize', () => canvases.forEach(c => { c.width = c.offsetWidth; c.height = c.offsetHeight; }));
+    function togglePenMode() { isPenMode = !isPenMode; document.body.classList.toggle('pen-mode', isPenMode); document.getElementById('penBtn').classList.toggle('active', isPenMode); document.getElementById('penOptions').style.display = isPenMode ? 'flex' : 'none'; }
+    function setPenColor(color, el) { currentColor = color; document.querySelectorAll('.color-dot').forEach(d => d.classList.remove('active')); el.classList.add('active'); }
+    function setPenSize(size, el) { currentSize = size; document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active')); el.classList.add('active'); }
+    function clearAllDrawings() { contexts.forEach((ctx, i) => ctx.clearRect(0, 0, canvases[i].width, canvases[i].height)); }
+    window.addEventListener('DOMContentLoaded', () => initCanvases());
+  </script>
+</body>
+</html>
