@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>國二理化（上）第 5 章 溫度與熱 互動電子書</title>
+  <!-- 電子書目錄身分標記（見 SKILL.md §11 與 AGENTS.md） -->
+  <meta name="ebook:subject" content="science">
+  <meta name="ebook:grade" content="8">
+  <meta name="ebook:type" content="handout">
+  <meta name="ebook:pages" content="15">
+  <meta name="ebook:level" content="std">
+  <meta name="ebook:summary" content="國二理化第5章溫度與熱完整講義（15頁），涵蓋：溫度計原理與溫標制定、熱量定義與熱平衡、比熱公式H=mSΔT應用、熱脹冷縮與水的異常膨脹、三態變化溫度時間圖、傳導對流輻射三種傳播方式、全章重點整理。">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <style>
+    @page { size: A4 portrait; margin: 10mm 12mm; }
+    * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body {
+      margin: 0; padding: 0; background-color: #e2e8f0;
+      font-family: "Times New Roman", "標楷體", "DFKai-SB", "BiauKai", serif;
+      font-size: 14pt; line-height: 1.5; color: #111;
+    }
+    .classroom-toolbar {
+      position: fixed; top: 14px; right: 20px; z-index: 9999;
+      display: flex; align-items: center; gap: 4px;
+      background: rgba(255,255,255,0.95); backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 4px 10px; border-radius: 40px; border: 1px solid rgba(203,213,225,0.9);
+      box-shadow: 0 4px 22px rgba(0,0,0,0.15);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .tool-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 36px; height: 36px; font-size: 18px; color: #334155;
+      background: transparent; border: 1px solid transparent; border-radius: 50%;
+      cursor: pointer; transition: all 0.15s ease; padding: 0; user-select: none;
+      text-decoration: none;
+    }
+    .tool-btn:hover { background: #f1f5f9; transform: scale(1.1); }
+    .tool-btn.active { background: #0f172a; color: #ffffff; }
+    .btn-toggle-ans.active { background: #eff6ff; border-color: #3b82f6; }
+    .toolbar-divider { width: 1px; height: 20px; background: #cbd5e1; margin: 0 4px; }
+    .toc-menu {
+      display: none; position: absolute; top: 46px; left: 0;
+      background: #ffffff; border: 1px solid #cbd5e1; border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.18); padding: 8px 0;
+      min-width: 320px; max-height: 500px; overflow-y: auto; z-index: 10000;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .toc-menu.show { display: block; animation: tocFadeIn 0.15s ease-out; }
+    @keyframes tocFadeIn { from { opacity:0; transform:translateY(-6px); } to { opacity:1; transform:translateY(0); } }
+    .toc-menu-title { padding: 6px 16px 8px 16px; font-size: 13px; font-weight: bold; color: #64748b; border-bottom: 1px solid #f1f5f9; }
+    .toc-menu-item { padding: 7px 16px; font-size: 13px; color: #334155; cursor: pointer; display: flex; align-items: center; justify-content: space-between; transition: background 0.12s, color 0.12s; }
+    .toc-menu-item:hover { background: #eff6ff; color: #2563eb; font-weight: bold; }
+    .toc-page-badge { font-size: 11.5px; color: #94a3b8; font-weight: normal; }
+    .toc-menu-item:hover .toc-page-badge { color: #2563eb; }
+    .pen-options { display: none; align-items: center; gap: 6px; background: #f8fafc; padding: 3px 8px; border-radius: 20px; border: 1px solid #e2e8f0; margin-left: 2px; }
+    .color-picker { display: flex; align-items: center; gap: 5px; }
+    .color-dot { width: 16px; height: 16px; border-radius: 50%; cursor: pointer; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.2); }
+    .color-dot.active { transform: scale(1.2); box-shadow: 0 0 0 2px #0f172a; }
+    .size-picker { display: flex; align-items: center; gap: 3px; }
+    .size-btn { border: 1px solid #cbd5e1; background: #fff; color: #475569; font-size: 11px; font-weight: bold; padding: 2px 7px; border-radius: 10px; cursor: pointer; }
+    .size-btn.active { background: #0f172a; color: #fff; border-color: #0f172a; }
+    .pages-container { padding: 20px 0 40px 0; }
+    .page {
+      box-sizing: border-box; width: 210mm; min-height: 297mm; max-height: 297mm;
+      padding: 10mm 15mm 8mm 15mm; margin: 0 auto 25px auto;
+      background: #ffffff; box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+      page-break-after: always; break-after: page; position: relative;
+      display: flex; flex-direction: column; justify-content: flex-start;
+      overflow: hidden;
+    }
+    .drawing-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 20; pointer-events: none; }
+    body.pen-mode .drawing-canvas { pointer-events: auto; cursor: crosshair; }
+    .page-header {
+      display: flex; justify-content: space-between; border-bottom: 2px solid #334155;
+      padding-bottom: 4px; margin-bottom: 8px; font-size: 12pt; font-weight: bold; color: #1e293b;
+    }
+    .page-footer {
+      margin-top: auto; padding-top: 5px; border-top: 1px solid #cbd5e1;
+      display: flex; justify-content: space-between; font-size: 10.5pt; color: #64748b;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .main-title { font-size: 18pt; font-weight: 900; text-align: center; margin: 2px 0 6px 0; color: #0f172a; }
+    .section-title {
+      font-size: 14.5pt; font-weight: bold; background: #e2e8f0; padding: 4px 10px;
+      border-radius: 6px; margin: 5px 0 6px 0; border-left: 6px solid #2563eb; color: #0f172a;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .task-title { font-size: 13.5pt; font-weight: bold; margin: 6px 0 4px 0; color: #1e293b; }
+    .tip-box {
+      border: 1.5px solid #93c5fd; background-color: #f0f9ff; border-radius: 6px;
+      padding: 6px 12px; margin: 5px 0 7px 0; font-size: 13pt; line-height: 1.45;
+    }
+    .item-line { padding: 3px 6px; border-radius: 4px; line-height: 1.5; font-size: 13.5pt; }
+    body:not(.pen-mode) .interactive-item { cursor: pointer; }
+    body:not(.pen-mode) .interactive-item:hover { background-color: #f8fafc; outline: 1px dashed #93c5fd; }
+    .correct-choice { display: inline-block; padding: 0 4px; transition: all 0.2s; }
+    .show-ans .correct-choice, .show-one .correct-choice, .correct-choice.revealed {
+      color: #dc2626 !important; font-weight: bold !important; border: 2px solid #dc2626 !important;
+      border-radius: 12px !important; background-color: #fef2f2 !important; padding: 0 5px !important;
+    }
+    .ans-slot { display: inline-block; min-width: 24px; text-align: center; color: transparent; font-weight: bold; cursor: pointer; user-select: none; }
+    .show-ans .ans-slot, .show-one .ans-slot, .ans-slot.revealed { color: #dc2626 !important; }
+    .ans-word { color: transparent; font-weight: bold; border-bottom: 1.5px solid #333; padding: 0 3px; cursor: pointer; user-select: none; }
+    .show-ans .ans-word, .show-one .ans-word, .ans-word.revealed { color: #dc2626 !important; }
+    body:not(.pen-mode) .ans-word:hover, body:not(.pen-mode) .ans-slot:hover { background-color: #fee2e2; }
+    .qa-block { margin-bottom: 9px; padding: 5px 8px; border-radius: 6px; line-height: 1.48; font-size: 13.5pt; }
+    .qa-header { font-weight: bold; }
+    .qa-bracket { color: transparent; font-weight: bold; padding: 0 2px; cursor: pointer; user-select: none; }
+    .show-ans .qa-bracket, .show-one .qa-bracket, .qa-bracket.revealed { color: #dc2626 !important; }
+    .qa-options { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 12px; margin-top: 4px; padding-left: 20px; font-size: 13pt; }
+    .qa-options.stacked { display: flex; flex-direction: column; gap: 3px; }
+    table.custom-table { width: 100%; border-collapse: collapse; margin: 5px 0; font-size: 12.5pt; line-height: 1.38; }
+    table.custom-table th, table.custom-table td { border: 1px solid #64748b; padding: 4px 7px; text-align: center; }
+    table.custom-table th { background-color: #f1f5f9; font-weight: bold; color: #0f172a; }
+    table.custom-table td.align-left { text-align: left; }
+    .calc-workspace { margin: 4px 0 2px 20px; padding: 5px 12px; border: 1px dashed #94a3b8; border-radius: 6px; background-color: #f8fafc; font-size: 12.5pt; }
+    .calc-solution { color: transparent; line-height: 1.48; }
+    .show-ans .calc-solution, .show-one .calc-solution, .calc-solution.revealed { color: #dc2626 !important; font-weight: bold; }
+    @media print {
+      @page { size: A4 portrait; margin: 10mm 12mm; }
+      html, body { width: 100% !important; height: auto !important; background: transparent !important; padding: 0 !important; margin: 0 !important; }
+      .no-print, .classroom-toolbar, .toc-menu, .drawing-canvas { display: none !important; }
+      .pages-container { display: block !important; padding: 0 !important; margin: 0 !important; }
+      .page {
+        box-sizing: border-box !important; margin: 0 !important; box-shadow: none !important;
+        width: 100% !important; height: 275mm !important; max-height: 275mm !important;
+        min-height: 0 !important; padding: 0 !important; page-break-after: always !important;
+        break-after: page !important; page-break-inside: avoid !important; break-inside: avoid !important;
+        display: flex !important; flex-direction: column !important; justify-content: flex-start !important;
+        overflow: hidden !important;
+      }
+      .page:last-child { page-break-after: avoid !important; break-after: avoid !important; }
+      .page-footer { margin-top: auto !important; padding-top: 4px !important; }
+      .correct-choice { color: inherit !important; font-weight: normal !important; border: none !important; background: transparent !important; padding: 0 !important; }
+      .ans-slot, .ans-word, .qa-bracket, .calc-solution { color: transparent !important; }
+      .calc-workspace { background: transparent !important; border-color: #cbd5e1 !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 課堂懸浮工具列 -->
+  <div class="classroom-toolbar no-print">
+    <!-- 回電子書目錄 -->
+    <a class="tool-btn" href="../index.html" title="回電子書目錄">🏠</a>
+    <!-- 目錄跳轉選單 -->
+    <div style="position: relative;">
+      <button class="tool-btn" id="tocBtn" onclick="toggleTocMenu(event)" title="單元章節目錄">📑</button>
+      <div class="toc-menu" id="tocMenu">
+        <div class="toc-menu-title">📖 第 5 章 單元章節目錄 (全 15 頁)</div>
+        <div class="toc-menu-item" onclick="jumpTo('page1')"><span>5-1 溫度與溫度計（觀念）</span><span class="toc-page-badge">P.1</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page2')"><span>5-1 隨堂評量（Q1～Q2）</span><span class="toc-page-badge">P.2</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page3')"><span>5-2 熱量（觀念）</span><span class="toc-page-badge">P.3</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page4')"><span>5-2 隨堂評量（Q1～Q4）</span><span class="toc-page-badge">P.4</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page5')"><span>5-3 比熱（觀念）</span><span class="toc-page-badge">P.5</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page6')"><span>5-3 隨堂評量（Q1～Q4）</span><span class="toc-page-badge">P.6</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page7')"><span>5-4 熱對物質的影響（觀念一：熱脹冷縮）</span><span class="toc-page-badge">P.7</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page8')"><span>5-4 熱對物質的影響（觀念二：三態變化）</span><span class="toc-page-badge">P.8</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page9')"><span>5-4 隨堂評量（Q1～Q4）</span><span class="toc-page-badge">P.9</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page10')"><span>5-4 隨堂評量（Q5 多選題）</span><span class="toc-page-badge">P.10</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page11')"><span>5-5 熱的傳播方式（觀念一：傳導、對流）</span><span class="toc-page-badge">P.11</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page12')"><span>5-5 熱的傳播方式（觀念二：輻射）</span><span class="toc-page-badge">P.12</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page13')"><span>5-5 隨堂評量（Q1～Q4）</span><span class="toc-page-badge">P.13</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page14')"><span>5-5 隨堂評量（Q5～Q8）</span><span class="toc-page-badge">P.14</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page15')"><span>第 5 章 核心重點整理</span><span class="toc-page-badge">P.15</span></div>
+      </div>
+    </div>
+    <!-- 一鍵顯答 -->
+    <button class="tool-btn btn-toggle-ans" id="toggleAllAnsBtn" onclick="toggleAllAnswers()" title="一鍵全開/全隱答案">
+      <span id="ansIcon">👁️</span>
+    </button>
+    <!-- 畫筆切換 -->
+    <button class="tool-btn" id="penBtn" onclick="togglePenMode()" title="螢光筆/板書筆">✏️</button>
+    <!-- 畫筆選單 -->
+    <div class="pen-options" id="penOptions">
+      <div class="color-picker">
+        <span class="color-dot active" style="background:#facc15;" onclick="setPenColor('rgba(250,204,21,0.45)', this)" title="螢光黃"></span>
+        <span class="color-dot" style="background:#ef4444;" onclick="setPenColor('rgba(239,68,68,0.8)', this)" title="紅筆"></span>
+        <span class="color-dot" style="background:#3b82f6;" onclick="setPenColor('rgba(37,99,235,0.8)', this)" title="藍筆"></span>
+        <span class="color-dot" style="background:#10b981;" onclick="setPenColor('rgba(16,185,129,0.8)', this)" title="綠筆"></span>
+      </div>
+      <div class="toolbar-divider" style="height:14px; margin:0 2px;"></div>
+      <div class="size-picker">
+        <span class="size-btn active" onclick="setPenSize(3, this)">細</span>
+        <span class="size-btn" onclick="setPenSize(7, this)">中</span>
+        <span class="size-btn" onclick="setPenSize(14, this)">粗</span>
+      </div>
+    </div>
+    <!-- 清除筆跡 -->
+    <button class="tool-btn" onclick="clearAllDrawings()" title="清除本頁筆跡">🧹</button>
+    <!-- 列印 -->
+    <button class="tool-btn" onclick="window.print()" title="列印純淨學習單">🖨️</button>
+  </div>
+
+  <div class="pages-container">
+
+    <!-- ==================== Page 1 ==================== -->
+    <div class="page" id="page1">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國二理化（上）講義</span>
+        <span>第 5 章 溫度與熱</span>
+        <span>P. 1</span>
+      </div>
+
+      <div class="main-title">第 5 章　溫度與熱</div>
+      <div class="section-title">
+        <span>5-1　溫度與溫度計</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #475569;">焦點一：溫度的定義、溫度計製作原理與溫標</span>
+      </div>
+
+      <div style="display:flex; gap:14px; align-items:flex-start; margin: 4px 0 6px 0;">
+        <div style="flex:1;">
+      <div class="task-title">1. 溫度計</div>
+      <div class="item-line interactive-item">(1) <span class="ans-word">溫度</span>：描述物體冷熱程度的物理量。</div>
+      <div class="item-line interactive-item">(2) 測量溫度的工具為<strong>溫度計</strong>，是利用物質 <span class="ans-word">熱脹冷縮</span> 的特性製作而成。</div>
+      <div class="item-line interactive-item">(3) 常見溫度計：</div>
+      <div class="item-line interactive-item">&emsp;a. <strong>酒精溫度計</strong>：具有低凝固點的特性，測量範圍為 −115℃ ～ 78℃。</div>
+      <div class="item-line interactive-item">&emsp;b. <strong>水銀溫度計</strong>：脹縮均勻，準確度高，測量範圍較廣（−39℃ ～ 357℃）；具有高沸點特性。</div>
+        </div>
+        <div style="text-align:center; flex-shrink:0; width:90px;">
+          <img src="../images/science-8-5-handout/image003.jpg" style="max-height:140px; max-width:100%; border-radius:4px; border:1px solid #cbd5e1;" alt="溫度計圖">
+          <div style="font-size:10.5pt; color:#64748b;">▲ 溫度計</div>
+        </div>
+      </div>
+
+      <div class="task-title" style="margin-top: 4px;">2. 溫標的制定</div>
+      <div style="display:flex; gap:14px; align-items:flex-start; margin: 3px 0;">
+        <div style="flex:1;">
+      <div class="item-line interactive-item">(1) <span class="ans-word">華氏</span>溫標（℉）：歷史上第一個溫標。</div>
+      <div class="item-line interactive-item">(2) <span class="ans-word">攝氏</span>溫標（℃）：在1大氣壓下，將水的凝固點定為 0℃，沸點定為 100℃，中間平均劃分出 100 個等分，每一等分為 1℃。</div>
+      <div class="item-line interactive-item">(3) 攝氏與華氏溫標兩者之間可以互相換算：</div>
+      <div class="tip-box" style="margin: 4px 6px 4px 12px; font-size:13pt;">
+        💡 換算公式：$\text{℉} = \frac{9}{5} \times \text{℃} + 32$，或 $\text{℃} = \frac{5}{9} \times (\text{℉} - 32)$
+      </div>
+        </div>
+        <div style="text-align:center; flex-shrink:0; width:100px;">
+          <img src="../images/science-8-5-handout/image003.jpg" style="max-height:130px; max-width:100%; border-radius:4px; border:1px solid #cbd5e1;" alt="攝氏華氏溫標">
+          <div style="font-size:10.5pt; color:#64748b;">▲ 攝氏與華氏刻度對照</div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>5-1 溫度與溫度計（觀念一）</span>
+        <span>第 1 頁 / 共 15 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 2 ==================== -->
+    <div class="page" id="page2">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國二理化（上）講義</span>
+        <span>第 5 章 溫度與熱</span>
+        <span>P. 2</span>
+      </div>
+
+      <div class="section-title">
+        <span>5-1　隨堂實戰評量</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #475569;">溫度計製作原理、熱脹冷縮與溫標</span>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ A ）</span> 1. 取一冬天校準的直尺，在夏天時測量一原子筆的長度，所得結果為 12.3 cm，則該原子筆實際的長度應為下列何者？
+        </div>
+        <div class="qa-options">
+          <div>(A) 大於 12.3 cm</div>
+          <div>(B) 小於 12.3 cm</div>
+          <div>(C) 等於 12.3 cm</div>
+          <div>(D) 不一定</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】直尺在冬天校準，夏天時因熱脹冷縮，直尺本身略有膨脹，每一刻度間距比冬天略大，所以用這支直尺量原子筆，讀數偏小。實際長度 > 12.3 cm，答案為 (A)。
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ D ）</span> 2. 阿翰操作溫度測量的實驗，他取甲、乙兩個相同的錐形瓶，插上玻璃管，甲瓶玻璃管較乙瓶細，在 20℃ 時兩瓶水面等高，將乙瓶放入 100℃ 的沸水後，結果如圖所示。關於此實驗過程，下列敘述何者<strong>錯誤</strong>？
+        </div>
+        <div style="text-align:center; margin: 4px 0;">
+          <img src="../images/science-8-5-handout/image005.jpg" style="max-height:130px; border-radius:4px; border:1px solid #cbd5e1;" alt="錐形瓶實驗圖">
+        </div>        <div class="qa-options">
+          <div>(A) 可在水中滴入紅墨水以方便觀察</div>
+          <div>(B) 此實驗是利用體積熱脹冷縮的原理</div>
+          <div>(C) 作溫度計使用時，甲測量的結果較準確</div>
+          <div>(D) 將甲瓶放入 100℃ 沸水後，液面高度也會是 12 cm</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】(A)(B)(C) 均正確。(D) 錯誤：甲管較細，相同體積膨脹量在細管中液面上升幅度更大（比乙管 12 cm 還高），不可能也剛好是 12 cm。
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>5-1 隨堂評量（Q1～Q2）</span>
+        <span>第 2 頁 / 共 15 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 3 ==================== -->
+    <div class="page" id="page3">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國二理化（上）講義</span>
+        <span>第 5 章 溫度與熱</span>
+        <span>P. 3</span>
+      </div>
+
+      <div class="section-title">
+        <span>5-2　熱量</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #475569;">焦點二：熱量定義、單位、熱量流動與熱平衡</span>
+      </div>
+
+      <div class="task-title">1. 熱量的定義與關係式</div>
+      <div class="item-line interactive-item">(1) 物體溫度的上升是由於熱源提供了 <span class="ans-word">熱量</span>，對穩定熱源而言，加熱物體的時間愈長，傳遞到物體的熱量愈多，即提供的熱量與加熱時間成 <span class="ans-word">正比</span>。</div>
+      <div class="item-line interactive-item">(2) <strong>關係式</strong>：熱量 ∝（水的質量）×（溫度變化量）</div>
+      <div style="text-align:center; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:8px 16px; margin:4px 20px; font-size:14pt;">
+        $H \propto m \times \Delta T = m \times (T_2 - T_1)$
+      </div>
+
+      <div class="task-title" style="margin-top: 6px;">2. 熱量的單位</div>
+      <div class="item-line interactive-item">a. <strong>卡（cal）：</strong>使 <span class="ans-word">1公克</span> 的水，溫度上升 <span class="ans-word">1℃</span> 所需的熱量，稱為 1 卡（cal）。</div>
+      <div class="item-line interactive-item">b. 1000 卡可以表示為 1 千卡（kcal），千卡又稱為 <span class="ans-word">大卡</span>。</div>
+
+      <div class="task-title" style="margin-top: 6px;">3. 熱量的流動與熱平衡</div>
+      <div class="item-line interactive-item">(1) 不同溫度的物體在接觸後，熱量會自 <span class="ans-word">高</span> 溫處流向 <span class="ans-word">低</span> 溫處。</div>
+      <div class="item-line interactive-item">(2) 最後兩物體溫度會相同，且不再改變，即達到 <span class="ans-word">熱平衡</span> 狀態。</div>
+      <div class="tip-box" style="margin-top: 6px;">
+        💡 <strong>觀念精粹：</strong>「溫度」描述冷熱程度，「熱量」描述能量轉移的多少。熱量流動方向：高溫 → 低溫（與溫差有關，與質量、比熱等因素無關）。
+      </div>
+
+      <div style="display:flex; gap:10px; align-items:center; margin-top:6px;">
+        <img src="../images/science-8-5-handout/image007.jpg" style="max-height:80px; border-radius:4px; border:1px solid #cbd5e1;" alt="熱量觀念圖">
+        <div style="font-size:11.5pt; color:#475569; line-height:1.6;">
+          ▲ 穩定熱源加熱：水量固定→加熱時間愈長，溫度上升愈多；水量愈多→達到相同升溫所需時間愈長。
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>5-2 熱量（觀念）</span>
+        <span>第 3 頁 / 共 15 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 4 ==================== -->
+    <div class="page" id="page4">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國二理化（上）講義</span>
+        <span>第 5 章 溫度與熱</span>
+        <span>P. 4</span>
+      </div>
+
+      <div class="section-title">
+        <span>5-2　隨堂實戰評量</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #475569;">熱量關係式、熱量單位與熱平衡</span>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ B ）</span> 1. 同一穩定熱源加熱質量 m₁ 公克及 m₂ 公克的水，加熱時間相同，水溫變化分別為 ΔT₁℃ 及 ΔT₂℃，則下列何者正確？
+        </div>
+        <div class="qa-options">
+          <div>(A) m₁：m₂ ＝ ΔT₁：ΔT₂</div>
+          <div>(B) m₁ × ΔT₁ ＝ m₂ × ΔT₂</div>
+          <div>(C) m₁ × m₂ ＝ ΔT₁ × ΔT₂</div>
+          <div>(D) m₁：ΔT₁ ＝ m₂：ΔT₂</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】穩定熱源、相同時間→兩杯水吸收的熱量相同（H₁ = H₂），由 H ∝ m × ΔT，得 m₁ × ΔT₁ = m₂ × ΔT₂，答案為 (B)。
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ A ）</span> 2. 若有一個杯子內裝有質量為 10 g、溫度為 1℃ 的水，則下列敘述何者<strong>錯誤</strong>？
+        </div>
+        <div class="qa-options">
+          <div>(A) 具有 10 卡的熱量</div>
+          <div>(B) 溫度上升至 2℃，必須吸收 10 卡的熱量</div>
+          <div>(C) 比質量 10 g、溫度 3℃ 的水少含 20 卡的熱量</div>
+          <div>(D) 溫度下降至 0.5℃ 必須放出 5 卡的熱量</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】(A) 錯誤：「熱量」是在傳遞過程中才有意義，物體本身不能說「具有」多少卡的熱量（應說內能）。(B)(C)(D) 皆正確（以 H = m × ΔT 計算）。
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ A ）</span> 3. 將三個燒杯分別加入 10 g、40 g 及 70 g 皆 20℃ 的水，放在同一個穩定熱源上加熱 5 分鐘，若三杯皆未沸騰，則哪一杯的溫度會最高？
+        </div>
+        <div class="qa-options">
+          <div>(A) 10 g 的水</div>
+          <div>(B) 40 g 的水</div>
+          <div>(C) 70 g 的水</div>
+          <div>(D) 三杯水皆相同</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】穩定熱源、相同時間→各杯吸收熱量相同（H 相同）。由 ΔT = H / m 得知，質量最小的 10 g 那杯溫度上升最多，最終溫度最高。答案為 (A)。
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ B ）</span> 4. 若熱量在兩物體之間傳送，它的熱流方向為何？
+        </div>
+        <div class="qa-options">
+          <div>(A) 質量大的傳向質量小的</div>
+          <div>(B) 溫度高的傳向溫度低的</div>
+          <div>(C) 體積大的傳向體積小的</div>
+          <div>(D) 密度大的傳向密度小的</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】熱量流動的方向由溫度高低決定，永遠從高溫流向低溫，與質量、體積、密度無關。答案為 (B)。
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>5-2 隨堂評量（Q1～Q4）</span>
+        <span>第 4 頁 / 共 15 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 5 ==================== -->
+    <div class="page" id="page5">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國二理化（上）講義</span>
+        <span>第 5 章 溫度與熱</span>
+        <span>P. 5</span>
+      </div>
+
+      <div class="section-title">
+        <span>5-3　比熱</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #475569;">焦點三：比熱定義、比熱表與 H = m × S × ΔT 公式</span>
+      </div>
+
+      <div class="task-title">1. 比熱的定義與單位</div>
+      <div class="item-line interactive-item">(1) <strong>定義：</strong>使 1 公克的物質上升 <span class="ans-word">1</span>℃ 要吸收的熱量，稱為該物質的<strong>比熱</strong>。</div>
+      <div class="item-line interactive-item">(2) <strong>單位：</strong>卡 / 公克．℃（cal/g．℃）。</div>
+      <div class="item-line interactive-item">(3) 比熱可以代表物質的特性，相同狀態下，同一種純物質會有相同的比熱。</div>
+
+      <table class="custom-table" style="margin: 5px 0; font-size:12pt;">
+        <tr>
+          <th>物質</th><th>銅</th><th>鐵</th><th>鋁</th><th>冰</th><th>酒精</th><th>甘油</th><th>水</th>
+        </tr>
+        <tr>
+          <td style="font-weight:bold;">比熱（cal/g．℃）</td>
+          <td>0.093</td><td>0.113</td><td>0.217</td><td>0.55</td><td>0.57</td><td>0.58</td><td>1.0</td>
+        </tr>
+      </table>
+
+      <div class="task-title" style="margin-top: 6px;">2. 比熱的意義</div>
+      <div class="item-line interactive-item">(a) 物質比熱 <span class="ans-word">大</span> 者，溫度不易升降，故<strong>難冷難熱</strong>（如水，海邊氣溫較穩定的原因）。</div>
+      <div class="item-line interactive-item">(b) 物質比熱 <span class="ans-word">小</span> 者，溫度容易升降，故<strong>易冷易熱</strong>（如銅、鐵等金屬）。</div>
+      <div class="item-line interactive-item">(c) 對同質量比熱不同的物質，由 T₁℃ 升至 T₂℃ 時，比熱較大者<strong>吸收熱量較多</strong>；由 T₂℃ 降至 T₁℃ 時，比熱較大者<strong>放熱亦較多</strong>。</div>
+
+      <div class="task-title" style="margin-top: 6px;">3. 熱量與比熱的關係（H = m × S × ΔT）</div>
+      <div style="text-align:center; background:#f0f9ff; border:1.5px solid #93c5fd; border-radius:8px; padding:8px 20px; margin: 4px 20px; font-size:15pt; font-weight:bold;">
+        $H = m \times S \times \Delta T = m \times S \times (T_2 - T_1)$
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:4px; margin: 5px 6px; font-size:12pt; text-align:center;">
+        <div style="background:#f1f5f9; padding:4px; border-radius:4px;"><strong>H</strong><br>熱量（cal）</div>
+        <div style="background:#f1f5f9; padding:4px; border-radius:4px;"><strong>m</strong><br>質量（g）</div>
+        <div style="background:#f1f5f9; padding:4px; border-radius:4px;"><strong>S</strong><br>比熱（cal/g．℃）</div>
+        <div style="background:#f1f5f9; padding:4px; border-radius:4px;"><strong>ΔT</strong><br>溫度變化（℃）</div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>5-3 比熱（觀念）</span>
+        <span>第 5 頁 / 共 15 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 6 ==================== -->
+    <div class="page" id="page6">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國二理化（上）講義</span>
+        <span>第 5 章 溫度與熱</span>
+        <span>P. 6</span>
+      </div>
+
+      <div class="section-title">
+        <span>5-3　隨堂實戰評量</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #475569;">比熱公式 H = mSΔT 應用與比熱大小比較</span>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ C ）</span> 1. 質量相同的甲、乙兩物體，其比熱之比為 2：1，若吸收相同的熱量後，升高的溫度比為何？
+        </div>
+        <div class="qa-options">
+          <div>(A) 2：1</div>
+          <div>(B) 1：1</div>
+          <div>(C) 1：2</div>
+          <div>(D) 1：3</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】由 H = mSΔT，m 與 H 相同，∴ ΔT ∝ 1/S。比熱比 S甲：S乙 = 2：1，故 ΔT甲：ΔT乙 = 1/2：1/1 = 1：2，答案為 (C)。
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ B ）</span> 2. 以相同的穩定熱源加熱 100 公克、25℃ 的水，可使水溫上升至 85℃，在相同時間內加熱 600 公克某液體（比熱 0.5 cal/g．℃），溫度會上升多少℃？
+        </div>
+        <div class="qa-options">
+          <div>(A) 10℃</div>
+          <div>(B) 20℃</div>
+          <div>(C) 30℃</div>
+          <div>(D) 40℃</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】穩定熱源、相同時間→吸熱相同。水吸熱：H = 100 × 1.0 × (85−25) = 6000 cal。某液體：6000 = 600 × 0.5 × ΔT，∴ ΔT = 6000/300 = 20℃，答案為 (B)。
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ A ）</span> 3. 某生利用一穩定的熱源來做測定比熱的實驗，他各取 100 公克的水及某液體分別加熱，其溫度與時間的關係如圖所示。假設某液體和水在同一時間內吸收相同的熱量，則某液體之比熱約為多少 cal/g．℃？（水的比熱為 1.0 cal/g．℃）
+        </div>
+        <div style="text-align:center; margin: 4px 0;">
+          <img src="../images/science-8-5-handout/image012.jpg" style="max-height:110px; border-radius:4px; border:1px solid #cbd5e1;" alt="溫度時間關係圖">
+        </div>        <div class="qa-options">
+          <div>(A) 0.63 cal/g．℃</div>
+          <div>(B) 0.80 cal/g．℃</div>
+          <div>(C) 1.24 cal/g．℃</div>
+          <div>(D) 1.60 cal/g．℃</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】由圖，相同時間內水升溫約 8℃，某液體升溫約 12.7℃。因 H 相同，m 相同，∴ S × ΔT = 常數。S液 × 12.7 = 1.0 × 8，∴ S液 ≈ 0.63 cal/g．℃，答案為 (A)。
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ A ）</span> 4. 有一塊質量 3 公斤的鐵塊，比熱 0.113 cal/g．℃、溫度 100℃；另一塊質量 2 公斤的銅塊，比熱 0.093 cal/g．℃、溫度 30℃。將鐵塊與銅塊接觸後，熱由鐵塊傳至銅塊，此現象的主要原因是下列何者？
+        </div>
+        <div class="qa-options">
+          <div>(A) 鐵塊的溫度較高</div>
+          <div>(B) 鐵塊含熱較多</div>
+          <div>(C) 鐵塊的質量較大</div>
+          <div>(D) 鐵塊的比熱較大</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】熱的流向由溫度決定：鐵塊溫度 100℃ > 銅塊 30℃，故熱從鐵流向銅，與質量、比熱、熱量多少無關。答案為 (A)。
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>5-3 隨堂評量（Q1～Q4）</span>
+        <span>第 6 頁 / 共 15 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 7 ==================== -->
+    <div class="page" id="page7">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國二理化（上）講義</span>
+        <span>第 5 章 溫度與熱</span>
+        <span>P. 7</span>
+      </div>
+
+      <div class="section-title">
+        <span>5-4　熱對物質的影響（一）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #475569;">焦點四：熱脹冷縮、水的異常膨脹與生活應用</span>
+      </div>
+
+      <div class="task-title">1. 熱對物質體積的影響</div>
+      <div class="item-line interactive-item">(1) 大部分的物質具有 <span class="ans-word">熱脹冷縮</span> 的性質，而物質體積隨溫度改變的情形，以<strong>氣體</strong>最為明顯、液體次之、固體最不明顯。</div>
+      <div class="item-line interactive-item">(2) <strong>生活應用：</strong>凹陷的乒乓球放入熱水使其恢復原狀；鐵軌銜接處的空隙、水泥橋面設計的伸縮縫等。</div>
+
+      <div class="task-title" style="margin-top: 6px;">2. 水的異常膨脹（例外！）</div>
+      <div class="item-line interactive-item">(1) 少數物質在某些狀況有例外，水在 4°C 時，密度最 <span class="ans-word">大</span>，體積最 <span class="ans-word">小</span>。</div>
+      <div style="display:flex; gap:12px; align-items:center; margin: 4px 6px;">
+        <div style="flex:1; font-size:13pt; line-height:1.6;">
+                <div class="item-line interactive-item">a. <strong>4°C ～ 100°C：</strong>水隨溫度愈高，體積愈大，密度愈小（正常熱脹冷縮）。</div>
+                <div class="item-line interactive-item">b. <strong>0°C ～ 4°C：</strong>水隨溫度愈低，體積愈大，密度愈小（反常：熱縮冷脹）。</div>
+        </div>
+      </div>
+      <div class="tip-box" style="margin-top:5px;">
+        💡 <strong>應用：</strong>水在 4°C 密度最大，湖泊底部在冬天接近 4°C，湖面才有結冰保護水中生物；同理，水管爆裂、瓶中水結冰膨脹撐破，均是此異常膨脹所致。
+      </div>
+
+      <div style="text-align:center; margin:5px 0;">
+        <div style="font-size:12pt; color:#475569; margin-bottom:3px;">▼ 水的密度 vs 溫度關係示意</div>
+        <div style="display:inline-flex; gap:0; border:1px solid #94a3b8; border-radius:6px; overflow:hidden; font-size:11.5pt;">
+          <div style="background:#dbeafe; padding:6px 14px; text-align:center;"><strong>0℃</strong><br>體積↑<br>密度↓<br><em>（結冰）</em></div>
+          <div style="background:#bfdbfe; padding:6px 14px; text-align:center; border-left:1px solid #94a3b8; border-right:1px solid #94a3b8;"><strong>0→4℃</strong><br>體積↓<br>密度↑</div>
+          <div style="background:#eff6ff; padding:6px 14px; text-align:center; border-right:1px solid #94a3b8;"><strong>4℃</strong><br>體積最小<br><strong>密度最大</strong></div>
+          <div style="background:#f0f9ff; padding:6px 14px; text-align:center;"><strong>4→100℃</strong><br>體積↑<br>密度↓</div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>5-4 熱對物質的影響（觀念一）</span>
+        <span>第 7 頁 / 共 15 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 8 ==================== -->
+    <div class="page" id="page8">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國二理化（上）講義</span>
+        <span>第 5 章 溫度與熱</span>
+        <span>P. 8</span>
+      </div>
+
+      <div class="section-title">
+        <span>5-4　熱對物質的影響（二）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #475569;">焦點五：三態變化、熔化沸騰過程與溫度時間圖</span>
+      </div>
+
+      <div class="task-title">1. 熱對物質狀態的影響</div>
+      <div class="item-line interactive-item">(1) 物質由固態 → 液態 → 氣態的過程，需 <span class="ans-word">吸收</span> 熱量。</div>
+      <div class="item-line interactive-item">(2) 物質由氣態 → 液態 → 固態的過程，需 <span class="ans-word">放出</span> 熱量。</div>
+
+      <div style="text-align:center; margin:5px 0;">
+        <img src="../images/science-8-5-handout/image016.png" style="max-height:110px; max-width:90%;" alt="三態變化箭頭圖">
+        <div style="font-size:10.5pt; color:#64748b;">▲ 三態變化（固、液、氣）吸放熱方向圖</div>
+      </div>
+
+      <div class="task-title" style="margin-top: 5px;">2. 三態變化溫度時間圖（以水加熱為例）</div>
+      <div style="display:flex; gap:12px; align-items:flex-start;">
+        <div style="flex:1;">
+      <div class="item-line interactive-item">a. <strong>冰熔化期間（熔點 0℃）：</strong>冰和水共存，繼續加熱溫度仍維持 <span class="ans-word">0</span> ℃，吸收的熱量全用來改變狀態（熔化熱）。</div>
+      <div class="item-line interactive-item">b. <strong>水沸騰期間（沸點 100℃）：</strong>水和水蒸氣共存，繼續加熱溫度仍維持 <span class="ans-word">100</span> ℃，吸收的熱量全用來改變狀態（汽化熱）。</div>
+      <div class="item-line interactive-item">c. <strong>蒸發 vs. 沸騰：</strong>蒸發可在任何溫度下進行（液面），沸騰須在沸點且液體內部急劇汽化。兩者都是液態→氣態（汽化）。</div>
+        </div>
+        <div style="text-align:center; flex-shrink:0; width:220px;">
+          <img src="../images/science-8-5-handout/image023.jpg" style="max-width:100%; max-height:150px; border-radius:4px; border:1px solid #cbd5e1;" alt="溫度時間關係圖">
+          <div style="font-size:10.5pt; color:#64748b;">▲ 水加熱的溫度與時間關係</div>
+        </div>
+      </div>
+
+      <div class="tip-box" style="margin-top:6px;">
+        💡 <strong>溫度不變的三態共存期間：</strong>固液共存（熔點）、液氣共存（沸點）——持續加熱但溫度不升，熱量全用於改變物質狀態（而非升溫）。
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>5-4 熱對物質的影響（觀念二）</span>
+        <span>第 8 頁 / 共 15 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 9 ==================== -->
+    <div class="page" id="page9">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國二理化（上）講義</span>
+        <span>第 5 章 溫度與熱</span>
+        <span>P. 9</span>
+      </div>
+
+      <div class="section-title">
+        <span>5-4　隨堂實戰評量（一）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #475569;">熱脹冷縮狀態、水的異常與三態變化</span>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ C ）</span> 1. 一般來說，熱脹冷縮最明顯的是物質的哪一種狀態？
+        </div>
+        <div class="qa-options">
+          <div>(A) 與物質狀態無關</div>
+          <div>(B) 液態物質</div>
+          <div>(C) 氣態物質</div>
+          <div>(D) 固態物質</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】體積隨溫度變化最明顯的是氣體，其次是液體，固體最不明顯。答案為 (C)。
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ B ）</span> 2. 零下 10℃、25 公克冰塊放在燒杯中加熱，加熱過程中溫度與加熱時間關係如圖所示，下列哪一時段中冰與水共存？
+        </div>
+        <div style="text-align:center; margin: 4px 0;">
+          <img src="../images/science-8-5-handout/image025.png" style="max-height:110px; border-radius:4px; border:1px solid #cbd5e1;" alt="溫度時間圖">
+        </div>        <div class="qa-options">
+          <div>(A) 0 ～ t₁</div>
+          <div>(B) t₁ ～ t₂</div>
+          <div>(C) t₂ ～ t₃</div>
+          <div>(D) t₃ ～ t₄</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】從圖可看出：t₁之前冰塊升溫（固態）；t₁～t₂ 溫度維持在 0℃ 不變（冰熔化，固液共存）；t₂ 之後全液態繼續升溫。答案為 (B)。
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ A ）</span> 3. 有關蒸發與沸騰，下列敘述何者正確？
+        </div>
+        <div class="qa-options">
+          <div>(A) 兩者都是液體汽化的過程</div>
+          <div>(B) 蒸發必須在特定的溫度下進行，沸騰則在任何溫度下皆可以進行</div>
+          <div>(C) 蒸發過程需要吸熱，沸騰過程需要放熱</div>
+          <div>(D) 沸騰是液體表面的汽化，蒸發是液體內部急劇汽化</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】(A) 正確：蒸發和沸騰都是液態→氣態（汽化），都吸熱。(B) 錯誤：蒸發任意溫度皆可，沸騰需在沸點。(C) 錯誤：兩者都吸熱。(D) 錯誤：相反，蒸發是液面，沸騰是液體內部急劇汽化。
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ C ）</span> 4. 路旁的輸油管每隔相當的距離就會彎成 U 字形，這是為了下列何種因素？
+        </div>
+        <div class="qa-options">
+          <div>(A) 增加美觀</div>
+          <div>(B) 增加輸油速率</div>
+          <div>(C) 避免油管脹縮而破裂</div>
+          <div>(D) 增加油的壓力</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】金屬管受溫度變化會熱脹冷縮，若無彈性設計，固定管道因熱脹產生的應力會導致管道破裂。U 字彎管提供伸縮緩衝空間。答案為 (C)。
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>5-4 隨堂評量（Q1～Q4）</span>
+        <span>第 9 頁 / 共 15 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 10 ==================== -->
+    <div class="page" id="page10">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國二理化（上）講義</span>
+        <span>第 5 章 溫度與熱</span>
+        <span>P. 10</span>
+      </div>
+
+      <div class="section-title">
+        <span>5-4　隨堂實戰評量（二）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #475569;">水的異常膨脹與溫度計應用（多選題）</span>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ CD ）</span> 5. 水對於我們的生活相當重要，不但是我們維持生命的重要物質，還可以調節大氣的溫度。試回答下列問題：
+        </div>
+        <div style="margin: 6px 0 0 20px; font-size:13.5pt; line-height:1.6;">
+          <div class="item-line interactive-item" style="margin-bottom:6px;">
+            (1) 阿吉測量湖泊表面的水溫，夏天為 20℃、冬天為 1℃，則下列對於湖泊底部與表面水溫的比較，何者正確？答：<span class="ans-word">C</span>。
+            <div class="qa-options stacked" style="font-size:12.5pt; margin-top:4px; padding-left:16px;">
+              <div>(A) 夏天、冬天的湖底水溫均較湖面低</div>
+              <div>(B) 夏天、冬天的湖底水溫均較湖面高</div>
+              <div>(C) 夏天的湖底水溫低於 20℃，而冬天則高於 1℃</div>
+              <div>(D) 夏天的湖底水溫高於 20℃，而冬天則低於 1℃</div>
+            </div>
+            <div class="calc-workspace"><div class="calc-solution">
+              【解析】水在 4℃ 密度最大。夏天水面 20℃，湖底密度最大的水為 4℃，低於 20℃（C前半正確）；冬天水面 1℃，湖底接近 4℃，高於 1℃（C後半正確）。答 (C)。
+            </div></div>
+          </div>
+          <div class="item-line interactive-item">
+            (2) 在 0℃ ～ 100℃ 之間，為何水不適合作為溫度計中的測量液體？答：<span class="ans-word">D</span>。
+            <div class="qa-options stacked" style="font-size:12.5pt; margin-top:4px; padding-left:16px;">
+              <div>(A) 水有對流現象</div>
+              <div>(B) 水的熱脹冷縮效應不大</div>
+              <div>(C) 水在 4℃ 以上不滿足熱脹冷縮性質</div>
+              <div>(D) 水的體積與溫度不是全為正比關係</div>
+            </div>
+            <div class="calc-workspace"><div class="calc-solution">
+              【解析】溫度計需要體積與溫度呈線性（正比）關係，才能均勻刻度。水在 0℃～4℃ 反常（降溫體積反而增大），不是全程線性關係，故不適合作測量液。答 (D)。
+            </div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tip-box" style="margin-top:8px;">
+        💡 <strong>本題重點：</strong>水的異常膨脹（0℃～4℃ 降溫膨脹）導致：(1) 湖底冬天保持在 4℃ 左右，保護水中生物；(2) 水的體積與溫度不是線性關係，不能作溫度計的測量液。
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>5-4 隨堂評量（Q5）</span>
+        <span>第 10 頁 / 共 15 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 11 ==================== -->
+    <div class="page" id="page11">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國二理化（上）講義</span>
+        <span>第 5 章 溫度與熱</span>
+        <span>P. 11</span>
+      </div>
+
+      <div class="section-title">
+        <span>5-5　熱的傳播方式（一）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #475569;">焦點六：傳導與對流的定義、特性與實例</span>
+      </div>
+
+      <div class="task-title">1. 熱傳播方式總覽</div>
+      <table class="custom-table" style="font-size:12.5pt; line-height:1.4;">
+        <tr><th style="width:12%;">方式</th><th style="width:30%;">定義</th><th style="width:33%;">特性</th><th style="width:25%;">實例</th></tr>
+        <tr class="interactive-item">
+          <td style="font-weight:bold; background:#dbeafe;">傳導</td>
+          <td class="align-left">透過 <span class="ans-word">接觸</span>，將熱在物體間傳遞的方式。</td>
+          <td class="align-left">不同物質傳導能力不同，分為<strong>熱的良導體</strong>（金屬）與<strong>熱的不良導體</strong>（木材、塑膠、空氣）。</td>
+          <td class="align-left">炒菜鍋、熱水壺等用金屬（傳導效果<span class="ans-word">佳</span>）；握柄用塑膠或木材（傳導效果較<span class="ans-word">差</span>）隔熱。</td>
+        </tr>
+        <tr class="interactive-item">
+          <td style="font-weight:bold; background:#dcfce7;">對流</td>
+          <td class="align-left">在液體或氣體內，經由物質的 <span class="ans-word">流動</span> 來傳送熱的方式。</td>
+          <td class="align-left">液體/氣體受熱膨脹密度變小上浮，冷卻收縮密度變大下沉，形成對流循環。</td>
+          <td class="align-left">(1) 冷氣裝 <span class="ans-word">高處</span>，電暖器設 <span class="ans-word">地面</span>。<br>(2) 加熱壺底使整壺水沸騰。</td>
+        </tr>
+      </table>
+
+      <div style="display:flex; gap:12px; margin-top:7px; align-items:center;">
+        <div style="text-align:center; flex:1;">
+          <img src="../images/science-8-5-handout/image028.jpg" style="max-height:110px; max-width:100%; border-radius:4px; border:1px solid #cbd5e1;" alt="熱傳導示意">
+          <div style="font-size:10.5pt; color:#64748b;">▲ 熱傳導（接觸傳熱）</div>
+        </div>
+        <div style="text-align:center; flex:1;">
+          <img src="../images/science-8-5-handout/image029.jpg" style="max-height:110px; max-width:100%; border-radius:4px; border:1px solid #cbd5e1;" alt="熱對流示意">
+          <div style="font-size:10.5pt; color:#64748b;">▲ 熱對流（流動傳熱）</div>
+        </div>
+      </div>
+
+      <div class="tip-box" style="margin-top:6px;">
+        💡 <strong>傳導 vs. 對流：</strong>傳導需要物體「接觸」，本身不流動；對流必須是液體或氣體（流體），靠密度差驅動流動。固體只能傳導，不能對流。
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>5-5 熱的傳播方式（觀念一）</span>
+        <span>第 11 頁 / 共 15 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 12 ==================== -->
+    <div class="page" id="page12">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國二理化（上）講義</span>
+        <span>第 5 章 溫度與熱</span>
+        <span>P. 12</span>
+      </div>
+
+      <div class="section-title">
+        <span>5-5　熱的傳播方式（二）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #475569;">焦點七：輻射的定義、特性與顏色/表面影響</span>
+      </div>
+
+      <div class="task-title">2. 輻射（Radiation）</div>
+      <table class="custom-table" style="font-size:12.5pt; line-height:1.4; margin-bottom:6px;">
+        <tr><th style="width:12%;">方式</th><th style="width:30%;">定義</th><th style="width:33%;">特性</th><th style="width:25%;">實例</th></tr>
+        <tr class="interactive-item">
+          <td style="font-weight:bold; background:#fef9c3;">輻射</td>
+          <td class="align-left">不需經由 <span class="ans-word">介質</span>，即可將熱直接傳送到四周的方式。</td>
+          <td class="align-left">(1) 溫度愈高，輻射能力愈強。<br>(2) <strong>顏色深、表面粗糙</strong>的物體較容易<strong>吸收與發出</strong>輻射；顏色淺、表面光滑的則相反。</td>
+          <td class="align-left">(1) 太陽能熱水器集熱板多為 <span class="ans-word">深</span> 色，吸收輻射熱。<br>(2) 儲油槽表面漆 <span class="ans-word">淺</span> 色，避免溫度過高。</td>
+        </tr>
+      </table>
+
+      <div style="text-align:center; margin:5px 0;">
+        <img src="../images/science-8-5-handout/image030.jpg" style="max-height:110px; max-width:85%; border-radius:4px; border:1px solid #cbd5e1;" alt="輻射示意圖">
+        <div style="font-size:10.5pt; color:#64748b;">▲ 輻射：無需介質，穿越真空傳熱（太陽→地球）</div>
+      </div>
+
+      <div class="tip-box">
+        💡 <strong>三種傳播方式比較：</strong>
+        <table class="custom-table" style="font-size:12pt; margin-top:5px;">
+          <tr><th>傳播方式</th><th>是否需要介質</th><th>適用物質</th><th>代表例子</th></tr>
+          <tr><td>傳導</td><td>需要（固體最佳）</td><td>固 > 液 > 氣</td><td>鍋把、鐵棒加熱</td></tr>
+          <tr><td>對流</td><td>需要（流體）</td><td>液體、氣體</td><td>冷氣、煮水、大氣環流</td></tr>
+          <tr><td>輻射</td><td><strong>不需要</strong></td><td>任何（含真空）</td><td>太陽輻射、火爐旁取暖</td></tr>
+        </table>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>5-5 熱的傳播方式（觀念二）</span>
+        <span>第 12 頁 / 共 15 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 13 ==================== -->
+    <div class="page" id="page13">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國二理化（上）講義</span>
+        <span>第 5 章 溫度與熱</span>
+        <span>P. 13</span>
+      </div>
+
+      <div class="section-title">
+        <span>5-5　隨堂實戰評量（一）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #475569;">傳導、對流、輻射的辨別與應用（第 1～4 題）</span>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ B ）</span> 1. 人碰到裝熱湯的鍋子，會覺得很燙，是因熱湯的熱量經由何種物質，以及何種方式傳到手上？
+        </div>
+        <div class="qa-options">
+          <div>(A) 空氣、對流</div>
+          <div>(B) 鍋子、傳導</div>
+          <div>(C) 空氣、傳導</div>
+          <div>(D) 鍋子、對流</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】熱湯→鍋子（傳導）→手（傳導），靠物體直接接觸傳熱。答案為 (B)。
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ B ）</span> 2. 在極寒冷的南極地區，為了避免身體的輻射熱散失，應穿下列哪一類的衣服？
+        </div>
+        <div class="qa-options">
+          <div>(A) 黑色衣服</div>
+          <div>(B) 白色衣服</div>
+          <div>(C) 綠色衣服</div>
+          <div>(D) 藍色衣服</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】顏色深（黑色）的衣服較容易「發出」輻射熱（散熱快），顏色淺（白色）較不易發出輻射熱（保溫）。為避免散熱，應穿白色。答案為 (B)。
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ C ）</span> 3. 如圖，大小相同的兩支試管，裝有等量、等溫的水，以火焰強度相等的酒精燈同時加熱。圖中甲處位於左試管底部，乙處位於右試管頸部，則甲、乙兩處溫度上升的快慢為何？
+        </div>
+        <div style="text-align:center; margin: 4px 0;">
+          <img src="../images/science-8-5-handout/image032.jpg" style="max-height:120px; border-radius:4px; border:1px solid #cbd5e1;" alt="試管加熱比較圖">
+        </div>        <div class="qa-options">
+          <div>(A) 一樣快</div>
+          <div>(B) 甲快</div>
+          <div>(C) 乙快</div>
+          <div>(D) 不一定</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】左試管加熱底部，底部水受熱上浮，形成對流，整管水均勻升溫，甲（底部）溫度上升較慢。右試管加熱頸部（上方），熱水留在上方不對流，乙處溫度迅速升高。故乙快。答案為 (C)。
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ B ）</span> 4. 下列情形中，哪幾項和熱的輻射有關？(甲)在炎熱夏天的太陽下，穿著深色的衣服會感覺較熱、(乙)在火爐旁取暖、(丙)手捧著裝有熱咖啡的杯子，手掌感覺很燙、(丁)焚化爐設置大煙囪、(戊)太陽傳熱至地球的方式。
+        </div>
+        <div class="qa-options">
+          <div>(A) 甲乙</div>
+          <div>(B) 甲乙戊</div>
+          <div>(C) 乙丙丁</div>
+          <div>(D) 甲乙丙丁戊</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】(甲)深色吸收太陽輻射較多→輻射；(乙)火爐旁取暖靠紅外線輻射；(丙)手捧杯傳熱為傳導；(丁)大煙囪排廢氣為對流；(戊)太陽熱傳地球穿越真空→輻射。與輻射有關的為甲、乙、戊，答案為 (B)。
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>5-5 隨堂評量（Q1～Q4）</span>
+        <span>第 13 頁 / 共 15 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 14 ==================== -->
+    <div class="page" id="page14">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國二理化（上）講義</span>
+        <span>第 5 章 溫度與熱</span>
+        <span>P. 14</span>
+      </div>
+
+      <div class="section-title">
+        <span>5-5　隨堂實戰評量（二）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #475569;">熱傳播方式綜合應用（第 5～8 題）</span>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ B ）</span> 5. 從冰庫中取出金屬製的製冰盒，用溼布擦拭時，會有被黏住的感覺，其原因為何？
+        </div>
+        <div class="qa-options">
+          <div>(A) 溼布與冰盒摩擦生熱，使水變黏</div>
+          <div>(B) 冰盒吸收溼布的熱，使水結冰</div>
+          <div>(C) 溼布與冰盒摩擦生電，兩者相吸</div>
+          <div>(D) 溼布與冰盒接觸傳熱，使水溫升高</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】冰盒溫度低（來自冰庫），接觸溼布後，冰盒透過傳導吸走溼布中水分的熱量，使水在接觸面結冰，兩者因此凍黏在一起。答案為 (B)。
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ C ）</span> 6. 焚化爐、煉油廠的煙囪總是設在高處，其原因為何？
+        </div>
+        <div class="qa-options">
+          <div>(A) 增加熱輻射，使得廢氣較容易排出</div>
+          <div>(B) 熱傳導較為旺盛</div>
+          <div>(C) 熱對流較為旺盛，廢氣較不易積存</div>
+          <div>(D) 造景使環境美觀</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】煙囪設高處是利用熱對流原理：高溫廢氣密度小上浮，煙囪高使對流旺盛，讓廢氣快速往高處擴散，不積存在地面造成汙染。答案為 (C)。
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ D ）</span> 7. 廚具大多為金屬製品，手把部分則使用木柄，這是因為下列哪一個因素？
+        </div>
+        <div class="qa-options">
+          <div>(A) 金屬比熱大</div>
+          <div>(B) 木柄比熱小</div>
+          <div>(C) 金屬不易傳導熱</div>
+          <div>(D) 木柄不易傳導熱</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】木材屬於熱的不良導體，傳導效率差，因此木柄握起來不燙手。金屬為良導體，拿起來容易燙傷。答案為 (D)。
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ C ）</span> 8. 關於熱的傳播方式，下列敘述何者正確？
+        </div>
+        <div class="qa-options">
+          <div>(A) 玻璃能使光透過，但輻射熱則無法穿透</div>
+          <div>(B) 將冰塊放入黑色與白色的杯子中，則室溫下白色杯中的冰塊熔化較快</div>
+          <div>(C) 用黑色與白色的杯子裝等溫的熱水，則室溫下黑色杯中的熱水冷得較快</div>
+          <div>(D) 冬天穿羽絨衣之所以能保暖，是因為空氣比熱較大</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】(A) 錯誤：玻璃可以讓某些輻射熱穿透（如溫室效應）。(B) 錯誤：黑色杯吸熱能力強，冰塊熔化較快（非白色）。(C) 正確：黑色杯發出輻射能力強，散熱快，熱水冷得較快。(D) 錯誤：羽絨衣保暖是因為空氣（不良導體）隔熱，而非比熱大。答案為 (C)。
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>5-5 隨堂評量（Q5～Q8）</span>
+        <span>第 14 頁 / 共 15 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 15 ==================== -->
+    <div class="page" id="page15">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國二理化（上）講義</span>
+        <span>第 5 章 溫度與熱</span>
+        <span>P. 15</span>
+      </div>
+
+      <div class="section-title">
+        <span>第 5 章　核心重點整理</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #475569;">5-1 溫度與溫度計 ｜ 5-2 熱量 ｜ 5-3 比熱 ｜ 5-4 熱的影響 ｜ 5-5 傳播方式</span>
+      </div>
+
+      <div style="font-size:13pt; line-height:1.55;">
+        <div class="task-title">5-1 溫度與溫度計</div>
+      <div class="item-line interactive-item">1. <span class="ans-word">溫度</span> 是描述物體冷熱程度的物理量；溫度計利用物質 <span class="ans-word">熱脹冷縮</span> 的特性製作。</div>
+      <div class="item-line interactive-item">2. <span class="ans-word">攝氏</span>溫標（℃）：水的凝固點 0℃，沸點 100℃，等分 100 格，每格 1℃。</div>
+
+        <div class="task-title" style="margin-top:5px;">5-2 熱量</div>
+      <div class="item-line interactive-item">1. 加熱時間愈久，傳遞至水中的能量就愈多，此種形式的能量即為 <span class="ans-word">熱量</span>。</div>
+      <div class="item-line interactive-item">2. 使 1 公克的水，溫度上升 1℃ 所需的熱量為 1 <span class="ans-word">卡（cal）</span>；1000 卡 = 1 千卡（kcal），又稱 <span class="ans-word">大卡</span>。</div>
+      <div class="item-line interactive-item">3. 熱量自 <span class="ans-word">高</span> 溫流向 <span class="ans-word">低</span> 溫，直到兩物體溫度相同達到 <span class="ans-word">熱平衡</span>。</div>
+
+        <div class="task-title" style="margin-top:5px;">5-3 比熱</div>
+      <div class="item-line interactive-item">1. 使 1 公克的物質上升 1℃ 所需的熱量，為此物質的 <span class="ans-word">比熱（S）</span>，單位：cal/g．℃。</div>
+      <div class="item-line interactive-item">2. 比熱愈 <span class="ans-word">小</span> 的物質，溫度愈容易升高及下降；比熱愈 <span class="ans-word">大</span> 的物質難冷難熱（如水）。</div>
+      <div class="item-line interactive-item">3. <strong>熱量公式：</strong>$H = m \times S \times \Delta T$（H：熱量，m：質量，S：比熱，ΔT：溫度變化）</div>
+
+        <div class="task-title" style="margin-top:5px;">5-4 熱對物質的影響</div>
+      <div class="item-line interactive-item">1. 大部分物質受熱體積 <span class="ans-word">膨脹</span>（熱脹冷縮）；氣體最明顯，固體最不明顯。</div>
+      <div class="item-line interactive-item">2. 水在 4°C 密度最 <span class="ans-word">大</span>，體積最 <span class="ans-word">小</span>；0°C～4°C 間水為反常（降溫反而膨脹）。</div>
+      <div class="item-line interactive-item">3. 熔化、汽化、昇華需 <span class="ans-word">吸收</span> 熱量；凝固、凝結、凝華需 <span class="ans-word">放出</span> 熱量。</div>
+
+        <div class="task-title" style="margin-top:5px;">5-5 熱的傳播方式</div>
+      </div>
+      <table class="custom-table" style="font-size:12pt; margin-top:3px;">
+        <tr><th>方式</th><th>是否需要介質</th><th>適用物質</th><th>代表例子</th></tr>
+        <tr class="interactive-item"><td><span class="ans-word">傳導</span></td><td>需要（接觸）</td><td>固 > 液 > 氣</td><td>鍋把、鐵棒導熱</td></tr>
+        <tr class="interactive-item"><td><span class="ans-word">對流</span></td><td>需要（流動）</td><td>液體、氣體</td><td>冷氣裝高、電暖器設地面</td></tr>
+        <tr class="interactive-item"><td><span class="ans-word">輻射</span></td><td><strong>不需要</strong></td><td>任何（含真空）</td><td>太陽輻射、火爐旁取暖</td></tr>
+      </table>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>第 5 章 核心重點整理</span>
+        <span>第 15 頁 / 共 15 頁</span>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    // KaTeX auto-render
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof renderMathInElement === 'function') {
+        renderMathInElement(document.body, { delimiters: [{left:'$',right:'$',display:false},{left:'$$',right:'$$',display:true}], throwOnError: false });
+      }
+    });
+
+    // 一鍵全開/全隱答案
+    let allShown = false;
+    function toggleAllAnswers() {
+      allShown = !allShown;
+      document.body.classList.toggle('show-ans', allShown);
+      document.getElementById('ansIcon').textContent = allShown ? '🙈' : '👁️';
+      document.getElementById('toggleAllAnsBtn').classList.toggle('active', allShown);
+    }
+
+    // 全域點擊顯答委派（單擊/雙擊直接顯示或隱藏答案，點擊整題/整行同步開合）
+    document.addEventListener('click', function(e) {
+      if (document.body.classList.contains('pen-mode')) return;
+      const targetAns = e.target.closest('.ans-word, .qa-bracket, .ans-slot, .calc-solution, .correct-choice');
+      if (targetAns) {
+        targetAns.classList.toggle('revealed');
+        e.stopPropagation();
+        return;
+      }
+      const item = e.target.closest('.interactive-item');
+      if (item) {
+        item.classList.toggle('show-one');
+      }
+    });
+
+    document.addEventListener('dblclick', function(e) {
+      if (document.body.classList.contains('pen-mode')) return;
+      const targetAns = e.target.closest('.ans-word, .qa-bracket, .ans-slot, .calc-solution, .correct-choice');
+      if (targetAns) {
+        targetAns.classList.toggle('revealed');
+        e.stopPropagation();
+      }
+    });
+
+    // TOC
+    function toggleTocMenu(e) {
+      e.stopPropagation();
+      document.getElementById('tocMenu').classList.toggle('show');
+    }
+    document.addEventListener('click', () => { document.getElementById('tocMenu').classList.remove('show'); });
+
+    function jumpTo(id) {
+      const el = document.getElementById(id);
+      if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      document.getElementById('tocMenu').classList.remove('show');
+    }
+
+    // 螢光筆
+    let penMode = false, penColor = 'rgba(250,204,21,0.45)', penSize = 3;
+    let currentCanvas = null, ctx = null, drawing = false;
+    const canvases = document.querySelectorAll('.drawing-canvas');
+
+    function togglePenMode() {
+      penMode = !penMode;
+      document.body.classList.toggle('pen-mode', penMode);
+      document.getElementById('penBtn').classList.toggle('active', penMode);
+      document.getElementById('penOptions').style.display = penMode ? 'flex' : 'none';
+      canvases.forEach(c => {
+        const page = c.parentElement;
+        c.width = page.offsetWidth;
+        c.height = page.offsetHeight;
+      });
+    }
+
+    function setPenColor(color, el) {
+      penColor = color;
+      document.querySelectorAll('.color-dot').forEach(d => d.classList.remove('active'));
+      el.classList.add('active');
+    }
+
+    function setPenSize(size, el) {
+      penSize = size;
+      document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+      el.classList.add('active');
+    }
+
+    function getPos(e, canvas) {
+      const rect = canvas.getBoundingClientRect();
+      if (e.touches) return { x: e.touches[0].clientX - rect.left, y: e.touches[0].clientY - rect.top };
+      return { x: e.clientX - rect.left, y: e.clientY - rect.top };
+    }
+
+    canvases.forEach(canvas => {
+      canvas.addEventListener('mousedown', e => {
+        if (!penMode) return;
+        drawing = true; currentCanvas = canvas;
+        ctx = canvas.getContext('2d');
+        ctx.strokeStyle = penColor; ctx.lineWidth = penSize;
+        ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+        const p = getPos(e, canvas); ctx.beginPath(); ctx.moveTo(p.x, p.y);
+      });
+      canvas.addEventListener('mousemove', e => {
+        if (!drawing || currentCanvas !== canvas) return;
+        const p = getPos(e, canvas); ctx.lineTo(p.x, p.y); ctx.stroke();
+      });
+      canvas.addEventListener('mouseup', () => { drawing = false; });
+      canvas.addEventListener('touchstart', e => {
+        if (!penMode) return; e.preventDefault();
+        drawing = true; currentCanvas = canvas;
+        ctx = canvas.getContext('2d');
+        ctx.strokeStyle = penColor; ctx.lineWidth = penSize;
+        ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+        const p = getPos(e, canvas); ctx.beginPath(); ctx.moveTo(p.x, p.y);
+      }, { passive: false });
+      canvas.addEventListener('touchmove', e => {
+        if (!drawing) return; e.preventDefault();
+        const p = getPos(e, canvas); ctx.lineTo(p.x, p.y); ctx.stroke();
+      }, { passive: false });
+      canvas.addEventListener('touchend', () => { drawing = false; });
+    });
+
+    function clearAllDrawings() {
+      canvases.forEach(c => { const ctx2 = c.getContext('2d'); ctx2.clearRect(0,0,c.width,c.height); });
+    }
+  </script>
+</body>
+</html>
