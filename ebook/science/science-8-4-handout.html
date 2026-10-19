@@ -1,0 +1,2156 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>國二理化（上）第 4 章 光、影像與顏色 互動電子書</title>
+  <!-- 電子書目錄身分標記（見 SKILL.md §11 與 AGENTS.md） -->
+  <meta name="ebook:subject" content="science">
+  <meta name="ebook:grade" content="8">
+  <meta name="ebook:type" content="handout">
+  <meta name="ebook:pages" content="20">
+  <meta name="ebook:level" content="std">
+  <meta name="ebook:summary" content="國二理化第4章光、影像與顏色完整講義（20頁舒展無截斷終極版），依據教材原稿製作：光的傳播與針孔成像、光的反射與平面鏡面鏡成像、光的折射規律與實例、透鏡成像性質（凸透鏡/凹透鏡）與視力矯正、色散與光的三原色物體呈色、全章重點整理與精華填空。">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <style>
+    @page { size: A4 portrait; margin: 10mm 12mm; }
+    * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body {
+      margin: 0; padding: 0; background-color: #e2e8f0;
+      font-family: "Times New Roman", "標楷體", "DFKai-SB", "BiauKai", serif;
+      font-size: 14pt; line-height: 1.5; color: #111;
+    }
+
+    /* 課堂懸浮工具列 */
+    .classroom-toolbar {
+      position: fixed; top: 14px; right: 20px; z-index: 9999;
+      display: flex; align-items: center; gap: 4px;
+      background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 4px 10px; border-radius: 40px; border: 1px solid rgba(203, 213, 225, 0.9);
+      box-shadow: 0 4px 22px rgba(0, 0, 0, 0.15);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .tool-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 36px; height: 36px; font-size: 18px; color: #334155;
+      background: transparent; border: 1px solid transparent; border-radius: 50%;
+      cursor: pointer; transition: all 0.15s ease; padding: 0; user-select: none;
+      text-decoration: none;
+    }
+    .tool-btn:hover { background: #f1f5f9; transform: scale(1.1); }
+    .tool-btn.active { background: #0f172a; color: #ffffff; }
+    .btn-toggle-ans.active { background: #eff6ff; border-color: #3b82f6; }
+    .toolbar-divider { width: 1px; height: 20px; background: #cbd5e1; margin: 0 4px; }
+
+    /* 目錄跳轉選單 */
+    .toc-menu {
+      display: none; position: absolute; top: 46px; left: 0;
+      background: #ffffff; border: 1px solid #cbd5e1; border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18); padding: 8px 0;
+      min-width: 320px; max-height: 500px; overflow-y: auto; z-index: 10000;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .toc-menu.show { display: block; animation: tocFadeIn 0.15s ease-out; }
+    @keyframes tocFadeIn {
+      from { opacity: 0; transform: translateY(-6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .toc-menu-title {
+      padding: 6px 16px 8px 16px; font-size: 13px; font-weight: bold;
+      color: #64748b; border-bottom: 1px solid #f1f5f9;
+    }
+    .toc-menu-item {
+      padding: 7px 16px; font-size: 13px; color: #334155; cursor: pointer;
+      display: flex; align-items: center; justify-content: space-between;
+      transition: background 0.12s, color 0.12s;
+    }
+    .toc-menu-item:hover { background: #eff6ff; color: #2563eb; font-weight: bold; }
+    .toc-page-badge { font-size: 11.5px; color: #94a3b8; font-weight: normal; }
+    .toc-menu-item:hover .toc-page-badge { color: #2563eb; }
+
+    /* 螢光筆選項 */
+    .pen-options {
+      display: none; align-items: center; gap: 6px; background: #f8fafc;
+      padding: 3px 8px; border-radius: 20px; border: 1px solid #e2e8f0; margin-left: 2px;
+    }
+    .color-picker { display: flex; align-items: center; gap: 5px; }
+    .color-dot {
+      width: 16px; height: 16px; border-radius: 50%; cursor: pointer;
+      box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+    }
+    .color-dot.active { transform: scale(1.2); box-shadow: 0 0 0 2px #0f172a; }
+    .size-picker { display: flex; align-items: center; gap: 3px; }
+    .size-btn {
+      border: 1px solid #cbd5e1; background: #fff; color: #475569; font-size: 11px;
+      font-weight: bold; padding: 2px 7px; border-radius: 10px; cursor: pointer;
+    }
+    .size-btn.active { background: #0f172a; color: #fff; border-color: #0f172a; }
+
+    /* A4 頁面設計 */
+    .pages-container { padding: 20px 0 40px 0; }
+    .page {
+      box-sizing: border-box; width: 210mm; min-height: 297mm; max-height: 297mm;
+      padding: 10mm 15mm 8mm 15mm; margin: 0 auto 25px auto;
+      background: #ffffff; box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+      page-break-after: always; break-after: page; position: relative;
+      display: flex; flex-direction: column; justify-content: flex-start;
+      overflow: hidden;
+    }
+    .drawing-canvas {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      z-index: 20; pointer-events: none;
+    }
+    body.pen-mode .drawing-canvas { pointer-events: auto; cursor: crosshair; }
+
+    /* 頁首與頁尾 */
+    .page-header {
+      display: flex; justify-content: space-between; border-bottom: 2px solid #334155;
+      padding-bottom: 4px; margin-bottom: 8px; font-size: 12pt; font-weight: bold; color: #1e293b;
+    }
+    .page-footer {
+      margin-top: auto; padding-top: 5px; border-top: 1px solid #cbd5e1;
+      display: flex; justify-content: space-between; font-size: 10.5pt; color: #64748b;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    /* 標題與版面區塊 */
+    .main-title { font-size: 18pt; font-weight: 900; text-align: center; margin: 2px 0 6px 0; color: #0f172a; }
+    .section-title {
+      font-size: 14.5pt; font-weight: bold; background: #e2e8f0; padding: 4px 10px;
+      border-radius: 6px; margin: 5px 0 6px 0; border-left: 6px solid #2563eb; color: #0f172a;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .task-title { font-size: 13.5pt; font-weight: bold; margin: 6px 0 4px 0; color: #1e293b; }
+    .tip-box {
+      border: 1.5px solid #93c5fd; background-color: #f0f9ff; border-radius: 6px;
+      padding: 6px 12px; margin: 5px 0 7px 0; font-size: 13pt; line-height: 1.45;
+    }
+    .item-line { padding: 3px 6px; border-radius: 4px; line-height: 1.5; font-size: 13.5pt; }
+
+    /* 互動解答控制 */
+    body:not(.pen-mode) .interactive-item { cursor: pointer; }
+    body:not(.pen-mode) .interactive-item:hover { background-color: #f8fafc; outline: 1px dashed #93c5fd; }
+    .correct-choice { display: inline-block; padding: 0 4px; transition: all 0.2s; }
+    .show-ans .correct-choice, .item-line.show-one .correct-choice, .qa-block.show-one .correct-choice {
+      color: #dc2626 !important; font-weight: bold !important; border: 2px solid #dc2626 !important;
+      border-radius: 12px !important; background-color: #fef2f2 !important; padding: 0 5px !important;
+    }
+    .ans-slot { display: inline-block; min-width: 24px; text-align: center; color: transparent; font-weight: bold; cursor: pointer; user-select: none; }
+    .show-ans .ans-slot, .item-line.show-one .ans-slot, .qa-block.show-one .ans-slot, .ans-slot.revealed { color: #dc2626 !important; }
+    .ans-word { color: transparent; font-weight: bold; border-bottom: 1.5px solid #333; padding: 0 3px; cursor: pointer; user-select: none; }
+    .show-ans .ans-word, .item-line.show-one .ans-word, .ans-word.revealed { color: #dc2626 !important; }
+    body:not(.pen-mode) .ans-word:hover, body:not(.pen-mode) .ans-slot:hover { background-color: #fee2e2; }
+
+    /* 選擇題括號與題幹同一行排版（永久原則） */
+    .qa-block {
+      margin-bottom: 9px; padding: 5px 8px; border-radius: 6px;
+      line-height: 1.48; font-size: 13.5pt;
+    }
+    .qa-header { font-weight: bold; }
+    .qa-bracket { color: transparent; font-weight: bold; padding: 0 2px; cursor: pointer; user-select: none; }
+    .show-ans .qa-bracket, .qa-block.show-one .qa-bracket, .qa-bracket.revealed { color: #dc2626 !important; }
+    .qa-options {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4px 12px;
+      margin-top: 4px; padding-left: 20px; font-size: 13pt;
+    }
+    .qa-options.stacked { display: flex; flex-direction: column; gap: 3px; }
+
+    /* 表格 */
+    table.custom-table { width: 100%; border-collapse: collapse; margin: 5px 0; font-size: 12.5pt; line-height: 1.38; }
+    table.custom-table th, table.custom-table td { border: 1px solid #64748b; padding: 4px 7px; text-align: center; }
+    table.custom-table th { background-color: #f1f5f9; font-weight: bold; color: #0f172a; }
+    table.custom-table td.align-left { text-align: left; }
+
+    /* 計算題解析方框 */
+    .calc-workspace {
+      margin: 4px 0 2px 20px; padding: 5px 12px;
+      border: 1px dashed #94a3b8; border-radius: 6px; background-color: #f8fafc;
+      font-size: 12.5pt;
+    }
+    .calc-solution { color: transparent; line-height: 1.48; }
+    .show-ans .calc-solution, .calc-workspace.show-one .calc-solution, .qa-block.show-one .calc-solution {
+      color: #dc2626 !important; font-weight: bold;
+    }
+
+    /* 列印強制規範：白紙考卷模式 */
+    @media print {
+      @page { size: A4 portrait; margin: 10mm 12mm; }
+      html, body {
+        width: 100% !important; height: auto !important; background: transparent !important;
+        padding: 0 !important; margin: 0 !important;
+      }
+      .no-print, .classroom-toolbar, .toc-menu, .drawing-canvas { display: none !important; }
+      .pages-container { display: block !important; padding: 0 !important; margin: 0 !important; }
+      .page {
+        box-sizing: border-box !important; margin: 0 !important; box-shadow: none !important;
+        width: 100% !important; height: 275mm !important; max-height: 275mm !important;
+        min-height: 0 !important; padding: 0 !important; page-break-after: always !important;
+        break-after: page !important; page-break-inside: avoid !important; break-inside: avoid !important;
+        display: flex !important; flex-direction: column !important; justify-content: flex-start !important;
+        overflow: hidden !important;
+      }
+      .page:last-child { page-break-after: avoid !important; break-after: avoid !important; }
+      .page-footer { margin-top: auto !important; padding-top: 4px !important; }
+      .correct-choice { color: inherit !important; font-weight: normal !important; border: none !important; background: transparent !important; padding: 0 !important; }
+      .ans-slot, .ans-word, .qa-bracket, .calc-solution { color: transparent !important; }
+      .calc-workspace { background: transparent !important; border-color: #cbd5e1 !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 課堂懸浮工具列 -->
+  <div class="classroom-toolbar no-print">
+    <!-- 回電子書目錄 -->
+    <a class="tool-btn" href="../index.html" title="回電子書目錄">🏠</a>
+    <!-- 目錄跳轉選單 -->
+    <div style="position: relative;">
+      <button class="tool-btn" id="tocBtn" onclick="toggleTocMenu(event)" title="單元章節目錄">📑</button>
+      <div class="toc-menu" id="tocMenu">
+        <div class="toc-menu-title">📖 第 4 章 單元章節目錄 (全 20 頁)</div>
+        <div class="toc-menu-item" onclick="jumpTo('page1')"><span>4-1 光的直線傳播與針孔成像（觀念）</span><span class="toc-page-badge">P.1</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page2')"><span>4-1 隨堂實戰評量 (Q1～Q4)</span><span class="toc-page-badge">P.2</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page3')"><span>4-1 隨堂實戰評量 (Q5～Q7 計算解析)</span><span class="toc-page-badge">P.3</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page4')"><span>4-2 光的反射定律與平面鏡（觀念）</span><span class="toc-page-badge">P.4</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page5')"><span>4-2 凸面鏡凹面鏡與隨堂評量 (Q1～Q2)</span><span class="toc-page-badge">P.5</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page6')"><span>4-2 隨堂實戰評量 (Q3～Q4 視野解析)</span><span class="toc-page-badge">P.6</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page7')"><span>4-3 光的折射定律與行進規律（觀念）</span><span class="toc-page-badge">P.7</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page8')"><span>4-3 隨堂實戰評量（一） (Q1～Q3 光路圖)</span><span class="toc-page-badge">P.8</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page9')"><span>4-3 隨堂實戰評量（二） (Q4～Q5 物理量與偏折)</span><span class="toc-page-badge">P.9</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page10')"><span>4-3 隨堂實戰評量（三） (Q6～Q7 介質表格與聲光)</span><span class="toc-page-badge">P.10</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page11')"><span>4-4 透鏡折射與凸/凹透鏡成像（觀念一）</span><span class="toc-page-badge">P.11</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page12')"><span>4-4 生活透鏡與視力矯正成因（觀念二）</span><span class="toc-page-badge">P.12</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page13')"><span>4-4 隨堂實戰評量（一） (Q1～Q4 透鏡形狀與像)</span><span class="toc-page-badge">P.13</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page14')"><span>4-4 隨堂實戰評量（二） (Q5～Q7 虛像與眼睛)</span><span class="toc-page-badge">P.14</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page15')"><span>4-4 隨堂實戰評量（三） (Q8～Q10 放大鏡與路徑)</span><span class="toc-page-badge">P.15</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page16')"><span>4-5 色散、光的三原色與物體顏色（觀念）</span><span class="toc-page-badge">P.16</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page17')"><span>4-5 隨堂實戰評量（一） (Q1～Q2 呈色分析)</span><span class="toc-page-badge">P.17</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page18')"><span>4-5 隨堂實戰評量（二） (Q3～Q4 面積比與濾光)</span><span class="toc-page-badge">P.18</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page19')"><span>第 4 章 核心重點整理（4-1～4-3 精要）</span><span class="toc-page-badge">P.19</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page20')"><span>第 4 章 核心重點整理（4-4～4-5 精要）</span><span class="toc-page-badge">P.20</span></div>
+      </div>
+    </div>
+    <!-- 一鍵顯答 -->
+    <button class="tool-btn btn-toggle-ans" id="toggleAllAnsBtn" onclick="toggleAllAnswers()" title="一鍵全開/全隱答案">
+      <span id="ansIcon">👁️</span>
+    </button>
+    <!-- 畫筆切換 -->
+    <button class="tool-btn" id="penBtn" onclick="togglePenMode()" title="螢光筆/板書筆">✏️</button>
+    <!-- 畫筆選單 -->
+    <div class="pen-options" id="penOptions">
+      <div class="color-picker">
+        <span class="color-dot active" style="background:#facc15;" onclick="setPenColor('rgba(250,204,21,0.45)', this)" title="螢光黃"></span>
+        <span class="color-dot" style="background:#ef4444;" onclick="setPenColor('rgba(239,68,68,0.8)', this)" title="紅筆"></span>
+        <span class="color-dot" style="background:#3b82f6;" onclick="setPenColor('rgba(37,99,235,0.8)', this)" title="藍筆"></span>
+        <span class="color-dot" style="background:#10b981;" onclick="setPenColor('rgba(16,185,129,0.8)', this)" title="綠筆"></span>
+      </div>
+      <div class="toolbar-divider" style="height:14px; margin:0 2px;"></div>
+      <div class="size-picker">
+        <span class="size-btn active" onclick="setPenSize(3, this)">細</span>
+        <span class="size-btn" onclick="setPenSize(7, this)">中</span>
+        <span class="size-btn" onclick="setPenSize(14, this)">粗</span>
+      </div>
+    </div>
+    <!-- 清除筆跡 -->
+    <button class="tool-btn" onclick="clearAllDrawings()" title="清除本頁筆跡">🧹</button>
+    <!-- 列印 -->
+    <button class="tool-btn" onclick="window.print()" title="列印純淨學習單">🖨️</button>
+  </div>
+
+  <div class="pages-container">
+
+    <!-- ==================== Page 1: 4-1 核心觀念 ==================== -->
+    <div class="page" id="page1">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國二理化（上）講義</span>
+        <span>第 4 章 光、影像與顏色</span>
+        <span>P. 1</span>
+      </div>
+      <div class="main-title">第 4 章　光、影像與顏色</div>
+      <div class="section-title">
+        <span>4-1　光的傳播</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #475569;">焦點一：光的直線傳播、針孔成像與光速</span>
+      </div>
+
+      <div class="task-title">1. 光的直線傳播與光源</div>
+      <div class="item-line interactive-item">
+        (1) <strong>光源（發光體）：</strong>太陽、通電的燈泡和燭火等能自行發光的物體，稱為發光體或<span class="ans-word">光源</span>。當光源發出的光線進入眼睛會使我們產生視覺。
+      </div>
+      <div class="item-line interactive-item">
+        (2) <strong>光的直進性：</strong>光在真空中或均勻介質中以直線前進，稱為<span class="ans-word">光的直進性</span>。
+      </div>
+
+      <div class="task-title" style="margin-top: 6px;">2. 影子的形成與光的直進性應用</div>
+      <div style="display: flex; gap: 12px; align-items: center; margin: 4px 0;">
+        <div style="flex: 1;">
+          <div class="item-line interactive-item">
+            (1) <strong>影子的成因：</strong>當光線遇到不透明的物體時，一部分的光被吸收，一部分的光被反射，其他未被物體擋住的光會繼續前進，而在物體後方形成陰影，此現象是由於<span class="ans-word">光的直進性</span>所造成。
+          </div>
+          <div class="item-line interactive-item">
+            (2) <strong>生活應用：</strong>古代計時工具日晷、皮影戲、木匠單眼判斷木板平直度、立竿見影、日食與月食等天文現象。
+          </div>
+        </div>
+        <div style="width: 175px; text-align: center; flex-shrink: 0;">
+          <img src="../images/science-8-4-handout/image003.jpg" style="max-width: 100%; border-radius: 4px; border: 1px solid #cbd5e1;" alt="光的直進性與影子">
+          <div style="font-size: 10.5pt; color: #64748b;">▲ 光直進形成影子</div>
+        </div>
+      </div>
+
+      <div class="task-title" style="margin-top: 6px;">3. 針孔成像實驗</div>
+      <div style="display: flex; gap: 12px; align-items: center; margin: 4px 0;">
+        <div style="flex: 1;">
+          <div class="item-line interactive-item">
+            (1) <strong>實驗原理：</strong>因為光的直進性，上方LED燈發出的光線通過針孔後直線抵達紙屏下方，下方LED燈的光線直線抵達紙屏上方。
+          </div>
+          <div class="item-line interactive-item">
+            (2) <strong>成像性質：</strong>在紙屏上呈現大小和原物成比例，且為<span class="ans-word">上下顛倒</span>、<span class="ans-word">左右相反</span>的像。
+          </div>
+          <div class="item-line interactive-item">
+            (3) <strong>實像定義：</strong>由光源發出的真實光線所構成的像，如針孔成像中紙屏上呈現的像，稱為<span class="ans-word">實像</span>（能用屏幕承接）。
+          </div>
+        </div>
+        <div style="width: 195px; text-align: center; flex-shrink: 0;">
+          <img src="../images/science-8-4-handout/image004.jpg" style="max-width: 100%; border-radius: 4px; border: 1px solid #cbd5e1;" alt="針孔成像實驗">
+          <div style="font-size: 10.5pt; color: #64748b;">▲ 針孔成像原理示意圖</div>
+        </div>
+      </div>
+
+      <div class="task-title" style="margin-top: 6px;">4. 光的傳播速率</div>
+      <div class="item-line interactive-item">
+        (1) 光在不同的介質中光速不同，光速快慢大致為：<span class="ans-word">在真空中</span> ＞ <span class="ans-word">在空氣中</span> ＞ <span class="ans-word">在水中</span> ＞ <span class="ans-word">在玻璃中</span>。
+      </div>
+      <table class="custom-table" style="margin-top: 4px;">
+        <tr>
+          <th style="width: 25%;">介質</th>
+          <th style="width: 25%;">真空</th>
+          <th style="width: 25%;">空氣</th>
+          <th style="width: 25%;">水中</th>
+          <th style="width: 25%;">玻璃</th>
+        </tr>
+        <tr>
+          <td style="font-weight: bold;">光速 (公尺／秒)</td>
+          <td>$3 \times 10^8\text{ m/s}$</td>
+          <td>約 $3 \times 10^8\text{ m/s}$</td>
+          <td>約 $2.25 \times 10^8\text{ m/s}$</td>
+          <td>約 $2.0 \times 10^8\text{ m/s}$</td>
+        </tr>
+      </table>
+      <div class="tip-box" style="margin-top: 5px;">
+        💡 <strong>觀念精粹：</strong>光是電磁波，不需介質傳播，且在真空中速度最快（約每秒30萬公里）；與聲波（需介質，固體＞液體＞氣體，真空無法傳播）完全相反！
+      </div>
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>4-1 光的直線傳播與針孔成像</span>
+        <span>第 1 頁 / 共 20 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 2: 4-1 隨堂評量 (Q1~Q4) ==================== -->
+    <div class="page" id="page2">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國二理化（上）講義</span>
+        <span>第 4 章 光、影像與顏色</span>
+        <span>P. 2</span>
+      </div>
+      <div class="section-title">
+        <span>4-1　隨堂實戰評量</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #475569;">光的直進性、影子與針孔成像（第 1～4 題）</span>
+      </div>
+
+      <!-- Q1 -->
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ B ）</span> 1. 當物體在光源與屏幕之連線上向屏幕移近時，影子會如何改變？
+        </div>
+        <div class="qa-options">
+          <div>(A) 影子漸大</div>
+          <div>(B) 影子漸小</div>
+          <div>(C) 影子不變</div>
+          <div>(D) 有時增大，有時縮小</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】物體向屏幕靠近時，光源投射到物體邊緣的張角減小，物體遮擋光線在屏幕上投影的幾何區域縮小，因此屏幕上的影子會漸漸變小。
+          </div>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ B ）</span> 2. 在針孔成像實驗中，如果將針孔開得太大時，則在紙屏上的成像會產生什麼影響？
+        </div>
+        <div class="qa-options">
+          <div>(A) 成像縮小</div>
+          <div>(B) 影像清晰度變差</div>
+          <div>(C) 像會旋轉90度</div>
+          <div>(D) 像由實像變虛像</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】若針孔開得過大，孔洞可視為許多相鄰針孔的集合，大量重疊的光斑會使影像輪廓模糊，成像清晰度大幅降低（但整體亮度變亮）。
+          </div>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ D ）</span> 3. 有關光的傳播特性，下列敘述何者正確？
+        </div>
+        <div class="qa-options stacked">
+          <div>(A) 只有在真空中會沿直線傳播</div>
+          <div>(B) 在玻璃中不是沿直線傳播</div>
+          <div>(C) 在任何狀況下均沿直線傳播</div>
+          <div>(D) 在同一種均勻的介質中會沿直線傳播</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】光在「真空中」或「同一種均勻介質」內傳播時必沿直線前進；若進入不同介質或介質密度不均勻時，傳播方向會發生偏折（折射現象）。故選(D)。
+          </div>
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ C ）</span> 4. 下列哪些現象與光的直進有關？(甲)影子的形成；(乙)以日晷來判斷時間；(丙)孕婦做胎兒檢查；(丁)日食與月食現象；(戊)木匠以單眼判斷木板平直與否。
+        </div>
+        <div class="qa-options">
+          <div>(A) 甲乙丙</div>
+          <div>(B) 甲乙戊</div>
+          <div>(C) 甲乙丁戊</div>
+          <div>(D) 甲丁戊</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】(丙)孕婦產檢是利用「超聲波（超音波）」的回聲反射技術，屬於力學聲波的反射應用；其餘(甲)、(乙)、(丁)、(戊)皆為光沿直線前進所產生的現象與應用。故選(C)。
+          </div>
+        </div>
+      </div>
+
+      <div class="tip-box" style="margin-top: 10px;">
+        📌 <strong>隨堂叮嚀：</strong>點選整題或點擊題號前方括號，即可在課堂上直接顯示或隱藏正解與解析。
+      </div>
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>4-1 隨堂實戰評量 (Q1～Q4)</span>
+        <span>第 2 頁 / 共 20 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 3: 4-1 隨堂評量 (Q5~Q7) ==================== -->
+    <div class="page" id="page3">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國二理化（上）講義</span>
+        <span>第 4 章 光、影像與顏色</span>
+        <span>P. 3</span>
+      </div>
+      <div class="section-title">
+        <span>4-1　隨堂實戰評量</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #475569;">光速傳播與距離時間計算（第 5～7 題）</span>
+      </div>
+
+      <!-- Q5 -->
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ C ）</span> 5. (甲)鋼琴聲、(乙)超音波、(丙)太陽光、(丁)燈泡發出的光、(戊)紅色的雷射光。以上5種，能在真空中傳播的有哪些？
+        </div>
+        <div class="qa-options">
+          <div>(A) 甲乙丙丁戊</div>
+          <div>(B) 乙丙丁戊</div>
+          <div>(C) 丙丁戊</div>
+          <div>(D) 乙丁戊</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】聲音（甲鋼琴聲、乙超音波）是力學波，傳播時需要空氣、液體或固體等介質，無法在真空傳播；光（丙太陽光、丁燈泡光、戊雷射光）是電磁波，不需介質即可在真空中傳播。故選(C)。
+          </div>
+        </div>
+      </div>
+
+      <!-- Q6 -->
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ C ）</span> 6. 在陽光下豎立一竹竿，下列敘述何者錯誤？
+        </div>
+        <div class="qa-options stacked">
+          <div>(A) 竿影頂點與竹竿頂點兩點連線的延長線會通過太陽</div>
+          <div>(B) 竿影的長度可隨陽光照射的角度不同而改變</div>
+          <div>(C) 陽光照射不到的地方會產生影子，長方形的影子一定是長方形物體造成的</div>
+          <div>(D) 立竿見影的現象為光的直進性</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】(C)錯誤。圓形硬幣若傾斜擺放受光照射，在地面上投射出的影子形狀可以是橢圓形甚至接近長方形；影子的輪廓由物體受光邊界決定，不一定與物體正面形狀相同。
+          </div>
+        </div>
+      </div>
+
+      <!-- Q7 -->
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ A ）</span> 7. 假設月球至地球的距離為 $4 \times 10^5\text{ 公里}$，則光線從月球傳播至地球的時間約為多少秒？（光速為 $3 \times 10^5\text{ 公里／秒}$）
+        </div>
+        <div class="qa-options">
+          <div>(A) 1.33秒</div>
+          <div>(B) 2.66秒</div>
+          <div>(C) 0.75秒</div>
+          <div>(D) 1330秒</div>
+        </div>
+        <div class="calc-workspace" style="margin-top: 8px;">
+          <div style="font-weight: bold; color: #334155; margin-bottom: 3px;">【計算過程與解析】</div>
+          <div class="calc-solution">
+            由基本運動學公式：時間 $t = \frac{\text{距離 } S}{\text{速度 } v}$<br>
+            已知距離 $S = 4 \times 10^5\text{ km}$，光速 $v = 3 \times 10^5\text{ km/s}$：<br>
+            $$t = \frac{4 \times 10^5\text{ km}}{3 \times 10^5\text{ km/s}} = \frac{4}{3} \approx 1.33\text{ 秒}$$
+            故光從月球射抵地球表面僅需約 1.33 秒。正確答案選 (A)。
+          </div>
+        </div>
+      </div>
+
+      <div class="tip-box" style="margin-top: 14px;">
+        💡 <strong>觀念延伸：</strong>「光年」是光在真空中前進一年的距離，為長度單位而非時間單位！計算公式為：$1\text{ 光年} = (3 \times 10^8\text{ m/s}) \times (365 \times 24 \times 3600\text{ s}) \approx 9.46 \times 10^{12}\text{ 公里}$。
+      </div>
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>4-1 隨堂實戰評量 (Q5～Q7)</span>
+        <span>第 3 頁 / 共 20 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 4: 4-2 核心觀念 ==================== -->
+    <div class="page" id="page4">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國二理化（上）講義</span>
+        <span>第 4 章 光、影像與顏色</span>
+        <span>P. 4</span>
+      </div>
+      <div class="section-title">
+        <span>4-2　光的反射與面鏡成像</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #475569;">焦點一：反射定律、光徑名詞與平面鏡成像</span>
+      </div>
+
+      <div class="task-title">1. 光的反射與反射定律</div>
+      <div class="item-line interactive-item">
+        (1) <strong>光的反射：</strong>光照在物體表面，都會發生<span class="ans-word">反射</span>，若反射的光進入眼睛，我們就能看見物體。
+      </div>
+      <div class="item-line interactive-item">
+        (2) <strong>反射定律三大內容：</strong>
+        <div style="padding-left: 16px; margin-top: 2px;">
+          a. 入射光線、反射光線和法線在<span class="ans-word">同一平面</span>上，且入射光線、反射光線分別在<span class="ans-word">法線</span>的兩側。<br>
+          b. <span class="ans-word">入射角等於反射角</span>（即 $\angle i = \angle r$）。<br>
+          c. <strong>光的可逆性：</strong>如果光線改從反射光的路徑射入，會沿原本入射光的路徑射出，此現象稱為<span class="ans-word">光的可逆性</span>。
+        </div>
+      </div>
+
+      <div class="task-title" style="margin-top: 6px;">2. 光的反射名詞圖解</div>
+      <div style="display: flex; gap: 14px; align-items: center; margin: 4px 0;">
+        <div style="flex: 1;">
+          <div class="item-line interactive-item">• <strong>界面：</strong>兩介質的交界表面。</div>
+          <div class="item-line interactive-item">• <strong>法線：</strong><span class="ans-word">垂直界面</span>的直線（虛構參考線）。</div>
+          <div class="item-line interactive-item">• <strong>入射線：</strong>射向界面的光線；<strong>反射線：</strong>自界面反彈射出的光線。</div>
+          <div class="item-line interactive-item">• <strong>入射角：</strong><span class="ans-word">入射線與法線</span>的夾角（注意：非與鏡面之夾角！）。</div>
+          <div class="item-line interactive-item">• <strong>反射角：</strong><span class="ans-word">反射線與法線</span>的夾角。</div>
+        </div>
+        <div style="width: 170px; text-align: center; flex-shrink: 0;">
+          <img src="../images/science-8-4-handout/image014.jpg" style="max-width: 100%; border-radius: 4px; border: 1px solid #cbd5e1;" alt="反射定律圖解">
+          <div style="font-size: 10.5pt; color: #64748b;">▲ 光的反射定律光路圖</div>
+        </div>
+      </div>
+
+      <div class="task-title" style="margin-top: 6px;">3. 平面鏡成像原理與實驗</div>
+      <div style="display: flex; gap: 12px; align-items: center; margin: 4px 0;">
+        <div style="flex: 1;">
+          <div class="item-line interactive-item">
+            (1) <strong>虛像：</strong>物體在平面鏡中的像，並非由實際光線會聚而成，不能投射至白紙或屏幕上，只能用眼睛透過鏡面看到，稱為<span class="ans-word">虛像</span>。
+          </div>
+          <div class="item-line interactive-item">
+            (2) <strong>實驗觀察：</strong>
+            1 來自硬幣的光線經塑膠板反射入眼，大腦依直進性感覺光線來自鏡後。<br>
+            2 像的位置在反射光線向後延伸的交點處。
+          </div>
+          <div class="item-line interactive-item">
+            (3) <strong>成像性質：</strong>
+            a. 大小：物大 <span class="ans-word">＝</span> 像大（等大）。<br>
+            b. 方向：以鏡面為中心呈現<span class="ans-word">左右對稱</span>、正立。<br>
+            c. 距離：<span class="ans-word">物距 ＝ 像距</span>。
+          </div>
+        </div>
+        <div style="width: 195px; text-align: center; flex-shrink: 0;">
+          <img src="../images/science-8-4-handout/image015.jpg" style="max-width: 100%; border-radius: 4px; border: 1px solid #cbd5e1; margin-bottom: 4px;" alt="平面鏡成像實驗">
+          <img src="../images/science-8-4-handout/image016.jpg" style="max-width: 100%; border-radius: 4px; border: 1px solid #cbd5e1;" alt="平面鏡成像對稱">
+          <div style="font-size: 10.5pt; color: #64748b;">▲ 平面鏡成像實驗與對稱性</div>
+        </div>
+      </div>
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>4-2 光的反射定律與平面鏡</span>
+        <span>第 4 頁 / 共 20 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 5: 4-2 面鏡比較與評量 (Q1~Q2) ==================== -->
+    <div class="page" id="page5">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國二理化（上）講義</span>
+        <span>第 4 章 光、影像與顏色</span>
+        <span>P. 5</span>
+      </div>
+      <div class="section-title">
+        <span>4-2　凸面鏡、凹面鏡與隨堂評量</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #475569;">焦點二：球面面鏡比較與實戰評量（第 1～2 題）</span>
+      </div>
+
+      <div class="task-title">4. 凸面鏡與凹面鏡比較</div>
+      <table class="custom-table" style="margin-top: 4px;">
+        <tr>
+          <th style="width: 16%;">面鏡種類</th>
+          <th style="width: 42%;">凸面鏡（反射面外凸）</th>
+          <th style="width: 42%;">凹面鏡（反射面內凹）</th>
+        </tr>
+        <tr>
+          <td style="font-weight: bold;">光學原理</td>
+          <td>凸面鏡會使光線<span class="ans-word">發散</span></td>
+          <td>凹面鏡能使光線<span class="ans-word">會聚</span>於焦點</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold;">光徑示意圖</td>
+          <td>
+            <img src="../images/science-8-4-handout/image017.jpg" style="max-height: 80px; border-radius: 3px;" alt="凸面鏡發散">
+          </td>
+          <td>
+            <img src="../images/science-8-4-handout/image018.jpg" style="max-height: 80px; border-radius: 3px;" alt="凹面鏡會聚">
+          </td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold;">成像特性</td>
+          <td>
+            必為<span class="ans-word">正</span>立、<span class="ans-word">縮小</span>、<span class="ans-word">虛</span>像<br>
+            （視野比同尺寸平面鏡廣闊）
+          </td>
+          <td class="align-left">
+            a. 物在焦點內：產生正立、<span class="ans-word">放大</span>的<span class="ans-word">虛</span>像。<br>
+            b. 光源置於焦點上：反射後產生<span class="ans-word">平行光束</span>。
+          </td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold;">生活應用</td>
+          <td>汽車後照鏡、道路轉彎處反射鏡</td>
+          <td>手電筒反光罩、車頭燈、化妝鏡、太陽爐</td>
+        </tr>
+      </table>
+
+      <div class="task-title" style="margin-top: 10px;">隨堂實戰評量 (Q1～Q2)</div>
+
+      <!-- Q1 -->
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ D ）</span> 1. 我們可看到各種不同外形與顏色的物體，原因為何？
+        </div>
+        <div class="qa-options stacked">
+          <div>(A) 物體均為發光體，可發出光線</div>
+          <div>(B) 物體可將光線完全反射</div>
+          <div>(C) 物體可將光線完全吸收</div>
+          <div>(D) 物體可發出光線或反射光線</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】視覺的產生是光線進入眼睛刺激視網膜。發光體（如太陽、燈泡）發射光線入眼，不發光的物體則反射周遭光線入眼，均能使我們看見物體。故選(D)。
+          </div>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ C ）</span> 2. 寶妹在鏡子裡看到車牌號碼為「18A－01」，請問實際上的車牌號碼應為何者？
+        </div>
+        <div class="qa-options">
+          <div>(A) 10－A18</div>
+          <div>(B) 18A－10</div>
+          <div>(C) 10－A81</div>
+          <div>(D) 81A－10</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】平面鏡成像具有「左右相反、物與像對稱」的性質。將鏡中字樣「18A－01」作水平翻轉對稱：
+            - 最右側的「01」水平翻轉對稱後變成最左側的「10」；
+            - 中間的「－A」水平翻轉對稱後仍為「－A」；
+            - 最左側的「18」水平翻轉對稱後變成最右側的「81」；
+            綜合可得實際車牌號碼為「10－A81」。正確答案選 (C)。
+          </div>
+        </div>
+      </div>
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>4-2 凸面鏡凹面鏡與隨堂評量</span>
+        <span>第 5 頁 / 共 20 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 6: 4-2 隨堂評量 (Q3~Q4) ==================== -->
+    <div class="page" id="page6">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國二理化（上）講義</span>
+        <span>第 4 章 光、影像與顏色</span>
+        <span>P. 6</span>
+      </div>
+      <div class="section-title">
+        <span>4-2　隨堂實戰評量</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #475569;">凸面鏡視野與平面鏡成像視野分析（第 3～4 題）</span>
+      </div>
+
+      <!-- Q3 -->
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ C ）</span> 3. 迂迴的山路轉彎處都會裝設「凸面鏡」而非平面鏡，其原因為何？
+        </div>
+        <div class="qa-options stacked">
+          <div>(A) 物體經凸面鏡反射後的成像較大</div>
+          <div>(B) 物體經凸面鏡反射後的成像為實像</div>
+          <div>(C) 凸面鏡的成像範圍較大，視野較廣</div>
+          <div>(D) 遠處的物體可以成像</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】凸面鏡會使光線發散，所成的像恆為「正立、縮小的虛像」。因為像縮小，能將更大角度範圍的景物全部映入鏡中，成像範圍大、視野開闊，利於駕駛人看清轉角對向車況。故選(C)。
+          </div>
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="qa-block interactive-item" style="margin-top: 10px;">
+        <div style="display: flex; gap: 14px; align-items: flex-start;">
+          <div style="flex: 1;">
+            <div class="qa-header">
+              <span class="qa-bracket">（ C ）</span> 4. 如圖中甲、乙、丙、丁、戊五個人，站在平面鏡前的固定位置，則戊看不到鏡內哪個人的像？
+            </div>
+            <div class="qa-options" style="margin-top: 8px;">
+              <div>(A) 甲</div>
+              <div>(B) 乙</div>
+              <div>(C) 丙</div>
+              <div>(D) 丁</div>
+            </div>
+          </div>
+          <div style="width: 165px; text-align: center; flex-shrink: 0;">
+            <img src="../images/science-8-4-handout/image020.jpg" style="max-width: 100%; border-radius: 4px; border: 1px solid #cbd5e1;" alt="平面鏡視野題目圖">
+            <div style="font-size: 10.5pt; color: #64748b;">▲ 4-2 第4題附圖</div>
+          </div>
+        </div>
+
+        <div class="calc-workspace" style="margin-top: 10px;">
+          <div style="font-weight: bold; color: #334155; margin-bottom: 3px;">【解題視野畫法與解析】</div>
+          <div class="calc-solution">
+            <strong>解題方法（對稱像點與視野光徑法）：</strong><br>
+            1. 戊若要看到某人在鏡中的像，該人發出的光線經平面鏡反射後必須能射入戊的眼睛。<br>
+            2. 根據光的可逆性，從「戊的眼睛位置」向「平面鏡的上下兩個端點」引兩條光線，此兩條光線依反射定律向鏡前反射所涵蓋的梯形區域，即為戊在鏡中看得到的物體範圍。<br>
+            3. 由網格圖中觀察：丙的位置位於戊的左側且偏下方，丙發出射向鏡面兩端的光線反射後，光徑均偏向鏡面上方或遠離戊，無法到達戊的眼睛；亦即戊與平面鏡端點的連線區域無法涵蓋丙的像。因此戊看不到「丙」的像。正確答案選 (C)。
+          </div>
+        </div>
+      </div>
+
+      <div class="tip-box" style="margin-top: 14px;">
+        💡 <strong>幾何對稱速記法：</strong>在方格圖上，將鏡後戊的對稱像點 $E'$ 與鏡面兩端連線，若某人位於此連線向鏡前延伸的射線範圍之外，則戊便無法由鏡中看到該人！
+      </div>
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>4-2 隨堂實戰評量 (Q3～Q4)</span>
+        <span>第 6 頁 / 共 20 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 7: 4-3 核心觀念 ==================== -->
+    <div class="page" id="page7">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國二理化（上）講義</span>
+        <span>第 4 章 光、影像與顏色</span>
+        <span>P. 7</span>
+      </div>
+      <div class="section-title">
+        <span>4-3　光的折射</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #475569;">焦點一：折射成因、名詞光徑與快慢介質偏折規律</span>
+      </div>
+
+      <div class="task-title">1. 光的折射定義與成因</div>
+      <div class="item-line interactive-item">
+        (1) <strong>光的折射：</strong>光進入不同介質時，由於光在不同介質內的<span class="ans-word">傳播速率不同</span>，前進方向在交界處發生偏折的現象，稱為<span class="ans-word">折射</span>。
+      </div>
+      <div class="item-line interactive-item">
+        (2) <strong>垂直入射特例：</strong>光線若垂直界面入射（入射角 $= 0^\circ$），則行進方向不偏折（折射角 $= 0^\circ$），但光速依然改變。
+      </div>
+
+      <div class="task-title" style="margin-top: 6px;">2. 折射名詞定義與光路圖</div>
+      <div style="display: flex; gap: 14px; align-items: center; margin: 4px 0;">
+        <div style="flex: 1;">
+          <div class="item-line interactive-item">• <strong>法線：</strong>垂直兩介質交界面的參考直線。</div>
+          <div class="item-line interactive-item">• <strong>入射線：</strong>射入界面的光線；<strong>折射線：</strong>進入另一介質後偏折的光線。</div>
+          <div class="item-line interactive-item">• <strong>入射角：</strong><span class="ans-word">入射線與法線</span>的夾角。</div>
+          <div class="item-line interactive-item">• <strong>折射角：</strong><span class="ans-word">折射線與法線</span>的夾角。</div>
+        </div>
+        <div style="width: 180px; text-align: center; flex-shrink: 0;">
+          <img src="../images/science-8-4-handout/image027.jpg" style="max-width: 100%; border-radius: 4px; border: 1px solid #cbd5e1;" alt="折射示意圖">
+          <div style="font-size: 10.5pt; color: #64748b;">▲ 折射角與入射角定義</div>
+        </div>
+      </div>
+
+      <div class="task-title" style="margin-top: 6px;">3. 快慢介質折射規律對照表</div>
+      <table class="custom-table" style="margin-top: 4px;">
+        <tr>
+          <th style="width: 20%;">光的行進方向</th>
+          <th style="width: 40%;">由光速快的介質 入射 光速慢的介質<br><span style="font-weight: normal; font-size: 11pt;">（例如：空氣 $\rightarrow$ 水 或 玻璃）</span></th>
+          <th style="width: 40%;">由光速慢的介質 入射 光速快的介質<br><span style="font-weight: normal; font-size: 11pt;">（例如：水 或 玻璃 $\rightarrow$ 空氣）</span></th>
+        </tr>
+        <tr>
+          <td style="font-weight: bold;">光徑圖示</td>
+          <td>
+            <img src="../images/science-8-4-handout/image028.jpg" style="max-height: 85px; border-radius: 3px;" alt="偏向法線">
+          </td>
+          <td>
+            <img src="../images/science-8-4-handout/image029.jpg" style="max-height: 85px; border-radius: 3px;" alt="偏離法線">
+          </td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold;">偏折結果</td>
+          <td class="align-left">
+            a. 前進方向<span class="ans-word">偏向</span>法線。<br>
+            b. <span class="ans-word">折射角 ＜ 入射角</span>。
+          </td>
+          <td class="align-left">
+            a. 前進方向<span class="ans-word">偏離</span>法線。<br>
+            b. <span class="ans-word">折射角 ＞ 入射角</span>。
+          </td>
+        </tr>
+      </table>
+
+      <div class="tip-box" style="margin-top: 6px;">
+        💡 <strong>折射黃金口訣：</strong>「快入慢，偏向法線角變小；慢入快，偏離法線角變大！」角度永遠與該介質中的光速成正比趨勢。
+      </div>
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>4-3 光的折射定律與規律</span>
+        <span>第 7 頁 / 共 20 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 8: 4-3 隨堂評量（一） (Q1~Q3) ==================== -->
+    <div class="page" id="page8">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國二理化（上）講義</span>
+        <span>第 4 章 光、影像與顏色</span>
+        <span>P. 8</span>
+      </div>
+      <div class="section-title">
+        <span>4-3　隨堂實戰評量（一）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #475569;">折射生活現象與光路圖判斷（第 1～3 題）</span>
+      </div>
+
+      <!-- Q1 -->
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ B ）</span> 1. 晚上看到星星常閃爍不定是下列哪一項因素造成的？
+        </div>
+        <div class="qa-options">
+          <div>(A) 星星位置不固定</div>
+          <div>(B) 光在不穩定氣流中折射</div>
+          <div>(C) 星星本身發光就是閃爍不定</div>
+          <div>(D) 觀察者眼睛的錯覺</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】大氣層中的空氣因溫度差異造成對流擾動，空氣密度不均勻且隨時變化，使遙遠星光進入大氣層時發生連續且微小的折射方向改變，產生忽亮忽暗的閃爍現象。故選(B)。
+          </div>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="qa-block interactive-item">
+        <div style="display: flex; gap: 14px; align-items: flex-start;">
+          <div style="flex: 1;">
+            <div class="qa-header">
+              <span class="qa-bracket">（ C ）</span> 2. 如圖為一光束自甲介質折射進入乙介質，再從乙介質折射進入丙介質，則光在各介質中速度大小之關係，下列何者正確？
+            </div>
+            <div class="qa-options">
+              <div>(A) 甲＞乙＞丙</div>
+              <div>(B) 乙＞甲＞丙</div>
+              <div>(C) 丙＞乙＞甲</div>
+              <div>(D) 甲＞丙＞乙</div>
+            </div>
+          </div>
+          <div style="width: 125px; text-align: center; flex-shrink: 0;">
+            <img src="../images/science-8-4-handout/image031.jpg" style="max-width: 100%; border-radius: 4px; border: 1px solid #cbd5e1;" alt="4-3 第2題圖">
+            <div style="font-size: 10pt; color: #64748b;">▲ 4-3 第2題</div>
+          </div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】觀察光徑與法線夾角：<br>
+            1. 光由甲進入乙時，光線「偏離法線」（折射角大於入射角），表示光速在乙中大於甲（$v_乙 > v_甲$）。<br>
+            2. 光由乙進入丙時，光線「再次偏離法線」，折射角進一步增大，表示光速在丙中大於乙（$v_丙 > v_乙$）。<br>
+            綜合可得光速大小關係為：丙 ＞ 乙 ＞ 甲。正確答案選 (C)。
+          </div>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="qa-block interactive-item" style="margin-top: 6px;">
+        <div class="qa-header">
+          <span class="qa-bracket">（ C ）</span> 3. 從水面上方看到水中的一顆石頭，下列何圖為合理的光行進路線圖？
+        </div>
+        <div style="display: flex; justify-content: space-around; margin: 6px 0;">
+          <div style="text-align: center;">
+            <img src="../images/science-8-4-handout/image032.jpg" style="height: 75px;" alt="(A)">
+            <div style="font-weight: bold; font-size: 11pt;">(A)</div>
+          </div>
+          <div style="text-align: center;">
+            <img src="../images/science-8-4-handout/image033.jpg" style="height: 75px;" alt="(B)">
+            <div style="font-weight: bold; font-size: 11pt;">(B)</div>
+          </div>
+          <div style="text-align: center;">
+            <img src="../images/science-8-4-handout/image034.jpg" style="height: 75px;" alt="(C)">
+            <div style="font-weight: bold; font-size: 11pt;">(C)</div>
+          </div>
+          <div style="text-align: center;">
+            <img src="../images/science-8-4-handout/image035.jpg" style="height: 75px;" alt="(D)">
+            <div style="font-weight: bold; font-size: 11pt;">(D)</div>
+          </div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】人能看見水中的石頭，光線是由水中的石頭射出進入空氣中的眼睛（箭頭朝上出水面）；光由水（慢）射入空氣（快），折射線偏離法線（折射角大於入射角）。逆著折射光線看去，虛像位置比實際石頭更淺。合乎此光路者唯有 (C)。
+          </div>
+        </div>
+      </div>
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>4-3 隨堂實戰評量（一） (Q1～Q3)</span>
+        <span>第 8 頁 / 共 20 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 9: 4-3 隨堂評量（二） (Q4~Q5) ==================== -->
+    <div class="page" id="page9">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國二理化（上）講義</span>
+        <span>第 4 章 光、影像與顏色</span>
+        <span>P. 9</span>
+      </div>
+      <div class="section-title">
+        <span>4-3　隨堂實戰評量（二）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #475569;">光跨介質物理量變化與偏折規律（第 4～5 題）</span>
+      </div>
+
+      <!-- Q4 -->
+      <div class="qa-block interactive-item" style="margin-top: 10px;">
+        <div class="qa-header">
+          <span class="qa-bracket">（ D ）</span> 4. 光由空氣進入水中，會發生下列哪些現象？<br>
+          <span style="font-weight: normal; font-size: 13pt; margin-left: 10px;">(甲)光速減慢、(乙)波長變長、(丙)頻率變小、(丁)同時有反射和折射現象、(戊)入射角等於反射角。</span>
+        </div>
+        <div class="qa-options" style="margin-top: 8px;">
+          <div>(A) 甲乙</div>
+          <div>(B) 乙丙丁</div>
+          <div>(C) 乙丁</div>
+          <div>(D) 甲丁戊</div>
+        </div>
+        <div class="calc-workspace" style="margin-top: 10px;">
+          <div style="font-weight: bold; color: #334155; margin-bottom: 3px;">【詳細考點解析】</div>
+          <div class="calc-solution">
+            • <strong>(甲) 正確：</strong>光在空氣中速率約為 $3 \times 10^8\text{ m/s}$，進入水中降為約 $2.25 \times 10^8\text{ m/s}$，速率確實變慢。<br>
+            • <strong>(丙) 錯誤：</strong>波動的「頻率」由最初發出光的波源決定，在穿透不同介質時<strong>頻率恆保持不變</strong>！<br>
+            • <strong>(乙) 錯誤：</strong>依波動波速公式 $v = f \lambda$，頻率 $f$ 固定，光速 $v$ 減慢時，波長 $\lambda$ 應隨之<strong>變短</strong>。<br>
+            • <strong>(丁) 正確：</strong>光線射抵不同介質的交界面時，絕大部分情況下均會<strong>同時發生一部分反射與一部分折射</strong>。<br>
+            • <strong>(戊) 正確：</strong>反射部分的光線始終嚴格遵守反射定律，入射角必然等於反射角。<br>
+            綜合以上分析，敘述正確者為 (甲)(丁)(戊)，正確答案選 (D)。
+          </div>
+        </div>
+      </div>
+
+      <!-- Q5 -->
+      <div class="qa-block interactive-item" style="margin-top: 16px;">
+        <div class="qa-header">
+          <span class="qa-bracket">（ C ）</span> 5. 光線由光速較慢的介質射入光速較快的介質時，將會發生何種情形？
+        </div>
+        <div class="qa-options stacked" style="margin-top: 8px;">
+          <div>(A) 偏向法線，同時折射角＞入射角</div>
+          <div>(B) 偏向法線，同時折射角＜入射角</div>
+          <div>(C) 偏離法線，同時折射角＞入射角</div>
+          <div>(D) 偏離法線，同時折射角＜入射角</div>
+        </div>
+        <div class="calc-workspace" style="margin-top: 10px;">
+          <div style="font-weight: bold; color: #334155; margin-bottom: 3px;">【偏折判斷精要】</div>
+          <div class="calc-solution">
+            【解析】光由光速較慢的介質進入較快的介質（例如：水 $\rightarrow$ 空氣 或 玻璃 $\rightarrow$ 空氣）：<br>
+            1. 進入快介質後，光束邊緣加速前進，導致光線行進方向朝<strong>「偏離法線」</strong>的方向偏折；<br>
+            2. 因為偏離法線，使得折射光線與法線之間的夾角增大，故<strong>「折射角 ＞ 入射角」</strong>。<br>
+            正確選項為 (C)。
+          </div>
+        </div>
+      </div>
+
+      <div class="tip-box" style="margin-top: 20px;">
+        💡 <strong>舒展學習空間：</strong>本頁專注於光跨介質核心概念之深度剖析，完整保留詳盡推導步驟，無跨頁或截斷之疑慮。
+      </div>
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>4-3 隨堂實戰評量（二） (Q4～Q5)</span>
+        <span>第 9 頁 / 共 20 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 10: 4-3 隨堂評量（三） (Q6~Q7) ==================== -->
+    <div class="page" id="page10">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國二理化（上）講義</span>
+        <span>第 4 章 光、影像與顏色</span>
+        <span>P. 10</span>
+      </div>
+      <div class="section-title">
+        <span>4-3　隨堂實戰評量（三）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #475569;">介質折射角度數據表與聲光特性對比（第 6～7 題）</span>
+      </div>
+
+      <!-- Q6 -->
+      <div class="qa-block interactive-item" style="margin-top: 8px;">
+        <div class="qa-header">
+          <span class="qa-bracket">（ C ）</span> 6. 小銘以固定角度 $30^\circ$ 將光線射入各種介質中，結果如右表，試由表中內容判斷光在甲、乙、丙、丁四種介質中的光速大小順序為何？
+        </div>
+        <div style="display: flex; gap: 14px; align-items: center; margin: 8px 0;">
+          <div style="flex: 1;">
+            <div class="qa-options stacked">
+              <div>(A) 乙＞丁＞丙＞甲</div>
+              <div>(B) 丁＞丙＞甲＞乙</div>
+              <div>(C) 乙＞甲＞丙＞丁</div>
+              <div>(D) 丙＞乙＞甲＞丁</div>
+            </div>
+          </div>
+          <div style="width: 230px; flex-shrink: 0;">
+            <table class="custom-table">
+              <tr><th>介質</th><th>甲</th><th>乙</th><th>丙</th><th>丁</th></tr>
+              <tr><td>入射角</td><td>$30^\circ$</td><td>$30^\circ$</td><td>$30^\circ$</td><td>$30^\circ$</td></tr>
+              <tr><td>折射角</td><td>$50^\circ$</td><td>$70^\circ$</td><td>$30^\circ$</td><td>$15^\circ$</td></tr>
+            </table>
+          </div>
+        </div>
+        <div class="calc-workspace" style="margin-top: 8px;">
+          <div style="font-weight: bold; color: #334155; margin-bottom: 3px;">【數據比較與解析】</div>
+          <div class="calc-solution">
+            【解析】入射角均固定為 $30^\circ$。在光的折射現象中，折射角的大小與光在該介質中的速率成正相關趨勢（介質內光速越快，與法線之夾角越大）：<br>
+            • 介質乙折射角為 $70^\circ$（最大），表示光在乙中的速度最快；<br>
+            • 介質甲折射角為 $50^\circ$（次大）；<br>
+            • 介質丙折射角為 $30^\circ$（折射角等於入射角，光速與原介質相同）；<br>
+            • 介質丁折射角為 $15^\circ$（最小，光速最慢）。<br>
+            因此四種介質中光速大小順序為：<strong>乙 ＞ 甲 ＞ 丙 ＞ 丁</strong>。正確答案選 (C)。
+          </div>
+        </div>
+      </div>
+
+      <!-- Q7 -->
+      <div class="qa-block interactive-item" style="margin-top: 14px;">
+        <div class="qa-header">
+          <span class="qa-bracket">（ D ）</span> 7. 關於聲音和光的敘述，下列何者正確？
+        </div>
+        <div class="qa-options stacked" style="margin-top: 6px;">
+          <div>(A) 兩者均需介質才能傳播</div>
+          <div>(B) 兩者在空氣、水、玻璃等介質中的傳播速率，均為空氣＞水＞玻璃</div>
+          <div>(C) 我們會先看見閃電再聽到雷聲，是因為閃電先產生</div>
+          <div>(D) 兩者遇到障礙物都會發生反射</div>
+        </div>
+        <div class="calc-workspace" style="margin-top: 8px;">
+          <div style="font-weight: bold; color: #334155; margin-bottom: 3px;">【聲波與光波綜合對比解析】</div>
+          <div class="calc-solution">
+            • <strong>(A) 錯誤：</strong>聲波是力學波，傳播需要介質；光波是電磁波，在真空中也能傳播。<br>
+            • <strong>(B) 錯誤：</strong>聲速傳播快慢為「固體 ＞ 液體 ＞ 氣體」（玻璃 ＞ 水 ＞ 空氣）；光速則剛好相反，為「真空中 ＞ 空氣 ＞ 水 ＞ 玻璃」。<br>
+            • <strong>(C) 錯誤：</strong>閃電與雷聲是同時伴隨發生的，我們先看到閃電是因為空氣中光速（約 $3 \times 10^8\text{ m/s}$）遠大於聲速（約 $340\text{ m/s}$）。<br>
+            • <strong>(D) 正確：</strong>聲波與光波都具有波動特性，遇到物體表面或介質障礙時均會發生反射。故選(D)。
+          </div>
+        </div>
+      </div>
+
+      <div class="tip-box" style="margin-top: 12px;">
+        💡 <strong>大考叮嚀：</strong>「聲速固體最快真空為零；光速真空最快固體最慢！」兩者剛好完全相反，考前務必多次強化記憶。
+      </div>
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>4-3 隨堂實戰評量（三） (Q6～Q7)</span>
+        <span>第 10 頁 / 共 20 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 11: 4-4 核心觀念一 ==================== -->
+    <div class="page" id="page11">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國二理化（上）講義</span>
+        <span>第 4 章 光、影像與顏色</span>
+        <span>P. 11</span>
+      </div>
+      <div class="section-title">
+        <span>4-4　透鏡成像</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #475569;">焦點一：透鏡折射現象與凸/凹透鏡成像性質</span>
+      </div>
+
+      <div class="task-title">1. 透鏡的折射現象與焦點</div>
+      <div style="display: flex; gap: 12px; align-items: center; margin: 4px 0;">
+        <div style="flex: 1;">
+          <div class="item-line interactive-item">
+            (1) <strong>凸透鏡（會聚透鏡）：</strong>平行雷射光經凸透鏡折射後，在鏡後會聚於一點，稱為<span class="ans-word">焦點</span>，因此凸透鏡又稱為<span class="ans-word">會聚透鏡</span>；焦點與透鏡中心的距離稱為<span class="ans-word">焦距</span>（$f$）。
+          </div>
+          <div class="item-line interactive-item">
+            (2) <strong>凹透鏡（發散透鏡）：</strong>平行雷射光經凹透鏡折射會發散，折射後光線的反向延長線在鏡前交會於一點，稱為<span class="ans-word">焦點</span>（虛焦點），因此凹透鏡又稱為<span class="ans-word">發散透鏡</span>。
+          </div>
+        </div>
+        <div style="width: 195px; text-align: center; flex-shrink: 0;">
+          <img src="../images/science-8-4-handout/image038.jpg" style="max-height: 65px; border-radius: 3px; border: 1px solid #cbd5e1; margin-bottom: 2px;" alt="凸透鏡會聚">
+          <img src="../images/science-8-4-handout/image039.jpg" style="max-height: 65px; border-radius: 3px; border: 1px solid #cbd5e1;" alt="凹透鏡發散">
+          <div style="font-size: 10pt; color: #64748b;">▲ 凸透鏡與凹透鏡折射路徑</div>
+        </div>
+      </div>
+
+      <div class="task-title" style="margin-top: 6px;">2. 凸透鏡成像性質（重要總表與綜合光路）</div>
+      <div style="text-align: center; margin: 2px 0;">
+        <img src="../images/science-8-4-handout/image040.jpg" style="max-width: 82%; border-radius: 4px; border: 1px solid #cbd5e1;" alt="凸透鏡成像綜合光路圖">
+      </div>
+      <table class="custom-table" style="margin-top: 3px;">
+        <tr>
+          <th style="width: 18%;">物體位置</th>
+          <th style="width: 25%;">成像位置</th>
+          <th style="width: 27%;">像的性質</th>
+          <th style="width: 30%;">生活應用</th>
+        </tr>
+        <tr>
+          <td>① $2f$ 外</td>
+          <td>①' $f \sim 2f$ 內（異側）</td>
+          <td><span class="ans-word">倒立縮小 實像</span></td>
+          <td>照相機、眼球成像</td>
+        </tr>
+        <tr>
+          <td>② $2f$ 上</td>
+          <td>②' $2f$ 上（異側）</td>
+          <td><span class="ans-word">倒立等大 實像</span></td>
+          <td>等大影印機</td>
+        </tr>
+        <tr>
+          <td>③ $f \sim 2f$ 內</td>
+          <td>③' $2f$ 外（異側）</td>
+          <td><span class="ans-word">倒立放大 實像</span></td>
+          <td>投影機、幻燈機</td>
+        </tr>
+        <tr>
+          <td>④ 焦點上 ($f$)</td>
+          <td>④' 無窮遠</td>
+          <td><span class="ans-word">無法成像</span>（平行光束）</td>
+          <td>手電筒、探照燈</td>
+        </tr>
+        <tr>
+          <td>⑤ 焦點內 ($< f$)</td>
+          <td>⑤' 鏡前物後（同側）</td>
+          <td><span class="ans-word">正立放大 虛像</span></td>
+          <td>放大鏡</td>
+        </tr>
+      </table>
+
+      <div class="task-title" style="margin-top: 6px;">3. 凹透鏡成像性質</div>
+      <div style="display: flex; gap: 10px; align-items: center;">
+        <div style="flex: 1;">
+          <div class="item-line interactive-item">
+            • <strong>任意物距：</strong>物體置於凹透鏡前任意位置，所成的像恆位於鏡前焦點內（與物同側），成像性質必為<span class="ans-word">正立縮小 虛像</span>。
+          </div>
+          <div class="item-line interactive-item">
+            • <strong>生活應用：</strong>近視眼鏡、大門防盜貓眼。
+          </div>
+        </div>
+        <div style="width: 175px; text-align: center; flex-shrink: 0;">
+          <img src="../images/science-8-4-handout/image041.jpg" style="max-width: 100%; border-radius: 4px; border: 1px solid #cbd5e1;" alt="凹透鏡成像綜合光路圖">
+        </div>
+      </div>
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>4-4 透鏡折射與凸/凹透鏡成像</span>
+        <span>第 11 頁 / 共 20 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 12: 4-4 核心觀念二 ==================== -->
+    <div class="page" id="page12">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國二理化（上）講義</span>
+        <span>第 4 章 光、影像與顏色</span>
+        <span>P. 12</span>
+      </div>
+      <div class="section-title">
+        <span>4-4　生活中的透鏡與視力矯正</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #475569;">焦點二：照相機、放大鏡、眼睛結構與近視/遠視矯正</span>
+      </div>
+
+      <div class="task-title">4. 生活中的常見透鏡工具</div>
+      <div class="item-line interactive-item">
+        (1) <strong>放大鏡：</strong>將物體置於凸透鏡的<span class="ans-word">焦距內</span>（$p < f$），透過透鏡可在物體同側觀察到<span class="ans-word">正立放大 虛像</span>。
+      </div>
+      <div class="item-line interactive-item">
+        (2) <strong>照相機：</strong>鏡頭為凸透鏡組，景物置於鏡頭<span class="ans-word">兩倍焦距外</span>（$p > 2f$），光線經折射後落在後方感光元件（如底片或CCD/CMOS）上，形成清晰的<span class="ans-word">倒立縮小 實像</span>。
+      </div>
+
+      <div class="task-title" style="margin-top: 8px;">5. 眼睛結構與近視、遠視矯正成因對照表</div>
+      <table class="custom-table" style="margin-top: 4px;">
+        <tr>
+          <th style="width: 18%;">眼部狀況</th>
+          <th style="width: 41%;">近視眼</th>
+          <th style="width: 41%;">遠視眼 或 老花眼</th>
+        </tr>
+        <tr>
+          <td style="font-weight: bold;">形成原因</td>
+          <td>眼球前後徑過長，或水晶體焦距過<span class="ans-word">短</span>（折射過強）</td>
+          <td>眼球前後徑過短，或水晶體焦距過<span class="ans-word">長</span>（折射不足）</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold;">未矯正成像情形</td>
+          <td>遠處物體成像於視網膜之<span class="ans-word">前</span></td>
+          <td>近處物體成像於視網膜之<span class="ans-word">後</span></td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold;">未矯正圖解</td>
+          <td>
+            <img src="../images/science-8-4-handout/image042.jpg" style="max-height: 80px;" alt="近視未矯正">
+          </td>
+          <td>
+            <img src="../images/science-8-4-handout/image043.jpg" style="max-height: 80px;" alt="遠視未矯正">
+          </td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold;">視力矯正方式</td>
+          <td>配戴<span class="ans-word">凹</span>透鏡（先發散光線後再入眼）</td>
+          <td>配戴<span class="ans-word">凸</span>透鏡（先會聚光線後再入眼）</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold;">矯正後光路圖</td>
+          <td>
+            <img src="../images/science-8-4-handout/image044.jpg" style="max-height: 80px;" alt="近視配戴凹透鏡">
+          </td>
+          <td>
+            <img src="../images/science-8-4-handout/image045.jpg" style="max-height: 80px;" alt="遠視配戴凸透鏡">
+          </td>
+        </tr>
+      </table>
+
+      <div class="tip-box" style="margin-top: 8px;">
+        💡 <strong>速記口訣：</strong>「近視晶焦短像在前，配戴凹鏡做發散；遠視晶焦長像在後，配戴凸鏡助會聚！」
+      </div>
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>4-4 生活透鏡與視力矯正成因</span>
+        <span>第 12 頁 / 共 20 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 13: 4-4 隨堂評量（一） (Q1~Q4) ==================== -->
+    <div class="page" id="page13">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國二理化（上）講義</span>
+        <span>第 4 章 光、影像與顏色</span>
+        <span>P. 13</span>
+      </div>
+      <div class="section-title">
+        <span>4-4　隨堂實戰評量（一）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #475569;">透鏡外形判斷與成像移動特性（第 1～4 題）</span>
+      </div>
+
+      <!-- Q1 -->
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ C ）</span> 1. 下列四種鏡片，何者可用來矯正近視？
+        </div>
+        <div style="display: flex; justify-content: space-around; margin: 4px 0;">
+          <div style="text-align: center;">
+            <img src="../images/science-8-4-handout/image047.jpg" style="height: 55px;" alt="(A)">
+            <div style="font-weight: bold; font-size: 11pt;">(A)</div>
+          </div>
+          <div style="text-align: center;">
+            <img src="../images/science-8-4-handout/image048.jpg" style="height: 55px;" alt="(B)">
+            <div style="font-weight: bold; font-size: 11pt;">(B)</div>
+          </div>
+          <div style="text-align: center;">
+            <img src="../images/science-8-4-handout/image049.jpg" style="height: 55px;" alt="(C)">
+            <div style="font-weight: bold; font-size: 11pt;">(C)</div>
+          </div>
+          <div style="text-align: center;">
+            <img src="../images/science-8-4-handout/image050.jpg" style="height: 55px;" alt="(D)">
+            <div style="font-weight: bold; font-size: 11pt;">(D)</div>
+          </div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】矯正近視需使用具有發散光線功能的「凹透鏡」（中間薄、邊緣厚）。(A)雙凸、(B)平凸、(D)凹凸（中間仍較厚）皆屬凸透鏡；(C)中間比兩端薄，為雙凹透鏡，可用於近視矯正。故選(C)。
+          </div>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="qa-block interactive-item">
+        <div style="display: flex; gap: 12px; align-items: flex-start;">
+          <div style="flex: 1;">
+            <div class="qa-header">
+              <span class="qa-bracket">（ C ）</span> 2. 根據光線的行進方向來判斷，右圖中間應為下列何種鏡面？
+            </div>
+            <div class="qa-options">
+              <div>(A) 平面鏡</div>
+              <div>(B) 凹透鏡</div>
+              <div>(C) 凸透鏡</div>
+              <div>(D) 凹面鏡</div>
+            </div>
+          </div>
+          <div style="width: 105px; text-align: center; flex-shrink: 0;">
+            <img src="../images/science-8-4-handout/image051.jpg" style="max-width: 100%; border-radius: 4px; border: 1px solid #cbd5e1;" alt="4-4 第2題圖">
+            <div style="font-size: 10pt; color: #64748b;">▲ 4-4 第2題</div>
+          </div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】光線穿透鏡面進入另一側介質，且折射後的光線向中心主軸靠攏偏折（產生會聚效果），故為凸透鏡（會聚透鏡）。選(C)。
+          </div>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ B ）</span> 3. 一般常見之放大鏡為何種透鏡？其理由為何？
+        </div>
+        <div class="qa-options stacked">
+          <div>(A) 凸透鏡，因為能發散光線</div>
+          <div>(B) 凸透鏡，因為能會聚光線</div>
+          <div>(C) 凹透鏡，因為能發散光線</div>
+          <div>(D) 凹透鏡，因為能會聚光線</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】放大鏡由凸透鏡製成，能會聚光線；當物體置於焦點內時，可折射出正立放大的虛像。故選(B)。
+          </div>
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ B ）</span> 4. 一物體在凸透鏡前的遙遠處，逐漸靠近透鏡，直到在焦點前停下，則下列敘述何者正確？
+        </div>
+        <div class="qa-options stacked">
+          <div>(A) 屏幕上的實像逐漸變小</div>
+          <div>(B) 屏幕上的實像逐漸變大</div>
+          <div>(C) 成像屏幕的移動方向與物體移動方向相反</div>
+          <div>(D) 眼睛透過透鏡，所看到遙遠處的物體為一正立虛像</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】凸透鏡成像規律：「物近像遠像變大」。物體由無窮遠處朝焦點靠近時，鏡後的實像會由焦點附近逐漸向外遠離透鏡，且實像尺寸持續放大。故選(B)。
+          </div>
+        </div>
+      </div>
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>4-4 隨堂實戰評量（一） (Q1～Q4)</span>
+        <span>第 13 頁 / 共 20 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 14: 4-4 隨堂評量（二） (Q5~Q7) ==================== -->
+    <div class="page" id="page14">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國二理化（上）講義</span>
+        <span>第 4 章 光、影像與顏色</span>
+        <span>P. 14</span>
+      </div>
+      <div class="section-title">
+        <span>4-4　隨堂實戰評量（二）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #475569;">凹透鏡成像、眼睛配鏡與焦點內虛像（第 5～7 題）</span>
+      </div>
+
+      <!-- Q5 -->
+      <div class="qa-block interactive-item" style="margin-top: 6px;">
+        <div class="qa-header">
+          <span class="qa-bracket">（ C ）</span> 5. 一物體由凹透鏡右方 30 公分處，往透鏡方向移動 25 公分，若透鏡的焦距為 15 公分，則物體在移動過程中，有關像的變化，下列敘述何者正確？
+        </div>
+        <div class="qa-options stacked" style="margin-top: 6px;">
+          <div>(A) 成像由倒立的像逐漸轉為正立的像</div>
+          <div>(B) 像會消失</div>
+          <div>(C) 整個過程中所成的像皆為虛像</div>
+          <div>(D) 成像的位置皆在凹透鏡的左方</div>
+        </div>
+        <div class="calc-workspace" style="margin-top: 8px;">
+          <div style="font-weight: bold; color: #334155; margin-bottom: 3px;">【凹透鏡成像特點解析】</div>
+          <div class="calc-solution">
+            【解析】凹透鏡對光線具有發散作用：<br>
+            1. 無論物體置於凹透鏡前的任何距離，折射後的發散光線反向延長，所成的像<strong>「恆為正立、縮小的虛像」</strong>；<br>
+            2. 成像位置永遠在鏡前焦點之內，且與物體在同一側（本題物體在透鏡右方，則像必在透鏡右方）。<br>
+            因此移動過程中整個過程所成的像皆為虛像。正確選項為 (C)。
+          </div>
+        </div>
+      </div>
+
+      <!-- Q6 -->
+      <div class="qa-block interactive-item" style="margin-top: 14px;">
+        <div class="qa-header">
+          <span class="qa-bracket">（ A ）</span> 6. 關於透鏡與眼睛成像，下列敘述何者正確？
+        </div>
+        <div class="qa-options stacked" style="margin-top: 6px;">
+          <div>(A) 將凹透鏡戴於正常眼睛上，則所生的像映在視網膜後</div>
+          <div>(B) 某同學所戴的眼鏡是凹透鏡，那麼他是遠視眼患者</div>
+          <div>(C) 近視眼的人由於水晶體焦距太短，因此成像在視網膜後方</div>
+          <div>(D) 近視眼的人所戴的眼鏡是凸透鏡</div>
+        </div>
+        <div class="calc-workspace" style="margin-top: 8px;">
+          <div style="font-weight: bold; color: #334155; margin-bottom: 3px;">【視力缺陷與配鏡解析】</div>
+          <div class="calc-solution">
+            • <strong>(A) 正確：</strong>正常眼睛成像恰在視網膜上；若配戴凹透鏡，因光線先被發散，聚焦位置延後，像會落在視網膜後方。<br>
+            • <strong>(B) 錯誤：</strong>配戴凹透鏡者是「近視眼」患者。<br>
+            • <strong>(C) 錯誤：</strong>近視眼水晶體焦距太短，折射力太強，成像在視網膜「前方」。<br>
+            • <strong>(D) 錯誤：</strong>近視眼應配戴「凹透鏡」矯正。故選(A)。
+          </div>
+        </div>
+      </div>
+
+      <!-- Q7 -->
+      <div class="qa-block interactive-item" style="margin-top: 14px;">
+        <div style="display: flex; gap: 14px; align-items: flex-start;">
+          <div style="flex: 1;">
+            <div class="qa-header">
+              <span class="qa-bracket">（ B ）</span> 7. 如圖，物體置於凸透鏡左側的焦點內，眼睛在透鏡右側觀察該物的成像應是下列何種情形？
+            </div>
+            <div class="qa-options" style="margin-top: 6px;">
+              <div>(A) 正立放大實像</div>
+              <div>(B) 正立放大虛像</div>
+              <div>(C) 倒立縮小實像</div>
+              <div>(D) 倒立放大實像</div>
+            </div>
+          </div>
+          <div style="width: 155px; text-align: center; flex-shrink: 0;">
+            <img src="../images/science-8-4-handout/image052.jpg" style="max-width: 100%; border-radius: 4px; border: 1px solid #cbd5e1;" alt="4-4 第7題圖">
+            <div style="font-size: 10pt; color: #64748b;">▲ 4-4 第7題</div>
+          </div>
+        </div>
+        <div class="calc-workspace" style="margin-top: 8px;">
+          <div class="calc-solution">
+            【解析】物體置於凸透鏡焦點內（$p < f$），折射光線為發散光無法會聚成實像；人眼逆著發散光線觀察，接收到的是反向延長線在物體同側交會形成的<strong>「正立、放大虛像」</strong>（放大鏡成像原理）。故選(B)。
+          </div>
+        </div>
+      </div>
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>4-4 隨堂實戰評量（二） (Q5～Q7)</span>
+        <span>第 14 頁 / 共 20 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 15: 4-4 隨堂評量（三） (Q8~Q10) ==================== -->
+    <div class="page" id="page15">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國二理化（上）講義</span>
+        <span>第 4 章 光、影像與顏色</span>
+        <span>P. 15</span>
+      </div>
+      <div class="section-title">
+        <span>4-4　隨堂實戰評量（三）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #475569;">放大鏡字體辨別、近視診斷與凸透鏡光徑（第 8～10 題）</span>
+      </div>
+
+      <!-- Q8 -->
+      <div class="qa-block interactive-item" style="margin-top: 6px;">
+        <div style="display: flex; gap: 14px; align-items: flex-start;">
+          <div style="flex: 1;">
+            <div class="qa-header">
+              <span class="qa-bracket">（ A ）</span> 8. 姿寧手拿一個透鏡，置於紙正上方 8 公分處，結果如圖所示，則該透鏡為下列何者？
+            </div>
+            <div class="qa-options stacked" style="margin-top: 6px;">
+              <div>(A) 焦距大於 8 公分的凸透鏡</div>
+              <div>(B) 焦距小於 8 公分的凸透鏡</div>
+              <div>(C) 焦距大於 8 公分的凹透鏡</div>
+              <div>(D) 焦距小於 8 公分的凹透鏡</div>
+            </div>
+          </div>
+          <div style="width: 120px; text-align: center; flex-shrink: 0;">
+            <img src="../images/science-8-4-handout/image053.jpg" style="max-width: 100%; border-radius: 4px; border: 1px solid #cbd5e1;" alt="4-4 第8題圖">
+            <div style="font-size: 10pt; color: #64748b;">▲ 4-4 第8題</div>
+          </div>
+        </div>
+        <div class="calc-workspace" style="margin-top: 8px;">
+          <div style="font-weight: bold; color: #334155; margin-bottom: 3px;">【觀察判斷與推導】</div>
+          <div class="calc-solution">
+            【解析】由圖中可清晰觀察到紙上的印刷字體呈現<strong>「正立且放大」</strong>的效果：<br>
+            1. 只有「凸透鏡」在物距小於焦距時能產生正立放大虛像（凹透鏡永遠只能形成正立縮小像）；<br>
+            2. 此時透鏡與紙的距離為物距 $p = 8\text{ 公分}$，欲形成正立放大虛像，物距必須小於焦距（$p < f$）；<br>
+            3. 因此該透鏡的焦距必大於 8 公分（$f > 8\text{ cm}$）。正確答案選 (A)。
+          </div>
+        </div>
+      </div>
+
+      <!-- Q9 -->
+      <div class="qa-block interactive-item" style="margin-top: 14px;">
+        <div class="qa-header">
+          <span class="qa-bracket">（ C ）</span> 9. 關於近視眼，下列敘述何者錯誤？
+        </div>
+        <div class="qa-options" style="margin-top: 6px;">
+          <div>(A) 水晶體的焦距過短</div>
+          <div>(B) 看不清楚遠處的物體</div>
+          <div>(C) 遠處物體成像在視網膜後方</div>
+          <div>(D) 要配戴凹透鏡矯正</div>
+        </div>
+        <div class="calc-workspace" style="margin-top: 8px;">
+          <div class="calc-solution">
+            【解析】(C)錯誤。近視眼是因為水晶體焦距過短（或眼球前後徑太長），導致來自遠處物體的平行光經折射後聚焦點落在<strong>「視網膜的前方」</strong>，投射在視網膜上時是發散模糊的光斑。故選(C)。
+          </div>
+        </div>
+      </div>
+
+      <!-- Q10 -->
+      <div class="qa-block interactive-item" style="margin-top: 14px;">
+        <div style="display: flex; gap: 14px; align-items: flex-start;">
+          <div style="flex: 1;">
+            <div class="qa-header">
+              <span class="qa-bracket">（ D ）</span> 10. 光入射凸透鏡的情形，應為右圖中的哪條路徑？
+            </div>
+            <div class="qa-options" style="margin-top: 6px;">
+              <div>(A) 甲</div>
+              <div>(B) 乙</div>
+              <div>(C) 丙</div>
+              <div>(D) 丁</div>
+            </div>
+          </div>
+          <div style="width: 125px; text-align: center; flex-shrink: 0;">
+            <img src="../images/science-8-4-handout/image054.jpg" style="max-width: 100%; border-radius: 4px; border: 1px solid #cbd5e1;" alt="4-4 第10題圖">
+            <div style="font-size: 10pt; color: #64748b;">▲ 4-4 第10題</div>
+          </div>
+        </div>
+        <div class="calc-workspace" style="margin-top: 8px;">
+          <div class="calc-solution">
+            【解析】平行於凸透鏡主軸的入射光線，經凸透鏡折射後，折射光線必定會偏折通過透鏡後方主軸上的<strong>焦點</strong>（即圖中之光路「丁」）。故選(D)。
+          </div>
+        </div>
+      </div>
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>4-4 隨堂實戰評量（三） (Q8～Q10)</span>
+        <span>第 15 頁 / 共 20 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 16: 4-5 核心觀念 ==================== -->
+    <div class="page" id="page16">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國二理化（上）講義</span>
+        <span>第 4 章 光、影像與顏色</span>
+        <span>P. 16</span>
+      </div>
+      <div class="section-title">
+        <span>4-5　色散與顏色</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #475569;">焦點一：色散現象、光的三原色與物體呈色原理</span>
+      </div>
+
+      <div class="task-title">1. 色散現象與三稜鏡折射</div>
+      <div style="display: flex; gap: 14px; align-items: center; margin: 6px 0;">
+        <div style="flex: 1;">
+          <div class="item-line interactive-item">
+            (1) <strong>色散定義：</strong>太陽光（白光）經介質（如三稜鏡）折射後分散成各種色光的現象，稱為<span class="ans-word">色散</span>。
+          </div>
+          <div class="item-line interactive-item">
+            (2) <strong>成因分析：</strong>白光由多種不同顏色的光混合而成。不同色光在玻璃介質中的傳播速率不同（<span class="ans-word">紅光最快</span>、<span class="ans-word">紫光最慢</span>），因而折射率不同（紅光偏折角最小、紫光偏折角最大），在白紙屏上散開形成紅、橙、黃、綠、藍、靛、紫之連續光譜。
+          </div>
+        </div>
+        <div style="width: 205px; text-align: center; flex-shrink: 0;">
+          <img src="../images/science-8-4-handout/image057.jpg" style="max-width: 100%; border-radius: 4px; border: 1px solid #cbd5e1;" alt="色散圖">
+          <div style="font-size: 10pt; color: #64748b;">▲ 牛頓三稜鏡色散實驗</div>
+        </div>
+      </div>
+
+      <div class="task-title" style="margin-top: 10px;">2. 光的三原色（加色法混合）</div>
+      <div style="display: flex; gap: 14px; align-items: center; margin: 6px 0;">
+        <div style="flex: 1;">
+          <div class="item-line interactive-item">
+            (1) <strong>光的三原色：</strong><span class="ans-word">紅（R）</span>、<span class="ans-word">綠（G）</span>、<span class="ans-word">藍（B）</span>三種色光。
+          </div>
+          <div class="item-line interactive-item">
+            (2) <strong>色光疊加規律：</strong>
+            • 紅光 ＋ 綠光 ＝ <span class="ans-word">黃光</span><br>
+            • 紅光 ＋ 藍光 ＝ <span class="ans-word">洋紅光（紫紅）</span><br>
+            • 綠光 ＋ 藍光 ＝ <span class="ans-word">青光（藍綠）</span><br>
+            • 紅光 ＋ 綠光 ＋ 藍光 ＝ <span class="ans-word">白光</span>
+          </div>
+          <div class="item-line interactive-item">
+            (3) <strong>生活應用：</strong>彩色電視、手機與電腦螢幕，均是由三原色微小發光點依不同強度組合呈現多彩世界。
+          </div>
+        </div>
+        <div style="width: 175px; text-align: center; flex-shrink: 0;">
+          <img src="../images/science-8-4-handout/image058.jpg" style="max-width: 100%; border-radius: 4px; border: 1px solid #cbd5e1;" alt="光的三原色">
+          <div style="font-size: 10pt; color: #64748b;">▲ 光的三原色重疊加色法</div>
+        </div>
+      </div>
+
+      <div class="task-title" style="margin-top: 10px;">3. 物體的顏色成因</div>
+      <div class="item-line interactive-item">
+        (1) <strong>透明物體的顏色：</strong>由其能「<span class="ans-word">透射</span>」的色光決定，其餘色光則被介質吸收。例如：紅色透明玻璃只讓紅光穿透，其餘色光被阻擋吸收。
+      </div>
+      <div class="item-line interactive-item">
+        (2) <strong>不透明物體的顏色：</strong>由其表面能「<span class="ans-word">反射</span>」的色光決定，其餘色光被吸收。<br>
+        • <span class="ans-word">白色物體</span>：能反射照射其上的所有色光。<br>
+        • <span class="ans-word">黑色物體</span>：吸收所有照射其上的色光，不反射任何色光入眼。
+      </div>
+
+      <div class="tip-box" style="margin-top: 10px;">
+        💡 <strong>呈色核心心法：</strong>透明看「透射」，不透明看「反射」；沒有光進眼睛就是「黑」！
+      </div>
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>4-5 色散、光的三原色與物體顏色</span>
+        <span>第 16 頁 / 共 20 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 17: 4-5 隨堂評量（一） (Q1~Q2) ==================== -->
+    <div class="page" id="page17">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國二理化（上）講義</span>
+        <span>第 4 章 光、影像與顏色</span>
+        <span>P. 17</span>
+      </div>
+      <div class="section-title">
+        <span>4-5　隨堂實戰評量（一）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #475569;">濾光透射與色光照射紙片呈色分析（第 1～2 題）</span>
+      </div>
+
+      <!-- Q1 -->
+      <div class="qa-block interactive-item" style="margin-top: 10px;">
+        <div class="qa-header">
+          <span class="qa-bracket">（ A ）</span> 1. 將藍色、綠色的玻璃紙重疊起來看一道白牆，則此白牆將會呈現哪種顏色？
+        </div>
+        <div class="qa-options" style="margin-top: 8px;">
+          <div>(A) 黑色</div>
+          <div>(B) 白色</div>
+          <div>(C) 藍色</div>
+          <div>(D) 綠色</div>
+        </div>
+        <div class="calc-workspace" style="margin-top: 12px;">
+          <div style="font-weight: bold; color: #334155; margin-bottom: 4px;">【光路逐步透射解析】</div>
+          <div class="calc-solution">
+            1. 白牆反射白光（由紅光、綠光、藍光等複色光混合而成）；<br>
+            2. 白光射入第一層<strong>藍色玻璃紙</strong>時，藍色玻璃紙只允許「藍光」穿透，吸收紅光與綠光；<br>
+            3. 穿出的藍光接著射向第二層<strong>綠色玻璃紙</strong>，綠色玻璃紙只允許「綠光」穿透而會吸收藍光；<br>
+            4. 因此穿過兩層玻璃紙後，<strong>沒有任何色光</strong>能夠到達人眼，大腦感知為無光刺激，故白牆呈現<strong>黑色</strong>。<br>
+            正確答案選 (A)。
+          </div>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="qa-block interactive-item" style="margin-top: 20px;">
+        <div class="qa-header">
+          <span class="qa-bracket">（ B ）</span> 2. 甲、乙、丙三張不同顏色紙片，以單色的紅光、綠光照射下呈現的顏色如表所示，已知甲、乙、丙中有一張的顏色為藍色，則甲、乙、丙的顏色依序為何？
+        </div>
+        <div style="display: flex; gap: 16px; align-items: center; margin: 10px 0;">
+          <div style="flex: 1;">
+            <div class="qa-options stacked">
+              <div>(A) 紅、綠、藍</div>
+              <div>(B) 白、紅、藍</div>
+              <div>(C) 白、黑、藍</div>
+              <div>(D) 白、藍、紅</div>
+            </div>
+          </div>
+          <div style="width: 210px; flex-shrink: 0;">
+            <table class="custom-table">
+              <tr><th>紙片名稱</th><th>甲</th><th>乙</th><th>丙</th></tr>
+              <tr><td>紅光照射</td><td>紅</td><td>紅</td><td>黑</td></tr>
+              <tr><td>綠光照射</td><td>綠</td><td>黑</td><td>黑</td></tr>
+            </table>
+          </div>
+        </div>
+        <div class="calc-workspace" style="margin-top: 10px;">
+          <div style="font-weight: bold; color: #334155; margin-bottom: 4px;">【表格推導分析】</div>
+          <div class="calc-solution">
+            • <strong>判斷紙片甲：</strong>紅光照射下反射紅光呈紅色、綠光照射下反射綠光呈綠色，表示甲紙能同時反射紅、綠等各色光，故甲紙為<strong>白色</strong>。<br>
+            • <strong>判斷紙片乙：</strong>紅光照射下反射紅光呈紅色、綠光照射下吸收綠光呈黑色，表示乙紙只反射紅光，故乙紙為<strong>紅色</strong>。<br>
+            • <strong>判斷紙片丙：</strong>紅光照射呈黑、綠光照射亦呈黑，吸收紅綠光；題目明確指出三張中有一張為藍色，藍色紙在紅光與綠光照射下均無法反射，恰呈現黑色，故丙紙為<strong>藍色</strong>。<br>
+            綜合結論，甲、乙、丙三張紙顏色依序為：<strong>白、紅、藍</strong>。故選(B)。
+          </div>
+        </div>
+      </div>
+
+      <div class="tip-box" style="margin-top: 22px;">
+        💡 <strong>解題口訣：</strong>「照射單色光時，白紙現該光色，黑紙恆為黑，同色紙現原色，異色紙變黑！」
+      </div>
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>4-5 隨堂實戰評量（一） (Q1～Q2)</span>
+        <span>第 17 頁 / 共 20 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 18: 4-5 隨堂評量（二） (Q3~Q4) ==================== -->
+    <div class="page" id="page18">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國二理化（上）講義</span>
+        <span>第 4 章 光、影像與顏色</span>
+        <span>P. 18</span>
+      </div>
+      <div class="section-title">
+        <span>4-5　隨堂實戰評量（二）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #475569;">色光照射面積比例計算與濾光透射（第 3～4 題）</span>
+      </div>
+
+      <!-- Q3 -->
+      <div class="qa-block interactive-item" style="margin-top: 6px;">
+        <div class="qa-header">
+          <span class="qa-bracket">（ A ）</span> 3. 一張正方形的彩色紙，上面塗有面積占 10％的白色、20％的紅色、30％的綠色、40％的藍色，以藍光照射後，呈現的藍色與黑色面積比為何？
+        </div>
+        <div class="qa-options" style="margin-top: 6px;">
+          <div>(A) 1：1</div>
+          <div>(B) 3：7</div>
+          <div>(C) 4：6</div>
+          <div>(D) 8：2</div>
+        </div>
+        <div class="calc-workspace" style="margin-top: 8px;">
+          <div style="font-weight: bold; color: #334155; margin-bottom: 3px;">【計算過程與呈色解析】</div>
+          <div class="calc-solution">
+            <strong>1. 各色塊在單色「藍光」照射下的反射情形：</strong><br>
+            • 白色色塊（10%）：可反射所有色光，受到藍光照射時反射藍光，呈現<strong>藍色</strong>（10%）。<br>
+            • 紅色色塊（20%）：只反射紅光，吸收藍光，呈現<strong>黑色</strong>（20%）。<br>
+            • 綠色色塊（30%）：只反射綠光，吸收藍光，呈現<strong>黑色</strong>（30%）。<br>
+            • 藍色色塊（40%）：反射藍光，呈現<strong>藍色</strong>（40%）。<br>
+            <strong>2. 統計總面積：</strong><br>
+            • 藍色總面積：$10\% + 40\% = 50\%$<br>
+            • 黑色總面積：$20\% + 30\% = 50\%$<br>
+            <strong>3. 藍黑面積比：</strong>$50\% : 50\% = 1 : 1$。故正確答案選 (A)。
+          </div>
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="qa-block interactive-item" style="margin-top: 12px;">
+        <div class="qa-header">
+          <span class="qa-bracket">（ C ）</span> 4. 有白光、紅光、綠光及藍光四種不同的色光照射在紅色玻璃片上，若虛線表示光線不透射，則通過紅色玻璃片之光線最接近下列何種情況？
+        </div>
+        <div style="display: flex; justify-content: space-around; margin: 6px 0;">
+          <div style="text-align: center;">
+            <img src="../images/science-8-4-handout/image060.jpg" style="height: 60px;" alt="(A)">
+            <div style="font-weight: bold; font-size: 11pt;">(A)</div>
+          </div>
+          <div style="text-align: center;">
+            <img src="../images/science-8-4-handout/image061.jpg" style="height: 60px;" alt="(B)">
+            <div style="font-weight: bold; font-size: 11pt;">(B)</div>
+          </div>
+          <div style="text-align: center;">
+            <img src="../images/science-8-4-handout/image062.jpg" style="height: 60px;" alt="(C)">
+            <div style="font-weight: bold; font-size: 11pt;">(C)</div>
+          </div>
+          <div style="text-align: center;">
+            <img src="../images/science-8-4-handout/image063.jpg" style="height: 60px;" alt="(D)">
+            <div style="font-weight: bold; font-size: 11pt;">(D)</div>
+          </div>
+        </div>
+        <div class="calc-workspace" style="margin-top: 8px;">
+          <div class="calc-solution">
+            【解析】紅色透明玻璃片具有只讓紅光透射、吸收綠光與藍光的濾光特性：<br>
+            1. 白光射入時，白光中的紅光能穿透出來，其餘色光被吸收；<br>
+            2. 紅光射入時，能完全透射；<br>
+            3. 綠光與藍光射入時，均被紅色玻璃吸收而無法穿透（圖中呈虛線）。<br>
+            比對各圖，符合此光學特徵者唯有 (C)。故選(C)。
+          </div>
+        </div>
+      </div>
+
+      <div class="tip-box" style="margin-top: 12px;">
+        💡 <strong>彩色濾光片生活應用：</strong>攝影鏡頭前加裝的偏光鏡與色彩濾鏡，以及舞台燈光投射多彩氛圍，均是運用透明介質選擇性透射特定色光的原理！
+      </div>
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>4-5 隨堂實戰評量（二） (Q3～Q4)</span>
+        <span>第 18 頁 / 共 20 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 19: 第4章 重點整理一 ==================== -->
+    <div class="page" id="page19">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國二理化（上）講義</span>
+        <span>第 4 章 光、影像與顏色</span>
+        <span>P. 19</span>
+      </div>
+      <div class="main-title" style="font-size: 17pt;">第 4 章　重點整理（一）</div>
+      <div class="section-title">
+        <span>4-1 光的傳播 ～ 4-3 光的折射 核心整合填空</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #475569;">考前快速盤點與概念複習</span>
+      </div>
+
+      <div class="task-title">4-1 光的傳播</div>
+      <div class="item-line interactive-item">
+        1. 太陽、通電的燈泡和燭火等能自行發光的物體，稱為發光體或<span class="ans-word">光源</span>，當光源發出的光線進入眼睛會使我們產生視覺。
+      </div>
+      <div class="item-line interactive-item">
+        2. 光在真空中或均勻介質中以直線前進，稱為<span class="ans-word">光的直進性</span>。
+      </div>
+      <div class="item-line interactive-item">
+        3. 因為光的直進性，三色LED燈光在通過針孔後，會在針孔後的紙屏上，呈現<span class="ans-word">上下顛倒</span>、<span class="ans-word">左右相反</span>的像。
+      </div>
+      <div class="item-line interactive-item">
+        4. 由光源發出的真實光線所構成的像，稱為<span class="ans-word">實像</span>。
+      </div>
+      <div class="item-line interactive-item">
+        5. 各介質光速快慢比較：<span class="ans-word">真空中</span> ＞ <span class="ans-word">空氣中</span> ＞ <span class="ans-word">水中</span> ＞ <span class="ans-word">玻璃中</span>。
+      </div>
+
+      <div class="task-title" style="margin-top: 8px;">4-2 光的反射與面鏡成像</div>
+      <div style="display: flex; gap: 12px; align-items: center;">
+        <div style="flex: 1;">
+          <div class="item-line interactive-item">
+            1. 不會發光的物體，需將光線<span class="ans-word">反射</span>進入眼睛，我們才能看見物體。
+          </div>
+          <div class="item-line interactive-item">
+            2. 反射定律：(1) 入射光線、反射光線分別在法線兩側，且此三直線在<span class="ans-word">同一平面</span>上；(2) 入射角<span class="ans-word">等於</span>反射角。
+          </div>
+          <div class="item-line interactive-item">
+            3. 平面鏡成像並非由實際光線會聚而成，不能投射至白紙或屏幕上，只能用眼睛看到，此成像稱為<span class="ans-word">虛像</span>。
+          </div>
+          <div class="item-line interactive-item">
+            4. 凸面鏡會形成<span class="ans-word">正立縮小</span>的虛像；距離凹面鏡不遠處的物體，則會形成<span class="ans-word">正立放大</span>的虛像。
+          </div>
+        </div>
+        <div style="width: 175px; text-align: center; flex-shrink: 0;">
+          <img src="../images/science-8-4-handout/image065.jpg" style="max-width: 100%; border-radius: 4px; border: 1px solid #cbd5e1;" alt="面鏡成像圖">
+        </div>
+      </div>
+
+      <div class="task-title" style="margin-top: 8px;">4-3 光的折射</div>
+      <div class="item-line interactive-item">
+        1. <span class="ans-word">折射</span>：光進入不同介質時，由於光速改變，前進方向在交界處發生偏折的現象。
+      </div>
+      <div class="item-line interactive-item">
+        2. 光線在不同介質中的傳播偏折情形：
+      </div>
+      <table class="custom-table" style="margin-top: 4px;">
+        <tr>
+          <th>情形路徑</th>
+          <th>介質速度變化</th>
+          <th>偏折方向</th>
+          <th>角度大小關係</th>
+        </tr>
+        <tr>
+          <td>空氣 $ightarrow$ 玻璃</td>
+          <td>光速變慢</td>
+          <td>偏<span class="ans-word">向</span>法線</td>
+          <td>折射角 ＜ 入射角</td>
+        </tr>
+        <tr>
+          <td>玻璃 $ightarrow$ 空氣</td>
+          <td>光速變快</td>
+          <td>偏<span class="ans-word">離</span>法線</td>
+          <td>折射角 ＞ 入射角</td>
+        </tr>
+      </table>
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>第 4 章 重點整理（4-1～4-3）</span>
+        <span>第 19 頁 / 共 20 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 20: 第4章 重點整理二 ==================== -->
+    <div class="page" id="page20">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國二理化（上）講義</span>
+        <span>第 4 章 光、影像與顏色</span>
+        <span>P. 20</span>
+      </div>
+      <div class="main-title" style="font-size: 17pt;">第 4 章　重點整理（二）</div>
+      <div class="section-title">
+        <span>4-4 透鏡成像 ～ 4-5 色散與顏色 核心整合填空</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #475569;">考前關鍵速記與全章總結</span>
+      </div>
+
+      <div class="task-title">4-4 透鏡成像與視力矯正</div>
+      <div class="item-line interactive-item">
+        1. 平行雷射光經凸透鏡折射，在鏡後會聚於一點，此點稱為<span class="ans-word">焦點</span>，因此凸透鏡又稱為<span class="ans-word">會聚透鏡</span>；焦點與透鏡中心的距離稱為<span class="ans-word">焦距</span>。
+      </div>
+      <div class="item-line interactive-item">
+        2. 平行雷射光經凹透鏡折射，會使得光線發散，因此凹透鏡又稱為<span class="ans-word">發散透鏡</span>，折射後各光線往反方向的延長線仍會在凹透鏡前相交於一點，此點亦稱為<span class="ans-word">焦點</span>。
+      </div>
+      <div class="item-line interactive-item">
+        3. 物體在凸透鏡前的成像情形速記：
+      </div>
+      <table class="custom-table" style="margin: 3px 0;">
+        <tr>
+          <th style="width: 35%;">物體位置</th>
+          <th style="width: 65%;">成像性質</th>
+        </tr>
+        <tr>
+          <td>兩倍焦距外 ($p > 2f$)</td>
+          <td><span class="ans-word">倒立縮小 實像</span></td>
+        </tr>
+        <tr>
+          <td>一至兩倍焦距間 ($f < p < 2f$)</td>
+          <td><span class="ans-word">倒立放大 實像</span></td>
+        </tr>
+        <tr>
+          <td>焦點內 ($p < f$)</td>
+          <td><span class="ans-word">正立放大 虛像</span></td>
+        </tr>
+      </table>
+      <div class="item-line interactive-item">
+        4. 透過凹透鏡所見到的像總是正立縮小的<span class="ans-word">虛</span>像。
+      </div>
+      <div class="item-line interactive-item">
+        5. 患有近視的人，需配戴<span class="ans-word">凹</span>透鏡矯正；而遠視的人，則需配戴<span class="ans-word">凸</span>透鏡矯正。
+      </div>
+
+      <div class="task-title" style="margin-top: 8px;">4-5 色散與顏色</div>
+      <div class="item-line interactive-item">
+        1. 光線經物體折射後，分散成各種顏色光線的現象，稱為<span class="ans-word">色散</span>。
+      </div>
+      <div class="item-line interactive-item">
+        2. 各種顏色的光，可用紅、綠、藍三種色光，依不同的亮度比例組合產生，因此稱它們為<span class="ans-word">光的三原色</span>。
+      </div>
+      <div class="item-line interactive-item">
+        3. 若物體可以反射各種色光，此物體將呈現<span class="ans-word">白</span>色；若物體吸收各種色光，不反射任何色光，則此物體將呈現<span class="ans-word">黑</span>色。
+      </div>
+
+      <div class="tip-box" style="margin-top: 10px; border-color: #10b981; background-color: #ecfdf5;">
+        🎯 <strong>滿分學習建議：</strong>
+        凸透鏡成像以「$2f$」與「$f$」為兩大分界點——$2f$ 是實像縮小與放大的分界點，$f$ 是實像（倒立）與虛像（正立）的分界點！熟記這兩大關鍵點，光學題目迎刃而解！
+      </div>
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>第 4 章 重點整理（4-4～4-5）</span>
+        <span>第 20 頁 / 共 20 頁（全書完）</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- JavaScript 核心功能腳本 -->
+  <script>
+    // 1. 單題答案獨立開關與填空點擊切換（永久原則可靠性機制）
+    document.addEventListener('click', function(e) {
+      if (document.body.classList.contains('pen-mode')) return;
+
+      // 點擊個別答案單詞或括號：直接單獨切換顯示/隱藏
+      if (e.target.classList.contains('ans-word') || e.target.classList.contains('ans-slot') || e.target.classList.contains('qa-bracket')) {
+        e.stopPropagation();
+        e.target.classList.toggle('revealed');
+        return;
+      }
+
+      // 點擊整題/整行/表格列：開合該項目下的所有答案
+      const item = e.target.closest('.interactive-item, .qa-block, .item-line, .calc-workspace');
+      if (item) {
+        item.classList.toggle('show-one');
+      }
+    });
+
+    // 雙擊個別填空亦支援直接切換
+    document.addEventListener('dblclick', function(e) {
+      if (document.body.classList.contains('pen-mode')) return;
+      if (e.target.classList.contains('ans-word') || e.target.classList.contains('ans-slot') || e.target.classList.contains('qa-bracket')) {
+        e.stopPropagation();
+        e.target.classList.toggle('revealed');
+      }
+    });
+
+    // 2. 一鍵全開 / 全關答案
+    let allAnsRevealed = false;
+    function toggleAllAnswers() {
+      allAnsRevealed = !allAnsRevealed;
+      document.body.classList.toggle('show-ans', allAnsRevealed);
+      const icon = document.getElementById('ansIcon');
+      const btn = document.getElementById('toggleAllAnsBtn');
+      if (allAnsRevealed) {
+        icon.textContent = '🙈';
+        btn.classList.add('active');
+      } else {
+        icon.textContent = '👁️';
+        btn.classList.remove('active');
+        document.querySelectorAll('.show-one').forEach(el => el.classList.remove('show-one'));
+        document.querySelectorAll('.revealed').forEach(el => el.classList.remove('revealed'));
+      }
+    }
+
+    // 3. 目錄浮動選單跳轉
+    function toggleTocMenu(e) {
+      e.stopPropagation();
+      const menu = document.getElementById('tocMenu');
+      menu.classList.toggle('show');
+    }
+    document.addEventListener('click', function(e) {
+      const menu = document.getElementById('tocMenu');
+      if (menu && menu.classList.contains('show') && !e.target.closest('.toc-menu') && e.target.id !== 'tocBtn') {
+        menu.classList.remove('show');
+      }
+    });
+    function jumpTo(pageId) {
+      const target = document.getElementById(pageId);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const menu = document.getElementById('tocMenu');
+        if (menu) menu.classList.remove('show');
+      }
+    }
+
+    // 4. 螢光筆與畫板系統
+    let isPenMode = false;
+    let currentColor = 'rgba(250, 204, 21, 0.45)';
+    let currentSize = 4;
+    const canvases = [];
+    const contexts = [];
+
+    function initCanvases() {
+      const pages = document.querySelectorAll('.page');
+      pages.forEach((page, index) => {
+        const canvas = page.querySelector('.drawing-canvas');
+        if (canvas) {
+          canvases.push(canvas);
+          const ctx = canvas.getContext('2d');
+          contexts.push(ctx);
+          resizeCanvas(canvas);
+
+          let drawing = false;
+          let lastX = 0, lastY = 0;
+
+          canvas.addEventListener('mousedown', (e) => {
+            if (!isPenMode) return;
+            drawing = true;
+            const rect = canvas.getBoundingClientRect();
+            lastX = e.clientX - rect.left;
+            lastY = e.clientY - rect.top;
+          });
+
+          canvas.addEventListener('mousemove', (e) => {
+            if (!drawing || !isPenMode) return;
+            const rect = canvas.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            ctx.strokeStyle = currentColor;
+            ctx.lineWidth = currentSize;
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+
+            ctx.beginPath();
+            ctx.moveTo(lastX, lastY);
+            ctx.lineTo(x, y);
+            ctx.stroke();
+
+            lastX = x;
+            lastY = y;
+          });
+
+          window.addEventListener('mouseup', () => { drawing = false; });
+          canvas.addEventListener('mouseleave', () => { drawing = false; });
+
+          // 觸控支援 (Touch screen / 大屏)
+          canvas.addEventListener('touchstart', (e) => {
+            if (!isPenMode) return;
+            drawing = true;
+            const rect = canvas.getBoundingClientRect();
+            const touch = e.touches[0];
+            lastX = touch.clientX - rect.left;
+            lastY = touch.clientY - rect.top;
+            e.preventDefault();
+          }, { passive: false });
+
+          canvas.addEventListener('touchmove', (e) => {
+            if (!drawing || !isPenMode) return;
+            const rect = canvas.getBoundingClientRect();
+            const touch = e.touches[0];
+            const x = touch.clientX - rect.left;
+            const y = touch.clientY - rect.top;
+
+            ctx.strokeStyle = currentColor;
+            ctx.lineWidth = currentSize;
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+
+            ctx.beginPath();
+            ctx.moveTo(lastX, lastY);
+            ctx.lineTo(x, y);
+            ctx.stroke();
+
+            lastX = x;
+            lastY = y;
+            e.preventDefault();
+          }, { passive: false });
+
+          canvas.addEventListener('touchend', () => { drawing = false; });
+        }
+      });
+    }
+
+    function resizeCanvas(canvas) {
+      canvas.width = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+    }
+
+    window.addEventListener('resize', () => {
+      canvases.forEach(canvas => resizeCanvas(canvas));
+    });
+
+    function togglePenMode() {
+      isPenMode = !isPenMode;
+      document.body.classList.toggle('pen-mode', isPenMode);
+      document.getElementById('penBtn').classList.toggle('active', isPenMode);
+      document.getElementById('penOptions').style.display = isPenMode ? 'flex' : 'none';
+    }
+
+    function setPenColor(color, el) {
+      currentColor = color;
+      document.querySelectorAll('.color-dot').forEach(dot => dot.classList.remove('active'));
+      el.classList.add('active');
+    }
+
+    function setPenSize(size, el) {
+      currentSize = size;
+      document.querySelectorAll('.size-btn').forEach(btn => btn.classList.remove('active'));
+      el.classList.add('active');
+    }
+
+    function clearAllDrawings() {
+      contexts.forEach((ctx, index) => {
+        ctx.clearRect(0, 0, canvases[index].width, canvases[index].height);
+      });
+    }
+
+    // 5. 渲染數學公式 KaTeX
+    function renderKaTeX() {
+      if (typeof renderMathInElement !== 'undefined') {
+        renderMathInElement(document.body, {
+          delimiters: [
+            { left: '$$', right: '$$', display: true },
+            { left: '$', right: '$', display: false }
+          ],
+          throwOnError: false
+        });
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      initCanvases();
+      renderKaTeX();
+    });
+    window.addEventListener('load', renderKaTeX);
+  </script>
+</body>
+</html>
