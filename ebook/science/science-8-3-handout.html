@@ -2,14 +2,14 @@
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-  <title>國二理化 第3章 波動與聲音 雙模式互動電子書</title>
-  <!-- 電子書目錄用身分標記（見 SKILL.md §11） -->
+  <title>國二理化（上）第 3 章 波動與聲音 互動電子書</title>
+  <!-- 電子書目錄身分標記（見 SKILL.md §11 與 AGENTS.md） -->
   <meta name="ebook:subject" content="science">
   <meta name="ebook:grade" content="8">
-  <meta name="ebook:type" content="review">
-  <meta name="ebook:pages" content="6">
+  <meta name="ebook:type" content="handout">
+  <meta name="ebook:pages" content="13">
   <meta name="ebook:level" content="std">
-  <meta name="ebook:summary" content="國二理化第3章波動與聲音全單元複習電子書：波的傳播、橫波縱波特徵、聲速計算、聲音三要素與超聲波應用，含各節精闢圖解與小試身手測驗題。">
+  <meta name="ebook:summary" content="國二理化第3章波動與聲音完整講義（13頁舒展無截斷版），依據教材原稿製作：波的傳播、橫波縱波特徵、週期波公式、聲音形成與傳播速率、氣溫與聲速計算、聲音三要素（響度/音調/音色）、回聲與超聲波應用、全章重點整理與考前自我檢核。">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -19,17 +19,17 @@
     body {
       margin: 0; padding: 0; background-color: #e2e8f0;
       font-family: "Times New Roman", "標楷體", "DFKai-SB", "BiauKai", serif;
-      font-size: 14pt; line-height: 1.45; color: #111;
+      font-size: 14pt; line-height: 1.5; color: #111;
     }
-    
+
     /* 課堂懸浮工具列 */
     .classroom-toolbar {
-      position: fixed; top: 12px; right: 20px; z-index: 9999;
+      position: fixed; top: 14px; right: 20px; z-index: 9999;
       display: flex; align-items: center; gap: 4px;
-      background: rgba(255, 255, 255, 0.96); backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       padding: 4px 10px; border-radius: 40px; border: 1px solid rgba(203, 213, 225, 0.9);
-      box-shadow: 0 4px 22px rgba(0, 0, 0, 0.14);
+      box-shadow: 0 4px 22px rgba(0, 0, 0, 0.15);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
     .tool-btn {
@@ -39,31 +39,36 @@
       cursor: pointer; transition: all 0.15s ease; padding: 0; user-select: none;
       text-decoration: none;
     }
-    .tool-btn:hover { background: #f1f5f9; transform: scale(1.08); }
+    .tool-btn:hover { background: #f1f5f9; transform: scale(1.1); }
     .tool-btn.active { background: #0f172a; color: #ffffff; }
     .btn-toggle-ans.active { background: #eff6ff; border-color: #3b82f6; }
-    .toolbar-divider { width: 1px; height: 18px; background: #cbd5e1; margin: 0 3px; }
+    .toolbar-divider { width: 1px; height: 20px; background: #cbd5e1; margin: 0 4px; }
 
-    /* 目錄跳轉選單 (TOC) */
+    /* 目錄跳轉選單 */
     .toc-menu {
       display: none; position: absolute; top: 46px; left: 0;
       background: #ffffff; border: 1px solid #cbd5e1; border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.18); padding: 6px 0;
-      min-width: 260px; max-height: 450px; overflow-y: auto; z-index: 10000;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18); padding: 8px 0;
+      min-width: 290px; max-height: 460px; overflow-y: auto; z-index: 10000;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
     .toc-menu.show { display: block; animation: tocFadeIn 0.15s ease-out; }
-    @keyframes tocFadeIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes tocFadeIn {
+      from { opacity: 0; transform: translateY(-6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
     .toc-menu-title {
       padding: 6px 16px 8px 16px; font-size: 13px; font-weight: bold;
       color: #64748b; border-bottom: 1px solid #f1f5f9;
     }
     .toc-menu-item {
-      padding: 8px 16px; font-size: 14px; color: #334155; cursor: pointer;
+      padding: 7px 16px; font-size: 13px; color: #334155; cursor: pointer;
       display: flex; align-items: center; justify-content: space-between;
       transition: background 0.12s, color 0.12s;
     }
     .toc-menu-item:hover { background: #eff6ff; color: #2563eb; font-weight: bold; }
-    .toc-page-badge { font-size: 12px; color: #94a3b8; font-weight: normal; }
+    .toc-page-badge { font-size: 11.5px; color: #94a3b8; font-weight: normal; }
+    .toc-menu-item:hover .toc-page-badge { color: #2563eb; }
 
     /* 螢光筆選項 */
     .pen-options {
@@ -73,9 +78,9 @@
     .color-picker { display: flex; align-items: center; gap: 5px; }
     .color-dot {
       width: 16px; height: 16px; border-radius: 50%; cursor: pointer;
-      box-shadow: inset 0 0 0 1px rgba(0,0,0,0.2);
+      box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
     }
-    .color-dot.active { transform: scale(1.25); box-shadow: 0 0 0 2px #0f172a; }
+    .color-dot.active { transform: scale(1.2); box-shadow: 0 0 0 2px #0f172a; }
     .size-picker { display: flex; align-items: center; gap: 3px; }
     .size-btn {
       border: 1px solid #cbd5e1; background: #fff; color: #475569; font-size: 11px;
@@ -83,13 +88,15 @@
     }
     .size-btn.active { background: #0f172a; color: #fff; border-color: #0f172a; }
 
-    /* A4 頁面規格與容器鎖定 */
-    .pages-container { padding: 15px 0 40px 0; }
+    /* A4 頁面設計 */
+    .pages-container { padding: 20px 0 40px 0; }
     .page {
-      width: 210mm; min-height: 297mm; max-height: 297mm; padding: 12mm 15mm 10mm 15mm;
-      margin: 0 auto 25px auto; background: #ffffff; box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+      box-sizing: border-box; width: 210mm; min-height: 297mm; max-height: 297mm;
+      padding: 10mm 15mm 8mm 15mm; margin: 0 auto 25px auto;
+      background: #ffffff; box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
       page-break-after: always; break-after: page; position: relative;
-      display: flex; flex-direction: column; justify-content: flex-start; overflow: hidden;
+      display: flex; flex-direction: column; justify-content: flex-start;
+      overflow: hidden;
     }
     .drawing-canvas {
       position: absolute; top: 0; left: 0; width: 100%; height: 100%;
@@ -97,125 +104,98 @@
     }
     body.pen-mode .drawing-canvas { pointer-events: auto; cursor: crosshair; }
 
-    /* 頁首頁尾 */
+    /* 頁首與頁尾 */
     .page-header {
       display: flex; justify-content: space-between; border-bottom: 2px solid #334155;
       padding-bottom: 4px; margin-bottom: 8px; font-size: 12pt; font-weight: bold; color: #1e293b;
     }
     .page-footer {
-      margin-top: auto; padding-top: 4px; border-top: 1px dashed #cbd5e1;
-      display: flex; justify-content: space-between; font-size: 11pt; color: #64748b;
+      margin-top: auto; padding-top: 5px; border-top: 1px solid #cbd5e1;
+      display: flex; justify-content: space-between; font-size: 10.5pt; color: #64748b;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
 
-    /* 標題與視覺區塊 */
-    .unit-badge {
-      display: inline-block; background: #1e3a8a; color: #fff; font-size: 11pt;
-      padding: 2px 8px; border-radius: 4px; font-weight: bold; margin-bottom: 4px;
-    }
-    .main-title {
-      font-size: 18pt; font-weight: 900; text-align: center; margin: 4px 0 8px 0;
-      color: #0f172a; letter-spacing: 0.5px;
-    }
+    /* 標題與版面區塊 */
+    .main-title { font-size: 19pt; font-weight: 900; text-align: center; margin: 2px 0 6px 0; color: #0f172a; }
     .section-title {
-      font-size: 14pt; font-weight: bold; background: #e0f2fe; color: #0369a1;
-      padding: 4px 10px; border-radius: 6px; margin: 6px 0 6px 0; border-left: 5px solid #0284c7;
+      font-size: 14.5pt; font-weight: bold; background: #e2e8f0; padding: 4px 10px;
+      border-radius: 6px; margin: 5px 0 6px 0; border-left: 6px solid #2563eb; color: #0f172a;
+      display: flex; justify-content: space-between; align-items: center;
     }
-    .part-title {
-      font-size: 13pt; font-weight: bold; color: #475569; margin: 6px 0 4px 0;
-      border-bottom: 1.5px solid #e2e8f0; padding-bottom: 2px;
+    .task-title { font-size: 13.5pt; font-weight: bold; margin: 6px 0 4px 0; color: #1e293b; }
+    .tip-box {
+      border: 1.5px solid #93c5fd; background-color: #f0f9ff; border-radius: 6px;
+      padding: 6px 12px; margin: 6px 0 8px 0; font-size: 13pt; line-height: 1.45;
     }
+    .item-line { padding: 3px 6px; border-radius: 4px; line-height: 1.5; font-size: 13.5pt; }
 
-    /* 填空互動機制 */
-    .write-blank {
-      display: inline-block; min-width: 50px; border-bottom: 1.5px solid #0f172a;
-      text-align: center; padding: 0 4px; cursor: pointer; vertical-align: baseline;
-      transition: background-color 0.15s;
+    /* 互動解答控制 */
+    body:not(.pen-mode) .interactive-item { cursor: pointer; }
+    body:not(.pen-mode) .interactive-item:hover { background-color: #f8fafc; outline: 1px dashed #93c5fd; }
+    .correct-choice { display: inline-block; padding: 0 4px; transition: all 0.2s; }
+    .show-ans .correct-choice, .item-line.show-one .correct-choice, .qa-block.show-one .correct-choice {
+      color: #dc2626 !important; font-weight: bold !important; border: 2px solid #dc2626 !important;
+      border-radius: 12px !important; background-color: #fef2f2 !important; padding: 0 5px !important;
     }
-    .write-blank:hover { background-color: #fef08a; }
-    .ans-reveal {
-      color: transparent; font-weight: bold; transition: color 0.15s;
-    }
-    .show-ans .ans-reveal,
-    .write-blank.show-one .ans-reveal {
-      color: #dc2626 !important;
-    }
+    .ans-slot { display: inline-block; min-width: 24px; text-align: center; color: transparent; font-weight: bold; cursor: pointer; user-select: none; }
+    .show-ans .ans-slot, .item-line.show-one .ans-slot, .qa-block.show-one .ans-slot, .ans-slot.revealed { color: #dc2626 !important; }
+    .ans-word { color: transparent; font-weight: bold; border-bottom: 1.5px solid #333; padding: 0 3px; cursor: pointer; user-select: none; }
+    .show-ans .ans-word, .item-line.show-one .ans-word, .ans-word.revealed { color: #dc2626 !important; }
+    body:not(.pen-mode) .ans-word:hover, body:not(.pen-mode) .ans-slot:hover { background-color: #fee2e2; }
 
-    /* 選擇題樣式 */
+    /* 選擇題括號與題幹同一行排版（永久原則） */
     .qa-block {
-      display: flex; align-items: flex-start; gap: 8px; margin-bottom: 6px;
-      padding: 3px 6px; border-radius: 6px; cursor: pointer; transition: background 0.15s;
+      margin-bottom: 10px; padding: 5px 8px; border-radius: 6px;
+      line-height: 1.48; font-size: 13.5pt;
     }
-    .qa-block:hover { background-color: #f8fafc; }
-    .qa-bracket {
-      flex-shrink: 0; width: 48px; font-weight: bold; text-align: center;
-      border-bottom: 1px solid #64748b; color: transparent;
+    .qa-header { font-weight: bold; }
+    .qa-bracket { color: transparent; font-weight: bold; padding: 0 2px; cursor: pointer; user-select: none; }
+    .show-ans .qa-bracket, .qa-block.show-one .qa-bracket, .qa-bracket.revealed { color: #dc2626 !important; }
+    .qa-options {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4px 12px;
+      margin-top: 4px; padding-left: 20px; font-size: 13pt;
     }
-    .show-ans .qa-bracket,
-    .qa-block.show-one .qa-bracket {
-      color: #dc2626 !important;
-    }
-    .qa-content { flex: 1; }
-    .qa-text { margin-bottom: 3px; }
-    .qa-opts-row { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 2px; font-size: 13.5pt; }
-    .qa-opts-col { display: flex; flex-direction: column; gap: 2px; margin-top: 2px; font-size: 13.5pt; }
-    .qa-opt.correct { transition: all 0.15s; border-radius: 4px; }
-    .show-ans .qa-opt.correct,
-    .qa-block.show-one .qa-opt.correct {
-      color: #dc2626 !important; font-weight: bold; background-color: #fee2e2; padding: 0 4px;
-    }
+    .qa-options.stacked { display: flex; flex-direction: column; gap: 3px; }
 
-    /* 表格設計 */
-    table.custom-table {
-      width: 100%; border-collapse: collapse; margin: 6px 0 8px 0; font-size: 13pt; line-height: 1.4;
-    }
-    table.custom-table th, table.custom-table td {
-      border: 1px solid #94a3b8; padding: 4px 8px; text-align: center;
-    }
-    table.custom-table th { background-color: #f1f5f9; font-weight: bold; color: #1e293b; }
+    /* 表格 */
+    table.custom-table { width: 100%; border-collapse: collapse; margin: 6px 0; font-size: 13pt; line-height: 1.4; }
+    table.custom-table th, table.custom-table td { border: 1px solid #64748b; padding: 5px 8px; text-align: center; }
+    table.custom-table th { background-color: #f1f5f9; font-weight: bold; color: #0f172a; }
     table.custom-table td.align-left { text-align: left; }
 
-    /* 圖表容器 */
-    .diagram-row {
-      display: flex; align-items: center; justify-content: space-around;
-      gap: 10px; margin: 6px 0; background: #fafafa; border: 1px solid #e2e8f0;
-      border-radius: 6px; padding: 6px 8px;
-    }
-    .diagram-card {
-      display: flex; flex-direction: column; align-items: center; font-size: 11pt; color: #475569;
-    }
-
-    /* 計算題留白框 */
+    /* 計算題解析方框 */
     .calc-workspace {
-      min-height: 75px; margin: 4px 0 8px 0; padding: 6px 10px;
-      border: 1px dashed #94a3b8; border-radius: 6px; background-color: #fafaf9;
-      cursor: pointer; position: relative;
+      margin: 4px 0 2px 20px; padding: 4px 10px;
+      border: 1px dashed #94a3b8; border-radius: 5px; background-color: #f8fafc;
+      font-size: 12.5pt;
     }
-    .calc-solution {
-      color: transparent; font-size: 12.5pt; line-height: 1.5;
-    }
-    .show-ans .calc-solution,
-    .calc-workspace.show-one .calc-solution,
-    .qa-block.show-one .calc-solution {
+    .calc-solution { color: transparent; line-height: 1.45; }
+    .show-ans .calc-solution, .calc-workspace.show-one .calc-solution, .qa-block.show-one .calc-solution {
       color: #dc2626 !important; font-weight: bold;
     }
 
     /* 列印強制規範：白紙考卷模式 */
     @media print {
-      body { background: #fff !important; }
+      @page { size: A4 portrait; margin: 10mm 12mm; }
+      html, body {
+        width: 100% !important; height: auto !important; background: transparent !important;
+        padding: 0 !important; margin: 0 !important;
+      }
       .no-print, .classroom-toolbar, .toc-menu, .drawing-canvas { display: none !important; }
-      .pages-container { padding: 0 !important; }
+      .pages-container { display: block !important; padding: 0 !important; margin: 0 !important; }
       .page {
-        margin: 0 !important; box-shadow: none !important; width: 100% !important;
-        height: 275mm !important; max-height: 275mm !important; min-height: 275mm !important;
-        padding: 0 !important; page-break-after: always !important; break-after: page !important;
-        page-break-inside: avoid !important; break-inside: avoid !important;
+        box-sizing: border-box !important; margin: 0 !important; box-shadow: none !important;
+        width: 100% !important; height: 275mm !important; max-height: 275mm !important;
+        min-height: 0 !important; padding: 0 !important; page-break-after: always !important;
+        break-after: page !important; page-break-inside: avoid !important; break-inside: avoid !important;
+        display: flex !important; flex-direction: column !important; justify-content: flex-start !important;
         overflow: hidden !important;
       }
       .page:last-child { page-break-after: avoid !important; break-after: avoid !important; }
-      .page-footer { margin-top: auto !important; padding-bottom: 2mm !important; }
-      .qa-bracket, .ans-reveal, .calc-solution { color: transparent !important; }
-      .qa-opt.correct { color: inherit !important; background: transparent !important; padding: 0 !important; font-weight: normal !important; }
-      .calc-workspace { background: transparent !important; border-color: #94a3b8 !important; }
+      .page-footer { margin-top: auto !important; padding-top: 4px !important; }
+      .correct-choice { color: inherit !important; font-weight: normal !important; border: none !important; background: transparent !important; padding: 0 !important; }
+      .ans-slot, .ans-word, .qa-bracket, .calc-solution { color: transparent !important; }
+      .calc-workspace { background: transparent !important; border-color: #cbd5e1 !important; }
     }
   </style>
 </head>
@@ -223,38 +203,53 @@
 
   <!-- 課堂懸浮工具列 -->
   <div class="classroom-toolbar no-print">
+    <!-- 回電子書目錄 -->
     <a class="tool-btn" href="../index.html" title="回電子書目錄">🏠</a>
+    <!-- 目錄跳轉選單 -->
     <div style="position: relative;">
-      <button class="tool-btn" id="tocBtn" onclick="toggleTocMenu(event)" title="章節目錄">📑</button>
+      <button class="tool-btn" id="tocBtn" onclick="toggleTocMenu(event)" title="單元章節目錄">📑</button>
       <div class="toc-menu" id="tocMenu">
-        <div class="toc-menu-title">📖 第3章 波動與聲音 目錄</div>
-        <div class="toc-menu-item" onclick="jumpTo('page1')"><span>3-1 波的傳播與特徵（觀念）</span><span class="toc-page-badge">P.1</span></div>
-        <div class="toc-menu-item" onclick="jumpTo('page2')"><span>3-1 小試身手題型演練</span><span class="toc-page-badge">P.2</span></div>
-        <div class="toc-menu-item" onclick="jumpTo('page3')"><span>3-2 聲音的形成與傳播</span><span class="toc-page-badge">P.3</span></div>
-        <div class="toc-menu-item" onclick="jumpTo('page4')"><span>3-3 多變的聲音（三要素）</span><span class="toc-page-badge">P.4</span></div>
-        <div class="toc-menu-item" onclick="jumpTo('page5')"><span>3-4 聲波反射與超聲波</span><span class="toc-page-badge">P.5</span></div>
-        <div class="toc-menu-item" onclick="jumpTo('page6')"><span>第 3 章 考前重點精華統整</span><span class="toc-page-badge">P.6</span></div>
+        <div class="toc-menu-title">📖 第 3 章 單元章節目錄 (全 13 頁)</div>
+        <div class="toc-menu-item" onclick="jumpTo('page1')"><span>3-1 波與波動的產生及形式</span><span class="toc-page-badge">P.1</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page2')"><span>3-1 週期波特徵物理量與波速</span><span class="toc-page-badge">P.2</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page3')"><span>3-1 隨堂實戰評量 (Q1~Q4)</span><span class="toc-page-badge">P.3</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page4')"><span>3-1 隨堂實戰評量 (Q5~Q7)</span><span class="toc-page-badge">P.4</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page5')"><span>3-2 聲音的形成與傳播（觀念）</span><span class="toc-page-badge">P.5</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page6')"><span>3-2 隨堂實戰評量 (Q1~Q6)</span><span class="toc-page-badge">P.6</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page7')"><span>3-3 聲音三要素核心觀念</span><span class="toc-page-badge">P.7</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page8')"><span>3-3 隨堂實戰評量 (Q1~Q4)</span><span class="toc-page-badge">P.8</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page9')"><span>3-3 隨堂實戰評量 (Q5~Q8)</span><span class="toc-page-badge">P.9</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page10')"><span>3-4 聲波反射與超聲波（觀念）</span><span class="toc-page-badge">P.10</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page11')"><span>3-4 隨堂實戰評量 (Q1~Q6)</span><span class="toc-page-badge">P.11</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page12')"><span>第 3 章 核心架構與重點整理</span><span class="toc-page-badge">P.12</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page13')"><span>第 3 章 考前盤點與自我檢核</span><span class="toc-page-badge">P.13</span></div>
       </div>
     </div>
-    <button class="tool-btn btn-toggle-ans" id="toggleAllAnsBtn" onclick="toggleAllAnswers()" title="一鍵全開/隱藏答案">
+    <!-- 一鍵顯答 -->
+    <button class="tool-btn btn-toggle-ans" id="toggleAllAnsBtn" onclick="toggleAllAnswers()" title="一鍵全開/全隱答案">
       <span id="ansIcon">👁️</span>
     </button>
+    <!-- 畫筆切換 -->
     <button class="tool-btn" id="penBtn" onclick="togglePenMode()" title="螢光筆/板書筆">✏️</button>
+    <!-- 畫筆選單 -->
     <div class="pen-options" id="penOptions">
       <div class="color-picker">
-        <span class="color-dot active" style="background:#facc15;" onclick="setPenColor('rgba(250, 204, 21, 0.45)', this)" title="螢光黃"></span>
-        <span class="color-dot" style="background:#ef4444;" onclick="setPenColor('rgba(239, 68, 68, 0.8)', this)" title="紅筆"></span>
-        <span class="color-dot" style="background:#3b82f6;" onclick="setPenColor('rgba(37, 99, 235, 0.8)', this)" title="藍筆"></span>
-        <span class="color-dot" style="background:#10b981;" onclick="setPenColor('rgba(16, 185, 129, 0.8)', this)" title="綠筆"></span>
+        <span class="color-dot active" style="background:#facc15;" onclick="setPenColor('rgba(250,204,21,0.45)', this)" title="螢光黃"></span>
+        <span class="color-dot" style="background:#ef4444;" onclick="setPenColor('rgba(239,68,68,0.8)', this)" title="紅筆"></span>
+        <span class="color-dot" style="background:#3b82f6;" onclick="setPenColor('rgba(37,99,235,0.8)', this)" title="藍筆"></span>
+        <span class="color-dot" style="background:#10b981;" onclick="setPenColor('rgba(16,185,129,0.8)', this)" title="綠筆"></span>
       </div>
+      <div style="width:1px; height:14px; background:#cbd5e1; margin:0 2px;"></div>
       <div class="size-picker">
         <button class="size-btn active" onclick="setPenSize(4, this)">細</button>
         <button class="size-btn" onclick="setPenSize(10, this)">中</button>
         <button class="size-btn" onclick="setPenSize(20, this)">粗</button>
       </div>
     </div>
-    <button class="tool-btn" onclick="clearAllDrawings()" title="清除畫記">🧹</button>
+    <!-- 清除全卷畫筆 -->
+    <button class="tool-btn" onclick="clearAllDrawings()" title="清除全卷畫筆">🧹</button>
     <div class="toolbar-divider"></div>
+    <!-- 列印 -->
     <button class="tool-btn" onclick="window.print()" title="列印純淨白紙卷 (A4)">🖨️</button>
   </div>
 
@@ -264,102 +259,68 @@
     <div class="page" id="page1">
       <canvas class="drawing-canvas"></canvas>
       <div class="page-header">
-        <span>國二理化（上）講義</span>
-        <span>第 3 章 波動與聲音</span>
+        <span>國中自然與生科（八上）</span>
         <span>班級：_______ 座號：_______ 姓名：_____________</span>
+        <span>P. 1</span>
+      </div>
+      <div class="main-title">第 3 章 波動與聲音</div>
+      <div class="section-title">
+        <span>3-1 波的傳播與特徵（一）</span>
+        <span style="font-size:11pt; font-weight:normal;">波與波動的產生及形式</span>
       </div>
 
-      <div class="main-title">3-1 波的傳播與特徵</div>
-      <div class="part-title">Part 1 重點填空</div>
-
-      <div style="font-size: 13.5pt; line-height: 1.5;">
-        <p style="margin: 3px 0;"><strong>1. 波與波動</strong></p>
-        <div style="padding-left: 14px;">
-          (1) 水、繩子或彈簧等物質受到外來擾動時，所產生凹凸或疏密的部分稱為<span class="write-blank" onclick="toggleItemAnswer(this)"><span class="ans-reveal">波</span></span>；而波向前傳遞出去的現象稱為<span class="write-blank" onclick="toggleItemAnswer(this)"><span class="ans-reveal">波動</span></span>。<br>
-          (2) 造成物質擾動的來源稱為<span class="write-blank" onclick="toggleItemAnswer(this)"><span class="ans-reveal">波源</span></span>（或振源），傳遞波的媒介物質稱為<span class="write-blank" onclick="toggleItemAnswer(this)"><span class="ans-reveal">介質</span></span>。<br>
-          (3) 需要介質才能傳播的波動，稱為<span class="write-blank" onclick="toggleItemAnswer(this)"><span class="ans-reveal">力學波</span></span>（如水波、繩波、聲波）；不需介質也能傳播的波動，稱為<span class="write-blank" onclick="toggleItemAnswer(this)"><span class="ans-reveal">非力學波</span></span>（如光波、無線電波、X射線）。
+      <div class="task-title">重點 1 波與波動的產生</div>
+      <div class="item-line interactive-item">
+        (1) 水、繩子或彈簧等物質，受到外來干擾影響時，所產生凹凸或疏密的部分稱為<span class="ans-word">波</span>；而波向前傳遞出去的現象則稱為<span class="ans-word">波動</span>。
+      </div>
+      <div class="item-line interactive-item">
+        (2) 造成物質擾動的來源稱為<span class="ans-word">波源</span>（或振源），傳遞波的媒介物質稱為<span class="ans-word">介質</span>。
+      </div>
+      <div class="item-line interactive-item">
+        (3) 依是否需要介質傳播分類：
+        <div style="padding-left: 16px; margin-top: 3px;">
+          • <strong>力學波</strong>：需要介質傳播的波動（如<span class="ans-word">水波</span>、<span class="ans-word">繩波</span>、<span class="ans-word">聲波</span>）。<br>
+          • <strong>非力學波</strong>：不需要介質也能傳播的波動（如<span class="ans-word">光波</span>、無線電波、微波、X 射線）。
         </div>
+      </div>
 
-        <p style="margin: 5px 0 2px 0;"><strong>2. 波的形式（依介質振動方向分類）</strong></p>
-        <table class="custom-table">
-          <thead>
-            <tr>
-              <th style="width: 22%;">波的種類</th>
-              <th style="width: 45%;">介質振動方向 vs 波前進方向</th>
-              <th style="width: 33%;">實例與示意圖</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>橫波</strong><br>(高低波)</td>
-              <td>介質振動方向與波前進方向互相<span class="write-blank" onclick="toggleItemAnswer(this)"><span class="ans-reveal">垂直</span></span></td>
-              <td class="align-left">繩波、水波表面<br>
-                <svg width="170" height="34" viewBox="0 0 170 34">
-                  <path d="M 5,17 Q 25,2 45,17 T 85,17 T 125,17 T 165,17" fill="none" stroke="#2563eb" stroke-width="2"/>
-                  <line x1="5" y1="17" x2="165" y2="17" stroke="#94a3b8" stroke-dasharray="3,3"/>
-                  <text x="5" y="10" font-size="9" fill="#dc2626">↕ 振動</text>
-                  <text x="125" y="12" font-size="9" fill="#0284c7">前進 ➔</text>
-                </svg>
-              </td>
-            </tr>
-            <tr>
-              <td><strong>縱波</strong><br>(疏密波)</td>
-              <td>介質振動方向與波前進方向互相<span class="write-blank" onclick="toggleItemAnswer(this)"><span class="ans-reveal">平行</span></span></td>
-              <td class="align-left">彈簧疏密波、空氣中的聲波<br>
-                <svg width="170" height="26" viewBox="0 0 170 26">
-                  <path d="M 5,13 L 20,13 M 25,13 L 30,13 M 34,13 L 37,13 M 40,13 L 42,13 M 48,13 L 60,13 M 70,13 L 80,13 M 84,13 L 87,13 M 95,13 L 115,13 M 125,13 L 130,13 M 134,13 L 137,13 M 145,13 L 165,13" stroke="#2563eb" stroke-width="3" stroke-linecap="round"/>
-                  <text x="5" y="24" font-size="9" fill="#dc2626">⟷ 振動</text>
-                  <text x="125" y="24" font-size="9" fill="#0284c7">前進 ➔</text>
-                </svg>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="task-title" style="margin-top: 8px;">重點 2 波的形式（依介質振動方向分類）</div>
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th style="width: 22%;">波的種類</th>
+            <th style="width: 48%;">介質振動方向 vs 波前進方向</th>
+            <th style="width: 30%;">教材圖示與實例</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="interactive-item">
+            <td><strong>橫波</strong><br>(高低波)</td>
+            <td>介質振動的方向與波前進的方向互相<span class="ans-word">垂直</span></td>
+            <td>
+              <img src="../images/science-8-3-handout/image003.jpg" alt="橫波圖" style="max-height: 44px; vertical-align: middle;"><br>
+              <span style="font-size: 11.5pt; color: #475569;">繩波、水波表面</span>
+            </td>
+          </tr>
+          <tr class="interactive-item">
+            <td><strong>縱波</strong><br>(疏密波)</td>
+            <td>介質振動的方向與波前進的方向互相<span class="ans-word">平行</span></td>
+            <td>
+              <img src="../images/science-8-3-handout/image004.jpg" alt="縱波圖" style="max-height: 36px; vertical-align: middle;"><br>
+              <span style="font-size: 11.5pt; color: #475569;">彈簧疏密波、空氣聲波</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
 
-        <p style="margin: 4px 0 2px 0;"><strong>3. 波的傳播特性：</strong>波只傳遞<span class="write-blank" onclick="toggleItemAnswer(this)"><span class="ans-reveal">能量</span></span>，不傳送介質，介質只在原處附近來回振動。在同一均勻介質中，波速為<span class="write-blank" onclick="toggleItemAnswer(this)"><span class="ans-reveal">定值</span></span>。</p>
-
-        <p style="margin: 4px 0 2px 0;"><strong>4. 週期波的特徵物理量</strong></p>
-        <div style="display: flex; gap: 10px; align-items: center;">
-          <div style="flex: 1.2;">
-            (1) <strong>週期波</strong>：波源做連續且規律的振動所形成的波。<br>
-            (2) <strong>全波</strong>：振源振動一次（經 4 個振幅）形成的完整波形。<br>
-            (3) <strong>波峰</strong>：波形的最高處；<strong>波谷</strong>：波形的最低處。<br>
-            (4) <strong>波長 ($\lambda$)</strong>：相鄰兩波峰（或波谷）之間的水平距離。<br>
-            (5) <strong>振幅 ($A$)</strong>：平衡位置到波峰或波谷的垂直距離。<br>
-            (6) <strong>週期 ($T$)</strong>：產生一個全波所需時間，單位：秒 ($s$)。<br>
-            (7) <strong>頻率 ($f$)</strong>：1 秒內產生的全波個數，單位：次/秒、赫茲 ($Hz$)。<br>
-            (8) <strong>關係式</strong>：$T = \frac{1}{f}$；波速 $v = \frac{\lambda}{T} = f \times \lambda$。
-          </div>
-          <div style="flex: 0.9; text-align: center; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 4px;">
-            <svg width="220" height="110" viewBox="0 0 220 110">
-              <line x1="10" y1="55" x2="210" y2="55" stroke="#64748b" stroke-dasharray="3,3"/>
-              <path d="M 15,55 Q 40,15 65,55 T 115,55 T 165,55 T 215,55" fill="none" stroke="#2563eb" stroke-width="2.5"/>
-              <!-- 波峰標示 -->
-              <circle cx="40" cy="20" r="3" fill="#dc2626"/>
-              <text x="32" y="14" font-size="10" fill="#dc2626" font-weight="bold">波峰</text>
-              <circle cx="140" cy="20" r="3" fill="#dc2626"/>
-              <text x="132" y="14" font-size="10" fill="#dc2626" font-weight="bold">波峰</text>
-              <!-- 波谷標示 -->
-              <circle cx="90" cy="90" r="3" fill="#0284c7"/>
-              <text x="82" y="104" font-size="10" fill="#0284c7" font-weight="bold">波谷</text>
-              <!-- 振幅 -->
-              <line x1="65" y1="20" x2="65" y2="55" stroke="#dc2626" stroke-width="1.2" marker-start="url(#arr)" marker-end="url(#arr)"/>
-              <text x="70" y="42" font-size="9" fill="#dc2626">振幅 A</text>
-              <!-- 波長 -->
-              <line x1="40" y1="20" x2="140" y2="20" stroke="#059669" stroke-width="1.2"/>
-              <line x1="40" y1="16" x2="40" y2="24" stroke="#059669" stroke-width="1.2"/>
-              <line x1="140" y1="16" x2="140" y2="24" stroke="#059669" stroke-width="1.2"/>
-              <text x="80" y="16" font-size="10" fill="#059669" font-weight="bold">波長 λ</text>
-              <text x="10" y="66" font-size="9" fill="#64748b">平衡位置</text>
-            </svg>
-            <div style="font-size: 10pt; color: #475569;">橫波各部位名詞對照圖</div>
-          </div>
-        </div>
+      <div class="tip-box interactive-item" style="margin-top: 10px;">
+        <strong>💡 波動傳播核心鐵律：</strong>波傳遞的快慢程度稱為<span class="ans-word">波速</span>。波只傳遞<span class="ans-word">能量</span>，不傳送介質！在<strong>同一種均勻介質中，波速為定值</strong>。介質質點僅在原處附近來回振動，絕不會隨波前進。
       </div>
 
       <div class="page-footer">
         <span>自製電子書 · 國中理化</span>
-        <span>第 1 頁 / 共 6 頁</span>
+        <span>3-1 波的本質與形式</span>
+        <span>第 1 頁 / 共 13 頁</span>
       </div>
     </div>
 
@@ -367,168 +328,37 @@
     <div class="page" id="page2">
       <canvas class="drawing-canvas"></canvas>
       <div class="page-header">
-        <span>國二理化（上）講義</span>
-        <span>3-1 波的傳播與特徵</span>
-        <span>第 2 頁</span>
+        <span>國中自然與生科（八上）</span>
+        <span>班級：_______ 座號：_______ 姓名：_____________</span>
+        <span>P. 2</span>
+      </div>
+      <div class="section-title">
+        <span>3-1 波的傳播與特徵（二）</span>
+        <span style="font-size:11pt; font-weight:normal;">週期波的特徵物理量與波速公式</span>
       </div>
 
-      <div class="part-title">Part 2 小試身手題型演練</div>
-
-      <div class="qa-block" onclick="toggleItemAnswer(this)">
-        <div class="qa-bracket">( <span class="ans-slot">D</span> )</div>
-        <div class="qa-content">
-          <div class="qa-text">1. 關於橫波與縱波特性的敘述，下列何者<strong>錯誤</strong>？</div>
-          <div class="qa-opts-row">
-            <span class="qa-opt">(A) 縱波介質振動方向與波前進方向互相平行</span>
-            <span class="qa-opt">(B) 橫波相鄰兩波峰的距離為一個波長</span>
-            <span class="qa-opt">(C) 空氣中傳遞的聲音是一種縱波</span>
-            <span class="qa-opt correct">(D) 橫波質點振動一次，介質移動的距離為兩個振幅</span>
-          </div>
+      <div class="task-title">重點 3 週期波的特徵物理量</div>
+      <div style="font-size: 13.5pt; line-height: 1.55;">
+        <div class="item-line interactive-item">• <strong>週期波</strong>：連續且有規律性的波；振源振動一次形成<span class="ans-word">全波</span>。</div>
+        <div class="item-line interactive-item">• <strong>波峰 / 波谷</strong>：波的最高點為波峰；波的最低點為波谷。</div>
+        <div class="item-line interactive-item">• <strong>波長 ($\lambda$)</strong>：一個全波的長度，即相鄰兩波峰或兩波谷之間的水平距離。</div>
+        <div class="item-line interactive-item">• <strong>振幅 ($A$)</strong>：平衡位置到波峰或到波谷的垂直距離。</div>
+        <div class="item-line interactive-item">• <strong>週期 ($T$)</strong>：產生一個全波所需的時間（秒），與頻率互為倒數。</div>
+        <div class="item-line interactive-item">• <strong>頻率 ($f$)</strong>：1 秒內產生的全波數目，單位為次／秒、赫茲 ($Hz$)。</div>
+        <div class="item-line interactive-item" style="color: #1e3a8a; font-weight: bold; background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 6px; padding: 5px 10px; margin: 4px 0;">
+          • <strong>核心公式</strong>：$T = \frac{1}{f}$ ； 波速 $v = \frac{\lambda}{T} = f \times \lambda$ （波速＝波長 $\times$ 頻率）
         </div>
       </div>
 
-      <div class="qa-block" onclick="toggleItemAnswer(this)">
-        <div class="qa-bracket">( <span class="ans-slot">D</span> )</div>
-        <div class="qa-content">
-          <div class="qa-text">2. 如附圖所示為一連續繩波，若波源振動頻率加倍，則下列何者正確？</div>
-          <div style="display: flex; gap: 12px; align-items: center; margin: 2px 0;">
-            <svg width="250" height="50" viewBox="0 0 250 50">
-              <line x1="10" y1="25" x2="240" y2="25" stroke="#94a3b8" stroke-dasharray="2,2"/>
-              <path d="M 20,25 Q 40,5 60,25 T 100,25 T 140,25 T 180,25 T 220,25" fill="none" stroke="#2563eb" stroke-width="2"/>
-              <circle cx="20" cy="25" r="3" fill="#1e293b"/><text x="18" y="38" font-size="9">A</text>
-              <circle cx="60" cy="25" r="3" fill="#1e293b"/><text x="58" y="38" font-size="9">B</text>
-              <circle cx="100" cy="25" r="3" fill="#1e293b"/><text x="98" y="38" font-size="9">C</text>
-              <circle cx="140" cy="25" r="3" fill="#1e293b"/><text x="138" y="38" font-size="9">D</text>
-              <circle cx="180" cy="25" r="3" fill="#1e293b"/><text x="178" y="38" font-size="9">E</text>
-              <circle cx="220" cy="25" r="3" fill="#1e293b"/><text x="218" y="38" font-size="9">F</text>
-              <text x="210" y="15" font-size="10" fill="#0284c7">前進 ➔</text>
-            </svg>
-            <div style="font-size: 11pt; color: #475569;">同一條繩子：波速 $v$ 保持不變！</div>
-          </div>
-          <div class="qa-opts-row">
-            <span class="qa-opt">(A) 振幅增加</span>
-            <span class="qa-opt">(B) 波速增加</span>
-            <span class="qa-opt">(C) 波自 B 傳到 F 的時間減少</span>
-            <span class="qa-opt correct">(D) 波長變短</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="qa-block" onclick="toggleItemAnswer(this)">
-        <div class="qa-bracket">( <span class="ans-slot">C</span> )</div>
-        <div class="qa-content">
-          <div class="qa-text">3. 下列四種波動：(甲) 上下擺動繩子形成的波；(乙) 對講機傳送的無線電波；(丙) 陽光穿透大氣的光波；(丁) 空氣中講話的聲波。其中哪些屬於「力學波」？</div>
-          <div class="qa-opts-row">
-            <span class="qa-opt">(A) 甲丙</span>
-            <span class="qa-opt">(B) 乙丁</span>
-            <span class="qa-opt correct">(C) 甲丁</span>
-            <span class="qa-opt">(D) 乙丙</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="qa-block" onclick="toggleItemAnswer(this)">
-        <div class="qa-bracket">( <span class="ans-slot">B</span> )</div>
-        <div class="qa-content">
-          <div class="qa-text">4. 如圖所示，小明握住細繩上下振動，當波形由 A 點傳播至 C 點時，共耗時 0.1 秒，則此繩波的振動頻率為多少次／秒？</div>
-          <div style="margin: 2px 0;">
-            <svg width="220" height="42" viewBox="0 0 220 42">
-              <line x1="10" y1="21" x2="200" y2="21" stroke="#cbd5e1" stroke-dasharray="2,2"/>
-              <path d="M 20,21 Q 45,3 70,21 T 120,21" fill="none" stroke="#2563eb" stroke-width="2"/>
-              <circle cx="20" cy="21" r="3" fill="#dc2626"/><text x="18" y="34" font-size="10" fill="#dc2626">A</text>
-              <circle cx="70" cy="21" r="3" fill="#1e293b"/><text x="68" y="34" font-size="10">B</text>
-              <circle cx="120" cy="21" r="3" fill="#0284c7"/><text x="118" y="34" font-size="10" fill="#0284c7">C (共 1 個完整全波)</text>
-            </svg>
-          </div>
-          <div class="qa-opts-row">
-            <span class="qa-opt">(A) 3 次／秒</span>
-            <span class="qa-opt correct">(B) 10 次／秒</span>
-            <span class="qa-opt">(C) 15 次／秒</span>
-            <span class="qa-opt">(D) 30 次／秒</span>
-          </div>
-          <div class="calc-workspace" onclick="event.stopPropagation(); toggleItemAnswer(this);">
-            <div class="calc-solution">
-              【解析】A 到 C 形成 1 個全波，花費時間即為週期 $T = 0.1\text{ s}$。<br>
-              頻率 $f = \frac{1}{T} = \frac{1}{0.1} = 10\text{ Hz}$（次／秒）。
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="qa-block" onclick="toggleItemAnswer(this)">
-        <div class="qa-bracket">( <span class="ans-slot">D</span> )</div>
-        <div class="qa-content">
-          <div class="qa-text">5. 一繩波每分鐘振動 120 次，若測得其波長為 3 公分，請問此繩波的傳播速率為多少？</div>
-          <div class="qa-opts-row">
-            <span class="qa-opt">(A) 360 公分／秒</span>
-            <span class="qa-opt">(B) 120 公分／秒</span>
-            <span class="qa-opt">(C) 40 公分／秒</span>
-            <span class="qa-opt correct">(D) 6 公分／秒</span>
-          </div>
-          <div class="calc-workspace" onclick="event.stopPropagation(); toggleItemAnswer(this);">
-            <div class="calc-solution">
-              【解析】頻率 $f = \frac{120\text{ 次}}{60\text{ 秒}} = 2\text{ Hz}$。<br>
-              波速 $v = f \times \lambda = 2\text{ Hz} \times 3\text{ cm} = 6\text{ cm/s}$。
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="qa-block" onclick="toggleItemAnswer(this)">
-        <div class="qa-bracket">( <span class="ans-slot">D</span> )</div>
-        <div class="qa-content">
-          <div class="qa-text">6. 附圖為同一時間內在<strong>同一均勻介質</strong>傳播的甲、乙兩波形，下列何項敘述<strong>錯誤</strong>？</div>
-          <div style="margin: 2px 0;">
-            <svg width="340" height="48" viewBox="0 0 340 48">
-              <!-- 甲波 -->
-              <text x="5" y="24" font-size="10" fill="#2563eb" font-weight="bold">甲</text>
-              <line x1="20" y1="24" x2="160" y2="24" stroke="#94a3b8" stroke-dasharray="2,2"/>
-              <path d="M 20,24 Q 30,10 40,24 T 60,24 T 80,24 T 100,24 T 120,24" fill="none" stroke="#2563eb" stroke-width="1.8"/>
-              <text x="125" y="27" font-size="9" fill="#64748b">λ=20cm, A=10</text>
-              <!-- 乙波 -->
-              <text x="180" y="24" font-size="10" fill="#dc2626" font-weight="bold">乙</text>
-              <line x1="195" y1="24" x2="335" y2="24" stroke="#94a3b8" stroke-dasharray="2,2"/>
-              <path d="M 195,24 Q 215,2 235,24 T 275,24 T 315,24" fill="none" stroke="#dc2626" stroke-width="1.8"/>
-              <text x="290" y="44" font-size="9" fill="#64748b">λ=40cm, A=20</text>
-            </svg>
-          </div>
-          <div class="qa-opts-row">
-            <span class="qa-opt">(A) 甲、乙波長比為 1：2</span>
-            <span class="qa-opt">(B) 甲、乙週期比為 1：2</span>
-            <span class="qa-opt">(C) 甲、乙振幅比為 1：2</span>
-            <span class="qa-opt correct">(D) 甲、乙波速比為 1：2（同一介質波速應為 1：1）</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="qa-block" onclick="toggleItemAnswer(this)">
-        <div class="qa-bracket">( <span class="ans-slot">B</span> )</div>
-        <div class="qa-content">
-          <div class="qa-text">7. 如圖為一向右傳播的週期波，試問甲、乙、丙三質點在該瞬間的運動方向為何？</div>
-          <div style="margin: 2px 0;">
-            <svg width="220" height="42" viewBox="0 0 220 42">
-              <line x1="10" y1="21" x2="210" y2="21" stroke="#cbd5e1" stroke-dasharray="2,2"/>
-              <path d="M 15,21 Q 40,3 65,21 T 115,21 T 165,21 T 215,21" fill="none" stroke="#2563eb" stroke-width="2"/>
-              <!-- 微位移虛線向右 -->
-              <path d="M 20,21 Q 45,3 70,21 T 120,21 T 170,21 T 220,21" fill="none" stroke="#f59e0b" stroke-width="1.2" stroke-dasharray="2,2"/>
-              <circle cx="35" cy="10" r="3" fill="#dc2626"/><text x="32" y="8" font-size="9">甲</text>
-              <circle cx="65" cy="21" r="3" fill="#dc2626"/><text x="62" y="32" font-size="9">乙</text>
-              <circle cx="105" cy="30" r="3" fill="#dc2626"/><text x="108" y="38" font-size="9">丙</text>
-              <text x="170" y="12" font-size="9" fill="#0284c7">波向右 ➔</text>
-            </svg>
-          </div>
-          <div class="qa-opts-row">
-            <span class="qa-opt">(A) 甲向上，乙向下，丙向下</span>
-            <span class="qa-opt correct">(B) 甲向下，乙向上，丙向上</span>
-            <span class="qa-opt">(C) 甲向下，乙不動，丙向上</span>
-            <span class="qa-opt">(D) 甲向上，乙不動，丙向下</span>
-          </div>
-        </div>
+      <div style="text-align: center; margin-top: 10px; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 8px;">
+        <img src="../images/science-8-3-handout/image005.png" alt="週期波產生與各特徵對照圖" style="max-height: 250px; max-width: 95%; object-fit: contain;">
+        <div style="font-size: 11pt; color: #475569; font-weight: bold; margin-top: 4px;">教材原檔解析：手搖產生週期波過程與各部位特徵名詞對照圖</div>
       </div>
 
       <div class="page-footer">
         <span>自製電子書 · 國中理化</span>
-        <span>第 2 頁 / 共 6 頁</span>
+        <span>3-1 週期波特徵物理量</span>
+        <span>第 2 頁 / 共 13 頁</span>
       </div>
     </div>
 
@@ -536,113 +366,69 @@
     <div class="page" id="page3">
       <canvas class="drawing-canvas"></canvas>
       <div class="page-header">
-        <span>國二理化（上）講義</span>
-        <span>第 3 章 波動與聲音</span>
-        <span>第 3 頁</span>
+        <span>國中自然與生科（八上）</span>
+        <span>班級：_______ 座號：_______ 姓名：_____________</span>
+        <span>P. 3</span>
+      </div>
+      <div class="section-title">
+        <span>3-1 隨堂實戰評量（一）</span>
+        <span style="font-size:11pt; font-weight:normal;">波動觀念與繩波特徵演練 (Q1~Q4)</span>
       </div>
 
-      <div class="main-title">3-2 聲音的形成與傳播</div>
-      <div class="part-title">Part 1 重點填空</div>
-
-      <div style="font-size: 13.5pt; line-height: 1.5;">
-        <p style="margin: 3px 0;"><strong>1. 聲音的產生條件</strong></p>
-        <div style="padding-left: 14px;">
-          (1) <strong>發聲體的狀態</strong>：物體必須迅速地<span class="write-blank" onclick="toggleItemAnswer(this)"><span class="ans-reveal">振動</span></span>才能產生聲音。<br>
-          (2) <strong>傳播媒介</strong>：必須有傳遞聲音的<span class="write-blank" onclick="toggleItemAnswer(this)"><span class="ans-reveal">介質</span></span>，無論是氣體、液體或固體皆可傳播聲波。<br>
-          (3) <strong>日常實例</strong>：說話時聲帶振動；音叉敲擊發出嗡嗡聲並於接觸水面時激起水花；撥動橡皮筋振動發聲。
-        </div>
-
-        <p style="margin: 6px 0 3px 0;"><strong>2. 聲音的傳播與聲速特性</strong></p>
-        <div style="padding-left: 14px;">
-          (1) <strong>力學波本質</strong>：聲音是力學波，在<span class="write-blank" onclick="toggleItemAnswer(this)"><span class="ans-reveal">真空</span></span>環境中無法傳遞（太空中無法直接交談）。<br>
-          (2) <strong>傳播速率的決定因素</strong>：聲速大小僅取決於<strong>介質的種類與狀態</strong>，與發聲體的振動頻率或音量大小<span class="write-blank" onclick="toggleItemAnswer(this)"><span class="ans-reveal">無關</span></span>。<br>
-          (3) <strong>介質狀態對聲速的影響</strong>：
-          <table class="custom-table" style="margin: 4px 0 6px 0;">
-            <thead>
-              <tr>
-                <th>影響因素</th>
-                <th>規律與說明</th>
-                <th>實例／數據</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>介質相態</strong></td>
-                <td>傳播速率快慢：<span class="write-blank" onclick="toggleItemAnswer(this)"><span class="ans-reveal">固態</span></span> ＞ <span class="write-blank" onclick="toggleItemAnswer(this)"><span class="ans-reveal">液態</span></span> ＞ <span class="write-blank" onclick="toggleItemAnswer(this)"><span class="ans-reveal">氣態</span></span></td>
-                <td>鋼鐵(約5000 m/s) ＞ 水(約1500 m/s) ＞ 空氣(約340 m/s)</td>
-              </tr>
-              <tr>
-                <td><strong>空氣溫度</strong></td>
-                <td>氣溫愈高，聲速愈<span class="write-blank" onclick="toggleItemAnswer(this)"><span class="ans-reveal">快</span></span>；$0^\circ\text{C}$ 時聲速為 $331\text{ m/s}$，每升高 $1^\circ\text{C}$ 增加 $0.6\text{ m/s}$</td>
-                <td>公式：$v = 331 + 0.6 \times T$（$15^\circ\text{C}$ 時聲速約 $340\text{ m/s}$）</td>
-              </tr>
-              <tr>
-                <td><strong>空氣濕度</strong></td>
-                <td>濕度愈高（水氣愈多），空氣平均密度較小，聲速愈<span class="write-blank" onclick="toggleItemAnswer(this)"><span class="ans-reveal">快</span></span></td>
-                <td>雨天傳聲比晴天乾燥時略快</td>
-              </tr>
-            </tbody>
-          </table>
+      <div class="qa-block interactive-item">
+        <div class="qa-header"><span class="qa-bracket">（ D ）</span> 1. 關於橫波與縱波的敘述，下列何者<strong>錯誤</strong>？</div>
+        <div class="qa-options">
+          <div class="qa-opt">(A) 縱波介質振動方向與波前進方向互相平行</div>
+          <div class="qa-opt">(B) 橫波相鄰兩波峰的距離為波長</div>
+          <div class="qa-opt">(C) 空氣中的聲音是一種縱波</div>
+          <div class="qa-opt correct-choice">(D) 橫波振動一次，介質移動兩個振幅（應為四個振幅）</div>
         </div>
       </div>
 
-      <div class="part-title" style="margin-top: 8px;">Part 2 小試身手題型演練</div>
-
-      <div class="qa-block" onclick="toggleItemAnswer(this)">
-        <div class="qa-bracket">( <span class="ans-slot">D</span> )</div>
-        <div class="qa-content">
-          <div class="qa-text">1. 下列關於聲波特性的敘述，何者<strong>正確</strong>？</div>
-          <div class="qa-opts-col">
-            <span class="qa-opt">(A) 空氣中聲波的振動形式屬於橫波</span>
-            <span class="qa-opt">(B) 發聲體的週期增大，則聲音在空氣中的傳播速度隨之變大</span>
-            <span class="qa-opt">(C) 聲波在空氣中的傳播速率大於其在水中的傳播速率</span>
-            <span class="qa-opt correct">(D) 在氣溫 $30^\circ\text{C}$ 時，聲波在乾燥空氣中的傳播速率大於其在氣溫 $10^\circ\text{C}$ 時的速率</span>
-          </div>
+      <div class="qa-block interactive-item">
+        <div class="qa-header"><span class="qa-bracket">（ D ）</span> 2. 如圖所示，若振動頻率加倍，則下列何者正確？</div>
+        <div style="margin: 4px 0 4px 20px;">
+          <img src="../images/science-8-3-handout/image007.jpg" alt="連續繩波圖" style="max-height: 56px; vertical-align: middle;">
+          <span style="font-size: 11pt; color: #475569; margin-left: 12px;">（同條細繩波速定值，頻率增倍則波長減半）</span>
+        </div>
+        <div class="qa-options">
+          <div class="qa-opt">(A) 振幅增加</div>
+          <div class="qa-opt">(B) 波速增加</div>
+          <div class="qa-opt">(C) 波自 B 傳到 F 的時間減少</div>
+          <div class="qa-opt correct-choice">(D) 波長變短</div>
         </div>
       </div>
 
-      <div class="qa-block" onclick="toggleItemAnswer(this)">
-        <div class="qa-bracket">( <span class="ans-slot">A</span> )</div>
-        <div class="qa-content">
-          <div class="qa-text">2. 下列有關聲音傳播的敘述，何者<strong>正確</strong>？</div>
-          <div class="qa-opts-col">
-            <span class="qa-opt correct">(A) 聲波屬於力學波，傳遞過程一定要依靠介質</span>
-            <span class="qa-opt">(B) 凡是物體發生振動，人耳一定可以聽到該聲音</span>
-            <span class="qa-opt">(C) 講話講得愈急愈快，聲音在空氣中傳播的速率愈快</span>
-            <span class="qa-opt">(D) 水上芭蕾舞者潛入水中時，無法聽到水面上的音樂與掌聲</span>
-          </div>
+      <div class="qa-block interactive-item">
+        <div class="qa-header"><span class="qa-bracket">（ C ）</span> 3. (甲) 上下擺動繩子所造成的波；(乙) 無線對講機的無線電波；(丙) 大氣中的光波；(丁) 空氣中的聲波。上列哪些波動屬於「力學波」？</div>
+        <div class="qa-options">
+          <div class="qa-opt">(A) 甲丙</div>
+          <div class="qa-opt">(B) 乙丁</div>
+          <div class="qa-opt correct-choice">(C) 甲丁</div>
+          <div class="qa-opt">(D) 乙丙</div>
         </div>
       </div>
 
-      <div class="qa-block" onclick="toggleItemAnswer(this)">
-        <div class="qa-bracket">( <span class="ans-slot">A</span> )</div>
-        <div class="qa-content">
-          <div class="qa-text">3. 炎炎夏日在開著冷氣（室內 $20^\circ\text{C}$）的教室內唱歌，當歌聲傳播到炎熱的室外（$32^\circ\text{C}$）時，聲波速率將如何變化？</div>
-          <div class="qa-opts-row">
-            <span class="qa-opt correct">(A) 變快</span>
-            <span class="qa-opt">(B) 變慢</span>
-            <span class="qa-opt">(C) 不變</span>
-            <span class="qa-opt">(D) 條件不足，無法判斷</span>
-          </div>
+      <div class="qa-block interactive-item">
+        <div class="qa-header"><span class="qa-bracket">（ B ）</span> 4. 如圖，小明以手握住細繩，當波由 A 點到達 C 點時，花費了 0.1 秒，試問繩波的振動頻率為多少？</div>
+        <div style="margin: 4px 0 4px 20px;">
+          <img src="../images/science-8-3-handout/image008.jpg" alt="繩波A到C圖" style="max-height: 48px; vertical-align: middle;">
         </div>
-      </div>
-
-      <div class="qa-block" onclick="toggleItemAnswer(this)">
-        <div class="qa-bracket">( <span class="ans-slot">D</span> )</div>
-        <div class="qa-content">
-          <div class="qa-text">4. 若欲製作具備高隔音效果的雙層隔音氣密窗，在兩片玻璃的中間夾層應如何處理效果最佳？</div>
-          <div class="qa-opts-row">
-            <span class="qa-opt">(A) 填入壓克力膠</span>
-            <span class="qa-opt">(B) 塞入高密度保麗龍</span>
-            <span class="qa-opt">(C) 貼上防爆隔熱反光貼紙</span>
-            <span class="qa-opt correct">(D) 將夾層氣體抽成真空狀態</span>
-          </div>
+        <div class="qa-options">
+          <div class="qa-opt">(A) 3 次／秒</div>
+          <div class="qa-opt correct-choice">(B) 10 次／秒</div>
+          <div class="qa-opt">(C) 15 次／秒</div>
+          <div class="qa-opt">(D) 30 次／秒</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">【解析】由 A 到 C 剛好產生 1 個完整全波，故花費時間即為週期 $T = 0.1\text{ 秒}$。頻率 $f = \frac{1}{T} = \frac{1}{0.1} = 10\text{ Hz}$（次／秒）。</div>
         </div>
       </div>
 
       <div class="page-footer">
         <span>自製電子書 · 國中理化</span>
-        <span>第 3 頁 / 共 6 頁</span>
+        <span>3-1 隨堂實戰評量（一）</span>
+        <span>第 3 頁 / 共 13 頁</span>
       </div>
     </div>
 
@@ -650,175 +436,61 @@
     <div class="page" id="page4">
       <canvas class="drawing-canvas"></canvas>
       <div class="page-header">
-        <span>國二理化（上）講義</span>
-        <span>第 3 章 波動與聲音</span>
-        <span>第 4 頁</span>
+        <span>國中自然與生科（八上）</span>
+        <span>班級：_______ 座號：_______ 姓名：_____________</span>
+        <span>P. 4</span>
+      </div>
+      <div class="section-title">
+        <span>3-1 隨堂實戰評量（二）</span>
+        <span style="font-size:11pt; font-weight:normal;">波速計算與波形坐標分析 (Q5~Q7)</span>
       </div>
 
-      <div class="main-title">3-3 多變的聲音（聲音三要素）</div>
-      <div class="part-title">Part 1 重點填空</div>
-
-      <div style="font-size: 13pt; line-height: 1.45;">
-        <p style="margin: 2px 0 4px 0;"><strong>1. 聲音三要素綜合對照分析</strong></p>
-        <table class="custom-table">
-          <thead>
-            <tr>
-              <th style="width: 14%;">要素</th>
-              <th style="width: 18%;">代表性質</th>
-              <th style="width: 16%;">決定因素</th>
-              <th style="width: 14%;">常用單位</th>
-              <th style="width: 38%;">示波器波形特徵與控制規律</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>響度</strong><br>(音量)</td>
-              <td>聲音的<strong>強弱大小</strong></td>
-              <td>聲波的<span class="write-blank" onclick="toggleItemAnswer(this)"><span class="ans-reveal">振幅</span></span></td>
-              <td>分貝<br>($dB$)</td>
-              <td class="align-left">用力敲擊振幅大，聲音大。<br>距離愈遠能量散失，振幅變小。</td>
-            </tr>
-            <tr>
-              <td><strong>音調</strong></td>
-              <td>聲音的<strong>高低清脆</strong></td>
-              <td>聲波的<span class="write-blank" onclick="toggleItemAnswer(this)"><span class="ans-reveal">頻率</span></span></td>
-              <td>赫茲<br>($Hz$)</td>
-              <td class="align-left">發聲體愈<strong>短、細、緊、薄</strong>，振動愈快，頻率愈高，音調愈高。</td>
-            </tr>
-            <tr>
-              <td><strong>音色</strong><br>(音品)</td>
-              <td>發聲體的<strong>獨特特色</strong></td>
-              <td>聲波的<span class="write-blank" onclick="toggleItemAnswer(this)"><span class="ans-reveal">波形</span></span></td>
-              <td>無特定單位</td>
-              <td class="align-left">由發聲體材質與結構決定（如音叉為正弦波，樂器含泛音複合波）。</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <!-- 示波器圖示 -->
-        <div class="diagram-row">
-          <div class="diagram-card">
-            <svg width="110" height="42" viewBox="0 0 110 42">
-              <rect x="0" y="0" width="110" height="42" fill="#0f172a" rx="4"/>
-              <line x1="5" y1="21" x2="105" y2="21" stroke="#334155" stroke-dasharray="2,2"/>
-              <path d="M 5,21 Q 17,14 30,21 T 55,21 T 80,21 T 105,21" fill="none" stroke="#22c55e" stroke-width="1.8"/>
-            </svg>
-            <span>振幅小（響度小）</span>
-          </div>
-          <div class="diagram-card">
-            <svg width="110" height="42" viewBox="0 0 110 42">
-              <rect x="0" y="0" width="110" height="42" fill="#0f172a" rx="4"/>
-              <line x1="5" y1="21" x2="105" y2="21" stroke="#334155" stroke-dasharray="2,2"/>
-              <path d="M 5,21 Q 17,4 30,21 T 55,21 T 80,21 T 105,21" fill="none" stroke="#22c55e" stroke-width="1.8"/>
-            </svg>
-            <span>振幅大（響度大）</span>
-          </div>
-          <div class="diagram-card">
-            <svg width="110" height="42" viewBox="0 0 110 42">
-              <rect x="0" y="0" width="110" height="42" fill="#0f172a" rx="4"/>
-              <line x1="5" y1="21" x2="105" y2="21" stroke="#334155" stroke-dasharray="2,2"/>
-              <path d="M 5,21 Q 30,8 55,21 T 105,21" fill="none" stroke="#eab308" stroke-width="1.8"/>
-            </svg>
-            <span>頻率低（音調低）</span>
-          </div>
-          <div class="diagram-card">
-            <svg width="110" height="42" viewBox="0 0 110 42">
-              <rect x="0" y="0" width="110" height="42" fill="#0f172a" rx="4"/>
-              <line x1="5" y1="21" x2="105" y2="21" stroke="#334155" stroke-dasharray="2,2"/>
-              <path d="M 5,21 Q 11,8 17,21 T 30,21 T 42,21 T 55,21 T 67,21 T 80,21 T 92,21 T 105,21" fill="none" stroke="#eab308" stroke-width="1.8"/>
-            </svg>
-            <span>頻率高（音調高）</span>
-          </div>
+      <div class="qa-block interactive-item">
+        <div class="qa-header"><span class="qa-bracket">（ D ）</span> 5. 有一繩波每分鐘振動 120 次，且波長為 3 公分，請問此波的傳播速率為多少？</div>
+        <div class="qa-options">
+          <div class="qa-opt">(A) 360 公分／秒</div>
+          <div class="qa-opt">(B) 120 公分／秒</div>
+          <div class="qa-opt">(C) 40 公分／秒</div>
+          <div class="qa-opt correct-choice">(D) 6 公分／秒</div>
         </div>
-
-        <p style="margin: 4px 0 2px 0;"><strong>2. 樂音、噪音與分貝規範</strong></p>
-        <div style="padding-left: 14px;">
-          (1) <strong>樂音</strong>：聽來規律愉悅的聲音，示波器波形呈現<span class="write-blank" onclick="toggleItemAnswer(this)"><span class="ans-reveal">週期性規律</span></span>。<br>
-          (2) <strong>噪音</strong>：吵雜刺耳令人生理不適的聲音，波形呈現<span class="write-blank" onclick="toggleItemAnswer(this)"><span class="ans-reveal">雜亂無章</span></span>；音量超過標準亦屬噪音。<br>
-          (3) <strong>分貝尺規觀念</strong>：$0\text{ dB}$ 代表人耳剛好能聽見的最微弱聲音，而非完全沒有能量；音量每增加 $10\text{ dB}$，聲音能量增加 $10$ 倍，若增加 $20\text{ dB}$ 則能量增為 $100$ 倍！長時間處於 $90\text{ dB}$ 以上環境將永久損害聽力。
+        <div class="calc-workspace">
+          <div class="calc-solution">【解析】頻率 $f = \frac{120\text{ 次}}{60\text{ 秒}} = 2\text{ Hz}$。波速 $v = f \times \lambda = 2\text{ Hz} \times 3\text{ cm} = 6\text{ cm/s}$。</div>
         </div>
       </div>
 
-      <div class="part-title" style="margin-top: 6px;">Part 2 小試身手題型演練（一）</div>
-
-      <div class="qa-block" onclick="toggleItemAnswer(this)">
-        <div class="qa-bracket">( <span class="ans-slot">A</span> )</div>
-        <div class="qa-content">
-          <div class="qa-text">1. 如下圖為同一時間內三種樂器發出聲音經示波器轉換後的波形，請問哪一種樂器的<strong>響度最大</strong>？</div>
-          <div style="display: flex; gap: 10px; margin: 2px 0;">
-            <div style="text-align: center;">
-              <svg width="100" height="38" viewBox="0 0 100 38">
-                <rect width="100" height="38" fill="#1e293b" rx="3"/>
-                <path d="M 5,19 Q 20,3 35,19 T 65,19 T 95,19" fill="none" stroke="#38bdf8" stroke-width="2"/>
-              </svg>
-              <div style="font-size: 10pt;">(甲) 音叉</div>
-            </div>
-            <div style="text-align: center;">
-              <svg width="100" height="38" viewBox="0 0 100 38">
-                <rect width="100" height="38" fill="#1e293b" rx="3"/>
-                <path d="M 5,19 L 15,10 L 25,28 L 35,19 L 45,10 L 55,28 L 65,19 L 75,10 L 85,28 L 95,19" fill="none" stroke="#f43f5e" stroke-width="1.8"/>
-              </svg>
-              <div style="font-size: 10pt;">(乙) 單簧管</div>
-            </div>
-            <div style="text-align: center;">
-              <svg width="100" height="38" viewBox="0 0 100 38">
-                <rect width="100" height="38" fill="#1e293b" rx="3"/>
-                <path d="M 5,19 Q 12,12 20,19 T 35,19 T 50,19 T 65,19 T 80,19 T 95,19" fill="none" stroke="#a855f7" stroke-width="1.8"/>
-              </svg>
-              <div style="font-size: 10pt;">(丙) 鋼琴</div>
-            </div>
-          </div>
-          <div class="qa-opts-row">
-            <span class="qa-opt correct">(A) 音叉（上下振幅最高）</span>
-            <span class="qa-opt">(B) 單簧管</span>
-            <span class="qa-opt">(C) 鋼琴</span>
-            <span class="qa-opt">(D) 三者一樣大</span>
-          </div>
+      <div class="qa-block interactive-item" style="margin-top: 14px;">
+        <div class="qa-header"><span class="qa-bracket">（ D ）</span> 6. 附圖為相同時間內在同一介質內傳播的甲、乙兩個波的波形，則下列敘述何者<strong>錯誤</strong>？</div>
+        <div style="margin: 6px 0 6px 20px;">
+          <img src="../images/science-8-3-handout/image009.jpg" alt="甲乙兩波波形比較圖" style="max-height: 96px; vertical-align: middle;">
+        </div>
+        <div class="qa-options">
+          <div class="qa-opt">(A) 甲、乙的波長比為 1 ： 2</div>
+          <div class="qa-opt">(B) 甲、乙的週期比為 1 ： 2</div>
+          <div class="qa-opt">(C) 甲、乙的振幅比為 1 ： 2</div>
+          <div class="qa-opt correct-choice">(D) 甲、乙的波速比為 1 ： 2（同介質波速應為 1：1）</div>
         </div>
       </div>
 
-      <div class="qa-block" onclick="toggleItemAnswer(this)">
-        <div class="qa-bracket">( <span class="ans-slot">D</span> )</div>
-        <div class="qa-content">
-          <div class="qa-text">2. 同一室內三人談話：甲聲音尖銳高亢、乙說話宏亮如鐘、丙說話急促飛快，這三人的聲音在空氣中傳播，何者<strong>傳播速率最快</strong>？</div>
-          <div class="qa-opts-row">
-            <span class="qa-opt">(A) 甲的聲音最快</span>
-            <span class="qa-opt">(B) 乙的聲音最快</span>
-            <span class="qa-opt">(C) 丙的聲音最快</span>
-            <span class="qa-opt correct">(D) 三人的聲音一樣快（同一環境介質相同）</span>
-          </div>
+      <div class="qa-block interactive-item" style="margin-top: 14px;">
+        <div class="qa-header"><span class="qa-bracket">（ B ）</span> 7. 圖為一向右前進的連續週期波，試問甲、乙、丙三點的瞬間運動方向為何？</div>
+        <div style="margin: 6px 0 6px 20px;">
+          <img src="../images/science-8-3-handout/image010.png" alt="週期波甲乙丙三點圖" style="max-height: 62px; vertical-align: middle;">
         </div>
-      </div>
-
-      <div class="qa-block" onclick="toggleItemAnswer(this)">
-        <div class="qa-bracket">( <span class="ans-slot">C</span> )</div>
-        <div class="qa-content">
-          <div class="qa-text">3. 阿翰習慣戴耳機大聲聽音樂，下列哪一種音量長時間聆聽最可能會對聽覺神經細胞造成損害？</div>
-          <div class="qa-opts-row">
-            <span class="qa-opt">(A) 10 分貝</span>
-            <span class="qa-opt">(B) 30 分貝</span>
-            <span class="qa-opt correct">(C) 90 分貝</span>
-            <span class="qa-opt">(D) 無法判斷</span>
-          </div>
+        <div class="qa-options">
+          <div class="qa-opt">(A) 甲向上，乙向下，丙向下</div>
+          <div class="qa-opt correct-choice">(B) 甲向下，乙向上，丙向上</div>
+          <div class="qa-opt">(C) 甲向下，乙不動，丙向上</div>
+          <div class="qa-opt">(D) 甲向上，乙不動，丙向下</div>
         </div>
-      </div>
-
-      <div class="qa-block" onclick="toggleItemAnswer(this)">
-        <div class="qa-bracket">( <span class="ans-slot">D</span> )</div>
-        <div class="qa-content">
-          <div class="qa-text">4. 演奏大鼓時，若欲使鼓面敲擊發出的樂音<strong>音調降低</strong>，應採取下列何種調整做法？</div>
-          <div class="qa-opts-row">
-            <span class="qa-opt">(A) 用更大的力氣打擊鼓面</span>
-            <span class="qa-opt">(B) 用較輕的力道打擊鼓面</span>
-            <span class="qa-opt">(C) 敲擊靠近鼓面邊緣處</span>
-            <span class="qa-opt correct">(D) 調鬆周圍繩索，使鼓面不緊繃</span>
-          </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">【解題技巧】微位移法：波形向右微移少許畫出虛線，甲質點往下拉向虛線（向下），乙與丙質點往上拉向虛線（向上），故選 (B)。</div>
         </div>
       </div>
 
       <div class="page-footer">
         <span>自製電子書 · 國中理化</span>
-        <span>第 4 頁 / 共 6 頁</span>
+        <span>3-1 隨堂實戰評量（二）</span>
+        <span>第 4 頁 / 共 13 頁</span>
       </div>
     </div>
 
@@ -826,112 +498,76 @@
     <div class="page" id="page5">
       <canvas class="drawing-canvas"></canvas>
       <div class="page-header">
-        <span>國二理化（上）講義</span>
-        <span>第 3 章 波動與聲音</span>
-        <span>第 5 頁</span>
+        <span>國中自然與生科（八上）</span>
+        <span>班級：_______ 座號：_______ 姓名：_____________</span>
+        <span>P. 5</span>
+      </div>
+      <div class="main-title">3-2 聲音的形成與傳播</div>
+      <div class="section-title">
+        <span>3-2 聲音的形成（一）</span>
+        <span style="font-size:11pt; font-weight:normal;">聲音產生條件與聲速影響因素</span>
       </div>
 
-      <div class="part-title">3-3 小試身手題型演練（二）</div>
-
-      <div class="qa-block" onclick="toggleItemAnswer(this)">
-        <div class="qa-bracket">( <span class="ans-slot">B</span> )</div>
-        <div class="qa-content">
-          <div class="qa-text">5. 國家安全級實驗室設置聲音防偽門禁系統，透過比對說話者的聲音特徵來核對身分，此系統主要依據講話時的哪項特徵來判定？</div>
-          <div class="qa-opts-row">
-            <span class="qa-opt">(A) 音調</span>
-            <span class="qa-opt correct">(B) 音色（波形為個人獨特指紋）</span>
-            <span class="qa-opt">(C) 響度</span>
-            <span class="qa-opt">(D) 聲速</span>
-          </div>
+      <div class="task-title">重點 1 聲音的產生條件</div>
+      <div class="item-line interactive-item">
+        (1) <strong>發聲條件</strong>：
+        <div style="padding-left: 14px; margin-top: 2px;">
+          a. 發聲體要迅速地<span class="ans-word">振動</span>。<br>
+          b. 要有傳遞的<span class="ans-word">介質</span>，且不論氣體、液體或固體皆可傳遞。
         </div>
       </div>
-
-      <div class="qa-block" onclick="toggleItemAnswer(this)">
-        <div class="qa-bracket">( <span class="ans-slot">D</span> )</div>
-        <div class="qa-content">
-          <div class="qa-text">6. 音樂中的七個基本唱名 Do、Re、Mi、Fa、So、La、Si，其排列順序主要是按下列何者由小而大排列？</div>
-          <div class="qa-opts-row">
-            <span class="qa-opt">(A) 波長由短而長</span>
-            <span class="qa-opt">(B) 波速由小而大</span>
-            <span class="qa-opt">(C) 振幅由小而大</span>
-            <span class="qa-opt correct">(D) 振動頻率由小而大</span>
-          </div>
+      <div class="item-line interactive-item">
+        (2) <strong>聲音產生的生活實例</strong>：
+        <div style="padding-left: 14px; margin-top: 2px;">
+          • 說話或唱歌時所發出的聲音，是由於喉嚨<span class="ans-word">聲帶</span>振動所造成。<br>
+          • 敲擊音叉，音叉振動發出嗡嗡聲；將敲擊後音叉接觸水面時，會激起水花。<br>
+          • 手指撥動橡皮筋，橡皮筋因迅速振動而發出聲音。
         </div>
       </div>
 
-      <div class="qa-block" onclick="toggleItemAnswer(this)">
-        <div class="qa-bracket">( <span class="ans-slot">A</span> )</div>
-        <div class="qa-content">
-          <div class="qa-text">7. 有關聲音各項物理特徵的敘述，下列何者<strong>正確</strong>？</div>
-          <div class="qa-opts-col">
-            <span class="qa-opt correct">(A) 將吉他弦線調得愈緊，彈奏時弦線每秒振動的次數（頻率）會增加</span>
-            <span class="qa-opt">(B) 只有在空氣中才能傳遞聲波，水中無法傳聲</span>
-            <span class="qa-opt">(C) 聲音的高低清脆稱為響度，以赫茲為單位</span>
-            <span class="qa-opt">(D) 聲速超過 345 m/s 的聲波稱為超聲波</span>
-          </div>
-        </div>
+      <div class="task-title" style="margin-top: 6px;">重點 2 聲音的傳播與聲速特性</div>
+      <div class="item-line interactive-item">
+        (1) <strong>力學波本質</strong>：聲音是一種力學波，必須藉由介質才能傳遞出去，在<span class="ans-word">真空</span>中聲音無法傳播。
+      </div>
+      <div class="item-line interactive-item">
+        (2) <strong>聲速決定因素</strong>：聲速的大小取決於<strong>介質的種類和狀態</strong>，與發音體本身的振動快慢或大小聲<span class="ans-word">無關</span>！
       </div>
 
-      <div class="qa-block" onclick="toggleItemAnswer(this)">
-        <div class="qa-bracket">( <span class="ans-slot">D</span> )</div>
-        <div class="qa-content">
-          <div class="qa-text">8. 坐在教室後排上課的同學，感覺老師的聲音較前排同學聽來微弱，是因為聲波傳到後排時，何項物理量減小？</div>
-          <div class="qa-opts-row">
-            <span class="qa-opt">(A) 波長</span>
-            <span class="qa-opt">(B) 頻率</span>
-            <span class="qa-opt">(C) 波速</span>
-            <span class="qa-opt correct">(D) 振幅（能量向外擴散減弱）</span>
-          </div>
-        </div>
-      </div>
+      <table class="custom-table" style="margin-top: 5px;">
+        <thead>
+          <tr>
+            <th style="width: 22%;">介質狀態與因素</th>
+            <th style="width: 45%;">傳播規律與原理</th>
+            <th style="width: 33%;">實例或計算公式</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="interactive-item">
+            <td><strong>介質相態</strong></td>
+            <td>一般而言：<span class="ans-word">固</span> 態 ＞ <span class="ans-word">液</span> 態 ＞ <span class="ans-word">氣</span> 態</td>
+            <td>鋼鐵(約 5000 m/s) ＞ 水(約 1500 m/s) ＞ 空氣(約 340 m/s)</td>
+          </tr>
+          <tr class="interactive-item">
+            <td><strong>空氣溫度</strong></td>
+            <td>溫度 $0^\circ\text{C}$ 時聲速為 $331\text{ m/s}$，每上升 $1^\circ\text{C}$ 聲速增加 $0.6\text{ m/s}$，氣溫愈高，聲速愈<span class="ans-word">快</span>。</td>
+            <td>公式：$v = 331 + 0.6 \times T$<br>（$15^\circ\text{C}$ 時聲速約 $340\text{ m/s}$）</td>
+          </tr>
+          <tr class="interactive-item">
+            <td><strong>空氣濕度</strong></td>
+            <td>濕度愈高，空氣平均密度較乾燥空氣小，聲速愈<span class="ans-word">快</span>。</td>
+            <td>雨天傳聲比乾燥晴天略快</td>
+          </tr>
+        </tbody>
+      </table>
 
-      <div class="main-title" style="margin-top: 10px;">3-4 聲波的反射與超聲波</div>
-      <div class="part-title">Part 1 重點填空</div>
-
-      <div style="font-size: 13.5pt; line-height: 1.5;">
-        <p style="margin: 3px 0;"><strong>1. 聲波反射與回聲現象</strong></p>
-        <div style="padding-left: 14px;">
-          (1) 聲波傳播途中遇到障礙物時反彈折回原介質的現象稱為聲波的<span class="write-blank" onclick="toggleItemAnswer(this)"><span class="ans-reveal">反射</span></span>，折回的聲波稱為<span class="write-blank" onclick="toggleItemAnswer(this)"><span class="ans-reveal">回聲</span></span>。<br>
-          (2) 反射前後聲波在同一介質傳播，其<strong>波速、頻率、週期、波長均不變</strong>，但因能量散失與吸收，其<strong>振幅（響度）會<span class="write-blank" onclick="toggleItemAnswer(this)"><span class="ans-reveal">減小</span></span></strong>。<br>
-          (3) <strong>生活應用</strong>：傳聲筒反射聚集聲波；聽診器在管內多次反射保留完整心跳聲；音樂廳牆面吸音板減少雜亂回聲。
-        </div>
-
-        <p style="margin: 6px 0 2px 0;"><strong>2. 超聲波（超音波）定義與生活應用</strong></p>
-        <div style="padding-left: 14px; display: flex; gap: 12px; align-items: center;">
-          <div style="flex: 1.3;">
-            (1) <strong>人耳聽覺極限</strong>：人耳能聽見的聲波頻率範圍約在 <span class="write-blank" onclick="toggleItemAnswer(this)"><span class="ans-reveal">20</span></span> 至 <span class="write-blank" onclick="toggleItemAnswer(this)"><span class="ans-reveal">20000</span></span> $Hz$ 之間。<br>
-            (2) <strong>超聲波定義</strong>：振動頻率高於 <span class="write-blank" onclick="toggleItemAnswer(this)"><span class="ans-reveal">20000</span></span> $Hz$、人耳無法感知的聲波。<br>
-            (3) <strong>科技與生物應用</strong>：
-            <ul style="margin: 2px 0; padding-left: 18px;">
-              <li>船隻<strong>聲納 (Sonar)</strong>：發射超聲波偵測海底深度與魚群。</li>
-              <li>醫療檢驗：產前胎兒超音波造影檢查。</li>
-              <li>工業清洗：超聲波清洗機振動水分子洗淨眼鏡珠寶。</li>
-              <li>動物生態：蝙蝠夜間飛行、海豚獵食皆靠發射超聲波回聲定位。</li>
-            </ul>
-          </div>
-          <div style="flex: 0.7; text-align: center; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 6px;">
-            <svg width="150" height="70" viewBox="0 0 150 70">
-              <!-- 海面與船 -->
-              <line x1="0" y1="20" x2="150" y2="20" stroke="#0284c7" stroke-width="1.5"/>
-              <path d="M 50,20 L 55,8 L 95,8 L 100,20 Z" fill="#475569"/>
-              <rect x="70" y="2" width="10" height="6" fill="#94a3b8"/>
-              <!-- 聲波發射與反射 -->
-              <path d="M 70,22 Q 75,32 80,22" fill="none" stroke="#dc2626" stroke-width="1.5"/>
-              <path d="M 65,30 Q 75,42 85,30" fill="none" stroke="#dc2626" stroke-width="1.5"/>
-              <path d="M 60,38 Q 75,52 90,38" fill="none" stroke="#dc2626" stroke-width="1.5"/>
-              <!-- 海底 -->
-              <path d="M 0,65 Q 40,58 75,62 T 150,60" fill="none" stroke="#92400e" stroke-width="3"/>
-              <text x="5" y="62" font-size="9" fill="#92400e">海底</text>
-              <text x="105" y="16" font-size="9" fill="#0284c7">聲納發射</text>
-            </svg>
-            <div style="font-size: 9.5pt; color: #166534; font-weight: bold;">聲納測深：距離 $S = v \times \frac{t}{2}$</div>
-          </div>
-        </div>
+      <div class="tip-box interactive-item">
+        <strong>💡 真空鈴聲實驗：</strong>將響鈴鬧鐘放入玻璃罩內，持續抽氣，鬧鈴聲逐漸<span class="ans-word">變小</span>至聽不見；若再將空氣重新注入，聲音又再度被聽見。這證實了<strong>聲音傳播一定要有介質，真空不能傳聲</strong>。
       </div>
 
       <div class="page-footer">
         <span>自製電子書 · 國中理化</span>
-        <span>第 5 頁 / 共 6 頁</span>
+        <span>3-2 聲音的形成與傳播</span>
+        <span>第 5 頁 / 共 13 頁</span>
       </div>
     </div>
 
@@ -939,261 +575,884 @@
     <div class="page" id="page6">
       <canvas class="drawing-canvas"></canvas>
       <div class="page-header">
-        <span>國二理化（上）講義</span>
-        <span>第 3 章 波動與聲音</span>
-        <span>第 6 頁</span>
+        <span>國中自然與生科（八上）</span>
+        <span>班級：_______ 座號：_______ 姓名：_____________</span>
+        <span>P. 6</span>
+      </div>
+      <div class="section-title">
+        <span>3-2 隨堂實戰評量（二）</span>
+        <span style="font-size:11pt; font-weight:normal;">經典試題即學即測 (Q1~Q6)</span>
       </div>
 
-      <div class="part-title">3-4 小試身手題型演練</div>
+      <div class="qa-block interactive-item">
+        <div class="qa-header"><span class="qa-bracket">（ D ）</span> 1. 下列關於聲波的敘述，何項<strong>正確</strong>？</div>
+        <div class="qa-options stacked">
+          <div class="qa-opt">(A) 聲波的振動形式為橫波</div>
+          <div class="qa-opt">(B) 發音體的週期增大，則聲音在空氣中的速度變大</div>
+          <div class="qa-opt">(C) 聲波在空氣中的傳播速度大於其在水中的傳播速度</div>
+          <div class="qa-opt correct-choice">(D) 在氣溫 $30^\circ\text{C}$ 時，聲波在空氣中的速度大於其在氣溫 $10^\circ\text{C}$ 時的速度</div>
+        </div>
+      </div>
 
-      <div class="qa-block" onclick="toggleItemAnswer(this)">
-        <div class="qa-bracket">( <span class="ans-slot">C</span> )</div>
-        <div class="qa-content">
-          <div class="qa-text">1. 當向遠處朋友大聲呼喚時，常會將雙手圍在嘴巴四周，使對方較容易聽得清楚，這主要利用了聲波的哪一項特性？</div>
-          <div class="qa-opts-row">
-            <span class="qa-opt">(A) 聲波可藉由不同介質傳遞</span>
-            <span class="qa-opt">(B) 聲音是由物體快速振動所產生</span>
-            <span class="qa-opt correct">(C) 聲波遇到手掌阻擋反射而集中方向傳播</span>
-            <span class="qa-opt">(D) 聲波在不同頻率下有不同速度</span>
+      <div class="qa-block interactive-item">
+        <div class="qa-header"><span class="qa-bracket">（ A ）</span> 2. 下列有關聲波的敘述，何者<strong>正確</strong>？</div>
+        <div class="qa-options stacked">
+          <div class="qa-opt correct-choice">(A) 聲波的傳遞過程一定要有介質</div>
+          <div class="qa-opt">(B) 凡是物體發生振動，人耳一定可聽到聲音</div>
+          <div class="qa-opt">(C) 講話講得愈快，聲速愈快</div>
+          <div class="qa-opt">(D) 水上芭蕾舞者潛入水中時，無法聽到觀眾的掌聲</div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header"><span class="qa-bracket">（ A ）</span> 3. 大熱天在開著冷氣（室內溫度較低）的教室內唱歌，當歌聲自教室傳到室外（溫度較高）時，聲音的速率將如何變化？</div>
+        <div class="qa-options">
+          <div class="qa-opt correct-choice">(A) 變快</div>
+          <div class="qa-opt">(B) 變慢</div>
+          <div class="qa-opt">(C) 不變</div>
+          <div class="qa-opt">(D) 不一定</div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header"><span class="qa-bracket">（ D ）</span> 4. 如欲製成一氣密式隔音窗戶，在兩片玻璃中間應如何處理，隔音效果最佳？</div>
+        <div class="qa-options">
+          <div class="qa-opt">(A) 填入壓克力</div>
+          <div class="qa-opt">(B) 塞入保麗龍</div>
+          <div class="qa-opt">(C) 貼上具防爆隔熱性質的貼紙</div>
+          <div class="qa-opt correct-choice">(D) 抽成真空</div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header"><span class="qa-bracket">（ B ）</span> 5. 某日氣溫為 $15^\circ\text{C}$，小明看見遠處閃電後，經過 4 秒才聽見雷聲，請問發生閃電處距離小明約多少公尺？</div>
+        <div class="qa-options">
+          <div class="qa-opt">(A) 340 公尺</div>
+          <div class="qa-opt correct-choice">(B) 1360 公尺</div>
+          <div class="qa-opt">(C) 2720 公尺</div>
+          <div class="qa-opt">(D) 5440 公尺</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">【解析】$15^\circ\text{C}$ 時聲速 $v = 331 + 0.6 \times 15 = 340\text{ m/s}$。光速極快瞬間即至，故距離 $S = v \times t = 340 \times 4 = 1360\text{ 公尺}$。</div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header"><span class="qa-bracket">（ C ）</span> 6. 國片電影常出現太空戰艦在太空中劇烈爆炸並發出震耳欲聾巨響的場景，從理化科學的角度來看，此情節是否符合真實原理？</div>
+        <div class="qa-options stacked">
+          <div class="qa-opt">(A) 符合，爆炸能量極強，能藉由爆炸火光直接傳播聲音</div>
+          <div class="qa-opt">(B) 符合，超聲波具有高度穿透性，能穿透真空傳播</div>
+          <div class="qa-opt correct-choice">(C) 不符合，太空中為真空狀態缺乏傳聲介質，無法傳遞聲音</div>
+          <div class="qa-opt">(D) 不符合，聲波在真空中的傳播速率高達光速，不可能聽得見</div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>3-2 隨堂實戰評量</span>
+        <span>第 6 頁 / 共 13 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== PAGE 7 ==================== -->
+    <div class="page" id="page7">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國中自然與生科（八上）</span>
+        <span>班級：_______ 座號：_______ 姓名：_____________</span>
+        <span>P. 7</span>
+      </div>
+      <div class="main-title">3-3 多變的聲音（聲音三要素）</div>
+      <div class="section-title">
+        <span>3-3 多變的聲音（一）</span>
+        <span style="font-size:11pt; font-weight:normal;">聲音三要素、示波器波形與噪音</span>
+      </div>
+
+      <div class="task-title">重點 1 聲音三要素對照表</div>
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th style="width: 14%;">要素</th>
+            <th style="width: 16%;">音量（響度）</th>
+            <th style="width: 16%;">音調</th>
+            <th style="width: 16%;">音色</th>
+            <th style="width: 38%;">示波器波形圖解</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="interactive-item">
+            <td><strong>代表性質</strong></td>
+            <td>聲音的大小</td>
+            <td>聲音的高低</td>
+            <td>聲音的特性</td>
+            <td rowspan="4" style="background: #fafafa; padding: 4px;">
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px; font-size: 10pt;">
+                <div>
+                  <img src="../images/science-8-3-handout/image013.jpg" alt="音量小" style="max-height: 40px;"><br>
+                  <span>音量小（振幅小）</span>
+                </div>
+                <div>
+                  <img src="../images/science-8-3-handout/image014.jpg" alt="音量大" style="max-height: 40px;"><br>
+                  <span>音量大（振幅大）</span>
+                </div>
+                <div>
+                  <img src="../images/science-8-3-handout/image019.jpg" alt="音調低" style="max-height: 40px;"><br>
+                  <span>音調低（頻率低）</span>
+                </div>
+                <div>
+                  <img src="../images/science-8-3-handout/image020.jpg" alt="音調高" style="max-height: 40px;"><br>
+                  <span>音調高（頻率高）</span>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr class="interactive-item">
+            <td><strong>決定因素</strong></td>
+            <td><span class="ans-word">振幅</span></td>
+            <td><span class="ans-word">頻率</span></td>
+            <td><span class="ans-word">波形</span></td>
+          </tr>
+          <tr class="interactive-item">
+            <td><strong>常用單位</strong></td>
+            <td><span class="ans-word">分貝</span>（dB）</td>
+            <td><span class="ans-word">赫茲</span>（Hz）</td>
+            <td>×（無特定單位）</td>
+          </tr>
+          <tr class="interactive-item">
+            <td><strong>控制特性</strong></td>
+            <td class="align-left">敲擊力愈大，聲音愈大，振幅愈大。</td>
+            <td class="align-left">發音體愈<strong>短、細、緊、薄</strong>，振動頻率愈高，音調愈高。</td>
+            <td class="align-left">不同發音體的獨特特性，由材料結構決定。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="task-title" style="margin-top: 4px;">重點 2 各種樂器的獨特音色波形</div>
+      <div style="display: flex; justify-content: space-around; align-items: center; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 4px 6px;">
+        <div style="text-align: center; font-size: 11pt;">
+          <img src="../images/science-8-3-handout/image015.jpg" alt="音叉波形" style="max-height: 30px;"><br>
+          <span>音叉的波形（純正弦波）</span>
+        </div>
+        <div style="text-align: center; font-size: 11pt;">
+          <img src="../images/science-8-3-handout/image016.jpg" alt="長笛波形" style="max-height: 30px;"><br>
+          <span>長笛的波形</span>
+        </div>
+        <div style="text-align: center; font-size: 11pt;">
+          <img src="../images/science-8-3-handout/image017.jpg" alt="小號波形" style="max-height: 30px;"><br>
+          <span>小號的波形</span>
+        </div>
+        <div style="text-align: center; font-size: 11pt;">
+          <img src="../images/science-8-3-handout/image018.jpg" alt="小提琴波形" style="max-height: 30px;"><br>
+          <span>小提琴的波形</span>
+        </div>
+      </div>
+
+      <div class="task-title" style="margin-top: 5px;">重點 3 樂音、噪音與分貝尺規</div>
+      <div class="item-line interactive-item">
+        (1) <strong>樂音</strong>：優美動聽、令人感到愉悅的聲音，其波形具有<span class="ans-word">規律性</span>。
+      </div>
+      <div class="item-line interactive-item">
+        (2) <strong>噪音</strong>：吵雜刺耳、令人不舒服的聲音，其波形<span class="ans-word">沒有規律性</span>；若音量過大超過標準亦屬噪音。
+      </div>
+      <div style="margin: 3px 0; text-align: center;">
+        <img src="../images/science-8-3-handout/image021.jpg" alt="分貝尺規對照圖" style="max-width: 96%; max-height: 36px; object-fit: contain;">
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>3-3 多變的聲音</span>
+        <span>第 7 頁 / 共 13 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== PAGE 8 ==================== -->
+    <div class="page" id="page8">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國中自然與生科（八上）</span>
+        <span>班級：_______ 座號：_______ 姓名：_____________</span>
+        <span>P. 8</span>
+      </div>
+      <div class="section-title">
+        <span>3-3 隨堂實戰評量（一）</span>
+        <span style="font-size:11pt; font-weight:normal;">示波器波形與音量音調題型 (Q1~Q4)</span>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header"><span class="qa-bracket">（ A ）</span> 1. 下圖為同一時間內三種樂器所發出的樂音經示波器轉換所描繪的波形，請問哪一個樂器發出的樂音<strong>響度最大</strong>？</div>
+        <div style="margin: 4px 0 4px 20px;">
+          <img src="../images/science-8-3-handout/image022.jpg" alt="音叉、單簧管、鋼琴示波器波形圖" style="max-height: 64px; vertical-align: middle;">
+        </div>
+        <div class="qa-options">
+          <div class="qa-opt correct-choice">(A) 音叉（上下振幅最高）</div>
+          <div class="qa-opt">(B) 單簧管</div>
+          <div class="qa-opt">(C) 鋼琴</div>
+          <div class="qa-opt">(D) 一樣大</div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item" style="margin-top: 10px;">
+        <div class="qa-header"><span class="qa-bracket">（ D ）</span> 2. 三個人共處一室談話，甲的聲音尖又高，乙的聲音宏亮大聲，丙說話快又急，這些聲音在空氣中傳播開來，何者<strong>傳聲最快</strong>？</div>
+        <div class="qa-options">
+          <div class="qa-opt">(A) 甲的聲音最快</div>
+          <div class="qa-opt">(B) 乙的聲音最快</div>
+          <div class="qa-opt">(C) 丙的聲音最快</div>
+          <div class="qa-opt correct-choice">(D) 三人的聲音一樣快（同一環境介質相同）</div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item" style="margin-top: 10px;">
+        <div class="qa-header"><span class="qa-bracket">（ C ）</span> 3. 阿翰讀書時，常配戴耳機聽音樂，下列哪種音量最可能會對耳朵造成傷害？</div>
+        <div class="qa-options">
+          <div class="qa-opt">(A) 10 分貝</div>
+          <div class="qa-opt">(B) 30 分貝</div>
+          <div class="qa-opt correct-choice">(C) 90 分貝</div>
+          <div class="qa-opt">(D) 無法判斷</div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item" style="margin-top: 10px;">
+        <div class="qa-header"><span class="qa-bracket">（ D ）</span> 4. 如何<strong>降低</strong>一面鼓發出的樂音<strong>音調</strong>？</div>
+        <div class="qa-options">
+          <div class="qa-opt">(A) 用較大的力打擊鼓面</div>
+          <div class="qa-opt">(B) 用較小的力打擊鼓面</div>
+          <div class="qa-opt">(C) 打擊靠近鼓面邊緣處</div>
+          <div class="qa-opt correct-choice">(D) 放鬆綁繩，使鼓面不繃得太緊</div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>3-3 隨堂實戰評量（一）</span>
+        <span>第 8 頁 / 共 13 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== PAGE 9 ==================== -->
+    <div class="page" id="page9">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國中自然與生科（八上）</span>
+        <span>班級：_______ 座號：_______ 姓名：_____________</span>
+        <span>P. 9</span>
+      </div>
+      <div class="section-title">
+        <span>3-3 隨堂實戰評量（二）</span>
+        <span style="font-size:11pt; font-weight:normal;">音色、頻率與聽覺傳播分析 (Q5~Q8)</span>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header"><span class="qa-bracket">（ B ）</span> 5. 姿寧在中研院上班，因為研究的題材很機密，因此進入實驗室必須通過層層關卡：驗指紋、掃描眼睛、驗聲音。請問驗聲音這一關，主要根據姿寧講話時的什麼來判定？</div>
+        <div class="qa-options">
+          <div class="qa-opt">(A) 音調</div>
+          <div class="qa-opt correct-choice">(B) 音色（波形為個人獨特指紋）</div>
+          <div class="qa-opt">(C) 響度</div>
+          <div class="qa-opt">(D) 音速</div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item" style="margin-top: 10px;">
+        <div class="qa-header"><span class="qa-bracket">（ D ）</span> 6. 在音樂中將音符分為 Do、Re、Mi、Fa、So、La、Si，其排列的次序是按下列何者為準？</div>
+        <div class="qa-options">
+          <div class="qa-opt">(A) 波長由短而長</div>
+          <div class="qa-opt">(B) 波速由小而大</div>
+          <div class="qa-opt">(C) 振幅由小而大</div>
+          <div class="qa-opt correct-choice">(D) 頻率由小而大</div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item" style="margin-top: 10px;">
+        <div class="qa-header"><span class="qa-bracket">（ A ）</span> 7. 有關聲音的敘述，下列何者<strong>正確</strong>？</div>
+        <div class="qa-options stacked">
+          <div class="qa-opt correct-choice">(A) 將吉他弦線拉緊，撥弦時弦線每秒振動的次數會增加</div>
+          <div class="qa-opt">(B) 唯有空氣中才能傳播聲波</div>
+          <div class="qa-opt">(C) 聲音的高低稱為響度，通常以赫茲為單位</div>
+          <div class="qa-opt">(D) 聲速超過 345 m/s 的聲波，稱為超聲波</div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item" style="margin-top: 10px;">
+        <div class="qa-header"><span class="qa-bracket">（ D ）</span> 8. 坐在教室後面上課，感覺老師的聲音比較小，是因為聲波傳至教室後面時，下列何者<strong>變小</strong>？</div>
+        <div class="qa-options">
+          <div class="qa-opt">(A) 波長</div>
+          <div class="qa-opt">(B) 頻率</div>
+          <div class="qa-opt">(C) 速度</div>
+          <div class="qa-opt correct-choice">(D) 振幅（能量向外擴散衰減）</div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>3-3 隨堂實戰評量（二）</span>
+        <span>第 9 頁 / 共 13 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== PAGE 10 ==================== -->
+    <div class="page" id="page10">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國中自然與生科（八上）</span>
+        <span>班級：_______ 座號：_______ 姓名：_____________</span>
+        <span>P. 10</span>
+      </div>
+      <div class="main-title">3-4 聲波的傳播與應用</div>
+      <div class="section-title">
+        <span>3-4 聲波的傳播與應用（一）</span>
+        <span style="font-size:11pt; font-weight:normal;">回聲規律與超聲波科技應用</span>
+      </div>
+
+      <div class="task-title">重點 1 聲波反射與回聲現象</div>
+      <div class="item-line interactive-item">
+        (1) <strong>定義</strong>：波傳遞遇到障礙物返回原介質的現象稱為<span class="ans-word">反射</span>，反射回來的聲波稱為<span class="ans-word">回聲</span>。
+      </div>
+      <div class="item-line interactive-item">
+        (2) <strong>反射前後物理量比較</strong>：
+        <div style="padding-left: 14px; margin-top: 2px;">
+          • <strong>波速、頻率、週期、波長均<span class="ans-word">不變</span></strong>（在同一介質傳播）。<br>
+          • <strong>振幅（響度）會<span class="ans-word">減小</span></strong>（因能量被障礙物吸收與向外擴散）。
+        </div>
+      </div>
+      <div class="item-line interactive-item">
+        (3) <strong>生活應用</strong>：
+        <div style="padding-left: 14px; margin-top: 2px;">
+          • <strong>傳聲筒</strong>：可將聲波反射集中朝同一方向傳播，使遠方的人容易聽見。<br>
+          • <strong>聽診器</strong>：讓聲波在細管之間不斷反射，避免聲波散失及防止周圍聲音干擾。
+        </div>
+      </div>
+
+      <div class="task-title" style="margin-top: 5px;">重點 2 超聲波的定義與特性</div>
+      <div class="item-line interactive-item">
+        (1) <strong>人耳聽覺極限</strong>：人耳可聽到的聲音頻率範圍約為 <span class="ans-word">20</span> ～ <span class="ans-word">20000</span> 赫茲 ($Hz$) 之間。
+      </div>
+      <div class="item-line interactive-item">
+        (2) <strong>超聲波定義</strong>：頻率超過 <span class="ans-word">20000</span> 赫茲，人耳無法聽到的聲音，稱為<span class="ans-word">超聲波</span>。
+      </div>
+
+      <div class="task-title" style="margin-top: 5px;">重點 3 超聲波的科技與生物應用</div>
+      <div style="display: flex; gap: 12px; align-items: center;">
+        <div style="flex: 1.25; font-size: 13pt; line-height: 1.45;">
+          <div class="item-line interactive-item">• <strong>聲納 (Sonar)</strong>：在船艦中可利用聲納測量海底地形或魚群距離。</div>
+          <div class="item-line interactive-item">• <strong>清洗</strong>：超聲波清洗機可以振動水以清潔物品（如眼鏡、首飾）。</div>
+          <div class="item-line interactive-item">• <strong>醫療</strong>：孕婦產檢時會以超聲波來檢查胎兒的發育狀態。</div>
+          <div class="item-line interactive-item">• <strong>動物生態</strong>：海豚、蝙蝠藉由發出及接收超聲波與同類溝通、辨別方向和覓食。</div>
+        </div>
+        <div style="flex: 0.75; text-align: center; background: #fff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 4px;">
+          <img src="../images/science-8-3-handout/image024.jpg" alt="聲納測量海底魚群" style="max-height: 135px; max-width: 100%; object-fit: contain;"><br>
+          <span style="font-size: 9.5pt; color: #166534; font-weight: bold;">原檔教材：聲納測深示意圖</span>
+        </div>
+      </div>
+
+      <div class="tip-box interactive-item" style="margin-top: 6px;">
+        <strong>💡 聲納測深核心公式：</strong>聲波由發射至接收經過「海面 $\rightarrow$ 海底 $\rightarrow$ 海面」來回雙程，求單程深度必須除以 2：<strong>$S = v \times \frac{t}{2}$</strong>。
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>3-4 聲波的傳播與應用</span>
+        <span>第 10 頁 / 共 13 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== PAGE 11 ==================== -->
+    <div class="page" id="page11">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國中自然與生科（八上）</span>
+        <span>班級：_______ 座號：_______ 姓名：_____________</span>
+        <span>P. 11</span>
+      </div>
+      <div class="section-title">
+        <span>3-4 隨堂實戰評量（二）</span>
+        <span style="font-size:11pt; font-weight:normal;">教材原檔試題即學即測 (Q1~Q6)</span>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header"><span class="qa-bracket">（ C ）</span> 1. 如圖所示，向遠處的人說話時，常會用手圍住嘴巴，讓聲音不易分散，使對方較容易聽清楚我們所說的話，此現象主要是利用聲波的哪一種特性？</div>
+        <div style="margin: 2px 0 2px 20px;">
+          <img src="../images/science-8-3-handout/image025.png" alt="雙手圍住嘴巴圖" style="max-height: 52px; vertical-align: middle;">
+        </div>
+        <div class="qa-options">
+          <div class="qa-opt">(A) 聲波可以不同介質來傳播</div>
+          <div class="qa-opt">(B) 聲波是因為物體的振動而產生</div>
+          <div class="qa-opt correct-choice">(C) 聲波傳播時遇到障礙物而被反射</div>
+          <div class="qa-opt">(D) 因不同頻率的聲波會有不同的前進方向</div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header"><span class="qa-bracket">（ B ）</span> 2. 超聲波與人耳可以聽見的聲音，何者的<strong>週期較大</strong>？</div>
+        <div class="qa-options">
+          <div class="qa-opt">(A) 超聲波</div>
+          <div class="qa-opt correct-choice">(B) 人耳可聽見的聲音（頻率較低，週期 $T = 1/f$ 較大）</div>
+          <div class="qa-opt">(C) 兩者一樣高</div>
+          <div class="qa-opt">(D) 必須視傳聲介質而定</div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header"><span class="qa-bracket">（ B ）</span> 3. 人耳聽不到下列哪一種聲音？</div>
+        <div class="qa-options">
+          <div class="qa-opt">(A) 游泳池底所發出的鬧鈴聲</div>
+          <div class="qa-opt correct-choice">(B) 振動頻率為 10 赫茲的聲音（次聲波）</div>
+          <div class="qa-opt">(C) 振動頻率為 10000 赫茲的聲音</div>
+          <div class="qa-opt">(D) 向山谷吼叫的回聲</div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header"><span class="qa-bracket">（ D ）</span> 4. 下列的行為或聲音，何者<strong>與超聲波無關</strong>？</div>
+        <div class="qa-options">
+          <div class="qa-opt">(A) 蝙蝠飛行</div>
+          <div class="qa-opt">(B) 聲納探測魚群</div>
+          <div class="qa-opt">(C) 婦產科醫生檢查胎兒</div>
+          <div class="qa-opt correct-choice">(D) 偶像演唱會的歌聲</div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header"><span class="qa-bracket">（ D ）</span> 5. 某振動體每分鐘振動 600 次，則一般人可因此而聽到何種頻率的聲音？</div>
+        <div class="qa-options">
+          <div class="qa-opt">(A) 600 赫茲</div>
+          <div class="qa-opt">(B) 10 赫茲</div>
+          <div class="qa-opt">(C) 300 赫茲</div>
+          <div class="qa-opt correct-choice">(D) 聽不到聲音（$f = 10\text{ Hz} < 20\text{ Hz}$）</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">【解析】頻率 $f = \frac{600\text{ 次}}{60\text{ 秒}} = 10\text{ Hz}$。人耳聽力頻率範圍為 $20 \sim 20000\text{ Hz}$，$10\text{ Hz}$ 低於人耳下限，故聽不到。</div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header"><span class="qa-bracket">（ C ）</span> 6. 漁船在海面利用聲納垂直向下發射超聲波，經 1.6 秒後收到海底反射回來的訊號。已知超聲波在海水中的速率約為 $1500\text{ m/s}$，請問該處海深為多少公尺？</div>
+        <div class="qa-options">
+          <div class="qa-opt">(A) 600 公尺</div>
+          <div class="qa-opt">(B) 960 公尺</div>
+          <div class="qa-opt correct-choice">(C) 1200 公尺</div>
+          <div class="qa-opt">(D) 2400 公尺</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">【解析】超聲波為來回雙程，單程海深需除以 2：$S = v \times \frac{t}{2} = 1500 \times \frac{1.6}{2} = 1500 \times 0.8 = 1200\text{ 公尺}$。</div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>3-4 隨堂實戰評量</span>
+        <span>第 11 頁 / 共 13 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== PAGE 12 ==================== -->
+    <div class="page" id="page12">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國中自然與生科（八上）</span>
+        <span>班級：_______ 座號：_______ 姓名：_____________</span>
+        <span>P. 12</span>
+      </div>
+      <div class="main-title">第 3 章 重點整理</div>
+      <div class="section-title">
+        <span>第 3 章 核心知識架構與重點整理</span>
+        <span style="font-size:11pt; font-weight:normal;">依據教材原稿全面歸納</span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 4px;">
+        <!-- 3-1 -->
+        <div style="background: #eff6ff; border: 1.5px solid #93c5fd; border-radius: 8px; padding: 6px 10px;">
+          <div style="font-weight: bold; color: #1e40af; font-size: 13pt; margin-bottom: 3px;">📌 3-1 波的傳播與特徵</div>
+          <div style="font-size: 12pt; line-height: 1.45; color: #1e293b;">
+            1. 凹凸或疏密為<strong>波</strong>；傳遞現象為<strong>波動</strong>。<br>
+            2. 橫波：前進方向與介質振動<strong>垂直</strong>。<br>
+            &nbsp;&nbsp;&nbsp;縱波：前進方向與介質振動<strong>平行</strong>。<br>
+            3. 連續規律的波稱為<strong>週期波</strong>。<br>
+            4. 週期 $T = \frac{1}{f}$；波速 $v = \frac{\lambda}{T} = f \times \lambda$。<br>
+            5. 平衡位置到波峰（谷）為<strong>振幅</strong>；兩波峰（谷）間為<strong>波長</strong>。
+          </div>
+        </div>
+
+        <!-- 3-2 -->
+        <div style="background: #f0fdf4; border: 1.5px solid #86efac; border-radius: 8px; padding: 6px 10px;">
+          <div style="font-weight: bold; color: #166534; font-size: 13pt; margin-bottom: 3px;">📌 3-2 聲音的形成</div>
+          <div style="font-size: 12pt; line-height: 1.45; color: #1e293b;">
+            1. 聲音是由物體迅速<strong>振動</strong>所造成。<br>
+            2. 聲音必須依靠<strong>介質</strong>才能傳遞出去（真空不傳聲）。<br>
+            3. 傳播速度：<strong>固體 ＞ 液體 ＞ 氣體</strong>。<br>
+            4. 氣溫公式：$v = 331 + 0.6 \times T$。<br>
+            5. 大聲喊叫只增加振幅，<strong>不會讓聲速變快</strong>！
+          </div>
+        </div>
+
+        <!-- 3-3 -->
+        <div style="background: #fefce8; border: 1.5px solid #fde047; border-radius: 8px; padding: 6px 10px;">
+          <div style="font-weight: bold; color: #854d0e; font-size: 13pt; margin-bottom: 3px;">📌 3-3 多變的聲音</div>
+          <div style="font-size: 12pt; line-height: 1.45; color: #1e293b;">
+            1. <strong>音量（響度）</strong>：決定於<span style="color:#dc2626; font-weight:bold;">振幅</span>，單位分貝 (dB)。<br>
+            2. <strong>音調</strong>：決定於<span style="color:#dc2626; font-weight:bold;">頻率</span>，發音體短細緊薄音調高。<br>
+            3. <strong>音色</strong>：決定於<span style="color:#dc2626; font-weight:bold;">波形</span>，獨特發音特性。<br>
+            4. 樂音波形具規律性；噪音波形無規律性。<br>
+            5. 音調高（尖銳）不等於音量大，兩者獨立！
+          </div>
+        </div>
+
+        <!-- 3-4 -->
+        <div style="background: #faf5ff; border: 1.5px solid #d8b4fe; border-radius: 8px; padding: 6px 10px;">
+          <div style="font-weight: bold; color: #6b21a8; font-size: 13pt; margin-bottom: 3px;">📌 3-4 聲波的傳播與應用</div>
+          <div style="font-size: 12pt; line-height: 1.45; color: #1e293b;">
+            1. 遇到障礙物反射回來的聲波稱為<strong>回聲</strong>。<br>
+            2. 反射前後：波速、頻率、波長<strong>不變</strong>，振幅<strong>減小</strong>。<br>
+            3. 人耳聽力範圍：$20 \sim 20000\text{ Hz}$。<br>
+            4. 頻率超過 $20000\text{ Hz}$ 稱為<strong>超聲波</strong>。<br>
+            5. 聲納測深公式：$S = v \times \frac{t}{2}$。
           </div>
         </div>
       </div>
 
-      <div class="qa-block" onclick="toggleItemAnswer(this)">
-        <div class="qa-bracket">( <span class="ans-slot">B</span> )</div>
-        <div class="qa-content">
-          <div class="qa-text">2. 超聲波與人耳剛好能聽見的聲音相比，何者的<strong>振動週期較大</strong>？</div>
-          <div class="qa-opts-row">
-            <span class="qa-opt">(A) 超聲波</span>
-            <span class="qa-opt correct">(B) 人耳可聽見的聲音（頻率較低，週期 $T = 1/f$ 較大）</span>
-            <span class="qa-opt">(C) 兩者週期相同</span>
-            <span class="qa-opt">(D) 視傳播介質而定</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="qa-block" onclick="toggleItemAnswer(this)">
-        <div class="qa-bracket">( <span class="ans-slot">B</span> )</div>
-        <div class="qa-content">
-          <div class="qa-text">3. 下列各項聲音中，哪一種是<strong>正常人耳無法聽見</strong>的？</div>
-          <div class="qa-opts-row">
-            <span class="qa-opt">(A) 沉入游泳池底聽見岸上的鬧鈴聲</span>
-            <span class="qa-opt correct">(B) 振動頻率為 10 赫茲的次聲波</span>
-            <span class="qa-opt">(C) 振動頻率為 10000 赫茲的高音</span>
-            <span class="qa-opt">(D) 對著高山呼喊所聽到的回聲</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="qa-block" onclick="toggleItemAnswer(this)">
-        <div class="qa-bracket">( <span class="ans-slot">D</span> )</div>
-        <div class="qa-content">
-          <div class="qa-text">4. 下列各項動物行為或日常科技應用中，何者<strong>與超聲波無關</strong>？</div>
-          <div class="qa-opts-row">
-            <span class="qa-opt">(A) 蝙蝠在黑夜中避障飛行</span>
-            <span class="qa-opt">(B) 漁船聲納探測海下魚群位置</span>
-            <span class="qa-opt">(C) 婦產科醫師利用儀器觀察胎兒健康</span>
-            <span class="qa-opt correct">(D) 偶像歌手在演唱會上的動人歌聲</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="qa-block" onclick="toggleItemAnswer(this)">
-        <div class="qa-bracket">( <span class="ans-slot">D</span> )</div>
-        <div class="qa-content">
-          <div class="qa-text">5. 某彈簧振動體每分鐘規律振動 600 次，則一般人對此振動體發出的聲音聽覺感受為何？</div>
-          <div class="qa-opts-row">
-            <span class="qa-opt">(A) 聽到 600 赫茲的聲音</span>
-            <span class="qa-opt">(B) 聽到 10 赫茲的低音</span>
-            <span class="qa-opt">(C) 聽到 300 赫茲的聲音</span>
-            <span class="qa-opt correct">(D) 完全聽不到聲音（$f = 10\text{ Hz}$ 低於人耳下限）</span>
-          </div>
-          <div class="calc-workspace" onclick="event.stopPropagation(); toggleItemAnswer(this);">
-            <div class="calc-solution">
-              【解析】頻率 $f = \frac{600\text{ 次}}{60\text{ 秒}} = 10\text{ Hz}$。<br>
-              人耳聽力頻率極限範圍為 $20 \sim 20000\text{ Hz}$，$10\text{ Hz} < 20\text{ Hz}$ 屬於次聲波，故人耳聽不到。
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="section-title" style="margin-top: 6px;">第 3 章 考前重點精華快速速記</div>
+      <div class="task-title" style="margin-top: 8px;">考前重點精華與易錯陷阱提醒表</div>
       <table class="custom-table" style="font-size: 11.5pt;">
         <thead>
           <tr>
-            <th style="width: 25%;">單元主題</th>
-            <th style="width: 50%;">核心觀念與必考公式</th>
-            <th style="width: 25%;">易錯陷阱提醒</th>
+            <th style="width: 22%;">單元主題</th>
+            <th style="width: 48%;">核心必背觀念</th>
+            <th style="width: 30%;">考前易錯陷阱提防</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td><strong>3-1 波動特性</strong></td>
-            <td>力學波需介質；波速 $v = f \times \lambda$；介質只上下/前後原地振動，不隨波遷移。</td>
-            <td>同一介質中波速定值，頻率增倍則波長減半，波速不變！</td>
+            <td>力學波需介質；波速 $v = f \times \lambda$；介質原地來回振動。</td>
+            <td>同一介質中波速固定，頻率加倍則波長減半，波速不變！</td>
           </tr>
           <tr>
             <td><strong>3-2 聲音傳播</strong></td>
             <td>聲音需介質（真空不傳聲）；聲速 固＞液＞氣；氣溫每升 $1^\circ\text{C}$ 聲速增 $0.6\text{ m/s}$。</td>
-            <td>大聲喊叫只增加振幅，不會讓聲速變快！</td>
+            <td>大聲喊叫只增加振幅，絕不會讓聲音傳播得比較快！</td>
           </tr>
           <tr>
             <td><strong>3-3 聲音三要素</strong></td>
-            <td>響度看<strong>振幅</strong>（單位分貝）；音調看<strong>頻率</strong>（短細緊薄音調高）；音色看<strong>波形</strong>。</td>
-            <td>音調高不代表聲音大聲，兩者完全獨立！</td>
+            <td>響度看振幅；音調看頻率（短細緊薄音調高）；音色看波形。</td>
+            <td>音調高（尖銳）不代表大聲，兩者完全獨立！</td>
           </tr>
           <tr>
             <td><strong>3-4 反射與超聲波</strong></td>
-            <td>反射回聲：波速頻率不變，振幅變小；超聲波頻率 $> 20000\text{ Hz}$，人耳聽不見。</td>
-            <td>聲納測距為來回雙程，求單程深度必須除以 2！</td>
+            <td>回聲波速頻率不變、振幅衰減；超聲波頻率 $>20000\text{ Hz}$。</td>
+            <td>聲納測距訊號為來回雙程，求單程距離務必除以 2！</td>
           </tr>
         </tbody>
       </table>
 
       <div class="page-footer">
         <span>自製電子書 · 國中理化</span>
-        <span>第 6 頁 / 共 6 頁（全書完）</span>
+        <span>第 3 章 重點整理</span>
+        <span>第 12 頁 / 共 13 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== PAGE 13 ==================== -->
+    <div class="page" id="page13">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國中自然與生科（八上）</span>
+        <span>班級：_______ 座號：_______ 姓名：_____________</span>
+        <span>P. 13</span>
+      </div>
+      <div class="main-title">第 3 章 波動與聲音</div>
+      <div class="section-title">
+        <span>第 3 章 考前盤點與自我檢核</span>
+        <span style="font-size:11pt; font-weight:normal;">必備技能自我檢核與概念診斷</span>
+      </div>
+
+      <div class="task-title">一、 核心概念自我檢核清單</div>
+      <table class="custom-table" style="font-size: 12pt;">
+        <thead>
+          <tr>
+            <th style="width: 12%;">檢核</th>
+            <th style="width: 38%;">能力指標與必備技能</th>
+            <th style="width: 50%;">精要回顧與自我提示</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>☐</td>
+            <td class="align-left">能區分力學波與非力學波、橫波與縱波</td>
+            <td class="align-left">力學波需介質；橫波垂直（繩波）、縱波平行（聲波）。</td>
+          </tr>
+          <tr>
+            <td>☐</td>
+            <td class="align-left">能熟練運用波速公式 $v = f \times \lambda$ 進行計算</td>
+            <td class="align-left">同介質波速定值；頻率 $f$ 與週期 $T$ 互為倒數。</td>
+          </tr>
+          <tr>
+            <td>☐</td>
+            <td class="align-left">能理解聲音需介質，真空無法傳聲</td>
+            <td class="align-left">太空中無法直接交談；鬧鐘抽真空實驗聲音消失。</td>
+          </tr>
+          <tr>
+            <td>☐</td>
+            <td class="align-left">熟記聲速大小順序並熟練氣溫公式計算</td>
+            <td class="align-left">固＞液＞氣；$v = 331 + 0.6 \times T$（$15^\circ\text{C}$ 時約 $340\text{ m/s}$）。</td>
+          </tr>
+          <tr>
+            <td>☐</td>
+            <td class="align-left">精確指認聲音三要素的決定物理量</td>
+            <td class="align-left">響度看振幅；音調看頻率；音色看波形。</td>
+          </tr>
+          <tr>
+            <td>☐</td>
+            <td class="align-left">能判讀示波器波形並比較三要素大小</td>
+            <td class="align-left">高度看振幅；疏密看頻率；曲線特徵看波形。</td>
+          </tr>
+          <tr>
+            <td>☐</td>
+            <td class="align-left">知道回聲反射前後各物理量的變化</td>
+            <td class="align-left">同一介質中波速、頻率、波長皆不變，僅振幅變小。</td>
+          </tr>
+          <tr>
+            <td>☐</td>
+            <td class="align-left">熟練計算聲納測距題型（牢記除以 2）</td>
+            <td class="align-left">單程深度 $S = v \times t / 2$，來回時間需除以 2。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="task-title" style="margin-top: 8px;">二、 易錯觀念診斷是非題（點擊顯答）</div>
+      <div class="qa-block interactive-item" style="font-size: 13pt; margin-bottom: 5px;">
+        <div class="qa-header"><span class="qa-bracket">（ ╳ ）</span> 1. 水波向前傳播時，水分子也會隨著波形一路流向遠處。</div>
+        <div style="font-size: 11.5pt; color: #64748b; padding-left: 20px;">
+          【解析】波只傳遞能量，不傳送介質，水分子僅在原處附近來回振動。
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item" style="font-size: 13pt; margin-bottom: 5px;">
+        <div class="qa-header"><span class="qa-bracket">（ ╳ ）</span> 2. 說話愈大聲，聲音在空氣中傳播的速率愈快。</div>
+        <div style="font-size: 11.5pt; color: #64748b; padding-left: 20px;">
+          【解析】說話大聲只增加振幅（響度），聲速由介質狀態決定，兩者完全無關。
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item" style="font-size: 13pt; margin-bottom: 5px;">
+        <div class="qa-header"><span class="qa-bracket">（ ╳ ）</span> 3. 女生說話音調高，代表她說話的聲音能量較大、較大聲。</div>
+        <div style="font-size: 11.5pt; color: #64748b; padding-left: 20px;">
+          【解析】音調由頻率決定；大聲（響度）由振幅決定，兩者完全獨立。
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item" style="font-size: 13pt; margin-bottom: 5px;">
+        <div class="qa-header"><span class="qa-bracket">（ Ｏ ）</span> 4. 聲波反射折回原介質傳播時，其聲速、頻率與波長皆保持不變。</div>
+        <div style="font-size: 11.5pt; color: #64748b; padding-left: 20px;">
+          【解析】介質相同則波速不變；波源沒變則頻率不變，波長亦不變，僅振幅衰減。
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item" style="font-size: 13pt; margin-bottom: 5px;">
+        <div class="qa-header"><span class="qa-bracket">（ ╳ ）</span> 5. 蝙蝠飛行發射的超聲波，在空氣中的傳播速度比一般人說話的聲音快。</div>
+        <div style="font-size: 11.5pt; color: #64748b; padding-left: 20px;">
+          【解析】超聲波與一般聲音同在空氣介質中傳播，聲速完全相同（頻率高則波長短）。
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>考前盤點與自我檢核</span>
+        <span>第 13 頁 / 共 13 頁（全書完）</span>
       </div>
     </div>
 
   </div>
 
-  <!-- 互動操作腳本 -->
+  <!-- JavaScript 核心功能腳本 -->
   <script>
-    // 1. 目錄面板切換與平滑跳轉
-    function toggleTocMenu(e) {
-      if (e) e.stopPropagation();
-      const menu = document.getElementById('tocMenu');
-      if (menu) menu.classList.toggle('show');
-    }
+    // 1. 單題答案獨立開關與填空點擊切換（永久原則可靠性機制）
+    document.addEventListener('click', function(e) {
+      if (document.body.classList.contains('pen-mode')) return;
 
-    function jumpTo(targetId) {
-      const el = document.getElementById(targetId);
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // 點擊個別答案單詞或括號：直接單獨切換顯示/隱藏
+      if (e.target.classList.contains('ans-word') || e.target.classList.contains('ans-slot') || e.target.classList.contains('qa-bracket')) {
+        e.stopPropagation();
+        e.target.classList.toggle('revealed');
+        return;
       }
-      const menu = document.getElementById('tocMenu');
-      if (menu) menu.classList.remove('show');
-    }
 
-    document.addEventListener('click', (e) => {
-      const menu = document.getElementById('tocMenu');
-      const btn = document.getElementById('tocBtn');
-      if (menu && menu.classList.contains('show')) {
-        if (!menu.contains(e.target) && e.target !== btn) {
-          menu.classList.remove('show');
-        }
+      // 點擊整題/整行/表格列：開合該項目下的所有答案
+      const item = e.target.closest('.interactive-item, .qa-block, .item-line, .calc-workspace');
+      if (item) {
+        item.classList.toggle('show-one');
       }
     });
 
-    // 2. 逐題/逐格顯答
-    function toggleItemAnswer(el) {
+    // 雙擊個別填空亦支援直接切換
+    document.addEventListener('dblclick', function(e) {
       if (document.body.classList.contains('pen-mode')) return;
-      el.classList.toggle('show-one');
-    }
+      if (e.target.classList.contains('ans-word') || e.target.classList.contains('ans-slot') || e.target.classList.contains('qa-bracket')) {
+        e.stopPropagation();
+        e.target.classList.toggle('revealed');
+      }
+    });
 
-    // 3. 一鍵全開/全隱答案
-    var isAllAnsShown = false;
+    // 2. 一鍵全開 / 全關答案
+    let allAnsRevealed = false;
     function toggleAllAnswers() {
-      isAllAnsShown = !isAllAnsShown;
-      var container = document.querySelector('.pages-container');
-      var btn = document.getElementById('toggleAllAnsBtn');
-      var btnIcon = document.getElementById('ansIcon');
-      if (isAllAnsShown) {
-        container.classList.add('show-ans');
+      allAnsRevealed = !allAnsRevealed;
+      document.body.classList.toggle('show-ans', allAnsRevealed);
+      const icon = document.getElementById('ansIcon');
+      const btn = document.getElementById('toggleAllAnsBtn');
+      if (allAnsRevealed) {
+        icon.textContent = '🙈';
         btn.classList.add('active');
-        btnIcon.textContent = '🙈';
       } else {
-        container.classList.remove('show-ans');
+        icon.textContent = '👁️';
         btn.classList.remove('active');
-        btnIcon.textContent = '👁️';
-        document.querySelectorAll('.write-blank.show-one, .qa-block.show-one, .calc-workspace.show-one').forEach(function(item) {
-          item.classList.remove('show-one');
-        });
+        document.querySelectorAll('.show-one').forEach(el => el.classList.remove('show-one'));
+        document.querySelectorAll('.revealed').forEach(el => el.classList.remove('revealed'));
       }
     }
 
-    // 4. 螢光筆/板書筆工具
-    var isPenMode = false;
-    var currentPenColor = 'rgba(250, 204, 21, 0.45)';
-    var currentPenSize = 4;
-
-    function setPenColor(color, el) {
-      currentPenColor = color;
-      document.querySelectorAll('.color-dot').forEach(function(d) { d.classList.remove('active'); });
-      el.classList.add('active');
+    // 3. 目錄浮動選單跳轉
+    function toggleTocMenu(e) {
+      e.stopPropagation();
+      const menu = document.getElementById('tocMenu');
+      menu.classList.toggle('show');
+    }
+    document.addEventListener('click', function(e) {
+      const menu = document.getElementById('tocMenu');
+      if (menu && menu.classList.contains('show') && !e.target.closest('.toc-menu') && e.target.id !== 'tocBtn') {
+        menu.classList.remove('show');
+      }
+    });
+    function jumpTo(pageId) {
+      const target = document.getElementById(pageId);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const menu = document.getElementById('tocMenu');
+        if (menu) menu.classList.remove('show');
+      }
     }
 
-    function setPenSize(size, el) {
-      currentPenSize = size;
-      document.querySelectorAll('.size-btn').forEach(function(b) { b.classList.remove('active'); });
-      el.classList.add('active');
+    // 4. 螢光筆與畫板系統
+    let isPenMode = false;
+    let currentColor = 'rgba(250, 204, 21, 0.45)';
+    let currentSize = 4;
+    const canvases = [];
+    const contexts = [];
+
+    function initCanvases() {
+      const pages = document.querySelectorAll('.page');
+      pages.forEach((page, index) => {
+        const canvas = page.querySelector('.drawing-canvas');
+        if (canvas) {
+          canvases.push(canvas);
+          const ctx = canvas.getContext('2d');
+          contexts.push(ctx);
+          resizeCanvas(canvas);
+
+          let drawing = false;
+          let lastX = 0, lastY = 0;
+
+          canvas.addEventListener('mousedown', (e) => {
+            if (!isPenMode) return;
+            drawing = true;
+            const rect = canvas.getBoundingClientRect();
+            lastX = e.clientX - rect.left;
+            lastY = e.clientY - rect.top;
+          });
+
+          canvas.addEventListener('mousemove', (e) => {
+            if (!drawing || !isPenMode) return;
+            const rect = canvas.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            ctx.strokeStyle = currentColor;
+            ctx.lineWidth = currentSize;
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+
+            ctx.beginPath();
+            ctx.moveTo(lastX, lastY);
+            ctx.lineTo(x, y);
+            ctx.stroke();
+
+            lastX = x;
+            lastY = y;
+          });
+
+          window.addEventListener('mouseup', () => { drawing = false; });
+          canvas.addEventListener('mouseleave', () => { drawing = false; });
+
+          // 觸控支援 (Touch screen / 大屏)
+          canvas.addEventListener('touchstart', (e) => {
+            if (!isPenMode) return;
+            drawing = true;
+            const rect = canvas.getBoundingClientRect();
+            const touch = e.touches[0];
+            lastX = touch.clientX - rect.left;
+            lastY = touch.clientY - rect.top;
+            e.preventDefault();
+          }, { passive: false });
+
+          canvas.addEventListener('touchmove', (e) => {
+            if (!drawing || !isPenMode) return;
+            const rect = canvas.getBoundingClientRect();
+            const touch = e.touches[0];
+            const x = touch.clientX - rect.left;
+            const y = touch.clientY - rect.top;
+
+            ctx.strokeStyle = currentColor;
+            ctx.lineWidth = currentSize;
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+
+            ctx.beginPath();
+            ctx.moveTo(lastX, lastY);
+            ctx.lineTo(x, y);
+            ctx.stroke();
+
+            lastX = x;
+            lastY = y;
+            e.preventDefault();
+          }, { passive: false });
+
+          canvas.addEventListener('touchend', () => { drawing = false; });
+        }
+      });
     }
+
+    function resizeCanvas(canvas) {
+      canvas.width = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+    }
+
+    window.addEventListener('resize', () => {
+      canvases.forEach(canvas => resizeCanvas(canvas));
+    });
 
     function togglePenMode() {
       isPenMode = !isPenMode;
       document.body.classList.toggle('pen-mode', isPenMode);
-      var penBtn = document.getElementById('penBtn');
-      var penOptions = document.getElementById('penOptions');
-      if (isPenMode) {
-        penBtn.classList.add('active');
-        if (penOptions) penOptions.style.display = 'flex';
-      } else {
-        penBtn.classList.remove('active');
-        if (penOptions) penOptions.style.display = 'none';
-      }
+      document.getElementById('penBtn').classList.toggle('active', isPenMode);
+      document.getElementById('penOptions').style.display = isPenMode ? 'flex' : 'none';
     }
 
-    function initCanvases() {
-      document.querySelectorAll('.page').forEach(function(page) {
-        var canvas = page.querySelector('.drawing-canvas');
-        if (!canvas) return;
-        var ctx = canvas.getContext('2d');
-        function resizeCanvas() {
-          canvas.width = page.clientWidth;
-          canvas.height = page.clientHeight;
-        }
-        resizeCanvas();
-        window.addEventListener('resize', resizeCanvas);
-
-        var isDrawing = false, lastX = 0, lastY = 0;
-        canvas.addEventListener('mousedown', function(e) {
-          if (!isPenMode) return;
-          isDrawing = true;
-          var rect = canvas.getBoundingClientRect();
-          lastX = e.clientX - rect.left;
-          lastY = e.clientY - rect.top;
-        });
-        canvas.addEventListener('mousemove', function(e) {
-          if (!isDrawing || !isPenMode) return;
-          var rect = canvas.getBoundingClientRect();
-          var currX = e.clientX - rect.left;
-          var currY = e.clientY - rect.top;
-          ctx.beginPath();
-          ctx.moveTo(lastX, lastY);
-          ctx.lineTo(currX, currY);
-          ctx.strokeStyle = currentPenColor;
-          ctx.lineWidth = currentPenSize;
-          ctx.lineCap = 'round';
-          ctx.lineJoin = 'round';
-          ctx.stroke();
-          lastX = currX;
-          lastY = currY;
-        });
-        window.addEventListener('mouseup', function() { isDrawing = false; });
-      });
+    function setPenColor(color, el) {
+      currentColor = color;
+      document.querySelectorAll('.color-dot').forEach(dot => dot.classList.remove('active'));
+      el.classList.add('active');
     }
-    window.addEventListener('load', initCanvases);
+
+    function setPenSize(size, el) {
+      currentSize = size;
+      document.querySelectorAll('.size-btn').forEach(btn => btn.classList.remove('active'));
+      el.classList.add('active');
+    }
 
     function clearAllDrawings() {
-      document.querySelectorAll('.drawing-canvas').forEach(function(canvas) {
-        var ctx = canvas.getContext('2d');
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
+      contexts.forEach((ctx, index) => {
+        ctx.clearRect(0, 0, canvases[index].width, canvases[index].height);
       });
     }
 
     // 5. 渲染數學公式 KaTeX
-    window.addEventListener('DOMContentLoaded', function() {
+    function renderKaTeX() {
       if (typeof renderMathInElement !== 'undefined') {
         renderMathInElement(document.body, {
           delimiters: [
@@ -1203,7 +1462,13 @@
           throwOnError: false
         });
       }
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      initCanvases();
+      renderKaTeX();
     });
+    window.addEventListener('load', renderKaTeX);
   </script>
 </body>
 </html>
