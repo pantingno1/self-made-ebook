@@ -1,0 +1,1596 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>國一自然（上）第 4 章 生物體的運輸作用 互動電子書</title>
+  <!-- 電子書目錄身分標記（見 SKILL.md §11 與 AGENTS.md） -->
+  <meta name="ebook:subject" content="science">
+  <meta name="ebook:grade" content="7">
+  <meta name="ebook:unit" content="4">
+  <meta name="ebook:title" content="國一自然（上）第 4 章 生物體的運輸作用 互動電子書">
+  <meta name="ebook:type" content="handout">
+  <meta name="ebook:pages" content="18">
+  <meta name="ebook:level" content="std">
+  <meta name="ebook:summary" content="國一自然（生物）第4章生物體的運輸作用完整講義（全18頁寬裕舒展無截斷版），涵蓋：植物的運輸構造（維管束與形成層、年輪）、植物體內物質的運輸（水分與養分運輸、蒸散作用與氣孔、芹菜水分運輸實驗）、人體心血管系統的組成（心臟與瓣膜、動脈/靜脈/微血管比較、血液與血球、小魚尾鰭血液流動觀察）、人體的循環系統（體循環與肺循環、淋巴系統與人體防禦防線）以及全章核心重點精華檢測。">
+  <style>
+    @page { size: A4 portrait; margin: 10mm 12mm; }
+    * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body {
+      margin: 0; padding: 0; background-color: #f1f5f9;
+      font-family: "Times New Roman", "標楷體", "DFKai-SB", "BiauKai", serif;
+      font-size: 13.5pt; line-height: 1.5; color: #111;
+    }
+
+    /* 課堂懸浮工具列 */
+    .classroom-toolbar {
+      position: fixed; top: 14px; right: 20px; z-index: 9999;
+      display: flex; align-items: center; gap: 4px;
+      background: rgba(255,255,255,0.95); backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 4px 10px; border-radius: 40px; border: 1px solid rgba(203,213,225,0.9);
+      box-shadow: 0 4px 22px rgba(0,0,0,0.15);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .tool-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 36px; height: 36px; font-size: 18px; color: #334155;
+      background: transparent; border: 1px solid transparent; border-radius: 50%;
+      cursor: pointer; transition: all 0.15s ease; padding: 0; user-select: none;
+      text-decoration: none;
+    }
+    .tool-btn:hover { background: #f1f5f9; transform: scale(1.1); }
+    .tool-btn.active { background: #0f172a; color: #ffffff; }
+    .btn-toggle-ans.active { background: #eff6ff; border-color: #3b82f6; }
+    .toolbar-divider { width: 1px; height: 20px; background: #cbd5e1; margin: 0 4px; }
+
+    /* 目錄跳轉選單 */
+    .toc-menu {
+      display: none; position: absolute; top: 46px; left: 0;
+      background: #ffffff; border: 1px solid #cbd5e1; border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.18); padding: 8px 0;
+      min-width: 320px; max-height: 500px; overflow-y: auto; z-index: 10000;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .toc-menu.show { display: block; animation: tocFadeIn 0.15s ease-out; }
+    @keyframes tocFadeIn { from { opacity:0; transform:translateY(-6px); } to { opacity:1; transform:translateY(0); } }
+    .toc-menu-title { padding: 6px 16px 8px 16px; font-size: 13px; font-weight: bold; color: #64748b; border-bottom: 1px solid #f1f5f9; }
+    .toc-menu-item { padding: 7px 16px; font-size: 13px; color: #334155; cursor: pointer; display: flex; align-items: center; justify-content: space-between; transition: background 0.12s, color 0.12s; }
+    .toc-menu-item:hover { background: #eff6ff; color: #2563eb; font-weight: bold; }
+    .toc-page-badge { font-size: 11.5px; color: #94a3b8; font-weight: normal; }
+    .toc-menu-item:hover .toc-page-badge { color: #2563eb; }
+
+    /* 螢光筆選項盤 */
+    .pen-options { display: none; align-items: center; gap: 6px; background: #f8fafc; padding: 3px 8px; border-radius: 20px; border: 1px solid #e2e8f0; margin-left: 2px; }
+    .color-picker { display: flex; align-items: center; gap: 5px; }
+    .color-dot { width: 16px; height: 16px; border-radius: 50%; cursor: pointer; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.2); }
+    .color-dot.active { transform: scale(1.2); box-shadow: 0 0 0 2px #0f172a; }
+    .size-picker { display: flex; align-items: center; gap: 3px; }
+    .size-btn { border: 1px solid #cbd5e1; background: #fff; color: #475569; font-size: 11px; font-weight: bold; padding: 2px 7px; border-radius: 10px; cursor: pointer; }
+    .size-btn.active { background: #0f172a; color: #fff; border-color: #0f172a; }
+
+    /* 頁面容器 */
+    .pages-container { padding: 20px 0 40px 0; }
+    .page {
+      box-sizing: border-box; width: 210mm; min-height: 297mm; max-height: 297mm;
+      padding: 10mm 15mm 8mm 15mm; margin: 0 auto 25px auto;
+      background: #ffffff; box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+      page-break-after: always; break-after: page; position: relative;
+      display: flex; flex-direction: column; justify-content: flex-start; overflow: hidden;
+    }
+    .drawing-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 50; pointer-events: none; }
+    body.pen-mode .drawing-canvas { pointer-events: auto; cursor: crosshair; }
+
+    /* 頁首與標題 */
+    .page-header {
+      display: flex; justify-content: space-between; align-items: center;
+      border-bottom: 2px solid #2563eb; padding-bottom: 4px; margin-bottom: 8px;
+      font-size: 11.5pt; font-weight: 700; color: #1e3a8a;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .section-title {
+      font-size: 13.5pt; font-weight: bold; background: #e0f2fe; color: #0369a1;
+      padding: 4px 10px; border-radius: 6px; margin: 5px 0 6px 0;
+      border-left: 6px solid #0284c7; display: flex; align-items: center; justify-content: space-between;
+    }
+    .task-title { font-size: 13pt; font-weight: bold; margin: 6px 0 4px 0; color: #1e293b; }
+    .item-line { padding: 3px 6px; border-radius: 4px; line-height: 1.5; font-size: 13pt; }
+    body:not(.pen-mode) .interactive-item { cursor: pointer; }
+    body:not(.pen-mode) .interactive-item:hover { background-color: #f8fafc; outline: 1px dashed #93c5fd; }
+
+    /* 填空答案樣式 */
+    .ans-word {
+      color: transparent; font-weight: bold; border-bottom: 1.5px solid #333;
+      padding: 0 3px; cursor: pointer; user-select: none; transition: all 0.15s ease;
+    }
+    .show-ans .ans-word, .show-one .ans-word, .ans-word.revealed {
+      color: #dc2626 !important; background: #fee2e2; border-radius: 3px;
+    }
+    body:not(.pen-mode) .ans-word:hover { background-color: #fee2e2; }
+
+    /* 選擇題與括號 */
+    .qa-block { margin-bottom: 8px; padding: 5px 8px; border-radius: 6px; line-height: 1.48; font-size: 13pt; }
+    .qa-header { font-weight: bold; }
+    .qa-bracket {
+      display: inline-block; color: transparent; font-weight: bold; padding: 0 4px;
+      min-width: 28px; text-align: center; border: 1.5px solid #2563eb; border-radius: 4px;
+      cursor: pointer; user-select: none; transition: all 0.15s ease; margin-right: 4px;
+    }
+    .show-ans .qa-bracket, .show-one .qa-bracket, .qa-bracket.revealed {
+      color: #dc2626 !important; background: #fee2e2;
+    }
+    .qa-options { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px 10px; margin-top: 4px; padding-left: 20px; font-size: 12.5pt; }
+    .qa-options.stacked { display: flex; flex-direction: column; gap: 3px; }
+
+    /* 表格樣式 */
+    table.custom-table { width: 100%; border-collapse: collapse; margin: 4px 0; font-size: 12pt; line-height: 1.38; }
+    table.custom-table th, table.custom-table td { border: 1px solid #64748b; padding: 4px 6px; text-align: center; }
+    table.custom-table th { background-color: #f1f5f9; font-weight: bold; color: #0f172a; }
+    table.custom-table td.align-left { text-align: left; }
+
+    /* 概念框 */
+    .tip-box {
+      border: 1.5px solid #93c5fd; background-color: #f0f9ff; border-radius: 6px;
+      padding: 6px 12px; margin: 5px 0 7px 0; font-size: 12pt; line-height: 1.45; color: #0369a1;
+    }
+
+    /* 題目解析框：預設隱藏，點選後才顯答 */
+    .calc-workspace {
+      margin: 4px 0 2px 20px; padding: 5px 12px; border: 1px dashed #94a3b8;
+      border-radius: 6px; background-color: #f8fafc; font-size: 11.5pt; cursor: pointer;
+      user-select: none;
+    }
+    .calc-workspace:hover {
+      background-color: #f1f5f9; border-color: #3b82f6;
+    }
+    .calc-solution {
+      color: transparent !important; line-height: 1.45; transition: color 0.15s ease;
+    }
+    .show-ans .calc-solution, .show-one .calc-solution, .calc-solution.revealed, .calc-workspace.revealed .calc-solution {
+      color: #dc2626 !important; font-weight: normal; user-select: text;
+    }
+
+    /* 頁尾 */
+    .page-footer {
+      margin-top: auto; border-top: 1px solid #cbd5e1; padding-top: 4px;
+      display: flex; justify-content: space-between; font-size: 9.5pt; color: #64748b;
+    }
+
+    /* 列印學生純淨版 */
+    @media print {
+      @page { size: A4 portrait; margin: 10mm 12mm; }
+      html, body { width: 100% !important; height: auto !important; background: transparent !important; padding: 0 !important; margin: 0 !important; }
+      .no-print, .classroom-toolbar, .toc-menu, .drawing-canvas { display: none !important; }
+      .pages-container { display: block !important; padding: 0 !important; margin: 0 !important; }
+      .page {
+        box-sizing: border-box !important; margin: 0 !important; box-shadow: none !important;
+        width: 100% !important; height: 275mm !important; max-height: 275mm !important;
+        min-height: 0 !important; padding: 0 !important; page-break-after: always !important;
+        break-after: page !important; page-break-inside: avoid !important; break-inside: avoid !important;
+        display: flex !important; flex-direction: column !important; justify-content: flex-start !important;
+        overflow: hidden !important;
+      }
+      .page:last-child { page-break-after: avoid !important; break-after: avoid !important; }
+      .page-footer { margin-top: auto !important; padding-top: 4px !important; }
+      .ans-word, .qa-bracket, .calc-solution { color: transparent !important; }
+      .calc-workspace { display: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 課堂懸浮工具列 -->
+  <div class="classroom-toolbar no-print">
+    <!-- 回電子書目錄 -->
+    <a class="tool-btn" href="../index.html" title="回電子書目錄">🏠</a>
+    <!-- 目錄跳轉選單 -->
+    <div style="position: relative;">
+      <button class="tool-btn" id="tocBtn" onclick="toggleTocMenu(event)" title="單元章節目錄">📑</button>
+      <div class="toc-menu" id="tocMenu">
+        <div class="toc-menu-title">📖 第 4 章 單元章節目錄 (全 18 頁)</div>
+        <div class="toc-menu-item" onclick="jumpTo('page1')"><span>4-1 植物運輸構造（觀念一）</span><span class="toc-page-badge">P.1</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page2')"><span>4-1 木本莖與年輪（觀念二）</span><span class="toc-page-badge">P.2</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page3')"><span>4-1 隨堂實戰評量 (Q1～Q2)</span><span class="toc-page-badge">P.3</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page4')"><span>4-2 物質運輸與蒸散作用（觀念一）</span><span class="toc-page-badge">P.4</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page5')"><span>4-2 芹菜水分實驗與蒸散變因（觀念二）</span><span class="toc-page-badge">P.5</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page6')"><span>4-2 隨堂實戰評量（一）(Q1～Q3)</span><span class="toc-page-badge">P.6</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page7')"><span>4-2 隨堂實戰評量（二）(Q4～Q6)</span><span class="toc-page-badge">P.7</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page8')"><span>4-3 心血管系統與心臟（觀念一）</span><span class="toc-page-badge">P.8</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page9')"><span>4-3 血管特性與血液成分（觀念二）</span><span class="toc-page-badge">P.9</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page10')"><span>4-3 隨堂實戰評量（一）(Q1～Q3)</span><span class="toc-page-badge">P.10</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page11')"><span>4-3 隨堂實戰評量（二）(Q4～Q6)</span><span class="toc-page-badge">P.11</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page12')"><span>4-3 隨堂實戰評量（三）(Q7～Q8)</span><span class="toc-page-badge">P.12</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page13')"><span>4-4 心血管雙循環與物質交換（觀念一）</span><span class="toc-page-badge">P.13</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page14')"><span>4-4 淋巴系統與三道防線（觀念二）</span><span class="toc-page-badge">P.14</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page15')"><span>4-4 隨堂實戰評量（一）(Q1～Q4)</span><span class="toc-page-badge">P.15</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page16')"><span>4-4 隨堂實戰評量（二）(Q5～Q8)</span><span class="toc-page-badge">P.16</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page17')"><span>第 4 章 核心重點整理（一）</span><span class="toc-page-badge">P.17</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page18')"><span>第 4 章 核心重點整理（二）</span><span class="toc-page-badge">P.18</span></div>
+      </div>
+    </div>
+    <!-- 一鍵顯答 -->
+    <button class="tool-btn btn-toggle-ans" id="toggleAllAnsBtn" onclick="toggleAllAnswers()" title="一鍵全開/全隱答案">
+      <span id="ansIcon">👁️</span>
+    </button>
+    <!-- 畫筆切換 -->
+    <button class="tool-btn" id="penBtn" onclick="togglePenMode()" title="螢光筆/板書筆">✏️</button>
+    <!-- 畫筆選單 -->
+    <div class="pen-options" id="penOptions">
+      <div class="color-picker">
+        <span class="color-dot active" style="background:#facc15;" onclick="setPenColor('rgba(250,204,21,0.45)', this)" title="螢光黃"></span>
+        <span class="color-dot" style="background:#ef4444;" onclick="setPenColor('rgba(239,68,68,0.8)', this)" title="紅筆"></span>
+        <span class="color-dot" style="background:#3b82f6;" onclick="setPenColor('rgba(37,99,235,0.8)', this)" title="藍筆"></span>
+        <span class="color-dot" style="background:#10b981;" onclick="setPenColor('rgba(16,185,129,0.8)', this)" title="綠筆"></span>
+      </div>
+      <div class="toolbar-divider" style="height:14px; margin:0 2px;"></div>
+      <div class="size-picker">
+        <span class="size-btn active" onclick="setPenSize(3, this)">細</span>
+        <span class="size-btn" onclick="setPenSize(7, this)">中</span>
+        <span class="size-btn" onclick="setPenSize(14, this)">粗</span>
+      </div>
+    </div>
+    <!-- 清除筆跡 -->
+    <button class="tool-btn" onclick="clearAllDrawings()" title="清除本頁筆跡">🧹</button>
+    <!-- 列印 -->
+    <button class="tool-btn" onclick="window.print()" title="列印純淨學習單">🖨️</button>
+  </div>
+
+  <!-- Pages Container -->
+  <div class="pages-container">
+
+    <!-- ==================== Page 1 ==================== -->
+    <div class="page" id="page1">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國一自然（上）講義</span>
+        <span>第 4 章 生物體的運輸作用</span>
+        <span>P. 1</span>
+      </div>
+
+      <div class="section-title">
+        <span>4-1　植物的運輸構造（一）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">焦點一：維管束的組成與功能、排列方式、被子植物莖內構造比較</span>
+      </div>
+
+      <div class="task-title">1. 植物的運輸構造概述</div>
+      <div class="item-line interactive-item">(1) <strong>定義：</strong>部分植物體內，負責運輸水分與養分的管道構造，統稱為 <span class="ans-word">維管束</span>。</div>
+      <div class="item-line interactive-item">(2) <strong>功能：</strong>植物體藉由維管束將根部吸收的水分與葉部製造的養分運送至全身各部位。</div>
+
+      <div class="task-title" style="margin-top: 5px;">2. 維管束的組成與功能（由內向外排列）</div>
+      <table class="custom-table" style="font-size:12pt; line-height:1.4; margin-top:2px;">
+        <tr><th style="width:20%;">組成構造</th><th style="width:22%;">分布位置</th><th style="width:58%;">核心功能與運輸方向</th></tr>
+        <tr class="interactive-item">
+          <td><strong>木質部</strong></td>
+          <td>維管束 <span class="ans-word">內側</span></td>
+          <td class="align-left">負責運輸 <span class="ans-word">水分</span> 與礦物質（無機鹽），方向一律 <span class="ans-word">由下往上</span> 單向運輸（根 → 莖 → 葉）。</td>
+        </tr>
+        <tr class="interactive-item">
+          <td><strong>形成層</strong></td>
+          <td>木質部與韌皮部之間</td>
+          <td class="align-left">為分生組織，具細胞分裂能力。向內分裂長出新的 <span class="ans-word">木質部</span>，向外分裂長出新的 <span class="ans-word">韌皮部</span>，使莖逐年加粗。</td>
+        </tr>
+        <tr class="interactive-item">
+          <td><strong>韌皮部</strong></td>
+          <td>維管束 <span class="ans-word">外側</span></td>
+          <td class="align-left">負責運輸光合作用產生的有機 <span class="ans-word">養分</span>（如蔗糖），方向由 <span class="ans-word">提供養分處</span> 運往 <span class="ans-word">需求養分處</span>（可向上或向下雙向流動）。</td>
+        </tr>
+      </table>
+
+      <div class="task-title" style="margin-top: 5px;">3. 被子植物莖內維管束之比較</div>
+      <table class="custom-table" style="font-size:11.5pt; line-height:1.35; margin-top:2px;">
+        <tr><th style="width:16%;">分類項目</th><th style="width:28%;">單子葉植物</th><th style="width:28%;">雙子葉草本植物</th><th style="width:28%;">雙子葉木本植物</th></tr>
+        <tr class="interactive-item">
+          <td><strong>莖切面圖</strong></td>
+          <td><img src="../images/science-7-4-handout/image004.jpg" style="max-height:65px; border-radius:4px; border:1px solid #cbd5e1;" alt="單子葉散生排列"></td>
+          <td><img src="../images/science-7-4-handout/image005.jpg" style="max-height:65px; border-radius:4px; border:1px solid #cbd5e1;" alt="雙子葉草本環狀排列"></td>
+          <td><img src="../images/science-7-4-handout/image006.jpg" style="max-height:65px; border-radius:4px; border:1px solid #cbd5e1;" alt="雙子葉木本環狀年輪"></td>
+        </tr>
+        <tr class="interactive-item">
+          <td><strong>排列方式</strong></td>
+          <td><span class="ans-word">散生</span> 排列</td>
+          <td><span class="ans-word">環狀</span> 排列</td>
+          <td><span class="ans-word">環狀</span> 排列</td>
+        </tr>
+        <tr class="interactive-item">
+          <td><strong>形成層</strong></td>
+          <td><span class="ans-word">無</span> 形成層（無法逐年加粗）</td>
+          <td><span class="ans-word">有</span> 形成層</td>
+          <td><span class="ans-word">有</span> 形成層（加粗明顯）</td>
+        </tr>
+        <tr class="interactive-item">
+          <td><strong>年輪特徵</strong></td>
+          <td><span class="ans-word">無</span> 年輪</td>
+          <td><span class="ans-word">無</span> 年輪</td>
+          <td><span class="ans-word">有</span> 明顯年輪</td>
+        </tr>
+        <tr class="interactive-item">
+          <td><strong>常見代表</strong></td>
+          <td class="align-left">水稻、玉米、甘蔗、小麥、百合、竹子</td>
+          <td class="align-left">向日葵、南瓜、鬼針草、酢漿草、牽牛花</td>
+          <td class="align-left">油桐、櫻花、朱槿、榕樹、黑板樹、臺灣扁柏</td>
+        </tr>
+      </table>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中生物</span>
+        <span>4-1 植物的運輸構造（一）</span>
+        <span>第 1 頁 / 共 18 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 2 ==================== -->
+    <div class="page" id="page2">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國一自然（上）講義</span>
+        <span>第 4 章 生物體的運輸作用</span>
+        <span>P. 2</span>
+      </div>
+
+      <div class="section-title">
+        <span>4-1　植物的運輸構造（二）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">焦點二：木本植物莖的橫切構造、樹皮與木材、年輪形成機制與春材秋材</span>
+      </div>
+
+      <div class="task-title">1. 木本植物莖的內部組織分布</div>
+      <div class="item-line interactive-item">(1) <strong>樹皮：</strong>形成層以 <span class="ans-word">外</span> 的所有組織，包含最外層保護用的木栓層、皮層以及 <span class="ans-word">韌皮部</span>。</div>
+      <div class="item-line interactive-item">(2) <strong>木材：</strong>形成層以 <span class="ans-word">內</span> 的所有組織，即多年生長累積的 <span class="ans-word">木質部</span>，占樹幹大部分體積，具有支持與輸水功能。</div>
+
+      <div style="text-align:center; margin: 3px 0;">
+        <img src="../images/science-7-4-handout/image007.jpg" style="max-height:125px; border-radius:4px; border:1px solid #cbd5e1;" alt="木本植物莖立體剖面圖">
+        <div style="font-size:10pt; color:#64748b; margin-top:1px;">▲ 木本植物莖構造剖面立體圖（樹皮、木材、木質部、形成層、韌皮部）</div>
+      </div>
+
+      <div class="task-title" style="margin-top: 5px;">2. 年輪（Growth Rings）的成因與春材秋材比較</div>
+      <div class="item-line interactive-item">(1) <strong>成因：</strong>氣候四季交替明顯地區，氣溫與降雨量隨季節變化，導致形成層生長速度與新生的 <span class="ans-word">木質部</span> 細胞大小不同，產生深淺相間的環狀紋路。</div>
+
+      <table class="custom-table" style="font-size:12pt; line-height:1.4; margin-top:3px;">
+        <tr><th style="width:16%;">比較項目</th><th style="width:42%;">春材（早材）</th><th style="width:42%;">秋材（晚材）</th></tr>
+        <tr class="interactive-item">
+          <td><strong>生長季節</strong></td>
+          <td>春夏季節</td>
+          <td>秋冬季節</td>
+        </tr>
+        <tr class="interactive-item">
+          <td><strong>氣候環境</strong></td>
+          <td>氣候溫暖、雨量 <span class="ans-word">較多</span></td>
+          <td>氣候寒冷、雨量 <span class="ans-word">較少</span></td>
+        </tr>
+        <tr class="interactive-item">
+          <td><strong>生長速度</strong></td>
+          <td>形成層分裂生長速度 <span class="ans-word">較快</span></td>
+          <td>形成層分裂生長速度 <span class="ans-word">較慢</span></td>
+        </tr>
+        <tr class="interactive-item">
+          <td><strong>細胞大小</strong></td>
+          <td>木質部細胞管徑較 <span class="ans-word">大</span>、管壁較薄</td>
+          <td>木質部細胞管徑較 <span class="ans-word">小</span>、管壁較厚</td>
+        </tr>
+        <tr class="interactive-item">
+          <td><strong>外觀顏色</strong></td>
+          <td>顏色較 <span class="ans-word">淺</span>、環帶質地疏鬆較寬</td>
+          <td>顏色較 <span class="ans-word">深</span>、環帶質地緊密較窄</td>
+        </tr>
+      </table>
+
+      <div style="display:flex; gap:12px; align-items:center; margin-top:6px;">
+        <div style="flex:1;">
+          <div class="tip-box" style="font-size:12pt; line-height:1.45;">
+            💡 <strong>年輪判讀關鍵要點：</strong><br>
+            • 年輪是由 <span class="ans-word">木質部</span> 構成，韌皮部不會形成年輪。<br>
+            • 一條淺色環帶（春材）加一條深色環帶（秋材）合稱為 <span class="ans-word">一輪</span>，代表一年。<br>
+            • 越靠近樹幹中心的木質部年代越 <span class="ans-word">老</span>（內老外新），越靠近形成層的木質部越 <span class="ans-word">新</span>。
+          </div>
+        </div>
+        <div style="text-align:center; flex-shrink:0; width:150px;">
+          <img src="../images/science-7-4-handout/image010.jpg" style="max-height:80px; border-radius:4px; border:1px solid #cbd5e1;" alt="年輪深淺細胞">
+          <div style="font-size:9.5pt; color:#64748b;">▲ 年輪顯微切面</div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中生物</span>
+        <span>4-1 植物的運輸構造（二）</span>
+        <span>第 2 頁 / 共 18 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 3 ==================== -->
+    <div class="page" id="page3">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國一自然（上）講義</span>
+        <span>第 4 章 生物體的運輸作用</span>
+        <span>P. 3</span>
+      </div>
+
+      <div class="section-title">
+        <span>4-1　隨堂實戰評量</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">維管束排列與功能、樹幹環切鑽取組織判別（第 1～2 題）</span>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ C ）</span> 1. 有關環狀排列維管束的形成層之敘述，下列何者正確？
+        </div>
+        <div class="qa-options">
+          <div>(A) 形成層會形成年輪</div>
+          <div>(B) 形成層可運送養分</div>
+          <div>(C) 形成層在木質部與韌皮部中間</div>
+          <div>(D) 形成層向外長出新的木質部細胞</div>
+        </div>
+        <div class="calc-workspace" title="點擊顯示／隱藏解析">
+          <div class="calc-solution">
+            【解析】(A) 形成層向內分裂產生的新「木質部」才會形成年輪；(B) 形成層為分生組織，不負責運送養分（運送養分為外側的韌皮部）；(C) 正確，環狀排列維管束的形成層位於木質部（內側）與韌皮部（外側）之間；(D) 形成層向內形成木質部，向外形成韌皮部。故答案選 (C)。
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ C ）</span> 2. 研究員利用工具鑽取臺灣扁柏樹幹的維管束組織，從樹皮表面上的 X 點垂直鑽入樹幹中心後，將取出的組織標示為甲、乙、丙，如表所示。依表中的主要功能判斷，比較三者與 X 點的直線距離，下列何者最合理？<br><table class="custom-table" style="width:85%; margin:6px auto; font-size:12pt;"><tr><th style="width:40%;">取出的組織</th><th style="width:60%;">主要功能</th></tr><tr><td>甲</td><td>運輸養分</td></tr><tr><td>乙</td><td>運輸水分</td></tr><tr><td>丙</td><td>細胞分裂</td></tr></table>
+        </div>
+        <div class="qa-options">
+          <div>(A) 乙＜丙＜甲</div>
+          <div>(B) 乙＜甲＜丙</div>
+          <div>(C) 甲＜丙＜乙</div>
+          <div>(D) 甲＜乙＜丙</div>
+        </div>
+        <div class="calc-workspace" title="點擊顯示／隱藏解析">
+          <div class="calc-solution">
+            【解析】由組織主要功能判斷：甲為「韌皮部」（運送養分）、乙為「木質部」（運送水分）、丙為「形成層」（具細胞分裂能力）。木本植物樹幹由外向內依序為：樹皮外側 → 韌皮部（甲） → 形成層（丙） → 木質部（乙） → 樹幹中心。因此與外表面 X 點的直線距離由近到遠為：甲＜丙＜乙。故答案選 (C)。
+          </div>
+        </div>
+      </div>
+
+      <div class="tip-box" style="margin-top:16px; font-size:12.5pt; line-height:1.5;">
+        🎯 <strong>核心觀念整合：維管束構造速記口訣</strong><br>
+        • <strong>內木外韌：</strong>木質部在內側（運水木），韌皮部在外側（運養分）。<br>
+        • <strong>向內生木、向外生韌：</strong>形成層分裂向內長出木質部（木材），向外長出韌皮部（樹皮內層）。<br>
+        • <strong>樹木環狀剝皮致死原因：</strong>破壞了樹皮中的 <span class="ans-word">韌皮部</span>，使得葉片製造的有機養分無法向下運送至根部，導致根部缺乏養分而死亡，最終全株枯死！
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中生物</span>
+        <span>4-1 隨堂評量（Q1～Q2）</span>
+        <span>第 3 頁 / 共 18 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 4 ==================== -->
+    <div class="page" id="page4">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國一自然（上）講義</span>
+        <span>第 4 章 生物體的運輸作用</span>
+        <span>P. 4</span>
+      </div>
+
+      <div class="section-title">
+        <span>4-2　植物體內物質的運輸（一）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">焦點三：水分與養分運輸途徑、蒸散作用拉力、氣孔與保衛細胞調控機制</span>
+      </div>
+
+      <div class="task-title">1. 植物體內物質的運輸途徑比較</div>
+      <table class="custom-table" style="font-size:12pt; line-height:1.45; margin-top:2px;">
+        <tr><th style="width:16%;">構造名稱</th><th style="width:24%;">分布位置</th><th style="width:24%;">運輸物質</th><th style="width:36%;">運輸方向與主要動力</th></tr>
+        <tr class="interactive-item">
+          <td><strong>木質部</strong></td>
+          <td>維管束內側<br>（莖內側、葉上側）</td>
+          <td><span class="ans-word">水分</span> 與 <span class="ans-word">礦物質</span></td>
+          <td class="align-left">一律 <span class="ans-word">由下往上</span> 單向運輸（根 → 莖 → 葉）。<br>主要動力：葉片之 <span class="ans-word">蒸散作用</span> 拉力。</td>
+        </tr>
+        <tr class="interactive-item">
+          <td><strong>韌皮部</strong></td>
+          <td>維管束外側<br>（莖外側、葉下側）</td>
+          <td>光合作用產生的<br><span class="ans-word">有機養分</span>（如蔗糖）</td>
+          <td class="align-left"><span class="ans-word">由提供處往需求處</span>（雙向流動：葉 → 根/果實，或發芽時塊根/塊莖 → 新芽）。</td>
+        </tr>
+      </table>
+
+      <div class="task-title" style="margin-top: 5px;">2. 蒸散作用（Transpiration）</div>
+      <div class="item-line interactive-item">(1) <strong>定義：</strong>植物體內的水分轉變為水蒸氣，主要由葉片的 <span class="ans-word">氣孔</span> 散失到空氣中的生理現象。</div>
+      <div class="item-line interactive-item">(2) <strong>生理意義：</strong></div>
+      <div class="item-line interactive-item">&emsp;① 產生強大牽引拉力，是植物體內水分與溶於水中的礦物質向上運送的 <span class="ans-word">主要動力</span>。</div>
+      <div class="item-line interactive-item">&emsp;② 水蒸氣散失吸收汽化熱，能有效調節並降低植物體表面溫度，避免高溫灼傷。</div>
+
+      <div class="task-title" style="margin-top: 5px;">3. 氣孔與保衛細胞的調節機制</div>
+      <div class="item-line interactive-item">(1) <strong>分布特點：</strong>主要分布在陸生植物葉片的 <span class="ans-word">下表皮</span>（可減少陽光直射造成水分過度散失）。</div>
+      <div class="item-line interactive-item">(2) <strong>細胞結構：</strong>氣孔是由兩個半月形的 <span class="ans-word">保衛細胞</span> 圍成；保衛細胞含 <span class="ans-word">葉綠體</span>，表皮細胞則透明無葉綠體。</div>
+      <div class="item-line interactive-item">(3) <strong>開閉機制：</strong></div>
+      <div class="item-line interactive-item">&emsp;• 白天光照充足且水分充足時：保衛細胞吸水膨脹彎曲 → 氣孔 <span class="ans-word">張開</span> → 蒸散作用旺盛、氣體進出順暢。</div>
+      <div class="item-line interactive-item">&emsp;• 夜間黑暗無光或植物體乾旱缺水時：保衛細胞失水萎縮拉直 → 氣孔 <span class="ans-word">關閉</span> → 減少水分散失保護植株。</div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中生物</span>
+        <span>4-2 植物體內物質運輸（一）</span>
+        <span>第 4 頁 / 共 18 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 5 ==================== -->
+    <div class="page" id="page5">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國一自然（上）講義</span>
+        <span>第 4 章 生物體的運輸作用</span>
+        <span>P. 5</span>
+      </div>
+
+      <div class="section-title">
+        <span>4-2　植物體內物質的運輸（二）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">焦點四：芹菜水分運輸探究實驗（紅墨水染色橫切與縱切面解析）</span>
+      </div>
+
+      <div class="task-title">1. 芹菜水分運輸探究實驗</div>
+      <div class="item-line interactive-item">(1) <strong>實驗操作：</strong>將帶葉芹菜枝條插入裝有稀釋 <span class="ans-word">紅墨水</span> 的量筒中，置於通風光照處靜置一段時間。</div>
+      <div class="item-line interactive-item">(2) <strong>實驗現象觀察：</strong>量筒液面明顯下降；芹菜葉片葉脈及葉柄內部被染成紅色。</div>
+
+      <div style="display:flex; justify-content:space-around; align-items:center; margin: 6px 0; background:#f8fafc; padding:6px; border-radius:6px; border:1px solid #e2e8f0;">
+        <div style="text-align:center; flex:1;">
+          <img src="../images/science-7-4-handout/image018.png" style="max-height:100px; border-radius:4px; border:1px solid #cbd5e1;" alt="芹菜葉片葉脈染色">
+          <div style="font-size:10pt; color:#475569; margin-top:2px;">① 芹菜葉片（葉脈變紅）</div>
+        </div>
+        <div style="text-align:center; flex:1;">
+          <img src="../images/science-7-4-handout/image015.png" style="max-height:100px; border-radius:4px; border:1px solid #cbd5e1;" alt="芹菜葉柄橫切面">
+          <div style="font-size:10pt; color:#475569; margin-top:2px;">② 葉柄橫切（紅點在內側木質部）</div>
+        </div>
+        <div style="text-align:center; flex:1;">
+          <img src="../images/science-7-4-handout/image019.png" style="max-height:100px; border-radius:4px; border:1px solid #cbd5e1;" alt="芹菜葉柄縱切面">
+          <div style="font-size:10pt; color:#475569; margin-top:2px;">③ 葉柄縱切（紅色連續細管）</div>
+        </div>
+      </div>
+
+      <div class="item-line interactive-item">(3) <strong>實驗切面推論與結論：</strong></div>
+      <div class="item-line interactive-item">&emsp;• 橫切面所見的紅色小斑點為維管束的 <span class="ans-word">木質部</span>，證明水分是由木質部負責輸送。</div>
+      <div class="item-line interactive-item">&emsp;• 縱切面所見的紅色細絲為相連的導管細胞，證明水分在木質部中形成 <span class="ans-word">連續管柱</span> 向上輸送。</div>
+      <div class="item-line interactive-item">&emsp;• 葉片葉脈變紅且邊緣水分釋出，證明水分最後經由葉脈輸送至葉肉並由 <span class="ans-word">氣孔</span> 蒸散到大氣中。</div>
+
+      <div class="task-title" style="margin-top: 5px;">2. 影響蒸散作用速率的環境變因對照表</div>
+      <table class="custom-table" style="font-size:11.5pt; line-height:1.4; margin-top:2px;">
+        <tr><th style="width:20%;">環境／構造變因</th><th style="width:40%;">蒸散速率加快的條件</th><th style="width:40%;">蒸散速率減慢的條件</th></tr>
+        <tr class="interactive-item">
+          <td><strong>葉片數量</strong></td>
+          <td>葉片 <span class="ans-word">較多</span>（氣孔總表面積大）</td>
+          <td>去除葉片或葉片數量 <span class="ans-word">較少</span></td>
+        </tr>
+        <tr class="interactive-item">
+          <td><strong>空氣流動</strong></td>
+          <td>環境 <span class="ans-word">通風良好</span>（加速擴散）</td>
+          <td>空氣靜止、環境不通風</td>
+        </tr>
+        <tr class="interactive-item">
+          <td><strong>環境溫度與光照</strong></td>
+          <td>光照 <span class="ans-word">充足</span>、溫度適度溫暖</td>
+          <td>黑暗無光（氣孔關閉）、溫度極低</td>
+        </tr>
+        <tr class="interactive-item">
+          <td><strong>環境空氣濕度</strong></td>
+          <td>空氣濕度 <span class="ans-word">較低</span>（乾燥環境）</td>
+          <td>空氣潮濕、相對濕度飽和</td>
+        </tr>
+      </table>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中生物</span>
+        <span>4-2 芹菜水分實驗與蒸散變因</span>
+        <span>第 5 頁 / 共 18 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 6 ==================== -->
+    <div class="page" id="page6">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國一自然（上）講義</span>
+        <span>第 4 章 生物體的運輸作用</span>
+        <span>P. 6</span>
+      </div>
+
+      <div class="section-title">
+        <span>4-2　隨堂實戰評量（一）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">植物體內運輸方向、葉表皮氣孔顯微圖、蒸散變因實驗（第 1～3 題）</span>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ A ）</span> 1. 右圖為植物體內物質的運輸示意圖，甲、乙、丙分別表示輸送的方向，則下列敘述中哪一項<strong>錯誤</strong>？
+        </div>
+        <div class="qa-options">
+          <div>(A) 甲能釋放出二氧化碳，並吸收水分進入植物體內</div>
+          <div>(B) 乙為養分的輸送方向</div>
+          <div>(C) 丙為水分的輸送方向</div>
+          <div>(D) 甲的輸送方向能釋放出氧氣及水分</div>
+        </div>
+        <div class="calc-workspace" title="點擊顯示／隱藏解析">
+          <div class="calc-solution">
+            【解析】(A) 錯誤：甲為氣孔釋出氣體與水分的方向，植物體透過氣孔釋放氧氣及水蒸氣（蒸散作用），水分是由根部自土壤吸收，並非由葉片甲處吸收進入體內。(B)(C)(D) 敘述均正確。故答案選 (A)。
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ C ）</span> 2. 小英用顯微鏡觀察某植物葉片的下表皮，如附圖所示，下列哪一項敘述<strong>錯誤</strong>？
+        </div>
+        <div style="text-align:center; margin: 4px 0;">
+          <img src="../images/science-7-4-handout/image021.jpg" style="max-height:90px; border-radius:4px; border:1px solid #cbd5e1;" alt="植物葉片下表皮顯微圖">
+        </div>        <div class="qa-options">
+          <div>(A) a 細胞能製造養分</div>
+          <div>(B) b 為氣體進出植物的通道</div>
+          <div>(C) c 能調節 b 的開閉</div>
+          <div>(D) b 張開時，植物的蒸散作用通常較旺盛</div>
+        </div>
+        <div class="calc-workspace" title="點擊顯示／隱藏解析">
+          <div class="calc-solution">
+            【解析】圖中 a 為半月形「保衛細胞」（具葉綠體可光合作用製造養分），b 為「氣孔」，c 為「表皮細胞」（透明無葉綠體，具保護功能）。(C) 錯誤：調節氣孔 b 開閉的是「保衛細胞 a」，而非表皮細胞 c。故答案選 (C)。
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ A ）</span> 3. 小全將植物分成兩組，一組保留葉片，另一組去除所有葉片，並將實驗場所區分成「通風」及「不通風」兩區進行實驗。則哪一組的實驗結果，蒸散作用的效率最高？
+        </div>
+        <div class="qa-options">
+          <div>(A) 有葉片、通風處</div>
+          <div>(B) 有葉片、不通風處</div>
+          <div>(C) 無葉片、通風處</div>
+          <div>(D) 無葉片、不通風處</div>
+        </div>
+        <div class="calc-workspace" title="點擊顯示／隱藏解析">
+          <div class="calc-solution">
+            【解析】蒸散作用的主要器官是「葉片」（氣孔分布處），且「通風良好」會加速葉片表面水蒸氣擴散，促使蒸散作用速率最高。因此「有葉片、通風處」的蒸散作用效率最高。答案選 (A)。
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中生物</span>
+        <span>4-2 隨堂評量（Q1～Q3）</span>
+        <span>第 6 頁 / 共 18 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 7 ==================== -->
+    <div class="page" id="page7">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國一自然（上）講義</span>
+        <span>第 4 章 生物體的運輸作用</span>
+        <span>P. 7</span>
+      </div>
+
+      <div class="section-title">
+        <span>4-2　隨堂實戰評量（二）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">礦物質運輸方向、水分上升動力分析、水蜜桃水肥吸收（第 4～6 題）</span>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ B ）</span> 4. 圖 ( 一 ) 為植物體內物質運輸示意圖，圖 ( 二 ) 為葉片氣孔狀態示意圖。白天植物進行旺盛的蒸散作用時，有關體內礦物質運輸方向（甲或乙）及葉片氣孔狀態（丙或丁），下列組合何者正確？
+        </div>
+        <div style="text-align:center; margin: 4px 0;">
+          <img src="../images/science-7-4-handout/image022.jpg" style="max-height:90px; border-radius:4px; border:1px solid #cbd5e1;" alt="物質運輸與氣孔開閉圖">
+        </div>        <div class="qa-options">
+          <div>(A) 甲，丙</div>
+          <div>(B) 乙，丙</div>
+          <div>(C) 甲，丁</div>
+          <div>(D) 乙，丁</div>
+        </div>
+        <div class="calc-workspace" title="點擊顯示／隱藏解析">
+          <div class="calc-solution">
+            【解析】礦物質溶於水中，隨水分由根部吸收並經由「木質部」一律「由下向上單向運輸」，對應圖(一)之「乙」方向；白天蒸散作用旺盛時，保衛細胞吸水膨脹，氣孔呈「張開」狀態，對應圖(二)之「丙」。故正確組合為「乙，丙」，答案選 (B)。
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ D ）</span> 5. 一棵數十公尺高的大樹，何者<strong>並非</strong>根部吸收的水分能送往莖部頂端的原因？
+        </div>
+        <div class="qa-options">
+          <div>(A) 蒸散作用的進行</div>
+          <div>(B) 木質部的細胞上下相連成細管</div>
+          <div>(C) 根、莖、葉內輸送水分的部位，其內的水分形成連續的管柱</div>
+          <div>(D) 呼吸作用的進行需要水分</div>
+        </div>
+        <div class="calc-workspace" title="點擊顯示／隱藏解析">
+          <div class="calc-solution">
+            【解析】植物水分向上提升的物理機制包括：①葉片「蒸散作用」產生的拉力（主要動力）；②木質部死細胞上下貫通形成細長管狀導管；③水分子之間的內聚力與附著力在管內形成不中斷的「連續水柱」；④根毛吸水的根壓。(D) 呼吸作用需要水分是代謝生理需求，並非促使水分向上運輸的物理動力。故答案選 (D)。
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ C ）</span> 6. 為了讓水蜜桃長得又大又甜，爺爺定期施肥與澆水，請問水蜜桃如何運輸肥料與水分？
+        </div>
+        <div class="qa-options">
+          <div>(A) 肥料由韌皮部輸送，水分由木質部輸送</div>
+          <div>(B) 肥料由木質部輸送，水分由韌皮部輸送</div>
+          <div>(C) 水分及肥料皆由木質部單向輸送</div>
+          <div>(D) 水分及肥料皆由韌皮部雙向輸送</div>
+        </div>
+        <div class="calc-workspace" title="點擊顯示／隱藏解析">
+          <div class="calc-solution">
+            【解析】土壤中的肥料（礦物質/無機鹽類）溶解於水中後，由根毛吸收，皆隨同水分進入「木質部」並「由下往上單向運輸」至全株；韌皮部則是運送葉片光合作用所產生的有機養分（葡萄糖、蔗糖）。故答案選 (C)。
+          </div>
+        </div>
+      </div>
+
+      <div class="tip-box" style="margin-top:12px; font-size:12pt; line-height:1.45;">
+        🎯 <strong>考點精要：水與肥料 vs. 養分運輸對比</strong><br>
+        • 水分 ＋ 肥料（無機鹽）：由 <span class="ans-word">木質部</span> 負責，運輸方向一律 <span class="ans-word">由下往上</span>，動力為蒸散拉力。<br>
+        • 有機養分（光合產物）：由 <span class="ans-word">韌皮部</span> 負責，運輸方向 <span class="ans-word">雙向均可</span>，由提供部位送往消耗或儲存部位。
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中生物</span>
+        <span>4-2 隨堂評量（Q4～Q6）</span>
+        <span>第 7 頁 / 共 18 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 8 ==================== -->
+    <div class="page" id="page8">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國一自然（上）講義</span>
+        <span>第 4 章 生物體的運輸作用</span>
+        <span>P. 8</span>
+      </div>
+
+      <div class="section-title">
+        <span>4-3　人體心血管系統的組成（一）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">焦點五：心血管系統組成、心臟腔室構造、瓣膜與心搏/心音機制</span>
+      </div>
+
+      <div class="task-title">1. 心血管系統概述</div>
+      <div class="item-line interactive-item">人體心血管系統由 <span class="ans-word">心臟</span>（動力幫浦）、<span class="ans-word">血管</span>（流通通道）與 <span class="ans-word">血液</span>（運送載體）三者共同組成。</div>
+
+      <div class="task-title" style="margin-top: 5px;">2. 心臟（Heart）的構造與運作機制</div>
+      <div class="item-line interactive-item">(1) <strong>位置與構造：</strong>位於胸腔中央偏 <span class="ans-word">左</span> 側，主要由心肌構成。</div>
+      <div class="item-line interactive-item">(2) <strong>四大腔室（解剖方位與受檢者相反：左在右、右在左）：</strong></div>
+      <div class="item-line interactive-item">&emsp;• 上方為心房（接收血液）：<span class="ans-word">左心房</span> 接收來自肺部的肺靜脈（充氧血）；<span class="ans-word">右心房</span> 接收全身的上、下大靜脈（缺氧血）。</div>
+      <div class="item-line interactive-item">&emsp;• 下方為心室（壓出血液）：<span class="ans-word">左心室</span> 肌肉壁最厚、收縮力最強，將血液壓入主動脈送往全身；<span class="ans-word">右心室</span> 將血液壓入肺動脈送往肺部。</div>
+      <div class="item-line interactive-item">(3) <strong>瓣膜（Valves）：</strong>位於心房與心室之間，以及心室與動脈之間，功能為防止 <span class="ans-word">血液逆流</span>，維持血液單向向前流動。</div>
+      <div class="item-line interactive-item">(4) <strong>心搏與心音：</strong>心臟有規律的收縮與舒張稱為 <span class="ans-word">心搏</span>。心室 <span class="ans-word">收縮</span> 時血液射入動脈；心室 <span class="ans-word">舒張</span> 時血液由靜脈回流心房。瓣膜快速關閉所產生的震動聲即為 <span class="ans-word">心音</span>。</div>
+
+      <div style="text-align:center; margin-top:5px;">
+        <img src="../images/science-7-4-handout/image041.jpg" style="max-height:215px; border-radius:6px; border:1px solid #cbd5e1;" alt="心臟解剖內部腔室構造大圖">
+        <div style="font-size:10pt; color:#64748b; margin-top:2px;">▲ 人體心臟解剖內部構造（四大腔室、出入主要血管與瓣膜位置）</div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中生物</span>
+        <span>4-3 心血管系統組成與心臟</span>
+        <span>第 8 頁 / 共 18 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 9 ==================== -->
+    <div class="page" id="page9">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國一自然（上）講義</span>
+        <span>第 4 章 生物體的運輸作用</span>
+        <span>P. 9</span>
+      </div>
+
+      <div class="section-title">
+        <span>4-3　人體心血管系統的組成（二）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">焦點六：動脈/微血管/靜脈特性比較表、血液成分（血漿與三種血球）</span>
+      </div>
+
+      <div class="task-title">1. 動脈、微血管與靜脈之比較</div>
+      <table class="custom-table" style="font-size:11.5pt; line-height:1.35; margin-top:2px;">
+        <tr><th style="width:16%;">比較項目</th><th style="width:28%;">動脈（Artery）</th><th style="width:28%;">微血管（Capillary）</th><th style="width:28%;">靜脈（Vein）</th></tr>
+        <tr class="interactive-item">
+          <td><strong>切面示意圖</strong></td>
+          <td><img src="../images/science-7-4-handout/image042.jpg" style="max-height:52px; border-radius:4px; border:1px solid #cbd5e1;" alt="動脈切面"></td>
+          <td><img src="../images/science-7-4-handout/image043.jpg" style="max-height:52px; border-radius:4px; border:1px solid #cbd5e1;" alt="微血管切面"></td>
+          <td><img src="../images/science-7-4-handout/image044.jpg" style="max-height:52px; border-radius:4px; border:1px solid #cbd5e1;" alt="靜脈切面"></td>
+        </tr>
+        <tr class="interactive-item">
+          <td><strong>血液流向</strong></td>
+          <td><span class="ans-word">離開</span> 心臟（心室 → 微血管）</td>
+          <td>由小動脈流向小靜脈</td>
+          <td><span class="ans-word">流回</span> 心臟（微血管 → 心房）</td>
+        </tr>
+        <tr class="interactive-item">
+          <td><strong>管壁厚度與彈性</strong></td>
+          <td>管壁 <span class="ans-word">最厚</span>，管壁彈性 <span class="ans-word">最佳</span></td>
+          <td>管壁 <span class="ans-word">最薄</span>（僅一層內皮細胞）</td>
+          <td>管壁較薄，彈性較動脈差</td>
+        </tr>
+        <tr class="interactive-item">
+          <td><strong>管腔大小</strong></td>
+          <td>管腔中等</td>
+          <td>管腔 <span class="ans-word">最小</span>（紅血球單行通過）</td>
+          <td>管腔 <span class="ans-word">最大</span>（常呈扁平塌陷）</td>
+        </tr>
+        <tr class="interactive-item">
+          <td><strong>血壓與流速</strong></td>
+          <td>血壓 <span class="ans-word">最高</span>，流速 <span class="ans-word">最快</span></td>
+          <td>血壓中等，流速 <span class="ans-word">最慢</span></td>
+          <td>血壓 <span class="ans-word">最低</span>，流速中等</td>
+        </tr>
+        <tr class="interactive-item">
+          <td><strong>特殊構造與特點</strong></td>
+          <td>管壁隨心搏跳動產生 <span class="ans-word">脈搏</span></td>
+          <td>血液與細胞進行 <span class="ans-word">物質交換</span> 處</td>
+          <td>四肢靜脈管腔內具 <span class="ans-word">瓣膜</span> 防止逆流</td>
+        </tr>
+      </table>
+
+      <div class="task-title" style="margin-top: 5px;">2. 血液的成分與功能（血漿占55%，血球占45%）</div>
+      <table class="custom-table" style="font-size:11.5pt; line-height:1.35; margin-top:2px;">
+        <tr><th style="width:16%;">血液成分</th><th style="width:20%;">外觀形狀</th><th style="width:14%;">細胞核</th><th style="width:14%;">大小比較</th><th style="width:36%;">主要功能與特性</th></tr>
+        <tr class="interactive-item">
+          <td><strong>血漿</strong></td>
+          <td>淡黃色液體</td>
+          <td>-</td>
+          <td>-</td>
+          <td class="align-left">含水90%，運送 <span class="ans-word">養分</span>、廢物、<span class="ans-word">二氧化碳</span>、激素與抗體。</td>
+        </tr>
+        <tr class="interactive-item">
+          <td><strong>紅血球</strong></td>
+          <td>雙凹圓盤狀</td>
+          <td><span class="ans-word">無</span> 細胞核</td>
+          <td>中等</td>
+          <td class="align-left">內含血紅素，主要負責運送 <span class="ans-word">氧氣</span> 至全身細胞。</td>
+        </tr>
+        <tr class="interactive-item">
+          <td><strong>白血球</strong></td>
+          <td>多呈球形</td>
+          <td><span class="ans-word">有</span> 細胞核</td>
+          <td>體積 <span class="ans-word">最大</span></td>
+          <td class="align-left">能變形穿過微血管壁，吞噬病原體，具 <span class="ans-word">防禦疾病</span> 功能。</td>
+        </tr>
+        <tr class="interactive-item">
+          <td><strong>血小板</strong></td>
+          <td>不規則碎片</td>
+          <td><span class="ans-word">無</span> 細胞核</td>
+          <td>體積 <span class="ans-word">最小</span></td>
+          <td class="align-left">在傷口處破裂釋放凝血因子，協助 <span class="ans-word">血液凝固</span> 與傷口癒合。</td>
+        </tr>
+      </table>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中生物</span>
+        <span>4-3 血管特性與血液成分</span>
+        <span>第 9 頁 / 共 18 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 10 ==================== -->
+    <div class="page" id="page10">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國一自然（上）講義</span>
+        <span>第 4 章 生物體的運輸作用</span>
+        <span>P. 10</span>
+      </div>
+
+      <div class="section-title">
+        <span>4-3　隨堂實戰評量（一）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">心跳脈搏關係、血漿運送養分、動脈與靜脈特性比較（第 1～3 題）</span>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ B ）</span> 1. 正常狀況下，同一時間測量人體心跳次數與脈搏次數的關係，下列何者正確？
+        </div>
+        <div class="qa-options">
+          <div>(A) 心跳次數＞脈搏次數</div>
+          <div>(B) 心跳次數＝脈搏次數</div>
+          <div>(C) 心跳次數＜脈搏次數</div>
+          <div>(D) 心跳次數與脈搏次數無關</div>
+        </div>
+        <div class="calc-workspace" title="點擊顯示／隱藏解析">
+          <div class="calc-solution">
+            【解析】正常人體的心臟每跳動（心搏）收縮一次，便將血液壓入動脈，引起動脈管壁相應產生一次規律的搏動，即為「脈搏」。因此同一時間內，心跳次數必定等於脈搏次數。答案選 (B)。
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ A ）</span> 2. 我們吃下去的許多營養素是由血液中的何種成分運輸到身體各個組織以供細胞利用？
+        </div>
+        <div class="qa-options">
+          <div>(A) 血漿</div>
+          <div>(B) 白血球</div>
+          <div>(C) 紅血球</div>
+          <div>(D) 血小板</div>
+        </div>
+        <div class="calc-workspace" title="點擊顯示／隱藏解析">
+          <div class="calc-solution">
+            【解析】血液分為「血球」與「血漿」。血漿約占血液體積的 55%，主要成分為水（約90%），負責運送養分（如葡萄糖、胺基酸）、代謝廢物（如尿素）、二氧化碳、抗體與激素等；紅血球主要負責攜帶氧氣。故答案選 (A)。
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ C ）</span> 3. 關於動脈與靜脈的比較，下列何者正確？<br><table class="custom-table" style="width:85%; margin:6px auto; font-size:12pt;"><tr><th style="width:25%;">選項</th><th style="width:25%;">比較項目</th><th style="width:25%;">動脈</th><th style="width:25%;">靜脈</th></tr><tr><td>(A)</td><td>管壁彈性</td><td>較差</td><td>較佳</td></tr><tr><td>(B)</td><td>有無瓣膜</td><td>有</td><td>無</td></tr><tr><td>(C)</td><td>血流方向</td><td>帶離心臟</td><td>帶回心臟</td></tr><tr><td>(D)</td><td>管壁厚度</td><td>較薄</td><td>較厚</td></tr></table>
+        </div>
+        <div class="qa-options">
+          <div>(A) 管壁彈性比較</div>
+          <div>(B) 有無瓣膜比較</div>
+          <div>(C) 血流方向比較</div>
+          <div>(D) 管壁厚度比較</div>
+        </div>
+        <div class="calc-workspace" title="點擊顯示／隱藏解析">
+          <div class="calc-solution">
+            【解析】(A) 動脈管壁彈性最佳，靜脈較差；(B) 四肢較大的靜脈管腔內具有瓣膜防止血液逆流，一般動脈管壁內無瓣膜；(C) 動脈血流方向為「將血液帶離心臟」，靜脈為「將血液引導流回心臟」，正確；(D) 動脈管壁最厚，靜脈較薄。答案選 (C)。
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中生物</span>
+        <span>4-3 隨堂評量（Q1～Q3）</span>
+        <span>第 10 頁 / 共 18 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 11 ==================== -->
+    <div class="page" id="page11">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國一自然（上）講義</span>
+        <span>第 4 章 生物體的運輸作用</span>
+        <span>P. 11</span>
+      </div>
+
+      <div class="section-title">
+        <span>4-3　隨堂實戰評量（二）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">人類血球示意圖、小魚尾鰭血流觀察、血液成分功能（第 4～6 題）</span>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ D ）</span> 4. 如圖是人類血球示意圖，請問下列敘述何者正確？
+        </div>
+        <div style="text-align:center; margin: 4px 0;">
+          <img src="../images/science-7-4-handout/image046.jpg" style="max-height:90px; border-radius:4px; border:1px solid #cbd5e1;" alt="人類血球示意圖甲乙丙">
+        </div>        <div class="qa-options">
+          <div>(A) 甲能使血液凝固</div>
+          <div>(B) 乙能攜帶氧氣</div>
+          <div>(C) 乙能離開微血管壁吞噬細菌</div>
+          <div>(D) 丙具有防禦疾病的功能</div>
+        </div>
+        <div class="calc-workspace" title="點擊顯示／隱藏解析">
+          <div class="calc-solution">
+            【解析】圖中甲為雙凹圓盤狀的「紅血球」（攜帶氧氣）；乙為不規則形最小的「血小板」（協助血液凝固與傷口癒合）；丙為體積最大、具有細胞核的「白血球」（防禦疾病、吞噬病原體）。(D) 丙具有防禦疾病的功能，正確。故答案選 (D)。
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ A ）</span> 5. 阿芳利用複式顯微鏡觀察小魚尾鰭內血液流動的方向，所觀察到的視野影像如圖所示，圖中的箭頭表示血液流動方向。若將培養皿往右移動，則視野中依序消失的血管，應為下列何者？
+        </div>
+        <div style="text-align:center; margin: 4px 0;">
+          <img src="../images/science-7-4-handout/image047.png" style="max-height:90px; border-radius:4px; border:1px solid #cbd5e1;" alt="小魚尾鰭顯微鏡血流圖">
+        </div>        <div class="qa-options">
+          <div>(A) 小動脈、微血管、小靜脈</div>
+          <div>(B) 小動脈、微血管、小動脈</div>
+          <div>(C) 小靜脈、微血管、小動脈</div>
+          <div>(D) 小靜脈、微血管、小靜脈</div>
+        </div>
+        <div class="calc-workspace" title="點擊顯示／隱藏解析">
+          <div class="calc-solution">
+            【解析】複式顯微鏡呈現「上下顛倒、左右相反」的倒像。當將實物培養皿向「右」移動時，顯微鏡視野中的影像會往「左」移動。因此位於視野最左側的血管會最先消失，依序為左側小動脈 → 中間微血管 → 右側小靜脈。故答案選 (A)。
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ B ）</span> 6. 關於人體血液的敘述，下列何者<strong>錯誤</strong>？
+        </div>
+        <div class="qa-options">
+          <div>(A) 紅血球中的血紅素可運送氧氣</div>
+          <div>(B) 白血球可運輸激素</div>
+          <div>(C) 血小板是體積最小的血球，其功能和血液凝固有關</div>
+          <div>(D) 血漿的主要成分是水，可運輸養分、二氧化碳和其他廢物</div>
+        </div>
+        <div class="calc-workspace" title="點擊顯示／隱藏解析">
+          <div class="calc-solution">
+            【解析】(B) 錯誤：激素（荷爾蒙）溶於「血漿」中由血漿運輸，白血球的功能是防禦病原體、吞噬細菌與產生抗體，並不負責運送激素。(A)(C)(D) 敘述均正確。故答案選 (B)。
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中生物</span>
+        <span>4-3 隨堂評量（Q4～Q6）</span>
+        <span>第 11 頁 / 共 18 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 12 ==================== -->
+    <div class="page" id="page12">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國一自然（上）講義</span>
+        <span>第 4 章 生物體的運輸作用</span>
+        <span>P. 12</span>
+      </div>
+
+      <div class="section-title">
+        <span>4-3　隨堂實戰評量（三）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">心臟瓣膜與缺氧血逆流推論、血管橫切面與脈搏探測（第 7～8 題）</span>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ D ）</span> 7. 小平心臟內的某一個瓣膜不能完全閉合，造成心室收縮時缺氧血會逆流回心房。根據上述，推測此閉合不全的瓣膜最可能位於下列何處？
+        </div>
+        <div class="qa-options">
+          <div>(A) 左心房和左心室之間</div>
+          <div>(B) 左心室和主動脈之間</div>
+          <div>(C) 肺靜脈和左心房之間</div>
+          <div>(D) 右心房和右心室之間</div>
+        </div>
+        <div class="calc-workspace" title="點擊顯示／隱藏解析">
+          <div class="calc-solution">
+            【解析】人體心臟的右半部（右心房、右心室）流動的是「缺氧血」，左半部（左心房、左心室）流動的是「充氧血」。心室收縮時，若缺氧血逆流回心房，表示是「右心室」收縮時血液逆流至「右心房」，故閉合不全的瓣膜位於「右心房和右心室之間」（三尖瓣）。答案選 (D)。
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ A ）</span> 8. 如圖為人體三種血管的橫切面，當用食指及中指輕按手腕探測脈搏時，所感受到的搏動來自哪一種血管？
+        </div>
+        <div style="text-align:center; margin: 4px 0;">
+          <img src="../images/science-7-4-handout/image048.jpg" style="max-height:55px; border-radius:4px; border:1px solid #cbd5e1;" alt="血管切面甲乙丙">
+        </div>        <div class="qa-options">
+          <div>(A) 甲</div>
+          <div>(B) 乙</div>
+          <div>(C) 丙</div>
+          <div>(D) 甲或丙</div>
+        </div>
+        <div class="calc-workspace" title="點擊顯示／隱藏解析">
+          <div class="calc-solution">
+            【解析】由血管橫切面圖可知：甲管壁最厚、管腔維持圓形，為「動脈」；乙管壁最薄僅一層細胞，為「微血管」；丙管壁較薄、管腔較大扁塌，為「靜脈」。探測手腕橈動脈所感受到的脈搏搏動，來自「動脈甲」。故答案選 (A)。
+          </div>
+        </div>
+      </div>
+
+      <div class="tip-box" style="margin-top:16px; font-size:12.5pt; line-height:1.5;">
+        🎯 <strong>核心觀念整合：心臟腔室、瓣膜與三種血管速記</strong><br>
+        • <strong>右室缺氧、左室充氧：</strong>心臟右半邊（右心房、右心室）流動暗紅色缺氧血；左半邊（左心房、左心室）流動鮮紅色充氧血。<br>
+        • <strong>房室瓣與動脈瓣：</strong>心房心室間的瓣膜在心室收縮時關閉，防止血液逆流回心房；心室動脈間的瓣膜在心室舒張時關閉，防止血液逆流回心室。<br>
+        • <strong>血管特性口訣：</strong>動脈壁最厚彈性佳測脈搏；微血管最薄流速最慢換物質；靜脈腔最大壁較薄具瓣膜防倒流。
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中生物</span>
+        <span>4-3 隨堂評量（Q7～Q8）</span>
+        <span>第 12 頁 / 共 18 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 13 ==================== -->
+    <div class="page" id="page13">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國一自然（上）講義</span>
+        <span>第 4 章 生物體的運輸作用</span>
+        <span>P. 13</span>
+      </div>
+
+      <div class="section-title">
+        <span>4-4　人體的循環系統（一）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">焦點七：心血管系統循環途徑（體循環與肺循環路徑、微血管物質交換、血液含氧量比較）</span>
+      </div>
+
+      <div class="task-title">1. 心血管系統的雙循環途徑</div>
+      <div class="item-line interactive-item">(1) <strong>體循環（大循環）：</strong></div>
+      <div class="item-line interactive-item">&emsp;• 路徑：<span class="ans-word">左心室</span> → 主動脈 → 小動脈 → 全身組織微血管（物質交換） → 小靜脈 → 上、下大靜脈 → <span class="ans-word">右心房</span>。</div>
+      <div class="item-line interactive-item">&emsp;• 功能：將充氧血輸送至全身組織細胞，供應氧氣與養分，並帶走二氧化碳與代謝廢物，血液由充氧血轉變為 <span class="ans-word">缺氧血</span>。</div>
+      <div class="item-line interactive-item">(2) <strong>肺循環（小循環）：</strong></div>
+      <div class="item-line interactive-item">&emsp;• 路徑：<span class="ans-word">右心室</span> → 肺動脈 → 肺部微血管（氣體交換） → 肺靜脈 → <span class="ans-word">左心房</span>。</div>
+      <div class="item-line interactive-item">&emsp;• 功能：將缺氧血送至肺泡微血管排出二氧化碳，吸收氧氣，血液由缺氧血轉變為 <span class="ans-word">充氧血</span> 流回心臟。</div>
+
+      <div class="task-title" style="margin-top: 5px;">2. 體循環與肺循環之微血管物質交換圖解</div>
+      <div style="display:flex; justify-content:space-around; align-items:center; margin: 4px 0; background:#f8fafc; padding:5px; border-radius:6px; border:1px solid #e2e8f0;">
+        <div style="text-align:center; flex:1;">
+          <img src="../images/science-7-4-handout/image064.jpg" style="max-height:125px; border-radius:4px; border:1px solid #cbd5e1;" alt="體循環組織細胞物質交換">
+          <div style="font-size:10pt; color:#475569; margin-top:2px;">① 組織微血管（充氧血 → 缺氧血）</div>
+        </div>
+        <div style="text-align:center; flex:1;">
+          <img src="../images/science-7-4-handout/image065.jpg" style="max-height:125px; border-radius:4px; border:1px solid #cbd5e1;" alt="肺循環肺泡物質交換">
+          <div style="font-size:10pt; color:#475569; margin-top:2px;">② 肺泡微血管（缺氧血 → 充氧血）</div>
+        </div>
+      </div>
+
+      <div class="task-title" style="margin-top: 5px;">3. 血液含氧量與顏色對照速查表</div>
+      <table class="custom-table" style="font-size:11.5pt; line-height:1.4; margin-top:2px;">
+        <tr><th style="width:20%;">血液類型</th><th style="width:16%;">含氧量</th><th style="width:16%;">外觀顏色</th><th style="width:48%;">流經之心臟腔室與主要血管</th></tr>
+        <tr class="interactive-item">
+          <td><strong>充氧血</strong>（動脈血）</td>
+          <td>含氧量 <span class="ans-word">高</span></td>
+          <td>呈 <span class="ans-word">鮮紅</span> 色</td>
+          <td class="align-left">左心房、左心室、<span class="ans-word">肺靜脈</span>、<span class="ans-word">主動脈</span>、全身各級動脈。</td>
+        </tr>
+        <tr class="interactive-item">
+          <td><strong>缺氧血</strong>（靜脈血）</td>
+          <td>含氧量 <span class="ans-word">低</span></td>
+          <td>呈 <span class="ans-word">暗紅</span> 色</td>
+          <td class="align-left">右心房、右心室、<span class="ans-word">上/下大靜脈</span>、全身各級靜脈、<span class="ans-word">肺動脈</span>。</td>
+        </tr>
+      </table>
+
+      <div class="tip-box" style="margin-top:6px; font-size:11.5pt; line-height:1.4;">
+        💡 <strong>觀念易錯警示：</strong>「動脈」不一定流充氧血（如肺動脈流暗紅色缺氧血）；「靜脈」不一定流缺氧血（如肺靜脈流鮮紅色充氧血）！判斷血管名稱看流向（離心為動脈、回心為靜脈），判斷血液種類看含氧量。
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中生物</span>
+        <span>4-4 心血管雙循環與物質交換</span>
+        <span>第 13 頁 / 共 18 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 14 ==================== -->
+    <div class="page" id="page14">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國一自然（上）講義</span>
+        <span>第 4 章 生物體的運輸作用</span>
+        <span>P. 14</span>
+      </div>
+
+      <div class="section-title">
+        <span>4-4　人體的循環系統（二）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">焦點八：人體淋巴系統（組織液與淋巴循環）、人體防禦作用三道防線與疫苗機制</span>
+      </div>
+
+      <div class="task-title">1. 人體的淋巴系統（Lymphatic System）</div>
+      <div class="item-line interactive-item">(1) <strong>體液三步轉換關係：</strong></div>
+      <div class="item-line interactive-item">&emsp;• 血漿：微血管內的液體部分，當血液流經全身微血管時，部分血漿濾出微血管壁進入組織間隙，成為 <span class="ans-word">組織液</span>。</div>
+      <div class="item-line interactive-item">&emsp;• 組織液：浸潤在組織細胞周圍進行物質交換，部分組織液滲入淋巴管，稱為 <span class="ans-word">淋巴</span>（淋巴液）。</div>
+      <div class="item-line interactive-item">&emsp;• 淋巴回流：淋巴在淋巴管內單向流動，經淋巴結過濾後，最後在鎖骨下注入 <span class="ans-word">靜脈</span>，回流至心血管系統。</div>
+
+      <div style="text-align:center; margin: 4px 0;">
+        <img src="../images/science-7-4-handout/image066.png" style="max-height:55px; border-radius:4px; border:1px solid #cbd5e1;" alt="淋巴循環流向圖">
+        <div style="font-size:10pt; color:#64748b; margin-top:2px;">▲ 體液循環三步轉換路徑：血漿 → 組織液 → 淋巴 → 靜脈</div>
+      </div>
+
+      <div class="item-line interactive-item">(2) <strong>淋巴結（Lymph Nodes）：</strong>淋巴管途中的膨大構造，內含大量 <span class="ans-word">淋巴球</span>（白血球的一種），可過濾清除病原體。人體感染時淋巴結會腫脹。</div>
+
+      <div class="task-title" style="margin-top: 5px;">2. 人體防禦作用的三道防線</div>
+      <table class="custom-table" style="font-size:11.5pt; line-height:1.4; margin-top:2px;">
+        <tr><th style="width:18%;">防禦層級</th><th style="width:18%;">專一性</th><th style="width:34%;">防禦機制與特點</th><th style="width:30%;">參與構造與成分</th></tr>
+        <tr class="interactive-item">
+          <td><strong>第一道防線</strong></td>
+          <td><span class="ans-word">非專一性</span></td>
+          <td>阻擋病原體入侵體內的物理與化學屏障。</td>
+          <td class="align-left"><span class="ans-word">皮膚</span>、黏膜、胃酸、眼淚溶菌酶、呼吸道纖毛。</td>
+        </tr>
+        <tr class="interactive-item">
+          <td><strong>第二道防線</strong></td>
+          <td><span class="ans-word">非專一性</span></td>
+          <td>病原體入侵傷口後，引起紅、熱、腫、痛，吞噬細胞消滅病原體。</td>
+          <td class="align-left"><span class="ans-word">發炎反應</span>、吞噬性白血球。</td>
+        </tr>
+        <tr class="interactive-item">
+          <td><strong>第三道防線</strong></td>
+          <td><span class="ans-word">專一性</span></td>
+          <td>辨識特定病原體抗原，針對特定病原體進行攻擊並產生免疫記憶。</td>
+          <td class="align-left"><span class="ans-word">淋巴球</span>（T細胞、B細胞）、<span class="ans-word">抗體</span>（蛋白質）。</td>
+        </tr>
+      </table>
+
+      <div class="item-line interactive-item">(3) <strong>疫苗（Vaccine）的免疫原理：</strong>透過施打無毒或弱化的病原體抗原，誘發第三道防線之淋巴球產生專一性 <span class="ans-word">記憶性</span>。日後真正病原體入侵時，能更 <span class="ans-word">快速</span> 且大量產生抗體消滅病原體。</div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中生物</span>
+        <span>4-4 淋巴系統與三道防線</span>
+        <span>第 14 頁 / 共 18 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 15 ==================== -->
+    <div class="page" id="page15">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國一自然（上）講義</span>
+        <span>第 4 章 生物體的運輸作用</span>
+        <span>P. 15</span>
+      </div>
+
+      <div class="section-title">
+        <span>4-4　隨堂實戰評量（一）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">體液轉換途徑、心臟腔室辨識、顯微鏡血流判斷、體液成分比較（第 1～4 題）</span>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ B ）</span> 1. 當我們吃下食物，吸收養分後，這些物質在人體內不同體液間的流動與轉換順序，下列何者正確？
+        </div>
+        <div class="qa-options">
+          <div>(A) 淋巴 → 組織液 → 血漿 → 靜脈</div>
+          <div>(B) 血漿 → 組織液 → 淋巴 → 靜脈</div>
+          <div>(C) 組織液 → 血漿 → 淋巴 → 動脈</div>
+          <div>(D) 血漿 → 淋巴 → 組織液 → 微血管</div>
+        </div>
+        <div class="calc-workspace" title="點擊顯示／隱藏解析">
+          <div class="calc-solution">
+            【解析】食物吸收後的養分進入血液（血漿）；當血液流經全身微血管時，部分血漿濾出微血管管壁進入組織間隙成為「組織液」；部分組織液滲入淋巴管成為「淋巴」；淋巴在淋巴管內單向流動，經淋巴結過濾後，最後在鎖骨下靜脈處匯入心血管系統的「靜脈」。正確順序為：血漿 → 組織液 → 淋巴 → 靜脈。答案選 (B)。
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ A ）</span> 2. 如圖所示，心臟的哪一個腔室與大靜脈相接？
+        </div>
+        <div style="text-align:center; margin: 4px 0;">
+          <img src="../images/science-7-4-handout/image068.jpg" style="max-height:75px; border-radius:4px; border:1px solid #cbd5e1;" alt="心臟腔室圖甲乙丙丁">
+        </div>        <div class="qa-options">
+          <div>(A) 甲</div>
+          <div>(B) 乙</div>
+          <div>(C) 丙</div>
+          <div>(D) 丁</div>
+        </div>
+        <div class="calc-workspace" title="點擊顯示／隱藏解析">
+          <div class="calc-solution">
+            【解析】由心臟解剖構造圖判斷：甲為右心房、乙為左心房、丙為右心室、丁為左心室。人體體循環的缺氧血經由上大靜脈與下大靜脈流回心臟的「右心房（甲）」。乙左心房接肺靜脈，丙右心室接肺動脈，丁左心室接主動脈。故答案選 (A)。
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ A ）</span> 3. 右圖是小華在顯微鏡下觀察血管內血液流動的情形（箭頭代表血流的方向），試問下列何項正確？
+        </div>
+        <div style="text-align:center; margin: 4px 0;">
+          <img src="../images/science-7-4-handout/image069.jpg" style="max-height:75px; border-radius:4px; border:1px solid #cbd5e1;" alt="顯微鏡血管流向圖">
+        </div>        <div class="qa-options">
+          <div>(A) 甲為小動脈，丙為小靜脈</div>
+          <div>(B) 甲為大靜脈，乙為小動脈</div>
+          <div>(C) 甲、丁皆為小動脈</div>
+          <div>(D) 甲、丙皆為小靜脈</div>
+        </div>
+        <div class="calc-workspace" title="點擊顯示／隱藏解析">
+          <div class="calc-solution">
+            【解析】血液流動方向一律是由「動脈 → 微血管 → 靜脈」。由箭頭可知：甲處一條血管分支為多條微細的乙（微血管），故甲為「小動脈」；乙處紅血球單行排列通過微血管；之後匯集進入丙血管流出，故丙為「小靜脈」。答案選 (A)。
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ B ）</span> 4. 下列哪兩者的成分較接近？ ( 甲 ) 血液、 ( 乙 ) 組織液、 ( 丙 ) 淋巴。
+        </div>
+        <div class="qa-options">
+          <div>(A) 甲乙</div>
+          <div>(B) 乙丙</div>
+          <div>(C) 甲丙</div>
+          <div>(D) 都不相同</div>
+        </div>
+        <div class="calc-workspace" title="點擊顯示／隱藏解析">
+          <div class="calc-solution">
+            【解析】組織液是由血漿濾出微血管壁形成（不含紅血球及大分子蛋白質）；而淋巴液則是由組織液滲入淋巴管形成。因此「組織液（乙）」與「淋巴（丙）」的成分極為相似，皆為清澈透明、含水、無機鹽、葡萄糖及小分子蛋白質與淋巴球的液體。答案選 (B)。
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中生物</span>
+        <span>4-4 隨堂評量（Q1～Q4）</span>
+        <span>第 15 頁 / 共 18 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 16 ==================== -->
+    <div class="page" id="page16">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國一自然（上）講義</span>
+        <span>第 4 章 生物體的運輸作用</span>
+        <span>P. 16</span>
+      </div>
+
+      <div class="section-title">
+        <span>4-4　隨堂實戰評量（二）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">心血管系統綜合判別、微血管氣體擴散方向、淋巴結腫脹、充氧血血管判定（第 5～8 題）</span>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ A ）</span> 5. 關於人體心血管系統的敘述，下列何者正確？
+        </div>
+        <div class="qa-options">
+          <div>(A) 血液在微血管與細胞間交換氣體、養分和廢物</div>
+          <div>(B) 肺動脈內的血液富含氧，所以呈鮮紅色</div>
+          <div>(C) 血液經由上大靜脈和下大靜脈流回左心房</div>
+          <div>(D) 靜脈是將血液由心臟輸出的血管，管壁比較厚且富有彈性</div>
+        </div>
+        <div class="calc-workspace" title="點擊顯示／隱藏解析">
+          <div class="calc-solution">
+            【解析】(A) 正確：微血管管壁僅一層內皮細胞且血流最慢，是進行物質與氣體交換的唯一場所；(B) 肺動脈將右心室的缺氧血送往肺部，血液缺氧呈暗紅色；(C) 血液經由上、下大靜脈流回「右心房」；(D) 將血液輸出心臟的血管是「動脈」，靜脈是將血液導回心臟。故答案選 (A)。
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ D ）</span> 6. 如圖是微血管與肺泡及組織細胞間的構造，其中甲、乙是物質的擴散方向， a 、 b 是血液流動路徑，下列何者正確？
+        </div>
+        <div style="text-align:center; margin: 4px 0;">
+          <img src="../images/science-7-4-handout/image070.jpg" style="max-height:85px; border-radius:4px; border:1px solid #cbd5e1;" alt="微血管物質擴散圖">
+        </div>        <div class="qa-options">
+          <div>(A) a 路徑須經右心房</div>
+          <div>(B) b 路徑須經主動脈</div>
+          <div>(C) 甲是二氧化碳的擴散方向</div>
+          <div>(D) 乙是廢物的擴散方向</div>
+        </div>
+        <div class="calc-workspace" title="點擊顯示／隱藏解析">
+          <div class="calc-solution">
+            【解析】在組織細胞處，血液將氧氣與養分釋出給細胞（甲方向），細胞代謝產生的二氧化碳與代謝廢物則擴散進入微血管（乙方向），因此乙是廢物/二氧化碳的擴散方向，(D) 正確；甲為氧氣/養分擴散方向；a 為體循環微血管，其血液經靜脈流回右心房；b 為肺循環微血管，流回肺靜脈及左心房。故答案選 (D)。
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ B ）</span> 7. 小華的腋下淋巴結有腫脹的現象，下列敘述何者正確？
+        </div>
+        <div class="qa-options">
+          <div>(A) 小華一定得了淋巴腺癌</div>
+          <div>(B) 小華的手臂可能有細菌感染</div>
+          <div>(C) 此處的淋巴結正在製造紅血球</div>
+          <div>(D) 小華體內過多的血液滲入此處的淋巴結</div>
+        </div>
+        <div class="calc-workspace" title="點擊顯示／隱藏解析">
+          <div class="calc-solution">
+            【解析】淋巴結內含有大量淋巴球，具有過濾病原體並啟動免疫反應的功能。當身體某部位受到病原體感染（如手臂傷口細菌感染），該區域引流的淋巴結會聚集大量淋巴球進行清除與免疫作戰，導致淋巴結發炎腫脹。紅血球由骨髓製造，非由淋巴結製造。故答案選 (B)。
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ D ）</span> 8. 下列哪些血管中的血液為鮮紅色的充氧血？ ( 甲 ) 肺靜脈、 ( 乙 ) 肺動脈、 ( 丙 ) 主動脈、 ( 丁 ) 上大靜脈、 ( 戊 ) 下大靜脈。
+        </div>
+        <div class="qa-options">
+          <div>(A) 甲丁戊</div>
+          <div>(B) 乙丁戊</div>
+          <div>(C) 丁戊</div>
+          <div>(D) 甲丙</div>
+        </div>
+        <div class="calc-workspace" title="點擊顯示／隱藏解析">
+          <div class="calc-solution">
+            【解析】充氧血流經肺靜脈、左心房、左心室與主動脈（全身動脈），血液含氧量高呈鮮紅色；缺氧血流經上下大靜脈、右心房、右心室與肺動脈，血液含氧量低呈暗紅色。因此充氧血的血管為「甲(肺靜脈)」與「丙(主動脈)」。答案選 (D)。
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中生物</span>
+        <span>4-4 隨堂評量（Q5～Q8）</span>
+        <span>第 16 頁 / 共 18 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 17 ==================== -->
+    <div class="page" id="page17">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國一自然（上）講義</span>
+        <span>第 4 章 生物體的運輸作用</span>
+        <span>P. 17</span>
+      </div>
+
+      <div class="section-title">
+        <span>第 4 章　核心重點整理（一）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">4-1 植物運輸構造 ｜ 4-2 植物體內物質運輸 全章架構圖與挖空精華檢測</span>
+      </div>
+
+      <div style="font-size:12.5pt; line-height:1.5;">
+        <div class="task-title">4-1 植物的運輸構造</div>
+      <div class="item-line interactive-item">1. 維管束組成：</div>
+      <div class="item-line interactive-item">&emsp;• <span class="ans-word">木質部</span>：位於內側，運送水分與礦物質，方向一律 <span class="ans-word">由下往上</span> 單向運輸。</div>
+      <div class="item-line interactive-item">&emsp;• <span class="ans-word">形成層</span>：位於中間，為分生組織，向內分裂長出 <span class="ans-word">木質部</span>，向外長出 <span class="ans-word">韌皮部</span>。</div>
+      <div class="item-line interactive-item">&emsp;• <span class="ans-word">韌皮部</span>：位於外側，運送光合作用有機養分，方向由 <span class="ans-word">提供處往需求處</span>（雙向）。</div>
+      <div class="item-line interactive-item">2. 維管束排列：單子葉植物為 <span class="ans-word">散生</span> 排列，<span class="ans-word">無</span> 形成層；雙子葉植物為 <span class="ans-word">環狀</span> 排列，<span class="ans-word">有</span> 形成層。</div>
+      <div class="item-line interactive-item">3. 年輪由多年累積的 <span class="ans-word">木質部</span> 構成：春夏生長快形成細胞大、顏色淺的 <span class="ans-word">春材</span>；秋冬生長慢形成細胞小、顏色深的 <span class="ans-word">秋材</span>。</div>
+
+        <div class="task-title" style="margin-top:8px;">4-2 植物體內物質的運輸</div>
+      <div class="item-line interactive-item">1. <span class="ans-word">蒸散作用</span>：水分自葉片氣孔以水蒸氣形式散失的現象，是水分上升的 <span class="ans-word">主要動力</span>，並能調節植物體溫。</div>
+      <div class="item-line interactive-item">2. 氣孔調控：主要分布於葉片 <span class="ans-word">下表皮</span>，由成對具葉綠體的 <span class="ans-word">保衛細胞</span> 調控。白天通常 <span class="ans-word">張開</span>；夜間或乾旱缺水時 <span class="ans-word">關閉</span>。</div>
+      <div class="item-line interactive-item">3. 芹菜紅墨水實驗：葉柄橫切面紅點為 <span class="ans-word">木質部</span>，縱切面紅絲證實木質部細胞相連成 <span class="ans-word">連續管柱</span>。</div>
+      </div>
+
+      <div class="tip-box" style="margin-top:14px; font-size:12pt; line-height:1.5;">
+        🎯 <strong>植物物質運輸快速判定指南：</strong><br>
+        • <strong>水分與礦物質（水肥）：</strong>吸收處為根毛 → 運輸管道為 <span class="ans-word">木質部</span> → 方向 <span class="ans-word">由下往上</span> → 動力為 <span class="ans-word">蒸散拉力</span>。<br>
+        • <strong>養分（葡萄糖/蔗糖）：</strong>製造處為葉肉細胞 → 運輸管道為 <span class="ans-word">韌皮部</span> → 方向 <span class="ans-word">提供處至需求處</span>。
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中生物</span>
+        <span>第 4 章 重點整理（一）</span>
+        <span>第 17 頁 / 共 18 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 18 ==================== -->
+    <div class="page" id="page18">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國一自然（上）講義</span>
+        <span>第 4 章 生物體的運輸作用</span>
+        <span>P. 18</span>
+      </div>
+
+      <div class="section-title">
+        <span>第 4 章　核心重點整理（二）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">4-3 人體心血管系統 ｜ 4-4 人體循環系統與防禦防線 核心精華檢測</span>
+      </div>
+
+      <div style="font-size:12pt; line-height:1.45;">
+        <div class="task-title">4-3 人體心血管系統的組成</div>
+      <div class="item-line interactive-item">1. 心臟：左房左室流 <span class="ans-word">充氧血</span>；右房右室流 <span class="ans-word">缺氧血</span>。房室間與心室動脈間有 <span class="ans-word">瓣膜</span> 防止血液逆流。</div>
+      <div class="item-line interactive-item">2. 血管：<span class="ans-word">動脈</span> 管壁最厚、彈性最好、流速最快；<span class="ans-word">微血管</span> 僅一層細胞厚，是物質交換場所；<span class="ans-word">靜脈</span> 具瓣膜防止逆流。</div>
+      <div class="item-line interactive-item">3. 血液：<span class="ans-word">血漿</span> 運送養分、廢物、激素與二氧化碳；<span class="ans-word">紅血球</span> 運氧；<span class="ans-word">白血球</span> 防禦吞噬；<span class="ans-word">血小板</span> 凝血。</div>
+
+        <div class="task-title" style="margin-top:6px;">4-4 人體的循環系統與防衛作用</div>
+      <div class="item-line interactive-item">1. 體循環：<span class="ans-word">左心室</span> → 主動脈 → 組織微血管（物質交換） → 大靜脈 → <span class="ans-word">右心房</span>。充氧血轉為缺氧血。</div>
+      <div class="item-line interactive-item">2. 肺循環：<span class="ans-word">右心室</span> → 肺動脈 → 肺微血管（氣體交換） → 肺靜脈 → <span class="ans-word">左心房</span>。缺氧血轉為充氧血。</div>
+      <div class="item-line interactive-item">3. 淋巴系統：血漿濾出微血管成為 <span class="ans-word">組織液</span> → 滲入淋巴管成為 <span class="ans-word">淋巴</span> → 經淋巴結過濾病原體 → 注入 <span class="ans-word">靜脈</span> 回流。</div>
+      <div class="item-line interactive-item">4. 三道防線：第一道 <span class="ans-word">皮膚黏膜</span>（非專一）；第二道 <span class="ans-word">發炎反應</span>（非專一）；第三道 <span class="ans-word">專一性防禦</span>（淋巴球產生抗體與記憶性，施打 <span class="ans-word">疫苗</span> 預防）。</div>
+      </div>
+
+      <div style="display:flex; justify-content:center; align-items:center; margin-top:14px;">
+        <div style="text-align:center; background:#ffffff; padding:10px 18px; border-radius:8px; border:1px solid #cbd5e1; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+          <img src="../images/science-7-4-handout/image074.jpg" style="max-height:220px; border-radius:4px;" alt="人體體循環與肺循環途徑圖">
+          <div style="font-size:10.5pt; font-weight:bold; color:#334155; margin-top:6px;">▲ 人體體循環與肺循環路徑示意圖</div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中生物</span>
+        <span>第 4 章 重點整理（二）</span>
+        <span>第 18 頁 / 共 18 頁</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let allShown = false;
+    function toggleAllAnswers() {
+      allShown = !allShown;
+      document.body.classList.toggle('show-ans', allShown);
+      document.getElementById('ansIcon').textContent = allShown ? '🙈' : '👁️';
+      document.getElementById('toggleAllAnsBtn').classList.toggle('active', allShown);
+    }
+
+    document.addEventListener('click', function(e) {
+      if (document.body.classList.contains('pen-mode')) return;
+
+      // 點擊填空、選擇題括號或解析框直接顯隱
+      const targetAns = e.target.closest('.ans-word, .qa-bracket, .calc-solution');
+      if (targetAns) {
+        targetAns.classList.toggle('revealed');
+        e.stopPropagation();
+        return;
+      }
+
+      const workspace = e.target.closest('.calc-workspace');
+      if (workspace) {
+        workspace.classList.toggle('revealed');
+        const sol = workspace.querySelector('.calc-solution');
+        if (sol) sol.classList.toggle('revealed');
+        e.stopPropagation();
+        return;
+      }
+
+      // 單擊 interactive-item 或 qa-block 開合整題
+      const item = e.target.closest('.interactive-item');
+      if (item) {
+        item.classList.toggle('show-one');
+      }
+    });
+
+    document.addEventListener('dblclick', function(e) {
+      if (document.body.classList.contains('pen-mode')) return;
+      const targetAns = e.target.closest('.ans-word, .qa-bracket, .calc-solution, .calc-workspace');
+      if (targetAns) {
+        targetAns.classList.toggle('revealed');
+        e.stopPropagation();
+      }
+    });
+
+    function toggleTocMenu(e) {
+      e.stopPropagation();
+      document.getElementById('tocMenu').classList.toggle('show');
+    }
+    document.addEventListener('click', () => {
+      const menu = document.getElementById('tocMenu');
+      if (menu) menu.classList.remove('show');
+    });
+
+    function jumpTo(id) {
+      const el = document.getElementById(id);
+      if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      const menu = document.getElementById('tocMenu');
+      if (menu) menu.classList.remove('show');
+    }
+
+    let penMode = false, penColor = 'rgba(250,204,21,0.45)', penSize = 3;
+    let currentCanvas = null, ctx = null, drawing = false;
+    const canvases = document.querySelectorAll('.drawing-canvas');
+
+    function togglePenMode() {
+      penMode = !penMode;
+      document.body.classList.toggle('pen-mode', penMode);
+      document.getElementById('penBtn').classList.toggle('active', penMode);
+      document.getElementById('penOptions').style.display = penMode ? 'flex' : 'none';
+      canvases.forEach(c => {
+        const page = c.parentElement;
+        c.width = page.offsetWidth;
+        c.height = page.offsetHeight;
+      });
+    }
+
+    function setPenColor(color, el) {
+      penColor = color;
+      document.querySelectorAll('.color-dot').forEach(d => d.classList.remove('active'));
+      if (el) el.classList.add('active');
+    }
+
+    function setPenSize(size, el) {
+      penSize = size;
+      document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+      el.classList.add('active');
+    }
+
+    function getPos(e, canvas) {
+      const rect = canvas.getBoundingClientRect();
+      if (e.touches) return { x: e.touches[0].clientX - rect.left, y: e.touches[0].clientY - rect.top };
+      return { x: e.clientX - rect.left, y: e.clientY - rect.top };
+    }
+
+    canvases.forEach(canvas => {
+      canvas.addEventListener('mousedown', e => {
+        if (!penMode) return;
+        drawing = true; currentCanvas = canvas;
+        ctx = canvas.getContext('2d');
+        ctx.strokeStyle = penColor; ctx.lineWidth = penSize;
+        ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+        const p = getPos(e, canvas); ctx.beginPath(); ctx.moveTo(p.x, p.y);
+      });
+      canvas.addEventListener('mousemove', e => {
+        if (!drawing || currentCanvas !== canvas) return;
+        const p = getPos(e, canvas); ctx.lineTo(p.x, p.y); ctx.stroke();
+      });
+      canvas.addEventListener('mouseup', () => { drawing = false; });
+      canvas.addEventListener('touchstart', e => {
+        if (!penMode) return; e.preventDefault();
+        drawing = true; currentCanvas = canvas;
+        ctx = canvas.getContext('2d');
+        ctx.strokeStyle = penColor; ctx.lineWidth = penSize;
+        ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+        const p = getPos(e, canvas); ctx.beginPath(); ctx.moveTo(p.x, p.y);
+      }, { passive: false });
+      canvas.addEventListener('touchmove', e => {
+        if (!drawing) return; e.preventDefault();
+        const p = getPos(e, canvas); ctx.lineTo(p.x, p.y); ctx.stroke();
+      }, { passive: false });
+      canvas.addEventListener('touchend', () => { drawing = false; });
+    });
+
+    function clearAllDrawings() {
+      canvases.forEach(c => { const ctx2 = c.getContext('2d'); ctx2.clearRect(0,0,c.width,c.height); });
+    }
+  </script>
+</body>
+</html>
