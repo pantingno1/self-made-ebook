@@ -1,0 +1,1687 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>國二理化（上）第 6 章 物質的基本結構 互動電子書</title>
+  <!-- 電子書目錄身分標記（見 SKILL.md §11 與 AGENTS.md） -->
+  <meta name="ebook:subject" content="science">
+  <meta name="ebook:grade" content="8">
+  <meta name="ebook:type" content="handout">
+  <meta name="ebook:pages" content="19">
+  <meta name="ebook:level" content="std">
+  <meta name="ebook:summary" content="國二理化第6章物質的基本結構完整講義（19頁寬裕無截斷版），涵蓋：元素與化合物定義及分類、常見金屬與非金屬元素性質與用途、道耳頓原子說與原子內部結構（質子/中子/電子）、週期表規律與四大族（鹼金屬/鹼土金屬/鹵素/鈍氣）、分子與化學式書寫原則及常見化學式對照表、全章核心重點精華檢測。">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <style>
+    @page { size: A4 portrait; margin: 10mm 12mm; }
+    * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body {
+      margin: 0; padding: 0; background-color: #e2e8f0;
+      font-family: "Times New Roman", "標楷體", "DFKai-SB", "BiauKai", serif;
+      font-size: 14pt; line-height: 1.5; color: #111;
+    }
+    .classroom-toolbar {
+      position: fixed; top: 14px; right: 20px; z-index: 9999;
+      display: flex; align-items: center; gap: 4px;
+      background: rgba(255,255,255,0.95); backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 4px 10px; border-radius: 40px; border: 1px solid rgba(203,213,225,0.9);
+      box-shadow: 0 4px 22px rgba(0,0,0,0.15);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .tool-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 36px; height: 36px; font-size: 18px; color: #334155;
+      background: transparent; border: 1px solid transparent; border-radius: 50%;
+      cursor: pointer; transition: all 0.15s ease; padding: 0; user-select: none;
+      text-decoration: none;
+    }
+    .tool-btn:hover { background: #f1f5f9; transform: scale(1.1); }
+    .tool-btn.active { background: #0f172a; color: #ffffff; }
+    .btn-toggle-ans.active { background: #eff6ff; border-color: #3b82f6; }
+    .toolbar-divider { width: 1px; height: 20px; background: #cbd5e1; margin: 0 4px; }
+    .toc-menu {
+      display: none; position: absolute; top: 46px; left: 0;
+      background: #ffffff; border: 1px solid #cbd5e1; border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.18); padding: 8px 0;
+      min-width: 320px; max-height: 500px; overflow-y: auto; z-index: 10000;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .toc-menu.show { display: block; animation: tocFadeIn 0.15s ease-out; }
+    @keyframes tocFadeIn { from { opacity:0; transform:translateY(-6px); } to { opacity:1; transform:translateY(0); } }
+    .toc-menu-title { padding: 6px 16px 8px 16px; font-size: 13px; font-weight: bold; color: #64748b; border-bottom: 1px solid #f1f5f9; }
+    .toc-menu-item { padding: 7px 16px; font-size: 13px; color: #334155; cursor: pointer; display: flex; align-items: center; justify-content: space-between; transition: background 0.12s, color 0.12s; }
+    .toc-menu-item:hover { background: #eff6ff; color: #2563eb; font-weight: bold; }
+    .toc-page-badge { font-size: 11.5px; color: #94a3b8; font-weight: normal; }
+    .toc-menu-item:hover .toc-page-badge { color: #2563eb; }
+    .pen-options { display: none; align-items: center; gap: 6px; background: #f8fafc; padding: 3px 8px; border-radius: 20px; border: 1px solid #e2e8f0; margin-left: 2px; }
+    .color-picker { display: flex; align-items: center; gap: 5px; }
+    .color-dot { width: 16px; height: 16px; border-radius: 50%; cursor: pointer; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.2); }
+    .color-dot.active { transform: scale(1.2); box-shadow: 0 0 0 2px #0f172a; }
+    .size-picker { display: flex; align-items: center; gap: 3px; }
+    .size-btn { border: 1px solid #cbd5e1; background: #fff; color: #475569; font-size: 11px; font-weight: bold; padding: 2px 7px; border-radius: 10px; cursor: pointer; }
+    .size-btn.active { background: #0f172a; color: #fff; border-color: #0f172a; }
+    .pages-container { padding: 20px 0 40px 0; }
+    .page {
+      box-sizing: border-box; width: 210mm; min-height: 297mm; max-height: 297mm;
+      padding: 10mm 15mm 8mm 15mm; margin: 0 auto 25px auto;
+      background: #ffffff; box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+      page-break-after: always; break-after: page; position: relative;
+      display: flex; flex-direction: column; justify-content: flex-start;
+      overflow: hidden;
+    }
+    .drawing-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 20; pointer-events: none; }
+    body.pen-mode .drawing-canvas { pointer-events: auto; cursor: crosshair; }
+    .page-header {
+      display: flex; justify-content: space-between; border-bottom: 2px solid #334155;
+      padding-bottom: 4px; margin-bottom: 8px; font-size: 12pt; font-weight: bold; color: #1e293b;
+    }
+    .page-footer {
+      margin-top: auto; padding-top: 5px; border-top: 1px solid #cbd5e1;
+      display: flex; justify-content: space-between; font-size: 10.5pt; color: #64748b;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .main-title { font-size: 18pt; font-weight: 900; text-align: center; margin: 2px 0 6px 0; color: #0f172a; }
+    .section-title {
+      font-size: 14.5pt; font-weight: bold; background: #e2e8f0; padding: 4px 10px;
+      border-radius: 6px; margin: 5px 0 6px 0; border-left: 6px solid #2563eb; color: #0f172a;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .task-title { font-size: 13.5pt; font-weight: bold; margin: 6px 0 4px 0; color: #1e293b; }
+    .nuclide { display: inline-flex; flex-direction: column; vertical-align: middle; font-size: 0.68em; line-height: 1.05; margin-right: 2px; text-align: right; }
+    .tip-box {
+      border: 1.5px solid #93c5fd; background-color: #f0f9ff; border-radius: 6px;
+      padding: 6px 12px; margin: 5px 0 7px 0; font-size: 13pt; line-height: 1.45;
+    }
+    .item-line { padding: 3px 6px; border-radius: 4px; line-height: 1.5; font-size: 13.5pt; }
+    body:not(.pen-mode) .interactive-item { cursor: pointer; }
+    body:not(.pen-mode) .interactive-item:hover { background-color: #f8fafc; outline: 1px dashed #93c5fd; }
+    .correct-choice { display: inline-block; padding: 0 4px; transition: all 0.2s; }
+    .show-ans .correct-choice, .show-one .correct-choice, .correct-choice.revealed {
+      color: #dc2626 !important; font-weight: bold !important; border: 2px solid #dc2626 !important;
+      border-radius: 12px !important; background-color: #fef2f2 !important; padding: 0 5px !important;
+    }
+    .ans-slot { display: inline-block; min-width: 24px; text-align: center; color: transparent; font-weight: bold; cursor: pointer; user-select: none; }
+    .show-ans .ans-slot, .show-one .ans-slot, .ans-slot.revealed { color: #dc2626 !important; }
+    .ans-word { color: transparent; font-weight: bold; border-bottom: 1.5px solid #333; padding: 0 3px; cursor: pointer; user-select: none; }
+    .show-ans .ans-word, .show-one .ans-word, .ans-word.revealed { color: #dc2626 !important; }
+    body:not(.pen-mode) .ans-word:hover, body:not(.pen-mode) .ans-slot:hover { background-color: #fee2e2; }
+    .qa-block { margin-bottom: 9px; padding: 5px 8px; border-radius: 6px; line-height: 1.48; font-size: 13.5pt; }
+    .qa-header { font-weight: bold; }
+    .qa-bracket { color: transparent; font-weight: bold; padding: 0 2px; cursor: pointer; user-select: none; }
+    .show-ans .qa-bracket, .show-one .qa-bracket, .qa-bracket.revealed { color: #dc2626 !important; }
+    .qa-options { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 12px; margin-top: 4px; padding-left: 20px; font-size: 13pt; }
+    .qa-options.stacked { display: flex; flex-direction: column; gap: 3px; }
+    table.custom-table { width: 100%; border-collapse: collapse; margin: 5px 0; font-size: 12.5pt; line-height: 1.38; }
+    table.custom-table th, table.custom-table td { border: 1px solid #64748b; padding: 4px 7px; text-align: center; }
+    table.custom-table th { background-color: #f1f5f9; font-weight: bold; color: #0f172a; }
+    table.custom-table td.align-left { text-align: left; }
+    .calc-workspace { margin: 4px 0 2px 20px; padding: 5px 12px; border: 1px dashed #94a3b8; border-radius: 6px; background-color: #f8fafc; font-size: 12.5pt; }
+    .calc-solution { color: transparent; line-height: 1.48; }
+    .show-ans .calc-solution, .show-one .calc-solution, .calc-solution.revealed { color: #dc2626 !important; font-weight: bold; }
+    @media print {
+      @page { size: A4 portrait; margin: 10mm 12mm; }
+      html, body { width: 100% !important; height: auto !important; background: transparent !important; padding: 0 !important; margin: 0 !important; }
+      .no-print, .classroom-toolbar, .toc-menu, .drawing-canvas { display: none !important; }
+      .pages-container { display: block !important; padding: 0 !important; margin: 0 !important; }
+      .page {
+        box-sizing: border-box !important; margin: 0 !important; box-shadow: none !important;
+        width: 100% !important; height: 275mm !important; max-height: 275mm !important;
+        min-height: 0 !important; padding: 0 !important; page-break-after: always !important;
+        break-after: page !important; page-break-inside: avoid !important; break-inside: avoid !important;
+        display: flex !important; flex-direction: column !important; justify-content: flex-start !important;
+        overflow: hidden !important;
+      }
+      .page:last-child { page-break-after: avoid !important; break-after: avoid !important; }
+      .page-footer { margin-top: auto !important; padding-top: 4px !important; }
+      .correct-choice { color: inherit !important; font-weight: normal !important; border: none !important; background: transparent !important; padding: 0 !important; }
+      .ans-slot, .ans-word, .qa-bracket, .calc-solution { color: transparent !important; }
+      .calc-workspace { background: transparent !important; border-color: #cbd5e1 !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 課堂懸浮工具列 -->
+  <div class="classroom-toolbar no-print">
+    <!-- 回電子書目錄 -->
+    <a class="tool-btn" href="../index.html" title="回電子書目錄">🏠</a>
+    <!-- 目錄跳轉選單 -->
+    <div style="position: relative;">
+      <button class="tool-btn" id="tocBtn" onclick="toggleTocMenu(event)" title="單元章節目錄">📑</button>
+      <div class="toc-menu" id="tocMenu">
+        <div class="toc-menu-title">📖 第 6 章 單元章節目錄 (全 19 頁)</div>
+        <div class="toc-menu-item" onclick="jumpTo('page1')"><span>6-1 元素與化合物（觀念）</span><span class="toc-page-badge">P.1</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page2')"><span>6-1 評量 ＆ 6-2 元素通性</span><span class="toc-page-badge">P.2</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page3')"><span>6-2 常見金屬元素（觀念）</span><span class="toc-page-badge">P.3</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page4')"><span>6-2 常見非金屬元素（觀念）</span><span class="toc-page-badge">P.4</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page5')"><span>6-2 隨堂評量（一）(Q1～Q4)</span><span class="toc-page-badge">P.5</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page6')"><span>6-2 隨堂評量（二）(Q5～Q7)</span><span class="toc-page-badge">P.6</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page7')"><span>6-3 原子說與原子結構發展（觀念）</span><span class="toc-page-badge">P.7</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page8')"><span>6-3 原子模型與符號表示法（觀念）</span><span class="toc-page-badge">P.8</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page9')"><span>6-3 隨堂評量（一）(Q1～Q4)</span><span class="toc-page-badge">P.9</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page10')"><span>6-3 隨堂評量（二）(Q5～Q8)</span><span class="toc-page-badge">P.10</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page11')"><span>6-4 週期表與四大族（觀念）</span><span class="toc-page-badge">P.11</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page12')"><span>6-4 隨堂評量（一）(Q1～Q5)</span><span class="toc-page-badge">P.12</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page13')"><span>6-4 隨堂評量（二）(Q6～Q9)</span><span class="toc-page-badge">P.13</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page14')"><span>6-5 分子與化學式書寫原則（觀念）</span><span class="toc-page-badge">P.14</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page15')"><span>6-5 常見化學式大對照表</span><span class="toc-page-badge">P.15</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page16')"><span>6-5 隨堂評量（一）(Q1～Q3)</span><span class="toc-page-badge">P.16</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page17')"><span>6-5 隨堂評量（二）(Q4～Q5)</span><span class="toc-page-badge">P.17</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page18')"><span>第 6 章 核心重點整理（一）</span><span class="toc-page-badge">P.18</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page19')"><span>第 6 章 核心重點整理（二）</span><span class="toc-page-badge">P.19</span></div>
+      </div>
+    </div>
+    <!-- 一鍵顯答 -->
+    <button class="tool-btn btn-toggle-ans" id="toggleAllAnsBtn" onclick="toggleAllAnswers()" title="一鍵全開/全隱答案">
+      <span id="ansIcon">👁️</span>
+    </button>
+    <!-- 畫筆切換 -->
+    <button class="tool-btn" id="penBtn" onclick="togglePenMode()" title="螢光筆/板書筆">✏️</button>
+    <!-- 畫筆選單 -->
+    <div class="pen-options" id="penOptions">
+      <div class="color-picker">
+        <span class="color-dot active" style="background:#facc15;" onclick="setPenColor('rgba(250,204,21,0.45)', this)" title="螢光黃"></span>
+        <span class="color-dot" style="background:#ef4444;" onclick="setPenColor('rgba(239,68,68,0.8)', this)" title="紅筆"></span>
+        <span class="color-dot" style="background:#3b82f6;" onclick="setPenColor('rgba(37,99,235,0.8)', this)" title="藍筆"></span>
+        <span class="color-dot" style="background:#10b981;" onclick="setPenColor('rgba(16,185,129,0.8)', this)" title="綠筆"></span>
+      </div>
+      <div class="toolbar-divider" style="height:14px; margin:0 2px;"></div>
+      <div class="size-picker">
+        <span class="size-btn active" onclick="setPenSize(3, this)">細</span>
+        <span class="size-btn" onclick="setPenSize(7, this)">中</span>
+        <span class="size-btn" onclick="setPenSize(14, this)">粗</span>
+      </div>
+    </div>
+    <!-- 清除筆跡 -->
+    <button class="tool-btn" onclick="clearAllDrawings()" title="清除本頁筆跡">🧹</button>
+    <!-- 列印 -->
+    <button class="tool-btn" onclick="window.print()" title="列印純淨學習單">🖨️</button>
+  </div>
+
+  <div class="pages-container">
+
+    <!-- ==================== Page 1 ==================== -->
+    <div class="page" id="page1">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國二理化（上）講義</span>
+        <span>第 6 章 物質的基本結構</span>
+        <span>P. 1</span>
+      </div>
+
+      <div class="main-title">第 6 章　物質的基本結構</div>
+      <div class="section-title">
+        <span>6-1　元素與化合物</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #475569;">焦點一：純物質分類、元素與化合物定義、元素符號與命名</span>
+      </div>
+
+      <div class="task-title">1. 純物質的分類與物質分類圖</div>
+      <div style="display:flex; gap:14px; align-items:center; margin: 4px 0;">
+        <div style="flex:1;">
+      <div class="item-line interactive-item">(1) <strong>純物質：</strong>具有固定的組成與性質（固定熔點、沸點與密度），不可用物理方法分離。分為 <span class="ans-word">元素</span> 與 <span class="ans-word">化合物</span>。</div>
+      <div class="item-line interactive-item">(2) <strong>混合物：</strong>由兩種或兩種以上純物質混合而成，無固定熔、沸點，可用 <span class="ans-word">物理方法</span>（如過濾、結晶、蒸餾）分離。</div>
+        </div>
+        <div style="text-align:center; flex-shrink:0; width:250px;">
+          <img src="../images/science-8-6-handout/image003.jpg" style="max-width:100%; border-radius:4px; border:1px solid #cbd5e1;" alt="物質分類圖">
+          <div style="font-size:10.5pt; color:#64748b;">▲ 物質分類架構圖</div>
+        </div>
+      </div>
+
+      <div class="task-title" style="margin-top: 4px;">2. 元素與化合物之比較</div>
+      <table class="custom-table" style="font-size:12.5pt; line-height:1.45;">
+        <tr><th style="width:14%;">類別</th><th style="width:40%;">定義</th><th style="width:18%;">化學方法分解</th><th style="width:14%;">熔、沸點</th><th style="width:14%;">實例</th></tr>
+        <tr class="interactive-item">
+          <td style="font-weight:bold; background:#dbeafe;"><span class="ans-word">元素</span></td>
+          <td class="align-left">無法再用化學方法分解的純物質（由同一種原子構成）。</td>
+          <td><span class="ans-word">不可以</span></td>
+          <td><span class="ans-word">固定</span></td>
+          <td>$H<sub>2</sub>$、$O<sub>2</sub>$、$Au$、$Fe$</td>
+        </tr>
+        <tr class="interactive-item">
+          <td style="font-weight:bold; background:#fef3c7;"><span class="ans-word">化合物</span></td>
+          <td class="align-left">由兩種或兩種以上元素以一定比例組合的純物質。</td>
+          <td><span class="ans-word">可以</span></td>
+          <td><span class="ans-word">固定</span></td>
+          <td>$CO<sub>2</sub>$、$H<sub>2</sub>O$、$NaCl$</td>
+        </tr>
+      </table>
+
+      <div class="task-title" style="margin-top: 6px;">3. 元素符號及中文命名原則</div>
+      <div class="item-line interactive-item">(1) <strong>元素符號：</strong>取元素英文或拉丁文名稱第一個字母大寫表示（如碳 C、氧 O）；若字首相同，則附加一小寫字母區別（如鈣 Ca、鉻 Cr、氯 Cl）。</div>
+      <div class="item-line interactive-item">(2) <strong>中文部首與狀態：</strong>配合常溫常壓狀態命名：</div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px; margin:4px 10px; font-size:12.5pt;">
+        <div class="interactive-item" style="background:#f8fafc; padding:4px 8px; border-radius:4px; border:1px solid #e2e8f0;">
+          <strong>固態金屬：</strong>以 <span class="ans-word">「金」</span> 部表示（例：鈉、鐵、銅、金）。
+        </div>
+        <div class="interactive-item" style="background:#f8fafc; padding:4px 8px; border-radius:4px; border:1px solid #e2e8f0;">
+          <strong>固態非金屬：</strong>以 <span class="ans-word">「石」</span> 部表示（例：碳、硫、矽、碘）。
+        </div>
+        <div class="interactive-item" style="background:#f8fafc; padding:4px 8px; border-radius:4px; border:1px solid #e2e8f0;">
+          <strong>液態元素：</strong>以 <span class="ans-word">「水」</span> 部表示（例：金屬<strong>汞</strong> Hg、非金屬<strong>溴</strong> Br）。
+        </div>
+        <div class="interactive-item" style="background:#f8fafc; padding:4px 8px; border-radius:4px; border:1px solid #e2e8f0;">
+          <strong>氣態元素：</strong>以 <span class="ans-word">「气」</span> 部表示（例：氧、氮、氫、氦、氯）。
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>6-1 元素與化合物（觀念）</span>
+        <span>第 1 頁 / 共 19 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 2 ==================== -->
+    <div class="page" id="page2">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國二理化（上）講義</span>
+        <span>第 6 章 物質的基本結構</span>
+        <span>P. 2</span>
+      </div>
+
+      <div class="section-title">
+        <span>6-1　隨堂評量 ＆ 6-2　元素的通性</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #475569;">6-1評量（Q1～Q2） ｜ 金屬與非金屬特性對照</span>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ C ）</span> 1. 下列哪一種物質<strong>不是</strong>元素？
+        </div>
+        <div class="qa-options">
+          <div>(A) 鈉</div>
+          <div>(B) 氧</div>
+          <div>(C) 水</div>
+          <div>(D) 碳</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】水（$H<sub>2</sub>O$）是由氫和氧兩種元素化合而成的化合物，不是元素。鈉（Na）、氧（O₂）、碳（C）皆為純元素。
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ D ）</span> 2. 汞、銅、銀、溴、氫、氦、氯、硫、碳。以上各物質中，常溫常壓下為氣態、液態及固態元素各有幾種？
+        </div>
+        <div class="qa-options">
+          <div>(A) 3、1、5</div>
+          <div>(B) 3、5、1</div>
+          <div>(C) 5、2、2</div>
+          <div>(D) 3、2、4</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】常溫常壓狀態分析：氣態 3 種（氫、氦、氯）；液態 2 種（汞金屬、溴非金屬）；固態 4 種（銅、銀、硫、碳）。故為 3、2、4，答案選 (D)。
+          </div>
+        </div>
+      </div>
+
+      <div class="task-title" style="margin-top: 8px;">6-2 焦點二：金屬元素與非金屬元素的通性比較</div>
+      <table class="custom-table" style="font-size:12.5pt; line-height:1.45;">
+        <tr><th style="width:16%;">性質</th><th style="width:42%;">金屬元素</th><th style="width:42%;">非金屬元素</th></tr>
+        <tr class="interactive-item">
+          <td style="font-weight:bold; background:#f1f5f9;">常溫常壓狀態</td>
+          <td class="align-left">多數為固態；只有 <span class="ans-word">汞（水銀，Hg）</span> 是唯一的液態金屬。</td>
+          <td class="align-left">多為固態或氣態；只有 <span class="ans-word">溴（Br）</span> 為唯一的液態非金屬。</td>
+        </tr>
+        <tr class="interactive-item">
+          <td style="font-weight:bold; background:#f1f5f9;">外觀顏色</td>
+          <td class="align-left">大部分為銀白或銀灰色；例外：<span class="ans-word">金（Au）</span> 為黃色、<span class="ans-word">銅（Cu）</span> 為紅棕色。</td>
+          <td class="align-left">顏色多樣（碳為黑、硫為黃、氯氣為黃綠、溴為紅棕、碘為紫黑）。</td>
+        </tr>
+        <tr class="interactive-item">
+          <td style="font-weight:bold; background:#f1f5f9;">金屬光澤</td>
+          <td class="align-left">具有特殊金屬光澤，拋光後能反光。</td>
+          <td class="align-left">大多沒有金屬光澤（表面暗淡）。</td>
+        </tr>
+        <tr class="interactive-item">
+          <td style="font-weight:bold; background:#f1f5f9;">延展性</td>
+          <td class="align-left">富延展性，受敲擊不易破碎，可拉成細絲或打成薄片。</td>
+          <td class="align-left">固態大多質脆易碎，<span class="ans-word">不具延展性</span>。</td>
+        </tr>
+        <tr class="interactive-item">
+          <td style="font-weight:bold; background:#f1f5f9;">導電與導熱</td>
+          <td class="align-left">電與熱的<strong>良導體</strong>（導電度：銀 ＞ 銅 ＞ 金 ＞ 鋁）。</td>
+          <td class="align-left">大多為電與熱不良導體；例外：<span class="ans-word">石墨（碳，C）</span> 可導電！</td>
+        </tr>
+      </table>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>6-1 評量 ＆ 6-2 元素通性</span>
+        <span>第 2 頁 / 共 19 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 3 ==================== -->
+    <div class="page" id="page3">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國二理化（上）講義</span>
+        <span>第 6 章 物質的基本結構</span>
+        <span>P. 3</span>
+      </div>
+
+      <div class="section-title">
+        <span>6-2　生活中常見的元素（一）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #475569;">常見金屬元素：金、鐵、銀、銅、鋁、汞、鈦之性質與用途</span>
+      </div>
+
+      <table class="custom-table" style="font-size:12pt; line-height:1.4;">
+        <tr><th style="width:14%;">元素／符號</th><th style="width:43%;">主要特性與性質</th><th style="width:43%;">重要生活用途</th></tr>
+        <tr class="interactive-item">
+          <td style="font-weight:bold; background:#fef3c7;">金<br>（<span class="ans-word">Au</span>）</td>
+          <td class="align-left">• <span class="ans-word">黃</span> 色固體，化學性質極安定，不易氧化（真金不怕火煉）。<br>• 金屬中 <span class="ans-word">延展性</span> 最佳。</td>
+          <td class="align-left">• 飾品、錢幣、高級電子工業電路板接線。</td>
+        </tr>
+        <tr class="interactive-item">
+          <td style="font-weight:bold; background:#f1f5f9;">鐵<br>（<span class="ans-word">Fe</span>）</td>
+          <td class="align-left">• 銀白色，地殼中金屬含量第 <span class="ans-word">二</span> 位（僅次於鋁）。<br>• 在空氣中容易生鏽，鐵鏽疏鬆無法保護內部。</td>
+          <td class="align-left">• 建築材料、鐵釘、鐵鍋。<br>• 與碳混合製鋼；與鎳、鉻製成<strong>不鏽鋼</strong>抗腐蝕。</td>
+        </tr>
+        <tr class="interactive-item">
+          <td style="font-weight:bold; background:#f1f5f9;">銀<br>（<span class="ans-word">Ag</span>）</td>
+          <td class="align-left">• 金屬中<strong>導電性與導熱性第 <span class="ans-word">一</span> 位</strong>。<br>• 延展性僅次於金。</td>
+          <td class="align-left">• 錢幣、首飾、精密儀器導電接點。<br>• 溴化銀（感光材料）、變色鏡片。</td>
+        </tr>
+        <tr class="interactive-item">
+          <td style="font-weight:bold; background:#fee2e2;">銅<br>（<span class="ans-word">Cu</span>）</td>
+          <td class="align-left">• <span class="ans-word">紅棕</span> 色，導電性與導熱性金屬中排名第 <span class="ans-word">二</span>。<br>• 延展性佳。</td>
+          <td class="align-left">• 電線、導電元件、硬幣。<br>• 合金：<strong>青銅</strong>（銅＋<span class="ans-word">錫</span>，香爐、銅像）；<strong>黃銅</strong>（銅＋<span class="ans-word">鋅</span>，樂器、水龍頭）。</td>
+        </tr>
+        <tr class="interactive-item">
+          <td style="font-weight:bold; background:#f1f5f9;">鋁<br>（<span class="ans-word">Al</span>）</td>
+          <td class="align-left">• 地殼中含量第 <span class="ans-word">一</span> 的金屬元素。<br>• 密度小，表面能生成緻密 <span class="ans-word">氧化鋁</span> 保護層防止內部鏽蝕。</td>
+          <td class="align-left">• 鋁門窗、鋁箔紙、易開罐。<br>• 鋁合金質輕堅硬，作飛機外殼、筆電外殼。</td>
+        </tr>
+        <tr class="interactive-item">
+          <td style="font-weight:bold; background:#dbeafe;">汞<br>（<span class="ans-word">Hg</span>）</td>
+          <td class="align-left">• 常溫常壓下唯一 <span class="ans-word">液</span> 態金屬，俗稱<strong>水銀</strong>。<br>• 密度大、導電佳，具神經毒性。</td>
+          <td class="align-left">• 水銀溫度計、血壓計、氣壓計、日光燈管、水銀電池。</td>
+        </tr>
+        <tr class="interactive-item">
+          <td style="font-weight:bold; background:#f1f5f9;">鈦<br>（<span class="ans-word">Ti</span>）</td>
+          <td class="align-left">• 質輕、強度高、耐腐蝕、耐高溫。<br>• 二氧化鈦（$TiO<sub>2</sub>$）俗稱<strong>鈦白粉</strong>。</td>
+          <td class="align-left">• 航太火箭、人工關節、球桿。<br>• 鈦白粉用於立可帶、防曬油；奈米級作<strong>光觸媒</strong>。</td>
+        </tr>
+      </table>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>6-2 常見金屬元素</span>
+        <span>第 3 頁 / 共 19 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 4 ==================== -->
+    <div class="page" id="page4">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國二理化（上）講義</span>
+        <span>第 6 章 物質的基本結構</span>
+        <span>P. 4</span>
+      </div>
+
+      <div class="section-title">
+        <span>6-2　生活中常見的元素（二）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #475569;">常見非金屬元素：矽（Si）、碳（C 同素異形體）、硫（S）之性質與用途</span>
+      </div>
+
+      <table class="custom-table" style="font-size:12.5pt; line-height:1.45;">
+        <tr><th style="width:15%;">元素／符號</th><th style="width:42%;">主要特性與性質</th><th style="width:43%;">重要生活用途</th></tr>
+        <tr class="interactive-item">
+          <td style="font-weight:bold; background:#f1f5f9;">矽<br>（<span class="ans-word">Si</span>）</td>
+          <td class="align-left">• 地殼中含量第 <span class="ans-word">二</span>（僅次於氧），多以二氧化矽或矽酸鹽化合物存在。<br>• 具<strong>半導體</strong>特性，導電性介於金屬與非金屬之間。</td>
+          <td class="align-left">• 玻璃、陶瓷、光纖製造。<br>• 電腦晶片、積體電路、<strong>矽晶圓</strong>的核心原料。</td>
+        </tr>
+        <tr class="interactive-item">
+          <td style="font-weight:bold; background:#f1f5f9;">碳<br>（<span class="ans-word">C</span>）</td>
+          <td class="align-left">• 在自然界中有多種形態（同素異形體）：<br>
+          &emsp;① <strong>煤炭/木炭：</strong>黑色粉末或塊狀，含雜質。<br>
+          &emsp;② <strong>鑽石（金剛石）：</strong>無色透明結晶，自然界<strong>硬度最高</strong>物質，不導電。<br>
+          &emsp;③ <strong>石墨：</strong>灰黑質軟易剝落，<strong>唯一可導電的非金屬</strong>。<br>
+          &emsp;④ <strong>石墨烯：</strong>單原子層奈米材料，強韌、透明且導電極佳。<br>
+          &emsp;⑤ <strong>活性碳：</strong>多孔隙構造，具強大吸附力。</td>
+          <td class="align-left">• 木炭/煤炭：燃料。<br>• 鑽石：飾品、工業切割刀具。<br>• 石墨：鉛筆芯、乾電池電極、高溫潤滑劑。<br>• 活性碳：脫色劑、除臭劑、防毒面具、濾水器。<br>• 石墨烯：先進觸控面板、高效電池電極。</td>
+        </tr>
+        <tr class="interactive-item">
+          <td style="font-weight:bold; background:#fef9c3;">硫<br>（<span class="ans-word">S</span>）</td>
+          <td class="align-left">• <span class="ans-word">黃</span> 色固體，俗稱硫磺，質脆易碎。<br>• 常見於火山噴氣孔與溫泉區，燃燒產生具刺激性二氧化硫氣體。</td>
+          <td class="align-left">• 製造黑火藥、煙火、鞭炮。<br>• 製造硫酸（工業之母）、輪胎橡膠硫化劑。</td>
+        </tr>
+      </table>
+
+      <div class="tip-box" style="margin-top:8px;">
+        💡 <strong>地殼元素含量口訣：</strong>「<strong>氧、矽、鋁、鐵、鈣、鈉、鉀、鎂</strong>」（前二名非金屬：氧 ＞ 矽；前二名金屬：鋁 ＞ 鐵）。<br>
+        💡 <strong>導電性排行：</strong>銀 ＞ 銅 ＞ 金 ＞ 鋁（做電線選銅是因為導電好且成本合理）。
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>6-2 常見非金屬元素</span>
+        <span>第 4 頁 / 共 19 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 5 ==================== -->
+    <div class="page" id="page5">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國二理化（上）講義</span>
+        <span>第 6 章 物質的基本結構</span>
+        <span>P. 5</span>
+      </div>
+
+      <div class="section-title">
+        <span>6-2　隨堂實戰評量（一）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #475569;">金屬與非金屬通性、導電導熱、石墨特性（第 1～4 題）</span>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ B ）</span> 1. 有關「金屬元素」及「非金屬元素」，下列哪一項敘述<strong>錯誤</strong>？
+        </div>
+        <div class="qa-options">
+          <div>(A) 石墨為黑色不具延展性的固體，且具有導電性</div>
+          <div>(B) 金屬都是以固態存在，且為熱、電的良導體</div>
+          <div>(C) 汞為金屬元素，在常溫下為銀白色液體</div>
+          <div>(D) 硫可用來製作硫酸與用於煙火的黑火藥</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】(B) 錯誤：汞（水銀，Hg）在常溫常壓下為液態金屬，並非所有金屬都是固態。(A)(C)(D) 敘述皆完全正確。
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ C ）</span> 2. 關於金、銀、銅三種金屬的比較，下列敘述何者<strong>正確</strong>？
+        </div>
+        <div class="qa-options">
+          <div>(A) 導電性最好的是金</div>
+          <div>(B) 延展性最好的是銀</div>
+          <div>(C) 電線主要的材料是銅</div>
+          <div>(D) 價格以銀最貴，銅最便宜</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】(A) 錯誤：導電性最好的為銀。(B) 錯誤：延展性最好的為金。(C) 正確：銅導電性僅次於銀，且成本比金銀便宜很多，故常作為電線主要材料。(D) 錯誤：價格以金最貴。
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ C ）</span> 3. 有關非金屬的通性，下列敘述何者<strong>錯誤</strong>？
+        </div>
+        <div class="qa-options">
+          <div>(A) 常溫時，以固態、液態或氣態存在</div>
+          <div>(B) 大多為熱及電的不良導體</div>
+          <div>(C) 非金屬元素大多為銀灰色</div>
+          <div>(D) 固態的非金屬不具延展性，易敲碎</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】(C) 錯誤：非金屬元素沒有固定顏色，大多不具銀灰色（銀灰色通常是金屬外觀特徵）。(A)(B)(D) 均為非金屬通性。
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ A ）</span> 4. 有關石墨的特性，下列敘述何者<strong>錯誤</strong>？
+        </div>
+        <div class="qa-options">
+          <div>(A) 可導電的金屬元素</div>
+          <div>(B) 可作為碳鋅電池的電極</div>
+          <div>(C) 黑色，容易剝落</div>
+          <div>(D) 可做鉛筆的筆芯</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】(A) 錯誤：石墨成分為碳，碳是「非金屬元素」，石墨是唯一能導電的非金屬元素，並非金屬元素。
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>6-2 隨堂評量（Q1～Q4）</span>
+        <span>第 5 頁 / 共 19 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 6 ==================== -->
+    <div class="page" id="page6">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國二理化（上）講義</span>
+        <span>第 6 章 物質的基本結構</span>
+        <span>P. 6</span>
+      </div>
+
+      <div class="section-title">
+        <span>6-2　隨堂實戰評量（二）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #475569;">金的安定性、碳的形態、矽的半導體特性（第 5～7 題）</span>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ D ）</span> 5. 俗話說：「真金不怕火煉」，是因為金的哪種特性？
+        </div>
+        <div class="qa-options">
+          <div>(A) 世界礦產區多，產量豐富</div>
+          <div>(B) 金富延展性，可以抽成細絲或壓成金箔</div>
+          <div>(C) 是一種導電與導熱性良好的金屬</div>
+          <div>(D) 金的性質安定，在高溫下也不易與其他物質反應</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】「真金不怕火煉」是指金在高溫灼燒下仍然不氧化變質，是因為金的化學活性極小、性質極度安定。答案選 (D)。
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ A ）</span> 6. 碳元素在自然界中常以不同的型態存在，請問下列何者對不同型態碳的描述是<strong>錯誤</strong>的？
+        </div>
+        <div class="qa-options">
+          <div>(A) 碳粉為暗紅色的粉末，常溫下極為安定</div>
+          <div>(B) 石墨具有良好的導電能力，常用來製造碳電極</div>
+          <div>(C) 活性碳可吸附雜質，常作為脫色劑、脫臭劑和水的濾清劑</div>
+          <div>(D) 鑽石是一種無色透明的碳結晶，硬度最高，可切割任何物質</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】(A) 錯誤：碳粉為黑色粉末，並非暗紅色（暗紅色是紅磷等物質的顏色）。(B)(C)(D) 敘述皆正確。
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ B ）</span> 7. 有關矽元素的特性，下列敘述何者<strong>錯誤</strong>？
+        </div>
+        <div class="qa-options">
+          <div>(A) 元素符號為 Si</div>
+          <div>(B) 矽晶體為黃色，不具金屬光澤</div>
+          <div>(C) 以化合物的形式存在各種礦石中</div>
+          <div>(D) 可製作半導體元件和積體電路</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】(B) 錯誤：純矽晶體為深灰色，且具有微弱的金屬光澤；黃色固體為硫（S）。矽具半導體特性，是積體電路重要原料。答案選 (B)。
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>6-2 隨堂評量（Q5～Q7）</span>
+        <span>第 6 頁 / 共 19 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 7 ==================== -->
+    <div class="page" id="page7">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國二理化（上）講義</span>
+        <span>第 6 章 物質的基本結構</span>
+        <span>P. 7</span>
+      </div>
+
+      <div class="section-title">
+        <span>6-3　原子結構（一）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #475569;">焦點三：道耳頓原子說 ｜ 電子、質子、中子的發現史</span>
+      </div>
+
+      <div class="task-title">1. 道耳頓的「原子說」（1803年提出）</div>
+      <div class="item-line interactive-item">(1) <strong>不可分割：</strong>一切物質皆由極微小、不可再分割的微粒—— <span class="ans-word">原子</span> 所組成。<em>（後被湯姆森發現電子所修正）</em></div>
+      <div class="item-line interactive-item">(2) <strong>同種相同：</strong>同種元素的原子，其質量與性質皆相同；不同元素的原子，其質量與性質不同。<em>（後被同位素的發現所修正）</em></div>
+      <div class="item-line interactive-item">(3) <strong>化合成物：</strong>化合物是由不同種原子以簡單的 <span class="ans-word">整數比</span> 化合而成。</div>
+      <div class="item-line interactive-item">(4) <strong>重組不滅：</strong>化學反應只是原子間 <span class="ans-word">重新排列</span> 結合，原子不會被創造、消滅或變成另一種原子（質量守恆）。</div>
+
+      <div class="task-title" style="margin-top: 8px;">2. 原子內部結構的發現歷程</div>
+      <table class="custom-table" style="font-size:12pt; line-height:1.45;">
+        <tr><th style="width:12%;">粒子</th><th style="width:12%;">發現順序</th><th style="width:16%;">發現者</th><th style="width:12%;">電性</th><th style="width:18%;">質量關係</th><th style="width:30%;">科學意義與影響</th></tr>
+        <tr class="interactive-item">
+          <td style="font-weight:bold; background:#dbeafe;">電子<br>（$e<sup>-</sup>$）</td>
+          <td>第 <span class="ans-word">1</span> 位<br>（1897）</td>
+          <td><span class="ans-word">湯姆森</span></td>
+          <td>帶 <span class="ans-word">負電（−）</span></td>
+          <td>質量極小<br>（約質子的 $\frac{1}{1836}$）</td>
+          <td class="align-left">由陰極射線實驗發現，打破「原子不可分割」的說法。</td>
+        </tr>
+        <tr class="interactive-item">
+          <td style="font-weight:bold; background:#fee2e2;">質子<br>（$p<sup>+</sup>$）</td>
+          <td>第 <span class="ans-word">2</span> 位<br>（1919）</td>
+          <td><span class="ans-word">拉塞福</span></td>
+          <td>帶 <span class="ans-word">正電（＋）</span></td>
+          <td>約為電子的<br><strong>1836 倍</strong></td>
+          <td class="align-left">α 粒子散射實驗發現<strong>原子核</strong>，進而發現質子。原子質量集中於核。</td>
+        </tr>
+        <tr class="interactive-item">
+          <td style="font-weight:bold; background:#f1f5f9;">中子<br>（$
+<sup>0</sup>$）</td>
+          <td>第 <span class="ans-word">3</span> 位<br>（1932）</td>
+          <td><span class="ans-word">查兌克</span></td>
+          <td><span class="ans-word">不帶電（電中性）</span></td>
+          <td>與質子質量相近<br>（約 1838 倍電子）</td>
+          <td class="align-left">證實核內除了質子，還有不帶電的中子維繫原子核。</td>
+        </tr>
+      </table>
+
+      <div class="tip-box" style="margin-top:6px;">
+        💡 <strong>發現順序口訣：</strong>「<strong>電、質、中</strong>」（湯姆森發現電子 → 拉塞福發現原子核與質子 → 查兌克發現中子）。
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>6-3 原子說與原子結構發展</span>
+        <span>第 7 頁 / 共 19 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 8 ==================== -->
+    <div class="page" id="page8">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國二理化（上）講義</span>
+        <span>第 6 章 物質的基本結構</span>
+        <span>P. 8</span>
+      </div>
+
+      <div class="section-title">
+        <span>6-3　原子結構（二）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #475569;">焦點四：原子內部模型、原子序、質量數與元素符號表示法</span>
+      </div>
+
+      <div class="task-title">1. 原子模型與空間分布</div>
+      <div style="display:flex; gap:16px; align-items:center; margin: 4px 0;">
+        <div style="flex:1;">
+      <div class="item-line interactive-item">(1) <strong>原子核：</strong>位於原子中心，體積極小但集中了原子<strong>幾乎所有的質量</strong>（含 <span class="ans-word">質子</span> 與 <span class="ans-word">中子</span>）。</div>
+      <div class="item-line interactive-item">(2) <strong>核外電子：</strong>帶負電的電子在核外廣大空間中高速運動，體積極小、質量可忽略。</div>
+      <div class="item-line interactive-item">(3) <strong>電中性原則：</strong>正常原子為電中性，故：</div>
+          <div style="text-align:center; background:#f8fafc; border:1px solid #cbd5e1; border-radius:6px; padding:6px; margin:4px 0; font-size:13pt;">
+            <strong>電中性時：</strong> <span class="ans-word">質子數</span> ＝ <span class="ans-word">電子數</span> ＝ <span class="ans-word">原子序</span>
+          </div>
+        </div>
+        <div style="text-align:center; flex-shrink:0; width:220px;">
+          <img src="../images/science-8-6-handout/image011.jpg" style="max-width:100%; border-radius:4px; border:1px solid #cbd5e1;" alt="原子結構示意圖">
+          <div style="font-size:10.5pt; color:#64748b;">▲ 原子內部微觀構造</div>
+        </div>
+      </div>
+
+      <div class="task-title" style="margin-top: 6px;">2. 原子序與質量數公式</div>
+      <div style="display:flex; gap:12px; margin: 4px 0; align-items:center;">
+        <div style="flex:1;">
+          <div class="interactive-item" style="background:#eff6ff; border:1.5px solid #93c5fd; border-radius:6px; padding:6px 12px; margin-bottom:6px; font-size:13pt;">
+            ① <strong>原子序（Z）：</strong>原子核內的 <strong>質子數</strong>，決定元素的種類與化學性質。
+          </div>
+          <div class="interactive-item" style="background:#f0fdf4; border:1.5px solid #86efac; border-radius:6px; padding:6px 12px; font-size:13pt;">
+            ② <strong>質量數（A）：</strong><strong>質子數 ＋ 中子數</strong>（整數，代表核內粒子總數）。
+          </div>
+        </div>
+        <div style="text-align:center; flex-shrink:0; width:160px; background:#fff; border:1px solid #cbd5e1; border-radius:6px; padding:6px;">
+          <div style="font-size:18pt; font-family:serif; line-height:1.2;">
+            <span class="nuclide"><span>A</span><span>Z</span></span>X
+          </div>
+          <div style="font-size:11pt; color:#475569; margin-top:4px;">
+            A：質量數（左上）<br>Z：原子序（左下）
+          </div>
+        </div>
+      </div>
+
+      <div class="task-title" style="margin-top: 6px;">3. 元素符號表示範例（以鋰 <span class="nuclide"><span>7</span><span>3</span></span>Li 為例）</div>
+      <div class="tip-box">
+        💡 對於 <span class="nuclide"><span>7</span><span>3</span></span>Li：<br>
+        • 原子序 $Z = 3$ $\rightarrow$ 質子數 ＝ <span class="ans-word">3</span> 個，電子數 ＝ <span class="ans-word">3</span> 個。<br>
+        • 質量數 $A = 7$ $\rightarrow$ 中子數 ＝ 質量數 − 質子數 ＝ $7 - 3 =$ <span class="ans-word">4</span> 個。
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>6-3 原子模型與表示法</span>
+        <span>第 8 頁 / 共 19 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 9 ==================== -->
+    <div class="page" id="page9">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國二理化（上）講義</span>
+        <span>第 6 章 物質的基本結構</span>
+        <span>P. 9</span>
+      </div>
+
+      <div class="section-title">
+        <span>6-3　隨堂實戰評量（一）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #475569;">粒子數質量計算、電中性原子、道耳頓原子說（第 1～4 題）</span>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ D ）</span> 1. 有甲、乙、丙、丁四種原子，其質子數、中子數如表所示，有關這四種原子的質量關係，下列敘述何者正確？<br><table class="custom-table" style="width:80%; margin:4px auto; font-size:11.5pt;"><tr><th>原子種類</th><th>質子數</th><th>中子數</th><th>質量數（質子＋中子）</th></tr><tr><td>甲</td><td>6</td><td>6</td><td>6 + 6 = 12</td></tr><tr><td>乙</td><td>6</td><td>7</td><td>6 + 7 = 13</td></tr><tr><td>丙</td><td>8</td><td>8</td><td>8 + 8 = 16</td></tr><tr><td>丁</td><td>8</td><td>10</td><td>8 + 10 = 18</td></tr></table>
+        </div>
+        <div class="qa-options">
+          <div>(A) 甲＝乙＜丙＝丁</div>
+          <div>(B) 甲＞乙＞丙＞丁</div>
+          <div>(C) 甲＜乙＝丙＜丁</div>
+          <div>(D) 甲＜乙＜丙＜丁</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】原子的質量主要由原子核決定，即質量數（質子數＋中子數）：甲質量數12、乙13、丙16、丁18，故質量大小為甲＜乙＜丙＜丁。答案選 (D)。
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ C ）</span> 2. 組成原子的三種基本粒子是電子、質子和中子，若某電中性原子的原子核含 Z 個質子和 Y 個中子，核外含 X 個電子，則下列對此電中性原子的敘述何者正確？
+        </div>
+        <div class="qa-options">
+          <div>(A) X＝Y</div>
+          <div>(B) Y＝Z</div>
+          <div>(C) X＝Z</div>
+          <div>(D) X＝Y＝Z</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】電中性原子中，正電荷總量等於負電荷總量，即質子數（Z）必等於核外電子數（X），因此 X＝Z。中子數 Y 不一定等於質子數。答案選 (C)。
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ C ）</span> 3. 科學家發現某些原子具有放射性，也就是原子能自動放射出一些固定粒子。據此推斷，當一種元素的原子經過放射變化後，變成了另一種元素的原子，它一定是放出了該原子的何種粒子？
+        </div>
+        <div class="qa-options">
+          <div>(A) 電子</div>
+          <div>(B) 中子</div>
+          <div>(C) 質子</div>
+          <div>(D) 原子核</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】決定元素種類的是「質子數」（原子序）。若原子變成另一種元素的原子，表示質子數發生了改變，故必放出了質子。答案選 (C)。
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ A ）</span> 4. 下列何者<strong>不是</strong>道耳頓所提出的「原子說」內容？
+        </div>
+        <div class="qa-options">
+          <div>(A) 物質發生化學反應時，會生成新原子</div>
+          <div>(B) 物質皆由不可被分割的原子所組成</div>
+          <div>(C) 化合物是由不同元素的原子以簡單整數比結合而成</div>
+          <div>(D) 化學反應將原子重新排列組成新物質</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】(A) 錯誤：化學反應中原子只是重新排列，絕不會生成新原子，原子不滅。(B)(C)(D) 皆為道耳頓原子說的原始內容。
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>6-3 隨堂評量（Q1～Q4）</span>
+        <span>第 9 頁 / 共 19 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 10 ==================== -->
+    <div class="page" id="page10">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國二理化（上）講義</span>
+        <span>第 6 章 物質的基本結構</span>
+        <span>P. 10</span>
+      </div>
+
+      <div class="section-title">
+        <span>6-3　隨堂實戰評量（二）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #475569;">原子模型辨識、小蘇打分解、碳同位素（第 5～8 題）</span>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ D ）</span> 5. 下列原子模型中，何者<strong>不是</strong>同一種元素？
+        </div>
+        <div style="text-align:center; margin: 4px 0;">
+          <img src="../images/science-8-6-handout/image015.jpg" style="max-height:90px; border-radius:4px; border:1px solid #cbd5e1;" alt="原子模型選項A">
+        </div>        <div class="qa-options">
+          <div>(A) 核內 2 質子、2 中子，核外 2 電子</div>
+          <div>(B) 核內 2 質子、1 中子，核外 2 電子</div>
+          <div>(C) 核內 2 質子、3 中子，核外 2 電子</div>
+          <div>(D) 核內 3 質子、3 中子，核外 3 電子</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】決定元素種類的是「質子數（原子序）」：(A)(B)(C) 的核內質子數皆為 2（均為氦元素，互為同位素）；(D) 核內質子數為 3（為鋰元素），非同一元素。答案選 (D)。
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ C ）</span> 6. 將碳酸氫鈉（$NaHCO<sub>3</sub>$）加熱分解，依據道耳頓的原子說，其生成物<strong>不可能</strong>是下列哪一種？
+        </div>
+        <div class="qa-options">
+          <div>(A) $CO<sub>2</sub>$</div>
+          <div>(B) $H<sub>2</sub>O$</div>
+          <div>(C) $NaCl$</div>
+          <div>(D) $Na<sub>2</sub>CO<sub>3</sub>$</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】反應物 $NaHCO<sub>3</sub>$ 含有鈉（Na）、氫（H）、碳（C）、氧（O）四種原子，不含氯（Cl）原子。化學反應中原子不會無中生有，故絕不可能生成含有氯的 $NaCl$。
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ A ）</span> 7. 有關 <span class="nuclide"><span>12</span><span>6</span></span>C、<span class="nuclide"><span>13</span><span>6</span></span>C、<span class="nuclide"><span>14</span><span>6</span></span>C 三種碳原子，下列敘述何者正確？
+        </div>
+        <div class="qa-options">
+          <div>(A) 此三種碳原子中的中子數不同</div>
+          <div>(B) 此三種碳原子中的電子數不同</div>
+          <div>(C) 此三種碳原子中的質量數相同</div>
+          <div>(D) 此三種碳原子中的質子數不同</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】此三種為同位素：左下角質子數皆為 6（質子數、電子數相同，化學性質相同）；左上角質量數分別為 12、13、14（中子數分別為 6、7、8，中子數不同）。故 (A) 正確。
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ B ）</span> 8. 下列有關原子結構的敘述，哪些正確？(甲)原子質量均勻分布於整個原子之中；(乙)中性原子的質子數和電子數相等；(丙)質子質量約為電子的1836倍；(丁)原子核中所含質子數一定和中子數相同。
+        </div>
+        <div class="qa-options">
+          <div>(A) 甲乙</div>
+          <div>(B) 乙丙</div>
+          <div>(C) 丙丁</div>
+          <div>(D) 甲丙</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】(甲)錯誤：原子質量幾乎全部集中在原子核；(乙)正確：電中性時質子數＝電子數；(丙)正確：質子質量約為電子1836倍；(丁)錯誤：質子數與中子數不一定相等（如碳-13、鋰-7）。故選乙丙。答案為 (B)。
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>6-3 隨堂評量（Q5～Q8）</span>
+        <span>第 10 頁 / 共 19 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 11 ==================== -->
+    <div class="page" id="page11">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國二理化（上）講義</span>
+        <span>第 6 章 物質的基本結構</span>
+        <span>P. 11</span>
+      </div>
+
+      <div class="section-title">
+        <span>6-4　週期表</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #475569;">焦點五：週期表規律性、橫列週期與縱行族、四大重要族性質</span>
+      </div>
+
+      <div class="task-title">1. 週期表的建立與排列規則</div>
+      <div class="item-line interactive-item">(1) <strong>排列依據：</strong>現今週期表是依據元素的 <span class="ans-word">原子序（質子數）</span> 由小到大排列，性質隨原子序呈現規律性與週期性。</div>
+      <div class="item-line interactive-item">(2) <strong>週期（橫列）：</strong>從上到下共有 <span class="ans-word">7</span> 個週期（同週期元素具有相同的電子殼層數）。</div>
+      <div class="item-line interactive-item">(3) <strong>族（縱行）：</strong>從左到右共分為 <span class="ans-word">1 ～ 18</span> 族。<strong>同族元素具有相似的 <span class="ans-word">化學</span> 性質</strong>。</div>
+      <div class="item-line interactive-item">(4) <strong>分區分布：</strong>左側與中間大多為 <span class="ans-word">金屬</span> 元素；右側大多為 <span class="ans-word">非金屬</span> 元素；交界處為半金屬（如矽、鍺）。</div>
+
+      <div class="task-title" style="margin-top: 8px;">2. 週期表四大家族重點特性</div>
+      <table class="custom-table" style="font-size:12pt; line-height:1.45;">
+        <tr><th style="width:18%;">家族名稱</th><th style="width:16%;">所屬族別</th><th style="width:26%;">代表元素</th><th style="width:40%;">關鍵特性與保存方式</th></tr>
+        <tr class="interactive-item">
+          <td style="font-weight:bold; background:#fee2e2;">鹼金屬</td>
+          <td>第 <span class="ans-word">1</span> 族<br>（IA族）</td>
+          <td>鋰（Li）、鈉（Na）、<br>鉀（K）、銣、銫</td>
+          <td class="align-left">• 質地柔軟可用刀切，密度小、熔點低。<br>• 活性極強，與水反應劇烈產生 <span class="ans-word">氫氣</span> 與鹼性水溶液，放出大量熱起火。<br>• 平時必須儲存於 <span class="ans-word">礦物油（石油）</span> 中。</td>
+        </tr>
+        <tr class="interactive-item">
+          <td style="font-weight:bold; background:#fef3c7;">鹼土金屬</td>
+          <td>第 <span class="ans-word">2</span> 族<br>（IIA族）</td>
+          <td>鈹（Be）、鎂（Mg）、<br>鈣（Ca）、鍶、鋇</td>
+          <td class="align-left">• 活性大，在自然界多以化合物存在地殼（土）中。<br>• 氧化物溶於水呈 <span class="ans-word">鹼</span> 性。<br>• 鎂、鈣、鋇的離子與碳酸根（$CO<sub>3</sub><sup>2-</sup>$）形成<strong>白色碳酸鹽沉澱</strong>。</td>
+        </tr>
+        <tr class="interactive-item">
+          <td style="font-weight:bold; background:#ecfdf5;">鹵素</td>
+          <td>第 <span class="ans-word">17</span> 族<br>（VIIA族）</td>
+          <td>氟（F）、氯（Cl）、<br>溴（Br）、碘（I）</td>
+          <td class="align-left">• 最 <span class="ans-word">活潑</span> 的非金屬元素家族，常溫下為雙原子分子（$F<sub>2</sub>, Cl<sub>2</sub>, Br<sub>2</sub>, I<sub>2</sub>$）。<br>• 具有毒性與刺激性，狀態多變：氟氣（淡黃氣）、氯氣（黃綠氣）、溴（紅棕液）、碘（紫黑固）。</td>
+        </tr>
+        <tr class="interactive-item">
+          <td style="font-weight:bold; background:#eff6ff;">鈍氣<br>（惰性氣體）</td>
+          <td>第 <span class="ans-word">18</span> 族<br>（VIIIA族）</td>
+          <td>氦（He）、氖（Ne）、<br>氬（Ar）、氪、氙、氡</td>
+          <td class="align-left">• 常溫常壓下皆為無色無味氣體，均為<strong>單原子分子</strong>。<br>• 化學性質極度安定，不易與其他物質反應。<br>• 氬氣常用於填裝鎢絲燈泡；氖氣用於霓虹燈。</td>
+        </tr>
+      </table>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>6-4 週期表與四大族</span>
+        <span>第 11 頁 / 共 19 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 12 ==================== -->
+    <div class="page" id="page12">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國二理化（上）講義</span>
+        <span>第 6 章 物質的基本結構</span>
+        <span>P. 12</span>
+      </div>
+
+      <div class="section-title">
+        <span>6-4　隨堂實戰評量（一）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #475569;">歸類依據、同族化學性質、鈉的活性（第 1～5 題）</span>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ B ）</span> 1. 元素週期表是以元素的何種性質作為歸類的依據？
+        </div>
+        <div class="qa-options">
+          <div>(A) 常溫時的狀態</div>
+          <div>(B) 化學性質</div>
+          <div>(C) 密度大小</div>
+          <div>(D) 顏色</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】週期表將元素依原子序排列，縱行稱為族，同族元素具有相似的「化學性質」。答案選 (B)。
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ D ）</span> 2. 有關週期表，下列敘述何者正確？
+        </div>
+        <div class="qa-options">
+          <div>(A) 週期表上共有 9 個族</div>
+          <div>(B) 週期表上共有 16 個週期</div>
+          <div>(C) 同週期的元素，其化學性質相似</div>
+          <div>(D) 同族的元素，其化學性質相似</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】週期表共有 7 個週期（橫列）與 18 族（縱行）。同族的元素化學性質相似（同週期化學性質不相似）。答案選 (D)。
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ A ）</span> 3. 有關鈉金屬的特性，下列敘述何者正確？
+        </div>
+        <div class="qa-options">
+          <div>(A) 鈉性質活潑，容易與水反應</div>
+          <div>(B) 鈉在常溫下為固體，質地堅硬不易變形</div>
+          <div>(C) 鈉與水反應後遇石蕊試紙呈紅色</div>
+          <div>(D) 一般而言，鈉都存放在酒精中</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】(A) 正確：鈉為鹼金屬，活性極大，與水劇烈反應。(B) 錯誤：鈉質地柔軟可用小刀切開。(C) 錯誤：水溶液呈鹼性，使石蕊試紙呈藍色。(D) 錯誤：鈉與酒精會反應，必須存放在礦物油中。
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ C ）</span> 4. 由週期表可以知道，下列四組元素，哪一組會具有類似的特性？
+        </div>
+        <div class="qa-options">
+          <div>(A) 鉀、鎂</div>
+          <div>(B) 鋁、鈣</div>
+          <div>(C) 鈹、鎂</div>
+          <div>(D) 鈉、鍶</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】具有類似化學性質的元素必須在「同一族（同一縱行）」：鈹（Be）與鎂（Mg）同屬於第 2 族（鹼土金屬族），特性最相似。答案選 (C)。
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ C ）</span> 5. 由週期表可知，下列哪一個元素與鈣同一族？
+        </div>
+        <div class="qa-options">
+          <div>(A) 鈉</div>
+          <div>(B) 金</div>
+          <div>(C) 鋇</div>
+          <div>(D) 銅</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】鈣（Ca）屬於第 2 族（鹼土金屬族：鈹、鎂、鈣、鍶、鋇），鋇（Ba）也是第 2 族元素，兩者同族。鈉是第 1 族。答案選 (C)。
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>6-4 隨堂評量（Q1～Q5）</span>
+        <span>第 12 頁 / 共 19 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 13 ==================== -->
+    <div class="page" id="page13">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國二理化（上）講義</span>
+        <span>第 6 章 物質的基本結構</span>
+        <span>P. 13</span>
+      </div>
+
+      <div class="section-title">
+        <span>6-4　隨堂實戰評量（二）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #475569;">橫列原子序規律、元素方格圖辨析、鹼金屬保存（第 6～9 題）</span>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ C ）</span> 6. 已知在週期表同一橫列中，由左而右依序有甲、乙、丙三種元素，則其中原子序最大者為下列何者？
+        </div>
+        <div class="qa-options">
+          <div>(A) 甲</div>
+          <div>(B) 乙</div>
+          <div>(C) 丙</div>
+          <div>(D) 無法確定</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】週期表在同一橫列（週期）中，原子序由左至右依序遞增，排在最右側的丙原子序最大。答案選 (C)。
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ D ）</span> 7. 如圖為週期表中氯元素的資料方格，從圖中<strong>不能</strong>獲知什麼資料？<br><div style="text-align:center; margin:5px 0;"><div style="display:inline-block; border:2px solid #334155; border-radius:6px; padding:6px 18px; font-size:13pt; background:#f8fafc;"><strong>17</strong><br><span style="font-size:16pt; font-weight:bold;">氯 Cl</span><br>35.45</div></div>
+        </div>
+        <div class="qa-options">
+          <div>(A) 原子核內所含質子數</div>
+          <div>(B) 原子核外所含電子數</div>
+          <div>(C) 常溫時屬於氣態</div>
+          <div>(D) 常溫時呈現黃綠色</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】方格資訊：原子序 17（代表核內質子數與電中性核外電子數為 17）；中文名稱「氯」有「气」部首代表常溫為氣態。但方格中沒有標註顏色（黃綠色），無法從圖中直接獲知。答案選 (D)。
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ A ）</span> 8. 週期表中最左邊一族的金屬元素（第 1 族，鋰、鈉、鉀等），又稱作什麼元素？
+        </div>
+        <div class="qa-options">
+          <div>(A) 鹼金屬元素</div>
+          <div>(B) 鹼土金屬元素</div>
+          <div>(C) 鹵素</div>
+          <div>(D) 鈍氣</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】最左邊第 1 族金屬稱為「鹼金屬元素」；第 2 族為鹼土金屬；第 17 族為鹵素；第 18 族為鈍氣。答案選 (A)。
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ C ）</span> 9. 胖多在整理實驗室時，發現有四種金屬：鈉、金、銅、鉀。若欲將之收藏分類，哪兩種元素必須儲存在礦物油中？
+        </div>
+        <div class="qa-options">
+          <div>(A) Na、Au</div>
+          <div>(B) Na、Cu</div>
+          <div>(C) Na、K</div>
+          <div>(D) Au、Cu</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】鈉（Na）與鉀（K）皆屬於第 1 族鹼金屬，化學活性極大，在空氣中易氧化且與水劇烈反應，因此平時必須隔絕空氣和水分，儲存在礦物油（石油）中。答案選 (C)。
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>6-4 隨堂評量（Q6～Q9）</span>
+        <span>第 13 頁 / 共 19 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 14 ==================== -->
+    <div class="page" id="page14">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國二理化（上）講義</span>
+        <span>第 6 章 物質的基本結構</span>
+        <span>P. 14</span>
+      </div>
+
+      <div class="section-title">
+        <span>6-5　分子與化學式（一）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #475569;">焦點六：分子概念、元素與化合物微觀模型、化學式書寫七大原則</span>
+      </div>
+
+      <div class="task-title">1. 分子的概念</div>
+      <div class="item-line interactive-item">(1) <strong>定義：</strong><span class="ans-word">分子</span> 是表現純物質化學特性的最小微粒，大多由 2 個或 2 個以上原子結合而成。</div>
+      <div class="item-line interactive-item">(2) <strong>分子的分類：</strong></div>
+      <div class="item-line interactive-item">&emsp;a. <strong>元素分子：</strong>由同種原子結合而成，如單原子分子 He，雙原子分子 O<sub>2</sub>、N<sub>2</sub>，三原子分子 O<sub>3</sub>（臭氧）。</div>
+      <div class="item-line interactive-item">&emsp;b. <strong>化合物分子：</strong>由不同種原子結合而成，如水 H<sub>2</sub>O、二氧化碳 CO<sub>2</sub>。</div>
+      <div class="item-line interactive-item">&emsp;c. <strong>非分子物質：</strong>金屬（如 Fe、Cu、Na）與離子化合物（如食鹽 NaCl）是由連續網絡排列而成，無獨立單一分子。</div>
+
+      <div class="task-title" style="margin-top: 6px;">2. 化學式書寫原則</div>
+      <div class="item-line interactive-item">(1) <strong>定義：</strong>利用 <span class="ans-word">元素符號</span> 及 <span class="ans-word">數字</span> 表示純物質組成的式子。分子式能表達一個分子中所含原子的種類與個數。</div>
+      <div class="item-line interactive-item">(2) <strong>七大書寫規則：</strong></div>
+      <div style="font-size:12.5pt; line-height:1.45; margin:4px 6px;">
+        <div class="interactive-item" style="background:#f8fafc; padding:4px 8px; border-radius:4px; margin-bottom:4px; border:1px solid #e2e8f0;">
+          ① <strong>單原子氣體與金屬：</strong>直接以符號表示，如氦 <span class="ans-word">He</span>、鈉 <span class="ans-word">Na</span>、鐵 <span class="ans-word">Fe</span>、銅 <span class="ans-word">Cu</span>。
+        </div>
+        <div class="interactive-item" style="background:#f8fafc; padding:4px 8px; border-radius:4px; margin-bottom:4px; border:1px solid #e2e8f0;">
+          ② <strong>常見氣體分子：</strong>氧氣為 <span class="ans-word">O<sub>2</sub></span>、氮氣為 <span class="ans-word">N<sub>2</sub></span>、氫氣為 <span class="ans-word">H<sub>2</sub></span>、臭氧為 <span class="ans-word">O<sub>3</sub></span>。
+        </div>
+        <div class="interactive-item" style="background:#f8fafc; padding:4px 8px; border-radius:4px; margin-bottom:4px; border:1px solid #e2e8f0;">
+          ③ <strong>多個分子表示法：</strong>數字寫在最前面，例如 2 個水分子寫成 <span class="ans-word">2H<sub>2</sub>O</span>。
+        </div>
+        <div class="interactive-item" style="background:#f8fafc; padding:4px 8px; border-radius:4px; margin-bottom:4px; border:1px solid #e2e8f0;">
+          ④ <strong>金屬＋非金屬：</strong>金屬放左邊，非金屬放右邊（與中文唸法相反！），如氯化鈉 <span class="ans-word">NaCl</span>、氯化鈣 <span class="ans-word">CaCl<sub>2</sub></span>。
+        </div>
+        <div class="interactive-item" style="background:#f8fafc; padding:4px 8px; border-radius:4px; margin-bottom:4px; border:1px solid #e2e8f0;">
+          ⑤ <strong>含氧化合物：</strong>氧通常寫在後面，如二氧化碳 <span class="ans-word">CO<sub>2</sub></span>、氧化鎂 <span class="ans-word">MgO</span>、氧化銅 <span class="ans-word">CuO</span>。
+        </div>
+        <div class="interactive-item" style="background:#f8fafc; padding:4px 8px; border-radius:4px; margin-bottom:4px; border:1px solid #e2e8f0;">
+          ⑥ <strong>有機化合物（含碳、氫、氧）：</strong>順序為碳 → 氫 → 氧，如葡萄糖 <span class="ans-word">C<sub>6</sub>H<sub>12</sub>O<sub>6</sub></span>。
+        </div>
+        <div class="interactive-item" style="background:#f8fafc; padding:4px 8px; border-radius:4px; border:1px solid #e2e8f0;">
+          ⑦ <strong>特定原子團：</strong>通常寫在後面，如氫氧化鈉 <span class="ans-word">NaOH</span>、硫酸 <span class="ans-word">H<sub>2</sub>SO<sub>4</sub></span>、碳酸鈣 <span class="ans-word">CaCO<sub>3</sub></span>。
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>6-5 分子與化學式（一）</span>
+        <span>第 14 頁 / 共 19 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 15 ==================== -->
+    <div class="page" id="page15">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國二理化（上）講義</span>
+        <span>第 6 章 物質的基本結構</span>
+        <span>P. 15</span>
+      </div>
+
+      <div class="section-title">
+        <span>6-5　分子與化學式（二）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #475569;">焦點七：國中必背常見化學式完整對照速查表</span>
+      </div>
+
+      <table class="custom-table" style="font-size:12.5pt; line-height:1.45;">
+        <tr><th style="width:20%;">物質中文名稱</th><th style="width:13%;">化學式</th><th style="width:20%;">物質中文名稱</th><th style="width:13%;">化學式</th><th style="width:20%;">物質中文名稱</th><th style="width:14%;">化學式</th></tr>
+        <tr class="interactive-item">
+          <td>氦氣</td><td><span class="ans-word">He</span></td>
+          <td>氯化鈉（食鹽）</td><td><span class="ans-word">NaCl</span></td>
+          <td>葡萄糖</td><td><span class="ans-word">C<sub>6</sub>H<sub>12</sub>O<sub>6</sub></span></td>
+        </tr>
+        <tr class="interactive-item">
+          <td>氫氣</td><td><span class="ans-word">H<sub>2</sub></span></td>
+          <td>氯化鈣</td><td><span class="ans-word">CaCl<sub>2</sub></span></td>
+          <td>蔗糖</td><td><span class="ans-word">C<sub>12</sub>H<sub>22</sub>O<sub>11</sub></span></td>
+        </tr>
+        <tr class="interactive-item">
+          <td>氮氣</td><td><span class="ans-word">N<sub>2</sub></span></td>
+          <td>氧化鎂</td><td><span class="ans-word">MgO</span></td>
+          <td>氫氧化鈉</td><td><span class="ans-word">NaOH</span></td>
+        </tr>
+        <tr class="interactive-item">
+          <td>氧氣</td><td><span class="ans-word">O<sub>2</sub></span></td>
+          <td>氧化銅</td><td><span class="ans-word">CuO</span></td>
+          <td>氫氧化鈣（熟石灰）</td><td><span class="ans-word">Ca(OH)<sub>2</sub></span></td>
+        </tr>
+        <tr class="interactive-item">
+          <td>臭氧</td><td><span class="ans-word">O<sub>3</sub></span></td>
+          <td>二氧化錳</td><td><span class="ans-word">MnO<sub>2</sub></span></td>
+          <td>硫酸</td><td><span class="ans-word">H<sub>2</sub>SO<sub>4</sub></span></td>
+        </tr>
+        <tr class="interactive-item">
+          <td>水</td><td><span class="ans-word">H<sub>2</sub>O</span></td>
+          <td>二氧化碳</td><td><span class="ans-word">CO<sub>2</sub></span></td>
+          <td>鹽酸（氯化氫）</td><td><span class="ans-word">HCl</span></td>
+        </tr>
+        <tr class="interactive-item">
+          <td>雙氧水（過氧化氫）</td><td><span class="ans-word">H<sub>2</sub>O<sub>2</sub></span></td>
+          <td>一氧化碳</td><td><span class="ans-word">CO</span></td>
+          <td>硝酸</td><td><span class="ans-word">HNO<sub>3</sub></span></td>
+        </tr>
+        <tr class="interactive-item">
+          <td>氨氣（阿摩尼亞）</td><td><span class="ans-word">NH<sub>3</sub></span></td>
+          <td>碳酸鈣（大理石）</td><td><span class="ans-word">CaCO<sub>3</sub></span></td>
+          <td>硝酸鉀</td><td><span class="ans-word">KNO<sub>3</sub></span></td>
+        </tr>
+        <tr class="interactive-item">
+          <td>甲烷（天然氣）</td><td><span class="ans-word">CH<sub>4</sub></span></td>
+          <td>碳酸鈉（純鹼）</td><td><span class="ans-word">Na<sub>2</sub>CO<sub>3</sub></span></td>
+          <td>硫酸銅</td><td><span class="ans-word">CuSO<sub>4</sub></span></td>
+        </tr>
+        <tr class="interactive-item">
+          <td>二氧化硫</td><td><span class="ans-word">SO<sub>2</sub></span></td>
+          <td>碳酸氫鈉（小蘇打）</td><td><span class="ans-word">NaHCO<sub>3</sub></span></td>
+          <td>酒精（乙醇）</td><td><span class="ans-word">C<sub>2</sub>H<sub>5</sub>OH</span></td>
+        </tr>
+      </table>
+
+      <div class="tip-box" style="margin-top:8px;">
+        💡 <strong>化學式記憶小技巧：</strong><br>
+        • 中文「某化某」順序顛倒：如「氯化鈉」符號是 Na 先寫，Cl 後寫 → NaCl。<br>
+        • 數字代表原子比例：如二氧化碳有 2 個氧，寫為 CO<sub>2</sub>；氯化鈣鈣帶正 2 價、氯帶負 1 價，結合比為 1 : 2 → CaCl<sub>2</sub>。
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>6-5 常見化學式大對照</span>
+        <span>第 15 頁 / 共 19 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 16 ==================== -->
+    <div class="page" id="page16">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國二理化（上）講義</span>
+        <span>第 6 章 物質的基本結構</span>
+        <span>P. 16</span>
+      </div>
+
+      <div class="section-title">
+        <span>6-5　隨堂實戰評量（一）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #475569;">微觀粒子模型判斷、化學式規則、化學式正誤（第 1～3 題）</span>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ C ）</span> 1. 甲、乙、丙、丁各物質，其組成粒子如圖所示，下列何者屬於<strong>元素</strong>？
+        </div>
+        <div style="text-align:center; margin: 4px 0;">
+          <img src="../images/science-8-6-handout/image029.jpg" style="max-height:75px; border-radius:4px; border:1px solid #cbd5e1;" alt="粒子模型甲乙丙丁">
+        </div>        <div class="qa-options">
+          <div>(A) 乙</div>
+          <div>(B) 丙</div>
+          <div>(C) 甲、丁</div>
+          <div>(D) 乙、丙</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】微觀分析：甲（同一種單原子純物質，為元素）；乙（由黑白兩種原子構成的化合物）；丙（含純白雙原子與純黑雙原子，為混合物）；丁（由同種原子構成的雙原子分子，為元素）。故甲、丁屬於元素。答案選 (C)。
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ B ）</span> 2. 有關化學式的寫法，下列何者<strong>錯誤</strong>？
+        </div>
+        <div class="qa-options">
+          <div>(A) 氧化物中的氧寫在右邊</div>
+          <div>(B) 金屬化合物中金屬放右邊</div>
+          <div>(C) 通常具有特定性質的原子團寫在右邊</div>
+          <div>(D) 有機化合物碳、氫、氧的排列順序中，碳排在最左邊</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】(B) 錯誤：金屬化合物中，金屬符號寫在「左邊（前面）」，非金屬符號寫在右邊（例如 NaCl、CaO）。(A)(C)(D) 皆為正確規則。
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ C ）</span> 3. Na<sub>2</sub>Cl、KNO<sub>3</sub>、MnO<sub>2</sub>、Ca<sub>2</sub>CO<sub>3</sub>、HO<sub>2</sub>。以上 5 個化學式中，寫錯的有幾個呢？
+        </div>
+        <div class="qa-options">
+          <div>(A) 1 個</div>
+          <div>(B) 2 個</div>
+          <div>(C) 3 個</div>
+          <div>(D) 4 個</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】錯誤分析：① Na<sub>2</sub>Cl 錯誤（應為 NaCl）；② KNO<sub>3</sub> 正確；③ MnO<sub>2</sub> 正確；④ Ca<sub>2</sub>CO<sub>3</sub> 錯誤（應為 CaCO<sub>3</sub>）；⑤ HO<sub>2</sub> 錯誤（雙氧水應為 H<sub>2</sub>O<sub>2</sub>、水為 H<sub>2</sub>O）。共有 3 個寫錯。答案選 (C)。
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>6-5 隨堂評量（一）</span>
+        <span>第 16 頁 / 共 19 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 17 ==================== -->
+    <div class="page" id="page17">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國二理化（上）講義</span>
+        <span>第 6 章 物質的基本結構</span>
+        <span>P. 17</span>
+      </div>
+
+      <div class="section-title">
+        <span>6-5　隨堂實戰評量（二）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #475569;">元素與化合物微觀概念、純物質辨析（第 4～5 題）</span>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ A ）</span> 4. 下列哪一物質<strong>不是</strong>元素？
+        </div>
+        <div class="qa-options">
+          <div>(A) 水</div>
+          <div>(B) 氧</div>
+          <div>(C) 鈉</div>
+          <div>(D) 氦</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】水（H<sub>2</sub>O）由氫與氧結合而成，為化合物。氧（O<sub>2</sub>）、鈉（Na）、氦（He）皆為元素。答案選 (A)。
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block interactive-item">
+        <div class="qa-header">
+          <span class="qa-bracket">（ D ）</span> 5. 關於元素和化合物，下列敘述何者<strong>錯誤</strong>？
+        </div>
+        <div class="qa-options">
+          <div>(A) 元素具有固定的性質</div>
+          <div>(B) 化合物不能用物理方法分解為更簡單的物質</div>
+          <div>(C) 食鹽是一種化合物</div>
+          <div>(D) 化合物是混合物，故無一定的性質</div>
+        </div>
+        <div class="calc-workspace">
+          <div class="calc-solution">
+            【解析】(D) 錯誤：化合物屬於「純物質」，具有固定的組成比例與固定的物理/化學性質（固定熔點與沸點），絕非混合物！
+          </div>
+        </div>
+      </div>
+
+      <div class="tip-box" style="margin-top:18px; font-size:12.5pt; line-height:1.55;">
+        🎯 <strong>重點回顧：純物質與混合物微觀辨析法</strong><br>
+        • <strong>元素（單質）：</strong>由「同一種原子」組成，可以是單原子分子（如 He、Ne）、雙原子分子（如 O<sub>2</sub>、N<sub>2</sub>）、多原子分子（如 O<sub>3</sub>）或巨大網絡金屬（如 Fe、Cu）。<br>
+        • <strong>化合物：</strong>由「兩種或兩種以上不同原子」以一定比例化合形成的純物質（如 H<sub>2</sub>O、CO<sub>2</sub>、NaCl）。具有固定的化學組成與固定的熔點、沸點。<br>
+        • <strong>混合物：</strong>由兩種或兩種以上純物質混合而成，沒有固定的熔點、沸點（如空氣、食鹽水、黃銅、粗鹽）。
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>6-5 隨堂評量（二）</span>
+        <span>第 17 頁 / 共 19 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 18 ==================== -->
+    <div class="page" id="page18">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國二理化（上）講義</span>
+        <span>第 6 章 物質的基本結構</span>
+        <span>P. 18</span>
+      </div>
+
+      <div class="section-title">
+        <span>第 6 章　核心重點整理（一）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #475569;">6-1 元素與化合物 ｜ 6-2 常見元素 ｜ 6-3 原子結構 精華挖空檢測</span>
+      </div>
+
+      <div style="font-size:13pt; line-height:1.55;">
+        <div class="task-title">6-1 元素與化合物</div>
+      <div class="item-line interactive-item">1. <span class="ans-word">元素</span>：無法再用化學方法分解的純物質（如金、氧氣）。</div>
+      <div class="item-line interactive-item">2. <span class="ans-word">化合物</span>：由兩種或兩種以上元素以一定比例組合的純物質（如水、食鹽）。</div>
+      <div class="item-line interactive-item">3. 元素符號取英/拉丁文首字母大寫；中文命名金屬為「金」部，固態非金屬為「石」部，液態為「水」部（汞、溴），氣態為「气」部。</div>
+
+        <div class="task-title" style="margin-top:5px;">6-2 生活中常見的元素</div>
+      <div class="item-line interactive-item">1. 唯一的液態金屬為 <span class="ans-word">汞（水銀，Hg）</span>；唯一的液態非金屬為 <span class="ans-word">溴（Br）</span>。</div>
+      <div class="item-line interactive-item">2. 金屬延展性最佳為 <span class="ans-word">金（Au）</span>；導電與導熱性最好為 <span class="ans-word">銀（Ag）</span>，居次且做電線為 <span class="ans-word">銅（Cu）</span>。</div>
+      <div class="item-line interactive-item">3. 鋁（Al）密度小，表面能生成緻密 <span class="ans-word">氧化鋁</span> 保護層防止內部生鏽。</div>
+      <div class="item-line interactive-item">4. 唯一可導電的非金屬元素為 <span class="ans-word">石墨（碳，C）</span>；半導體工業基石為 <span class="ans-word">矽（Si）</span>。</div>
+
+        <div class="task-title" style="margin-top:5px;">6-3 原子結構</div>
+      <div class="item-line interactive-item">1. 道耳頓原子說：物質由不可分割的 <span class="ans-word">原子</span> 組成；化學反應只是原子間 <span class="ans-word">重新排列</span>，原子不滅。</div>
+      <div class="item-line interactive-item">2. 基本粒子發現順序：<span class="ans-word">電子（湯姆森）</span> → <span class="ans-word">質子（拉塞福）</span> → <span class="ans-word">中子（查兌克）</span>。</div>
+      <div class="item-line interactive-item">3. 原子質量集中於體積極小的 <span class="ans-word">原子核</span>（質子＋中子）。質子質量約為電子質量的 <span class="ans-word">1836</span> 倍。</div>
+      <div class="item-line interactive-item">4. <strong>原子序 ＝ <span class="ans-word">質子數</span> ＝ 電子數</strong>（電中性時）。<strong>質量數 ＝ <span class="ans-word">質子數 ＋ 中子數</span></strong>。</div>
+      </div>
+
+      <div style="text-align:center; margin-top:6px;">
+        <img src="../images/science-8-6-handout/image032.png" style="max-height:85px; border-radius:4px; border:1px solid #cbd5e1;" alt="原子微觀構造">
+        <div style="font-size:10.5pt; color:#64748b;">▲ 原子內部基本粒子構造</div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>第 6 章 重點整理（一）</span>
+        <span>第 18 頁 / 共 19 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 19 ==================== -->
+    <div class="page" id="page19">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國二理化（上）講義</span>
+        <span>第 6 章 物質的基本結構</span>
+        <span>P. 19</span>
+      </div>
+
+      <div class="section-title">
+        <span>第 6 章　核心重點整理（二）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #475569;">6-4 週期表四大族 ｜ 6-5 分子與化學式 精華挖空檢測</span>
+      </div>
+
+      <div style="font-size:13pt; line-height:1.55;">
+        <div class="task-title">6-4 週期表四大重要家族</div>
+      </div>
+      <table class="custom-table" style="font-size:12pt; line-height:1.4; margin-top:2px;">
+        <tr><th>家族名稱</th><th>族別</th><th>代表元素</th><th>核心考點與特性</th></tr>
+        <tr class="interactive-item">
+          <td><span class="ans-word">鹼金屬</span></td>
+          <td>第 1 族</td>
+          <td>鋰（Li）、鈉（Na）、鉀（K）</td>
+          <td class="align-left">質軟、熔點低，與水劇烈反應產生 <span class="ans-word">氫氣</span> 與鹼性水溶液，儲存於 <span class="ans-word">礦物油</span> 中。</td>
+        </tr>
+        <tr class="interactive-item">
+          <td><span class="ans-word">鹼土金屬</span></td>
+          <td>第 2 族</td>
+          <td>鎂（Mg）、鈣（Ca）、鋇（Ba）</td>
+          <td class="align-left">氧化物溶於水呈鹼性，其離子與碳酸根結合產生 <span class="ans-word">白色碳酸鹽沉澱</span>。</td>
+        </tr>
+        <tr class="interactive-item">
+          <td><span class="ans-word">鹵素</span></td>
+          <td>第 17 族</td>
+          <td>氟（F）、氯（Cl）、溴（Br）、碘（I）</td>
+          <td class="align-left">最活潑的非金屬，具毒性與刺激性，常態為 <span class="ans-word">雙原子分子</span>。</td>
+        </tr>
+        <tr class="interactive-item">
+          <td><span class="ans-word">鈍氣（惰性氣體）</span></td>
+          <td>第 18 族</td>
+          <td>氦（He）、氖（Ne）、氬（Ar）</td>
+          <td class="align-left">化學性質最安定不易反應，常態皆為 <span class="ans-word">單原子分子</span>。</td>
+        </tr>
+      </table>
+
+      <div style="font-size:13pt; line-height:1.55; margin-top:6px;">
+        <div class="task-title">6-5 分子與化學式</div>
+      <div class="item-line interactive-item">1. <span class="ans-word">分子</span> 是表現物質化學特性的最小微粒；由元素符號與數字表示組成的式子稱為 <span class="ans-word">化學式</span>。</div>
+      <div class="item-line interactive-item">2. <strong>微觀粒子圖判斷重點：</strong></div>
+      <div class="item-line interactive-item">&emsp;• 只含同一種顏色且大小相同原子 → <span class="ans-word">元素</span>。</div>
+      <div class="item-line interactive-item">&emsp;• 每個分子由兩種或以上不同原子固定結合 → <span class="ans-word">化合物</span>。</div>
+      <div class="item-line interactive-item">&emsp;• 箱內有兩種或兩種以上獨立不同分子 → <span class="ans-word">混合物</span>。</div>
+      <div class="item-line interactive-item">3. <strong>國中必背十大化學式快速通關：</strong>水 <span class="ans-word">H<sub>2</sub>O</span>、雙氧水 <span class="ans-word">H<sub>2</sub>O<sub>2</sub></span>、食鹽 <span class="ans-word">NaCl</span>、小蘇打 <span class="ans-word">NaHCO<sub>3</sub></span>、碳酸鈣 <span class="ans-word">CaCO<sub>3</sub></span>、二氧化碳 <span class="ans-word">CO<sub>2</sub></span>、葡萄糖 <span class="ans-word">C<sub>6</sub>H<sub>12</sub>O<sub>6</sub></span>、氧化銅 <span class="ans-word">CuO</span>、硫酸 <span class="ans-word">H<sub>2</sub>SO<sub>4</sub></span>、氫氧化鈉 <span class="ans-word">NaOH</span>。</div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中理化</span>
+        <span>第 6 章 重點整理（二）</span>
+        <span>第 19 頁 / 共 19 頁</span>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof renderMathInElement === 'function') {
+        renderMathInElement(document.body, { delimiters: [{left:'$',right:'$',display:false},{left:'$$',right:'$$',display:true}], throwOnError: false });
+      }
+    });
+
+    let allShown = false;
+    function toggleAllAnswers() {
+      allShown = !allShown;
+      document.body.classList.toggle('show-ans', allShown);
+      document.getElementById('ansIcon').textContent = allShown ? '🙈' : '👁️';
+      document.getElementById('toggleAllAnsBtn').classList.toggle('active', allShown);
+    }
+
+    document.addEventListener('click', function(e) {
+      if (document.body.classList.contains('pen-mode')) return;
+      const targetAns = e.target.closest('.ans-word, .qa-bracket, .ans-slot, .calc-solution, .correct-choice');
+      if (targetAns) {
+        targetAns.classList.toggle('revealed');
+        e.stopPropagation();
+        return;
+      }
+      const item = e.target.closest('.interactive-item');
+      if (item) {
+        item.classList.toggle('show-one');
+      }
+    });
+
+    document.addEventListener('dblclick', function(e) {
+      if (document.body.classList.contains('pen-mode')) return;
+      const targetAns = e.target.closest('.ans-word, .qa-bracket, .ans-slot, .calc-solution, .correct-choice');
+      if (targetAns) {
+        targetAns.classList.toggle('revealed');
+        e.stopPropagation();
+      }
+    });
+
+    function toggleTocMenu(e) {
+      e.stopPropagation();
+      document.getElementById('tocMenu').classList.toggle('show');
+    }
+    document.addEventListener('click', () => { document.getElementById('tocMenu').classList.remove('show'); });
+
+    function jumpTo(id) {
+      const el = document.getElementById(id);
+      if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      document.getElementById('tocMenu').classList.remove('show');
+    }
+
+    let penMode = false, penColor = 'rgba(250,204,21,0.45)', penSize = 3;
+    let currentCanvas = null, ctx = null, drawing = false;
+    const canvases = document.querySelectorAll('.drawing-canvas');
+
+    function togglePenMode() {
+      penMode = !penMode;
+      document.body.classList.toggle('pen-mode', penMode);
+      document.getElementById('penBtn').classList.toggle('active', penMode);
+      document.getElementById('penOptions').style.display = penMode ? 'flex' : 'none';
+      canvases.forEach(c => {
+        const page = c.parentElement;
+        c.width = page.offsetWidth;
+        c.height = page.offsetHeight;
+      });
+    }
+
+    function setPenColor(color, el) {
+      penColor = color;
+      document.querySelectorAll('.color-dot').forEach(d => d.classList.remove('active'));
+      el.classList.add('active');
+    }
+
+    function setPenSize(size, el) {
+      penSize = size;
+      document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+      el.classList.add('active');
+    }
+
+    function getPos(e, canvas) {
+      const rect = canvas.getBoundingClientRect();
+      if (e.touches) return { x: e.touches[0].clientX - rect.left, y: e.touches[0].clientY - rect.top };
+      return { x: e.clientX - rect.left, y: e.clientY - rect.top };
+    }
+
+    canvases.forEach(canvas => {
+      canvas.addEventListener('mousedown', e => {
+        if (!penMode) return;
+        drawing = true; currentCanvas = canvas;
+        ctx = canvas.getContext('2d');
+        ctx.strokeStyle = penColor; ctx.lineWidth = penSize;
+        ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+        const p = getPos(e, canvas); ctx.beginPath(); ctx.moveTo(p.x, p.y);
+      });
+      canvas.addEventListener('mousemove', e => {
+        if (!drawing || currentCanvas !== canvas) return;
+        const p = getPos(e, canvas); ctx.lineTo(p.x, p.y); ctx.stroke();
+      });
+      canvas.addEventListener('mouseup', () => { drawing = false; });
+      canvas.addEventListener('touchstart', e => {
+        if (!penMode) return; e.preventDefault();
+        drawing = true; currentCanvas = canvas;
+        ctx = canvas.getContext('2d');
+        ctx.strokeStyle = penColor; ctx.lineWidth = penSize;
+        ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+        const p = getPos(e, canvas); ctx.beginPath(); ctx.moveTo(p.x, p.y);
+      }, { passive: false });
+      canvas.addEventListener('touchmove', e => {
+        if (!drawing) return; e.preventDefault();
+        const p = getPos(e, canvas); ctx.lineTo(p.x, p.y); ctx.stroke();
+      }, { passive: false });
+      canvas.addEventListener('touchend', () => { drawing = false; });
+    });
+
+    function clearAllDrawings() {
+      canvases.forEach(c => { const ctx2 = c.getContext('2d'); ctx2.clearRect(0,0,c.width,c.height); });
+    }
+  </script>
+</body>
+</html>
