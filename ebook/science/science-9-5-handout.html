@@ -1,0 +1,1442 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>國三地球科學（上）第 5 章 地球的環境 互動電子書</title>
+  <!-- 電子書目錄身分標記（見 SKILL.md §11 與 AGENTS.md） -->
+  <meta name="ebook:subject" content="science">
+  <meta name="ebook:grade" content="9">
+  <meta name="ebook:unit" content="5">
+  <meta name="ebook:title" content="國三地球科學（上）第 5 章 地球的環境 互動電子書">
+  <meta name="ebook:type" content="handout">
+  <meta name="ebook:pages" content="13">
+  <meta name="ebook:level" content="std">
+  <meta name="ebook:summary" content="國三地球科學（上）第5章地球的環境完整互動教學講義（全13頁寬裕舒展無截斷版），涵蓋：水體的分布與比例、地下水成因與超抽地層下陷、全球水循環歷程、地表內營力與外營力比較、風化/侵蝕/搬運/沉積作用、四大外營力地形景觀、河道與海岸線動態平衡、火成岩/沉積岩/變質岩三大成因與特徵、臺灣岩石地理分布、常見造岩礦物特性與應用，以及全章核心重點精華檢測。">
+  <style>
+    @page { size: A4 portrait; margin: 10mm 12mm; }
+    * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body {
+      margin: 0; padding: 0; background-color: #f1f5f9;
+      font-family: "Times New Roman", "標楷體", "DFKai-SB", "BiauKai", serif;
+      font-size: 13.5pt; line-height: 1.5; color: #111;
+    }
+
+    /* 課堂懸浮工具列 */
+    .classroom-toolbar {
+      position: fixed; top: 14px; right: 20px; z-index: 9999;
+      display: flex; align-items: center; gap: 6px;
+      background: rgba(255, 255, 255, 0.96); padding: 5px 10px;
+      border-radius: 40px; box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      border: 1px solid #cbd5e1; backdrop-filter: blur(8px);
+    }
+    .tool-btn {
+      width: 36px; height: 36px; border-radius: 50%; border: 1px solid #cbd5e1;
+      background: #fff; color: #334155; font-size: 15px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.15s ease; outline: none; text-decoration: none;
+    }
+    .tool-btn:hover { background: #f8fafc; border-color: #94a3b8; transform: translateY(-1px); }
+    .tool-btn.active { background: #0284c7; color: #fff; border-color: #0284c7; }
+    .btn-toggle-ans { background: #eff6ff; border-color: #bfdbfe; color: #1d4ed8; font-weight: bold; }
+    .btn-toggle-ans.revealed { background: #fef2f2; border-color: #fecaca; color: #dc2626; }
+
+    /* 目錄跳轉選單 */
+    .toc-menu {
+      display: none; position: absolute; top: 46px; right: 0;
+      background: #fff; border: 1px solid #cbd5e1; border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15); width: 340px; max-height: 480px;
+      overflow-y: auto; z-index: 10000; padding: 6px 0; font-family: sans-serif;
+    }
+    .toc-menu.show { display: block; }
+    .toc-menu-title {
+      font-size: 11pt; font-weight: bold; padding: 8px 16px; color: #0284c7;
+      border-bottom: 1px solid #e2e8f0; background: #f8fafc;
+    }
+    .toc-menu-item {
+      padding: 7px 16px; font-size: 10.5pt; color: #334155; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center;
+      border-bottom: 1px dashed #f1f5f9; transition: background 0.1s;
+    }
+    .toc-menu-item:hover { background: #f0f9ff; color: #0284c7; }
+    .toc-page-badge {
+      font-size: 9pt; background: #e0f2fe; color: #0369a1;
+      padding: 1px 7px; border-radius: 12px; font-weight: bold;
+    }
+
+    /* 畫筆顏色選單 */
+    .pen-options {
+      display: none; position: absolute; top: 46px; right: 50px;
+      background: #fff; border: 1px solid #cbd5e1; border-radius: 20px;
+      padding: 4px 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      z-index: 10000; align-items: center; gap: 6px;
+    }
+    .pen-options.show { display: flex; }
+    .color-dot {
+      width: 18px; height: 18px; border-radius: 50%; cursor: pointer;
+      border: 2px solid transparent; transition: transform 0.1s;
+    }
+    .color-dot.active { border-color: #0f172a; transform: scale(1.15); }
+    .size-picker { display: flex; gap: 3px; align-items: center; }
+    .size-btn {
+      font-size: 10px; padding: 2px 5px; border-radius: 4px; border: 1px solid #cbd5e1;
+      background: #f8fafc; cursor: pointer;
+    }
+    .size-btn.active { background: #0284c7; color: #fff; border-color: #0284c7; }
+
+    /* 頁面容器 */
+    .pages-container {
+      display: flex; flex-direction: column; align-items: center;
+      padding: 24px 0 80px 0; gap: 24px;
+    }
+    .page {
+      position: relative; width: 210mm; min-height: 297mm; max-height: 297mm;
+      padding: 10mm 14mm 8mm 14mm; background: #fff;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08); border-radius: 2px;
+      overflow: hidden; display: flex; flex-direction: column; justify-content: space-between;
+    }
+
+    /* 繪圖畫布 */
+    .drawing-canvas {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      pointer-events: none; z-index: 50;
+    }
+    body.pen-active .drawing-canvas { pointer-events: auto; cursor: crosshair; }
+
+    /* 頁首與頁尾 */
+    .page-header {
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 10.5pt; color: #64748b; border-bottom: 1.5px solid #0284c7;
+      padding-bottom: 4px; margin-bottom: 8px; font-weight: bold;
+    }
+    .page-footer {
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 9.5pt; color: #94a3b8; border-top: 1px solid #e2e8f0;
+      padding-top: 4px; margin-top: auto;
+    }
+
+    /* 大標題與副標題 */
+    .section-title {
+      font-size: 14pt; font-weight: bold; color: #0f172a;
+      display: flex; justify-content: space-between; align-items: baseline;
+      border-left: 4.5px solid #0284c7; padding-left: 8px; margin: 4px 0 8px 0;
+    }
+    .task-title {
+      font-size: 12.5pt; font-weight: bold; color: #0369a1;
+      margin: 6px 0 4px 0; display: flex; align-items: center; gap: 4px;
+    }
+
+    /* 表格設計 */
+    .concept-table {
+      width: 100%; border-collapse: collapse; margin: 4px 0;
+      font-size: 11pt; line-height: 1.45;
+    }
+    .concept-table th {
+      background: #f0f9ff; color: #0369a1; font-weight: bold;
+      border: 1px solid #cbd5e1; padding: 5px 8px; text-align: center;
+    }
+    .concept-table td {
+      border: 1px solid #cbd5e1; padding: 4.5px 8px; vertical-align: middle;
+    }
+
+    /* 列表與行高 */
+    .item-line { margin: 3px 0; line-height: 1.5; font-size: 12.5pt; }
+
+    /* 提示與重點外框 */
+    .tip-box {
+      background: #f8fafc; border: 1.2px solid #bae6fd; border-radius: 6px;
+      padding: 8px 12px; margin-top: 8px;
+    }
+    .tip-title {
+      font-size: 11pt; font-weight: bold; color: #0284c7; margin-bottom: 3px;
+    }
+
+    /* 題目排版 */
+    .q-item {
+      margin: 6px 0; padding: 6px 8px; border-radius: 6px;
+      background: #fafafa; border: 1px solid #f1f5f9;
+      transition: background 0.15s;
+    }
+    .q-item:hover { background: #f8fafc; border-color: #e2e8f0; }
+    .q-stem { font-size: 12.5pt; line-height: 1.45; color: #0f172a; }
+    .q-num { font-weight: bold; color: #0284c7; margin-right: 4px; }
+    .q-options {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 3px 14px; margin-top: 4px; font-size: 11.5pt; color: #334155;
+      padding-left: 6px;
+    }
+    .q-opt { line-height: 1.4; }
+
+    /* 互動填空與顯答 */
+    .ans-word {
+      color: transparent !important; border-bottom: 1.5px solid #0284c7;
+      padding: 0 4px; cursor: pointer; user-select: none;
+      transition: color 0.15s; display: inline-block; min-width: 24px; text-align: center;
+    }
+    .ans-word:hover { border-bottom-color: #ef4444; }
+    .ans-word.revealed, body.show-all-answers .ans-word {
+      color: #dc2626 !important; font-weight: bold;
+    }
+
+    /* 選擇題括號顯答 */
+    .qa-bracket {
+      cursor: pointer; user-select: none; font-weight: bold;
+      color: #0f172a; padding: 0 2px;
+    }
+    .qa-bracket .ans-text {
+      color: transparent; min-width: 14px; display: inline-block;
+      text-align: center; transition: color 0.15s;
+    }
+    .qa-bracket:hover .ans-text { color: #f87171; }
+    .qa-bracket.revealed .ans-text, body.show-all-answers .qa-bracket .ans-text {
+      color: #dc2626 !important; font-weight: bold;
+    }
+
+    /* 題目解析區塊 */
+    .calc-workspace {
+      margin-top: 4px; padding: 5px 8px; border-radius: 4px;
+      background: #fff; border: 1px dashed #cbd5e1; cursor: pointer;
+      user-select: none;
+    }
+    .calc-solution {
+      font-size: 10.5pt; line-height: 1.45;
+      color: transparent !important;
+      transition: color 0.15s;
+    }
+    .calc-solution.revealed, body.show-all-answers .calc-solution {
+      color: #b91c1c !important;
+    }
+
+    /* 列印樣式 (純淨學生學習單) */
+    @media print {
+      html, body {
+        width: 100% !important; height: auto !important;
+        background: #fff !important; padding: 0 !important; margin: 0 !important;
+      }
+      .no-print, .classroom-toolbar, .drawing-canvas, .toc-menu, .pen-options {
+        display: none !important;
+      }
+      .pages-container { padding: 0 !important; gap: 0 !important; }
+      .page {
+        width: 100% !important; height: auto !important;
+        max-height: none !important; min-height: 275mm !important;
+        box-shadow: none !important; border-radius: 0 !important;
+        page-break-after: always; break-after: page;
+        padding: 8mm 12mm 6mm 12mm !important;
+      }
+      .ans-word {
+        color: transparent !important; border-bottom: 1px solid #475569 !important;
+      }
+      .qa-bracket .ans-text { color: transparent !important; }
+      .calc-solution { display: none !important; }
+      .calc-workspace { display: none !important; }
+      .q-item { background: transparent !important; border: none !important; padding: 3px 0 !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 課堂懸浮工具列 -->
+  <div class="classroom-toolbar no-print">
+    <!-- 回電子書目錄 -->
+    <a class="tool-btn" href="../index.html" title="回電子書目錄">🏠</a>
+    <!-- 目錄跳轉選單 -->
+    <div style="position: relative;">
+      <button class="tool-btn" id="tocBtn" onclick="toggleTocMenu(event)" title="單元章節目錄">📑</button>
+      <div class="toc-menu" id="tocMenu">
+        <div class="toc-menu-title">📖 第 5 章 單元章節目錄 (全 13 頁)</div>
+        <div class="toc-menu-item" onclick="jumpTo('page1')"><span>5-1 水體分布與地下水系統（觀念一）</span><span class="toc-page-badge">P.1</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page2')"><span>5-1 超抽地下水與水循環作用（觀念二）</span><span class="toc-page-badge">P.2</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page3')"><span>5-1 隨堂實戰評量（一）(Q1～Q3)</span><span class="toc-page-badge">P.3</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page4')"><span>5-1 隨堂實戰評量（二）(Q4～Q7)</span><span class="toc-page-badge">P.4</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page5')"><span>5-2 地質營力與外營力四大作用（觀念一）</span><span class="toc-page-badge">P.5</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page6')"><span>5-2 營力地貌與河道海岸線動態平衡（觀念二）</span><span class="toc-page-badge">P.6</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page7')"><span>5-2 隨堂實戰評量（一）(Q1～Q4)</span><span class="toc-page-badge">P.7</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page8')"><span>5-2 隨堂實戰評量（二）(Q5～Q8)</span><span class="toc-page-badge">P.8</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page9')"><span>5-3 三大岩類成因與分類特徵（觀念一）</span><span class="toc-page-badge">P.9</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page10')"><span>5-3 臺灣岩石分布與常見礦物特性（觀念二）</span><span class="toc-page-badge">P.10</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page11')"><span>5-3 隨堂實戰評量 (Q1～Q5)</span><span class="toc-page-badge">P.11</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page12')"><span>第 5 章 核心重點整理（一）</span><span class="toc-page-badge">P.12</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page13')"><span>第 5 章 核心重點整理（二）</span><span class="toc-page-badge">P.13</span></div>
+      </div>
+    </div>
+    <!-- 一鍵顯答 -->
+    <button class="tool-btn btn-toggle-ans" id="toggleAllAnsBtn" onclick="toggleAllAnswers()" title="一鍵全開/全隱答案">
+      <span id="ansIcon">👁️</span>
+    </button>
+    <!-- 畫筆切換 -->
+    <button class="tool-btn" id="penBtn" onclick="togglePenMode()" title="螢光筆/板書筆">✏️</button>
+    <!-- 畫筆選單 -->
+    <div class="pen-options" id="penOptions">
+      <div class="color-picker">
+        <span class="color-dot active" style="background:#facc15;" onclick="setPenColor('rgba(250,204,21,0.45)', this)" title="螢光黃"></span>
+        <span class="color-dot" style="background:#ef4444;" onclick="setPenColor('rgba(239,68,68,0.8)', this)" title="紅筆"></span>
+        <span class="color-dot" style="background:#3b82f6;" onclick="setPenColor('rgba(37,99,235,0.8)', this)" title="藍筆"></span>
+        <span class="color-dot" style="background:#10b981;" onclick="setPenColor('rgba(16,185,129,0.8)', this)" title="綠筆"></span>
+      </div>
+      <div class="toolbar-divider" style="height:14px; margin:0 2px;"></div>
+      <div class="size-picker">
+        <span class="size-btn active" onclick="setPenSize(3, this)">細</span>
+        <span class="size-btn" onclick="setPenSize(7, this)">中</span>
+        <span class="size-btn" onclick="setPenSize(14, this)">粗</span>
+      </div>
+    </div>
+    <!-- 清除筆跡 -->
+    <button class="tool-btn" onclick="clearAllDrawings()" title="清除本頁筆跡">🧹</button>
+    <!-- 列印 -->
+    <button class="tool-btn" onclick="window.print()" title="列印純淨學習單">🖨️</button>
+  </div>
+
+  <!-- Pages Container -->
+  <div class="pages-container">
+    <!-- Page 1 -->
+    <div class="page" id="page1">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國三地球科學（上）講義</span>
+        <span>第 5 章 地球的環境</span>
+        <span>P. 1</span>
+      </div>
+
+
+      <div class="section-title">
+        <span>5-1　我們的地球（一）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">水體分布比例 ｜ 各種水體特性 ｜ 地下水成因與水面</span>
+      </div>
+
+      <div class="task-title">焦點一：地球上水體的分布與比例</div>
+      <div class="item-line interactive-item">1. <strong>水球地球</strong>：地球表面約有 <span class="ans-word" onclick="toggleAns(this)">71</span> ％以上的面積被水覆蓋，全球總水量極為龐大，但鹹水與淡水分布極不均勻。</div>
+      <div class="item-line interactive-item">2. <strong>各種水體所占比例與人類使用情形比較表</strong>：</div>
+
+      <table class="concept-table" style="margin: 6px 0 10px 0; font-size: 11pt;">
+        <thead>
+          <tr>
+            <th style="width: 18%;">水體種類</th>
+            <th style="width: 18%;">占全球總水量比例</th>
+            <th>特徵與人類利用情形</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>海洋</strong></td>
+            <td>約 <strong>97％</strong></td>
+            <td>主要為<strong>鹹水</strong>（無法直接飲用或灌溉）。</td>
+          </tr>
+          <tr>
+            <td><strong>冰川</strong></td>
+            <td>約 <strong>2％</strong></td>
+            <td>占<strong>淡水總量最高（約 2/3 以上）</strong>，但多凍結於極地與高山，不易直接利用。</td>
+          </tr>
+          <tr>
+            <td><strong>地下水</strong></td>
+            <td>約 <strong>1％</strong></td>
+            <td>為人類<strong>可直接利用的重要淡水資源</strong>，主要來源為雨水滲透補注。</td>
+          </tr>
+          <tr>
+            <td><strong>河流與湖泊</strong></td>
+            <td>小於 <strong>0.01％</strong></td>
+            <td>地表水，是人類<strong>飲用、灌溉、民生用水最主要來源</strong>。湖泊依含鹽量可分淡水湖與鹹水湖。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="task-title" style="margin-top: 8px;">焦點二：地下水的成因與地下水面</div>
+      <div class="item-line interactive-item">1. <strong>地下水成因</strong>：降雨時雨水滲入地下，滲透至<strong>不透水層</strong>（如質地緻密的頁岩層）時開始向上累積，填充岩層中的孔隙。</div>
+      <div class="item-line interactive-item">2. <strong>地下水面特徵</strong>：地下水體的頂部界線稱為<strong>地下水面</strong>，其起伏通常 <span class="ans-word" onclick="toggleAns(this)">會</span> 隨地表地形高低而起伏（填會或不會）。雨季補注多時水面上升，乾季時水面下降。</div>
+      <div class="item-line interactive-item">3. <strong>井水出水條件</strong>：水井的井底深度必須<strong>低於地下水面</strong>，才能汲取地下水。若在山谷或低窪處與地表相交，則會湧出形成泉水或補注河湖。</div>
+
+      <div style="display: flex; justify-content: center; align-items: center; margin-top: 8px;">
+        <div style="text-align: center; background: #fff; padding: 6px 14px; border-radius: 6px; border: 1px solid #cbd5e1;">
+          <img src="../images/science-9-5-handout/image003.png" style="max-height: 180px; border-radius: 4px;" alt="地下水面與地層結構示意圖">
+          <div style="font-size: 9.5pt; color: #475569; margin-top: 3px;">▲ 地下水面、透水層與不透水層構造示意圖</div>
+        </div>
+      </div>
+
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中地球科學</span>
+        <span>5-1 我們的地球（一）</span>
+        <span>第 1 頁 / 共 13 頁</span>
+      </div>
+    </div>
+    <!-- Page 2 -->
+    <div class="page" id="page2">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國三地球科學（上）講義</span>
+        <span>第 5 章 地球的環境</span>
+        <span>P. 2</span>
+      </div>
+
+
+      <div class="section-title">
+        <span>5-1　我們的地球（二）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">超抽地下水危害 ｜ 地層下陷 ｜ 全球水循環歷程</span>
+      </div>
+
+      <div class="task-title">焦點三：超抽地下水與地層下陷的環境災害</div>
+      <div class="item-line interactive-item">1. <strong>地層下陷成因</strong>：若抽取地下水的量遠超過雨水滲入地下的補注量，岩層孔隙中的水壓消失，上方土石重力將岩層孔隙壓縮密實，導致 <span class="ans-word" onclick="toggleAns(this)">地層下陷</span>。</div>
+      <div class="item-line interactive-item">2. <strong>引發之後續災害</strong>：沿海低窪地區發生海水倒灌、積水不退、土壤與地下水 <span class="ans-word" onclick="toggleAns(this)">鹹化</span>，建築物與堤防傾斜龜裂。</div>
+      <div class="item-line interactive-item">3. <strong>不可逆性</strong>：當發生嚴重地層下陷後，即使完全停止抽取地下水，岩層孔隙已被壓實，地層 <span class="ans-word" onclick="toggleAns(this)">無法</span> 恢復原狀！（填可以或無法）</div>
+
+      <div style="display: flex; justify-content: center; align-items: center; margin: 8px 0;">
+        <div style="text-align: center; background: #fff; padding: 6px 12px; border-radius: 6px; border: 1px solid #cbd5e1;">
+          <img src="../images/science-9-5-handout/image004.jpg" style="max-height: 155px; border-radius: 4px;" alt="地層下陷前後岩層孔隙壓縮示意圖">
+          <div style="font-size: 9.5pt; color: #475569; margin-top: 3px;">▲ 超抽地下水導致岩層孔隙壓密與地層下陷示意圖</div>
+        </div>
+      </div>
+
+      <div class="task-title" style="margin-top: 8px;">焦點四：大自然的水循環（Hydrological Cycle）</div>
+      <div class="item-line interactive-item">1. <strong>水的旅程</strong>：陸地上的淡水主要來自降雨。地表水流入河湖海洋，並不斷進行蒸發與蒸散。</div>
+      <div class="item-line interactive-item">2. <strong>循環三大關鍵步驟</strong>：</div>
+      <div class="item-line interactive-item" style="padding-left: 16px;">(1) <strong>蒸發與蒸散</strong>：海面與地表水吸收太陽熱能 <span class="ans-word" onclick="toggleAns(this)">蒸發</span> 為水氣，植物根部吸收的水分由氣孔 <span class="ans-word" onclick="toggleAns(this)">蒸散</span> 入空氣中。</div>
+      <div class="item-line interactive-item" style="padding-left: 16px;">(2) <strong>凝結</strong>：水氣上升至高空遇冷，<span class="ans-word" onclick="toggleAns(this)">凝結</span> 形成雲或霧（放熱）。</div>
+      <div class="item-line interactive-item" style="padding-left: 16px;">(3) <strong>降水</strong>：雲滴凝結增大後降落回地面或海洋，形成雨、雪、冰雹等 <span class="ans-word" onclick="toggleAns(this)">降水</span>。</div>
+
+      <div style="display: flex; justify-content: center; align-items: center; margin-top: 6px;">
+        <div style="text-align: center; background: #fff; padding: 6px 14px; border-radius: 6px; border: 1px solid #cbd5e1;">
+          <img src="../images/science-9-5-handout/image005.jpg" style="max-height: 175px; border-radius: 4px;" alt="水循環流程示意圖">
+          <div style="font-size: 9.5pt; color: #475569; margin-top: 3px;">▲ 全球水循環：蒸發、蒸散、凝結、降水與逕流</div>
+        </div>
+      </div>
+
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中地球科學</span>
+        <span>5-1 我們的地球（二）</span>
+        <span>第 2 頁 / 共 13 頁</span>
+      </div>
+    </div>
+    <!-- Page 3 -->
+    <div class="page" id="page3">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國三地球科學（上）講義</span>
+        <span>第 5 章 地球的環境</span>
+        <span>P. 3</span>
+      </div>
+
+
+      <div class="section-title">
+        <span>5-1　隨堂實戰評量（一）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">水體含量比例 ｜ 超抽地下水災害 ｜ 水循環階段判讀</span>
+      </div>
+
+      <div class="q-item interactive-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this)">（ <span class="ans-text">C</span> ）</span>
+          <span class="q-num">1.</span>
+          <span class="q-text">下列哪一種水體為世界上比例最高的淡水資源？</span>
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 河流</div>
+          <div class="q-opt">(B) 湖泊</div>
+          <div class="q-opt">(C) 冰川</div>
+          <div class="q-opt">(D) 地下水</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">💡 <strong>【解題核心精析】：</strong>全球總水量中鹹水占約 97％，淡水僅占約 3％。在淡水資源中，以<strong>冰川占最多（約占淡水總量的 68％～70％，即全球總水量之 2％）</strong>；地下水次之（約 30％）；河流與湖泊等人類最常使用的地表水僅占淡水總量不到 1％。</div>
+        </div>
+      </div>
+
+      <div class="q-item interactive-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this)">（ <span class="ans-text">B</span> ）</span>
+          <span class="q-num">2.</span>
+          <span class="q-text">超抽地下水最常造成下列哪一項地質災害出現？</span>
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 山崩</div>
+          <div class="q-opt">(B) 地層下陷</div>
+          <div class="q-opt">(C) 旱災</div>
+          <div class="q-opt">(D) 沙漠化</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">💡 <strong>【解題核心精析】：</strong>過度抽取地下水會使沉積岩層孔隙中的承載水壓銳減，岩層失去支撐後受上方土石重力壓迫，孔隙壓縮密實，導致<strong>地層下陷</strong>，並常伴隨海水倒灌與地下水鹹化。</div>
+        </div>
+      </div>
+
+      <div class="q-item interactive-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this)">（ <span class="ans-text">C</span> ）</span>
+          <span class="q-num">3.</span>
+          <span class="q-text">關於大自然「水循環」之敘述，下列何者完全正確？</span>
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 水循環的終點是降水</div>
+          <div class="q-opt">(B) 冰川被冰凍不會參與水循環</div>
+          <div class="q-opt">(C) 水循環主要包含蒸發、蒸散、凝結、降水等步驟</div>
+          <div class="q-opt">(D) 降水時會大量吸熱，可調節地表氣候</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">💡 <strong>【解題核心精析】：</strong>(A) 水循環是全球封閉且連續不斷進行的循環過程，沒有終點；(B) 冰川融化會注入河流或昇華蒸發，均參與水循環；(D) 水分蒸發與蒸散時需要<strong>吸收熱量</strong>，水氣凝結降水時則是<strong>放出熱量</strong>。</div>
+        </div>
+      </div>
+
+      <div class="tip-box" style="margin-top: 14px;">
+        <div class="tip-title">📌 核心觀念統整：水體比例與水循環盲點掃雷</div>
+        <div style="font-size: 11pt; line-height: 1.5; color: #334155;">
+          • <strong>淡水最多是冰川</strong>，但因位處極地高山，人類<strong>最主要利用的淡水來源是河流、湖泊與地下水</strong>。<br>
+          • <strong>地下水不是地下暗河</strong>：地下水主要儲存在砂岩、礫岩等岩層的細小「孔隙」中，像吸滿水的大海綿。<br>
+          • <strong>地層下陷不可逆</strong>：一旦孔隙被壓實密合，就算注入再多水分也無法讓地層膨脹復原！
+        </div>
+      </div>
+
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中地球科學</span>
+        <span>5-1 隨堂實戰評量（一）</span>
+        <span>第 3 頁 / 共 13 頁</span>
+      </div>
+    </div>
+    <!-- Page 4 -->
+    <div class="page" id="page4">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國三地球科學（上）講義</span>
+        <span>第 5 章 地球的環境</span>
+        <span>P. 4</span>
+      </div>
+
+
+      <div class="section-title">
+        <span>5-1　隨堂實戰評量（二）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">井水觀測判讀 ｜ 透水層特性 ｜ 地下水變動 ｜ 沿海下陷實例</span>
+      </div>
+
+      <div class="q-item interactive-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this)">（ <span class="ans-text">A</span> ）</span>
+          <span class="q-num">4.</span>
+          <span class="q-text">右圖為甲、乙、丙、丁、戊五口井與地下水面的示意圖，請問哪幾口井中會有水？</span>
+        </div>
+        <div class="q-diagram" style="text-align:center; margin:6px 0;"><img src="../images/science-9-5-handout/image007.png" style="max-height:120px; border-radius:4px; border:1px solid #cbd5e1;" alt="五口井水面深度示意圖"></div>
+        <div class="q-options">
+          <div class="q-opt">(A) 甲、乙、戊</div>
+          <div class="q-opt">(B) 乙、丙、丁</div>
+          <div class="q-opt">(C) 丙、丁、戊</div>
+          <div class="q-opt">(D) 乙、丁、戊</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">💡 <strong>【解題核心精析】：</strong>水井欲取得井水，其<strong>井底深度必須低於地下水面</strong>，孔隙水方能湧入井管內。由示意圖可知：甲、乙、戊三口井的井底均深入地下水面以下，故<strong>井中有水</strong>；丙、丁兩口井井底高於地下水面，為乾井無水。</div>
+        </div>
+      </div>
+
+      <div class="q-item interactive-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this)">（ <span class="ans-text">D</span> ）</span>
+          <span class="q-num">5.</span>
+          <span class="q-text">若要形成一個良好的地下透水含水層，地層應具備下列哪些特性？<br>&nbsp;&nbsp;&nbsp;&nbsp;甲. 岩層孔隙大；乙. 質地緻密；丙. 透水性佳；丁. 不透水</span>
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 甲乙</div>
+          <div class="q-opt">(B) 乙丙</div>
+          <div class="q-opt">(C) 乙丁</div>
+          <div class="q-opt">(D) 甲丙</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">💡 <strong>【解題核心精析】：</strong>良好的透水含水層（如砂岩層、礫岩層）必須具備<strong>孔隙大（甲）</strong>能儲存足量水分子，且孔隙互相連通使<strong>透水性佳（丙）</strong>；質地緻密、不透水（乙、丁）者如頁岩層，為阻隔水流的不透水層。</div>
+        </div>
+      </div>
+
+      <div class="q-item interactive-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this)">（ <span class="ans-text">A</span> ）</span>
+          <span class="q-num">6.</span>
+          <span class="q-text">有關「地下水」的流動與性質敘述，下列何者錯誤？</span>
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 地下水深藏在地底，絕不可能自行流出地表</div>
+          <div class="q-opt">(B) 地下水面的高低會隨季節降雨與地形不斷變動</div>
+          <div class="q-opt">(C) 雨季時雨水大量滲透，地下水體的範圍會增大</div>
+          <div class="q-opt">(D) 地下水可與相連的井水、河水或湖泊互相調節互補</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">💡 <strong>【解題核心精析】：</strong>(A) 當地下水面與低窪地形相交（如山谷），地下水會自然溢出形成<strong>泉水、湧泉</strong>或補注河流湖泊；受壓地下水井口低於受壓水面時亦會形成自噴井。</div>
+        </div>
+      </div>
+
+      <div class="q-item interactive-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this)">（ <span class="ans-text">D</span> ）</span>
+          <span class="q-num">7.</span>
+          <span class="q-text">臺灣雲林、嘉義與屏東沿海地區地層下陷日益嚴重的主要原因為何？</span>
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 颱風帶來的瞬間豪雨沖刷</div>
+          <div class="q-opt">(B) 久旱不雨造成表土乾燥脫水</div>
+          <div class="q-opt">(C) 斷層錯動頻繁引發強烈地震</div>
+          <div class="q-opt">(D) 沿海養殖業過量超抽地下水</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">💡 <strong>【解題核心精析】：</strong>臺灣西南部沿海地區因養殖漁業大量且長期<strong>超抽地下水</strong>，抽取量遠大於雨水入滲補注量，導致地層深處孔隙嚴重壓密下陷。</div>
+        </div>
+      </div>
+
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中地球科學</span>
+        <span>5-1 隨堂實戰評量（二）</span>
+        <span>第 4 頁 / 共 13 頁</span>
+      </div>
+    </div>
+    <!-- Page 5 -->
+    <div class="page" id="page5">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國三地球科學（上）講義</span>
+        <span>第 5 章 地球的環境</span>
+        <span>P. 5</span>
+      </div>
+
+
+      <div class="section-title">
+        <span>5-2　地表的改變與平衡（一）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">地質作用分類 ｜ 內營力 vs 外營力 ｜ 風化、侵蝕、搬運、沉積</span>
+      </div>
+
+      <div class="task-title">焦點一：地表高低起伏的兩大營力比較</div>
+      <div class="item-line interactive-item">1. <strong>內營力與外營力的對抗</strong>：地貌隨時受到地球內部與外部兩種力量的雕塑塑造。</div>
+
+      <table class="concept-table" style="margin: 6px 0 10px 0; font-size: 11pt;">
+        <thead>
+          <tr>
+            <th style="width: 18%;">營力類別</th>
+            <th style="width: 24%;">地質作用與來源</th>
+            <th style="width: 28%;">地質營力媒介</th>
+            <th>對地表形態的主要影響</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>內營力</strong><br>(內部動力)</td>
+            <td>火山活動、造山運動、岩層褶皺與斷層</td>
+            <td>地球內部熱能、<strong>板塊運動</strong></td>
+            <td>造陸造山，使地表產生 <strong><span class="ans-word" onclick="toggleAns(this)">高低起伏</span></strong>（形成高山、裂谷、海溝）。</td>
+          </tr>
+          <tr>
+            <td><strong>外營力</strong><br>(外部雕塑)</td>
+            <td><strong>風化、侵蝕、搬運、沉積作用</strong></td>
+            <td>太陽輻射熱能、重力、<strong>河流、風、冰川、海浪</strong></td>
+            <td>削高填低，削平山陵填補低地，使地表 <strong><span class="ans-word" onclick="toggleAns(this)">趨於平坦</span></strong>。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="display: flex; justify-content: center; align-items: center; margin: 6px 0;">
+        <div style="text-align: center; background: #fff; padding: 6px 12px; border-radius: 6px; border: 1px solid #cbd5e1;">
+          <img src="../images/science-9-5-handout/image010.jpg" style="max-height: 145px; border-radius: 4px;" alt="內營力與外營力作用示意圖">
+          <div style="font-size: 9.5pt; color: #475569; margin-top: 3px;">▲ 內營力（火山與造山）與外營力（水與風雕塑）相互消長示意圖</div>
+        </div>
+      </div>
+
+      <div class="task-title" style="margin-top: 8px;">焦點二：外營力的四大基本地質作用</div>
+      <table class="concept-table" style="margin: 6px 0 0 0; font-size: 11pt;">
+        <thead>
+          <tr>
+            <th style="width: 20%;">地質作用</th>
+            <th>核心定義與實例特徵</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong><span class="ans-word" onclick="toggleAns(this)">風化</span> 作用</strong></td>
+            <td>岩石在<strong>原地</strong>受空氣、水分、陽光（熱脹冷縮）、生物（植物根伸展）影響，成分改變（化學風化）或崩解破碎疏鬆（物理風化），由大顆粒變成小顆粒，最終發育成 <strong><span class="ans-word" onclick="toggleAns(this)">土壤</span></strong>。</td>
+          </tr>
+          <tr>
+            <td><strong><span class="ans-word" onclick="toggleAns(this)">侵蝕</span> 作用</strong></td>
+            <td>岩石或其風化碎屑受流水、冰川、風、海浪等外在動能沖刷磨蝕，<strong>自原處剝離脫落</strong>的過程（如瀑布後退、峽谷下切）。</td>
+          </tr>
+          <tr>
+            <td><strong><span class="ans-word" onclick="toggleAns(this)">搬運</span> 作用</strong></td>
+            <td>風化與侵蝕產生的岩石碎屑，藉由流水、冰川、風等外力媒介<strong>運送移動至其他地方</strong>的過程（流水搬運會磨圓礫石）。</td>
+          </tr>
+          <tr>
+            <td><strong><span class="ans-word" onclick="toggleAns(this)">沉積</span> 作用</strong></td>
+            <td>當外營力流速減慢、搬運力量減弱，岩石碎屑沉降堆積下來的過程（如河流下游泥沙淤積成三角洲、沖積扇）。</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中地球科學</span>
+        <span>5-2 地表的改變與平衡（一）</span>
+        <span>第 5 頁 / 共 13 頁</span>
+      </div>
+    </div>
+    <!-- Page 6 -->
+    <div class="page" id="page6">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國三地球科學（上）講義</span>
+        <span>第 5 章 地球的環境</span>
+        <span>P. 6</span>
+      </div>
+
+
+      <div class="section-title">
+        <span>5-2　地表的改變與平衡（二）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">四大外營力地貌對照 ｜ 侵蝕與沉積平衡 ｜ 海岸線進退動態</span>
+      </div>
+
+      <div class="task-title">焦點三：改變地表地貌的四大外營力地形對照</div>
+      <div class="item-line interactive-item">1. <strong>主要外營力媒介</strong>：河流是全球最主要且分布最廣的外營力。</div>
+
+      <table class="concept-table" style="margin: 6px 0 10px 0; font-size: 11pt;">
+        <thead>
+          <tr>
+            <th style="width: 16%;">外營力媒介</th>
+            <th style="width: 42%;">侵蝕作用地形（削高）</th>
+            <th>沉積作用地形（填低）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>河流 (流水)</strong><br><small style="color:#0284c7;">最主要營力</small></td>
+            <td>下切侵蝕成 <strong><span class="ans-word" onclick="toggleAns(this)">V</span> 型谷</strong>、峽谷（太魯閣）、瀑布、河床巨石。</td>
+            <td>出山口形成沖積扇；下游形成氾濫平原；出海口堆積成 <strong><span class="ans-word" onclick="toggleAns(this)">三角洲</span></strong>、沙洲。</td>
+          </tr>
+          <tr>
+            <td><strong>冰川</strong></td>
+            <td>塑性流動磨蝕，形成寬平谷底的 <strong><span class="ans-word" onclick="toggleAns(this)">U</span> 型谷</strong>、冰斗、角峰。</td>
+            <td>冰融化時堆積雜亂無章的<strong>冰磧石</strong>（無淘選分選特性）。</td>
+          </tr>
+          <tr>
+            <td><strong>風力</strong></td>
+            <td>挾帶細沙磨蝕迎風面，形成多角稜面的<strong>風稜石</strong>、風蝕蕈狀石。</td>
+            <td>風力減弱處細沙沉降形成<strong>沙丘</strong>、黃土高原。</td>
+          </tr>
+          <tr>
+            <td><strong>海浪與海流</strong></td>
+            <td>拍擊岸邊岩壁形成<strong>海蝕崖</strong>、海蝕洞、海蝕門、海蝕平臺。</td>
+            <td>沿岸流與碎浪沉積形成 <strong><span class="ans-word" onclick="toggleAns(this)">沙灘</span></strong>、沿岸沙洲（潟湖外圍）。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="task-title" style="margin-top: 6px;">焦點四：河道與海岸線的動態平衡關係</div>
+      <div class="item-line interactive-item">1. <strong>河流的平滑平衡剖面</strong>：河床突起處侵蝕加劇夷平，凹陷處沉積填補，長期將趨於平滑平衡。</div>
+      <div class="item-line interactive-item">2. <strong>侵蝕與沉積對海岸線進退的影響</strong>：</div>
+      <div class="item-line interactive-item" style="padding-left: 16px;">• <strong>侵蝕 ＞ 沉積</strong>：海浪侵蝕大於泥沙堆積（如水庫攔沙使出海口沙源減少），海岸線向陸地 <strong><span class="ans-word" onclick="toggleAns(this)">後退</span></strong>。</div>
+      <div class="item-line interactive-item" style="padding-left: 16px;">• <strong>侵蝕 ＝ 沉積</strong>：泥沙補注量與被波浪帶走量相等，海岸線達到<strong>動態平衡</strong>，形狀穩定。</div>
+      <div class="item-line interactive-item" style="padding-left: 16px;">• <strong>侵蝕 ＜ 沉積</strong>：上游濫墾土石流失使入海泥沙大增，出海口沉積堆高，海岸線向海 <strong><span class="ans-word" onclick="toggleAns(this)">前進</span></strong>（生成海埔新生地）。</div>
+
+      <div style="display: flex; justify-content: center; align-items: center; margin-top: 6px;">
+        <div style="text-align: center; background: #fff; padding: 6px 14px; border-radius: 6px; border: 1px solid #cbd5e1;">
+          <img src="../images/science-9-5-handout/image011.png" style="max-height: 150px; border-radius: 4px;" alt="河道變化與採砂掏空橋墩圖">
+          <div style="font-size: 9.5pt; color: #475569; margin-top: 3px;">▲ 河道變化：下游濫採砂石造成侵蝕基準面下移，引發嚴重下切掏空橋墩</div>
+        </div>
+      </div>
+
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中地球科學</span>
+        <span>5-2 地表的改變與平衡（二）</span>
+        <span>第 6 頁 / 共 13 頁</span>
+      </div>
+    </div>
+    <!-- Page 7 -->
+    <div class="page" id="page7">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國三地球科學（上）講義</span>
+        <span>第 5 章 地球的環境</span>
+        <span>P. 7</span>
+      </div>
+
+
+      <div class="section-title">
+        <span>5-2　隨堂實戰評量（一）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">主要外營力 ｜ 化學風化作用 ｜ 侵蝕沉積與橋墩 ｜ 磨圓礫石成因</span>
+      </div>
+
+      <div class="q-item interactive-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this)">（ <span class="ans-text">C</span> ）</span>
+          <span class="q-num">1.</span>
+          <span class="q-text">下列何種外營力是地表分布最廣、侵蝕與塑造地貌最主要的力量？</span>
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 冰川</div>
+          <div class="q-opt">(B) 風力</div>
+          <div class="q-opt">(C) 河流（流水）</div>
+          <div class="q-opt">(D) 海浪</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">💡 <strong>【解題核心精析】：</strong>在地球上大多數氣候濕潤地區，<strong>河流（流水）</strong>的侵蝕、搬運與沉積作用分布面積最廣，是形塑地貌景觀最普遍、最主要的地質營力。</div>
+        </div>
+      </div>
+
+      <div class="q-item interactive-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this)">（ <span class="ans-text">B</span> ）</span>
+          <span class="q-num">2.</span>
+          <span class="q-text">空氣中的氧氣與水將岩石中的鐵質礦物氧化，產生紅褐色的氧化鐵粉末，請問此過程屬於下列哪一種地質作用？</span>
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 侵蝕作用</div>
+          <div class="q-opt">(B) 風化作用</div>
+          <div class="q-opt">(C) 搬運作用</div>
+          <div class="q-opt">(D) 沉積作用</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">💡 <strong>【解題核心精析】：</strong>岩石在原地與大氣中的氧氣、水發生化學反應，改變了礦物的化學成分與組織構造，使其由堅硬變為脆弱粉碎，屬於<strong>化學風化作用</strong>。</div>
+        </div>
+      </div>
+
+      <div class="q-item interactive-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this)">（ <span class="ans-text">C</span> ）</span>
+          <span class="q-num">3.</span>
+          <span class="q-text">有關「侵蝕作用」與「沉積作用」的敘述，下列何者錯誤？</span>
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 兩種自然力皆屬於地球外部的作用力（外營力）</div>
+          <div class="q-opt">(B) 沉積作用是搬運力量減弱時發生的過程</div>
+          <div class="q-opt">(C) 河床上橋墩裸露的主要原因是上游濫採砂石</div>
+          <div class="q-opt">(D) 長遠看來，兩者的綜合作用會使地表更加趨於平坦</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">💡 <strong>【解題核心精析】：</strong>(C) 若在橋墩<strong>下游</strong>或當地河床濫採砂石，會使河道局部加深、侵蝕基準面相對降低，導致上游流水流速加快並加劇<strong>向下侵蝕</strong>，進而掏空沖刷橋墩基底使其裸露危險。</div>
+        </div>
+      </div>
+
+      <div class="q-item interactive-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this)">（ <span class="ans-text">C</span> ）</span>
+          <span class="q-num">4.</span>
+          <span class="q-text">在河流中下游或野外常可見到圓滑飽滿的「鵝卵石（礫石）」，主要是由下列何項地質營力所造成？</span>
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 風化作用原地崩裂</div>
+          <div class="q-opt">(B) 冰川侵蝕磨蝕</div>
+          <div class="q-opt">(C) 流水搬運碰撞摩擦</div>
+          <div class="q-opt">(D) 風力搬運吹拂</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">💡 <strong>【解題核心精析】：</strong>岩石碎屑落入河流後，在<strong>流水搬運</strong>過程中隨水流翻滾，碎屑顆粒之間不斷相互碰撞、摩擦，逐漸將尖銳的稜角磨蝕修圓，最終形成圓滑的卵石與礫石。</div>
+        </div>
+      </div>
+
+      <div class="tip-box" style="margin-top: 14px;">
+        <div class="tip-title">📌 觀念辨正：風化 vs 侵蝕 的最大關鍵在於「是否位移」</div>
+        <div style="font-size: 11pt; line-height: 1.5; color: #334155;">
+          • <strong>風化作用（原地）</strong>：岩石乖乖待在原地，被陽光熱脹冷縮撐破、水結冰膨脹撐破、植物根撐破、酸雨氧化溶蝕。沒有移動！<br>
+          • <strong>侵蝕作用（剝離）</strong>：有流動的媒介（河水、海浪、強風、冰川）主動刮削沖刷，把岩石碎屑<strong>從原處剝離刮走</strong>！
+        </div>
+      </div>
+
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中地球科學</span>
+        <span>5-2 隨堂實戰評量（一）</span>
+        <span>第 7 頁 / 共 13 頁</span>
+      </div>
+    </div>
+    <!-- Page 8 -->
+    <div class="page" id="page8">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國三地球科學（上）講義</span>
+        <span>第 5 章 地球的環境</span>
+        <span>P. 8</span>
+      </div>
+
+
+      <div class="section-title">
+        <span>5-2　隨堂實戰評量（二）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">海岸線進退變化 ｜ 冰川U型谷剖面 ｜ 風化作用比較 ｜ 河流縱剖面分析</span>
+      </div>
+
+      <div class="q-item interactive-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this)">（ <span class="ans-text">A</span> ）</span>
+          <span class="q-num">5.</span>
+          <span class="q-text">若在河流上游山區過度濫墾濫伐，造成水土流失嚴重，使得河流攜帶進入出海口的泥沙量大增，則該處海岸線會有何變化？</span>
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 海岸線向海洋方向前進，形成海埔新生地</div>
+          <div class="q-opt">(B) 海岸線向內陸方向退縮</div>
+          <div class="q-opt">(C) 海岸線維持穩定不變</div>
+          <div class="q-opt">(D) 海岸線完全消失沉入海底</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">💡 <strong>【解題核心精析】：</strong>大量泥沙入海使出海口的<strong>沉積作用遠大於侵蝕作用</strong>，泥沙淤積堆積加高並向外延伸，使<strong>海岸線向海洋方向前進（外推）</strong>，增加沙洲與海埔新生地。</div>
+        </div>
+      </div>
+
+      <div class="q-item interactive-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this)">（ <span class="ans-text">C</span> ）</span>
+          <span class="q-num">6.</span>
+          <span class="q-text">下列四種河谷或山谷剖面示意圖中，何者最可能是由「冰川侵蝕」所塑造的地形？</span>
+        </div>
+        <div class="q-diagram" style="text-align:center; margin:6px 0;"><div style="display:flex; justify-content:center; gap:24px; margin:6px 0;">
+     <div style="text-align:center;"><img src="../images/science-9-5-handout/image013.jpg" style="height:35px;" alt="A"><br>(A)</div>
+     <div style="text-align:center;"><img src="../images/science-9-5-handout/image014.jpg" style="height:35px;" alt="B"><br>(B)</div>
+     <div style="text-align:center;"><img src="../images/science-9-5-handout/image015.jpg" style="height:35px;" alt="C"><br>(C)</div>
+     <div style="text-align:center;"><img src="../images/science-9-5-handout/image016.jpg" style="height:35px;" alt="D"><br>(D)</div>
+   </div></div>
+        <div class="q-options">
+          <div class="q-opt">(A) 深窄 V 型谷</div>
+          <div class="q-opt">(B) 陡峭階梯谷</div>
+          <div class="q-opt">(C) 寬底 U 型谷</div>
+          <div class="q-opt">(D) 平坦波狀谷</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">💡 <strong>【解題核心精析】：</strong>冰川體積厚重龐大且具塑性流動特性，對谷底與山谷兩側山壁進行全面性的挖蝕與磨蝕，形成底部寬闊平坦、兩壁陡峭的<strong>U 型谷（圖 C）</strong>；(A) 為流水下切形成的 V 型谷。</div>
+        </div>
+      </div>
+
+      <div class="q-item interactive-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this)">（ <span class="ans-text">C</span> ）</span>
+          <span class="q-num">7.</span>
+          <span class="q-text">下列何者對地表造成的地質作用，與其他三者的地質機制「不同」？</span>
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 水在岩石裂隙結冰膨脹將岩石撐破</div>
+          <div class="q-opt">(B) 植物根部在岩石裂縫生長將岩石撐裂</div>
+          <div class="q-opt">(C) 河流長年沖刷河道，使河床不斷加深</div>
+          <div class="q-opt">(D) 陽光照射使岩石表面礦物熱脹冷縮而剝落</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">💡 <strong>【解題核心精析】：</strong>(A)、(B)、(D) 皆為岩石在原地受到物理或生物機械力量碎裂，屬於<strong>風化作用</strong>；(C) 為流水動能主動自河床剝離岩石顆粒，屬於<strong>侵蝕作用</strong>。</div>
+        </div>
+      </div>
+
+      <div class="q-item interactive-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this)">（ <span class="ans-text">D</span> ）</span>
+          <span class="q-num">8.</span>
+          <span class="q-text">如圖是一條河流由源頭到出海口的縱剖面示意圖，則下列關於各河段敘述何者錯誤？</span>
+        </div>
+        <div class="q-diagram" style="text-align:center; margin:6px 0;"><img src="../images/science-9-5-handout/image017.jpg" style="max-height:85px; border-radius:4px; border:1px solid #cbd5e1;" alt="河流源頭到出海口剖面圖"></div>
+        <div class="q-options">
+          <div class="q-opt">(A) c 處沉積作用顯著，容易發現被河水磨圓的細卵石與泥沙</div>
+          <div class="q-opt">(B) a 處由於地形坡度最陡峭，因此流水侵蝕力量最強</div>
+          <div class="q-opt">(C) 由 a 到 c 處，河流的沉積顆粒由粗變細</div>
+          <div class="q-opt">(D) b 處位於河流中游，河床中沉積物應以極細微的泥沙為主</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">💡 <strong>【解題核心精析】：</strong>(D) 河流從源頭 a（上游）到出海口 c（下游），坡度由陡變緩，流速由快變慢，沉積顆粒由大變小。a 處多巨石大岩塊；中游 b 處多鵝卵石與粗砂；只有到了出海口下游平緩處 c，流速極慢時才會大量沉積<strong>細沙與黏土</strong>。故 (D) 敘述錯誤。</div>
+        </div>
+      </div>
+
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中地球科學</span>
+        <span>5-2 隨堂實戰評量（二）</span>
+        <span>第 8 頁 / 共 13 頁</span>
+      </div>
+    </div>
+    <!-- Page 9 -->
+    <div class="page" id="page9">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國三地球科學（上）講義</span>
+        <span>第 5 章 地球的環境</span>
+        <span>P. 9</span>
+      </div>
+
+
+      <div class="section-title">
+        <span>5-3　岩石與礦物（一）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">三大岩類成因 ｜ 火成岩冷卻速率與結晶 ｜ 沉積岩顆粒分類</span>
+      </div>
+
+      <div class="task-title">焦點一：地質岩石三大成因分類</div>
+      <div class="item-line interactive-item">1. <strong>岩石劃分基準</strong>：地質學上主要依據岩石的<strong>形成過程（成因）</strong>將岩石劃分為三大類：</div>
+
+      <table class="concept-table" style="margin: 6px 0 10px 0; font-size: 11pt;">
+        <thead>
+          <tr>
+            <th style="width: 16%;">岩石大類</th>
+            <th style="width: 32%;">主要成因與地質環境</th>
+            <th>代表性常見岩石與特徵說明</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong><span class="ans-word" onclick="toggleAns(this)">火成</span> 岩</strong></td>
+            <td>地下深處岩漿上升冷卻凝固形成。<br>• <strong>噴出岩</strong>：噴出地表快速冷卻。<br>• <strong>深成岩</strong>：地下深處緩慢冷卻。</td>
+            <td>• 地表快速冷卻：結晶細小，如 <strong><span class="ans-word" onclick="toggleAns(this)">玄武</span> 岩</strong>（深黑氣孔）、<strong>安山岩</strong>（灰褐火山岩）。<br>• 地底緩慢冷卻：結晶粗大清晰，如 <strong><span class="ans-word" onclick="toggleAns(this)">花岡</span> 岩</strong>（長石+石英+雲母）。</td>
+          </tr>
+          <tr>
+            <td><strong><span class="ans-word" onclick="toggleAns(this)">沉積</span> 岩</strong></td>
+            <td>岩石風化碎屑物在水底或陸地堆積，歷經漫長歲月的<strong>壓密與膠結</strong>硬化而成（常具層理與化石）。</td>
+            <td>• <strong>碎屑沉積岩</strong>（依顆粒大到小）：<strong>礫岩 → 砂岩 → <span class="ans-word" onclick="toggleAns(this)">頁</span> 岩</strong>。<br>• <strong>化學與生物沉積岩</strong>：<strong><span class="ans-word" onclick="toggleAns(this)">石灰</span> 岩</strong>（碳酸鈣遇酸起泡，水泥原料）、<strong>鹽岩</strong>（易溶於水）。</td>
+          </tr>
+          <tr>
+            <td><strong><span class="ans-word" onclick="toggleAns(this)">變質</span> 岩</strong></td>
+            <td>原有岩石深埋地底高溫、高壓環境，礦物重新結晶排列，成分與結構產生質變。</td>
+            <td>• 頁岩受熱變質成 <strong><span class="ans-word" onclick="toggleAns(this)">板</span> 岩</strong>。<br>• 石灰岩受熱重結晶成 <strong><span class="ans-word" onclick="toggleAns(this)">大理</span> 岩</strong>（方解石結晶粗）。<br>• 花岡岩受壓變質成 <strong><span class="ans-word" onclick="toggleAns(this)">花岡片麻</span> 岩</strong>（具片麻狀條紋）。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="task-title" style="margin-top: 8px;">焦點二：火成岩與沉積岩的分類鑑別特徵</div>
+      <div style="display: flex; gap: 12px; margin-top: 6px;">
+        <div style="flex: 1;">
+          <div style="font-weight: bold; color: #0284c7; margin-bottom: 4px; font-size: 11.5pt;">【火成岩：冷卻速度 vs 結晶顆粒】</div>
+          <table class="concept-table" style="font-size: 10.5pt;">
+            <thead>
+              <tr><th>岩石</th><th>冷卻地點</th><th>冷卻速率</th><th>結晶顆粒</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>玄武岩<br>安山岩</strong></td><td>噴出地表</td><td>快速</td><td>較 <strong><span class="ans-word" onclick="toggleAns(this)">小</span></strong><br>(肉眼難辨)</td></tr>
+              <tr><td><strong>花岡岩</strong></td><td>地下深處</td><td>緩慢</td><td>較 <strong><span class="ans-word" onclick="toggleAns(this)">大</span></strong><br>(顆粒分明)</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div style="flex: 1.2;">
+          <div style="font-weight: bold; color: #0284c7; margin-bottom: 4px; font-size: 11.5pt;">【沉積岩：碎屑顆粒大小與特徵鑑別】</div>
+          <table class="concept-table" style="font-size: 10.5pt;">
+            <thead>
+              <tr><th>種類</th><th>顆粒大小</th><th>肉眼與觸感特徵</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>礫岩</strong></td><td>最大 (＞2mm)</td><td>肉眼清晰可見粗大磨圓卵石</td></tr>
+              <tr><td><strong>砂岩</strong></td><td>中等 (1/16~2mm)</td><td>摸起來有明顯粗糙顆粒感</td></tr>
+              <tr><td><strong>頁岩</strong></td><td>最小 (＜1/16mm)</td><td>觸感平滑緻密，易沿薄層剝落</td></tr>
+              <tr><td><strong>石灰岩</strong></td><td>不固定</td><td>主要含碳酸鈣，<strong>遇稀鹽酸劇烈起泡</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中地球科學</span>
+        <span>5-3 岩石與礦物（一）</span>
+        <span>第 9 頁 / 共 13 頁</span>
+      </div>
+    </div>
+    <!-- Page 10 -->
+    <div class="page" id="page10">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國三地球科學（上）講義</span>
+        <span>第 5 章 地球的環境</span>
+        <span>P. 10</span>
+      </div>
+
+
+      <div class="section-title">
+        <span>5-3　岩石與礦物（二）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">臺灣三大岩類分布 ｜ 岩石與礦物關係 ｜ 常見礦物特性與應用</span>
+      </div>
+
+      <div class="task-title">焦點三：臺灣三大岩類的地理分布</div>
+      <div class="item-line interactive-item">1. <strong>臺灣本島與離島岩石分布規律</strong>：</div>
+      <div class="item-line interactive-item" style="padding-left: 14px;">• <strong>東部地區（中央山脈東翼）</strong>：主要為 <strong>變質岩</strong>（如太魯閣大理岩、中央山脈板岩與片岩）。</div>
+      <div class="item-line interactive-item" style="padding-left: 14px;">• <strong>西部麓山帶與平原</strong>：主要為 <strong>沉積岩</strong>（厚層沉積之砂岩、頁岩、礫岩）。</div>
+      <div class="item-line interactive-item" style="padding-left: 14px;">• <strong>北部大屯與基隆火山群</strong>：主要為 <strong>火成岩（安山岩）</strong>。</div>
+      <div class="item-line interactive-item" style="padding-left: 14px;">• <strong>離島澎湖群島</strong>：基性熔岩噴發形成壯麗柱狀節理之 <strong>玄武岩</strong>。</div>
+      <div class="item-line interactive-item" style="padding-left: 14px;">• <strong>金門、馬祖</strong>：大陸邊緣侵入結晶之 <strong>花岡岩</strong>。</div>
+
+      <div style="display: flex; justify-content: center; align-items: center; margin: 6px 0;">
+        <div style="text-align: center; background: #fff; padding: 6px 12px; border-radius: 6px; border: 1px solid #cbd5e1;">
+          <img src="../images/science-9-5-handout/image021.png" style="max-height: 140px; border-radius: 4px;" alt="臺灣三種岩類分布圖">
+          <div style="font-size: 9.5pt; color: #475569; margin-top: 3px;">▲ 臺灣岩石分布圖：西部沉積岩、東部變質岩、北部與離島火成岩</div>
+        </div>
+      </div>
+
+      <div class="task-title" style="margin-top: 6px;">焦點四：礦物的定義與常見生活礦物</div>
+      <div class="item-line interactive-item">1. <strong>礦物的定義</strong>：自然界天然產出且原子排列規則的固體 <strong><span class="ans-word" onclick="toggleAns(this)">無</span></strong> 機物（填有或無），具有特定均勻的化學成分與晶體構造。</div>
+      <div class="item-line interactive-item">2. <strong>岩石與礦物的關係</strong>：岩石是由一種或多種 <strong><span class="ans-word" onclick="toggleAns(this)">礦物</span></strong> 混合聚合而成。因此岩石沒有固定的化學式與熔點。</div>
+      <div class="item-line interactive-item">3. <strong>花岡岩三大造岩礦物</strong>：由 <strong>長石（肉紅或白色）</strong>、<strong>石英（透明半透明）</strong> 與 <strong>雲母（黑褐色發亮薄片）</strong> 組成。</div>
+
+      <div style="display: flex; justify-content: space-around; align-items: center; margin: 6px 0;">
+        <div style="text-align: center; background: #fff; padding: 4px 10px; border-radius: 6px; border: 1px solid #cbd5e1; flex: 1.2;">
+          <img src="../images/science-9-5-handout/image022.jpg" style="max-height: 120px; border-radius: 4px;" alt="花岡岩由長石雲母石英組成">
+          <div style="font-size: 9pt; color: #475569; margin-top: 2px;">▲ 花岡岩分解圖：長石、石英與黑雲母</div>
+        </div>
+        <div style="flex: 1.5; margin-left: 10px; font-size: 10.5pt; line-height: 1.45;">
+          • <strong><span class="ans-word" onclick="toggleAns(this)">長</span> 石</strong>：地殼中最豐富的礦物，製造<strong>陶瓷</strong>的主要原料。<br>
+          • <strong><span class="ans-word" onclick="toggleAns(this)">石英</span></strong>：硬度大，為製造<strong>玻璃與半導體晶圓</strong>之主要原料。<br>
+          • <strong>方解石</strong>：碳酸鈣主成分，滴稀鹽酸冒泡，雙折射光學特性。<br>
+          • <strong>雲母</strong>：片狀解理極佳，耐熱絕緣性好。<br>
+          • <strong>寶石</strong>：產量稀少、光澤美麗、硬度高耐磨損之礦物（如鑽石、紅寶石）。
+        </div>
+      </div>
+
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中地球科學</span>
+        <span>5-3 岩石與礦物（二）</span>
+        <span>第 10 頁 / 共 13 頁</span>
+      </div>
+    </div>
+    <!-- Page 11 -->
+    <div class="page" id="page11">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國三地球科學（上）講義</span>
+        <span>第 5 章 地球的環境</span>
+        <span>P. 11</span>
+      </div>
+
+
+      <div class="section-title">
+        <span>5-3　隨堂實戰評量</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">三大岩類劃分 ｜ 火成岩脈判讀 ｜ 澎湖熔岩台地 ｜ 結晶冷卻速率 ｜ 酸雨建材選擇</span>
+      </div>
+
+      <div class="q-item interactive-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this)">（ <span class="ans-text">C</span> ）</span>
+          <span class="q-num">1.</span>
+          <span class="q-text">地質學家將「礫岩」、「安山岩」、「大理岩」三種岩石劃分至不同類別，主要依據下列何種差異？</span>
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 岩石的整體密度大小不同</div>
+          <div class="q-opt">(B) 岩石外觀顏色的深淺不同</div>
+          <div class="q-opt">(C) 岩石的形成過程與成因不同</div>
+          <div class="q-opt">(D) 組成岩石碎屑顆粒的大小不同</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">💡 <strong>【解題核心精析】：</strong>地質學上將岩石劃分為火成岩（如安山岩）、沉積岩（如礫岩）與變質岩（如大理岩）三大類，其根本劃分標準為<strong>岩石形成時的地質作用成因與環境（形成過程）</strong>。</div>
+        </div>
+      </div>
+
+      <div class="q-item interactive-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this)">（ <span class="ans-text">B</span> ）</span>
+          <span class="q-num">2.</span>
+          <span class="q-text">岩漿侵入地層或岩層裂隙中，冷卻凝固形成的火成岩地質構造稱為岩脈。請問在岩脈中較「不可能」含有下列哪一種岩石？</span>
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 花岡岩</div>
+          <div class="q-opt">(B) 頁岩</div>
+          <div class="q-opt">(C) 玄武岩</div>
+          <div class="q-opt">(D) 安山岩</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">💡 <strong>【解題核心精析】：</strong>岩脈是高溫地下岩漿侵入冷卻形成的<strong>火成岩</strong>構造；(B) <strong>頁岩</strong>是泥質碎屑在水底壓密膠結形成的<strong>沉積岩</strong>，不可能在岩漿冷凝產物中出現。</div>
+        </div>
+      </div>
+
+      <div class="q-item interactive-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this)">（ <span class="ans-text">A</span> ）</span>
+          <span class="q-num">3.</span>
+          <span class="q-text">臺灣著名的澎湖群島由熔岩冷凝台地構成，其最主要的基底岩石種類為何？</span>
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 玄武岩</div>
+          <div class="q-opt">(B) 安山岩</div>
+          <div class="q-opt">(C) 花岡岩</div>
+          <div class="q-opt">(D) 大理岩</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">💡 <strong>【解題核心精析】：</strong>澎湖群島是由地下基性岩漿經地表裂隙平緩湧出冷卻形成的熔岩方山台地，主要岩石為具有發達柱狀節理與氣孔構造的<strong>玄武岩</strong>。</div>
+        </div>
+      </div>
+
+      <div class="q-item interactive-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this)">（ <span class="ans-text">B</span> ）</span>
+          <span class="q-num">4.</span>
+          <span class="q-text">有關「岩石」、「礦物」與「寶石」的性質與成因敘述，下列何者錯誤？</span>
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 礦物是指天然產出且原子排列規則的固體無機物</div>
+          <div class="q-opt">(B) 火成岩中的礦物結晶顆粒大小與岩漿冷卻速度無關</div>
+          <div class="q-opt">(C) 寶石通常是產量特別稀少、質地耐磨且光澤美麗的礦物</div>
+          <div class="q-opt">(D) 自然界中的岩石通常是由一種或多種礦物混合聚合而成</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">💡 <strong>【解題核心精析】：</strong>(B) 火成岩的結晶顆粒大小與冷卻速率關係極大：<strong>冷卻越緩慢（地下深處），結晶顆粒越大</strong>（如花岡岩）；冷卻越快（地表），結晶顆粒越細小（如玄武岩、安山岩）。</div>
+        </div>
+      </div>
+
+      <div class="q-item interactive-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this)">（ <span class="ans-text">D</span> ）</span>
+          <span class="q-num">5.</span>
+          <span class="q-text">如果要在一個工業污染、酸雨相當嚴重的現代城市建造一座歷史紀念石碑，下列何種岩石「最不適宜」作為戶外建材？</span>
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 花岡岩</div>
+          <div class="q-opt">(B) 安山岩</div>
+          <div class="q-opt">(C) 砂岩</div>
+          <div class="q-opt">(D) 大理岩</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">💡 <strong>【解題核心精析】：</strong>大理岩由石灰岩高溫高壓變質而成，主要成分為碳酸鈣（$\text{CaCO}_3$），極易與<strong>酸雨反應溶解起泡</strong>腐蝕，雕刻細節迅速風化剝落毀損，最不適合作為戶外石碑建材。</div>
+        </div>
+      </div>
+
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中地球科學</span>
+        <span>5-3 隨堂實戰評量</span>
+        <span>第 11 頁 / 共 13 頁</span>
+      </div>
+    </div>
+    <!-- Page 12 -->
+    <div class="page" id="page12">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國三地球科學（上）講義</span>
+        <span>第 5 章 地球的環境</span>
+        <span>P. 12</span>
+      </div>
+
+
+      <div class="section-title">
+        <span>第 5 章　核心重點整理（一）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">5-1 我們的地球 ｜ 5-2 地表的改變與平衡 核心挖空檢測與地質作用總歸納</span>
+      </div>
+
+      <div class="task-title">5-1 我們的地球 核心精華檢測</div>
+      <div class="item-line interactive-item">1. <strong>水體分布</strong>：地球表面有 <span class="ans-word" onclick="toggleAns(this)">71</span> ％面積被水覆蓋，其中約有 <span class="ans-word" onclick="toggleAns(this)">97</span> ％儲存於海洋鹹水中。</div>
+      <div class="item-line interactive-item">2. <strong>淡水存量</strong>：地球上淡水存量最多的是凍結在極地高山的 <span class="ans-word" onclick="toggleAns(this)">冰川</span>（約占總水量 2％），人類生活與灌溉能直接取用的是河流水、淡水湖與 <span class="ans-word" onclick="toggleAns(this)">地下水</span>。</div>
+      <div class="item-line interactive-item">3. <strong>超抽地下水危害</strong>：當抽取量大於降水補注量時，岩層孔隙受重力壓實引發 <span class="ans-word" onclick="toggleAns(this)">地層下陷</span>，造成沿海海水倒灌、積水不退，且完全停止抽水後 <span class="ans-word" onclick="toggleAns(this)">無法</span> 恢復原狀！</div>
+      <div class="item-line interactive-item">4. <strong>水循環歷程</strong>：地表水經 <span class="ans-word" onclick="toggleAns(this)">蒸發</span> 與植物 <span class="ans-word" onclick="toggleAns(this)">蒸散</span> 上升，在高空遇冷 <span class="ans-word" onclick="toggleAns(this)">凝結</span> 成雲，最後藉由 <span class="ans-word" onclick="toggleAns(this)">降水</span> 回到陸地與海洋，永不停息。</div>
+
+      <div class="task-title" style="margin-top: 8px;">5-2 地表的改變與平衡 核心精華檢測</div>
+      <div class="item-line interactive-item">1. <strong>地貌營力比較</strong>：內營力源自地熱與板塊運動，使地表 <span class="ans-word" onclick="toggleAns(this)">高低起伏</span>；外營力藉流水、風、冰川、海浪削高填低，使地表趨於 <span class="ans-word" onclick="toggleAns(this)">平坦</span>。</div>
+      <div class="item-line interactive-item">2. <strong>外營力四大地質作用核心定義</strong>：</div>
+
+      <table class="concept-table" style="margin: 6px 0 8px 0; font-size: 11pt;">
+        <thead>
+          <tr><th style="width: 22%;">地質作用</th><th>作用過程與關鍵判斷指標</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong><span class="ans-word" onclick="toggleAns(this)">風化</span> 作用</strong></td><td>岩石在<strong>原地</strong>受空氣、水、陽光、生物影響，漸漸崩解破碎或成分改變化為土壤。</td></tr>
+          <tr><td><strong><span class="ans-word" onclick="toggleAns(this)">侵蝕</span> 作用</strong></td><td>岩石或風化物受流水、冰川等外營力動能沖刷，<strong>自原處剝離脫落</strong>。</td></tr>
+          <tr><td><strong><span class="ans-word" onclick="toggleAns(this)">搬運</span> 作用</strong></td><td>風化與侵蝕產生的岩石碎屑，藉外營力<strong>運送至其他地方</strong>（流水滾動磨圓礫石）。</td></tr>
+          <tr><td><strong><span class="ans-word" onclick="toggleAns(this)">沉積</span> 作用</strong></td><td>流速減慢、動能減弱時，岩石碎屑暫時或永久<strong>堆積下來</strong>（如沖積扇、三角洲）。</td></tr>
+        </tbody>
+      </table>
+
+      <div class="item-line interactive-item">3. <strong>海岸線動態平衡</strong>：入海泥沙量＝海浪帶走泥沙量時達到平衡；當入海泥沙因上游水土流失而大增時，出海口沉積大於侵蝕，海岸線向海 <span class="ans-word" onclick="toggleAns(this)">前進</span>（生成海埔新生地）；出海口沙源減少時，海岸線則向陸地 <span class="ans-word" onclick="toggleAns(this)">後退</span>。</div>
+
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中地球科學</span>
+        <span>第 5 章 重點整理（一）</span>
+        <span>第 12 頁 / 共 13 頁</span>
+      </div>
+    </div>
+    <!-- Page 13 -->
+    <div class="page" id="page13">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國三地球科學（上）講義</span>
+        <span>第 5 章 地球的環境</span>
+        <span>P. 13</span>
+      </div>
+
+
+      <div class="section-title">
+        <span>第 5 章　核心重點整理（二）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">5-3 岩石與礦物 核心挖空檢測 ｜ 三大岩類生成與常見造岩礦物總體系</span>
+      </div>
+
+      <div class="task-title">5-3 岩石與礦物 核心精華檢測</div>
+      <div class="item-line interactive-item">1. <strong>三大岩類生成方式與實例對照表</strong>：</div>
+
+      <table class="concept-table" style="margin: 6px 0 10px 0; font-size: 11pt;">
+        <thead>
+          <tr>
+            <th style="width: 18%;">岩石大類</th>
+            <th style="width: 38%;">生成地質環境與成因</th>
+            <th>常見岩石實例與代表</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong><span class="ans-word" onclick="toggleAns(this)">火成</span> 岩</strong></td>
+            <td>由地下高溫岩漿冷卻凝固而形成。<br>• 深處冷卻慢：結晶 <span class="ans-word" onclick="toggleAns(this)">大</span>。<br>• 地表冷卻快：結晶 <span class="ans-word" onclick="toggleAns(this)">小</span>。</td>
+            <td>• <strong>花岡岩</strong>（地下深處結晶大）。<br>• <strong>玄武岩</strong>（地表噴出快速冷卻，澎湖）。<br>• <strong>安山岩</strong>（大屯火山群）。</td>
+          </tr>
+          <tr>
+            <td><strong><span class="ans-word" onclick="toggleAns(this)">沉積</span> 岩</strong></td>
+            <td>岩石碎屑沉積於水底或陸地，經漫長時間的<strong>壓密與膠結</strong>硬化而成。</td>
+            <td>• <strong>礫岩</strong>（顆粒最大，＞2mm）。<br>• <strong>砂岩</strong>（顆粒中等，摸起來粗糙）。<br>• <strong><span class="ans-word" onclick="toggleAns(this)">頁</span> 岩</strong>（顆粒最細，觸感平滑）。<br>• <strong><span class="ans-word" onclick="toggleAns(this)">石灰</span> 岩</strong>（碳酸鈣主成分，遇酸起泡）。</td>
+          </tr>
+          <tr>
+            <td><strong><span class="ans-word" onclick="toggleAns(this)">變質</span> 岩</strong></td>
+            <td>深埋地底的原有岩石，經<strong>高溫與高壓</strong>作用，礦物重新結晶排列，成分與結構發生變化。</td>
+            <td>• 頁岩受變質 → <strong><span class="ans-word" onclick="toggleAns(this)">板</span> 岩</strong>。<br>• 石灰岩受變質 → <strong><span class="ans-word" onclick="toggleAns(this)">大理</span> 岩</strong>。<br>• 花岡岩受變質 → <strong><span class="ans-word" onclick="toggleAns(this)">花岡片麻</span> 岩</strong>。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="item-line interactive-item">2. <strong>岩石與礦物關係</strong>：岩石是由一種或多種 <span class="ans-word" onclick="toggleAns(this)">礦物</span> 聚合而成，無固定成分；礦物則是天然產出且原子排列規則的固體 <span class="ans-word" onclick="toggleAns(this)">無</span> 機物，具特定物理與化學性質。</div>
+      <div class="item-line interactive-item">3. <strong>常見礦物用途記憶</strong>：<span class="ans-word" onclick="toggleAns(this)">長石</span> 製造陶瓷原料；<span class="ans-word" onclick="toggleAns(this)">石英</span> 製造玻璃與半導體晶圓原料；方解石遇稀鹽酸會劇烈產生 <span class="ans-word" onclick="toggleAns(this)">二氧化碳</span> 氣泡；特別稀少美觀耐磨者稱為 <span class="ans-word" onclick="toggleAns(this)">寶石</span>。</div>
+
+      <div class="tip-box" style="margin-top: 12px;">
+        <div class="tip-title">🧭 全章核心概念網絡思維導圖</div>
+        <div style="font-size: 11pt; line-height: 1.5; color: #334155;">
+          <strong>地球環境</strong> ── <strong>水圈（5-1）</strong>：71％水覆蓋（鹹水 97％、冰川 2％、地下水 1％） → 水循環（蒸發/蒸散 → 凝結 → 降水）<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── <strong>岩石圈（5-2、5-3）</strong>：內營力（起伏） vs 外營力（平坦，河流/風/冰川/海浪） → 風化/侵蝕/搬運/沉積<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── 三大岩類（火成岩、沉積岩、變質岩） ＋ 造岩礦物（長石、石英、雲母、方解石）
+        </div>
+      </div>
+
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中地球科學</span>
+        <span>第 5 章 重點整理（二）</span>
+        <span>第 13 頁 / 共 13 頁</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let allRevealed = false;
+    let penMode = false;
+    let penColor = 'rgba(250, 204, 21, 0.45)';
+    let penSize = 3;
+
+    // Toggle single answer word
+    function toggleAns(el, e) {
+      if (e) e.stopPropagation();
+      el.classList.toggle('revealed');
+    }
+
+    // Toggle QA bracket
+    function toggleBracket(el, e) {
+      if (e) e.stopPropagation();
+      el.classList.toggle('revealed');
+    }
+
+    // Toggle solution box
+    function toggleSolution(el, e) {
+      if (e) e.stopPropagation();
+      const sol = el.querySelector('.calc-solution');
+      if (sol) sol.classList.toggle('revealed');
+    }
+
+    // Clicking question item toggles all its answers
+    function toggleItemAnswers(item, e) {
+      // Don't trigger if clicked directly on a child interactive element
+      if (e.target.closest('.ans-word') || e.target.closest('.qa-bracket') || e.target.closest('.calc-workspace')) {
+        return;
+      }
+      const bracket = item.querySelector('.qa-bracket');
+      const sol = item.querySelector('.calc-solution');
+      const blanks = item.querySelectorAll('.ans-word');
+
+      const isRev = bracket ? bracket.classList.contains('revealed') : (sol ? sol.classList.contains('revealed') : false);
+      if (bracket) bracket.classList.toggle('revealed', !isRev);
+      if (sol) sol.classList.toggle('revealed', !isRev);
+      blanks.forEach(b => b.classList.toggle('revealed', !isRev));
+    }
+
+    // Toggle all answers across document
+    function toggleAllAnswers() {
+      allRevealed = !allRevealed;
+      document.body.classList.toggle('show-all-answers', allRevealed);
+      const btn = document.getElementById('toggleAllAnsBtn');
+      const icon = document.getElementById('ansIcon');
+      if (btn) btn.classList.toggle('revealed', allRevealed);
+      if (icon) icon.innerText = allRevealed ? '🙈' : '👁️';
+    }
+
+    // TOC dropdown
+    function toggleTocMenu(e) {
+      if (e) e.stopPropagation();
+      const m = document.getElementById('tocMenu');
+      if (m) m.classList.toggle('show');
+    }
+
+    function jumpTo(pageId) {
+      const el = document.getElementById(pageId);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+      const m = document.getElementById('tocMenu');
+      if (m) m.classList.remove('show');
+    }
+
+    // Pen mode
+    function togglePenMode() {
+      penMode = !penMode;
+      document.body.classList.toggle('pen-active', penMode);
+      const btn = document.getElementById('penBtn');
+      const pop = document.getElementById('penOptions');
+      if (btn) btn.classList.toggle('active', penMode);
+      if (pop) pop.classList.toggle('show', penMode);
+    }
+
+    function setPenColor(col, dot) {
+      penColor = col;
+      document.querySelectorAll('.color-dot').forEach(d => d.classList.remove('active'));
+      if (dot) dot.classList.add('active');
+    }
+
+    function setPenSize(sz, btn) {
+      penSize = sz;
+      document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+    }
+
+    // Close popups on outer click
+    window.addEventListener('click', e => {
+      if (!e.target.closest('#tocBtn') && !e.target.closest('#tocMenu')) {
+        const m = document.getElementById('tocMenu');
+        if (m) m.classList.remove('show');
+      }
+    });
+
+    // Canvas drawing setup
+    const canvases = document.querySelectorAll('.drawing-canvas');
+    function resizeCanvases() {
+      canvases.forEach(c => {
+        const rect = c.parentElement.getBoundingClientRect();
+        c.width = rect.width; c.height = rect.height;
+      });
+    }
+    window.addEventListener('resize', resizeCanvases);
+    window.addEventListener('load', resizeCanvases);
+
+    let drawing = false;
+    let currentCanvas = null;
+    let ctx = null;
+
+    function getPos(e, c) {
+      const rect = c.getBoundingClientRect();
+      const x = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left;
+      const y = (e.touches ? e.touches[0].clientY : e.clientY) - rect.top;
+      return { x, y };
+    }
+
+    canvases.forEach(canvas => {
+      canvas.addEventListener('mousedown', e => {
+        if (!penMode) return;
+        drawing = true; currentCanvas = canvas;
+        ctx = canvas.getContext('2d');
+        ctx.strokeStyle = penColor; ctx.lineWidth = penSize;
+        ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+        const p = getPos(e, canvas); ctx.beginPath(); ctx.moveTo(p.x, p.y);
+      });
+      canvas.addEventListener('mousemove', e => {
+        if (!drawing || currentCanvas !== canvas) return;
+        const p = getPos(e, canvas); ctx.lineTo(p.x, p.y); ctx.stroke();
+      });
+      canvas.addEventListener('mouseup', () => { drawing = false; });
+      canvas.addEventListener('touchstart', e => {
+        if (!penMode) return; e.preventDefault();
+        drawing = true; currentCanvas = canvas;
+        ctx = canvas.getContext('2d');
+        ctx.strokeStyle = penColor; ctx.lineWidth = penSize;
+        ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+        const p = getPos(e, canvas); ctx.beginPath(); ctx.moveTo(p.x, p.y);
+      }, { passive: false });
+      canvas.addEventListener('touchmove', e => {
+        if (!drawing) return; e.preventDefault();
+        const p = getPos(e, canvas); ctx.lineTo(p.x, p.y); ctx.stroke();
+      }, { passive: false });
+      canvas.addEventListener('touchend', () => { drawing = false; });
+    });
+
+    function clearAllDrawings() {
+      canvases.forEach(c => { const ctx2 = c.getContext('2d'); ctx2.clearRect(0,0,c.width,c.height); });
+    }
+  </script>
+</body>
+</html>
