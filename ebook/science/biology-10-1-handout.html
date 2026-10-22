@@ -1,0 +1,1691 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>高中生物（全）1-1 細胞的構造 互動電子書</title>
+  <!-- 電子書目錄身分標記（見 SKILL.md §11 與 AGENTS.md） -->
+  <meta name="ebook:subject" content="science">
+  <meta name="ebook:grade" content="10">
+  <meta name="ebook:unit" content="1-1">
+  <meta name="ebook:title" content="高中生物（全）1-1 細胞的構造 互動電子書">
+  <meta name="ebook:type" content="handout">
+  <meta name="ebook:pages" content="16">
+  <meta name="ebook:level" content="std">
+  <meta name="ebook:summary" content="高中生物（全）1-1細胞的構造完整互動教學講義（全16頁寬裕舒展無截斷版），涵蓋：生命現象定義與四大特徵、顯微鏡發展史與細胞學說建立歷程、細胞大小尺度與形態多樣性、組成細胞的分子（水、醣類、蛋白質、脂質、核酸）、真核細胞構造（細胞膜流體鑲嵌模型、細胞核、各級膜狀與非膜狀胞器詳細機能）、原核細胞與真核細胞構造比較，以及28題基礎練習與課後演練（單選11題+多選4題）精析題組。">
+  <style>
+    @page { size: A4 portrait; margin: 10mm 12mm; }
+    * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body {
+      margin: 0; padding: 0; background-color: #f1f5f9;
+      font-family: "Times New Roman", "標楷體", "DFKai-SB", "BiauKai", serif;
+      font-size: 13pt; line-height: 1.5; color: #111;
+    }
+
+    /* 課堂懸浮工具列 */
+    .classroom-toolbar {
+      position: fixed; top: 14px; right: 20px; z-index: 9999;
+      display: flex; align-items: center; gap: 6px;
+      background: rgba(255, 255, 255, 0.96); padding: 5px 10px;
+      border-radius: 40px; box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      border: 1px solid #cbd5e1; backdrop-filter: blur(8px);
+    }
+    .tool-btn {
+      width: 36px; height: 36px; border-radius: 50%; border: 1px solid #cbd5e1;
+      background: #fff; color: #334155; font-size: 15px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.15s ease; outline: none; text-decoration: none;
+    }
+    .tool-btn:hover { background: #f8fafc; border-color: #94a3b8; transform: translateY(-1px); }
+    .tool-btn.active { background: #0284c7; color: #fff; border-color: #0284c7; }
+    .btn-toggle-ans { background: #eff6ff; border-color: #bfdbfe; color: #1d4ed8; font-weight: bold; }
+    .btn-toggle-ans.revealed { background: #fef2f2; border-color: #fecaca; color: #dc2626; }
+
+    /* 目錄跳轉選單 */
+    .toc-menu {
+      display: none; position: absolute; top: 46px; right: 0;
+      background: #fff; border: 1px solid #cbd5e1; border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15); width: 350px; max-height: 480px;
+      overflow-y: auto; z-index: 10000; padding: 6px 0; font-family: sans-serif;
+    }
+    .toc-menu.show { display: block; }
+    .toc-menu-title {
+      font-size: 11pt; font-weight: bold; padding: 8px 16px; color: #0284c7;
+      border-bottom: 1px solid #e2e8f0; background: #f8fafc;
+    }
+    .toc-menu-item {
+      padding: 6.5px 16px; font-size: 10pt; color: #334155; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center;
+      border-bottom: 1px dashed #f1f5f9; transition: background 0.1s;
+    }
+    .toc-menu-item:hover { background: #f0f9ff; color: #0284c7; }
+    .toc-page-badge {
+      font-size: 8.5pt; background: #e0f2fe; color: #0369a1;
+      padding: 1px 7px; border-radius: 12px; font-weight: bold;
+    }
+
+    /* 畫筆顏色選單 */
+    .pen-options {
+      display: none; position: absolute; top: 46px; right: 50px;
+      background: #fff; border: 1px solid #cbd5e1; border-radius: 20px;
+      padding: 4px 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      z-index: 10000; align-items: center; gap: 6px;
+    }
+    .pen-options.show { display: flex; }
+    .color-dot {
+      width: 18px; height: 18px; border-radius: 50%; cursor: pointer;
+      border: 2px solid transparent; transition: transform 0.1s;
+    }
+    .color-dot.active { border-color: #0f172a; transform: scale(1.15); }
+    .size-picker { display: flex; gap: 3px; align-items: center; }
+    .size-btn {
+      font-size: 10px; padding: 2px 5px; border-radius: 4px; border: 1px solid #cbd5e1;
+      background: #f8fafc; cursor: pointer;
+    }
+    .size-btn.active { background: #0284c7; color: #fff; border-color: #0284c7; }
+
+    /* 頁面容器 */
+    .pages-container {
+      display: flex; flex-direction: column; align-items: center;
+      padding: 24px 0 80px 0; gap: 24px;
+    }
+    .page {
+      position: relative; width: 210mm; min-height: 297mm; max-height: 297mm;
+      padding: 10mm 14mm 8mm 14mm; background: #fff;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08); border-radius: 2px;
+      overflow: hidden; display: flex; flex-direction: column; justify-content: space-between;
+    }
+
+    /* 繪圖畫布 */
+    .drawing-canvas {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      pointer-events: none; z-index: 50;
+    }
+    body.pen-active .drawing-canvas { pointer-events: auto; cursor: crosshair; }
+
+    /* 頁首與頁尾 */
+    .page-header {
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 10.5pt; color: #64748b; border-bottom: 1.5px solid #0284c7;
+      padding-bottom: 4px; margin-bottom: 6px; font-weight: bold;
+    }
+    .page-footer {
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 9.5pt; color: #94a3b8; border-top: 1px solid #e2e8f0;
+      padding-top: 4px; margin-top: auto;
+    }
+
+    /* 大標題與副標題 */
+    .section-title {
+      font-size: 13.5pt; font-weight: bold; color: #0f172a;
+      display: flex; justify-content: space-between; align-items: baseline;
+      border-left: 4.5px solid #0284c7; padding-left: 8px; margin: 3px 0 6px 0;
+    }
+    .task-title {
+      font-size: 12pt; font-weight: bold; color: #0369a1;
+      margin: 5px 0 3px 0; display: flex; align-items: center; gap: 4px;
+    }
+
+    /* 表格設計 */
+    .concept-table {
+      width: 100%; border-collapse: collapse; margin: 4px 0;
+      font-size: 10.5pt; line-height: 1.4;
+    }
+    .concept-table th {
+      background: #f0f9ff; color: #0369a1; font-weight: bold;
+      border: 1px solid #cbd5e1; padding: 4px 6px; text-align: center;
+    }
+    .concept-table td {
+      border: 1px solid #cbd5e1; padding: 4px 6px; vertical-align: middle;
+    }
+
+    /* 列表與行高 */
+    .item-line { margin: 2.5px 0; line-height: 1.45; font-size: 12pt; }
+
+    /* 提示與重點外框 */
+    .tip-box {
+      background: #f8fafc; border: 1.2px solid #bae6fd; border-radius: 6px;
+      padding: 6px 10px; margin-top: 6px;
+    }
+    .tip-title {
+      font-size: 10.5pt; font-weight: bold; color: #0284c7; margin-bottom: 2px;
+    }
+
+    /* 題目排版 */
+    .q-item {
+      margin: 5px 0; padding: 5px 8px; border-radius: 6px;
+      background: #fafafa; border: 1px solid #f1f5f9;
+      transition: background 0.15s;
+    }
+    .q-item:hover { background: #f8fafc; border-color: #e2e8f0; }
+    .q-stem { font-size: 12pt; line-height: 1.42; color: #0f172a; }
+    .q-num { font-weight: bold; color: #0284c7; margin-right: 4px; }
+    .q-options {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 2.5px 12px; margin-top: 3px; font-size: 11pt; color: #334155;
+      padding-left: 6px;
+    }
+    .q-opt { line-height: 1.35; }
+
+    /* 互動填空與顯答 */
+    .ans-word {
+      color: transparent !important; border-bottom: 1.5px solid #0284c7;
+      padding: 0 4px; cursor: pointer; user-select: none;
+      transition: color 0.15s; display: inline-block; min-width: 22px; text-align: center;
+    }
+    .ans-word:hover { border-bottom-color: #ef4444; }
+    .ans-word.revealed, body.show-all-answers .ans-word {
+      color: #dc2626 !important; font-weight: bold;
+    }
+
+    /* 選擇題括號顯答 */
+    .qa-bracket {
+      cursor: pointer; user-select: none; font-weight: bold;
+      color: #0f172a; padding: 0 2px;
+    }
+    .qa-bracket .ans-text {
+      color: transparent; min-width: 14px; display: inline-block;
+      text-align: center; transition: color 0.15s;
+    }
+    .qa-bracket:hover .ans-text { color: #f87171; }
+    .qa-bracket.revealed .ans-text, body.show-all-answers .qa-bracket .ans-text {
+      color: #dc2626 !important; font-weight: bold;
+    }
+
+    /* 題目解析區塊 */
+    .calc-workspace {
+      margin-top: 3px; padding: 4px 8px; border-radius: 4px;
+      background: #fff; border: 1px dashed #cbd5e1; cursor: pointer;
+      user-select: none;
+    }
+    .calc-solution {
+      font-size: 10pt; line-height: 1.4;
+      color: transparent !important;
+      transition: color 0.15s;
+    }
+    .calc-solution.revealed, body.show-all-answers .calc-solution {
+      color: #b91c1c !important;
+    }
+
+    /* 列印樣式 (純淨學生學習單) */
+    @media print {
+      html, body {
+        width: 100% !important; height: auto !important;
+        background: #fff !important; padding: 0 !important; margin: 0 !important;
+      }
+      .no-print, .classroom-toolbar, .drawing-canvas, .toc-menu, .pen-options {
+        display: none !important;
+      }
+      .pages-container { padding: 0 !important; gap: 0 !important; }
+      .page {
+        width: 100% !important; height: auto !important;
+        max-height: none !important; min-height: 275mm !important;
+        box-shadow: none !important; border-radius: 0 !important;
+        page-break-after: always; break-after: page;
+        padding: 8mm 12mm 6mm 12mm !important;
+      }
+      .ans-word {
+        color: transparent !important; border-bottom: 1px solid #475569 !important;
+      }
+      .qa-bracket .ans-text { color: transparent !important; }
+      .calc-solution { display: none !important; }
+      .calc-workspace { display: none !important; }
+      .q-item { background: transparent !important; border: none !important; padding: 2px 0 !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 課堂懸浮工具列 -->
+  <div class="classroom-toolbar no-print">
+    <!-- 回電子書目錄 -->
+    <a class="tool-btn" href="../index.html" title="回電子書目錄">🏠</a>
+    <!-- 目錄跳轉選單 -->
+    <div style="position: relative;">
+      <button class="tool-btn" id="tocBtn" onclick="toggleTocMenu(event)" title="單元章節目錄">📑</button>
+      <div class="toc-menu" id="tocMenu">
+        <div class="toc-menu-title">📖 1-1 細胞的構造 目錄 (全 16 頁)</div>
+        <div class="toc-menu-item" onclick="jumpTo('page1')"><span>1-1.1 生命現象與顯微鏡進展（觀念一）</span><span class="toc-page-badge">P.1</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page2')"><span>1-1.1 細胞學說建立與基礎練習（觀念二）</span><span class="toc-page-badge">P.2</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page3')"><span>1-1.2 細胞大小尺度與形態多樣性（觀念一）</span><span class="toc-page-badge">P.3</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page4')"><span>1-1.2 組成細胞的分子：水與醣類（觀念二）</span><span class="toc-page-badge">P.4</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page5')"><span>1-1.2 蛋白質、脂質與核酸（觀念三）</span><span class="toc-page-badge">P.5</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page6')"><span>1-1.2 基礎練習題組 (Q1～Q5)</span><span class="toc-page-badge">P.6</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page7')"><span>1-1.3 真核細胞與細胞膜模型（觀念一）</span><span class="toc-page-badge">P.7</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page8')"><span>1-1.3 細胞核與無膜胞器（觀念二）</span><span class="toc-page-badge">P.8</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page9')"><span>1-1.3 膜狀胞器：內質網、高基氏體、液泡（觀念三）</span><span class="toc-page-badge">P.9</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page10')"><span>1-1.3 粒線體、葉綠體與半自主特性（觀念四）</span><span class="toc-page-badge">P.10</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page11')"><span>1-1.3 原核與真核及三大細胞大對照（觀念五）</span><span class="toc-page-badge">P.11</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page12')"><span>1-1.3 基礎練習題組 (Q1～Q5)</span><span class="toc-page-badge">P.12</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page13')"><span>課後演練（一）：單選題 (Q1～Q6)</span><span class="toc-page-badge">P.13</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page14')"><span>課後演練（二）：單選題 (Q7～Q11)</span><span class="toc-page-badge">P.14</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page15')"><span>課後演練（三）：多選題 (Q1～Q4)</span><span class="toc-page-badge">P.15</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page16')"><span>1-1 單元核心知識統整與思維導圖</span><span class="toc-page-badge">P.16</span></div>
+      </div>
+    </div>
+    <!-- 一鍵顯答 -->
+    <button class="tool-btn btn-toggle-ans" id="toggleAllAnsBtn" onclick="toggleAllAnswers()" title="一鍵全開/全隱答案">
+      <span id="ansIcon">👁️</span>
+    </button>
+    <!-- 畫筆切換 -->
+    <button class="tool-btn" id="penBtn" onclick="togglePenMode()" title="螢光筆/板書筆">✏️</button>
+    <!-- 畫筆選單 -->
+    <div class="pen-options" id="penOptions">
+      <div class="color-picker">
+        <span class="color-dot active" style="background:#facc15;" onclick="setPenColor('rgba(250,204,21,0.45)', this)" title="螢光黃"></span>
+        <span class="color-dot" style="background:#ef4444;" onclick="setPenColor('rgba(239,68,68,0.8)', this)" title="紅筆"></span>
+        <span class="color-dot" style="background:#3b82f6;" onclick="setPenColor('rgba(37,99,235,0.8)', this)" title="藍筆"></span>
+        <span class="color-dot" style="background:#10b981;" onclick="setPenColor('rgba(16,185,129,0.8)', this)" title="綠筆"></span>
+      </div>
+      <div class="toolbar-divider" style="height:14px; margin:0 2px;"></div>
+      <div class="size-picker">
+        <span class="size-btn active" onclick="setPenSize(3, this)">細</span>
+        <span class="size-btn" onclick="setPenSize(7, this)">中</span>
+        <span class="size-btn" onclick="setPenSize(14, this)">粗</span>
+      </div>
+    </div>
+    <!-- 清除筆跡 -->
+    <button class="tool-btn" onclick="clearAllDrawings()" title="清除本頁筆跡">🧹</button>
+    <!-- 列印 -->
+    <button class="tool-btn" onclick="window.print()" title="列印純淨學習單">🖨️</button>
+  </div>
+
+  <!-- Pages Container -->
+  <div class="pages-container">
+    <!-- Page 1 -->
+    <div class="page" id="page1">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物（全）講義</span>
+        <span>1-1 細胞的構造</span>
+        <span>P. 1</span>
+      </div>
+
+
+      <div class="section-title">
+        <span>1-1.1　細胞學說的建立（一）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">生命現象四大特徵 ｜ 病毒的生物界線 ｜ 顯微鏡之發展史</span>
+      </div>
+
+      <div class="task-title">焦點一：生命現象（Characteristics of Life）</div>
+      <div class="item-line interactive-item">1. <strong>生物定義</strong>：可以獨立表現「生命現象」的完整有機個體。</div>
+      <div class="item-line interactive-item">2. <strong>四大基本生命現象</strong>：</div>
+      <div class="item-line interactive-item" style="padding-left: 14px;">(1) <strong><span class="ans-word" onclick="toggleAns(this)">代謝</span></strong>：生物體內所有化學反應的總稱。包含：<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• <strong>合成反應（同化代謝）</strong>：小分子 → 大分子，<strong>吸收能量</strong>合成所需物質（如光合作用）。<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• <strong>分解反應（異化代謝）</strong>：大分子 → 小分子，<strong>釋出能量</strong>提供細胞利用（如呼吸作用）。</div>
+      <div class="item-line interactive-item" style="padding-left: 14px;">(2) <strong><span class="ans-word" onclick="toggleAns(this)">生長</span> 與發育</strong>：細胞體積增大、細胞數目增多，或進行細胞分化伴隨發育。</div>
+      <div class="item-line interactive-item" style="padding-left: 14px;">(3) <strong><span class="ans-word" onclick="toggleAns(this)">感應</span></strong>：生物接受內外在刺激產生反應（如單細胞趨化游向食物、植物向光性、動物神經肌肉運動）。</div>
+      <div class="item-line interactive-item" style="padding-left: 14px;">(4) <strong><span class="ans-word" onclick="toggleAns(this)">生殖（繁殖）</span></strong>：產生新子代並將遺傳特徵延續傳遞給下一代的現象。</div>
+
+      <div class="tip-box" style="margin: 6px 0;">
+        <div class="tip-title">🔍 延伸思考：病毒（Virus）為何處於「生物」與「非生物」之間的灰色地帶？</div>
+        <div style="font-size: 10.5pt; line-height: 1.45; color: #334155;">
+          病毒不具細胞構造，缺乏獨立進行代謝、生長與主動運動的能力；離開宿主時宛如無生物結晶，只有進入特定活細胞寄生時，才能利用宿主的酵素與能量複製增殖。
+        </div>
+      </div>
+
+      <div class="task-title" style="margin-top: 6px;">焦點二：顯微鏡的發展歷程</div>
+      <div class="item-line interactive-item">1. <strong>顯微鏡之重要性</strong>：細胞極為微小，近代生物學的重要發現與細胞學說均與顯微鏡發展密不可分。</div>
+      <div class="item-line interactive-item">2. <strong>各階段顯微鏡的演進</strong>：</div>
+      <div class="item-line interactive-item" style="padding-left: 14px;">• <strong>詹森父子（1590）</strong>：發明首台光學複式顯微鏡，放大約 10 倍。</div>
+      <div class="item-line interactive-item" style="padding-left: 14px;">• <strong>虎克（1665）</strong>：自製改良複式顯微鏡（約 50 倍），觀察軟木栓切片發現蜂窩狀小格子，命名為 <strong>細胞 (Cell)</strong>（實為死細胞壁）。</div>
+      <div class="item-line interactive-item" style="padding-left: 14px;">• <strong>雷文霍克（1676）</strong>：精磨單式顯微鏡提高至 <strong>270 倍</strong>，首度觀察到活原生生物與細菌。</div>
+      <div class="item-line interactive-item" style="padding-left: 14px;">• <strong>電子顯微鏡（1930起）</strong>：放大達數十萬倍以上。<strong>掃描式 (SEM)</strong> 觀察細胞表面 3D 立體細微構造；<strong>穿透式 (TEM)</strong> 觀察細胞內部超微結構。</div>
+
+      <div style="text-align: center; margin-top: 6px;">
+        <img src="../images/biology-10-1-handout/fig_1_1_timeline.png" style="max-height: 135px; border-radius: 4px; border: 1px solid #cbd5e1;" alt="顯微鏡與細胞學說演進圖">
+        <div style="font-size: 9pt; color: #475569; margin-top: 2px;">▲ 顯微鏡技術演進與細胞學說建立時間軸對照</div>
+      </div>
+
+
+      <div class="page-footer">
+        <span>自製電子書 · 高中生物</span>
+        <span>1-1.1 細胞學說的建立（一）</span>
+        <span>第 1 頁 / 共 16 頁</span>
+      </div>
+    </div>
+    <!-- Page 2 -->
+    <div class="page" id="page2">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物（全）講義</span>
+        <span>1-1 細胞的構造</span>
+        <span>P. 2</span>
+      </div>
+
+
+      <div class="section-title">
+        <span>1-1.1　細胞學說的建立（二）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">細胞學說建立歷程 ｜ 細胞學說核心內容 ｜ 基礎演練題組</span>
+      </div>
+
+      <div class="task-title">焦點三：細胞學說（Cell Theory）的建立過程與核心內容</div>
+      <div class="item-line interactive-item">1. <strong>細胞學說建立關鍵里程碑</strong>：</div>
+
+      <div style="text-align: center; margin: 4px 0 6px 0;">
+        <img src="../images/biology-10-1-handout/fig_1_2_theory_flow.png" style="max-height: 110px; border-radius: 4px; border: 1px solid #cbd5e1;" alt="細胞學說建立歷程圖">
+        <div style="font-size: 9pt; color: #475569; margin-top: 2px;">▲ 布朗（發現核） → 許來登（植物） → 許旺（動植物） → 魏修（細胞分裂）</div>
+      </div>
+
+      <div class="item-line interactive-item">2. <strong>細胞學說三大核心內容摘要</strong>：</div>
+      <div class="item-line interactive-item" style="padding-left: 14px;">(1) <strong>所有生物體皆由一個或多個細胞所構成</strong>。</div>
+      <div class="item-line interactive-item" style="padding-left: 14px;">(2) <strong>細胞是生物體結構和功能的基本單位</strong>。</div>
+      <div class="item-line interactive-item" style="padding-left: 14px;">(3) <strong>新細胞皆由已存在的舊細胞經由 <span class="ans-word" onclick="toggleAns(this)">細胞分裂</span> 所產生</strong>（魏修提出）。</div>
+      <div class="item-line interactive-item">3. <strong>細胞學說的生物學意義</strong>：闡明生物在微觀構造上的統一性，並為「生物演化具共同起源」奠定重要論證基石。</div>
+
+      <div class="task-title" style="margin-top: 8px;">1-1.1 基礎練習題組</div>
+      <div class="q-item interactive-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this)">（ <span class="ans-text">C</span> ）</span>
+          <span class="q-num">1.</span>
+          <span class="q-text">下列有關生命現象的描述，何者完全正確？</span>
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 病毒能在活細胞內增殖，故屬於完整生物</div>
+          <div class="q-opt">(B) 代謝作用僅包含合成新物質的過程</div>
+          <div class="q-opt">(C) 植物亦可進行運動（如膨壓運動）</div>
+          <div class="q-opt">(D) 生長現象僅包含細胞體積增大與數量增多</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">💡 <strong>【解題核心精析】：</strong>(A) 病毒具絕對寄生性，缺乏完整細胞結構與自主代謝，介於生物與非生物間；(B) 代謝包含同化（合成）與異化（分解）；(C) 植物可藉由細胞膨壓改變進行運動（如睡眠運動、觸發運動、氣孔開閉）；(D) 生長現象包含體積增大、數量增加以及「細胞分化與組織發育」。</div>
+        </div>
+      </div>
+
+      <div class="q-item interactive-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this)">（ <span class="ans-text">D</span> ）</span>
+          <span class="q-num">2.</span>
+          <span class="q-text">下列化學反應中，何者屬於細胞內的「合成反應（同化作用）」？</span>
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 澱粉水解成葡萄糖</div>
+          <div class="q-opt">(B) 蛋白質分解為胺基酸</div>
+          <div class="q-opt">(C) 葡萄糖氧化轉變成二氧化碳和水</div>
+          <div class="q-opt">(D) 脂肪酸和甘油結合成脂肪</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">💡 <strong>【解題核心精析】：</strong>(A)、(B)、(C) 均由大分子分解為小分子，並釋放能量，為分解反應（異化作用）；(D) 1 分子甘油與 3 分子脂肪酸聚合合成三酸甘油酯，為小分子組合成大分子之合成反應（同化作用）。</div>
+        </div>
+      </div>
+
+      <div class="q-item interactive-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this)">（ <span class="ans-text">B</span> ）</span>
+          <span class="q-num">3.</span>
+          <span class="q-text">下列有關生物體內「合成反應」的敘述，何者錯誤？</span>
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 將小分子原料化合成大分子物質</div>
+          <div class="q-opt">(B) 反應過程多半伴隨大量能量的釋出</div>
+          <div class="q-opt">(C) 植物光合作用整體而言屬於同化代謝</div>
+          <div class="q-opt">(D) 多半伴隨化學鍵與物質間的連結形成</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">💡 <strong>【解題核心精析】：</strong>(B) 錯誤。合成反應（同化作用）從小分子組裝成高位能之複雜分子，過程多伴隨<strong>能量的吸收與儲存</strong>（如吸熱）；分解反應才多伴隨能量釋放（如放熱）。</div>
+        </div>
+      </div>
+
+      <div class="q-item interactive-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this)">（ <span class="ans-text">B</span> ）</span>
+          <span class="q-num">4.</span>
+          <span class="q-text">關於細胞的發現與細胞學說建立的相關敘述，何者正確？</span>
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 電子顯微鏡的發明對細胞最初的發現貢獻卓著</div>
+          <div class="q-opt">(B) 生物體的構造與功能基本單位即為細胞</div>
+          <div class="q-opt">(C) 魏修認為新細胞是由舊細胞成分結晶沉澱產生</div>
+          <div class="q-opt">(D) 虎克觀察到活細胞核，並率先提出細胞學說</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">💡 <strong>【解題核心精析】：</strong>(A) 虎克使用的是光學顯微鏡；(C) 魏修提出新細胞來自既存細胞之分裂；(D) 虎克觀察到死木栓細胞壁並命名 cell，細胞學說是許來登與許旺等人於近兩百年後提出。</div>
+        </div>
+      </div>
+
+
+      <div class="page-footer">
+        <span>自製電子書 · 高中生物</span>
+        <span>1-1.1 細胞學說的建立（二）</span>
+        <span>第 2 頁 / 共 16 頁</span>
+      </div>
+    </div>
+    <!-- Page 3 -->
+    <div class="page" id="page3">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物（全）講義</span>
+        <span>1-1 細胞的構造</span>
+        <span>P. 3</span>
+      </div>
+
+
+      <div class="section-title">
+        <span>1-1.2　細胞的形態與功能（一）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">細胞大小尺度 ｜ 顯微觀察極限 ｜ 細胞形態與生理功能之適應</span>
+      </div>
+
+      <div class="task-title">焦點一：細胞的大小與尺度界限</div>
+      <div class="item-line interactive-item">1. <strong>細胞的一般尺度</strong>：絕大多數細胞介於 <strong>1 ～ 100 微米 (μm)</strong> 之間，必須仰賴顯微鏡方能觀察。</div>
+      <div class="item-line interactive-item" style="padding-left: 14px;">• <strong>微小細胞實例</strong>：大腸桿菌長約 2 μm、人類紅血球直徑約 7～8 μm、人類白血球約 10～15 μm。</div>
+      <div class="item-line interactive-item" style="padding-left: 14px;">• <strong>大型細胞實例（肉眼可見）</strong>：牛蛙卵直徑約 2 mm、鴕鳥卵黃直徑達 8 cm、人類坐骨神經細胞長度可達 1 公尺！</div>
+
+      <div style="text-align: center; margin: 4px 0 6px 0;">
+        <img src="../images/biology-10-1-handout/fig_1_3_scale.png" style="max-height: 150px; border-radius: 4px; border: 1px solid #cbd5e1;" alt="生物尺度對照圖">
+        <div style="font-size: 9pt; color: #475569; margin-top: 2px;">▲ 不同物質與細胞尺度：電子顯微鏡 (nm~μm) ｜ 光學顯微鏡 (μm~mm) ｜ 肉眼 (＞0.1mm)</div>
+      </div>
+
+      <div class="task-title" style="margin-top: 6px;">焦點二：細胞的形態多樣性與機能分工</div>
+      <div class="item-line interactive-item">1. <strong>「形態隨功能而異」原則</strong>：多細胞生物細胞分化，形態特化以完美配合其生理機能。</div>
+
+      <div style="display: flex; gap: 10px; margin-top: 4px;">
+        <div style="flex: 1.6; font-size: 11pt; line-height: 1.5;">
+          • <strong>神經細胞</strong>：具有許多細長樹狀<strong>突起</strong>（樹突與軸突），大幅增加接觸面積，專門用於電訊號與化學訊息的接收與傳導。<br>
+          • <strong>肌肉細胞</strong>：呈細長<strong>纖維狀</strong>，富含肌動蛋白與肌凝蛋白，利於收縮舒張以產生運動。<br>
+          • <strong>木質部導管與管胞</strong>：呈<strong>中空管狀</strong>且細胞壁加厚，能高效率疏導水分與無機鹽，並支撐植物體。<br>
+          • <strong>表皮細胞</strong>：扁平且排列<strong>緊密無間隙</strong>，能有效防止水分散失並抵禦病原體入侵。<br>
+          • <strong>保衛細胞</strong>：兩兩成對呈<strong>半月形</strong>，兩側壁厚薄不均，藉由細胞膨壓變化控制<strong>氣孔開閉</strong>。
+        </div>
+
+        <div style="flex: 1; text-align: center;">
+          <img src="../images/biology-10-1-handout/fig_1_4_cells_diversity.png" style="max-height: 175px; border-radius: 4px; border: 1px solid #cbd5e1;" alt="肌肉細胞與神經細胞">
+          <div style="font-size: 8.5pt; color: #475569; margin-top: 2px;">▲ (A) 纖維狀肌肉細胞 (B) 多突起神經元</div>
+        </div>
+      </div>
+
+
+      <div class="page-footer">
+        <span>自製電子書 · 高中生物</span>
+        <span>1-1.2 細胞的形態與功能（一）</span>
+        <span>第 3 頁 / 共 16 頁</span>
+      </div>
+    </div>
+    <!-- Page 4 -->
+    <div class="page" id="page4">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物（全）講義</span>
+        <span>1-1 細胞的構造</span>
+        <span>P. 4</span>
+      </div>
+
+
+      <div class="section-title">
+        <span>1-1.2　細胞的形態與功能（二）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">細胞化學組成 ｜ 水的重要性 ｜ 醣類的分類與功能</span>
+      </div>
+
+      <div class="task-title">焦點三：組成細胞的化學分子總覽</div>
+      <div class="item-line interactive-item">1. <strong>細胞組成成分</strong>：分為<strong>無機物</strong>（水、礦物質如 Na<sup>+</sup>、K<sup>+</sup>、Ca<sup>2+</sup>）與<strong>有機物</strong>（醣類、蛋白質、脂質、核酸）。</div>
+
+      <div style="text-align: center; margin: 4px 0 6px 0;">
+        <img src="../images/biology-10-1-handout/fig_1_5_composition.png" style="max-height: 115px; border-radius: 4px; border: 1px solid #cbd5e1;" alt="細胞分子組成比例">
+        <div style="font-size: 9pt; color: #475569; margin-top: 2px;">▲ 細胞內化學成分比例：水（約70%最多） ＞ 蛋白質（有機物最多） ＞ 脂質 ＞ 醣類 ＞ 核酸 ＞ 礦物質</div>
+      </div>
+
+      <div class="item-line interactive-item">2. <strong>水 (Water) 的生理功能</strong>：</div>
+      <div class="item-line interactive-item" style="padding-left: 14px;">• 細胞中<strong>含量最多的化合物</strong>（約占細胞重量 70%）。</div>
+      <div class="item-line interactive-item" style="padding-left: 14px;">• <strong>良好溶劑</strong>：水具極性，能溶解多種營養與離子，利於細胞內化學代謝進行；高比熱可穩定細胞溫度。</div>
+
+      <div class="task-title" style="margin-top: 6px;">焦點四：醣類（Carbohydrates，碳水化合物）</div>
+      <div class="item-line interactive-item">1. <strong>元素組成與通式</strong>：由 C、H、O 組成，分子通式多為 (CH<sub>2</sub>O)<sub>n</sub>。主要作為<strong>能量供應</strong>、能量儲存與結構支撐。</div>
+      <div class="item-line interactive-item">2. <strong>醣類的層次分類與機能比較表</strong>：</div>
+
+      <table class="concept-table" style="font-size: 10.5pt; margin: 4px 0;">
+        <thead>
+          <tr>
+            <th style="width: 15%;">類別</th>
+            <th style="width: 20%;">組成特徵</th>
+            <th style="width: 25%;">常見種類實例</th>
+            <th>主要生理機能與重要性</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td rowspan="2"><strong>單醣</strong></td>
+            <td><strong>五碳醣</strong> (C<sub>5</sub>H<sub>10</sub>O<sub>5</sub>)</td>
+            <td><strong>核糖</strong>、<strong>去氧核糖</strong></td>
+            <td>分別構成 RNA 與 DNA 核苷酸之骨架成分。</td>
+          </tr>
+          <tr>
+            <td><strong>六碳醣</strong> (C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>)</td>
+            <td><strong>葡萄糖</strong>、果糖、半乳糖</td>
+            <td>細胞進行呼吸作用<strong>最主要的直接能量來源</strong>。</td>
+          </tr>
+          <tr>
+            <td><strong>雙醣</strong></td>
+            <td>2 分子單醣脫水聚合</td>
+            <td><strong>麥芽糖</strong>（種子發芽）<br><strong>蔗糖</strong>（植物養分運輸形式）<br><strong>乳糖</strong>（哺乳類乳汁）</td>
+            <td>麥芽糖 = 葡萄糖 + 葡萄糖<br>蔗糖 = 葡萄糖 + 果糖<br>乳糖 = 葡萄糖 + 半乳糖</td>
+          </tr>
+          <tr>
+            <td><strong>多醣</strong></td>
+            <td>數百至數千單醣聚合</td>
+            <td><strong>澱粉</strong>（植物儲存性多醣）<br><strong>肝醣</strong>（動物儲存性多醣）<br><strong>纖維素</strong>（植物細胞壁主成分）</td>
+            <td>澱粉與肝醣為能量儲備庫；纖維素耐拉扯，維持植物細胞堅固結構。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="text-align: center; margin-top: 4px;">
+        <img src="../images/biology-10-1-handout/fig_1_6_sugars.png" style="max-height: 85px; border-radius: 4px; border: 1px solid #cbd5e1;" alt="單醣雙醣多醣分子模型">
+        <div style="font-size: 8.5pt; color: #475569; margin-top: 1px;">▲ 單醣（單元） ｜ 雙醣（二聚體） ｜ 多醣（長鏈聚合物）</div>
+      </div>
+
+
+      <div class="page-footer">
+        <span>自製電子書 · 高中生物</span>
+        <span>1-1.2 細胞的形態與功能（二）</span>
+        <span>第 4 頁 / 共 16 頁</span>
+      </div>
+    </div>
+    <!-- Page 5 -->
+    <div class="page" id="page5">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物（全）講義</span>
+        <span>1-1 細胞的構造</span>
+        <span>P. 5</span>
+      </div>
+
+
+      <div class="section-title">
+        <span>1-1.2　細胞的形態與功能（三）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">蛋白質機能 ｜ 脂質三大類別 ｜ 核酸 DNA 與 RNA 構造</span>
+      </div>
+
+      <div class="task-title">焦點五：蛋白質（Proteins）</div>
+      <div class="item-line interactive-item">1. <strong>基本單位與元素</strong>：由 C、H、O、N、S 組成。基本構成單位為 <strong><span class="ans-word" onclick="toggleAns(this)">胺基酸</span></strong>（生物體主要有 20 種）。</div>
+      <div class="item-line interactive-item">2. <strong>結構與多樣性</strong>：胺基酸藉肽鍵相連成多肽鏈，不同種類、數量與排列順序摺疊出千變萬化的蛋白質立體構型。</div>
+      <div class="item-line interactive-item">3. <strong>廣泛生理機能</strong>：酵素（催化代謝）、抗體（免疫防禦）、血紅素（運輸氧氣）、膠原蛋白與毛髮（構造支撐）、肌動蛋白（肌肉收縮）。</div>
+
+      <div style="display: flex; gap: 8px; margin: 4px 0;">
+        <div style="flex: 1; text-align: center;">
+          <img src="../images/biology-10-1-handout/fig_1_7_protein.png" style="max-height: 90px; border-radius: 4px; border: 1px solid #cbd5e1;" alt="胺基酸串接成蛋白質">
+          <div style="font-size: 8.5pt; color: #475569;">▲ 胺基酸（珠子）串接摺疊成蛋白質</div>
+        </div>
+        <div style="flex: 1.2; text-align: center;">
+          <img src="../images/biology-10-1-handout/fig_1_8_lipids.png" style="max-height: 90px; border-radius: 4px; border: 1px solid #cbd5e1;" alt="中性脂肪與磷脂質">
+          <div style="font-size: 8.5pt; color: #475569;">▲ 中性脂肪（3酸） vs 磷脂質（2酸+磷）</div>
+        </div>
+      </div>
+
+      <div class="task-title" style="margin-top: 6px;">焦點六：脂質（Lipids）與核酸（Nucleic Acids）</div>
+      <div class="item-line interactive-item">1. <strong>脂質主要三大種類</strong>：</div>
+      <div class="item-line interactive-item" style="padding-left: 14px;">• <strong>中性脂肪（三酸甘油酯）</strong>：1 分子甘油 ＋ 3 分子脂肪酸。為體內能量<strong>最高密度的儲存形式</strong>，具隔熱保溫與緩衝抗壓功能。</div>
+      <div class="item-line interactive-item" style="padding-left: 14px;">• <strong>磷脂質</strong>：1 分子甘油 ＋ 2 分子脂肪酸 ＋ 含磷親水端。構成<strong>生物膜（細胞膜、胞器膜）最主要的骨架</strong>。</div>
+      <div class="item-line interactive-item" style="padding-left: 14px;">• <strong>固醇類</strong>：具四個碳環構造（不具脂肪酸），如膽固醇（調節膜流動性）、性激素（睪固酮、動情素）。</div>
+
+      <div class="item-line interactive-item">2. <strong>核酸（DNA 與 RNA）結構與比較表</strong>：基本組成單位為 <strong><span class="ans-word" onclick="toggleAns(this)">核苷酸</span></strong>（含氮鹼基 ＋ 五碳醣 ＋ 磷酸基）。</div>
+
+      <table class="concept-table" style="font-size: 10.5pt; margin: 4px 0;">
+        <thead>
+          <tr><th style="width: 18%;">核酸類型</th><th style="width: 18%;">五碳醣</th><th style="width: 24%;">含氮鹼基</th><th style="width: 16%;">空間結構</th><th>主要生理機能</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>DNA</strong><br>(去氧核糖核酸)</td>
+            <td>去氧核糖</td>
+            <td>A、T、C、G<br>(具胸腺嘧啶 T)</td>
+            <td>多為 <strong>雙股螺旋</strong></td>
+            <td>攜帶遺傳訊息的遺傳物質（基因即具功能之 DNA 片段）。</td>
+          </tr>
+          <tr>
+            <td><strong>RNA</strong><br>(核糖核酸)</td>
+            <td>核糖</td>
+            <td>A、U、C、G<br>(具尿嘧啶 U)</td>
+            <td>多為 <strong>單股</strong></td>
+            <td>參與遺傳訊息的轉錄與蛋白質的轉譯合成。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="text-align: center; margin-top: 4px;">
+        <img src="../images/biology-10-1-handout/fig_1_10_nucleic_acid.png" style="max-height: 105px; border-radius: 4px; border: 1px solid #cbd5e1;" alt="核苷酸與核酸構造">
+        <div style="font-size: 8.5pt; color: #475569; margin-top: 1px;">▲ 核苷酸構造（磷酸+五碳醣+鹼基） ｜ DNA 雙股螺旋 vs RNA 單股鏈</div>
+      </div>
+
+
+      <div class="page-footer">
+        <span>自製電子書 · 高中生物</span>
+        <span>1-1.2 細胞的形態與功能（三）</span>
+        <span>第 5 頁 / 共 16 頁</span>
+      </div>
+    </div>
+    <!-- Page 6 -->
+    <div class="page" id="page6">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物（全）講義</span>
+        <span>1-1 細胞的構造</span>
+        <span>P. 6</span>
+      </div>
+
+
+      <div class="section-title">
+        <span>1-1.2　基礎練習題組</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">核酸構造判別 ｜ 細胞物質組成 ｜ 蛋白質特性 ｜ 病毒成分 ｜ 顯微解析度計算</span>
+      </div>
+
+      <div class="q-item interactive-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this)">（ <span class="ans-text">B</span> ）</span>
+          <span class="q-num">1.</span>
+          <span class="q-text">有關生物體內「核酸」的構造與功能敘述，下列何者正確？</span>
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 基因是指具有特定遺傳訊息片段的 DNA 或 RNA</div>
+          <div class="q-opt">(B) 組成 DNA 與 RNA 的基本重複構造單位皆為核苷酸</div>
+          <div class="q-opt">(C) 核糖核酸簡稱為 DNA，去氧核糖核酸簡稱為 RNA</div>
+          <div class="q-opt">(D) 在真核細胞中，RNA 分子多半為穩定的雙股螺旋構造</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">💡 <strong>【解題核心精析】：</strong>(A) 細胞生物的基因皆為 DNA 片段（僅部分 RNA 病毒遺傳物質為 RNA）；(C) 核糖核酸簡稱為 RNA，去氧核糖核酸為 DNA；(D) RNA 在細胞中多以單股形式存在，DNA 多為雙股螺旋。</div>
+        </div>
+      </div>
+
+      <div class="q-item interactive-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this)">（ <span class="ans-text">C</span> ）</span>
+          <span class="q-num">2.</span>
+          <span class="q-text">下列關於細胞內各類化學物質的敘述，何者完全正確？</span>
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 醣類為植物細胞進行光合作用所消耗的最主要原料</div>
+          <div class="q-opt">(B) 動物與植物體內最主要儲存能量的醣類皆以澱粉為主</div>
+          <div class="q-opt">(C) 澱粉和纖維素分別為植物的儲存性多醣與植物細胞壁的主成分</div>
+          <div class="q-opt">(D) DNA 的中文全名為核糖核酸，RNA 為去氧核糖核酸</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">💡 <strong>【解題核心精析】：</strong>(A) 光合作用原料為水與二氧化碳，醣類是光合作用產物；(B) 動物體內儲存多醣以肝醣為主；(D) DNA 是去氧核糖核酸，RNA 是核糖核酸。</div>
+        </div>
+      </div>
+
+      <div class="q-item interactive-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this)">（ <span class="ans-text">B</span> ）</span>
+          <span class="q-num">3.</span>
+          <span class="q-text">下列有關「蛋白質」構造與生理功能的敘述，何者正確？</span>
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 人體維持基礎代謝的主要能量直接來源是胺基酸</div>
+          <div class="q-opt">(B) 多肽鏈中胺基酸的種類與排列順序會決定蛋白質的立體構型與功能</div>
+          <div class="q-opt">(C) 自然界中構成生物體蛋白質的核苷酸主要有 20 種</div>
+          <div class="q-opt">(D) 蛋白質在細胞內總重量含量僅次於核酸，具有催化等多種機能</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">💡 <strong>【解題核心精析】：</strong>(A) 人體最主要的直接能源物質是葡萄糖（醣類）；(C) 構成蛋白質的基本單元是「胺基酸」而非核苷酸；(D) 細胞內含量最多的是水，蛋白質佔有機物的第一位（含量僅次於水）。</div>
+        </div>
+      </div>
+
+      <div class="q-item interactive-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this)">（ <span class="ans-text">A, B, D</span> ）</span>
+          <span class="q-num">4.</span>
+          <span class="q-text">狂犬病毒之核心基本構造僅由單股 RNA 和蛋白質外殼組成，其最外層再包覆一層來自宿主細胞的脂質套膜。請問下列哪些化學物質可能存在於狂犬病毒的完整結構中？（應選 3 項）</span>
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 胺基酸</div>
+          <div class="q-opt">(B) 磷脂質</div>
+          <div class="q-opt">(C) 去氧核糖</div>
+          <div class="q-opt">(D) 核糖</div>
+          <div class="q-opt">(E) 纖維素</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">💡 <strong>【解題核心精析】：</strong>蛋白質外殼由胺基酸(A)組成；套膜含雙層磷脂質(B)；RNA 的五碳醣為核糖(D)。狂犬病毒為 RNA 病毒，不含去氧核糖(C)，亦不含植物成分纖維素(E)。</div>
+        </div>
+      </div>
+
+      <div class="q-item interactive-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this)">（ <span class="ans-text">B</span> ）</span>
+          <span class="q-num">5.</span>
+          <span class="q-text">人類正常肉眼的解像力（極限解析距離）約為 0.1 mm。若使用放大倍率為 1000 倍的光學顯微鏡觀察下列四種不同長度的微小構造，何者在視野下「看不見」？</span>
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 10<sup>-6</sup> m</div>
+          <div class="q-opt">(B) 10<sup>-5</sup> mm</div>
+          <div class="q-opt">(C) 10<sup>-5</sup> cm</div>
+          <div class="q-opt">(D) 10<sup>4</sup> nm</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">💡 <strong>【解題核心精析】：</strong>顯微鏡放大 1000 倍後，影像尺寸必須達到肉眼解析極限 0.1 mm 才能被分辨看見。<br>• (A) 10<sup>-6</sup> m = 10<sup>-3</sup> mm × 1000 = 1 mm > 0.1 mm（清晰可見）<br>• (B) 10<sup>-5</sup> mm × 1000 = 10<sup>-2</sup> mm = 0.01 mm < 0.1 mm（<strong>小於肉眼極限，看不見</strong>）<br>• (C) 10<sup>-5</sup> cm = 10<sup>-4</sup> mm × 1000 = 0.1 mm（達到可見門檻）<br>• (D) 10<sup>4</sup> nm = 10<sup>-2</sup> mm × 1000 = 10 mm（清晰可見）。</div>
+        </div>
+      </div>
+
+
+      <div class="page-footer">
+        <span>自製電子書 · 高中生物</span>
+        <span>1-1.2 基礎練習題組</span>
+        <span>第 6 頁 / 共 16 頁</span>
+      </div>
+    </div>
+    <!-- Page 7 -->
+    <div class="page" id="page7">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物（全）講義</span>
+        <span>1-1 細胞的構造</span>
+        <span>P. 7</span>
+      </div>
+
+
+      <div class="section-title">
+        <span>1-1.3　原核細胞與真核細胞（一）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">真核細胞基本架構 ｜ 動植物細胞3D比較 ｜ 細胞膜流體鑲嵌模型</span>
+      </div>
+
+      <div class="task-title">焦點一：真核細胞的基本構造與動植物細胞比較</div>
+      <div class="item-line interactive-item">1. <strong>三大基本架構</strong>：細胞膜、細胞質（細胞質液 + 胞器）、細胞核。植物、藻類及真菌外圍另具<strong>細胞壁</strong>。</div>
+
+      <div style="text-align: center; margin: 4px 0 6px 0;">
+        <img src="../images/biology-10-1-handout/fig_1_11_cells.png" style="max-height: 185px; border-radius: 4px; border: 1px solid #cbd5e1;" alt="動植物真核細胞3D解剖圖">
+        <div style="font-size: 9pt; color: #475569; margin-top: 2px;">▲ 植物細胞（具細胞壁、大中央液泡、葉綠體） vs 動物細胞（具中心粒、小液泡、溶體）</div>
+      </div>
+
+      <div class="task-title" style="margin-top: 6px;">焦點二：細胞膜的流體鑲嵌模型（Fluid Mosaic Model）</div>
+      <div class="item-line interactive-item">1. <strong>基本骨架</strong>：由 <strong><span class="ans-word" onclick="toggleAns(this)">雙層磷脂質</span></strong> 分子排列形成連續平面，親水端朝向膜內外兩側水溶液，疏水性脂肪酸尾部朝向內側。</div>
+      <div class="item-line interactive-item">2. <strong>膜蛋白（Membrane Proteins）</strong>：</div>
+      <div class="item-line interactive-item" style="padding-left: 14px;">• <strong>位置</strong>：鑲嵌於膜表面或貫穿雙層磷脂質。能在膜中側向移動，展現<strong>膜的流動性</strong>。</div>
+      <div class="item-line interactive-item" style="padding-left: 14px;">• <strong>功能</strong>：物質運輸通道（離子通道、載體蛋白）、受體（接收細胞外荷爾蒙或化學訊號）、催化酵素。</div>
+      <div class="item-line interactive-item">3. <strong>醣類分子（Carbohydrates）</strong>：</div>
+      <div class="item-line interactive-item" style="padding-left: 14px;">• 與膜蛋白或磷脂結合，<strong>僅分布於細胞膜的外側表面</strong>。</div>
+      <div class="item-line interactive-item" style="padding-left: 14px;">• 作為細胞表面的「身分識別標籤」，與細胞辨識（如血型、免疫自我辨識）密切相關。</div>
+      <div class="item-line interactive-item">4. <strong>膽固醇（Cholesterol）</strong>：鑲嵌於動物細胞膜磷脂分子間，高溫時限制磷脂移動、低溫時防止凝固，<strong>調節並穩定細胞膜的流動性</strong>。</div>
+
+      <div style="text-align: center; margin-top: 4px;">
+        <img src="../images/biology-10-1-handout/fig_1_12_membrane.png" style="max-height: 115px; border-radius: 4px; border: 1px solid #cbd5e1;" alt="細胞膜流體鑲嵌模型">
+        <div style="font-size: 8.5pt; color: #475569; margin-top: 1px;">▲ 細胞膜構造：磷脂雙層、鑲嵌蛋白質、外側醣蛋白標籤與選擇性通透</div>
+      </div>
+
+
+      <div class="page-footer">
+        <span>自製電子書 · 高中生物</span>
+        <span>1-1.3 原核細胞與真核細胞（一）</span>
+        <span>第 7 頁 / 共 16 頁</span>
+      </div>
+    </div>
+    <!-- Page 8 -->
+    <div class="page" id="page8">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物（全）講義</span>
+        <span>1-1 細胞的構造</span>
+        <span>P. 8</span>
+      </div>
+
+
+      <div class="section-title">
+        <span>1-1.3　原核細胞與真核細胞（二）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">細胞核超微構造 ｜ 染色質與染色體 ｜ 核糖體與中心粒</span>
+      </div>
+
+      <div class="task-title">焦點三：細胞核（Nucleus）——遺傳管控中心</div>
+      <div class="item-line interactive-item">1. <strong>核膜（Nuclear Envelope）</strong>：由 <strong><span class="ans-word" onclick="toggleAns(this)">雙層膜</span></strong> 組成，外膜與粗糙內質網相連。膜上具有 <strong><span class="ans-word" onclick="toggleAns(this)">核孔</span></strong>，嚴格管制 RNA、蛋白質等大分子進出細胞核。</div>
+      <div class="item-line interactive-item">2. <strong>核質與染色質（Chromatin）</strong>：核內膠狀液體散布著細絲狀染色質。由 <strong><span class="ans-word" onclick="toggleAns(this)">DNA</span> ＋ 組織蛋白質</strong> 共同組成，攜帶全套遺傳基因。細胞分裂時濃縮纏繞成顯微鏡可見的短棒狀<strong>染色體</strong>。</div>
+      <div class="item-line interactive-item">3. <strong>核仁（Nucleolus）</strong>：核內顏色深暗緻密區域（一個或數個），成分為 RNA 與蛋白質，專門負責 <strong><span class="ans-word" onclick="toggleAns(this)">核糖體次單元</span> 的合成與組裝</strong>。</div>
+
+      <div style="display: flex; gap: 10px; margin: 4px 0 6px 0;">
+        <div style="flex: 1; text-align: center;">
+          <img src="../images/biology-10-1-handout/fig_1_13_nucleus.png" style="max-height: 110px; border-radius: 4px; border: 1px solid #cbd5e1;" alt="細胞核構造圖">
+          <div style="font-size: 8.5pt; color: #475569;">▲ 細胞核：雙層核膜、核孔、核仁與染色質</div>
+        </div>
+        <div style="flex: 1; text-align: center;">
+          <img src="../images/biology-10-1-handout/fig_1_14_chromatin.png" style="max-height: 110px; border-radius: 4px; border: 1px solid #cbd5e1;" alt="染色質纏繞DNA">
+          <div style="font-size: 8.5pt; color: #475569;">▲ 染色質：DNA 雙螺旋纏繞組織蛋白</div>
+        </div>
+      </div>
+
+      <div class="task-title" style="margin-top: 6px;">焦點四：不具膜的胞器（核糖體與中心粒）</div>
+      <div class="item-line interactive-item">1. <strong>核糖體（Ribosome）</strong>：</div>
+      <div class="item-line interactive-item" style="padding-left: 14px;">• <strong>構造成分</strong>：<strong>不具膜構造</strong>，由核糖體 RNA (rRNA) 與蛋白質組成，分為大、小兩個次單元。</div>
+      <div class="item-line interactive-item" style="padding-left: 14px;">• <strong>主要機能</strong>：細胞中 <strong><span class="ans-word" onclick="toggleAns(this)">蛋白質合成</span></strong> 的工廠。</div>
+      <div class="item-line interactive-item" style="padding-left: 14px;">• <strong>細胞內分布</strong>：游離分散於細胞質液（合成胞內自身蛋白質）、附著於粗糙內質網表面（合成外泌蛋白或膜蛋白），亦存在於粒線體與葉綠體基質中。</div>
+
+      <div class="item-line interactive-item">2. <strong>中心體與中心粒（Centrosome & Centrioles）</strong>：</div>
+      <div class="item-line interactive-item" style="padding-left: 14px;">• <strong>構造特徵</strong>：<strong>不具膜構造</strong>。每個中心體由兩個互相垂直排列的<strong>中心粒</strong>及其周圍微管蛋白組成。由蛋白質微管排列而成。</div>
+      <div class="item-line interactive-item" style="padding-left: 14px;">• <strong>主要機能</strong>：動物細胞分裂時負責紡錘絲的形成，<strong>協助染色體的分離</strong>；並與纖毛、鞭毛的基底發育相關。</div>
+      <div class="item-line interactive-item" style="padding-left: 14px;">• <strong>分布特點</strong>：普遍存在於<strong>動物細胞</strong>與低等植物，高等植物細胞<strong>通常不具中心粒</strong>。</div>
+
+      <div style="display: flex; justify-content: space-around; margin-top: 4px;">
+        <div style="text-align: center;">
+          <img src="../images/biology-10-1-handout/fig_1_15_ribosome.png" style="max-height: 75px; border-radius: 4px; border: 1px solid #cbd5e1;" alt="核糖體大小次單元">
+          <div style="font-size: 8.5pt; color: #475569;">▲ 核糖體大、小次單元</div>
+        </div>
+        <div style="text-align: center;">
+          <img src="../images/biology-10-1-handout/fig_1_16_centrosome.png" style="max-height: 75px; border-radius: 4px; border: 1px solid #cbd5e1;" alt="中心粒管狀排列">
+          <div style="font-size: 8.5pt; color: #475569;">▲ 垂直排列之中心粒</div>
+        </div>
+      </div>
+
+
+      <div class="page-footer">
+        <span>自製電子書 · 高中生物</span>
+        <span>1-1.3 原核細胞與真核細胞（二）</span>
+        <span>第 8 頁 / 共 16 頁</span>
+      </div>
+    </div>
+    <!-- Page 9 -->
+    <div class="page" id="page9">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物（全）講義</span>
+        <span>1-1 細胞的構造</span>
+        <span>P. 9</span>
+      </div>
+
+
+      <div class="section-title">
+        <span>1-1.3　原核細胞與真核細胞（三）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">單層膜胞器 ｜ 內質網加工運輸 ｜ 高基氏體分泌 ｜ 液泡與溶體</span>
+      </div>
+
+      <div class="task-title">焦點五：單層膜胞器之機能與協同作用</div>
+
+      <div style="display: flex; gap: 10px; margin-top: 4px;">
+        <div style="flex: 1.6; font-size: 11pt; line-height: 1.5;">
+          <strong>1. 內質網（Endoplasmic Reticulum，ER）</strong>：<br>
+          • <strong>構造</strong>：單層膜摺疊而成的扁囊狀與分支管狀網絡，內連核膜、外通細胞膜。<br>
+          • <strong><span class="ans-word" onclick="toggleAns(this)">粗糙內質網 (rER)</span></strong>：表面附著核糖體，負責接收新合成的蛋白質進行修飾、折疊與運輸。<br>
+          • <strong><span class="ans-word" onclick="toggleAns(this)">平滑內質網 (sER)</span></strong>：表面無核糖體，專司<strong>脂質與固醇類合成</strong>；在肝細胞具<strong>解毒作用</strong>、在肌肉細胞調節鈣離子釋放。<br><br>
+
+          <strong>2. 高基氏體（Golgi Apparatus）</strong>：<br>
+          • <strong>構造</strong>：數個如飛碟盤狀重疊的單層膜扁囊，周圍簇擁運輸囊泡。<br>
+          • <strong>功能</strong>：細胞的 <strong><span class="ans-word" onclick="toggleAns(this)">分泌與轉運中心</span></strong>。接收來自粗糙內質網的蛋白質，進行糖基化修飾、分類、包裝，產生囊泡送往細胞膜外分泌（外泌作用）或形成溶體。
+        </div>
+
+        <div style="flex: 1; text-align: center;">
+          <img src="../images/biology-10-1-handout/fig_1_17_er.png" style="max-height: 95px; border-radius: 4px; border: 1px solid #cbd5e1;" alt="粗糙與平滑內質網">
+          <div style="font-size: 8pt; color: #475569; margin: 2px 0 4px 0;">▲ 內質網：粗糙型附著核糖體</div>
+          <img src="../images/biology-10-1-handout/fig_1_18_golgi.png" style="max-height: 95px; border-radius: 4px; border: 1px solid #cbd5e1;" alt="高基氏體扁囊與囊泡">
+          <div style="font-size: 8pt; color: #475569; margin-top: 2px;">▲ 高基氏體修飾包裝囊泡</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 10px; margin-top: 6px;">
+        <div style="flex: 1.6; font-size: 11pt; line-height: 1.5;">
+          <strong>3. 液泡（Vacuole）</strong>：<br>
+          • <strong>植物成熟中央液泡</strong>：佔細胞 90% 體積，儲存水分、無機鹽、花青素與代謝廢物；充水維持<strong>細胞膨壓與剛性形狀</strong>。<br>
+          • <strong>動物液泡與變形</strong>：較小且多樣，如白血球吞噬細菌形成之 <strong><span class="ans-word" onclick="toggleAns(this)">吞噬體</span></strong>；淡水草履蟲具 <strong><span class="ans-word" onclick="toggleAns(this)">伸縮泡</span></strong> 排除多餘水分。<br><br>
+
+          <strong>4. 溶體（Lysosome）</strong>：<br>
+          • 由高基氏體衍生的單層膜囊泡，內部富含多種<strong>酸性水解酵素</strong>。<br>
+          • 機能：分解胞內大分子、消化衰老破損胞器進行自噬回收、協助白血球清除外來病原體。
+        </div>
+
+        <div style="flex: 1; text-align: center;">
+          <img src="../images/biology-10-1-handout/fig_1_19_vacuole.png" style="max-height: 100px; border-radius: 4px; border: 1px solid #cbd5e1;" alt="植物中央大液泡">
+          <div style="font-size: 8pt; color: #475569; margin: 2px 0 4px 0;">▲ 植物中央大液泡維持膨壓</div>
+          <img src="../images/biology-10-1-handout/fig_1_20_contractile_vacuole.png" style="max-height: 70px; border-radius: 4px; border: 1px solid #cbd5e1;" alt="草履蟲伸縮泡">
+          <div style="font-size: 8pt; color: #475569; margin-top: 2px;">▲ 草履蟲伸縮泡調控水分</div>
+        </div>
+      </div>
+
+
+      <div class="page-footer">
+        <span>自製電子書 · 高中生物</span>
+        <span>1-1.3 原核細胞與真核細胞（三）</span>
+        <span>第 9 頁 / 共 16 頁</span>
+      </div>
+    </div>
+    <!-- Page 10 -->
+    <div class="page" id="page10">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物（全）講義</span>
+        <span>1-1 細胞的構造</span>
+        <span>P. 10</span>
+      </div>
+
+
+      <div class="section-title">
+        <span>1-1.3　原核細胞與真核細胞（四）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">能量轉換胞器 ｜ 雙層膜構造 ｜ 半自主胞器 ｜ 細胞器數量邏輯</span>
+      </div>
+
+      <div class="task-title">焦點六：粒線體與葉綠體——細胞的能量工廠</div>
+      <div class="item-line interactive-item">1. <strong>粒線體（Mitochondria）——細胞的發電廠</strong>：</div>
+      <div class="item-line interactive-item" style="padding-left: 14px;">• <strong>構造</strong>：<strong>雙層膜構造</strong>。外膜平滑；內膜向內高度摺疊形成許多皺褶（<strong>嵴</strong>），大幅增加表面積；內膜包夾之液體稱為<strong>基質</strong>。</div>
+      <div class="item-line interactive-item" style="padding-left: 14px;">• <strong>功能</strong>：內含大量呼吸酵素，為細胞進行<strong>有氧呼吸</strong>將有機物氧化分解產生 <strong>ATP</strong> 的主要場所。代謝旺盛之細胞（如心肌、肝臟）數量極多。</div>
+
+      <div class="item-line interactive-item">2. <strong>葉綠體（Chloroplast）——綠色工廠</strong>：</div>
+      <div class="item-line interactive-item" style="padding-left: 14px;">• <strong>構造</strong>：<strong>雙層膜構造</strong>。內部由扁平囊狀的 <strong><span class="ans-word" onclick="toggleAns(this)">類囊體</span></strong> 堆疊成葉綠餅，懸浮於充滿酵素的<strong>基質</strong>中。</div>
+      <div class="item-line interactive-item" style="padding-left: 14px;">• <strong>功能</strong>：藻類與植物進行光合作用場所。類囊體膜富含葉綠素進行<strong>光反應</strong>；基質進行<strong>固碳反應（卡爾文循環）</strong>合成葡萄糖。</div>
+
+      <div style="display: flex; gap: 12px; margin: 4px 0 6px 0;">
+        <div style="flex: 1; text-align: center;">
+          <img src="../images/biology-10-1-handout/fig_1_21_mitochondria.png" style="max-height: 125px; border-radius: 4px; border: 1px solid #cbd5e1;" alt="粒線體超微構造">
+          <div style="font-size: 8.5pt; color: #475569; margin-top: 2px;">▲ 粒線體：外膜、皺褶內膜、基質、自身環狀 DNA 與核糖體</div>
+        </div>
+        <div style="flex: 1; text-align: center;">
+          <img src="../images/biology-10-1-handout/fig_1_22_chloroplast.png" style="max-height: 125px; border-radius: 4px; border: 1px solid #cbd5e1;" alt="葉綠體超微構造">
+          <div style="font-size: 8.5pt; color: #475569; margin-top: 2px;">▲ 葉綠體：外膜、內膜、類囊體（葉綠餅）、基質與 DNA</div>
+        </div>
+      </div>
+
+      <div class="item-line interactive-item">3. <strong>「半自主胞器」三大關鍵特徵</strong>（內共生學說證據）：</div>
+      <div class="item-line interactive-item" style="padding-left: 14px;">(1) <strong>擁有自身獨立的環狀 DNA</strong>。</div>
+      <div class="item-line interactive-item" style="padding-left: 14px;">(2) <strong>擁有自身的 70S 核糖體</strong>，能自行轉錄轉譯合成小部分自身所需蛋白質。</div>
+      <div class="item-line interactive-item" style="padding-left: 14px;">(3) <strong>能自行像細菌般進行分裂增殖</strong>。</div>
+
+      <div class="tip-box" style="margin-top: 6px;">
+        <div class="tip-title">💡 滿分題型解題思維：如何推論不同細胞中何種胞器較多？</div>
+        <div style="font-size: 10.5pt; line-height: 1.45; color: #334155;">
+          • <strong>心肌／飛行肌／精子尾部</strong>：劇烈收縮需極多能量 → <strong>粒線體</strong>數量特別龐大。<br>
+          • <strong>胰臟外分泌細胞／唾腺／漿細胞（抗體）</strong>：大量分泌外泌蛋白 → <strong>粗糙內質網與高基氏體</strong>高度發達。<br>
+          • <strong>葉肉細胞</strong>：專司吸收陽光製造養分 → <strong>葉綠體</strong>含量豐富。
+        </div>
+      </div>
+
+
+      <div class="page-footer">
+        <span>自製電子書 · 高中生物</span>
+        <span>1-1.3 原核細胞與真核細胞（四）</span>
+        <span>第 10 頁 / 共 16 頁</span>
+      </div>
+    </div>
+    <!-- Page 11 -->
+    <div class="page" id="page11">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物（全）講義</span>
+        <span>1-1 細胞的構造</span>
+        <span>P. 11</span>
+      </div>
+
+
+      <div class="section-title">
+        <span>1-1.3　原核細胞與真核細胞（五）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">原核 vs 真核對照 ｜ 隔間化優點 ｜ 動植物與原核全構造大對比</span>
+      </div>
+
+      <div class="task-title">焦點七：原核細胞與真核細胞核心構造對照</div>
+      <div class="item-line interactive-item">1. <strong>原核細胞 (Prokaryotic cell)</strong>：無核膜包裹之細胞核（DNA 裸露於細胞質的擬核區）、<strong>無任何膜狀胞器</strong>、僅有 70S 核糖體。代表：細菌、藍綠菌。</div>
+      <div class="item-line interactive-item">2. <strong>膜狀胞器的進化優勢——細胞內部隔間化 (Compartmentalization)</strong>：</div>
+      <div class="item-line interactive-item" style="padding-left: 14px;">• 隔絕不同化學反應微環境，避免互相干擾破壞；集中酵素與反應物，大幅提高代謝反應效率。</div>
+
+      <div style="text-align: center; margin: 4px 0 6px 0;">
+        <img src="../images/biology-10-1-handout/fig_1_23_pro_vs_eu.png" style="max-height: 145px; border-radius: 4px; border: 1px solid #cbd5e1;" alt="原核與真核細胞對照圖">
+        <div style="font-size: 9pt; color: #475569; margin-top: 2px;">▲ 原核細胞（大腸桿菌 1~10μm） vs 真核細胞（植物葉肉細胞 10~100μm）</div>
+      </div>
+
+      <div class="task-title" style="margin-top: 4px;">焦點八：植物、動物與原核細胞構造完整大對比</div>
+      <table class="concept-table" style="font-size: 9.5pt; margin-top: 2px;">
+        <thead>
+          <tr>
+            <th>細胞構造</th>
+            <th>膜層數</th>
+            <th>主要機能特色</th>
+            <th style="width: 13%;">植物細胞</th>
+            <th style="width: 13%;">動物細胞</th>
+            <th style="width: 13%;">原核細胞</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>細胞膜</strong></td><td>單層(雙磷脂)</td><td>選擇性通透管制物質進出</td><td>✓</td><td>✓</td><td>✓</td></tr>
+          <tr><td><strong>細胞核</strong></td><td>雙層膜</td><td>內含染色質，主宰生命代謝與遺傳</td><td>✓</td><td>✓</td><td>✗ (無核膜)</td></tr>
+          <tr><td><strong>細胞質</strong></td><td>—</td><td>膠狀液體，代謝反應場所</td><td>✓</td><td>✓</td><td>✓</td></tr>
+          <tr><td><strong>核糖體</strong></td><td><strong>無膜</strong></td><td>由蛋白質+rRNA組成，合成蛋白質</td><td>✓</td><td>✓</td><td>✓</td></tr>
+          <tr><td><strong>內質網</strong></td><td>單層膜</td><td>粗糙型修飾蛋白質；平滑型合成脂質</td><td>✓</td><td>✓</td><td>✗</td></tr>
+          <tr><td><strong>高基氏體</strong></td><td>單層膜</td><td>蛋白質修飾、包裝與分泌中心</td><td>✓</td><td>✓</td><td>✗</td></tr>
+          <tr><td><strong>液泡</strong></td><td>單層膜</td><td>儲存物質維持膨壓；動物吞噬泡</td><td>✓ (大型中央)</td><td>✓ (小型)</td><td>✗</td></tr>
+          <tr><td><strong>粒線體</strong></td><td><strong>雙層膜</strong></td><td>有氧呼吸產生 ATP，半自主胞器</td><td>✓</td><td>✓</td><td>✗</td></tr>
+          <tr><td><strong>葉綠體</strong></td><td><strong>雙層膜</strong></td><td>光合作用製造醣類，半自主胞器</td><td>✓ (葉肉綠色處)</td><td>✗</td><td>✗</td></tr>
+          <tr><td><strong>細胞壁</strong></td><td>非膜構造</td><td>保護細胞，支持外型（植物含纖維素）</td><td>✓ (纖維素)</td><td>✗</td><td>✓ (肽聚醣等)</td></tr>
+          <tr><td><strong>溶體</strong></td><td>單層膜</td><td>含酸性水解酶，自噬與消化廢物</td><td>△ (液泡代之)</td><td>✓</td><td>✗</td></tr>
+          <tr><td><strong>中心體/粒</strong></td><td><strong>無膜</strong></td><td>協助微管發育與染色體分離</td><td>✗ (通常無)</td><td>✓</td><td>✗</td></tr>
+        </tbody>
+      </table>
+
+
+      <div class="page-footer">
+        <span>自製電子書 · 高中生物</span>
+        <span>1-1.3 原核細胞與真核細胞（五）</span>
+        <span>第 11 頁 / 共 16 頁</span>
+      </div>
+    </div>
+    <!-- Page 12 -->
+    <div class="page" id="page12">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物（全）講義</span>
+        <span>1-1 細胞的構造</span>
+        <span>P. 12</span>
+      </div>
+
+
+      <div class="section-title">
+        <span>1-1.3　基礎練習題組</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">胞器機能判斷 ｜ 核酸分布鑑定 ｜ 細胞形狀維持 ｜ 膜構造層數 ｜ 原核真核鑑別</span>
+      </div>
+
+      <div class="q-item interactive-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this)">（ <span class="ans-text">A</span> ）</span>
+          <span class="q-num">1.</span>
+          <span class="q-text">細胞質內的何種胞器具有轉譯「合成蛋白質」的主要生理功能？</span>
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 核糖體</div>
+          <div class="q-opt">(B) 高基氏體</div>
+          <div class="q-opt">(C) 溶體</div>
+          <div class="q-opt">(D) 葉綠體</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">💡 <strong>【解題核心精析】：</strong>核糖體是由蛋白質與 rRNA 組成的不具膜胞器，為細胞中將胺基酸依 mRNA 密碼序列組裝成蛋白質的合成基地。</div>
+        </div>
+      </div>
+
+      <div class="q-item interactive-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this)">（ <span class="ans-text">A</span> ）</span>
+          <span class="q-num">2.</span>
+          <span class="q-text">下列細胞構造或胞器成分中，何者「完全不含核酸」的化學成分？</span>
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 核膜</div>
+          <div class="q-opt">(B) 核糖體</div>
+          <div class="q-opt">(C) 染色質</div>
+          <div class="q-opt">(D) 核仁</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">💡 <strong>【解題核心精析】：</strong>核膜為雙層磷脂質與膜蛋白構成之生物膜，不含核酸；核糖體含 rRNA、染色質含 DNA、核仁富含 rRNA 與核糖體次單元成分。</div>
+        </div>
+      </div>
+
+      <div class="q-item interactive-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this)">（ <span class="ans-text">A, C</span> ）</span>
+          <span class="q-num">3.</span>
+          <span class="q-text">下列哪些細胞構造與「維持植物細胞特定形狀與機械剛性」有密切關聯？（應選 2 項）</span>
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 中央大液泡</div>
+          <div class="q-opt">(B) 細胞膜</div>
+          <div class="q-opt">(C) 細胞壁</div>
+          <div class="q-opt">(D) 內質網</div>
+          <div class="q-opt">(E) 葉綠體</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">💡 <strong>【解題核心精析】：</strong>植物細胞壁(C)為堅韌的纖維素外殼，能抵抗物理形變；成熟植物細胞內的大型中央液泡(A)充水飽滿產生向外的膨壓，緊推細胞壁，共同維持植物挺立姿態與形狀。</div>
+        </div>
+      </div>
+
+      <div class="q-item interactive-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this)">（ <span class="ans-text">A</span> ）</span>
+          <span class="q-num">4.</span>
+          <span class="q-text">下列有關真核細胞各胞器與構造的敘述，何者完全正確？</span>
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 粒線體是進行有氧呼吸的主要場所，葉綠體可將光能轉換儲存為化學能</div>
+          <div class="q-opt">(B) 內質網直接與細胞膜相連，為脂質唯一合成與分泌至細胞外的通道</div>
+          <div class="q-opt">(C) 核糖體主要存在於細胞核內，為製造遺傳物質 DNA 的主要胞器</div>
+          <div class="q-opt">(D) 細胞膜、粒線體和葉綠體皆由雙層膜（兩層磷脂雙層）構造所構成</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">💡 <strong>【解題核心精析】：</strong>(B) 內質網向內與核膜相通，分泌物需經高基氏體包裝；(C) 核糖體在細胞質中合成蛋白質；(D) 細胞膜為「一層」生物膜（由一對磷脂雙層構成），粒線體與葉綠體才具有內外「兩層」生物膜。</div>
+        </div>
+      </div>
+
+      <div class="q-item interactive-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this)">（ <span class="ans-text">C</span> ）</span>
+          <span class="q-num">5.</span>
+          <span class="q-text">下列有關「原核細胞」和「真核細胞」構造的比較選項，何者正確？</span>
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 細胞核：原核細胞【有】、真核細胞【有】</div>
+          <div class="q-opt">(B) 內質網：原核細胞【有】、真核細胞【有】</div>
+          <div class="q-opt">(C) 核糖體：原核細胞【有】、真核細胞【有】</div>
+          <div class="q-opt">(D) 細胞壁：原核細胞【有】、真核細胞【無】</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">💡 <strong>【解題核心精析】：</strong>(A) 原核細胞無核膜，不具真正細胞核；(B) 原核細胞缺乏內質網等膜狀胞器；(D) 植物、藻類與真菌等真核生物均具細胞壁；(C) 核糖體為無膜構造，原核與真核細胞均具備以合成生命所需之蛋白質。</div>
+        </div>
+      </div>
+
+      <div class="tip-box" style="margin-top: 10px;">
+        <div class="tip-title">📌 胞器特性快問快答大統整</div>
+        <div style="font-size: 10.5pt; line-height: 1.45; color: #334155;">
+          • <strong>雙層膜構造</strong>：細胞核、粒線體、葉綠體（三者皆含 DNA、RNA、核糖體，皆具雙層膜）。<br>
+          • <strong>單層膜構造</strong>：內質網、高基氏體、液泡、溶體。<br>
+          • <strong>不具膜構造</strong>：核糖體、中心體／中心粒、細胞壁（細胞骨架）。<br>
+          • <strong>含核酸 (DNA/RNA)</strong>：細胞核、粒線體、葉綠體、核糖體。
+        </div>
+      </div>
+
+
+      <div class="page-footer">
+        <span>自製電子書 · 高中生物</span>
+        <span>1-1.3 基礎練習題組</span>
+        <span>第 12 頁 / 共 16 頁</span>
+      </div>
+    </div>
+    <!-- Page 13 -->
+    <div class="page" id="page13">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物（全）講義</span>
+        <span>1-1 細胞的構造</span>
+        <span>P. 13</span>
+      </div>
+
+
+      <div class="section-title">
+        <span>1-1 課後演練（一）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">大考趨勢單選精練 ｜ 生命現象 ｜ 電顯尺度 ｜ 雙醣 ｜ 動物中心粒 ｜ 蛋白質特性</span>
+      </div>
+
+      <div class="q-item interactive-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this)">（ <span class="ans-text">C</span> ）</span>
+          <span class="q-num">1.</span>
+          <span class="q-text">下列哪一個生理狀態與生命現象，「絕對不會」發生在單細胞生物個體上？</span>
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 細胞吸收養分後使細胞體積增大</div>
+          <div class="q-opt">(B) 同化合成作用之速率大於分解作用</div>
+          <div class="q-opt">(C) 細胞群特化分工並進行細胞分化</div>
+          <div class="q-opt">(D) 感應環境中的外界化學養分濃度並產生游動</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">💡 <strong>【解題核心精析】：</strong>單細胞生物單獨一個細胞即是一個完整獨立的生命體，其生長透過細胞體積增大或細胞分裂產生新個體，<strong>不會發生多細胞生物體內的「細胞分化」</strong>現象（細胞分化是多細胞生物形成不同組織與器官的歷程）。</div>
+        </div>
+      </div>
+
+      <div class="q-item interactive-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this)">（ <span class="ans-text">C</span> ）</span>
+          <span class="q-num">2.</span>
+          <span class="q-text">下列何種微小病原體或生物體，在大多數情況下必須使用「電子顯微鏡」才能清楚觀察其超微形態構造？</span>
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 瘧原蟲（原生生物）</div>
+          <div class="q-opt">(B) 金黃色葡萄球菌（細菌）</div>
+          <div class="q-opt">(C) 新冠冠狀病毒 (SARS-CoV-2)</div>
+          <div class="q-opt">(D) 釀酒酵母菌（真菌）</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">💡 <strong>【解題核心精析】：</strong>瘧原蟲（數微米至十微米）、葡萄球菌（約 1 μm）、酵母菌（約 5～10 μm）均可利用光學顯微鏡清晰辨識；<strong>病毒（如冠狀病毒直徑僅約 100 nm）</strong>遠低於光學顯微鏡極限解析度（約 200 nm），必須仰賴電子顯微鏡。</div>
+        </div>
+      </div>
+
+      <div class="q-item interactive-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this)">（ <span class="ans-text">C</span> ）</span>
+          <span class="q-num">3.</span>
+          <span class="q-text">下列生物體常見的醣類分子中，何者在化學分類上屬於「雙醣」？</span>
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 澱粉</div>
+          <div class="q-opt">(B) 肝醣</div>
+          <div class="q-opt">(C) 麥芽糖</div>
+          <div class="q-opt">(D) 纖維素</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">💡 <strong>【解題核心精析】：</strong>澱粉、肝醣與纖維素皆是由成百上千個葡萄糖分子脫水縮合構成的「多醣」；麥芽糖是由 2 分子葡萄糖結合成的「雙醣」。</div>
+        </div>
+      </div>
+
+      <div class="q-item interactive-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this)">（ <span class="ans-text">D</span> ）</span>
+          <span class="q-num">4.</span>
+          <span class="q-text">下列何種細胞構造在動物細胞分裂時清楚可見，但在絕大多數的高等被子植物細胞中卻完全缺乏？</span>
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 細胞壁</div>
+          <div class="q-opt">(B) 葉綠體</div>
+          <div class="q-opt">(C) 細胞核</div>
+          <div class="q-opt">(D) 中心粒</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">💡 <strong>【解題核心精析】：</strong>中心粒（中心體）存在於動物細胞中，負責在有絲分裂時協助紡錘絲形成與微管排列；高等植物細胞分裂時雖有紡錘絲形成，但<strong>缺乏中心粒</strong>構造。</div>
+        </div>
+      </div>
+
+      <div class="q-item interactive-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this)">（ <span class="ans-text">D</span> ）</span>
+          <span class="q-num">5.</span>
+          <span class="q-text">下列人體與細胞代謝所需的營養分子中，何者「無法」被細胞氧化分解以作為提供能量的來源？</span>
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 醣類</div>
+          <div class="q-opt">(B) 脂質</div>
+          <div class="q-opt">(C) 蛋白質</div>
+          <div class="q-opt">(D) 維生素</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">💡 <strong>【解題核心精析】：</strong>醣類（4 kcal/g）、蛋白質（4 kcal/g）、脂質（9 kcal/g）皆為能源營養素；<strong>維生素為微量有機分子</strong>，作為輔酶參與調節代謝反應，本身不能氧化產生能量。</div>
+        </div>
+      </div>
+
+      <div class="q-item interactive-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this)">（ <span class="ans-text">A</span> ）</span>
+          <span class="q-num">6.</span>
+          <span class="q-text">下列有關細胞內「蛋白質」構造與生理功能的敘述，何者正確？</span>
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 構成生物體蛋白質的基本胺基酸種類至少有 20 種</div>
+          <div class="q-opt">(B) 蛋白質功能繁多，例如主要負責催化體內化學反應進行的抗體</div>
+          <div class="q-opt">(C) 只要胺基酸的種類與數量完全相同，組合而成的蛋白質功能必然完全相同</div>
+          <div class="q-opt">(D) 蛋白質為細胞內重量比例最高的物質，具有多樣化的生命機能</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">💡 <strong>【解題核心精析】：</strong>(B) 催化反應進行的是「酵素」，抗體的功能是專一性結合抗原進行免疫；(C) 胺基酸排列順序不同，摺疊之三度空間構型即不同，機能亦相異；(D) 細胞內含量最多之分子為水，蛋白質為細胞內含量最多的「有機物」。</div>
+        </div>
+      </div>
+
+
+      <div class="page-footer">
+        <span>自製電子書 · 高中生物</span>
+        <span>1-1 課後演練（一）</span>
+        <span>第 13 頁 / 共 16 頁</span>
+      </div>
+    </div>
+    <!-- Page 14 -->
+    <div class="page" id="page14">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物（全）講義</span>
+        <span>1-1 細胞的構造</span>
+        <span>P. 14</span>
+      </div>
+
+
+      <div class="section-title">
+        <span>1-1 課後演練（二）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">大考趨勢單選精練 ｜ 胞器產能 ｜ 原核真核鑑別 ｜ 粒線體生理意義 ｜ 細胞尺度推論</span>
+      </div>
+
+      <div class="q-item interactive-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this)">（ <span class="ans-text">D</span> ）</span>
+          <span class="q-num">7.</span>
+          <span class="q-text">在探討細胞內胞器交互作用的科學益智遊戲中，當原始細胞獲得下列哪一種胞器後，其將養分轉換為 ATP 能量的效率得以大幅提升數十倍？</span>
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 核糖體</div>
+          <div class="q-opt">(B) 內質網</div>
+          <div class="q-opt">(C) 中心體</div>
+          <div class="q-opt">(D) 粒線體</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">💡 <strong>【解題核心精析】：</strong>粒線體能利用氧氣進行有氧呼吸，將葡萄糖經丙酮酸徹底氧化分解為 CO<sub>2</sub> 與 H<sub>2</sub>O，每分子葡萄糖可產生高達約 30～32 分子 ATP，產能效率遠高於細胞質發酵。</div>
+        </div>
+      </div>
+
+      <div class="q-item interactive-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this)">（ <span class="ans-text">A</span> ）</span>
+          <span class="q-num">8.</span>
+          <span class="q-text">若要明確區分某單細胞微生物究屬「真核生物」或「原核生物」，下列何項構造特徵是最關鍵的判定指標？</span>
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 細胞內有無核膜包圍之細胞核</div>
+          <div class="q-opt">(B) 細胞外圍有無保護性的細胞壁</div>
+          <div class="q-opt">(C) 細胞是否具備選擇通透之細胞膜</div>
+          <div class="q-opt">(D) 細胞質內有無合成蛋白質之核糖體</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">💡 <strong>【解題核心精析】：</strong>原核生物與真核生物最本質的核心差異在於<strong>有無核膜</strong>分隔出的細胞核及有無膜狀胞器。細胞壁、細胞膜與核糖體在兩大類生物中均普遍存在。</div>
+        </div>
+      </div>
+
+      <div class="q-item interactive-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this)">（ <span class="ans-text">B</span> ）</span>
+          <span class="q-num">9.</span>
+          <span class="q-text">綠色植物細胞吸收環境中的光能，並一步步利用該能量轉移合成出蛋白質。請問下列哪一個胞器與此完整生理歷程「最無直接關聯」？</span>
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 葉綠體</div>
+          <div class="q-opt">(B) 中央大液泡</div>
+          <div class="q-opt">(C) 核糖體</div>
+          <div class="q-opt">(D) 粒線體</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">💡 <strong>【解題核心精析】：</strong>植物以葉綠體(A)吸收光能合成醣類，再由細胞質與粒線體(D)氧化醣類產生 ATP 能量，最後驅動核糖體(C)將胺基酸合成為蛋白質。中央大液泡(B)主司水分儲存與膨壓維持，與此產能合成鏈無直接關聯。</div>
+        </div>
+      </div>
+
+      <div class="q-item interactive-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this)">（ <span class="ans-text">C</span> ）</span>
+          <span class="q-num">10.</span>
+          <span class="q-text">細胞的形態與胞器分佈常與其生理功能密切相關。若已知人體心肌細胞與肝臟細胞內含有異常眾多的粒線體，對此現象最合理的生物學解釋為何？</span>
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 該類細胞染色體中含有數量較多的基因</div>
+          <div class="q-opt">(B) 該類細胞對外界能量的需求程度顯著較低</div>
+          <div class="q-opt">(C) 該細胞內部 ATP 的合成與水解反應極為旺盛頻繁</div>
+          <div class="q-opt">(D) 該細胞合成蛋白質時僅需要粒線體提供酵素</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">💡 <strong>【解題核心精析】：</strong>粒線體為細胞有氧呼吸製造 ATP 之場所。心肌不斷自主搏動、肝臟負責全身繁複代謝，兩者能量需求極高，故胞內 <strong>ATP 的合成與消耗反應極為頻繁</strong>，需大量粒線體常駐供能。</div>
+        </div>
+      </div>
+
+      <div class="q-item interactive-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this)">（ <span class="ans-text">D</span> ）</span>
+          <span class="q-num">11.</span>
+          <span class="q-text">有關於「原核細胞」與「真核細胞」的生物學特性比較，下列敘述何者完全正確？</span>
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 兩者細胞外圍皆必然具有細胞壁</div>
+          <div class="q-opt">(B) 兩者的遺傳物質皆是由核糖核酸 (RNA) 所構成</div>
+          <div class="q-opt">(C) 原核細胞與真核細胞的細胞質中均普遍具備中心粒</div>
+          <div class="q-opt">(D) 真核細胞的形態變化及體積尺度通常顯著較原核細胞為大</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">💡 <strong>【解題核心精析】：</strong>(A) 動物細胞無細胞壁；(B) 所有細胞生物的遺傳物質皆為 DNA（去氧核糖核酸）；(C) 原核生物缺乏中心粒與任何細胞骨架中心體；(D) 原核細胞直徑一般約 1～10 μm，真核細胞多介於 10～100 μm，真核細胞體積與形態複雜度均顯著更大。</div>
+        </div>
+      </div>
+
+
+      <div class="page-footer">
+        <span>自製電子書 · 高中生物</span>
+        <span>1-1 課後演練（二）</span>
+        <span>第 14 頁 / 共 16 頁</span>
+      </div>
+    </div>
+    <!-- Page 15 -->
+    <div class="page" id="page15">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物（全）講義</span>
+        <span>1-1 細胞的構造</span>
+        <span>P. 15</span>
+      </div>
+
+
+      <div class="section-title">
+        <span>1-1 課後演練（三）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">學測跨章節多選題組 ｜ 內質網與高基氏體 ｜ 葉綠體微構造 ｜ 生物膜本質 ｜ 流體鑲嵌模型</span>
+      </div>
+
+      <div class="q-item interactive-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this)">（ <span class="ans-text">A, D, E</span> ）</span>
+          <span class="q-num">多選 1.</span>
+          <span class="q-text">下列有關真核細胞內「內質網」與「高基氏體」的構造與功能比較，哪些正確？（應選 3 項）</span>
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 兩者在構造上皆屬於單層膜所構成的囊狀或管狀胞器</div>
+          <div class="q-opt">(B) 高基氏體主要負責細胞內各類脂質與固醇類的合成</div>
+          <div class="q-opt">(C) 粗糙內質網與高基氏體表面皆具有密集的核糖體附著</div>
+          <div class="q-opt">(D) 肝臟和胰臟因需大量合成與分泌蛋白質，故細胞內具有發達的內質網與高基氏體</div>
+          <div class="q-opt">(E) 兩者在細胞內物質的修飾、加工、分類與運輸途徑上具有緊密的連續協同關係</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">💡 <strong>【解題核心精析】：</strong>(B) 脂質與固醇類合成主要由<strong>平滑內質網</strong>負責；(C) 僅粗糙內質網表面有核糖體，高基氏體表面平滑<strong>無核糖體</strong>附著；(A)、(D)、(E) 敘述皆正確。</div>
+        </div>
+      </div>
+
+      <div class="q-item interactive-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this)">（ <span class="ans-text">A, C, E</span> ）</span>
+          <span class="q-num">多選 2.</span>
+          <span class="q-text">下列有關植物細胞「葉綠體」超微構造與生理反應的敘述，哪些正確？（應選 3 項）</span>
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 葉綠體具有由外膜與內膜構成的雙層膜構造，內部含有扁平囊狀的類囊體</div>
+          <div class="q-opt">(B) 葉綠體的基質是進行光反應吸收太陽輻射光能的主要場所</div>
+          <div class="q-opt">(C) 數個扁平的類囊體可相互重疊堆砌形成葉綠餅構造</div>
+          <div class="q-opt">(D) 類囊體膜內部是利用酵素進行固碳反應合成葡萄糖的主要位置</div>
+          <div class="q-opt">(E) 葉綠體基質中含有多種參與卡爾文循環（固碳反應）所需的特化酵素</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">💡 <strong>【解題核心精析】：</strong>(B) 光反應吸收光能是在<strong>類囊體膜</strong>上進行；(D) 固碳反應合成葡萄糖是在<strong>基質</strong>中進行；(A)、(C)、(E) 皆為葉綠體構造之正確描述。</div>
+        </div>
+      </div>
+
+      <div class="q-item interactive-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this)">（ <span class="ans-text">C, D, E</span> ）</span>
+          <span class="q-num">多選 3.</span>
+          <span class="q-text">下列有關細胞化學成分與構造的敘述，哪些正確？（應選 3 項）</span>
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 動物細胞膜的主要化學成分為蛋白質、核酸和磷脂質</div>
+          <div class="q-opt">(B) 細胞膜外側的醣類分子主動用於探測並辨識細胞外的環境物質</div>
+          <div class="q-opt">(C) 生物界中僅特定細胞具有細胞壁，且植物（纖維素）、真菌（幾丁質）成分各異</div>
+          <div class="q-opt">(D) 細胞膜、粒線體和葉綠體之各層生物膜皆是由磷脂雙層作為骨架建構而成</div>
+          <div class="q-opt">(E) 粒線體（呼吸作用）和葉綠體（光合作用）皆在細胞內扮演能量轉換的關鍵角色</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">💡 <strong>【解題核心精析】：</strong>(A) 細胞膜<strong>不含核酸</strong>；(B) 膜外醣類是做為細胞本身的「標籤」以<strong>供其他細胞辨識</strong>（如免疫辨識）；(C)、(D)、(E) 均完全正確。</div>
+        </div>
+      </div>
+
+      <div class="q-item interactive-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this)">（ <span class="ans-text">B, C, D</span> ）</span>
+          <span class="q-num">多選 4.</span>
+          <span class="q-text">下列有關「細胞膜」構造與膜上分子特性的敘述，哪些正確？（應選 3 項）</span>
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 細胞膜主要由蛋白質與醣類構成，雙層磷脂質僅占極少數比例</div>
+          <div class="q-opt">(B) 寡醣鏈主要分布在細胞膜的外側表面，作為分子與細胞的辨識標籤</div>
+          <div class="q-opt">(C) 膜上的蛋白質鑲嵌於磷脂雙層中，部分可作為專一性運輸物質的通道或載體</div>
+          <div class="q-opt">(D) 膜上的受體蛋白質可專一性接收外界激素或化學分子的訊號刺激</div>
+          <div class="q-opt">(E) 細胞膜具有極佳的自由通透性，多數水溶性離子與大分子皆可直接自由擴散通過</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">💡 <strong>【解題核心精析】：</strong>(A) 細胞膜以雙層磷脂質為基本連續骨架；(E) 細胞膜具有<strong>選擇性通透</strong>，具電荷離子與親水性大分子無法直接自由穿透磷脂雙層，需仰賴膜蛋白協助；(B)、(C)、(D) 正確。</div>
+        </div>
+      </div>
+
+
+      <div class="page-footer">
+        <span>自製電子書 · 高中生物</span>
+        <span>1-1 課後演練（三）</span>
+        <span>第 15 頁 / 共 16 頁</span>
+      </div>
+    </div>
+    <!-- Page 16 -->
+    <div class="page" id="page16">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物（全）講義</span>
+        <span>1-1 細胞的構造</span>
+        <span>P. 16</span>
+      </div>
+
+
+      <div class="section-title">
+        <span>1-1　單元核心知識統整</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">全章脈絡導圖 ｜ 胞器分類速記 ｜ 概念比較總結 ｜ 學測滿分心法</span>
+      </div>
+
+      <div class="task-title">🎯 1-1 細胞的構造 全章概念體系思維導圖</div>
+
+      <div style="background: #f8fafc; border: 1.5px solid #0284c7; border-radius: 8px; padding: 10px 14px; font-size: 11pt; line-height: 1.55;">
+        <div style="font-weight: bold; color: #0284c7; margin-bottom: 6px; font-size: 11.5pt;">🧭 細胞學說與細胞組成核心網絡</div>
+        • <strong>生命現象與學說</strong>：代謝（同化/異化）、生長發育、感應、生殖 → 顯微鏡（虎克命名細胞） → 細胞學說（生物由細胞構成、功能結構單位、新細胞由分裂來）。<br>
+        • <strong>細胞分子基礎</strong>：水（含量最多） ＋ 醣類（單/雙/多醣） ＋ 蛋白質（胺基酸20種，酵素抗體） ＋ 脂質（中性脂肪、磷脂質、固醇） ＋ 核酸（DNA雙股遺傳、RNA單股合成蛋白）。<br>
+        • <strong>真核細胞架構</strong>：<br>
+        &nbsp;&nbsp;├─ <strong>界限系統</strong>：細胞膜（流體鑲嵌模型：磷脂雙層＋膜蛋白＋外側醣蛋白標籤＋膽固醇）。<br>
+        &nbsp;&nbsp;├─ <strong>管控核心</strong>：細胞核（雙層核膜含核孔 ＋ 染色質[DNA+蛋白質] ＋ 核仁[合成rRNA與核糖體]）。<br>
+        &nbsp;&nbsp;├─ <strong>無膜構造</strong>：核糖體（合成蛋白質）、中心體／中心粒（微管組成，協助染色體分離，植物無）。<br>
+        &nbsp;&nbsp;├─ <strong>單層膜胞器</strong>：粗糙內質網（修飾蛋白質） → 高基氏體（包裝分泌中心） → 溶體（水解消化）；平滑內質網（合成脂質解毒）；液泡（植物中央大液泡維持膨壓）。<br>
+        &nbsp;&nbsp;└─ <strong>雙層膜能量胞器（半自主胞器：含自身環狀DNA、70S核糖體、能自行分裂）</strong>：<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• 粒線體（內膜皺褶嵴＋基質，有氧呼吸產生 ATP，細胞發電廠）。<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• 葉綠體（類囊體葉綠餅光反應 ＋ 基質固碳反應，植物專屬能量製造廠）。
+      </div>
+
+      <div class="task-title" style="margin-top: 10px;">⚡ 學測生物必考陷阱與快速辨析速查表</div>
+      <table class="concept-table" style="font-size: 10.5pt; margin-top: 4px;">
+        <thead>
+          <tr><th style="width: 25%;">常見混淆陷阱</th><th>正確觀念釐清與關鍵解題密碼</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>細胞膜 vs 細胞壁</strong></td><td>細胞壁全透性且不具生理活性；<strong>細胞膜具選擇性通透</strong>，主宰物質進出與細胞辨識。</td></tr>
+          <tr><td><strong>染色質 vs 染色體</strong></td><td>成分完全相同（DNA ＋ 組織蛋白）；未分裂時呈<strong>細絲散漫狀（染色質）</strong>；分裂時高度纏繞濃縮成<strong>短棒狀（染色體）</strong>。</td></tr>
+          <tr><td><strong>原核細胞 vs 真核細胞</strong></td><td>原核細胞<strong>「絕無任何膜狀胞器」</strong>，亦無核膜；但原核細胞<strong>擁有核糖體</strong>合成蛋白質！</td></tr>
+          <tr><td><strong>動植物細胞差異</strong></td><td>高等植物<strong>無中心粒</strong>；動物細胞<strong>無細胞壁、無葉綠體、無大型中央液泡</strong>。</td></tr>
+        </tbody>
+      </table>
+
+
+      <div class="page-footer">
+        <span>自製電子書 · 高中生物</span>
+        <span>1-1 單元核心知識統整</span>
+        <span>第 16 頁 / 共 16 頁</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let allRevealed = false;
+    let penMode = false;
+    let penColor = 'rgba(250, 204, 21, 0.45)';
+    let penSize = 3;
+
+    // Toggle single answer word
+    function toggleAns(el, e) {
+      if (e) e.stopPropagation();
+      el.classList.toggle('revealed');
+    }
+
+    // Toggle QA bracket
+    function toggleBracket(el, e) {
+      if (e) e.stopPropagation();
+      el.classList.toggle('revealed');
+    }
+
+    // Toggle solution box
+    function toggleSolution(el, e) {
+      if (e) e.stopPropagation();
+      const sol = el.querySelector('.calc-solution');
+      if (sol) sol.classList.toggle('revealed');
+    }
+
+    // Clicking question item toggles all its answers
+    function toggleItemAnswers(item, e) {
+      if (e.target.closest('.ans-word') || e.target.closest('.qa-bracket') || e.target.closest('.calc-workspace')) {
+        return;
+      }
+      const bracket = item.querySelector('.qa-bracket');
+      const sol = item.querySelector('.calc-solution');
+      const blanks = item.querySelectorAll('.ans-word');
+
+      const isRev = bracket ? bracket.classList.contains('revealed') : (sol ? sol.classList.contains('revealed') : false);
+      if (bracket) bracket.classList.toggle('revealed', !isRev);
+      if (sol) sol.classList.toggle('revealed', !isRev);
+      blanks.forEach(b => b.classList.toggle('revealed', !isRev));
+    }
+
+    // Toggle all answers across document
+    function toggleAllAnswers() {
+      allRevealed = !allRevealed;
+      document.body.classList.toggle('show-all-answers', allRevealed);
+      const btn = document.getElementById('toggleAllAnsBtn');
+      const icon = document.getElementById('ansIcon');
+      if (btn) btn.classList.toggle('revealed', allRevealed);
+      if (icon) icon.innerText = allRevealed ? '🙈' : '👁️';
+    }
+
+    // TOC dropdown
+    function toggleTocMenu(e) {
+      if (e) e.stopPropagation();
+      const m = document.getElementById('tocMenu');
+      if (m) m.classList.toggle('show');
+    }
+
+    function jumpTo(pageId) {
+      const el = document.getElementById(pageId);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+      const m = document.getElementById('tocMenu');
+      if (m) m.classList.remove('show');
+    }
+
+    // Pen mode
+    function togglePenMode() {
+      penMode = !penMode;
+      document.body.classList.toggle('pen-active', penMode);
+      const btn = document.getElementById('penBtn');
+      const pop = document.getElementById('penOptions');
+      if (btn) btn.classList.toggle('active', penMode);
+      if (pop) pop.classList.toggle('show', penMode);
+    }
+
+    function setPenColor(col, dot) {
+      penColor = col;
+      document.querySelectorAll('.color-dot').forEach(d => d.classList.remove('active'));
+      if (dot) dot.classList.add('active');
+    }
+
+    function setPenSize(sz, btn) {
+      penSize = sz;
+      document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+    }
+
+    // Close popups on outer click
+    window.addEventListener('click', e => {
+      if (!e.target.closest('#tocBtn') && !e.target.closest('#tocMenu')) {
+        const m = document.getElementById('tocMenu');
+        if (m) m.classList.remove('show');
+      }
+    });
+
+    // Canvas drawing setup
+    const canvases = document.querySelectorAll('.drawing-canvas');
+    function resizeCanvases() {
+      canvases.forEach(c => {
+        const rect = c.parentElement.getBoundingClientRect();
+        c.width = rect.width; c.height = rect.height;
+      });
+    }
+    window.addEventListener('resize', resizeCanvases);
+    window.addEventListener('load', resizeCanvases);
+
+    let drawing = false;
+    let currentCanvas = null;
+    let ctx = null;
+
+    function getPos(e, c) {
+      const rect = c.getBoundingClientRect();
+      const x = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left;
+      const y = (e.touches ? e.touches[0].clientY : e.clientY) - rect.top;
+      return { x, y };
+    }
+
+    canvases.forEach(canvas => {
+      canvas.addEventListener('mousedown', e => {
+        if (!penMode) return;
+        drawing = true; currentCanvas = canvas;
+        ctx = canvas.getContext('2d');
+        ctx.strokeStyle = penColor; ctx.lineWidth = penSize;
+        ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+        const p = getPos(e, canvas); ctx.beginPath(); ctx.moveTo(p.x, p.y);
+      });
+      canvas.addEventListener('mousemove', e => {
+        if (!drawing || currentCanvas !== canvas) return;
+        const p = getPos(e, canvas); ctx.lineTo(p.x, p.y); ctx.stroke();
+      });
+      canvas.addEventListener('mouseup', () => { drawing = false; });
+      canvas.addEventListener('touchstart', e => {
+        if (!penMode) return; e.preventDefault();
+        drawing = true; currentCanvas = canvas;
+        ctx = canvas.getContext('2d');
+        ctx.strokeStyle = penColor; ctx.lineWidth = penSize;
+        ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+        const p = getPos(e, canvas); ctx.beginPath(); ctx.moveTo(p.x, p.y);
+      }, { passive: false });
+      canvas.addEventListener('touchmove', e => {
+        if (!drawing) return; e.preventDefault();
+        const p = getPos(e, canvas); ctx.lineTo(p.x, p.y); ctx.stroke();
+      }, { passive: false });
+      canvas.addEventListener('touchend', () => { drawing = false; });
+    });
+
+    function clearAllDrawings() {
+      canvases.forEach(c => { const ctx2 = c.getContext('2d'); ctx2.clearRect(0,0,c.width,c.height); });
+    }
+  </script>
+</body>
+</html>
