@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>國一自然（上）第 6 章 生物體的恆定 互動電子書</title>
+  <!-- 電子書目錄身分標記（見 SKILL.md §11 與 AGENTS.md） -->
+  <meta name="ebook:subject" content="science">
+  <meta name="ebook:grade" content="7">
+  <meta name="ebook:unit" content="6">
+  <meta name="ebook:title" content="國一自然（上）第 6 章 生物體的恆定 互動電子書">
+  <meta name="ebook:type" content="handout">
+  <meta name="ebook:pages" content="15">
+  <meta name="ebook:level" content="std">
+  <meta name="ebook:summary" content="國一自然（生物）第6章生物體的恆定完整講義（全15頁寬裕舒展無截斷版），涵蓋：呼吸與氣體的恆定（呼吸作用與呼吸運動、人體呼吸系統解剖圖、吸呼氣變化比較、胸腔模型與動植物呼吸實驗）、排泄與水分的恆定（含氮廢物毒性與排泄途徑、人體泌尿系統解剖圖、心肝腎血液循環、水分調節天平模型）、體溫與血糖的恆定（外溫與內溫動物調節曲線、體溫恆定天平、血糖來源與胰島素/升糖素/腎上腺素調節歷程曲線），以及全章精華重點整理與隨堂實戰小試身手。">
+  <style>
+    @page { size: A4 portrait; margin: 10mm 12mm; }
+    * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body {
+      margin: 0; padding: 0; background-color: #f1f5f9;
+      font-family: "Times New Roman", "標楷體", "DFKai-SB", "BiauKai", serif;
+      font-size: 13.5pt; line-height: 1.5; color: #111;
+    }
+
+    /* 課堂懸浮工具列 */
+    .classroom-toolbar {
+      position: fixed; top: 14px; right: 20px; z-index: 9999;
+      display: flex; align-items: center; gap: 4px;
+      background: rgba(255,255,255,0.95); backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 4px 10px; border-radius: 40px; border: 1px solid rgba(203,213,225,0.9);
+      box-shadow: 0 4px 22px rgba(0,0,0,0.15);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .tool-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 36px; height: 36px; font-size: 18px; color: #334155;
+      background: transparent; border: 1px solid transparent; border-radius: 50%;
+      cursor: pointer; transition: all 0.15s ease; padding: 0; user-select: none;
+      text-decoration: none;
+    }
+    .tool-btn:hover { background: #f1f5f9; transform: scale(1.1); }
+    .tool-btn.active { background: #0f172a; color: #ffffff; }
+    .btn-toggle-ans.active { background: #eff6ff; border-color: #3b82f6; }
+    .toolbar-divider { width: 1px; height: 20px; background: #cbd5e1; margin: 0 4px; }
+
+    /* 目錄跳轉選單 */
+    .toc-menu {
+      display: none; position: absolute; top: 46px; left: 0;
+      background: #ffffff; border: 1px solid #cbd5e1; border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.18); padding: 8px 0;
+      min-width: 330px; max-height: 520px; overflow-y: auto; z-index: 10000;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .toc-menu.show { display: block; animation: tocFadeIn 0.15s ease-out; }
+    @keyframes tocFadeIn { from { opacity:0; transform:translateY(-6px); } to { opacity:1; transform:translateY(0); } }
+    .toc-menu-title { padding: 6px 16px 8px 16px; font-size: 13px; font-weight: bold; color: #64748b; border-bottom: 1px solid #f1f5f9; }
+    .toc-menu-item { padding: 7px 16px; font-size: 13px; color: #334155; cursor: pointer; display: flex; align-items: center; justify-content: space-between; transition: background 0.12s, color 0.12s; }
+    .toc-menu-item:hover { background: #eff6ff; color: #2563eb; font-weight: bold; }
+    .toc-page-badge { font-size: 11.5px; color: #94a3b8; font-weight: normal; }
+    .toc-menu-item:hover .toc-page-badge { color: #2563eb; }
+
+    /* 螢光筆選項盤 */
+    .pen-options { display: none; align-items: center; gap: 6px; background: #f8fafc; padding: 3px 8px; border-radius: 20px; border: 1px solid #e2e8f0; margin-left: 2px; }
+    .color-picker { display: flex; align-items: center; gap: 5px; }
+    .color-dot { width: 16px; height: 16px; border-radius: 50%; cursor: pointer; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.2); }
+    .color-dot.active { transform: scale(1.2); box-shadow: 0 0 0 2px #0f172a; }
+    .size-picker { display: flex; align-items: center; gap: 3px; }
+    .size-btn { border: 1px solid #cbd5e1; background: #fff; color: #475569; font-size: 11px; font-weight: bold; padding: 2px 7px; border-radius: 10px; cursor: pointer; }
+    .size-btn.active { background: #0f172a; color: #fff; border-color: #0f172a; }
+
+    /* 頁面容器 */
+    .pages-container { padding: 20px 0 40px 0; }
+    .page {
+      box-sizing: border-box; width: 210mm; min-height: 297mm; max-height: 297mm;
+      padding: 10mm 15mm 8mm 15mm; margin: 0 auto 25px auto;
+      background: #ffffff; box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+      page-break-after: always; break-after: page; position: relative;
+      display: flex; flex-direction: column; justify-content: flex-start; overflow: hidden;
+    }
+    .drawing-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 50; pointer-events: none; }
+    body.pen-mode .drawing-canvas { pointer-events: auto; cursor: crosshair; }
+
+    /* 頁首與標題 */
+    .page-header {
+      display: flex; justify-content: space-between; align-items: center;
+      border-bottom: 2px solid #2563eb; padding-bottom: 4px; margin-bottom: 8px;
+      font-size: 11.5pt; font-weight: 700; color: #1e3a8a;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .section-title {
+      font-size: 13.5pt; font-weight: bold; background: #e0f2fe; color: #0369a1;
+      padding: 4px 10px; border-radius: 6px; margin: 5px 0 6px 0;
+      border-left: 6px solid #0284c7; display: flex; align-items: center; justify-content: space-between;
+    }
+    .task-title { font-size: 13pt; font-weight: bold; margin: 6px 0 4px 0; color: #1e293b; }
+    .item-line { padding: 3px 6px; border-radius: 4px; line-height: 1.5; font-size: 13pt; }
+    body:not(.pen-mode) .interactive-item { cursor: pointer; }
+    body:not(.pen-mode) .interactive-item:hover { background-color: #f8fafc; outline: 1px dashed #93c5fd; }
+
+    /* 填空答案樣式 */
+    .ans-word {
+      color: transparent; font-weight: bold; border-bottom: 1.5px solid #333;
+      padding: 0 3px; cursor: pointer; user-select: none; transition: all 0.15s ease;
+    }
+    .show-ans .ans-word, .show-one .ans-word, .ans-word.revealed {
+      color: #dc2626 !important; background: #fee2e2; border-radius: 3px;
+    }
+    body:not(.pen-mode) .ans-word:hover { background-color: #fee2e2; }
+
+    /* 選擇題與括號 */
+    .qa-block { margin-bottom: 7px; padding: 5px 8px; border-radius: 6px; line-height: 1.48; font-size: 12.5pt; }
+    .qa-header { font-weight: bold; }
+    .qa-bracket {
+      display: inline-block; color: transparent; font-weight: bold; padding: 0 4px;
+      min-width: 28px; text-align: center; border: 1.5px solid #2563eb; border-radius: 4px;
+      cursor: pointer; user-select: none; transition: all 0.15s ease; margin-right: 4px;
+    }
+    .show-ans .qa-bracket, .show-one .qa-bracket, .qa-bracket.revealed {
+      color: #dc2626 !important; background: #fee2e2;
+    }
+    .qa-options { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px 10px; margin-top: 4px; padding-left: 20px; font-size: 12pt; }
+    .qa-options.stacked { display: flex; flex-direction: column; gap: 3px; }
+
+    /* 表格樣式 */
+    table.custom-table { width: 100%; border-collapse: collapse; margin: 4px 0; font-size: 12pt; line-height: 1.38; }
+    table.custom-table th, table.custom-table td { border: 1px solid #64748b; padding: 4px 6px; text-align: center; }
+    table.custom-table th { background-color: #f1f5f9; font-weight: bold; color: #0f172a; }
+    table.custom-table td.align-left { text-align: left; }
+
+    /* 概念提示框 */
+    .tip-box {
+      border: 1.5px solid #93c5fd; background-color: #f0f9ff; border-radius: 6px;
+      padding: 6px 12px; margin: 5px 0 7px 0; font-size: 12pt; line-height: 1.45; color: #0369a1;
+    }
+
+    /* 流程圖樣式 */
+    .flow-box {
+      display: inline-block; border: 1.5px solid #2563eb; border-radius: 6px;
+      padding: 3px 8px; background: #eff6ff; font-weight: bold; color: #1e3a8a;
+    }
+    .flow-arrow { display: inline-block; margin: 0 4px; color: #2563eb; font-weight: bold; }
+
+    /* 頁尾 */
+    .page-footer {
+      margin-top: auto; border-top: 1px solid #cbd5e1; padding-top: 4px;
+      display: flex; justify-content: space-between; font-size: 9.5pt; color: #64748b;
+    }
+
+    /* 列印學生純淨版 */
+    @media print {
+      @page { size: A4 portrait; margin: 10mm 12mm; }
+      html, body { width: 100% !important; height: auto !important; background: transparent !important; padding: 0 !important; margin: 0 !important; }
+      .no-print, .classroom-toolbar, .toc-menu, .drawing-canvas { display: none !important; }
+      .pages-container { display: block !important; padding: 0 !important; margin: 0 !important; }
+      .page {
+        box-sizing: border-box !important; margin: 0 !important; box-shadow: none !important;
+        width: 100% !important; height: 275mm !important; max-height: 275mm !important;
+        min-height: 0 !important; padding: 0 !important; page-break-after: always !important;
+        break-after: page !important; page-break-inside: avoid !important; break-inside: avoid !important;
+        display: flex !important; flex-direction: column !important; justify-content: flex-start !important;
+        overflow: hidden !important;
+      }
+      .page:last-child { page-break-after: avoid !important; break-after: avoid !important; }
+      .page-footer { margin-top: auto !important; padding-top: 4px !important; }
+      .ans-word, .qa-bracket { color: transparent !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 課堂懸浮工具列 -->
+  <div class="classroom-toolbar no-print">
+    <!-- 回電子書目錄 -->
+    <a class="tool-btn" href="../index.html" title="回電子書目錄">🏠</a>
+    <!-- 目錄跳轉選單 -->
+    <div style="position: relative;">
+      <button class="tool-btn" id="tocBtn" onclick="toggleTocMenu(event)" title="單元章節目錄">📑</button>
+      <div class="toc-menu" id="tocMenu">
+        <div class="toc-menu-title">📖 第 6 章 生物體的恆定 (全 15 頁)</div>
+        <div class="toc-menu-item" onclick="jumpTo('page1')"><span>6-1 呼吸作用與氣體交換構造</span><span class="toc-page-badge">P.1</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page2')"><span>6-1 人體呼吸系統與吸呼氣比較</span><span class="toc-page-badge">P.2</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page3')"><span>6-1 呼吸運動與動植物呼吸實驗</span><span class="toc-page-badge">P.3</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page4')"><span>6-1 隨堂小試身手（一）(Q1～Q4)</span><span class="toc-page-badge">P.4</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page5')"><span>6-1 隨堂小試身手（二）(Q5～Q8)</span><span class="toc-page-badge">P.5</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page6')"><span>6-2 排泄與含氮廢物比較</span><span class="toc-page-badge">P.6</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page7')"><span>6-2 人體含氮廢物途徑與泌尿系統</span><span class="toc-page-badge">P.7</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page8')"><span>6-2 水分調節天平與防失水構造</span><span class="toc-page-badge">P.8</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page9')"><span>6-2 隨堂小試身手（一）(Q1～Q4)</span><span class="toc-page-badge">P.9</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page10')"><span>6-2 隨堂小試身手（二）(Q5～Q7)</span><span class="toc-page-badge">P.10</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page11')"><span>6-3 體溫恆定與內外溫動物比較</span><span class="toc-page-badge">P.11</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page12')"><span>6-3 體溫調節天平與血糖恆定機制</span><span class="toc-page-badge">P.12</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page13')"><span>6-3 血糖激素調節歷程曲線分析</span><span class="toc-page-badge">P.13</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page14')"><span>6-3 隨堂小試身手 (Q1～Q4)</span><span class="toc-page-badge">P.14</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page15')"><span>第 6 章 全章核心重點整理</span><span class="toc-page-badge">P.15</span></div>
+      </div>
+    </div>
+    <!-- 一鍵顯答 -->
+    <button class="tool-btn btn-toggle-ans" id="toggleAllAnsBtn" onclick="toggleAllAnswers()" title="一鍵全開/全隱答案">
+      <span id="ansIcon">👁️</span>
+    </button>
+    <!-- 畫筆切換 -->
+    <button class="tool-btn" id="penBtn" onclick="togglePenMode()" title="螢光筆/板書筆">✏️</button>
+    <!-- 畫筆選單 -->
+    <div class="pen-options" id="penOptions">
+      <div class="color-picker">
+        <span class="color-dot active" style="background:#facc15;" onclick="setPenColor('rgba(250,204,21,0.45)', this)" title="螢光黃"></span>
+        <span class="color-dot" style="background:#ef4444;" onclick="setPenColor('rgba(239,68,68,0.8)', this)" title="紅筆"></span>
+        <span class="color-dot" style="background:#3b82f6;" onclick="setPenColor('rgba(37,99,235,0.8)', this)" title="藍筆"></span>
+        <span class="color-dot" style="background:#10b981;" onclick="setPenColor('rgba(16,185,129,0.8)', this)" title="綠筆"></span>
+      </div>
+      <div class="toolbar-divider" style="height:14px; margin:0 2px;"></div>
+      <div class="size-picker">
+        <span class="size-btn active" onclick="setPenSize(3, this)">細</span>
+        <span class="size-btn" onclick="setPenSize(7, this)">中</span>
+        <span class="size-btn" onclick="setPenSize(14, this)">粗</span>
+      </div>
+    </div>
+    <!-- 清除筆跡 -->
+    <button class="tool-btn" onclick="clearAllDrawings()" title="清除本頁筆跡">🧹</button>
+    <!-- 列印 -->
+    <button class="tool-btn" onclick="window.print()" title="列印純淨學習單">🖨️</button>
+  </div>
+
+  <!-- Pages Container -->
+  <div class="pages-container">
+    <!-- ==================== Page 1 ==================== -->
+    <div class="page" id="page1">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國一自然（上）講義</span>
+        <span>第 6 章 生物體的恆定</span>
+        <span>P. 1</span>
+      </div>
+
+      <div class="section-title">
+        <span>6-1　呼吸與氣體的恆定（一）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">焦點：恆定性定義、呼吸作用、生物氣體交換構造</span>
+      </div>
+
+      <div class="task-title">Part 1 重點填空</div>
+
+      <div class="item-line interactive-item"><strong>1. 恆定性：</strong>生物體內的氣體含量、體溫、水分及血糖濃度維持在一定狀態範圍的特性。</div>
+
+      <div class="item-line interactive-item"><strong>2. 呼吸作用：</strong></div>
+      <div class="item-line interactive-item" style="padding-left: 18px;">(1) 作用地點：細胞的 <span class="ans-word">粒線體</span> 中。</div>
+      <div class="item-line interactive-item" style="padding-left: 18px;">(2) 反應通式：<span class="ans-word">葡萄糖</span> ＋ 氧氣 → 能量 ＋ <span class="ans-word">水</span> ＋ <span class="ans-word">二氧化碳</span>。</div>
+
+      <div class="task-title" style="margin-top: 6px;">3. 氣體交換的構造</div>
+      <div class="item-line interactive-item"><strong>(1) 植物：</strong></div>
+      <div class="item-line interactive-item" style="padding-left: 18px;">a. 草本植物：主要透過葉上的 <span class="ans-word">氣孔</span> 以及根的 <span class="ans-word">表皮細胞</span> 進行氣體交換。</div>
+      <div class="item-line interactive-item" style="padding-left: 18px;">b. 木本植物：莖上有 <span class="ans-word">皮孔</span> 能進行氣體交換。</div>
+
+      <div class="item-line interactive-item"><strong>(2) 水中小生物：</strong>藉由 <span class="ans-word">擴散作用</span> 直接從水中獲得氧氣，並排出二氧化碳。</div>
+
+      <div class="item-line interactive-item"><strong>(3) 構造較複雜的動物與呼吸器官：</strong></div>
+      <table class="custom-table" style="font-size:12pt; margin: 4px 0 8px 0;">
+        <tr><th style="width:50%;">動物類型</th><th style="width:50%;">呼吸器官</th></tr>
+        <tr class="interactive-item"><td>蚯蚓</td><td><span class="ans-word">皮膚</span>（體表需保持溼潤）</td></tr>
+        <tr class="interactive-item"><td>魚、蝦、貝類等水生動物</td><td><span class="ans-word">鰓</span></td></tr>
+        <tr class="interactive-item"><td>鳥類和哺乳類等陸生動物</td><td><span class="ans-word">肺</span></td></tr>
+      </table>
+
+      <div class="item-line interactive-item"><strong>(4) 呼吸器官的共同特徵：</strong>具有 <span class="ans-word">溼潤</span> 的表面、廣大的表面積，且內部有充分的 <span class="ans-word">血液</span> 流通以利氣體交換。</div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中生物</span>
+        <span>6-1 呼吸與氣體的恆定（一）</span>
+        <span>第 1 頁 / 共 15 頁</span>
+      </div>
+    </div>
+    <!-- ==================== Page 2 ==================== -->
+    <div class="page" id="page2">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國一自然（上）講義</span>
+        <span>第 6 章 生物體的恆定</span>
+        <span>P. 2</span>
+      </div>
+
+      <div class="section-title">
+        <span>6-1　呼吸與氣體的恆定（二）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">焦點：人體呼吸系統組成、肺泡構造、呼吸運動機制與吸呼氣比較</span>
+      </div>
+
+      <div class="task-title">4. 人體的呼吸系統</div>
+      <div class="item-line interactive-item">(1) 人體與外界的氣體交換是透過 <span class="ans-word">呼吸</span> 系統進行。</div>
+      <div class="item-line interactive-item">(2) 外界氣體流動途徑：經 <span class="ans-word">鼻</span> → <span class="ans-word">咽</span> → <span class="ans-word">喉</span> → <span class="ans-word">氣管</span> 和 <span class="ans-word">支氣管</span>，最後進入肺臟中的 <span class="ans-word">肺泡</span>。</div>
+
+      <!-- 人體呼吸系統精美解剖圖 -->
+      <div style="text-align: center; margin: 4px 0 2px 0;">
+        <img src="../images/science-7-6-handout/image019.png" alt="人體呼吸系統與肺泡構造" style="max-width: 92%; height: auto; max-height: 155px; border-radius: 6px; border: 1px solid #cbd5e1; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+      </div>
+
+      <div class="task-title" style="margin-top: 4px;">(3) 肺臟與呼吸運動</div>
+      <div class="item-line interactive-item">a. 位於胸腔，由無數微小的 <span class="ans-word">肺泡</span> 組成。</div>
+      <div class="item-line interactive-item">b. 肺泡壁僅含一層細胞，表面布滿 <span class="ans-word">微血管</span>，氧氣及二氧化碳在此以 <span class="ans-word">擴散作用</span> 進行交換。</div>
+      <div class="item-line interactive-item">c. 肺臟不具肌肉組織，<span class="ans-word">不能</span> 主動舒張或收縮，必須藉由肋骨與橫膈變動改變胸腔體積，間接使肺臟脹縮，稱為 <span class="ans-word">呼吸運動</span>。</div>
+      <div class="item-line interactive-item">d. 呼吸運動的控制中樞：<span class="ans-word">腦幹</span>（偵測血液中二氧化碳濃度）。</div>
+
+      <div class="task-title" style="margin-top: 4px;">(4) 吸氣與呼氣運動時的身體變化比較</div>
+      <table class="custom-table" style="font-size:11.5pt; margin: 2px 0;">
+        <tr><th style="width:20%;">比較項目</th><th style="width:40%;">吸氣</th><th style="width:40%;">呼氣</th></tr>
+        <tr class="interactive-item"><td><strong>肋骨位置</strong></td><td><span class="ans-word">上升</span>（肌肉收縮）</td><td>下降（肌肉舒張）</td></tr>
+        <tr class="interactive-item"><td><strong>橫膈位置</strong></td><td>下降（肌肉收縮，變平）</td><td><span class="ans-word">上升</span>（肌肉舒張，呈拱形）</td></tr>
+        <tr class="interactive-item"><td><strong>胸腔大小</strong></td><td><span class="ans-word">擴大</span></td><td>縮小</td></tr>
+        <tr class="interactive-item"><td><strong>肺部大小</strong></td><td>擴大（內壓變小）</td><td><span class="ans-word">縮小</span>（內壓變大）</td></tr>
+        <tr class="interactive-item"><td><strong>氣體流向</strong></td><td><span class="ans-word">進入</span> 肺內</td><td><span class="ans-word">排出</span> 體外</td></tr>
+      </table>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中生物</span>
+        <span>6-1 呼吸與氣體的恆定（二）</span>
+        <span>第 2 頁 / 共 15 頁</span>
+      </div>
+    </div>
+    <!-- ==================== Page 3 ==================== -->
+    <div class="page" id="page3">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國一自然（上）講義</span>
+        <span>第 6 章 生物體的恆定</span>
+        <span>P. 3</span>
+      </div>
+
+      <div class="section-title">
+        <span>6-1　呼吸與氣體的恆定（三）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">焦點：呼吸作用 vs 呼吸運動、動植物呼吸實驗檢驗</span>
+      </div>
+
+      <div class="task-title">5. 呼吸作用與呼吸運動之比較</div>
+      <table class="custom-table" style="font-size:12.5pt; margin: 6px 0 12px 0;">
+        <tr><th style="width:20%;">比較項目</th><th style="width:40%;">呼吸作用</th><th style="width:40%;">呼吸運動</th></tr>
+        <tr class="interactive-item"><td><strong>發生生物</strong></td><td>所有生物（動、植、菌等）</td><td>部分動物才有（如人類、哺乳類等）</td></tr>
+        <tr class="interactive-item"><td><strong>生理目的</strong></td><td>分解養分，產生 <span class="ans-word">能量</span></td><td>吸入與排出氣體，進行 <span class="ans-word">氣體交換</span></td></tr>
+        <tr class="interactive-item"><td><strong>反應物</strong></td><td>葡萄糖、氧氣</td><td>無（物理性機械運動）</td></tr>
+        <tr class="interactive-item"><td><strong>產物</strong></td><td>二氧化碳、水、能量</td><td>無</td></tr>
+      </table>
+
+      <div class="task-title" style="margin-top: 10px;">6. 動植物的呼吸作用實驗檢驗</div>
+      <table class="custom-table" style="font-size:12pt; line-height: 1.4; margin: 6px 0 12px 0;">
+        <tr>
+          <th style="width:18%;">檢驗對象</th>
+          <th style="width:25%;">檢測方法與試劑</th>
+          <th style="width:25%;">檢測結果</th>
+          <th style="width:16%;">檢測氣體</th>
+          <th style="width:16%;">實驗結論說明</th>
+        </tr>
+        <tr class="interactive-item">
+          <td><strong>植物（綠豆）</strong></td>
+          <td>利用澄清石灰水測試</td>
+          <td>萌芽綠豆瓶中的氣體可使澄清石灰水變 <span class="ans-word">混濁</span></td>
+          <td><span class="ans-word">二氧化碳</span></td>
+          <td class="align-left" rowspan="3">
+            動、植物進行呼吸作用都是利用 <span class="ans-word">氧氣</span>，釋出 <span class="ans-word">二氧化碳</span>。<br>
+            動物呼出氣體帶有 <span class="ans-word">水氣</span>，使氯化亞鈷試紙由藍變粉紅。
+          </td>
+        </tr>
+        <tr class="interactive-item">
+          <td rowspan="2"><strong>動物（人）</strong></td>
+          <td>利用氯化亞鈷試紙測試</td>
+          <td>人呼出的氣體可使 <span class="ans-word">藍</span> 色氯化亞鈷試紙變成 <span class="ans-word">粉紅</span> 色</td>
+          <td><span class="ans-word">水氣</span></td>
+        </tr>
+        <tr class="interactive-item">
+          <td>利用澄清石灰水測試</td>
+          <td>人呼出的氣體可使澄清石灰水變混濁</td>
+          <td><span class="ans-word">二氧化碳</span></td>
+        </tr>
+      </table>
+
+      <div class="tip-box" style="margin-top: 16px;">
+        <strong>💡 實驗檢驗重點叮嚀：</strong><br>
+        1. <strong>乾燥綠豆 vs 萌芽綠豆：</strong>萌芽綠豆細胞代謝與呼吸旺盛，釋出大量二氧化碳；乾燥綠豆代謝微弱，石灰水無明顯變化。<br>
+        2. <strong>氯化亞鈷試紙水氣檢驗：</strong>乾燥時為藍色，遇水氣呈粉紅色；加熱烘乾後可恢復藍色。
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中生物</span>
+        <span>6-1 呼吸與氣體的恆定（三）</span>
+        <span>第 3 頁 / 共 15 頁</span>
+      </div>
+    </div>
+    <!-- ==================== Page 4 ==================== -->
+    <div class="page" id="page4">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國一自然（上）講義</span>
+        <span>第 6 章 生物體的協調作用</span>
+        <span>P. 4</span>
+      </div>
+
+      <div class="section-title">
+        <span>6-1　呼吸與氣體恆定隨堂小試身手（一）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">基礎評量 · Q1～Q4</span>
+      </div>
+
+      <div class="task-title">Part 2 小試身手</div>
+
+      <!-- Q1 -->
+      <div class="qa-block interactive-item" style="margin-bottom: 18px;">
+        <div class="qa-header"><span class="qa-bracket">A</span> 1. 醫院中利用照 X 光檢查肺部前，通常醫生會要求接受檢查的人深呼吸後憋氣，此時關於胸腔的變化，下列敘述何者錯誤？</div>
+        <div class="qa-options stacked" style="margin-top: 6px; gap: 6px;">
+          <span>(A) 橫膈上升</span>
+          <span>(B) 肋骨上升</span>
+          <span>(C) 胸腔體積擴大</span>
+          <span>(D) 肺部脹大</span>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="qa-block interactive-item" style="margin-bottom: 18px;">
+        <div class="qa-header"><span class="qa-bracket">A</span> 2. (甲)分支或泡狀突起、(乙)布滿微血管、(丙)表面溼潤、(丁)質地堅硬。岑珊檢視魚的鰓、豬的肺，哪些構造或狀態是她在這兩種器官上皆可以發現的？</div>
+        <div class="qa-options" style="margin-top: 6px;">
+          <span>(A) 甲乙丙</span><span>(B) 乙丙丁</span><span>(C) 甲丙丁</span><span>(D) 丁</span>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="qa-block interactive-item" style="margin-bottom: 18px;">
+        <div class="qa-header"><span class="qa-bracket">C</span> 3. 許多植物的根部若浸水過久，很容易爛掉而死，請問根部爛掉死亡的原因為何？</div>
+        <div class="qa-options" style="margin-top: 6px;">
+          <span>(A) 缺二氧化碳</span><span>(B) 缺養分</span><span>(C) 缺氧</span><span>(D) 細菌影響</span>
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="qa-block interactive-item" style="margin-bottom: 18px;">
+        <div class="qa-header"><span class="qa-bracket">B</span> 4. (甲)上午十點多，肚子飢腸轆轆、(乙)感冒發燒，吃藥後流汗、(丙)定期修剪頭髮，並變換髮型、(丁)跑完操場後，口乾舌燥。哪些生理現象是人體啟動恆定性的反應？</div>
+        <div class="qa-options" style="margin-top: 6px;">
+          <span>(A) 甲乙丙</span><span>(B) 甲乙丁</span><span>(C) 乙丙丁</span><span>(D) 甲丙丁</span>
+        </div>
+      </div>
+
+      <div class="tip-box" style="margin-top: 20px;">
+        <strong>💡 觀念導引：</strong><br>
+        1. <strong>深吸氣憋氣：</strong>肋骨上舉、橫膈收縮「下降」，胸腔體積擴大，肺隨之擴大。<br>
+        2. <strong>植物根細胞需要呼吸：</strong>土壤浸水過久會隔絕土壤孔隙空氣，使根部缺氧無法進行呼吸作用而腐爛。
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中生物</span>
+        <span>6-1 隨堂小試身手（一）(Q1～Q4)</span>
+        <span>第 4 頁 / 共 15 頁</span>
+      </div>
+    </div>
+    <!-- ==================== Page 5 ==================== -->
+    <div class="page" id="page5">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國一自然（上）講義</span>
+        <span>第 6 章 生物體的協調作用</span>
+        <span>P. 5</span>
+      </div>
+
+      <div class="section-title">
+        <span>6-1　呼吸與氣體恆定隨堂小試身手（二）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">基礎評量 · Q5～Q8</span>
+      </div>
+
+      <div class="task-title">Part 2 小試身手（續）</div>
+
+      <!-- Q5 -->
+      <div class="qa-block interactive-item" style="margin-bottom: 14px;">
+        <div class="qa-header"><span class="qa-bracket">C</span> 5. 氧氣和二氧化碳是利用下列何種作用，在肺泡壁和微血管壁間進行交換？</div>
+        <div class="qa-options stacked" style="margin-top: 4px; gap: 4px;">
+          <span>(A) 蒸發作用</span>
+          <span>(B) 細胞膜上特殊蛋白質協助</span>
+          <span>(C) 擴散作用</span>
+          <span>(D) 滲透作用</span>
+        </div>
+      </div>
+
+      <!-- Q6 附圖：image021.jpg -->
+      <div class="qa-block interactive-item" style="margin-bottom: 14px;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px;">
+          <div style="flex: 1;">
+            <div class="qa-header"><span class="qa-bracket">C</span> 6. 右圖為利用寶特瓶、氣球等材料製作的人體胸腔構造模型。關於此模型，下列敘述何者正確？</div>
+            <div class="qa-options stacked" style="margin-top: 4px; gap: 4px;">
+              <span>(A) 甲相當於人的肺</span>
+              <span>(B) 丁相當於人體的橫膈</span>
+              <span>(C) 當將丁向下拉時，乙的體積會變大</span>
+              <span>(D) 當將丁向下拉時，表示呼氣狀態</span>
+            </div>
+          </div>
+          <div style="width: 105px; text-align: center; flex-shrink: 0;">
+            <img src="../images/science-7-6-handout/image021.jpg" alt="人體胸腔構造模型" style="max-width: 100%; height: auto; max-height: 125px; border-radius: 4px; border: 1px solid #cbd5e1;">
+          </div>
+        </div>
+      </div>
+
+      <!-- Q7 -->
+      <div class="qa-block interactive-item" style="margin-bottom: 14px;">
+        <div class="qa-header"><span class="qa-bracket">B</span> 7. 「恆定性」的定義為何？</div>
+        <div class="qa-options stacked" style="margin-top: 4px; gap: 4px;">
+          <span>(A) 自外界攝食食物及水分，使體內的養分、廢物、水分維持定值</span>
+          <span>(B) 利用系統的協調，使體內的環境（如養分、水分、體溫等）維持在一定範圍內</span>
+          <span>(C) 利用受器與動器使體內的內分泌維持恆定</span>
+          <span>(D) 利用體內的器官來感知外界的變化，使血液濃度維持一定</span>
+        </div>
+      </div>
+
+      <!-- Q8 附圖：image022.jpg -->
+      <div class="qa-block interactive-item" style="margin-bottom: 14px;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px;">
+          <div style="flex: 1;">
+            <div class="qa-header"><span class="qa-bracket">D</span> 8. 附圖為人體進行呼吸運動時，橫膈位置變動的示意圖。利用藍色氯化亞鈷試紙可檢測人體呼出氣體中的某物質。有關呼氣時橫膈位置的變化及可使試紙變色的物質，下列何者正確？</div>
+            <div class="qa-options stacked" style="margin-top: 4px; gap: 4px;">
+              <span>(A) 甲 → 乙，二氧化碳</span>
+              <span>(B) 甲 → 乙，水</span>
+              <span>(C) 乙 → 甲，二氧化碳</span>
+              <span>(D) 乙 → 甲，水</span>
+            </div>
+          </div>
+          <div style="width: 155px; text-align: center; flex-shrink: 0; padding-top: 6px;">
+            <img src="../images/science-7-6-handout/image022.jpg" alt="橫膈位置變動示意圖" style="max-width: 100%; height: auto; border-radius: 4px; border: 1px solid #cbd5e1;">
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中生物</span>
+        <span>6-1 隨堂小試身手（二）(Q5～Q8)</span>
+        <span>第 5 頁 / 共 15 頁</span>
+      </div>
+    </div>
+    <!-- ==================== Page 6 ==================== -->
+    <div class="page" id="page6">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國一自然（上）講義</span>
+        <span>第 6 章 生物體的協調作用</span>
+        <span>P. 6</span>
+      </div>
+
+      <div class="section-title">
+        <span>6-2　排泄與水分的恆定（一）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">焦點：排泄定義、含氮廢物形成與不同生物排泄途徑比較</span>
+      </div>
+
+      <div class="task-title">Part 1 重點填空</div>
+
+      <div class="item-line interactive-item"><strong>1. 排泄作用：</strong>生物從體內排除代謝廢物的過程。</div>
+      <div class="item-line interactive-item" style="padding-left: 18px;">(1) 二氧化碳的排除：主要由肺部透過 <span class="ans-word">呼氣</span> 來排除。</div>
+      <div class="item-line interactive-item" style="padding-left: 18px;">(2) 水的排除：在腎臟形成 <span class="ans-word">尿液</span> 後排出；皮膚以 <span class="ans-word">排汗</span> 方式排出；肺部呼氣亦會帶走水氣。</div>
+
+      <div class="item-line interactive-item" style="padding-left: 18px;">(3) <strong>含氮廢物的形成與排除：</strong></div>
+      <div class="item-line interactive-item" style="padding-left: 36px;">a. 蛋白質代謝後會產生劇毒的含氮廢物── <span class="ans-word">氨</span>。</div>
+      <div class="item-line interactive-item" style="padding-left: 36px;">b. 不同生物的含氮廢物排除方式：</div>
+
+      <table class="custom-table" style="font-size:11.5pt; margin: 4px 0 8px 0;">
+        <tr><th style="width:25%;">生物名稱</th><th style="width:75%;">排除方式與轉變途徑</th></tr>
+        <tr class="interactive-item"><td>單細胞動物</td><td class="align-left">直接將氨擴散到周遭水中。</td></tr>
+        <tr class="interactive-item"><td>淡水魚類</td><td class="align-left">透過 <span class="ans-word">鰓</span> 將氨直接排至水中。</td></tr>
+        <tr class="interactive-item"><td>哺乳動物</td><td class="align-left">在 <span class="ans-word">肝臟</span> 中將氨轉變為毒性較小的 <span class="ans-word">尿素</span>，再由 <span class="ans-word">腎臟</span> 形成尿液排出。</td></tr>
+        <tr class="interactive-item"><td>昆蟲及鳥類</td><td class="align-left">將氨轉變成毒性甚小且難溶於水的 <span class="ans-word">尿酸</span>，混合於糞便中排出。</td></tr>
+      </table>
+
+      <div class="task-title" style="margin-top: 6px;">c. 含氮廢物的特性比較</div>
+      <table class="custom-table" style="font-size:12pt; margin: 4px 0 8px 0;">
+        <tr><th style="width:22%;">含氮廢物</th><th style="width:26%;">毒性高低</th><th style="width:26%;">溶於水之難易</th><th style="width:26%;">代表性生物</th></tr>
+        <tr class="interactive-item"><td><strong>氨</strong></td><td><span class="ans-word">最強</span></td><td>容易</td><td>單細胞生物、魚類</td></tr>
+        <tr class="interactive-item"><td><strong>尿素</strong></td><td>其次（中等）</td><td>較容易</td><td><span class="ans-word">哺乳類</span>、兩生類</td></tr>
+        <tr class="interactive-item"><td><strong>尿酸</strong></td><td>最弱</td><td><span class="ans-word">難</span> 溶於水</td><td><span class="ans-word">鳥類</span>、<span class="ans-word">昆蟲</span>、爬蟲類</td></tr>
+      </table>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中生物</span>
+        <span>6-2 排泄與水分的恆定（一）</span>
+        <span>第 6 頁 / 共 15 頁</span>
+      </div>
+    </div>
+    <!-- ==================== Page 7 ==================== -->
+    <div class="page" id="page7">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國一自然（上）講義</span>
+        <span>第 6 章 生物體的協調作用</span>
+        <span>P. 7</span>
+      </div>
+
+      <div class="section-title">
+        <span>6-2　排泄與水分的恆定（二）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">焦點：人體含氮廢物流程、泌尿系統器官構造與功能</span>
+      </div>
+
+      <div class="task-title">(4) 人體中含氮廢物的形成及排除流程</div>
+      <div style="padding: 6px 12px; background: #f8fafc; border-radius: 6px; border: 1.5px solid #cbd5e1; margin-bottom: 6px; font-size: 12pt; line-height: 1.5;">
+        <span class="flow-box">蛋白質</span>
+        <span class="flow-arrow">→ (細胞代謝) →</span>
+        <span class="flow-box"><span class="ans-word">氨</span></span>
+        <span class="flow-arrow">→ (<span class="ans-word">肝臟</span> 解毒) →</span>
+        <span class="flow-box"><span class="ans-word">尿素</span></span>
+        <span class="flow-arrow">→ (血液循環) →</span>
+        <span class="flow-box"><span class="ans-word">腎臟</span> (形成尿液)</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-box"><span class="ans-word">膀胱</span> (儲存)</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-box"><span class="ans-word">尿道</span> (排出體外)</span>
+      </div>
+
+      <!-- 人體含氮廢物形成及排除流程原圖 -->
+      <div style="text-align: center; margin: 4px 0 8px 0;">
+        <img src="../images/science-7-6-handout/image025.jpg" alt="人體中含氮廢物的形成及排除流程圖" style="max-width: 85%; height: auto; max-height: 110px; border-radius: 6px; border: 1px solid #cbd5e1; box-shadow: 0 2px 6px rgba(0,0,0,0.06);">
+      </div>
+
+      <div class="task-title" style="margin-top: 6px;">2. 人體的泌尿系統</div>
+      <div class="item-line interactive-item">包含 <span class="ans-word">腎臟</span>、<span class="ans-word">輸尿管</span>、<span class="ans-word">膀胱</span> 和 <span class="ans-word">尿道</span> 四大器官。</div>
+      <div class="item-line interactive-item" style="padding-left: 18px;">(1) 尿液在 <span class="ans-word">腎臟</span> 形成，再經 <span class="ans-word">輸尿管</span> 注入 <span class="ans-word">膀胱</span> 以儲存尿液。</div>
+      <div class="item-line interactive-item" style="padding-left: 18px;">(2) 當膀胱內的尿液達到一定量時，便會刺激神經引起尿意。</div>
+      <div class="item-line interactive-item" style="padding-left: 18px;">(3) 尿液經 <span class="ans-word">尿道</span> 排出體外。</div>
+
+      <!-- 人體泌尿系統精美解剖圖 -->
+      <div style="text-align: center; margin: 6px 0 2px 0;">
+        <img src="../images/science-7-6-handout/image033.png" alt="人體泌尿系統構造圖" style="max-width: 95%; height: auto; max-height: 190px; border-radius: 6px; border: 1px solid #cbd5e1; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中生物</span>
+        <span>6-2 排泄與水分的恆定（二）</span>
+        <span>第 7 頁 / 共 15 頁</span>
+      </div>
+    </div>
+    <!-- ==================== Page 8 ==================== -->
+    <div class="page" id="page8">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國一自然（上）講義</span>
+        <span>第 6 章 生物體的協調作用</span>
+        <span>P. 8</span>
+      </div>
+
+      <div class="section-title">
+        <span>6-2　排泄與水分的恆定（三）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">焦點：水分調節天平模型、動植物防失水構造</span>
+      </div>
+
+      <div class="task-title">3. 水分的調節</div>
+      <div class="item-line interactive-item">(1) 水分主要由 <span class="ans-word">飲食</span> 獲得，經 <span class="ans-word">排尿</span>、流汗、呼氣及排便而流失。</div>
+      <div class="item-line interactive-item">(2) 人體的水分恆定調節天平：</div>
+
+      <!-- 水分平衡動態天平圖 -->
+      <div style="text-align: center; margin: 4px 0 2px 0;">
+        <img src="../images/science-7-6-handout/image034.jpg" alt="人體水分平衡調節天平" style="max-width: 90%; height: auto; max-height: 165px; border-radius: 6px; border: 1px solid #cbd5e1; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+      </div>
+
+      <div class="task-title" style="margin-top: 4px;">(3) 植物的水分調節</div>
+      <div class="item-line interactive-item">a. 植物從根部吸收的水分，絕大部分從葉片 <span class="ans-word">氣孔</span> 蒸散到空氣中。</div>
+      <div class="item-line interactive-item">b. 陸生植物葉與莖具有不透水的 <span class="ans-word">角質層</span>，可防止水分過度散失。</div>
+      <div class="item-line interactive-item">c. 夜晚氣孔關閉，若土壤水分過多，水分會由 <span class="ans-word">葉</span> 的邊緣或尖端泌出（泌液作用）。</div>
+
+      <div class="task-title" style="margin-top: 4px;">(4) 動植物防止水分散失的構造</div>
+      <table class="custom-table" style="font-size:11.5pt; margin: 2px 0;">
+        <tr><th style="width:30%;">生物類型</th><th style="width:70%;">防止水分散失之構造</th></tr>
+        <tr class="interactive-item"><td>昆蟲</td><td><span class="ans-word">外骨骼</span></td></tr>
+        <tr class="interactive-item"><td>爬蟲類</td><td><span class="ans-word">鱗片</span> 或骨板</td></tr>
+        <tr class="interactive-item"><td>人體等哺乳類</td><td>皮膚的 <span class="ans-word">角質層</span></td></tr>
+      </table>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中生物</span>
+        <span>6-2 排泄與水分的恆定（三）</span>
+        <span>第 8 頁 / 共 15 頁</span>
+      </div>
+    </div>
+    <!-- ==================== Page 9 ==================== -->
+    <div class="page" id="page9">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國一自然（上）講義</span>
+        <span>第 6 章 生物體的協調作用</span>
+        <span>P. 9</span>
+      </div>
+
+      <div class="section-title">
+        <span>6-2　排泄與水分恆定隨堂小試身手（一）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">基礎實戰評量 · Q1～Q4</span>
+      </div>
+
+      <div class="task-title">Part 2 小試身手</div>
+
+      <!-- Q1 -->
+      <div class="qa-block interactive-item" style="margin-bottom: 18px;">
+        <div class="qa-header"><span class="qa-bracket">C</span> 1. 下列哪種生物的構造不能防止水分散失？</div>
+        <div class="qa-options stacked" style="margin-top: 6px; gap: 6px;">
+          <span>(A) 葉子表面的角質層</span>
+          <span>(B) 植物關閉的氣孔</span>
+          <span>(C) 蚯蚓的皮膚</span>
+          <span>(D) 鍬形蟲的外骨骼</span>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="qa-block interactive-item" style="margin-bottom: 18px;">
+        <div class="qa-header"><span class="qa-bracket">C</span> 2. 攝食下列哪一類食物會產生較多的含氮廢物？</div>
+        <div class="qa-options" style="margin-top: 6px;">
+          <span>(A) 米飯、麵包</span><span>(B) 橘子、柳丁</span><span>(C) 豬肉、牛肉</span><span>(D) 豆腐、蔬菜</span>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="qa-block interactive-item" style="margin-bottom: 18px;">
+        <div class="qa-header"><span class="qa-bracket">B</span> 3. (甲)臺灣獼猴、(乙)草履蟲、(丙)蝗蟲。上述三種生物排出的蛋白質代謝廢物，其毒性由大到小依序為何？</div>
+        <div class="qa-options" style="margin-top: 6px;">
+          <span>(A) 甲乙丙</span><span>(B) 乙甲丙</span><span>(C) 丙乙甲</span><span>(D) 乙丙甲</span>
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="qa-block interactive-item" style="margin-bottom: 18px;">
+        <div class="qa-header"><span class="qa-bracket">A</span> 4. 下列人體的生理現象，何者不是排泄作用？</div>
+        <div class="qa-options stacked" style="margin-top: 6px; gap: 6px;">
+          <span>(A) 糞便自肛門排出</span>
+          <span>(B) 尿液自尿道排出</span>
+          <span>(C) 汗液自皮膚排出</span>
+          <span>(D) 二氧化碳自鼻孔排出</span>
+        </div>
+      </div>
+
+      <div class="tip-box" style="margin-top: 20px;">
+        <strong>💡 觀念導引（排遺 vs 排泄）：</strong><br>
+        1. <strong>排遺：</strong>未消化的食物殘渣直接經肛門排出體外（如排便），未參與細胞代謝，不屬於排泄！<br>
+        2. <strong>排泄：</strong>細胞代謝後的廢物排出體外（如肺排二氧化碳與水、皮膚排汗、腎臟排尿）。<br>
+        3. <strong>含氮廢物毒性順序：</strong>氨（草履蟲、魚類）＞ 尿素（獼猴等哺乳類）＞ 尿酸（蝗蟲等昆蟲、鳥類）。
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中生物</span>
+        <span>6-2 隨堂小試身手（一）(Q1～Q4)</span>
+        <span>第 9 頁 / 共 15 頁</span>
+      </div>
+    </div>
+    <!-- ==================== Page 10 ==================== -->
+    <div class="page" id="page10">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國一自然（上）講義</span>
+        <span>第 6 章 生物體的協調作用</span>
+        <span>P. 10</span>
+      </div>
+
+      <div class="section-title">
+        <span>6-2　排泄與水分恆定隨堂小試身手（二）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">進階實戰評量 · Q5～Q7</span>
+      </div>
+
+      <div class="task-title">Part 2 小試身手（續）</div>
+
+      <!-- Q5 附圖：image036.png -->
+      <div class="qa-block interactive-item" style="margin-bottom: 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 14px;">
+          <div style="flex: 1;">
+            <div class="qa-header"><span class="qa-bracket">D</span> 5. 附圖為人體心臟、肝臟和腎臟之間血液循環的示意圖，箭頭代表血液流動的方向，甲、乙、丙、丁分別代表不同的血管。根據此圖，若要比較血液中氨與尿素濃度，下列何者最合理？</div>
+            <div class="qa-options stacked" style="margin-top: 6px; gap: 4px;">
+              <span>(A) 尿素濃度：丙 ＞ 丁</span>
+              <span>(B) 尿素濃度：甲 ＜ 乙</span>
+              <span>(C) 氨濃度：丙 ＜ 丁</span>
+              <span>(D) 氨濃度：甲 ＜ 乙</span>
+            </div>
+          </div>
+          <div style="width: 125px; text-align: center; flex-shrink: 0; padding-top: 4px;">
+            <img src="../images/science-7-6-handout/image036.png" alt="人體心肝腎循環圖" style="max-width: 100%; height: auto; border-radius: 4px; border: 1px solid #cbd5e1;">
+          </div>
+        </div>
+      </div>
+
+      <!-- Q6 -->
+      <div class="qa-block interactive-item" style="margin-bottom: 16px;">
+        <div class="qa-header"><span class="qa-bracket">D</span> 6. 青蛙必須生活在水池附近的原因為何？</div>
+        <div class="qa-options stacked" style="margin-top: 6px; gap: 4px;">
+          <span>(A) 容易捕捉食物</span>
+          <span>(B) 容易逃避敵害</span>
+          <span>(C) 容易尋找伴侶</span>
+          <span>(D) 體表皮膚不具防止水分散失的功能，所以必須隨時保持溼潤</span>
+        </div>
+      </div>
+
+      <!-- Q7 附圖：image037.jpg -->
+      <div class="qa-block interactive-item" style="margin-bottom: 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 14px;">
+          <div style="flex: 1;">
+            <div class="qa-header"><span class="qa-bracket">B</span> 7. 右圖是人體的泌尿系統示意圖，下列敘述何者正確？</div>
+            <div class="qa-options stacked" style="margin-top: 6px; gap: 4px;">
+              <span>(A) 甲會產生尿酸</span>
+              <span>(B) 乙可過濾血液</span>
+              <span>(C) 丙可以儲存尿液</span>
+              <span>(D) 丁可以將有用的物質回收至心血管系統</span>
+            </div>
+          </div>
+          <div style="width: 110px; text-align: center; flex-shrink: 0; padding-top: 4px;">
+            <img src="../images/science-7-6-handout/image037.jpg" alt="泌尿系統構造代號圖" style="max-width: 100%; height: auto; border-radius: 4px; border: 1px solid #cbd5e1;">
+          </div>
+        </div>
+      </div>
+
+      <div class="tip-box" style="margin-top: 14px;">
+        <strong>💡 深度解題要訣（Q5）：</strong><br>
+        血液流經肝臟時，肝臟將氨轉變成尿素，故流出肝臟的甲血管中「氨最少、尿素最多」；而流入肝臟的乙血管氨較高，因此「氨濃度：甲 ＜ 乙」最合理！
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中生物</span>
+        <span>6-2 隨堂小試身手（二）(Q5～Q7)</span>
+        <span>第 10 頁 / 共 15 頁</span>
+      </div>
+    </div>
+    <!-- ==================== Page 11 ==================== -->
+    <div class="page" id="page11">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國一自然（上）講義</span>
+        <span>第 6 章 生物體的協調作用</span>
+        <span>P. 11</span>
+      </div>
+
+      <div class="section-title">
+        <span>6-3　體溫的恆定與血糖的恆定（一）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">焦點：外溫與內溫動物比較、體溫恆定調節曲線與機制</span>
+      </div>
+
+      <div class="task-title">Part 1 重點填空</div>
+
+      <div class="item-line interactive-item"><strong>1. 體溫的恆定：</strong></div>
+      <div class="item-line interactive-item" style="padding-left: 18px;">(1) 依體溫熱來源與調節機制不同，可分為 <span class="ans-word">外溫</span> 動物和 <span class="ans-word">內溫</span> 動物。</div>
+
+      <!-- 體溫與環境溫度關係曲線圖 -->
+      <div style="text-align: center; margin: 4px 0 2px 0;">
+        <img src="../images/science-7-6-handout/image040.jpg" alt="外溫與內溫動物體溫變化曲線圖" style="max-width: 85%; height: auto; max-height: 145px; border-radius: 6px; border: 1px solid #cbd5e1; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+      </div>
+
+      <table class="custom-table" style="font-size:11.5pt; margin: 3px 0 6px 0;">
+        <tr><th style="width:20%;">比較項目</th><th style="width:40%;">外溫動物（變溫動物）</th><th style="width:40%;">內溫動物（恆溫動物）</th></tr>
+        <tr class="interactive-item"><td><strong>定義機制</strong></td><td class="align-left">藉由外在環境溫度來調節體溫</td><td class="align-left">以體內 <span class="ans-word">代謝作用</span> 所產生的熱能維持體溫</td></tr>
+        <tr class="interactive-item"><td><strong>保暖構造</strong></td><td class="align-left">體表無特別保暖構造</td><td class="align-left">有 <span class="ans-word">毛髮</span>、<span class="ans-word">羽毛</span> 或豐厚的皮下脂肪保溫</td></tr>
+        <tr class="interactive-item"><td><strong>代表生物</strong></td><td class="align-left">魚類、蛙、蛇、昆蟲等</td><td class="align-left">鳥類、哺乳類</td></tr>
+      </table>
+
+      <div class="item-line interactive-item"><strong>(2) 外溫動物的體溫調節：</strong>體溫過高時躲在陰涼處或水中；體溫過低時到陽光下曬太陽以提升體溫。</div>
+
+      <div class="task-title" style="margin-top: 4px;">(3) 人體的體溫調節機制</div>
+      <table class="custom-table" style="font-size:11.5pt; margin: 2px 0;">
+        <tr><th style="width:20%;">生理反應</th><th style="width:40%;">體溫過高（散熱機制）</th><th style="width:40%;">體溫過低（產熱與保溫機制）</th></tr>
+        <tr class="interactive-item"><td><strong>體表血管</strong></td><td><span class="ans-word">擴張</span>（血流增加加速散熱）</td><td>收縮（減少血流散熱）</td></tr>
+        <tr class="interactive-item"><td><strong>食慾變化</strong></td><td>下降（減少代謝產熱）</td><td><span class="ans-word">上升</span>（增加攝食產熱）</td></tr>
+        <tr class="interactive-item"><td><strong>汗腺與肌肉</strong></td><td>分泌汗液，蒸發吸熱</td><td>汗液減少；<span class="ans-word">肌肉顫抖</span> 產生熱量</td></tr>
+      </table>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中生物</span>
+        <span>6-3 體溫的恆定與血糖的恆定（一）</span>
+        <span>第 11 頁 / 共 15 頁</span>
+      </div>
+    </div>
+    <!-- ==================== Page 12 ==================== -->
+    <div class="page" id="page12">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國一自然（上）講義</span>
+        <span>第 6 章 生物體的協調作用</span>
+        <span>P. 12</span>
+      </div>
+
+      <div class="section-title">
+        <span>6-3　體溫的恆定與血糖的恆定（二）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">焦點：體溫恆定天平模型、血糖來源與胰島素/升糖素調節機制</span>
+      </div>
+
+      <!-- 體溫調節天平圖 -->
+      <div style="text-align: center; margin: 2px 0 4px 0;">
+        <img src="../images/science-7-6-handout/image041.jpg" alt="人體體溫平衡天平圖" style="max-width: 80%; height: auto; max-height: 125px; border-radius: 6px; border: 1px solid #cbd5e1;">
+      </div>
+
+      <div class="task-title" style="margin-top: 4px;">2. 血糖的恆定</div>
+      <div class="item-line interactive-item"><strong>(1) 血糖來源：</strong></div>
+      <div class="item-line interactive-item" style="padding-left: 18px;">a. 攝取醣類食物消化成 <span class="ans-word">葡萄糖</span>，被小腸吸收至血液中。</div>
+      <div class="item-line interactive-item" style="padding-left: 18px;">b. 儲存在肝臟中的 <span class="ans-word">肝糖</span> 分解為葡萄糖，釋放到血液中。</div>
+
+      <!-- 血糖升降調節天平圖 -->
+      <div style="text-align: center; margin: 2px 0 4px 0;">
+        <img src="../images/science-7-6-handout/image044.jpg" alt="血糖恆定調節天平" style="max-width: 90%; height: auto; max-height: 120px; border-radius: 6px; border: 1px solid #cbd5e1;">
+      </div>
+
+      <div class="task-title" style="margin-top: 4px;">(2) 血糖的調節與激素分泌</div>
+      <table class="custom-table" style="font-size:11.5pt; margin: 2px 0;">
+        <tr><th style="width:20%;">狀態</th><th style="width:40%;">血糖過高（如飽餐後）</th><th style="width:40%;">血糖過低（如飢餓時）</th></tr>
+        <tr class="interactive-item"><td><strong>分泌激素</strong></td><td><span class="ans-word">胰島素</span> 分泌增加</td><td><span class="ans-word">升糖素</span> 分泌增加</td></tr>
+        <tr class="interactive-item"><td><strong>生理反應</strong></td><td>促使葡萄糖進入細胞或合成肝糖，降低血糖</td><td>促使肝糖分解成葡萄糖，提高血糖</td></tr>
+        <tr class="interactive-item"><td><strong>食慾感覺</strong></td><td>產生飽足感</td><td>產生飢餓感</td></tr>
+      </table>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中生物</span>
+        <span>6-3 體溫的恆定與血糖的恆定（二）</span>
+        <span>第 12 頁 / 共 15 頁</span>
+      </div>
+    </div>
+    <!-- ==================== Page 13 ==================== -->
+    <div class="page" id="page13">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國一自然（上）講義</span>
+        <span>第 6 章 生物體的協調作用</span>
+        <span>P. 13</span>
+      </div>
+
+      <div class="section-title">
+        <span>6-3　體溫的恆定與血糖的恆定（三）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">焦點：激素與血糖調控歷程曲線、進食與應急反應</span>
+      </div>
+
+      <div class="task-title">(3) 激素與血糖調節事例分析</div>
+      <table class="custom-table" style="font-size:12pt; margin: 4px 0 8px 0;">
+        <tr><th style="width:20%;">事例</th><th style="width:25%;">引發變動原因</th><th style="width:30%;">腺體分泌激素</th><th style="width:25%;">恆定方向</th></tr>
+        <tr class="interactive-item"><td><strong>飽餐後</strong></td><td>血糖過高</td><td>胰島分泌 <span class="ans-word">胰島素</span></td><td>血糖 → 肝糖儲存</td></tr>
+        <tr class="interactive-item"><td><strong>飢餓時</strong></td><td>血糖過低</td><td><span class="ans-word">胰島</span> 分泌升糖素</td><td>肝糖 → 血糖利用</td></tr>
+        <tr class="interactive-item"><td><strong>運動、緊張時</strong></td><td>需要更多血糖</td><td>腎上腺分泌 <span class="ans-word">腎上腺素</span></td><td>肝糖 → 血糖利用</td></tr>
+      </table>
+
+      <!-- 血糖調控時序歷程曲線圖 -->
+      <div style="text-align: center; margin: 6px 0 4px 0;">
+        <img src="../images/science-7-6-handout/image045.png" alt="人體進食與緊急狀態下血糖濃度與激素變化曲線" style="max-width: 90%; height: auto; max-height: 250px; border-radius: 6px; border: 1px solid #cbd5e1; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中生物</span>
+        <span>6-3 體溫的恆定與血糖的恆定（三）</span>
+        <span>第 13 頁 / 共 15 頁</span>
+      </div>
+    </div>
+    <!-- ==================== Page 14 ==================== -->
+    <div class="page" id="page14">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國一自然（上）講義</span>
+        <span>第 6 章 生物體的協調作用</span>
+        <span>P. 14</span>
+      </div>
+
+      <div class="section-title">
+        <span>6-3　體溫與血糖恆定隨堂小試身手</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">實戰評量 · 共 4 題</span>
+      </div>
+
+      <div class="task-title">Part 2 小試身手</div>
+
+      <!-- Q1 -->
+      <div class="qa-block interactive-item" style="margin-bottom: 18px;">
+        <div class="qa-header"><span class="qa-bracket">D</span> 1. 人體的體溫不隨環境的溫度而改變，能維持恆定狀態，當天氣炎熱或體內熱量增加時，生理上會有調節性活動以增加體熱的發散，此調節方式不包括下列何者？</div>
+        <div class="qa-options stacked" style="margin-top: 6px; gap: 5px;">
+          <span>(A) 皮膚微血管的血液量增加</span>
+          <span>(B) 攝食量減少</span>
+          <span>(C) 排汗量增加</span>
+          <span>(D) 肌肉收縮速率增加</span>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="qa-block interactive-item" style="margin-bottom: 18px;">
+        <div class="qa-header"><span class="qa-bracket">C</span> 2. 小丸子的爺爺到醫院做健康檢查時，醫護人員將爺爺的尿液作分析，加入本氏液後再加熱，結果呈現橘紅色。請問爺爺可能是哪一個器官出問題了？</div>
+        <div class="qa-options" style="margin-top: 6px;">
+          <span>(A) 脾臟</span><span>(B) 小腸</span><span>(C) 胰臟</span><span>(D) 膀胱</span>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="qa-block interactive-item" style="margin-bottom: 18px;">
+        <div class="qa-header"><span class="qa-bracket">D</span> 3. 人體的何種器官兼具消化腺和內分泌腺的功能？</div>
+        <div class="qa-options" style="margin-top: 6px;">
+          <span>(A) 肝臟</span><span>(B) 心臟</span><span>(C) 肺臟</span><span>(D) 胰臟</span>
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="qa-block interactive-item" style="margin-bottom: 18px;">
+        <div class="qa-header"><span class="qa-bracket">B</span> 4. (甲)甲狀腺素、(乙)升糖素、(丙)胰島素、(丁)腎上腺素、(戊)生長素。動物血液中葡萄糖的濃度和上列哪些激素有關？</div>
+        <div class="qa-options" style="margin-top: 6px;">
+          <span>(A) 甲乙丙</span><span>(B) 乙丙丁</span><span>(C) 丙丁戊</span><span>(D) 甲丙丁</span>
+        </div>
+      </div>
+
+      <div class="tip-box" style="margin-top: 25px;">
+        <strong>💡 觀念導引：</strong><br>
+        1. <strong>散熱機制：</strong>皮膚微血管擴張、排汗增加、食慾下降。肌肉顫抖為「產熱」，在寒冷時才會發生！<br>
+        2. <strong>尿糖與胰臟：</strong>尿液加入本氏液隔水加熱呈橘紅色代表含有大量葡萄糖（糖尿病），主因為胰臟內的胰島素分泌不足。<br>
+        3. <strong>兼具消化與內分泌：</strong>胰臟分泌胰液經導管進入十二指腸消化養分（外分泌/消化腺），胰島細胞分泌胰島素和升糖素入血液（內分泌腺）。
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中生物</span>
+        <span>6-3 隨堂小試身手 (Q1～Q4)</span>
+        <span>第 14 頁 / 共 15 頁</span>
+      </div>
+    </div>
+    <!-- ==================== Page 15 ==================== -->
+    <div class="page" id="page15">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國一自然（上）講義</span>
+        <span>第 6 章 生物體的協調作用</span>
+        <span>P. 15</span>
+      </div>
+
+      <div class="section-title">
+        <span>第 6 章　全章核心重點整理</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">呼吸氣體、水分排泄、體溫與血糖恆定精華檢測</span>
+      </div>
+
+      <div class="task-title" style="font-size: 12.5pt; margin: 4px 0 2px 0;">6-1 呼吸與氣體的恆定</div>
+      <div class="item-line interactive-item" style="font-size: 11.5pt; line-height: 1.45;">
+        1. 在細胞的粒線體中，透過酵素協助，葡萄糖與氧反應釋放能量，同時放出水及二氧化碳，稱為 <span class="ans-word">呼吸作用</span>。<br>
+        2. 水中小生物藉由 <span class="ans-word">擴散作用</span> 獲取氧氣；呼吸器官特徵為表面 <span class="ans-word">溼潤</span>、表面積廣大且微血管發達。<br>
+        3. 人體呼吸系統包括鼻、咽、喉、氣管、支氣管及 <span class="ans-word">肺臟</span> 等。<br>
+        4. 吸氣時肋骨 <span class="ans-word">上升</span>、橫膈 <span class="ans-word">下降</span>、胸腔 <span class="ans-word">擴大</span>；呼氣時肋骨下降、橫膈上升、胸腔縮小。
+      </div>
+
+      <div class="task-title" style="font-size: 12.5pt; margin: 6px 0 2px 0;">6-2 排泄與水分的恆定</div>
+      <div class="item-line interactive-item" style="font-size: 11.5pt; line-height: 1.45;">
+        1. 生物體將代謝廢物排出體外的過程稱為 <span class="ans-word">排泄作用</span>。<br>
+        2. 含氮廢物：單細胞動物及魚類直接排 <span class="ans-word">氨</span>（毒性最強）；哺乳類排 <span class="ans-word">尿素</span>；昆蟲及鳥類排 <span class="ans-word">尿酸</span>（難溶於水）。<br>
+        3. 人體由腎臟、<span class="ans-word">輸尿管</span>、膀胱及 <span class="ans-word">尿道</span> 合稱為泌尿系統；動植物體表有角質層、外骨骼或鱗片防止水分散失。<br>
+        4. 水分過多時排尿次數增加；水分過少時刺激腦部產生口渴並使排尿次數減少。
+      </div>
+
+      <div class="task-title" style="font-size: 12.5pt; margin: 6px 0 2px 0;">6-3 體溫與血糖的恆定</div>
+      <div class="item-line interactive-item" style="font-size: 11.5pt; line-height: 1.45;">
+        1. 外溫動物隨環境調節體溫；內溫動物（鳥類、哺乳類）依靠 <span class="ans-word">代謝作用</span> 維持體溫，有毛髮羽毛保溫。<br>
+        2. 體溫過高時體表血管 <span class="ans-word">擴張</span>、排汗增加；體溫過低時體表血管收縮、肌肉顫抖產熱、食慾上升。<br>
+        3. 血糖來源為食物消化成 <span class="ans-word">葡萄糖</span> 及肝臟中 <span class="ans-word">肝糖</span> 分解；血糖過高時 <span class="ans-word">胰島素</span> 分泌增加降血糖；血糖過低時 <span class="ans-word">升糖素</span> 分泌增加升血糖。
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中生物</span>
+        <span>第 6 章 全章核心重點整理</span>
+        <span>第 15 頁 / 共 15 頁</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let allShown = false;
+    function toggleAllAnswers() {
+      allShown = !allShown;
+      document.body.classList.toggle('show-ans', allShown);
+      document.getElementById('ansIcon').textContent = allShown ? '🙈' : '👁️';
+      document.getElementById('toggleAllAnsBtn').classList.toggle('active', allShown);
+    }
+
+    document.addEventListener('click', function(e) {
+      if (document.body.classList.contains('pen-mode')) return;
+
+      // 點擊填空、選擇題括號直接顯隱
+      const targetAns = e.target.closest('.ans-word, .qa-bracket');
+      if (targetAns) {
+        targetAns.classList.toggle('revealed');
+        e.stopPropagation();
+        return;
+      }
+
+      // 單擊 interactive-item 或 qa-block 開合整題
+      const item = e.target.closest('.interactive-item');
+      if (item) {
+        item.classList.toggle('show-one');
+      }
+    });
+
+    document.addEventListener('dblclick', function(e) {
+      if (document.body.classList.contains('pen-mode')) return;
+      const targetAns = e.target.closest('.ans-word, .qa-bracket');
+      if (targetAns) {
+        targetAns.classList.toggle('revealed');
+        e.stopPropagation();
+      }
+    });
+
+    function toggleTocMenu(e) {
+      e.stopPropagation();
+      document.getElementById('tocMenu').classList.toggle('show');
+    }
+    document.addEventListener('click', () => {
+      const menu = document.getElementById('tocMenu');
+      if (menu) menu.classList.remove('show');
+    });
+
+    function jumpTo(id) {
+      const el = document.getElementById(id);
+      if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      const menu = document.getElementById('tocMenu');
+      if (menu) menu.classList.remove('show');
+    }
+
+    let penMode = false, penColor = 'rgba(250,204,21,0.45)', penSize = 3;
+    let currentCanvas = null, ctx = null, drawing = false;
+    const canvases = document.querySelectorAll('.drawing-canvas');
+
+    function togglePenMode() {
+      penMode = !penMode;
+      document.body.classList.toggle('pen-mode', penMode);
+      document.getElementById('penBtn').classList.toggle('active', penMode);
+      document.getElementById('penOptions').style.display = penMode ? 'flex' : 'none';
+      canvases.forEach(c => {
+        const page = c.parentElement;
+        c.width = page.offsetWidth;
+        c.height = page.offsetHeight;
+      });
+    }
+
+    function setPenColor(color, el) {
+      penColor = color;
+      document.querySelectorAll('.color-dot').forEach(d => d.classList.remove('active'));
+      if (el) el.classList.add('active');
+    }
+
+    function setPenSize(size, el) {
+      penSize = size;
+      document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+      el.classList.add('active');
+    }
+
+    function getPos(e, canvas) {
+      const rect = canvas.getBoundingClientRect();
+      if (e.touches) return { x: e.touches[0].clientX - rect.left, y: e.touches[0].clientY - rect.top };
+      return { x: e.clientX - rect.left, y: e.clientY - rect.top };
+    }
+
+    canvases.forEach(canvas => {
+      canvas.addEventListener('mousedown', e => {
+        if (!penMode) return;
+        drawing = true; currentCanvas = canvas;
+        ctx = canvas.getContext('2d');
+        ctx.strokeStyle = penColor; ctx.lineWidth = penSize;
+        ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+        const p = getPos(e, canvas); ctx.beginPath(); ctx.moveTo(p.x, p.y);
+      });
+      canvas.addEventListener('mousemove', e => {
+        if (!drawing || currentCanvas !== canvas) return;
+        const p = getPos(e, canvas); ctx.lineTo(p.x, p.y); ctx.stroke();
+      });
+      canvas.addEventListener('mouseup', () => { drawing = false; });
+      canvas.addEventListener('touchstart', e => {
+        if (!penMode) return; e.preventDefault();
+        drawing = true; currentCanvas = canvas;
+        ctx = canvas.getContext('2d');
+        ctx.strokeStyle = penColor; ctx.lineWidth = penSize;
+        ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+        const p = getPos(e, canvas); ctx.beginPath(); ctx.moveTo(p.x, p.y);
+      }, { passive: false });
+      canvas.addEventListener('touchmove', e => {
+        if (!drawing) return; e.preventDefault();
+        const p = getPos(e, canvas); ctx.lineTo(p.x, p.y); ctx.stroke();
+      }, { passive: false });
+      canvas.addEventListener('touchend', () => { drawing = false; });
+    });
+
+    function clearAllDrawings() {
+      canvases.forEach(c => { const ctx2 = c.getContext('2d'); ctx2.clearRect(0,0,c.width,c.height); });
+    }
+  </script>
+</body>
+</html>
