@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>國一自然（上）第 5 章 生物體的協調作用 互動電子書</title>
+  <!-- 電子書目錄身分標記（見 SKILL.md §11 與 AGENTS.md） -->
+  <meta name="ebook:subject" content="science">
+  <meta name="ebook:grade" content="7">
+  <meta name="ebook:unit" content="5">
+  <meta name="ebook:title" content="國一自然（上）第 5 章 生物體的協調作用 互動電子書">
+  <meta name="ebook:type" content="handout">
+  <meta name="ebook:pages" content="15">
+  <meta name="ebook:level" content="std">
+  <meta name="ebook:summary" content="國一自然（生物）第5章生物體的協調作用完整講義（全15頁寬裕舒展無截斷版），涵蓋：刺激與反應（受器與動器、感覺疲勞與後像）、神經系統（中樞神經與周圍神經、大腦/小腦/腦幹/脊髓、神經傳導與反射作用）、內分泌系統（激素特性、主要內分泌腺比較與失調症狀）、動物行為與植物感應（趨性、學習、向性與膨壓快速感應），以及全章精華重點整理與隨堂小試身手。">
+  <style>
+    @page { size: A4 portrait; margin: 10mm 12mm; }
+    * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body {
+      margin: 0; padding: 0; background-color: #f1f5f9;
+      font-family: "Times New Roman", "標楷體", "DFKai-SB", "BiauKai", serif;
+      font-size: 13.5pt; line-height: 1.5; color: #111;
+    }
+
+    /* 課堂懸浮工具列 */
+    .classroom-toolbar {
+      position: fixed; top: 14px; right: 20px; z-index: 9999;
+      display: flex; align-items: center; gap: 4px;
+      background: rgba(255,255,255,0.95); backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 4px 10px; border-radius: 40px; border: 1px solid rgba(203,213,225,0.9);
+      box-shadow: 0 4px 22px rgba(0,0,0,0.15);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .tool-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 36px; height: 36px; font-size: 18px; color: #334155;
+      background: transparent; border: 1px solid transparent; border-radius: 50%;
+      cursor: pointer; transition: all 0.15s ease; padding: 0; user-select: none;
+      text-decoration: none;
+    }
+    .tool-btn:hover { background: #f1f5f9; transform: scale(1.1); }
+    .tool-btn.active { background: #0f172a; color: #ffffff; }
+    .btn-toggle-ans.active { background: #eff6ff; border-color: #3b82f6; }
+    .toolbar-divider { width: 1px; height: 20px; background: #cbd5e1; margin: 0 4px; }
+
+    /* 目錄跳轉選單 */
+    .toc-menu {
+      display: none; position: absolute; top: 46px; left: 0;
+      background: #ffffff; border: 1px solid #cbd5e1; border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.18); padding: 8px 0;
+      min-width: 330px; max-height: 520px; overflow-y: auto; z-index: 10000;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .toc-menu.show { display: block; animation: tocFadeIn 0.15s ease-out; }
+    @keyframes tocFadeIn { from { opacity:0; transform:translateY(-6px); } to { opacity:1; transform:translateY(0); } }
+    .toc-menu-title { padding: 6px 16px 8px 16px; font-size: 13px; font-weight: bold; color: #64748b; border-bottom: 1px solid #f1f5f9; }
+    .toc-menu-item { padding: 7px 16px; font-size: 13px; color: #334155; cursor: pointer; display: flex; align-items: center; justify-content: space-between; transition: background 0.12s, color 0.12s; }
+    .toc-menu-item:hover { background: #eff6ff; color: #2563eb; font-weight: bold; }
+    .toc-page-badge { font-size: 11.5px; color: #94a3b8; font-weight: normal; }
+    .toc-menu-item:hover .toc-page-badge { color: #2563eb; }
+
+    /* 螢光筆選項盤 */
+    .pen-options { display: none; align-items: center; gap: 6px; background: #f8fafc; padding: 3px 8px; border-radius: 20px; border: 1px solid #e2e8f0; margin-left: 2px; }
+    .color-picker { display: flex; align-items: center; gap: 5px; }
+    .color-dot { width: 16px; height: 16px; border-radius: 50%; cursor: pointer; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.2); }
+    .color-dot.active { transform: scale(1.2); box-shadow: 0 0 0 2px #0f172a; }
+    .size-picker { display: flex; align-items: center; gap: 3px; }
+    .size-btn { border: 1px solid #cbd5e1; background: #fff; color: #475569; font-size: 11px; font-weight: bold; padding: 2px 7px; border-radius: 10px; cursor: pointer; }
+    .size-btn.active { background: #0f172a; color: #fff; border-color: #0f172a; }
+
+    /* 頁面容器 */
+    .pages-container { padding: 20px 0 40px 0; }
+    .page {
+      box-sizing: border-box; width: 210mm; min-height: 297mm; max-height: 297mm;
+      padding: 10mm 15mm 8mm 15mm; margin: 0 auto 25px auto;
+      background: #ffffff; box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+      page-break-after: always; break-after: page; position: relative;
+      display: flex; flex-direction: column; justify-content: flex-start; overflow: hidden;
+    }
+    .drawing-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 50; pointer-events: none; }
+    body.pen-mode .drawing-canvas { pointer-events: auto; cursor: crosshair; }
+
+    /* 頁首與標題 */
+    .page-header {
+      display: flex; justify-content: space-between; align-items: center;
+      border-bottom: 2px solid #2563eb; padding-bottom: 4px; margin-bottom: 8px;
+      font-size: 11.5pt; font-weight: 700; color: #1e3a8a;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .section-title {
+      font-size: 13.5pt; font-weight: bold; background: #e0f2fe; color: #0369a1;
+      padding: 4px 10px; border-radius: 6px; margin: 5px 0 6px 0;
+      border-left: 6px solid #0284c7; display: flex; align-items: center; justify-content: space-between;
+    }
+    .task-title { font-size: 13pt; font-weight: bold; margin: 6px 0 4px 0; color: #1e293b; }
+    .item-line { padding: 3px 6px; border-radius: 4px; line-height: 1.5; font-size: 13pt; }
+    body:not(.pen-mode) .interactive-item { cursor: pointer; }
+    body:not(.pen-mode) .interactive-item:hover { background-color: #f8fafc; outline: 1px dashed #93c5fd; }
+
+    /* 填空答案樣式 */
+    .ans-word {
+      color: transparent; font-weight: bold; border-bottom: 1.5px solid #333;
+      padding: 0 3px; cursor: pointer; user-select: none; transition: all 0.15s ease;
+    }
+    .show-ans .ans-word, .show-one .ans-word, .ans-word.revealed {
+      color: #dc2626 !important; background: #fee2e2; border-radius: 3px;
+    }
+    body:not(.pen-mode) .ans-word:hover { background-color: #fee2e2; }
+
+    /* 選擇題與括號 */
+    .qa-block { margin-bottom: 7px; padding: 5px 8px; border-radius: 6px; line-height: 1.48; font-size: 12.5pt; }
+    .qa-header { font-weight: bold; }
+    .qa-bracket {
+      display: inline-block; color: transparent; font-weight: bold; padding: 0 4px;
+      min-width: 28px; text-align: center; border: 1.5px solid #2563eb; border-radius: 4px;
+      cursor: pointer; user-select: none; transition: all 0.15s ease; margin-right: 4px;
+    }
+    .show-ans .qa-bracket, .show-one .qa-bracket, .qa-bracket.revealed {
+      color: #dc2626 !important; background: #fee2e2;
+    }
+    .qa-options { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px 10px; margin-top: 4px; padding-left: 20px; font-size: 12pt; }
+    .qa-options.stacked { display: flex; flex-direction: column; gap: 3px; }
+
+    /* 表格樣式 */
+    table.custom-table { width: 100%; border-collapse: collapse; margin: 4px 0; font-size: 12pt; line-height: 1.38; }
+    table.custom-table th, table.custom-table td { border: 1px solid #64748b; padding: 4px 6px; text-align: center; }
+    table.custom-table th { background-color: #f1f5f9; font-weight: bold; color: #0f172a; }
+    table.custom-table td.align-left { text-align: left; }
+
+    /* 概念提示框 */
+    .tip-box {
+      border: 1.5px solid #93c5fd; background-color: #f0f9ff; border-radius: 6px;
+      padding: 6px 12px; margin: 5px 0 7px 0; font-size: 12pt; line-height: 1.45; color: #0369a1;
+    }
+
+    /* 流程圖樣式 */
+    .flow-box {
+      display: inline-block; border: 1.5px solid #2563eb; border-radius: 6px;
+      padding: 3px 8px; background: #eff6ff; font-weight: bold; color: #1e3a8a;
+    }
+    .flow-arrow { display: inline-block; margin: 0 4px; color: #2563eb; font-weight: bold; }
+
+    /* 頁尾 */
+    .page-footer {
+      margin-top: auto; border-top: 1px solid #cbd5e1; padding-top: 4px;
+      display: flex; justify-content: space-between; font-size: 9.5pt; color: #64748b;
+    }
+
+    /* 列印學生純淨版 */
+    @media print {
+      @page { size: A4 portrait; margin: 10mm 12mm; }
+      html, body { width: 100% !important; height: auto !important; background: transparent !important; padding: 0 !important; margin: 0 !important; }
+      .no-print, .classroom-toolbar, .toc-menu, .drawing-canvas { display: none !important; }
+      .pages-container { display: block !important; padding: 0 !important; margin: 0 !important; }
+      .page {
+        box-sizing: border-box !important; margin: 0 !important; box-shadow: none !important;
+        width: 100% !important; height: 275mm !important; max-height: 275mm !important;
+        min-height: 0 !important; padding: 0 !important; page-break-after: always !important;
+        break-after: page !important; page-break-inside: avoid !important; break-inside: avoid !important;
+        display: flex !important; flex-direction: column !important; justify-content: flex-start !important;
+        overflow: hidden !important;
+      }
+      .page:last-child { page-break-after: avoid !important; break-after: avoid !important; }
+      .page-footer { margin-top: auto !important; padding-top: 4px !important; }
+      .ans-word, .qa-bracket { color: transparent !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 課堂懸浮工具列 -->
+  <div class="classroom-toolbar no-print">
+    <!-- 回電子書目錄 -->
+    <a class="tool-btn" href="../index.html" title="回電子書目錄">🏠</a>
+    <!-- 目錄跳轉選單 -->
+    <div style="position: relative;">
+      <button class="tool-btn" id="tocBtn" onclick="toggleTocMenu(event)" title="單元章節目錄">📑</button>
+      <div class="toc-menu" id="tocMenu">
+        <div class="toc-menu-title">📖 第 5 章 生物體的協調作用 (全 15 頁)</div>
+        <div class="toc-menu-item" onclick="jumpTo('page1')"><span>5-1 刺激與反應核心觀念</span><span class="toc-page-badge">P.1</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page2')"><span>5-1 隨堂小試身手（一）(Q1～Q5)</span><span class="toc-page-badge">P.2</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page3')"><span>5-1 隨堂小試身手（二）(Q6～Q9)</span><span class="toc-page-badge">P.3</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page4')"><span>5-2 神經系統組成與腦/脊髓構造</span><span class="toc-page-badge">P.4</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page5')"><span>5-2 神經傳導路徑與反射作用</span><span class="toc-page-badge">P.5</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page6')"><span>5-2 隨堂小試身手 (Q1～Q4)</span><span class="toc-page-badge">P.6</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page7')"><span>5-3 內分泌系統與人體內分泌腺分布</span><span class="toc-page-badge">P.7</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page8')"><span>5-3 內分泌腺比較與失調症狀</span><span class="toc-page-badge">P.8</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page9')"><span>5-3 隨堂小試身手（一）(Q1～Q4)</span><span class="toc-page-badge">P.9</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page10')"><span>5-3 隨堂小試身手（二）(Q5～Q9)</span><span class="toc-page-badge">P.10</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page11')"><span>5-4 動物行為與植物感應</span><span class="toc-page-badge">P.11</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page12')"><span>5-4 隨堂小試身手（一）(Q1～Q4)</span><span class="toc-page-badge">P.12</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page13')"><span>5-4 隨堂小試身手（二）(Q5～Q7)</span><span class="toc-page-badge">P.13</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page14')"><span>第 5 章 全章核心重點整理（一）</span><span class="toc-page-badge">P.14</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page15')"><span>第 5 章 全章核心重點整理（二）</span><span class="toc-page-badge">P.15</span></div>
+      </div>
+    </div>
+    </div>
+    <!-- 一鍵顯答 -->
+    <button class="tool-btn btn-toggle-ans" id="toggleAllAnsBtn" onclick="toggleAllAnswers()" title="一鍵全開/全隱答案">
+      <span id="ansIcon">👁️</span>
+    </button>
+    <!-- 畫筆切換 -->
+    <button class="tool-btn" id="penBtn" onclick="togglePenMode()" title="螢光筆/板書筆">✏️</button>
+    <!-- 畫筆選單 -->
+    <div class="pen-options" id="penOptions">
+      <div class="color-picker">
+        <span class="color-dot active" style="background:#facc15;" onclick="setPenColor('rgba(250,204,21,0.45)', this)" title="螢光黃"></span>
+        <span class="color-dot" style="background:#ef4444;" onclick="setPenColor('rgba(239,68,68,0.8)', this)" title="紅筆"></span>
+        <span class="color-dot" style="background:#3b82f6;" onclick="setPenColor('rgba(37,99,235,0.8)', this)" title="藍筆"></span>
+        <span class="color-dot" style="background:#10b981;" onclick="setPenColor('rgba(16,185,129,0.8)', this)" title="綠筆"></span>
+      </div>
+      <div class="toolbar-divider" style="height:14px; margin:0 2px;"></div>
+      <div class="size-picker">
+        <span class="size-btn active" onclick="setPenSize(3, this)">細</span>
+        <span class="size-btn" onclick="setPenSize(7, this)">中</span>
+        <span class="size-btn" onclick="setPenSize(14, this)">粗</span>
+      </div>
+    </div>
+    <!-- 清除筆跡 -->
+    <button class="tool-btn" onclick="clearAllDrawings()" title="清除本頁筆跡">🧹</button>
+    <!-- 列印 -->
+    <button class="tool-btn" onclick="window.print()" title="列印純淨學習單">🖨️</button>
+  </div>
+
+  <!-- Pages Container -->
+  <div class="pages-container">
+    <!-- ==================== Page 1 ==================== -->
+        <!-- ==================== Page 1 ==================== -->
+    <div class="page" id="page1">
+<canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國一自然（上）講義</span>
+        <span>第 5 章 生物體的協調作用</span>
+        <span>P. 1</span>
+      </div>
+
+      <div class="section-title">
+        <span>5-1　刺激與反應</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">焦點：受器與動器、感覺疲勞、視覺暫留與後像</span>
+      </div>
+
+      <div class="task-title">Part 1 重點填空</div>
+      
+      <div class="item-line interactive-item"><strong>1. 刺激：</strong>外在環境或生物體內所發生的改變。</div>
+      <div class="item-line interactive-item" style="padding-left: 18px;">(1) 生物體中接受刺激的部位稱為 <span class="ans-word">受器</span>。</div>
+      <div class="item-line interactive-item" style="padding-left: 18px;">(2) 刺激與人類的受器對應：</div>
+
+      <table class="custom-table" style="font-size:12pt; margin: 4px 0 8px 0;">
+        <tr><th style="width:28%;">環境刺激</th><th style="width:28%;">人體器官</th><th style="width:44%;">所含受器種類</th></tr>
+        <tr class="interactive-item"><td>光線</td><td>眼睛</td><td><span class="ans-word">視覺</span> 受器</td></tr>
+        <tr class="interactive-item"><td>聲音</td><td>耳朵</td><td><span class="ans-word">聽覺</span> 受器</td></tr>
+        <tr class="interactive-item"><td>氣味</td><td>鼻腔</td><td><span class="ans-word">嗅覺</span> 受器</td></tr>
+        <tr class="interactive-item"><td>味道</td><td>舌頭</td><td><span class="ans-word">味覺</span> 受器</td></tr>
+        <tr class="interactive-item"><td>溫度、壓力等</td><td>皮膚</td><td>冷覺受器、熱覺受器、觸覺受器、壓覺受器、痛覺受器</td></tr>
+      </table>
+
+      <div class="item-line interactive-item"><strong>2. 反應：</strong>生物體接受刺激後，產生因應的行為。</div>
+      <div class="item-line interactive-item" style="padding-left: 18px;">(1) 產生反應的部位稱為 <span class="ans-word">動器</span>。</div>
+      <div class="item-line interactive-item" style="padding-left: 18px;">(2) 人類的動器與反應模式：</div>
+
+      <table class="custom-table" style="font-size:12pt; margin: 4px 0 8px 0;">
+        <tr><th style="width:25%;">人體動器</th><th style="width:25%;">產生反應</th><th style="width:50%;">生活實例</th></tr>
+        <tr class="interactive-item"><td><strong>肌肉</strong></td><td>收縮</td><td class="align-left">手部肌肉收縮，做出拍打或逃避動作</td></tr>
+        <tr class="interactive-item"><td><strong>腺體</strong></td><td>分泌</td><td class="align-left">唾腺分泌唾液、汗腺分泌汗液</td></tr>
+      </table>
+
+      <div class="item-line interactive-item"><strong>3. 連續刺激：</strong>受器連續接受相同刺激，敏感度降低，可能會產生 <span class="ans-word">感覺疲勞</span> 的現象。</div>
+
+      <div class="item-line interactive-item"><strong>4. 感覺疲勞與後像實例：</strong></div>
+      <div class="item-line interactive-item" style="padding-left: 18px;">(1) <strong>味覺：</strong>吃完糖果後再吃水果，會覺得水果不甜。</div>
+      <div class="item-line interactive-item" style="padding-left: 18px;">(2) <strong>聽覺：</strong>在吵雜環境待久了，漸漸不覺得吵。</div>
+      <div class="item-line interactive-item" style="padding-left: 18px;">(3) <strong>視覺：</strong></div>
+      <div class="item-line interactive-item" style="padding-left: 36px;">a. <strong>正片後像：</strong>物體影像暫時留存，並與原物體 <span class="ans-word">同色</span> 的情形，是因為 <span class="ans-word">視覺暫留</span> 的作用。例如：看電影、卡通與揮動仙女棒/煙火。</div>
+      <div class="item-line interactive-item" style="padding-left: 36px;">b. <strong>負片後像：</strong>後像的顏色與原物體 <span class="ans-word">不同</span> 時，除了視覺暫留外，也會因為凝視物體過久，產生 <span class="ans-word">視覺疲勞</span> 的現象，因而看到互補色的後像。</div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中生物</span>
+        <span>5-1 刺激與反應核心觀念</span>
+        <span>第 1 頁 / 共 15 頁</span>
+      </div>
+    </div>
+    <!-- ==================== Page 2 ==================== -->
+    <!-- ==================== Page 2 ==================== -->
+    <div class="page" id="page2">
+<canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國一自然（上）講義</span>
+        <span>第 5 章 生物體的協調作用</span>
+        <span>P. 2</span>
+      </div>
+
+      <div class="section-title">
+        <span>5-1　刺激與反應隨堂小試身手（一）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">基礎實戰評量 · Q1～Q5</span>
+      </div>
+
+      <div class="task-title">Part 2 小試身手</div>
+
+      <!-- Q1 -->
+      <div class="qa-block interactive-item" style="margin-bottom: 14px;">
+        <div class="qa-header"><span class="qa-bracket">D</span> 1. 人體的受器能將接收的訊息傳遞到反射中樞，再由動器做出反應得以應付外來的各種狀況，請問下列何者不是接受外界訊息的器官？</div>
+        <div class="qa-options" style="margin-top: 6px;">
+          <span>(A) 眼睛</span><span>(B) 鼻子</span><span>(C) 耳朵</span><span>(D) 食道</span>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="qa-block interactive-item" style="margin-bottom: 14px;">
+        <div class="qa-header"><span class="qa-bracket">C</span> 2. 下列關於感覺疲勞的敘述，何者錯誤？</div>
+        <div class="qa-options stacked" style="margin-top: 6px; gap: 5px;">
+          <span>(A) 感覺疲勞是因為受器長時間接受相同的刺激所引起</span>
+          <span>(B) 嗅覺是容易發生感覺疲勞的感覺之一</span>
+          <span>(C) 發生感覺疲勞時，代表受器已經永久損壞</span>
+          <span>(D) 感覺疲勞可以幫助我們忽略環境中不重要的持續性刺激</span>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="qa-block interactive-item" style="margin-bottom: 14px;">
+        <div class="qa-header"><span class="qa-bracket">A</span> 3. 下列敘述何者正確？</div>
+        <div class="qa-options stacked" style="margin-top: 6px; gap: 5px;">
+          <span>(A) 外在環境或生物體內所發生的事件稱為刺激</span>
+          <span>(B) 生物體中接受刺激的部位稱為受器，例如：轉動眼球的肌肉</span>
+          <span>(C) 動器多分布於眼、耳、鼻、舌和皮膚等器官中</span>
+          <span>(D) 人體的視覺受器在鼻腔中</span>
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="qa-block interactive-item" style="margin-bottom: 14px;">
+        <div class="qa-header"><span class="qa-bracket">D</span> 4. 「吃糖果後感覺西瓜不甜」的原理與下列何者不同？</div>
+        <div class="qa-options stacked" style="margin-top: 6px; gap: 5px;">
+          <span>(A) 由冷氣房出來，覺得室外很熱</span>
+          <span>(B) 吵雜的機器聲突然停止，覺得很安靜</span>
+          <span>(C) 媽媽在滷豬腳，久而不聞其香</span>
+          <span>(D) 魷魚絲一口接一口，愈吃愈想吃</span>
+        </div>
+      </div>
+
+      <!-- Q5 -->
+      <div class="qa-block interactive-item" style="margin-bottom: 14px;">
+        <div class="qa-header"><span class="qa-bracket">D</span> 5. (甲)手指肌肉、(乙)眼瞼、(丙)皮膚、(丁)唾腺、(戊)味蕾。以上哪些是受器？</div>
+        <div class="qa-options" style="margin-top: 6px;">
+          <span>(A) 甲乙丙</span><span>(B) 乙戊</span><span>(C) 甲乙丁</span><span>(D) 丙戊</span>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中生物</span>
+        <span>5-1 隨堂小試身手（一）(Q1～Q5)</span>
+        <span>第 2 頁 / 共 15 頁</span>
+      </div>
+    </div>
+    <!-- ==================== Page 3 ==================== -->
+    <!-- ==================== Page 3 ==================== -->
+    <div class="page" id="page3">
+<canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國一自然（上）講義</span>
+        <span>第 5 章 生物體的協調作用</span>
+        <span>P. 3</span>
+      </div>
+
+      <div class="section-title">
+        <span>5-1　刺激與反應隨堂小試身手（二）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">基礎實戰評量 · Q6～Q9</span>
+      </div>
+
+      <div class="task-title">Part 2 小試身手（續）</div>
+
+      <!-- Q6 -->
+      <div class="qa-block interactive-item" style="margin-bottom: 18px;">
+        <div class="qa-header"><span class="qa-bracket">A</span> 6. 視覺暫留是指光線刺激消失後，影像仍會短暫保留的現象；而視覺疲勞則是長時間凝視圖案後，會看見相異顏色的現象。關於這兩種現象的原理比較，下列敘述何者正確？</div>
+        <div class="qa-options stacked" style="margin-top: 6px; gap: 6px;">
+          <span>(A) 視覺疲勞為感覺疲勞的一種，是因為視覺受器產生生理適應</span>
+          <span>(B) 視覺暫留是因為受器連續受到相同刺激，導致敏感度下降所引起</span>
+          <span>(C) 動畫與電影能產生連續動作的錯覺，主要是利用視覺疲勞的原理</span>
+          <span>(D) 兩者皆屬於感覺疲勞，是為了保護眼部肌肉免於受傷的機制</span>
+        </div>
+      </div>
+
+      <!-- Q7 -->
+      <div class="qa-block interactive-item" style="margin-bottom: 18px;">
+        <div class="qa-header"><span class="qa-bracket">A</span> 7. 人體的眼、耳、鼻、舌和皮膚內，都有接受刺激的構造，請問這些構造的名稱為何？</div>
+        <div class="qa-options" style="margin-top: 6px;">
+          <span>(A) 受器</span><span>(B) 動器</span><span>(C) 感覺神經元</span><span>(D) 運動神經元</span>
+        </div>
+      </div>
+
+      <!-- Q8 -->
+      <div class="qa-block interactive-item" style="margin-bottom: 18px;">
+        <div class="qa-header"><span class="qa-bracket">A</span> 8. 人體發生反應的部位稱為動器，請問下列哪一選項不屬於動器？</div>
+        <div class="qa-options" style="margin-top: 6px;">
+          <span>(A) 皮膚</span><span>(B) 唾腺</span><span>(C) 手臂肌肉</span><span>(D) 汗腺</span>
+        </div>
+      </div>
+
+      <!-- Q9 -->
+      <div class="qa-block interactive-item" style="margin-bottom: 18px;">
+        <div class="qa-header"><span class="qa-bracket">B</span> 9. 先將左手放入甲燒杯水中，右手放入乙燒杯水中，然後兩手再同時放入丙燒杯的水中，結果左手感覺熱，右手感覺冷，則甲、乙、丙三杯水的溫度高低可能為何？</div>
+        <div class="qa-options" style="margin-top: 6px;">
+          <span>(A) 甲＝乙＝丙</span><span>(B) 乙＞丙＞甲</span><span>(C) 甲＞丙＞乙</span><span>(D) 乙＞甲＞丙</span>
+        </div>
+      </div>
+
+      <div class="tip-box" style="margin-top: 20px;">
+        <strong>💡 觀念導引：</strong><br>
+        1. <strong>受器 vs 動器：</strong>受器負責接收環境或體內刺激（如眼、耳、鼻、舌、皮膚中神經末梢）；動器負責做出反應動作（肌肉收縮或腺體分泌）。皮膚是含有多種受器的器官，本身不是動器！<br>
+        2. <strong>溫度感覺的相對性：</strong>皮膚對溫度的感受是「相對變化」而非絕對溫度計，長時間接觸某溫度會產生感覺適應（感覺疲勞）。
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中生物</span>
+        <span>5-1 隨堂小試身手（二）(Q6～Q9)</span>
+        <span>第 3 頁 / 共 15 頁</span>
+      </div>
+    </div>
+    <!-- ==================== Page 4 ==================== -->
+    <!-- ==================== Page 4 ==================== -->
+    <div class="page" id="page4">
+<canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國一自然（上）講義</span>
+        <span>第 5 章 生物體的協調作用</span>
+        <span>P. 4</span>
+      </div>
+
+      <div class="section-title">
+        <span>5-2　神經系統（一）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">焦點：神經元構造、中樞神經（腦與脊髓）與周圍神經</span>
+      </div>
+
+      <div class="task-title">Part 1 重點填空</div>
+
+      <div class="item-line interactive-item"><strong>1. 神經系統組成架構：</strong>可分為 <span class="ans-word">中樞</span> 神經系統與 <span class="ans-word">周圍</span> 神經系統。</div>
+      <div class="item-line interactive-item" style="padding-left: 18px;">(1) 負責傳遞訊息的基本單位為 <span class="ans-word">神經細胞</span>，又稱為 <span class="ans-word">神經元</span>。</div>
+      <div class="item-line interactive-item" style="padding-left: 36px;">a. <strong>細胞本體：</strong>內有細胞核，控制神經元的代謝與生長。</div>
+      <div class="item-line interactive-item" style="padding-left: 36px;">b. <strong>神經纖維：</strong>接收與傳遞訊息，聚集成束稱為 <span class="ans-word">神經</span>。</div>
+      <div class="item-line interactive-item" style="padding-left: 18px;">(2) <strong>中樞神經系統：</strong>包括 <span class="ans-word">腦</span> 與 <span class="ans-word">脊髓</span>，是神經系統的指揮中心，主要功能為整合訊息並發出命令。</div>
+      <div class="item-line interactive-item" style="padding-left: 18px;">(3) <strong>周圍神經系統：</strong>包含 12 對 <span class="ans-word">腦神經</span> 與 31 對 <span class="ans-word">脊神經</span>，分別由腦和脊髓發出，主要的功能為傳遞訊息。</div>
+
+      <div class="task-title" style="margin-top: 6px;">2. 腦的構造與主要功能</div>
+      <table class="custom-table" style="font-size:12pt; margin: 4px 0 6px 0;">
+        <tr><th style="width:20%;">腦的部位</th><th style="width:80%;">構造特色與生理功能</th></tr>
+        <tr class="interactive-item">
+          <td><strong>大腦</strong></td>
+          <td class="align-left">
+            (1) 分為左右半球。<span class="ans-word">左</span> 半球控制右半身，<span class="ans-word">右</span> 半球控制左半身。<br>
+            (2) 掌管 <span class="ans-word">意識</span> 的中樞。<br>
+            (3) 表層主管運動、感覺、語言、記憶與思考等高級功能。
+          </td>
+        </tr>
+        <tr class="interactive-item">
+          <td><strong>小腦</strong></td>
+          <td class="align-left">可協調全身肌肉活動，維持身體 <span class="ans-word">平衡</span>（鳥類飛行及特技演員特別發達）。</td>
+        </tr>
+        <tr class="interactive-item">
+          <td><strong>腦幹</strong></td>
+          <td class="align-left">與心跳、呼吸等生命機能密切相關，維持生命不可或缺，又稱為 <span class="ans-word">生命中樞</span>。亦為眨眼、打噴嚏、咳嗽等頭頸反射中樞。</td>
+        </tr>
+      </table>
+
+      <!-- 腦構造精美圖示：改用 501.jpg -->
+      <div style="text-align: center; margin: 6px 0 4px 0;">
+        <img src="../images/science-7-5-handout/501.jpg" alt="人腦的構造與分工" style="max-width: 95%; height: auto; max-height: 155px; border-radius: 6px; border: 1px solid #cbd5e1; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+      </div>
+
+      <div class="task-title" style="margin-top: 6px;">3. 脊髓</div>
+      <div class="item-line interactive-item">(1) 為長條狀神經組織，位於腦幹下方、身體背側脊柱內中央。</div>
+      <div class="item-line interactive-item">(2) 能將身體各部位的訊息傳達到腦部，或將腦的命令傳達到身體各部位；亦為頸部以下軀幹與四肢的反射中樞。</div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中生物</span>
+        <span>5-2 神經系統組成與腦/脊髓構造</span>
+        <span>第 4 頁 / 共 15 頁</span>
+      </div>
+    </div>
+    <!-- ==================== Page 5 ==================== -->
+    <!-- ==================== Page 5 ==================== -->
+    <div class="page" id="page5">
+<canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國一自然（上）講義</span>
+        <span>第 5 章 生物體的協調作用</span>
+        <span>P. 5</span>
+      </div>
+
+      <div class="section-title">
+        <span>5-2　神經系統（二）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">焦點：神經傳導路徑、反射作用、感覺/意識/反射實例比較</span>
+      </div>
+
+      <div class="task-title">4. 神經傳導路徑</div>
+      <div class="item-line interactive-item" style="margin-bottom: 4px;">
+        (1) 基本途徑流程：
+        <span class="flow-box">刺激</span> <span class="flow-arrow">→</span>
+        <span class="flow-box"><span class="ans-word">受器</span></span> <span class="flow-arrow">→</span>
+        <span class="flow-box">神經系統</span> <span class="flow-arrow">→</span>
+        <span class="flow-box"><span class="ans-word">動器</span></span> <span class="flow-arrow">→</span>
+        <span class="flow-box">反應</span>
+      </div>
+      <div class="item-line interactive-item">(2) 生物從接受刺激至產生反應所需的時間，稱為 <span class="ans-word">反應時間</span>。</div>
+      <div class="item-line interactive-item">(3) 將受器接受的訊息傳至中樞神經系統的神經元，稱為 <span class="ans-word">感覺</span> 神經元。</div>
+      <div class="item-line interactive-item">(4) 將中樞神經系統的訊息傳至動器的神經元，稱為 <span class="ans-word">運動</span> 神經元。</div>
+
+      <div class="task-title" style="margin-top: 4px;">5. 反射作用</div>
+      <div class="item-line interactive-item">(1) 不經大腦意識進行思考判斷的快速反應，反應迅速，可讓身體避開危險。</div>
+      <div class="item-line interactive-item">(2) 通常由 <span class="ans-word">脊髓</span> 或 <span class="ans-word">腦幹</span> 所控制。</div>
+
+      <!-- 反射與非反射神經傳遞路徑圖示：改用 502.jpg -->
+      <div style="text-align: center; margin: 4px 0 2px 0;">
+        <img src="../images/science-7-5-handout/502.jpg" alt="反射與非反射神經傳導路徑" style="max-width: 95%; height: auto; max-height: 185px; border-radius: 6px; border: 1px solid #cbd5e1; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+      </div>
+
+      <div class="task-title" style="margin-top: 2px;">(4) 人體神經傳遞作用之比較</div>
+      <table class="custom-table" style="font-size:11.5pt; margin: 2px 0 4px 0;">
+        <tr><th style="width:20%;">作用名稱</th><th style="width:25%;">控制中樞</th><th style="width:20%;">動器</th><th style="width:35%;">生活實例</th></tr>
+        <tr class="interactive-item"><td><strong>感覺作用</strong></td><td><span class="ans-word">大腦</span></td><td>無</td><td class="align-left">眼觀四面、耳聽八方、聞香知味</td></tr>
+        <tr class="interactive-item"><td><strong>意識作用</strong></td><td>大腦</td><td><span class="ans-word">肌肉</span></td><td class="align-left">手拿物品、看到紅燈踩煞車、跑步</td></tr>
+        <tr class="interactive-item"><td><strong>反射動作</strong></td><td><span class="ans-word">脊髓</span>、<span class="ans-word">腦幹</span></td><td>肌肉、腺體</td><td class="align-left">手觸熱燙迅速縮回、膝反射、眨眼、唾液分泌</td></tr>
+      </table>
+
+      <div class="task-title" style="margin-top: 2px;">(5) 神經傳導途徑實例解析</div>
+      <table class="custom-table" style="font-size:11pt; line-height: 1.35; margin: 2px 0;">
+        <tr><th style="width:20%;">分類</th><th style="width:80%;">神經傳導完整流程</th></tr>
+        <tr class="interactive-item">
+          <td><strong>感覺作用</strong></td>
+          <td class="align-left">
+            1. 看電視：光線改變 → 眼睛受器 → 感覺神經元 → <strong>大腦</strong><br>
+            2. 蚊叮覺癢：皮膚受器 → 感覺神經元 → 脊髓 → <strong>大腦</strong>
+          </td>
+        </tr>
+        <tr class="interactive-item">
+          <td><strong>意識行為</strong></td>
+          <td class="align-left">
+            1. 見紅燈踩煞車：眼睛受器 → 感覺神經元 → <strong>大腦</strong> → 脊髓 → 運動神經元 → 腿肌收縮（踩煞車）<br>
+            2. 被蚊叮抓癢：皮膚受器 → 感覺神經元 → 脊髓 → <strong>大腦</strong> → 脊髓 → 運動神經元 → 手肌收縮（抓癢）
+          </td>
+        </tr>
+        <tr class="interactive-item">
+          <td><strong><span class="ans-word">反射</span> 作用</strong></td>
+          <td class="align-left">
+            1. 物品逼近眨眼：眼睛受器 → 感覺神經元 → <strong><span class="ans-word">腦幹</span></strong> → 運動神經元 → 眼肌收縮（眨眼）<br>
+            2. 被排氣管燙到縮腳：皮膚受器 → 感覺神經元 → <strong><span class="ans-word">脊髓</span></strong> → 運動神經元 → 腿肌收縮（縮腳）
+          </td>
+        </tr>
+      </table>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中生物</span>
+        <span>5-2 神經傳導路徑與反射作用</span>
+        <span>第 5 頁 / 共 15 頁</span>
+      </div>
+    </div>
+    <!-- ==================== Page 6 ==================== -->
+    <!-- ==================== Page 6 ==================== -->
+    <div class="page" id="page6">
+<canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國一自然（上）講義</span>
+        <span>第 5 章 生物體的協調作用</span>
+        <span>P. 6</span>
+      </div>
+
+      <div class="section-title">
+        <span>5-2　神經系統隨堂小試身手</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">神經傳導與反射中樞評量 · 共 4 題</span>
+      </div>
+
+      <div class="task-title">Part 2 小試身手</div>
+
+      <!-- Q1 -->
+      <div class="qa-block interactive-item" style="margin-bottom: 16px;">
+        <div class="qa-header"><span class="qa-bracket">D</span> 1. 人體的神經反射須包括：(甲)感覺神經元、(乙)運動神經元、(丙)受器、(丁)動器、(戊)脊髓。小強無意間手指觸及熱燙熨斗而迅速將手臂縮回，請問下列哪一項是手臂縮回的正確途徑？</div>
+        <div class="qa-options" style="margin-top: 6px;">
+          <span>(A) 丙戊甲乙丁</span><span>(B) 丙甲乙丁戊</span><span>(C) 丙甲丁乙戊</span><span>(D) 丙甲戊乙丁</span>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="qa-block interactive-item" style="margin-bottom: 16px;">
+        <div class="qa-header"><span class="qa-bracket">C</span> 2. 阿宏到醫院探望腦出血而住院的爺爺，發現爺爺的精神狀況良好，但是右半邊的身體似乎不太靈活。請問血塊有可能壓迫爺爺腦部的何處？</div>
+        <div class="qa-options" style="margin-top: 6px;">
+          <span>(A) 小腦</span><span>(B) 腦幹</span><span>(C) 左大腦</span><span>(D) 右大腦</span>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="qa-block interactive-item" style="margin-bottom: 16px;">
+        <div class="qa-header"><span class="qa-bracket">B</span> 3. 下列何者的神經傳導途徑符合：受器 → 感覺神經 → 大腦 → 脊髓 → 運動神經 → 動器？</div>
+        <div class="qa-options stacked" style="margin-top: 6px; gap: 5px;">
+          <span>(A) 走入暗室，瞳孔擴大</span>
+          <span>(B) 看到紅燈後，腳踩煞車</span>
+          <span>(C) 踩到尖銳物體，腳迅速縮回</span>
+          <span>(D) 碰到熱湯，手迅速縮回</span>
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="qa-block interactive-item" style="margin-bottom: 16px;">
+        <div class="qa-header"><span class="qa-bracket">C</span> 4. 小喜喝玉米濃湯時，撒了太多胡椒粉，結果猛打噴嚏，此反應是由身體的哪一構造所控制？</div>
+        <div class="qa-options" style="margin-top: 6px;">
+          <span>(A) 鼻子</span><span>(B) 脊髓</span><span>(C) 腦幹</span><span>(D) 大腦</span>
+        </div>
+      </div>
+
+      <div class="tip-box" style="margin-top: 25px;">
+        <strong>💡 重點回顧與解題關鍵：</strong><br>
+        1. <strong>縮手/縮腳反射：</strong>中樞為「脊髓」，路徑不經過大腦即可先做出避險反應，隨後訊息上傳大腦才感覺疼痛。<br>
+        2. <strong>大腦交叉控制：</strong>左大腦控制右半身運動與感覺，右大腦控制左半身。<br>
+        3. <strong>頭頸部反射中樞：</strong>打噴嚏、眨眼、嘔吐、唾液分泌等，皆由「腦幹」（生命中樞）掌控。
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中生物</span>
+        <span>5-2 隨堂小試身手 (Q1～Q4)</span>
+        <span>第 6 頁 / 共 15 頁</span>
+      </div>
+    </div>
+    <!-- ==================== Page 7 ==================== -->
+    <!-- ==================== Page 7 ==================== -->
+    <div class="page" id="page7">
+<canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國一自然（上）講義</span>
+        <span>第 5 章 生物體的協調作用</span>
+        <span>P. 7</span>
+      </div>
+
+      <div class="section-title">
+        <span>5-3　內分泌系統（一）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">焦點：激素特性、神經與內分泌比較、人體內分泌腺分布圖</span>
+      </div>
+
+      <div class="task-title">Part 1 重點填空</div>
+
+      <div class="item-line interactive-item"><strong>1. 內分泌系統特性：</strong></div>
+      <div class="item-line interactive-item" style="padding-left: 18px;">(1) <strong>激素：</strong>由 <span class="ans-word">內分泌腺</span> 分泌，又稱為 <span class="ans-word">荷爾蒙</span>。微量即可發揮顯著調節效果。</div>
+      <div class="item-line interactive-item" style="padding-left: 18px;">(2) 內分泌腺無專門導管（無管腺），分泌物直接進入微血管，利用 <span class="ans-word">血液</span> 循環輸送至全身作用部位。</div>
+
+      <div class="item-line interactive-item" style="padding-left: 18px;">(3) <strong>內分泌與神經系統的比較：</strong></div>
+      <table class="custom-table" style="font-size:12.5pt; margin: 4px 0 10px 0;">
+        <tr><th style="width:25%;">比較項目</th><th style="width:25%;">傳遞速度</th><th style="width:25%;">持續性</th><th style="width:25%;">作用範圍</th></tr>
+        <tr class="interactive-item"><td><strong>內分泌系統</strong></td><td><span class="ans-word">慢</span></td><td>長</td><td><span class="ans-word">大</span>（廣泛）</td></tr>
+        <tr class="interactive-item"><td><strong>神經系統</strong></td><td><span class="ans-word">快</span></td><td>短</td><td><span class="ans-word">小</span>（局部）</td></tr>
+      </table>
+
+      <div class="task-title" style="margin-top: 6px;">2. 人體的內分泌系統</div>
+      <div class="item-line interactive-item">(1) <strong>內分泌腺的位置與分布：</strong></div>
+
+      <!-- 人體男女內分泌腺分布圖 -->
+      <div style="text-align: center; margin: 6px 0 4px 0;">
+        <img src="../images/science-7-5-handout/fig_5_endocrine.png" alt="人體內分泌腺分布圖（男女對照）" style="max-width: 95%; height: auto; max-height: 235px; border-radius: 6px; border: 1px solid #cbd5e1; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中生物</span>
+        <span>5-3 內分泌系統與人體內分泌腺分布</span>
+        <span>第 7 頁 / 共 15 頁</span>
+      </div>
+    </div>
+    <!-- ==================== Page 8 ==================== -->
+    <!-- ==================== Page 8 ==================== -->
+    <div class="page" id="page8">
+<canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國一自然（上）講義</span>
+        <span>第 5 章 生物體的協調作用</span>
+        <span>P. 8</span>
+      </div>
+
+      <div class="section-title">
+        <span>5-3　內分泌系統（二）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">焦點：主要內分泌腺比較與失調病症</span>
+      </div>
+
+      <div class="task-title">(2) 內分泌腺的比較與生理功能</div>
+
+      <table class="custom-table" style="font-size:11.5pt; line-height:1.35; margin: 4px 0;">
+        <tr>
+          <th style="width:14%;">內分泌腺</th>
+          <th style="width:15%;">分布位置</th>
+          <th style="width:18%;">所分泌激素</th>
+          <th style="width:31%;">主要功能</th>
+          <th style="width:22%;">分泌異常症狀</th>
+        </tr>
+        <tr class="interactive-item">
+          <td rowspan="2"><strong>腦垂腺</strong></td>
+          <td rowspan="2">大腦下方</td>
+          <td><span class="ans-word">生長激素</span></td>
+          <td class="align-left">刺激骨骼與身體組織生長，與個體生長發育密切相關。</td>
+          <td class="align-left">幼年過多：<span class="ans-word">巨人症</span><br>幼年不足：<span class="ans-word">侏儒症</span></td>
+        </tr>
+        <tr class="interactive-item">
+          <td>其他促激素</td>
+          <td class="align-left" colspan="2">可調控甲狀腺、腎上腺皮質及性腺等內分泌腺的分泌活動（內分泌總司令）。</td>
+        </tr>
+        <tr class="interactive-item">
+          <td><strong>甲狀腺</strong></td>
+          <td>喉部氣管兩旁</td>
+          <td><span class="ans-word">甲狀腺素</span></td>
+          <td class="align-left">促進細胞 <span class="ans-word">代謝</span> 作用，維持正常發育。</td>
+          <td class="align-left">過多：代謝旺盛、神經興奮、心跳加快、體重減輕、凸眼<br>幼年不足：呆小症（影響發育智力）</td>
+        </tr>
+        <tr class="interactive-item">
+          <td><strong>副甲狀腺</strong></td>
+          <td>包埋在 <span class="ans-word">甲狀腺</span> 背側（共4顆）</td>
+          <td><span class="ans-word">副甲狀腺素</span></td>
+          <td class="align-left">調節體內 <span class="ans-word">鈣</span> 與磷的濃度，維持骨骼與神經肌肉正常功能。</td>
+          <td class="align-left">不足：血鈣過低，引起肌肉抽搐甚至痙攣死亡。</td>
+        </tr>
+        <tr class="interactive-item">
+          <td rowspan="2"><strong>胰島</strong></td>
+          <td rowspan="2">胰臟組織中</td>
+          <td><span class="ans-word">胰島素</span></td>
+          <td class="align-left">促使血糖進入細胞被利用，或轉為 <span class="ans-word">肝糖</span> 儲存於肝臟與肌肉，<span class="ans-word">降低</span> 血糖濃度。</td>
+          <td class="align-left">不足：<span class="ans-word">糖尿病</span>（血糖過高隨尿排出）。</td>
+        </tr>
+        <tr class="interactive-item">
+          <td><span class="ans-word">升糖素</span></td>
+          <td class="align-left" colspan="2">促使肝糖分解轉變為 <span class="ans-word">葡萄糖</span> 釋入血液，<span class="ans-word">提高</span> 血糖濃度。</td>
+        </tr>
+        <tr class="interactive-item">
+          <td><strong>腎上腺</strong></td>
+          <td>腎臟上方</td>
+          <td><span class="ans-word">腎上腺素</span></td>
+          <td class="align-left" colspan="2">
+            1. 促使肝糖分解為葡萄糖，提高血糖濃度。<br>
+            2. 使心跳加快、血壓升高、呼吸加快、腸胃蠕動減慢、肌肉強力收縮，應付緊急挑戰。
+          </td>
+        </tr>
+        <tr class="interactive-item">
+          <td rowspan="2"><strong>性腺</strong></td>
+          <td>睪丸（男性）</td>
+          <td><span class="ans-word">雄性激素</span></td>
+          <td class="align-left" colspan="2">長出鬍鬚、聲音低沉、骨骼粗壯，表現男性第二性徵。</td>
+        </tr>
+        <tr class="interactive-item">
+          <td>卵巢（女性）</td>
+          <td><span class="ans-word">雌性激素</span></td>
+          <td class="align-left" colspan="2">乳房發育、皮下脂肪增厚、聲音高亢，表現女性第二性徵。</td>
+        </tr>
+      </table>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中生物</span>
+        <span>5-3 內分泌腺比較與失調症狀</span>
+        <span>第 8 頁 / 共 15 頁</span>
+      </div>
+    </div>
+    <!-- ==================== Page 9 ==================== -->
+    <!-- ==================== Page 9 ==================== -->
+    <div class="page" id="page9">
+<canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國一自然（上）講義</span>
+        <span>第 5 章 生物體的協調作用</span>
+        <span>P. 9</span>
+      </div>
+
+      <div class="section-title">
+        <span>5-3　內分泌系統隨堂小試身手（一）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">內分泌腺與激素作用評量 · Q1～Q4</span>
+      </div>
+
+      <div class="task-title">Part 2 小試身手</div>
+
+      <!-- Q1 -->
+      <div class="qa-block interactive-item" style="margin-bottom: 18px;">
+        <div class="qa-header"><span class="qa-bracket">B</span> 1. 下列四種內分泌腺，何者所分泌的激素可調控某些內分泌腺的活動？</div>
+        <div class="qa-options" style="margin-top: 6px;">
+          <span>(A) 甲狀腺</span><span>(B) 腦垂腺</span><span>(C) 腎上腺</span><span>(D) 性腺</span>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="qa-block interactive-item" style="margin-bottom: 18px;">
+        <div class="qa-header"><span class="qa-bracket">C</span> 2. 成年老鼠的腦垂腺被切除後，其甲狀腺機能也會衰退，主要原因為何？</div>
+        <div class="qa-options stacked" style="margin-top: 6px; gap: 6px;">
+          <span>(A) 腦垂腺和甲狀腺間的神經被切斷</span>
+          <span>(B) 缺乏生長激素影響甲狀腺的發育</span>
+          <span>(C) 沒有調控甲狀腺分泌的激素</span>
+          <span>(D) 大腦功能發生異常</span>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="qa-block interactive-item" style="margin-bottom: 18px;">
+        <div class="qa-header"><span class="qa-bracket">D</span> 3. 下列何種變化不是內分泌系統作用的結果？</div>
+        <div class="qa-options" style="margin-top: 6px;">
+          <span>(A) 毛毛蟲變蝴蝶</span><span>(B) 蝌蚪變青蛙</span><span>(C) 蠶寶寶變蛾</span><span>(D) 短頭髮變長頭髮</span>
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="qa-block interactive-item" style="margin-bottom: 18px;">
+        <div class="qa-header"><span class="qa-bracket">C</span> 4. 下列哪一組激素對人體血糖濃度的影響是相反的？</div>
+        <div class="qa-options" style="margin-top: 6px;">
+          <span>(A) 升糖素和腎上腺素</span><span>(B) 副甲狀腺素和胰島素</span><span>(C) 升糖素和胰島素</span><span>(D) 副甲狀腺素和腎上腺素</span>
+        </div>
+      </div>
+
+      <div class="tip-box" style="margin-top: 25px;">
+        <strong>💡 內分泌系統核心考點：</strong><br>
+        1. <strong>腦垂腺：</strong>分泌生長激素及多種促激素（如促甲狀腺素），是體內內分泌系統的主控中樞（內分泌總司令）。<br>
+        2. <strong>血糖調控拮抗作用：</strong>「胰島素」降血糖（促使細胞利用或形成肝糖儲存）；「升糖素」與「腎上腺素」升血糖（促使肝糖分解釋出葡萄糖）。
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中生物</span>
+        <span>5-3 隨堂小試身手（一）(Q1～Q4)</span>
+        <span>第 9 頁 / 共 15 頁</span>
+      </div>
+    </div>
+    <!-- ==================== Page 10 ==================== -->
+    <div class="page" id="page10">
+<canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國一自然（上）講義</span>
+        <span>第 5 章 生物體的協調作用</span>
+        <span>P. 10</span>
+      </div>
+
+      <div class="section-title">
+        <span>5-3　內分泌系統隨堂小試身手（二）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">內分泌腺與激素作用評量 · Q5～Q9</span>
+      </div>
+
+      <div class="task-title">Part 2 小試身手（續）</div>
+
+      <!-- Q5 -->
+      <div class="qa-block interactive-item" style="margin-bottom: 14px;">
+        <div class="qa-header"><span class="qa-bracket">C</span> 5. 下列敘述中，何者與內分泌的作用無關？</div>
+        <div class="qa-options stacked" style="margin-top: 4px; gap: 4px;">
+          <span>(A) 火災時，人突然變得力大無窮，可以背三個人一起逃生</span>
+          <span>(B) 生活在水中的蝌蚪，逐漸長出四肢，尾巴慢慢消失，變成青蛙</span>
+          <span>(C) 穿山甲遇到危險時，將身體彎曲成球狀以保護自己</span>
+          <span>(D) 毛毛蟲羽化，變成漂亮的蝴蝶</span>
+        </div>
+      </div>
+
+      <!-- Q6 附圖：503.jpg -->
+      <div class="qa-block interactive-item" style="margin-bottom: 14px;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px;">
+          <div style="flex: 1;">
+            <div class="qa-header"><span class="qa-bracket">D</span> 6. 附圖為男性內分泌腺分布圖。翰翰在國三時長出鬍鬚與喉結，這種變化和下列哪些腺體所分泌的激素有較直接的關係？</div>
+            <div class="qa-options" style="margin-top: 6px;">
+              <span>(A) 甲（腦垂腺）</span><span>(B) 乙（甲狀腺）</span><span>(C) 丙（腎上腺）</span><span>(D) 丁（睪丸）</span>
+            </div>
+          </div>
+          <div style="width: 105px; text-align: center; flex-shrink: 0;">
+            <img src="../images/science-7-5-handout/503.jpg" alt="男性內分泌腺分布圖" style="max-width: 100%; height: auto; max-height: 120px; border-radius: 4px; border: 1px solid #cbd5e1;">
+          </div>
+        </div>
+      </div>
+
+      <!-- Q7 -->
+      <div class="qa-block interactive-item" style="margin-bottom: 14px;">
+        <div class="qa-header"><span class="qa-bracket">C</span> 7. 有關內分泌系統的敘述，下列選項何者正確？</div>
+        <div class="qa-options stacked" style="margin-top: 4px; gap: 4px;">
+          <span>(A) 內分泌系統是由腺體和神經元所組成</span>
+          <span>(B) 內分泌腺分泌的激素有專門的管道負責運送到作用部位</span>
+          <span>(C) 內分泌腺分泌的激素量非常少，但作用後的反應影響很大</span>
+          <span>(D) 內分泌腺分泌的激素不足時會造成疾病；分泌過多時則不會影響生理反應</span>
+        </div>
+      </div>
+
+      <!-- Q8 -->
+      <div class="qa-block interactive-item" style="margin-bottom: 14px;">
+        <div class="qa-header"><span class="qa-bracket">B</span> 8. 在運動比賽中，腎上腺素屬於禁藥，選手不能注射，否則有違公平競爭，這是因為腎上腺素可能會使人體出現以下何種生理反應？</div>
+        <div class="qa-options stacked" style="margin-top: 4px; gap: 4px;">
+          <span>(A) 緩和血壓，放鬆心情</span>
+          <span>(B) 使肌肉產生比平常大的收縮力量</span>
+          <span>(C) 增進食慾，補充養分</span>
+          <span>(D) 使胃腸蠕動加快，幫助消化</span>
+        </div>
+      </div>
+
+      <!-- Q9 -->
+      <div class="qa-block interactive-item" style="margin-bottom: 14px;">
+        <div class="qa-header"><span class="qa-bracket">A</span> 9. 下列腺體分泌的激素與生理作用的配對，何者正確？</div>
+        <div class="qa-options stacked" style="margin-top: 4px; gap: 4px;">
+          <span>(A) 腦垂腺──個體發育</span>
+          <span>(B) 甲狀腺素──體內鈣的調節</span>
+          <span>(C) 腎上腺素──降低心跳及呼吸速率</span>
+          <span>(D) 雌性激素──聲音變低沉</span>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中生物</span>
+        <span>5-3 隨堂小試身手（二）(Q5～Q9)</span>
+        <span>第 10 頁 / 共 15 頁</span>
+      </div>
+    </div>
+    <!-- ==================== Page 11 ==================== -->
+    <div class="page" id="page11">
+<canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國一自然（上）講義</span>
+        <span>第 5 章 生物體的協調作用</span>
+        <span>P. 11</span>
+      </div>
+
+      <div class="section-title">
+        <span>5-4　行為與感應</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">焦點：動物本能與學習行為、植物向性與膨壓快速運動</span>
+      </div>
+
+      <div class="task-title">Part 1 重點填空</div>
+
+      <div class="item-line interactive-item"><strong>1. 動物的行為：</strong>主要受 <span class="ans-word">神經</span> 系統和 <span class="ans-word">內分泌</span> 系統的控制與調節。</div>
+      <div class="item-line interactive-item" style="padding-left: 18px;">(1) <strong>與生俱來的行為（本能）：</strong>趨性、反射動作、求偶、傳遞訊息、蛾的趨光性等。</div>
+      <div class="item-line interactive-item" style="padding-left: 18px;">(2) <strong>經由學習而產生的行為：</strong>黑猩猩使用工具、鳥類學習唱歌、人騎腳踏車。學習能力與 <span class="ans-word">神經</span> 系統的發達程度、個體構造密切相關。</div>
+
+      <div class="item-line interactive-item"><strong>2. 植物的感應：</strong>可分為長時間的 <span class="ans-word">向性</span> 和短時間的感應兩種。</div>
+      
+      <div class="task-title" style="margin-top: 6px;">(1) 長時間的感應──向性</div>
+      <div class="item-line interactive-item" style="padding-left: 18px;">a. <strong>定義：</strong>植物朝向或背離某種環境刺激來源而生長的現象（生長素分佈不均造成，不可逆）。</div>
+      <div class="item-line interactive-item" style="padding-left: 18px;">b. <strong>向性的類型與說明：</strong></div>
+
+      <table class="custom-table" style="font-size:12pt; margin: 4px 0 8px 0;">
+        <tr><th style="width:25%;">向性類型</th><th style="width:75%;">生理現象與說明</th></tr>
+        <tr class="interactive-item"><td><strong>向地性</strong></td><td class="align-left"><span class="ans-word">根</span> 會朝向重力方向、往土壤深層生長。</td></tr>
+        <tr class="interactive-item"><td><strong>背地性</strong></td><td class="align-left"><span class="ans-word">莖</span> 會背離地心引力方向向上生長。</td></tr>
+        <tr class="interactive-item"><td><strong>向光性</strong></td><td class="align-left"><span class="ans-word">莖</span> 會朝向單側光線較強的方向彎曲生長。</td></tr>
+        <tr class="interactive-item"><td><strong>向觸性</strong></td><td class="align-left"><span class="ans-word">爬藤植物</span> 藉由莖或卷鬚纏繞依附物體獲得支撐，占據陽光充足位置。</td></tr>
+      </table>
+
+      <div class="task-title" style="margin-top: 6px;">(2) 短時間的感應──水分（膨壓）改變造成的運動</div>
+      <table class="custom-table" style="font-size:12pt; margin: 4px 0 8px 0;">
+        <tr><th style="width:25%;">感應類型</th><th style="width:75%;">實例與現象說明（可逆的局部膨壓變化）</th></tr>
+        <tr class="interactive-item"><td><strong>觸發運動</strong></td><td class="align-left">如 <span class="ans-word">含羞草</span> 葉片，受到外力觸碰後小葉迅速閉合、葉柄下垂。</td></tr>
+        <tr class="interactive-item"><td><strong>睡眠運動</strong></td><td class="align-left">如 <span class="ans-word">酢漿草</span> 葉片，白天平舉張開吸收光線，夜間下垂合起。</td></tr>
+        <tr class="interactive-item"><td><strong>捕蟲運動</strong></td><td class="align-left">如 <span class="ans-word">捕蠅草</span>、毛氈苔葉片，因昆蟲觸碰誘發陷阱迅速閉合。</td></tr>
+      </table>
+
+      <div class="item-line interactive-item"><strong>(3) 其他植物生理感應：</strong></div>
+      <div class="item-line interactive-item" style="padding-left: 18px;">a. 泡過水的種子，因吸收水分與酵素活化，會開始萌芽。</div>
+      <div class="item-line interactive-item" style="padding-left: 18px;">b. 光照長短或溫度改變，會影響植物的開花時間（如菊花、鬱金香）。</div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中生物</span>
+        <span>5-4 動物行為與植物感應</span>
+        <span>第 11 頁 / 共 15 頁</span>
+      </div>
+    </div>
+    <!-- ==================== Page 11 ==================== -->
+    <!-- ==================== Page 12 ==================== -->
+    <div class="page" id="page12">
+<canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國一自然（上）講義</span>
+        <span>第 5 章 生物體的協調作用</span>
+        <span>P. 12</span>
+      </div>
+
+      <div class="section-title">
+        <span>5-4　行為與感應隨堂小試身手（一）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">動物本能與植物向性評量 · Q1～Q4</span>
+      </div>
+
+      <div class="task-title">Part 2 小試身手</div>
+
+      <!-- Q1 -->
+      <div class="qa-block interactive-item" style="margin-bottom: 18px;">
+        <div class="qa-header"><span class="qa-bracket">D</span> 1. 下列有關動物行為的敘述，何者正確？</div>
+        <div class="qa-options stacked" style="margin-top: 6px; gap: 6px;">
+          <span>(A) 雄孔雀展示鮮艷的羽毛吸引雌孔雀是經學習的行為</span>
+          <span>(B) 蜘蛛經學習了解如何織網</span>
+          <span>(C) 導盲犬天生就會協助盲人行走</span>
+          <span>(D) 經學習的行為與動物的神經系統發展有關</span>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="qa-block interactive-item" style="margin-bottom: 18px;">
+        <div class="qa-header"><span class="qa-bracket">D</span> 2. 下列有關於植物對環境產生反應的敘述，何者錯誤？</div>
+        <div class="qa-options stacked" style="margin-top: 6px; gap: 6px;">
+          <span>(A) 植物雖然沒有神經系統，但是仍然有對環境產生反應的機制</span>
+          <span>(B) 植物體朝向或背離刺激方向生長的反應，稱為向性</span>
+          <span>(C) 除了向性外，植物也有一些反應較快的運動</span>
+          <span>(D) 向性的反應通常比含羞草的觸發運動快</span>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="qa-block interactive-item" style="margin-bottom: 18px;">
+        <div class="qa-header"><span class="qa-bracket">B</span> 3. 關於動物趨性和植物向性的比較，下列何者正確？</div>
+        <div class="qa-options stacked" style="margin-top: 6px; gap: 6px;">
+          <span>(A) 都受神經系統控制及調節</span>
+          <span>(B) 均為生物朝向或背離環境刺激的反應</span>
+          <span>(C) 趨性必定朝向環境刺激，向性必定背離環境刺激</span>
+          <span>(D) 趨性所需的反應時間較長，向性可立即表現出反應</span>
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="qa-block interactive-item" style="margin-bottom: 18px;">
+        <div class="qa-header"><span class="qa-bracket">D</span> 4. (甲)豆苗朝向窗外生長、(乙)酢漿草的睡眠運動、(丙)含羞草的觸發運動、(丁)葡萄的莖沿著竹竿捲旋生長、(戊)氣孔的開閉。上述何者與植物向性有關？</div>
+        <div class="qa-options" style="margin-top: 6px;">
+          <span>(A) 甲丙</span><span>(B) 乙丁</span><span>(C) 乙戊</span><span>(D) 甲丁</span>
+        </div>
+      </div>
+
+      <div class="tip-box" style="margin-top: 25px;">
+        <strong>💡 向性 vs 膨壓運動辨析：</strong><br>
+        1. <strong>向性：</strong>生長素分佈不均引起，與單側刺激方向有直接關聯（朝向為正向性、背離為負向性），生長速度緩慢且不可逆。<br>
+        2. <strong>膨壓運動：</strong>細胞含水量改變引起，與刺激方向無關（如含羞草觸發閉合、酢漿草睡眠合起、氣孔開閉），反應快速且可復原。
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中生物</span>
+        <span>5-4 隨堂小試身手（一）(Q1～Q4)</span>
+        <span>第 12 頁 / 共 15 頁</span>
+      </div>
+    </div>
+    <!-- ==================== Page 12 ==================== -->
+    <!-- ==================== Page 13 ==================== -->
+    <div class="page" id="page13">
+<canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國一自然（上）講義</span>
+        <span>第 5 章 生物體的協調作用</span>
+        <span>P. 13</span>
+      </div>
+
+      <div class="section-title">
+        <span>5-4　行為與感應隨堂小試身手（二）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">動物本能與植物向性評量 · Q5～Q7</span>
+      </div>
+
+      <div class="task-title">Part 2 小試身手（續）</div>
+
+      <!-- Q5 附圖：改用 504.png -->
+      <div class="qa-block interactive-item" style="margin-bottom: 20px;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 14px;">
+          <div style="flex: 1;">
+            <div class="qa-header"><span class="qa-bracket">B</span> 5. 將紅豆放在玻璃管中，置於唯一光源為燈泡的暗室。經過一段時間，根的生長方向如圖中所示，下列有關實驗結果的推論，哪一項最合理？</div>
+            <div class="qa-options stacked" style="margin-top: 6px; gap: 5px;">
+              <span>(A) 在玻璃管內發芽的紅豆，根只會沿水平方向生長</span>
+              <span>(B) 根同時表現了向地性與背光性，因而沿水平方向生長</span>
+              <span>(C) 將豆子水平放進玻璃管，所以呈水平方向生長</span>
+              <span>(D) 根表現向溼性，所以有水的情況下就沿水平方向生長</span>
+            </div>
+          </div>
+          <div style="width: 175px; text-align: center; flex-shrink: 0; padding-top: 6px;">
+            <img src="../images/science-7-5-handout/504.png" alt="紅豆根向性實驗裝置圖" style="max-width: 100%; height: auto; border-radius: 4px; border: 1px solid #cbd5e1; box-shadow: 0 2px 6px rgba(0,0,0,0.06);">
+          </div>
+        </div>
+      </div>
+
+      <!-- Q6 -->
+      <div class="qa-block interactive-item" style="margin-bottom: 20px;">
+        <div class="qa-header"><span class="qa-bracket">C</span> 6. 剛出生的嬰兒，肚子餓了就會哭，奶嘴放入口中就會吸吮，試問哭和吸吮這兩種行為各屬於何者？</div>
+        <div class="qa-options stacked" style="margin-top: 6px; gap: 5px;">
+          <span>(A) 均為經學習的行為</span>
+          <span>(B) 哭為與生俱來的行為，吸吮為經學習的行為</span>
+          <span>(C) 均為與生俱來的行為</span>
+          <span>(D) 哭為經學習的行為，吸吮為與生俱來的行為</span>
+        </div>
+      </div>
+
+      <!-- Q7 -->
+      <div class="qa-block interactive-item" style="margin-bottom: 20px;">
+        <div class="qa-header"><span class="qa-bracket">C</span> 7. 捕捉小卷的漁船必須經過特殊改裝，主要為裝設強烈的燈光以吸引小卷，再以餌料來垂釣。請問利用燈光吸引小卷，這是利用動物的何種本能所想出來的捕抓方法？</div>
+        <div class="qa-options" style="margin-top: 6px;">
+          <span>(A) 背光性</span><span>(B) 向光性</span><span>(C) 正趨光性</span><span>(D) 負趨光性</span>
+        </div>
+      </div>
+
+      <div class="tip-box" style="margin-top: 25px;">
+        <strong>💡 深度剖析（Q5 解題要訣）：</strong><br>
+        燈泡位於下方，根具有「負向光性（背光性）」，會背離光線（向上彎曲）；同時根受到地心引力吸引，具有「正向地性（向地性）」，會向下生長。兩股相反方向的作用力互相平衡抵消，使根沿著水平方向向前生長！
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中生物</span>
+        <span>5-4 隨堂小試身手（二）(Q5～Q7)</span>
+        <span>第 13 頁 / 共 15 頁</span>
+      </div>
+    </div>
+    <!-- ==================== Page 13 ==================== -->
+    <!-- ==================== Page 14 ==================== -->
+    <div class="page" id="page14">
+<canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國一自然（上）講義</span>
+        <span>第 5 章 生物體的協調作用</span>
+        <span>P. 14</span>
+      </div>
+
+      <div class="section-title">
+        <span>第 5 章　全章核心重點整理（一）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">5-1 刺激反應與 5-2 神經系統核心脈絡</span>
+      </div>
+
+      <div class="task-title" style="font-size: 13.5pt;">5-1 刺激與反應</div>
+      <div class="item-line interactive-item" style="font-size: 13pt; line-height: 1.6; margin-bottom: 8px;">
+        1. 生物體內或周遭環境所發生的改變稱為 <span class="ans-word">刺激</span>，生物體中接受刺激的部位稱為 <span class="ans-word">受器</span>，生物接受刺激後，通常會產生反應，產生反應的部位稱為 <span class="ans-word">動器</span>，動器包括 <span class="ans-word">肌肉</span> 與 <span class="ans-word">腺體</span> 等。
+      </div>
+
+      <div class="task-title" style="font-size: 13.5pt; margin-top: 14px;">5-2 神經系統</div>
+      <div class="item-line interactive-item" style="font-size: 13pt; line-height: 1.6;">
+        1. <span class="ans-word">神經細胞</span>（神經元）為負責傳遞訊息的基本單位。
+      </div>
+      <div class="item-line interactive-item" style="font-size: 13pt; line-height: 1.6;">
+        2. 神經系統包括中樞神經系統與周圍神經系統：
+      </div>
+      <div class="item-line interactive-item" style="padding-left: 18px; font-size: 13pt;">
+        (1) <strong>中樞神經系統：</strong>
+      </div>
+
+      <table class="custom-table" style="font-size:12.5pt; line-height: 1.5; margin: 6px 0 14px 0;">
+        <tr><th style="width:20%;">中樞部位</th><th style="width:80%;">生理功能核心重點</th></tr>
+        <tr class="interactive-item">
+          <td><strong>大腦</strong></td>
+          <td class="align-left">分左右兩半球，主管運動、感覺、語言、記憶與思考等，為掌管 <span class="ans-word">意識</span> 的主要中樞。</td>
+        </tr>
+        <tr class="interactive-item">
+          <td><strong>小腦</strong></td>
+          <td class="align-left">協調全身肌肉活動，維持個體 <span class="ans-word">平衡</span>。</td>
+        </tr>
+        <tr class="interactive-item">
+          <td><strong>腦幹</strong></td>
+          <td class="align-left">與心跳和呼吸等生命機能密切相關（生命中樞），亦負責眨眼、打噴嚏、吞嚥等頭頸反射。</td>
+        </tr>
+        <tr class="interactive-item">
+          <td><strong>脊髓</strong></td>
+          <td class="align-left">為腦與軀幹之間神經傳導的通道，且為軀幹和四肢 <span class="ans-word">反射</span> 的中樞。</td>
+        </tr>
+      </table>
+
+      <div class="item-line interactive-item" style="padding-left: 18px; font-size: 13pt; line-height: 1.6;">
+        (2) <strong>周圍神經系統：</strong>依發出位置，分為 12 對腦神經和 31 對脊神經；依傳導方向，分為 <span class="ans-word">感覺</span> 神經元和 <span class="ans-word">運動</span> 神經元。
+      </div>
+      <div class="item-line interactive-item" style="padding-left: 18px; font-size: 13pt; line-height: 1.6;">
+        (3) 不經大腦意識所控制的快速反應，稱為 <span class="ans-word">反射作用</span>，可讓身體避開危險。
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中生物</span>
+        <span>第 5 章 全章核心重點整理（一）</span>
+        <span>第 14 頁 / 共 15 頁</span>
+      </div>
+    </div>
+    <!-- ==================== Page 14 ==================== -->
+    <!-- ==================== Page 15 ==================== -->
+    <div class="page" id="page15">
+<canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>國一自然（上）講義</span>
+        <span>第 5 章 生物體的協調作用</span>
+        <span>P. 15</span>
+      </div>
+
+      <div class="section-title">
+        <span>第 5 章　全章核心重點整理（二）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">5-3 內分泌系統與 5-4 行為感應核心脈絡</span>
+      </div>
+
+      <div class="task-title" style="font-size: 13.5pt;">5-3 內分泌系統</div>
+      <div class="item-line interactive-item" style="font-size: 13pt; line-height: 1.6; margin-bottom: 6px;">
+        1. <span class="ans-word">激素</span> 會隨著血液輸送到動物全身，對某些特定的細胞發生作用，適量的激素可調節動物體的生理機能。
+      </div>
+      <div class="item-line interactive-item" style="font-size: 13pt; margin-bottom: 6px;">
+        2. 人體的內分泌系統概要：
+      </div>
+
+      <table class="custom-table" style="font-size:12pt; line-height: 1.45; margin: 4px 0 14px 0;">
+        <tr><th style="width:20%;">內分泌腺</th><th style="width:80%;">分泌激素與生理功能核心要點</th></tr>
+        <tr class="interactive-item"><td><strong>腦垂腺</strong></td><td class="align-left">可分泌多種激素，與身體的生長發育有密切關係，並可影響其他內分泌腺的分泌。</td></tr>
+        <tr class="interactive-item"><td><strong>甲狀腺</strong></td><td class="align-left">分泌甲狀腺素，促進人體的 <span class="ans-word">代謝</span> 作用。</td></tr>
+        <tr class="interactive-item"><td><strong>副甲狀腺</strong></td><td class="align-left">分泌副甲狀腺素，調節體內 <span class="ans-word">鈣</span> 的濃度。</td></tr>
+        <tr class="interactive-item"><td><strong>胰島</strong></td><td class="align-left">分泌胰島素及升糖素。<span class="ans-word">胰島素</span> 能降低血糖濃度，<span class="ans-word">升糖素</span> 會使血糖濃度上升。</td></tr>
+        <tr class="interactive-item"><td><strong>腎上腺</strong></td><td class="align-left">分泌 <span class="ans-word">腎上腺素</span>，使血糖濃度上升，心跳加快、血壓增高、腸胃蠕動減慢、肌肉有力收縮。</td></tr>
+        <tr class="interactive-item"><td><strong>性腺</strong></td><td class="align-left">睪丸分泌 <span class="ans-word">雄性激素</span> 表現男性性徵；卵巢分泌 <span class="ans-word">雌性激素</span> 表現女性性徵。</td></tr>
+      </table>
+
+      <div class="task-title" style="font-size: 13.5pt; margin-top: 10px;">5-4 行為與感應</div>
+      <div class="item-line interactive-item" style="font-size: 13pt; line-height: 1.6;">
+        1. 動物的行為表現，通常經由 <span class="ans-word">神經</span> 系統及 <span class="ans-word">內分泌</span> 系統統整與協調。
+      </div>
+      <div class="item-line interactive-item" style="font-size: 13pt; line-height: 1.6;">
+        2. 動物的行為包括與生俱來的行為與經學習而來的行為。
+      </div>
+      <div class="item-line interactive-item" style="font-size: 13pt; line-height: 1.6; margin-bottom: 6px;">
+        3. 植物的感應模式：
+      </div>
+
+      <table class="custom-table" style="font-size:12pt; line-height: 1.5; margin: 4px 0 10px 0;">
+        <tr><th style="width:25%;">感應機制</th><th style="width:75%;">具體代表實例</th></tr>
+        <tr class="interactive-item"><td><strong>向性（生長素）</strong></td><td class="align-left">根的向地性、莖的向光性及背地性、爬藤植物的向觸性。</td></tr>
+        <tr class="interactive-item"><td><strong>快速感應（膨壓）</strong></td><td class="align-left">含羞草的 <span class="ans-word">觸發</span> 運動、酢漿草的 <span class="ans-word">睡眠</span> 運動、捕蠅草與毛氈苔的 <span class="ans-word">捕蟲</span> 運動。</td></tr>
+      </table>
+
+      <div class="page-footer">
+        <span>自製電子書 · 國中生物</span>
+        <span>第 5 章 全章核心重點整理（二）</span>
+        <span>第 15 頁 / 共 15 頁</span>
+      </div>
+</div>
+  </div>
+
+  <script>
+    let allShown = false;
+    function toggleAllAnswers() {
+      allShown = !allShown;
+      document.body.classList.toggle('show-ans', allShown);
+      document.getElementById('ansIcon').textContent = allShown ? '🙈' : '👁️';
+      document.getElementById('toggleAllAnsBtn').classList.toggle('active', allShown);
+    }
+
+    document.addEventListener('click', function(e) {
+      if (document.body.classList.contains('pen-mode')) return;
+
+      // 點擊填空、選擇題括號直接顯隱
+      const targetAns = e.target.closest('.ans-word, .qa-bracket');
+      if (targetAns) {
+        targetAns.classList.toggle('revealed');
+        e.stopPropagation();
+        return;
+      }
+
+      // 單擊 interactive-item 或 qa-block 開合整題
+      const item = e.target.closest('.interactive-item');
+      if (item) {
+        item.classList.toggle('show-one');
+      }
+    });
+
+    document.addEventListener('dblclick', function(e) {
+      if (document.body.classList.contains('pen-mode')) return;
+      const targetAns = e.target.closest('.ans-word, .qa-bracket');
+      if (targetAns) {
+        targetAns.classList.toggle('revealed');
+        e.stopPropagation();
+      }
+    });
+
+    function toggleTocMenu(e) {
+      e.stopPropagation();
+      document.getElementById('tocMenu').classList.toggle('show');
+    }
+    document.addEventListener('click', () => {
+      const menu = document.getElementById('tocMenu');
+      if (menu) menu.classList.remove('show');
+    });
+
+    function jumpTo(id) {
+      const el = document.getElementById(id);
+      if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      const menu = document.getElementById('tocMenu');
+      if (menu) menu.classList.remove('show');
+    }
+
+    let penMode = false, penColor = 'rgba(250,204,21,0.45)', penSize = 3;
+    let currentCanvas = null, ctx = null, drawing = false;
+    const canvases = document.querySelectorAll('.drawing-canvas');
+
+    function togglePenMode() {
+      penMode = !penMode;
+      document.body.classList.toggle('pen-mode', penMode);
+      document.getElementById('penBtn').classList.toggle('active', penMode);
+      document.getElementById('penOptions').style.display = penMode ? 'flex' : 'none';
+      canvases.forEach(c => {
+        const page = c.parentElement;
+        c.width = page.offsetWidth;
+        c.height = page.offsetHeight;
+      });
+    }
+
+    function setPenColor(color, el) {
+      penColor = color;
+      document.querySelectorAll('.color-dot').forEach(d => d.classList.remove('active'));
+      if (el) el.classList.add('active');
+    }
+
+    function setPenSize(size, el) {
+      penSize = size;
+      document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+      el.classList.add('active');
+    }
+
+    function getPos(e, canvas) {
+      const rect = canvas.getBoundingClientRect();
+      if (e.touches) return { x: e.touches[0].clientX - rect.left, y: e.touches[0].clientY - rect.top };
+      return { x: e.clientX - rect.left, y: e.clientY - rect.top };
+    }
+
+    canvases.forEach(canvas => {
+      canvas.addEventListener('mousedown', e => {
+        if (!penMode) return;
+        drawing = true; currentCanvas = canvas;
+        ctx = canvas.getContext('2d');
+        ctx.strokeStyle = penColor; ctx.lineWidth = penSize;
+        ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+        const p = getPos(e, canvas); ctx.beginPath(); ctx.moveTo(p.x, p.y);
+      });
+      canvas.addEventListener('mousemove', e => {
+        if (!drawing || currentCanvas !== canvas) return;
+        const p = getPos(e, canvas); ctx.lineTo(p.x, p.y); ctx.stroke();
+      });
+      canvas.addEventListener('mouseup', () => { drawing = false; });
+      canvas.addEventListener('touchstart', e => {
+        if (!penMode) return; e.preventDefault();
+        drawing = true; currentCanvas = canvas;
+        ctx = canvas.getContext('2d');
+        ctx.strokeStyle = penColor; ctx.lineWidth = penSize;
+        ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+        const p = getPos(e, canvas); ctx.beginPath(); ctx.moveTo(p.x, p.y);
+      }, { passive: false });
+      canvas.addEventListener('touchmove', e => {
+        if (!drawing) return; e.preventDefault();
+        const p = getPos(e, canvas); ctx.lineTo(p.x, p.y); ctx.stroke();
+      }, { passive: false });
+      canvas.addEventListener('touchend', () => { drawing = false; });
+    });
+
+    function clearAllDrawings() {
+      canvases.forEach(c => { const ctx2 = c.getContext('2d'); ctx2.clearRect(0,0,c.width,c.height); });
+    }
+  </script>
+</body>
+</html>
