@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>國一自然（上）第 1 章 生命世界與科學方法 互動講義</title>
+  <!-- 電子書目錄身分標記 -->
+  <meta name="ebook:subject" content="science">
+  <meta name="ebook:grade" content="7">
+  <meta name="ebook:unit" content="1">
+  <meta name="ebook:title" content="國一自然（上）第 1 章 生命世界與科學方法 互動講義">
+  <meta name="ebook:type" content="handout">
+  <meta name="ebook:pages" content="7">
+  <meta name="ebook:level" content="std">
+  <meta name="ebook:summary" content="國一自然第1章生命世界與科學方法完整講義（全7頁舒展版），涵蓋1-1多彩多姿的生命世界（生命現象與生物圈）、1-2探究自然的科學方法（科學流程與變因對照）、1-3進入實驗室（實驗安全器材、複式顯微鏡與解剖顯微鏡結構與操作、視野故障排除），以及小試身手與章末重點整理。">
+  <style>
+    @page { size: A4 portrait; margin: 10mm 12mm; }
+    * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body {
+      margin: 0; padding: 0; background-color: #f1f5f9;
+      font-family: "Times New Roman", "標楷體", "DFKai-SB", "BiauKai", serif;
+      font-size: 13.5pt; line-height: 1.55; color: #111;
+    }
+
+    /* 課堂懸浮工具列 */
+    .classroom-toolbar {
+      position: fixed; top: 14px; right: 20px; z-index: 9999;
+      display: flex; align-items: center; gap: 4px;
+      background: rgba(255,255,255,0.96); backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 4px 10px; border-radius: 40px; border: 1px solid rgba(203,213,225,0.9);
+      box-shadow: 0 4px 22px rgba(0,0,0,0.15);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .tool-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 36px; height: 36px; font-size: 18px; color: #334155;
+      background: transparent; border: 1px solid transparent; border-radius: 50%;
+      cursor: pointer; transition: all 0.15s ease; padding: 0; user-select: none;
+      text-decoration: none;
+    }
+    .tool-btn:hover { background: #f1f5f9; transform: scale(1.08); }
+    .tool-btn.active { background: #0f172a; color: #ffffff; }
+    .btn-toggle-ans.active { background: #eff6ff; border-color: #3b82f6; }
+    .toolbar-divider { width: 1px; height: 20px; background: #cbd5e1; margin: 0 4px; }
+
+    /* 目錄跳轉選單 */
+    .toc-menu {
+      display: none; position: absolute; top: 46px; left: 0;
+      background: #ffffff; border: 1px solid #cbd5e1; border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.18); padding: 8px 0;
+      min-width: 320px; max-height: 500px; overflow-y: auto; z-index: 10000;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .toc-menu.show { display: block; animation: tocFadeIn 0.15s ease-out; }
+    @keyframes tocFadeIn { from { opacity:0; transform:translateY(-6px); } to { opacity:1; transform:translateY(0); } }
+    .toc-menu-title { padding: 6px 16px 8px 16px; font-size: 13px; font-weight: bold; color: #64748b; border-bottom: 1px solid #f1f5f9; }
+    .toc-menu-item { padding: 8px 16px; font-size: 13.5px; color: #334155; cursor: pointer; display: flex; align-items: center; justify-content: space-between; transition: background 0.12s, color 0.12s; }
+    .toc-menu-item:hover { background: #eff6ff; color: #2563eb; font-weight: bold; }
+    .toc-page-badge { font-size: 11.5px; color: #94a3b8; }
+    .toc-menu-item:hover .toc-page-badge { color: #2563eb; }
+
+    /* 螢光筆選項盤 */
+    .pen-options { display: none; align-items: center; gap: 6px; background: #f8fafc; padding: 3px 8px; border-radius: 20px; border: 1px solid #e2e8f0; margin-left: 2px; }
+    .color-picker { display: flex; align-items: center; gap: 5px; }
+    .color-dot { width: 16px; height: 16px; border-radius: 50%; cursor: pointer; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.2); }
+    .color-dot.active { transform: scale(1.2); box-shadow: 0 0 0 2px #0f172a; }
+    .size-picker { display: flex; align-items: center; gap: 3px; }
+    .size-btn { border: 1px solid #cbd5e1; background: #fff; color: #475569; font-size: 11px; font-weight: bold; padding: 2px 7px; border-radius: 10px; cursor: pointer; }
+    .size-btn.active { background: #0f172a; color: #fff; border-color: #0f172a; }
+
+    /* A4 頁面 */
+    .pages-container { padding: 20px 0 40px 0; }
+    .page {
+      width: 210mm; min-height: 297mm; padding: 12mm 15mm 14mm 15mm; margin: 0 auto 25px auto;
+      background: #ffffff; box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+      page-break-after: always; break-after: page; position: relative;
+    }
+    .drawing-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 20; pointer-events: none; }
+    body.pen-mode .drawing-canvas { pointer-events: auto; cursor: crosshair; }
+
+    /* 頁面標頭與頁尾 */
+    .page-header { display: flex; justify-content: space-between; border-bottom: 2px solid #334155; padding-bottom: 5px; margin-bottom: 8px; font-size: 12.5pt; font-weight: bold; }
+    .page-footer { position: absolute; bottom: 8mm; left: 15mm; right: 15mm; border-top: 1px solid #cbd5e1; padding-top: 4px; display: flex; justify-content: space-between; font-size: 11pt; color: #64748b; }
+
+    /* 標題與裝飾 */
+    .main-title { font-size: 20pt; font-weight: 900; text-align: center; margin: 4px 0 2px 0; letter-spacing: 1px; }
+    .section-title {
+      font-size: 15pt; font-weight: bold; background: #e0f2fe; color: #0369a1; padding: 4px 12px;
+      border-radius: 6px; margin: 8px 0 6px 0; border-left: 6px solid #0284c7;
+    }
+    .subsection-title { font-size: 13.5pt; font-weight: bold; color: #0284c7; margin: 6px 0 4px 0; }
+    .part-badge { display: inline-flex; align-items: center; background: #0f172a; color: #ffffff; font-weight: bold; font-size: 12pt; padding: 2px 10px; border-radius: 20px; margin: 4px 0 6px 0; }
+
+    /* 條目與文字 */
+    .item-line { padding: 3px 4px; line-height: 1.55; font-size: 13.5pt; }
+    body:not(.pen-mode) .interactive-item { cursor: pointer; border-radius: 4px; }
+    body:not(.pen-mode) .interactive-item:hover { background-color: #f8fafc; }
+
+    /* 解答樣式：徹底預設隱藏！點擊顯答 */
+    .ans-word {
+      color: transparent !important;
+      font-weight: bold;
+      border-bottom: 1.5px solid #334155;
+      padding: 0 4px;
+      cursor: pointer;
+      user-select: none;
+      transition: color 0.15s, background-color 0.15s;
+    }
+    .ans-word:hover { background-color: #fee2e2; }
+    .show-ans .ans-word,
+    .item-line.show-one .ans-word,
+    .qa-item.show-one .ans-word,
+    .interactive-item.show-one .ans-word,
+    .ans-word.revealed {
+      color: #dc2626 !important;
+    }
+
+    /* 選擇題樣式：括號在題號與題幹同一行（格式如 （ C ） 1. 題目...） */
+    .qa-item { margin-bottom: 8px; padding: 3px 6px; border-radius: 6px; }
+    .q-stem { font-size: 13.5pt; line-height: 1.55; color: #0f172a; }
+    .q-num { font-weight: bold; margin-right: 4px; }
+    .qa-bracket {
+      cursor: pointer; user-select: none; font-weight: bold;
+      color: #0f172a; padding: 0 1px; display: inline;
+    }
+    .qa-bracket .ans-text {
+      color: transparent !important;
+      min-width: 16px; display: inline-block; text-align: center;
+      transition: color 0.15s;
+    }
+    .qa-bracket:hover .ans-text { color: #fca5a5 !important; }
+    .show-ans .qa-bracket .ans-text,
+    .qa-item.show-one .qa-bracket .ans-text,
+    .qa-bracket.revealed .ans-text {
+      color: #dc2626 !important;
+      font-weight: bold !important;
+    }
+    .q-options {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 2px 14px; margin-top: 3px; font-size: 13pt;
+      padding-left: 20px;
+    }
+    .q-options.stacked {
+      display: flex; flex-direction: column; gap: 2px;
+      padding-left: 20px;
+    }
+    .q-opt { line-height: 1.45; }
+
+    /* 表格樣式 */
+    table.custom-table { width: 100%; border-collapse: collapse; margin: 6px 0 8px 0; font-size: 13pt; }
+    table.custom-table th, table.custom-table td { border: 1px solid #64748b; padding: 4px 8px; text-align: center; vertical-align: middle; }
+    table.custom-table th { background-color: #e2e8f0; font-weight: bold; }
+    table.custom-table td.txt-left { text-align: left; }
+    table.custom-table td.w-head { background-color: #f8fafc; font-weight: bold; }
+
+    /* 圖表容器（防超出版面） */
+    .img-box { text-align: center; margin: 6px 0; max-width: 100%; overflow: hidden; }
+    .img-box img { max-width: 100%; height: auto; object-fit: contain; }
+
+    /* 題目右側附圖列 */
+    .qa-with-fig { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+    .qa-fig-side { flex-shrink: 0; text-align: center; }
+    .qa-fig-side img { max-width: 220px; height: auto; object-fit: contain; }
+
+    /* 列印規則：強制白紙卷、隱藏答案與工具列 */
+    @media print {
+      @page { size: A4 portrait; margin: 8mm 12mm; }
+      html, body { width: 100% !important; height: auto !important; background: transparent !important; padding: 0 !important; margin: 0 !important; }
+      .no-print, .classroom-toolbar, .toc-menu, .drawing-canvas { display: none !important; }
+      .pages-container { display: block !important; padding: 0 !important; margin: 0 !important; }
+      .page {
+        box-sizing: border-box !important; margin: 0 !important; box-shadow: none !important;
+        width: 100% !important; height: 280mm !important; max-height: 280mm !important; min-height: 0 !important;
+        padding: 0 !important; page-break-after: always !important; break-after: page !important; overflow: hidden !important;
+      }
+      .page:last-child { page-break-after: avoid !important; break-after: avoid !important; }
+      .qa-bracket .ans-text, .ans-word { color: transparent !important; }
+      .page-footer { position: static !important; margin-top: auto !important; padding-top: 4px !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 課堂懸浮工具列 -->
+  <div class="classroom-toolbar no-print">
+    <a class="tool-btn" href="../index.html" title="回電子書目錄">🏠</a>
+    <div style="position: relative;">
+      <button class="tool-btn" id="tocBtn" onclick="toggleTocMenu(event)" title="章節目錄導覽">📑</button>
+      <div class="toc-menu" id="tocMenu">
+        <div class="toc-menu-title">📖 單元章節目錄</div>
+        <div class="toc-menu-item" onclick="jumpTo('page1')"><span>P.1 1-1 多彩多姿的生命世界（填空＋選擇）</span><span class="toc-page-badge">第 1 頁</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page2')"><span>P.2 1-2 探究自然的科學方法（流程＋選擇）</span><span class="toc-page-badge">第 2 頁</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page3')"><span>P.3 1-3 進入實驗室與複式顯微鏡構造</span><span class="toc-page-badge">第 3 頁</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page4')"><span>P.4 1-3 顯微鏡操作技巧與故障排除圖解</span><span class="toc-page-badge">第 4 頁</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page5')"><span>P.5 1-3 低高倍比較與解剖顯微鏡構造</span><span class="toc-page-badge">第 5 頁</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page6')"><span>P.6 1-3 小試身手實戰評量（全 7 題）</span><span class="toc-page-badge">第 6 頁</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page7')"><span>P.7 第 1 章 全章重點整理與觀念統整</span><span class="toc-page-badge">第 7 頁</span></div>
+      </div>
+    </div>
+    <button class="tool-btn btn-toggle-ans" id="toggleAllAnsBtn" onclick="toggleAllAnswers()" title="一鍵全開/全隱答案">
+      <span id="ansIcon">👁️</span>
+    </button>
+    <button class="tool-btn" id="penBtn" onclick="togglePenMode()" title="螢光筆/板書筆">✏️</button>
+    <div class="pen-options" id="penOptions">
+      <div class="color-picker">
+        <span class="color-dot active" style="background:#facc15;" onclick="setPenColor('rgba(250,204,21,0.45)',this)" title="螢光黃"></span>
+        <span class="color-dot" style="background:#ef4444;" onclick="setPenColor('rgba(239,68,68,0.8)',this)" title="紅筆"></span>
+        <span class="color-dot" style="background:#3b82f6;" onclick="setPenColor('rgba(37,99,235,0.8)',this)" title="藍筆"></span>
+        <span class="color-dot" style="background:#10b981;" onclick="setPenColor('rgba(16,185,129,0.8)',this)" title="綠筆"></span>
+      </div>
+      <div style="width:1px;height:16px;background:#cbd5e1;margin:0 2px;"></div>
+      <div class="size-picker">
+        <button class="size-btn active" onclick="setPenSize(4,this)">細</button>
+        <button class="size-btn" onclick="setPenSize(10,this)">中</button>
+        <button class="size-btn" onclick="setPenSize(20,this)">粗</button>
+      </div>
+    </div>
+    <button class="tool-btn" onclick="clearAllDrawings()" title="清除畫跡">🧹</button>
+    <div class="toolbar-divider"></div>
+    <button class="tool-btn" onclick="window.print()" title="列印純淨白紙卷">🖨️</button>
+  </div>
+
+  <div class="pages-container">
+
+    <!-- ═══════════════════════════════════ PAGE 1 ═══════════════════════════════════ -->
+    <div class="page" id="page1">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>班級：_______ 座號：_______ 姓名：_____________</span>
+        <span>第 1 頁</span>
+      </div>
+
+      <div class="main-title">第1章 生命世界與科學方法</div>
+      <div class="section-title">1-1 多彩多姿的生命世界</div>
+
+      <div class="part-badge">Part 1 重點填空</div>
+
+      <div class="item-line interactive-item">
+        <strong>1. 生物生存的條件</strong><br>
+        地球同時擁有生物生存所需的各種資源：
+        <span class="ans-word">陽光</span>、空氣、<span class="ans-word">水</span>和養分。
+      </div>
+
+      <div class="item-line interactive-item" style="margin-top:4px;">
+        <strong>2. 生命現象</strong><br>
+        (1) 生物與非生物的差別在於有無表現 <span class="ans-word">生命現象</span>。<br>
+        (2) 生命現象包含：<span class="ans-word">代謝</span>、<span class="ans-word">生長與發育</span>、
+            <span class="ans-word">感應與運動</span>、<span class="ans-word">生殖</span>等。
+      </div>
+
+      <div class="item-line interactive-item" style="margin-top:4px;">
+        <strong>3. 生物圈的範圍：</strong>海平面上下各約 <span class="ans-word">一萬</span> 公尺內。
+      </div>
+
+      <div style="margin-top:4px;"><strong>4. 特殊環境中的生物</strong></div>
+      <table class="custom-table">
+        <thead><tr><th style="width:36%;">環境狀態</th><th>適應環境的能力</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>溫暖、水分充足</td>
+            <td class="txt-left">大部分的生物都可以在此種環境條件下生存</td>
+          </tr>
+          <tr>
+            <td>寒冷、深海、缺水、高溫等環境</td>
+            <td class="txt-left interactive-item">生活在其中的生物，須有<span class="ans-word">特殊方式</span>來適應環境</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="margin-top:4px;"><strong>5. 和環境相似的生物</strong></div>
+      <table class="custom-table">
+        <thead><tr><th style="width:26%;">生物</th><th>適應環境的特點</th></tr></thead>
+        <tbody>
+          <tr><td>樹蛙</td><td class="txt-left interactive-item">綠色身體為與環境相似的 <span class="ans-word">保護色</span></td></tr>
+          <tr><td>尺蠖</td><td class="txt-left">外形像樹枝</td></tr>
+          <tr><td>枯葉蝶</td><td class="txt-left">翅膀似枯葉</td></tr>
+        </tbody>
+      </table>
+
+      <div class="part-badge" style="margin-top:8px;">Part 2 小試身手</div>
+
+      <!-- 題 1：括號在題號與題幹同一行 -->
+      <div class="qa-item interactive-item">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">D</span> ）</span>
+          <span class="q-num">1.</span>下列何者不是一般生物共同具有的特徵？
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 需要養分</div>
+          <div class="q-opt">(B) 有繁衍後代的能力</div>
+          <div class="q-opt">(C) 會生長與發育</div>
+          <div class="q-opt">(D) 有主動運動與遷移的能力</div>
+        </div>
+      </div>
+
+      <!-- 題 2：括號在題號與題幹同一行 -->
+      <div class="qa-item interactive-item">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">D</span> ）</span>
+          <span class="q-num">2.</span>有關生物生存的敘述，下列何者錯誤？
+        </div>
+        <div class="q-options stacked">
+          <div class="q-opt">(A) 岩石、礦物等屬於非生物</div>
+          <div class="q-opt">(B) 生物能表現出生命現象，非生物則否</div>
+          <div class="q-opt">(C) 大部分生命生存的條件有空氣、水、陽光和養分</div>
+          <div class="q-opt">(D) 若沒有太陽，對於生活在深海中的魚類完全不受影響</div>
+        </div>
+      </div>
+
+      <!-- 題 3：括號在題號與題幹同一行 -->
+      <div class="qa-item interactive-item">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">D</span> ）</span>
+          <span class="q-num">3.</span>生長在沙漠地區的仙人掌上有許多「針」，這些「針」其實是葉子，這種針狀葉對仙人掌適應乾燥的沙漠有什麼作用？
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 加快養分輸送的速度</div>
+          <div class="q-opt">(B) 增加水分的吸收</div>
+          <div class="q-opt">(C) 減少陽光的傷害</div>
+          <div class="q-opt">(D) 減少水分的散失</div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>國一自然 第1章 生命世界與科學方法</span><span>第 1 頁 / 共 7 頁</span>
+      </div>
+    </div><!-- /page1 -->
+
+    <!-- ═══════════════════════════════════ PAGE 2 ═══════════════════════════════════ -->
+    <div class="page" id="page2">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>班級：_______ 座號：_______ 姓名：_____________</span>
+        <span>第 2 頁</span>
+      </div>
+
+      <div class="section-title">1-2 探究自然的科學方法</div>
+
+      <div class="part-badge">Part 1 重點填空</div>
+
+      <div class="item-line"><strong>1. 科學方法的流程</strong></div>
+      <div class="img-box" style="margin:4px 0 6px 0;">
+        <img src="../images/science-7-1-handout/flowchart_method.png" alt="科學方法的流程" style="max-height:130px;">
+      </div>
+
+      <div class="item-line interactive-item">
+        <strong>2. 設計實驗步驟</strong><br>
+        (1) 實驗中，主要的觀察對象為 <span class="ans-word">實驗組</span>，作為比較之用的是 <span class="ans-word">對照組</span>。<br>
+        (2) 變因：可能會影響實驗結果的因素
+      </div>
+      <table class="custom-table">
+        <thead><tr><th style="width:28%;">種類</th><th>說明</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="interactive-item"><span class="ans-word">操作變因</span></td>
+            <td class="txt-left">實驗組和對照組中<strong>不同</strong>的因素</td>
+          </tr>
+          <tr>
+            <td>控制變因</td>
+            <td class="txt-left interactive-item">實驗組和對照組中必須 <span class="ans-word">相同</span> 的因素</td>
+          </tr>
+          <tr>
+            <td>應變變因</td>
+            <td class="txt-left">實驗後要測量或比較的項目</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="item-line interactive-item" style="margin-top:4px;">
+        <strong>3. 實驗的結論與修正</strong><br>
+        (1) 實驗結果若與假說不符，應重新檢視修正後再次實驗，直到獲得合理的結論。<br>
+        (2) 實驗往往要重複驗證多次，即使不同人操作相同實驗，也應能得到 <span class="ans-word">一致</span> 的結果。<br>
+        (3) 經多次實驗驗證的假說，可成為 <span class="ans-word">學說</span>，但仍有機會被更先進的技術或證據推翻或修正。
+      </div>
+
+      <div class="part-badge" style="margin-top:8px;">Part 2 小試身手</div>
+
+      <!-- 題 1：括號在題號與題幹同一行 -->
+      <div class="qa-item interactive-item">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">C</span> ）</span>
+          <span class="q-num">1.</span>科學方法的正確順序為何？（甲）觀察、（乙）提出問題、（丙）設計與進行實驗、（丁）形成假說、（戊）提出結論。
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 甲乙丙丁戊</div>
+          <div class="q-opt">(B) 甲丁丙乙戊</div>
+          <div class="q-opt">(C) 甲乙丁丙戊</div>
+          <div class="q-opt">(D) 甲丙丁乙戊</div>
+        </div>
+      </div>
+
+      <!-- 題 2：括號在題號與題幹同一行 -->
+      <div class="qa-item interactive-item">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">A</span> ）</span>
+          <span class="q-num">2.</span>科學家為觀察麵包發霉的狀況，將一個大麵包切成體積與重量相等的三個小麵包，並用夾鏈袋密封好後，將其中一個放冷藏室，一個放在冷凍庫，另一個則放在室溫下，請問上述步驟中的操作變因為何？
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 溫度</div>
+          <div class="q-opt">(B) 重量</div>
+          <div class="q-opt">(C) 密封方式</div>
+          <div class="q-opt">(D) 體積</div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>國一自然 第1章 生命世界與科學方法</span><span>第 2 頁 / 共 7 頁</span>
+      </div>
+    </div><!-- /page2 -->
+
+    <!-- ═══════════════════════════════════ PAGE 3 ═══════════════════════════════════ -->
+    <div class="page" id="page3">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>班級：_______ 座號：_______ 姓名：_____________</span>
+        <span>第 3 頁</span>
+      </div>
+
+      <div class="section-title">1-3 進入實驗室</div>
+
+      <div class="part-badge">Part 1 重點填空</div>
+
+      <div class="item-line"><strong>1. 遵守實驗室安全守則</strong></div>
+      <div class="item-line interactive-item">
+        (1) 實驗應在教師指導下進行，嚴禁從事與實驗無關的活動與工作。<br>
+        (2) 實驗室內禁止飲食、追逐打鬧或嬉戲。<br>
+        (3) 應確認實驗室內消防器材、急救設備擺放的位置，並了解逃生路線。<br>
+        (4) 實驗中，應穿著實驗衣，必要時應戴上手套及護目鏡，蓄長髮者應束紮整齊。<br>
+        (5) 廢棄物應集中管理，並依環保原則處理，不可任意丟棄。
+      </div>
+
+      <div class="item-line" style="margin-top:4px;"><strong>2. 正確使用實驗器材</strong></div>
+      <div class="item-line interactive-item">
+        (1) 酒精燈中的酒精應維持 <span class="ans-word">1/3 ～ 2/3</span> 的量，使用時應以打火機點燃，不可用另一點燃的酒精燈引燃，使用完畢以 <span class="ans-word">燈罩</span> 蓋熄火焰。<br>
+        (2) 量筒是用來 <span class="ans-word">測量液體體積</span> 的工具，不可加熱，也不可作為調配藥品的容器。
+      </div>
+
+      <div class="item-line" style="margin-top:6px;"><strong>3. 複式顯微鏡的構造</strong></div>
+      <div class="img-box" style="margin:4px 0;">
+        <img src="../images/science-7-1-handout/compound_microscope_labeled.png" alt="複式顯微鏡構造標籤圖" style="max-height:430px;">
+      </div>
+
+      <div class="page-footer">
+        <span>國一自然 第1章 生命世界與科學方法</span><span>第 3 頁 / 共 7 頁</span>
+      </div>
+    </div><!-- /page3 -->
+
+    <!-- ═══════════════════════════════════ PAGE 4 ═══════════════════════════════════ -->
+    <div class="page" id="page4">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>班級：_______ 座號：_______ 姓名：_____________</span>
+        <span>第 4 頁</span>
+      </div>
+
+      <div class="section-title">1-3 進入實驗室（續）— 顯微鏡操作技巧</div>
+
+      <div class="item-line"><strong>4. 複式顯微鏡的使用步驟</strong></div>
+      <div class="item-line interactive-item">
+        (1) 將低倍率物鏡對準載物臺上的圓孔，將標本對準圓孔中央，以玻片夾固定。<br>
+        (2) 轉動粗調節輪，使物鏡和玻片的距離最接近。<br>
+        (3) 打開光源及調整 <span class="ans-word">光圈</span> 的大小，使視野中的亮度適中。<br>
+        (4) 旋轉 <span class="ans-word">粗</span> 調節輪，至大約可看清楚標本。<br>
+        (5) 轉動 <span class="ans-word">細</span> 調節輪，直到標本清晰。<br>
+        (6) 更換較高倍率物鏡觀察。
+      </div>
+
+      <div class="item-line" style="margin-top:4px;"><strong>5. 複式顯微鏡操作技巧</strong></div>
+      <div class="item-line interactive-item">
+        (1) 拿顯微鏡時，一手托住鏡臂，一手托住鏡座底部。放置時與桌緣保持適當距離。<br>
+        (2) 顯微鏡的鏡頭不乾淨時，應使用 <span class="ans-word">拭鏡紙</span> 擦拭，以免損傷鏡頭。<br>
+        (3) 若需要較強的光線時，調整光圈，或使用反光鏡的 <span class="ans-word">凹面鏡</span>，有聚光效果。<br>
+        (4) 標本的放大倍率 ＝ 目鏡放大倍率 × <span class="ans-word">物鏡</span> 放大倍率。<br>
+        (5) 觀察標本時，張開雙眼，以一眼從目鏡觀察。<br>
+        (6) 複式顯微鏡所觀察到的物像與標本的關係為上下 <span class="ans-word">顛倒</span>、左右 <span class="ans-word">相反</span>。<br>
+        (7) 以高倍率物鏡觀察時，只需稍微轉動 <span class="ans-word">細調節輪</span>，避免碰壞標本或鏡頭。<br>
+        (8) 使用完畢後，應調回低倍率物鏡，取出載玻片，整理乾淨後放回原位。
+      </div>
+
+      <div class="item-line" style="margin-top:4px;"><strong>(9) 操作問題與解決方案</strong></div>
+      <div class="img-box" style="margin:2px 0;">
+        <img src="../images/science-7-1-handout/microscope_solutions.png" alt="顯微鏡操作問題與解決方案" style="max-height:430px;">
+      </div>
+
+      <div class="page-footer">
+        <span>國一自然 第1章 生命世界與科學方法</span><span>第 4 頁 / 共 7 頁</span>
+      </div>
+    </div><!-- /page4 -->
+
+    <!-- ═══════════════════════════════════ PAGE 5 ═══════════════════════════════════ -->
+    <div class="page" id="page5">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>班級：_______ 座號：_______ 姓名：_____________</span>
+        <span>第 5 頁</span>
+      </div>
+
+      <div class="section-title">1-3 進入實驗室（續）— 顯微鏡比較與解剖顯微鏡</div>
+
+      <div class="item-line"><strong>6. 低、高倍率鏡頭之比較</strong></div>
+      <table class="custom-table">
+        <thead><tr><th>比較項目</th><th>低倍</th><th>高倍</th></tr></thead>
+        <tbody>
+          <tr><td>目鏡鏡頭長短</td><td class="interactive-item"><span class="ans-word">長</span></td><td class="interactive-item"><span class="ans-word">短</span></td></tr>
+          <tr><td>物鏡鏡頭長短</td><td>短</td><td>長</td></tr>
+          <tr><td>視野範圍</td><td class="interactive-item"><span class="ans-word">大</span></td><td class="interactive-item"><span class="ans-word">小</span></td></tr>
+          <tr><td>視野亮度</td><td class="interactive-item"><span class="ans-word">亮</span></td><td class="interactive-item"><span class="ans-word">暗</span></td></tr>
+          <tr><td>觀察細胞數目</td><td class="interactive-item"><span class="ans-word">多</span></td><td class="interactive-item"><span class="ans-word">少</span></td></tr>
+          <tr><td>觀察細胞大小</td><td>小</td><td>大</td></tr>
+          <tr><td>適用反光鏡</td><td>平面鏡</td><td>凹面鏡</td></tr>
+          <tr><td>適用光圈</td><td class="interactive-item"><span class="ans-word">小</span></td><td class="interactive-item"><span class="ans-word">大</span></td></tr>
+        </tbody>
+      </table>
+
+      <div class="item-line" style="margin-top:4px;"><strong>7. 解剖顯微鏡的構造</strong></div>
+      <div class="img-box" style="margin:2px 0;">
+        <img src="../images/science-7-1-handout/stereo_microscope_labeled.png" alt="解剖顯微鏡構造標籤圖" style="max-height:340px;">
+      </div>
+
+      <div class="item-line" style="margin-top:4px;"><strong>8. 複式顯微鏡與解剖顯微鏡之比較</strong></div>
+      <table class="custom-table">
+        <thead><tr><th>比較項目</th><th>複式顯微鏡</th><th>解剖顯微鏡</th></tr></thead>
+        <tbody>
+          <tr><td>放大倍率</td><td class="interactive-item">通常較 <span class="ans-word">大</span></td><td class="interactive-item">通常較 <span class="ans-word">小</span></td></tr>
+          <tr><td>適用標本特性</td><td>平面、可透光</td><td class="interactive-item"><span class="ans-word">立體</span>、不透光</td></tr>
+          <tr><td>物像與標本的關係</td><td class="interactive-item"><span class="ans-word">上下</span>顛倒、<span class="ans-word">左右</span>相反</td><td class="interactive-item">方向 <span class="ans-word">相同</span></td></tr>
+          <tr><td>可否觀察蠶寶寶吃桑葉</td><td>不可</td><td>可</td></tr>
+          <tr><td>可否觀察植物氣孔水埋玻片</td><td>可</td><td>不可</td></tr>
+        </tbody>
+      </table>
+
+      <div class="page-footer">
+        <span>國一自然 第1章 生命世界與科學方法</span><span>第 5 頁 / 共 7 頁</span>
+      </div>
+    </div><!-- /page5 -->
+
+    <!-- ═══════════════════════════════════ PAGE 6 ═══════════════════════════════════ -->
+    <div class="page" id="page6">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>班級：_______ 座號：_______ 姓名：_____________</span>
+        <span>第 6 頁</span>
+      </div>
+
+      <div class="section-title">1-3 小試身手</div>
+      <div class="part-badge">Part 2 小試身手</div>
+
+      <!-- 題 1：括號在題號與題幹同一行 -->
+      <div class="qa-item interactive-item">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">D</span> ）</span>
+          <span class="q-num">1.</span>關於複式顯微鏡的使用，下列何者是不正確的操作？
+        </div>
+        <div class="q-options stacked">
+          <div class="q-opt">(A) 取用顯微鏡時一手握住鏡臂，一手托住鏡座</div>
+          <div class="q-opt">(B) 鏡頭有髒汙時，應使用拭鏡紙擦拭鏡頭</div>
+          <div class="q-opt">(C) 轉換觀察倍率時，應轉動旋轉盤更換物鏡倍率</div>
+          <div class="q-opt">(D) 使用高倍率物鏡時，轉動粗調節輪可更清楚看到物體</div>
+        </div>
+      </div>
+
+      <!-- 題 2：附圖 + 括號在同一行 -->
+      <div class="qa-item interactive-item">
+        <div class="qa-with-fig">
+          <div style="flex:1;">
+            <div class="q-stem">
+              <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">B</span> ）</span>
+              <span class="q-num">2.</span>小黑觀察同一個標本四次，每次只調整物鏡倍率，其他皆未變動，結果如右圖。請問何者視野亮度最暗？
+            </div>
+            <div class="q-options" style="margin-top:6px;">
+              <div class="q-opt">(A) 甲</div>
+              <div class="q-opt">(B) 乙</div>
+              <div class="q-opt">(C) 丙</div>
+              <div class="q-opt">(D) 丁</div>
+            </div>
+          </div>
+          <div class="qa-fig-side">
+            <img src="../images/science-7-1-handout/q2_cells.jpg" alt="小黑觀察標本四次結果" style="max-height:85px;">
+          </div>
+        </div>
+      </div>
+
+      <!-- 題 3：括號在同一行 -->
+      <div class="qa-item interactive-item">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">C</span> ）</span>
+          <span class="q-num">3.</span>丁丁拿了一張小紙片，上面寫上「pbdq」，並放在複式顯微鏡下觀察，則他所看到的影像應該為何？
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) dbqp</div>
+          <div class="q-opt">(B) qpdb</div>
+          <div class="q-opt">(C) bpqd</div>
+          <div class="q-opt">(D) bdpq</div>
+        </div>
+      </div>
+
+      <!-- 題 4：括號在同一行 -->
+      <div class="qa-item interactive-item">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">D</span> ）</span>
+          <span class="q-num">4.</span>有關顯微鏡操作的敘述，下列何者正確？
+        </div>
+        <div class="q-options stacked">
+          <div class="q-opt">(A) 拿取顯微鏡時，必須以單手拿，否則易導致顯微鏡不平衡而翻落</div>
+          <div class="q-opt">(B) 當發現鏡頭有灰塵時，必須使用衛生紙擦拭</div>
+          <div class="q-opt">(C) 從低倍率物鏡轉換成高倍率物鏡時，須轉動粗調節輪調整視野</div>
+          <div class="q-opt">(D) 觀察時若亮度不足，可調整光圈大小</div>
+        </div>
+      </div>
+
+      <!-- 題 5：括號在同一行 -->
+      <div class="qa-item interactive-item">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">D</span> ）</span>
+          <span class="q-num">5.</span>操作複式顯微鏡時，關於問題與解決方法的配對，下列何者正確？
+        </div>
+        <div class="q-options stacked">
+          <div class="q-opt">(A) 視野中物體的影像太小──調整細調節輪</div>
+          <div class="q-opt">(B) 視野中的物體偏下──將玻片往上方移動</div>
+          <div class="q-opt">(C) 視野中光線太暗──將低倍率物鏡更換為高倍率物鏡</div>
+          <div class="q-opt">(D) 標本更換後，視野中仍持續看到同樣的黑點或線條──用拭鏡紙擦拭鏡頭</div>
+        </div>
+      </div>
+
+      <!-- 題 6：附圖 + 括號在同一行 -->
+      <div class="qa-item interactive-item">
+        <div class="qa-with-fig">
+          <div style="flex:1;">
+            <div class="q-stem">
+              <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">C</span> ）</span>
+              <span class="q-num">6.</span>附圖為實驗課的兩臺顯微鏡，若阿彥要觀察葉片的葉綠體，而阿秀要觀察螞蟻的觸角，則最適合他們使用的顯微鏡分別為何？
+            </div>
+            <div class="q-options stacked" style="margin-top:4px;">
+              <div class="q-opt">(A) 兩人皆為甲顯微鏡</div>
+              <div class="q-opt">(B) 兩人皆為乙顯微鏡</div>
+              <div class="q-opt">(C) 阿彥為甲顯微鏡，阿秀為乙顯微鏡</div>
+              <div class="q-opt">(D) 阿彥為乙顯微鏡，阿秀為甲顯微鏡</div>
+            </div>
+          </div>
+          <div class="qa-fig-side">
+            <img src="../images/science-7-1-handout/q6_microscopes.png" alt="顯微鏡甲乙" style="max-height:100px;">
+          </div>
+        </div>
+      </div>
+
+      <!-- 題 7：附圖 + 括號在同一行 -->
+      <div class="qa-item interactive-item">
+        <div class="qa-with-fig">
+          <div style="flex:1;">
+            <div class="q-stem">
+              <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">A</span> ）</span>
+              <span class="q-num">7.</span>附圖為複式顯微鏡的目鏡，試問何者的放大倍率最大？
+            </div>
+            <div class="q-options" style="margin-top:6px;">
+              <div class="q-opt">(A) 甲</div>
+              <div class="q-opt">(B) 乙</div>
+              <div class="q-opt">(C) 丙</div>
+              <div class="q-opt">(D) 三者放大倍率一樣</div>
+            </div>
+          </div>
+          <div class="qa-fig-side">
+            <img src="../images/science-7-1-handout/q7_eyepieces.jpg" alt="目鏡甲乙丙" style="max-height:75px;">
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>國一自然 第1章 生命世界與科學方法</span><span>第 6 頁 / 共 7 頁</span>
+      </div>
+    </div><!-- /page6 -->
+
+    <!-- ═══════════════════════════════════ PAGE 7 ═══════════════════════════════════ -->
+    <div class="page" id="page7">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>班級：_______ 座號：_______ 姓名：_____________</span>
+        <span>第 7 頁</span>
+      </div>
+
+      <div class="section-title" style="background:#fef3c7;color:#b45309;border-left-color:#f59e0b;">
+        📋 第1章 重點整理
+      </div>
+
+      <div class="subsection-title">1-1 多彩多姿的生命世界</div>
+      <div class="item-line interactive-item">
+        1. 具有代謝、生長與發育、感應與運動、生殖等生命現象的個體稱為 <span class="ans-word">生物</span>，不具生命現象的物體稱為 <span class="ans-word">非生物</span>。<br>
+        2. 生物生存的要素包括：<span class="ans-word">陽光</span>、<span class="ans-word">空氣</span>、<span class="ans-word">水</span>、<span class="ans-word">養分</span>。<br>
+        3. 地球上所有的生物體和其賴以生存的區域，合稱為 <span class="ans-word">生物圈</span>。
+      </div>
+
+      <div class="subsection-title" style="margin-top:8px;">1-2 探究自然的科學方法</div>
+      <div class="item-line interactive-item">
+        1. 常用的科學方法流程：觀察 → 提出問題 → 參考文獻資料 → 形成假說 → 設計與進行實驗 → 分析實驗結果 → 提出結論。<br>
+        2. 設計實驗時，必須有實驗組和對照組，<span class="ans-word">實驗組</span> 為主要的觀察對象，<span class="ans-word">對照組</span> 則是與實驗組作為比較之用。<br>
+        3. 設計實驗時，各種可能會影響實驗結果的因素稱為 <span class="ans-word">變因</span>。<br>
+        4. 變因的種類：
+      </div>
+      <table class="custom-table">
+        <thead><tr><th style="width:28%;">變因</th><th>說明</th></tr></thead>
+        <tbody>
+          <tr><td>操作變因</td><td class="txt-left">實驗組和對照組中不同的因素</td></tr>
+          <tr><td>控制變因</td><td class="txt-left">實驗組和對照組中相同的各種因素</td></tr>
+          <tr><td>應變變因</td><td class="txt-left">實驗後要測量或比較的項目</td></tr>
+        </tbody>
+      </table>
+      <div class="item-line interactive-item">
+        5. 假說經過科學家多次的實驗探討和證實後，會成為 <span class="ans-word">學說</span>，但仍可能被推翻或修正。
+      </div>
+
+      <div class="subsection-title" style="margin-top:8px;">1-3 進入實驗室</div>
+      <div class="item-line interactive-item">
+        1. 在實驗室務必遵守 <span class="ans-word">實驗室安全守則</span>。<br>
+        2. 實驗器材須在老師指導下正確地操作。<br>
+        3. <span class="ans-word">顯微鏡</span> 是觀察微小生物及微細構造的主要儀器。<br>
+        4. 複式顯微鏡與解剖顯微鏡之比較：
+      </div>
+      <table class="custom-table">
+        <thead><tr><th>項目</th><th>複式顯微鏡</th><th>解剖顯微鏡</th></tr></thead>
+        <tbody>
+          <tr><td>放大倍率</td><td>通常較大</td><td>通常較小</td></tr>
+          <tr><td>適用標本特性</td><td>平面、可透光</td><td>立體、不透光</td></tr>
+          <tr><td>物像與標本關係</td><td class="interactive-item">上下 <span class="ans-word">顛倒</span>、左右 <span class="ans-word">相反</span></td><td class="interactive-item">方向 <span class="ans-word">相同</span></td></tr>
+        </tbody>
+      </table>
+
+      <div class="page-footer">
+        <span>國一自然 第1章 生命世界與科學方法</span><span>第 7 頁 / 共 7 頁</span>
+      </div>
+    </div><!-- /page7 -->
+
+  </div><!-- /pages-container -->
+
+  <!-- 課堂互動腳本 -->
+  <script>
+    // 目錄導覽
+    function toggleTocMenu(e) {
+      if (e) e.stopPropagation();
+      document.getElementById('tocMenu').classList.toggle('show');
+    }
+    function jumpTo(id) {
+      var el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      document.getElementById('tocMenu').classList.remove('show');
+    }
+    document.addEventListener('click', function(e) {
+      var menu = document.getElementById('tocMenu');
+      var btn = document.getElementById('tocBtn');
+      if (menu && menu.classList.contains('show') && !menu.contains(e.target) && e.target !== btn) {
+        menu.classList.remove('show');
+      }
+    });
+
+    // 點擊選擇題括號直接顯答
+    function toggleBracket(el, e) {
+      if (document.body.classList.contains('pen-mode')) return;
+      if (e) e.stopPropagation();
+      el.classList.toggle('revealed');
+    }
+
+    // 點擊填空文字或整題開合答案
+    document.addEventListener('click', function(e) {
+      if (document.body.classList.contains('pen-mode')) return;
+      var blank = e.target.closest('.ans-word');
+      if (blank) {
+        e.stopPropagation();
+        blank.classList.toggle('revealed');
+        return;
+      }
+      var bracket = e.target.closest('.qa-bracket');
+      if (bracket) {
+        e.stopPropagation();
+        bracket.classList.toggle('revealed');
+        return;
+      }
+      var item = e.target.closest('.interactive-item, .qa-item');
+      if (item) {
+        e.stopPropagation();
+        item.classList.toggle('show-one');
+        var isShow = item.classList.contains('show-one');
+        item.querySelectorAll('.ans-word').forEach(function(b) {
+          if (isShow) b.classList.add('revealed');
+          else b.classList.remove('revealed');
+        });
+        item.querySelectorAll('.qa-bracket').forEach(function(br) {
+          if (isShow) br.classList.add('revealed');
+          else br.classList.remove('revealed');
+        });
+      }
+    });
+
+    // 一鍵全顯/隱藏答案
+    var isAllAnsShown = false;
+    function toggleAllAnswers() {
+      isAllAnsShown = !isAllAnsShown;
+      var container = document.querySelector('.pages-container');
+      var btn = document.getElementById('toggleAllAnsBtn');
+      var icon = document.getElementById('ansIcon');
+      if (isAllAnsShown) {
+        container.classList.add('show-ans');
+        btn.classList.add('active');
+        icon.textContent = '🙈';
+      } else {
+        container.classList.remove('show-ans');
+        btn.classList.remove('active');
+        icon.textContent = '👁️';
+        document.querySelectorAll('.interactive-item.show-one, .qa-item.show-one').forEach(function(i) {
+          i.classList.remove('show-one');
+        });
+        document.querySelectorAll('.ans-word.revealed').forEach(function(b) { b.classList.remove('revealed'); });
+        document.querySelectorAll('.qa-bracket.revealed').forEach(function(b) { b.classList.remove('revealed'); });
+      }
+    }
+
+    // 螢光筆塗鴉板書
+    var isPenMode = false;
+    var currentPenColor = 'rgba(250, 204, 21, 0.45)';
+    var currentPenSize = 20;
+    function setPenColor(c, el) {
+      currentPenColor = c;
+      document.querySelectorAll('.color-dot').forEach(function(d) { d.classList.remove('active'); });
+      el.classList.add('active');
+    }
+    function setPenSize(s, el) {
+      currentPenSize = s;
+      document.querySelectorAll('.size-btn').forEach(function(b) { b.classList.remove('active'); });
+      el.classList.add('active');
+    }
+    function togglePenMode() {
+      isPenMode = !isPenMode;
+      document.body.classList.toggle('pen-mode', isPenMode);
+      var penBtn = document.getElementById('penBtn');
+      var penOpts = document.getElementById('penOptions');
+      if (isPenMode) {
+        penBtn.classList.add('active');
+        penOpts.style.display = 'flex';
+      } else {
+        penBtn.classList.remove('active');
+        penOpts.style.display = 'none';
+      }
+    }
+    function initCanvases() {
+      document.querySelectorAll('.page').forEach(function(page) {
+        var canvas = page.querySelector('.drawing-canvas');
+        if (!canvas) return;
+        var ctx = canvas.getContext('2d');
+        function resize() { canvas.width = page.clientWidth; canvas.height = page.clientHeight; }
+        resize();
+        window.addEventListener('resize', resize);
+        var isDrawing = false, lastX = 0, lastY = 0;
+        canvas.addEventListener('mousedown', function(e) {
+          if (!isPenMode) return;
+          isDrawing = true;
+          var r = canvas.getBoundingClientRect();
+          lastX = e.clientX - r.left; lastY = e.clientY - r.top;
+        });
+        canvas.addEventListener('mousemove', function(e) {
+          if (!isDrawing || !isPenMode) return;
+          var r = canvas.getBoundingClientRect();
+          var cx = e.clientX - r.left, cy = e.clientY - r.top;
+          ctx.beginPath();
+          ctx.moveTo(lastX, lastY);
+          ctx.lineTo(cx, cy);
+          ctx.strokeStyle = currentPenColor;
+          ctx.lineWidth = currentPenSize;
+          ctx.lineCap = 'round';
+          ctx.lineJoin = 'round';
+          ctx.stroke();
+          lastX = cx; lastY = cy;
+        });
+        window.addEventListener('mouseup', function() { isDrawing = false; });
+      });
+    }
+    window.addEventListener('load', initCanvases);
+    function clearAllDrawings() {
+      document.querySelectorAll('.drawing-canvas').forEach(function(c) {
+        c.getContext('2d').clearRect(0, 0, c.width, c.height);
+      });
+    }
+  </script>
+</body>
+</html>
