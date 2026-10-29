@@ -1,0 +1,1875 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>高中生物（全）1-2 細胞及能量 互動電子書</title>
+  <!-- 電子書目錄身分標記（見 SKILL.md §11 與 AGENTS.md） -->
+  <meta name="ebook:subject" content="science">
+  <meta name="ebook:grade" content="10">
+  <meta name="ebook:unit" content="1-2">
+  <meta name="ebook:title" content="高中生物（全）1-2 細胞及能量 互動電子書">
+  <meta name="ebook:type" content="handout">
+  <meta name="ebook:pages" content="16">
+  <meta name="ebook:level" content="std">
+  <meta name="ebook:summary" content="高中生物（全）1-2細胞及能量完整互動教學講義（全16頁寬裕舒展無截斷版），涵蓋：細胞內代謝作用（同化代謝與異化代謝、人體醣類代謝）、腺苷三磷酸ATP結構與水解合成能量轉換（AMP結構、ATP-ADP循環）、ATP生理功能與能量貨幣機制、光合作用與呼吸作用能量流轉、光反應與固碳反應詳細歷程與場所（葉綠體、類囊體、基質）、影響光合作用之因素、有氧呼吸兩階段歷程（糖解作用與粒線體反應）、發酵作用（酒精發酵與乳酸發酵比較）、光合與呼吸作用綜合比較表、基礎練習6題與課後實戰演練（單選8題+多選7題）精析題組，以及全章核心思維導圖總整理。">
+  <style>
+    @page { size: A4 portrait; margin: 10mm 12mm; }
+    * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body {
+      margin: 0; padding: 0; background-color: #f1f5f9;
+      font-family: "Times New Roman", "標楷體", "DFKai-SB", "BiauKai", serif;
+      font-size: 12.5pt; line-height: 1.5; color: #111;
+    }
+
+    /* 課堂懸浮工具列 */
+    .classroom-toolbar {
+      position: fixed; top: 14px; right: 20px; z-index: 9999;
+      display: flex; align-items: center; gap: 6px;
+      background: rgba(255, 255, 255, 0.96); padding: 5px 10px;
+      border-radius: 40px; box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      border: 1px solid #cbd5e1; backdrop-filter: blur(8px);
+    }
+    .tool-btn {
+      width: 36px; height: 36px; border-radius: 50%; border: 1px solid #cbd5e1;
+      background: #fff; color: #334155; font-size: 15px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.15s ease; outline: none; text-decoration: none;
+    }
+    .tool-btn:hover { background: #f8fafc; border-color: #94a3b8; transform: translateY(-1px); }
+    .tool-btn.active { background: #0284c7; color: #fff; border-color: #0284c7; }
+    .btn-toggle-ans { background: #eff6ff; border-color: #bfdbfe; color: #1d4ed8; font-weight: bold; }
+    .btn-toggle-ans.revealed { background: #fef2f2; border-color: #fecaca; color: #dc2626; }
+
+    /* 目錄跳轉選單 */
+    .toc-menu {
+      display: none; position: absolute; top: 46px; right: 0;
+      background: #fff; border: 1px solid #cbd5e1; border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15); width: 360px; max-height: 500px;
+      overflow-y: auto; z-index: 10000; padding: 6px 0; font-family: sans-serif;
+    }
+    .toc-menu.show { display: block; }
+    .toc-menu-title {
+      padding: 8px 16px; font-weight: bold; font-size: 13.5px;
+      color: #0f172a; border-bottom: 1px solid #e2e8f0; background: #f8fafc;
+    }
+    .toc-menu-item {
+      padding: 8px 16px; font-size: 12.5px; color: #334155; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center;
+      transition: background 0.1s;
+    }
+    .toc-menu-item:hover { background: #f0f9ff; color: #0284c7; font-weight: bold; }
+    .toc-page-badge {
+      background: #e2e8f0; color: #475569; font-size: 11px;
+      padding: 1px 6px; border-radius: 10px;
+    }
+
+    /* 螢光筆選項 */
+    .pen-options {
+      display: none; position: absolute; top: 46px; right: 130px;
+      background: #fff; border: 1px solid #cbd5e1; border-radius: 10px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12); padding: 8px 12px;
+      z-index: 10000; gap: 8px; align-items: center;
+    }
+    .pen-options.show { display: flex; }
+    .color-dot {
+      width: 20px; height: 20px; border-radius: 50%; cursor: pointer;
+      border: 2px solid transparent; transition: transform 0.1s;
+    }
+    .color-dot:hover { transform: scale(1.15); }
+    .color-dot.active { border-color: #0f172a; transform: scale(1.15); }
+    .size-btn {
+      padding: 2px 8px; border: 1px solid #cbd5e1; border-radius: 4px;
+      background: #fff; font-size: 12px; cursor: pointer;
+    }
+    .size-btn.active { background: #0284c7; color: #fff; border-color: #0284c7; }
+
+    /* 頁面整體排版 */
+    .pages-container {
+      display: flex; flex-direction: column; align-items: center;
+      padding: 24px 0 40px 0; gap: 24px;
+    }
+    .page {
+      position: relative; width: 210mm; min-height: 297mm; max-height: 297mm;
+      padding: 11mm 15mm 9mm 15mm; background: #fff;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06); border-radius: 4px;
+      display: flex; flex-direction: column; justify-content: flex-start;
+      overflow: hidden;
+    }
+    .drawing-canvas {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      pointer-events: none; z-index: 50;
+    }
+    body.pen-active .drawing-canvas { pointer-events: auto; cursor: crosshair; }
+
+    /* 頁首與頁尾 */
+    .page-header {
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 10.5pt; color: #64748b; border-bottom: 1.5px solid #0284c7;
+      padding-bottom: 4px; margin-bottom: 6px; font-weight: bold;
+    }
+    .page-footer {
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 9.5pt; color: #94a3b8; border-top: 1px solid #e2e8f0;
+      padding-top: 4px; margin-top: auto;
+    }
+
+    /* 大標題與副標題 */
+    .section-title {
+      font-size: 13.5pt; font-weight: bold; color: #0f172a;
+      display: flex; justify-content: space-between; align-items: baseline;
+      border-left: 4.5px solid #0284c7; padding-left: 8px; margin: 3px 0 6px 0;
+    }
+    .task-title {
+      font-size: 12pt; font-weight: bold; color: #0369a1;
+      margin: 5px 0 3px 0; display: flex; align-items: center; gap: 4px;
+    }
+
+    /* 表格設計 */
+    .concept-table {
+      width: 100%; border-collapse: collapse; margin: 4px 0;
+      font-size: 10.5pt; line-height: 1.4;
+    }
+    .concept-table th {
+      background: #f0f9ff; color: #0369a1; font-weight: bold;
+      border: 1px solid #cbd5e1; padding: 4px 6px; text-align: center;
+    }
+    .concept-table td {
+      border: 1px solid #cbd5e1; padding: 4px 6px; vertical-align: middle;
+    }
+
+    /* 列表與行高 */
+    .item-line { margin: 2.5px 0; line-height: 1.45; font-size: 12pt; }
+
+    /* 提示與重點外框 */
+    .tip-box {
+      background: #f8fafc; border: 1.2px solid #bae6fd; border-radius: 6px;
+      padding: 6px 10px; margin-top: 6px;
+    }
+    .tip-title {
+      font-size: 10.5pt; font-weight: bold; color: #0284c7; margin-bottom: 2px;
+    }
+
+    /* 題目排版 */
+    .q-item {
+      margin: 5px 0; padding: 5px 8px; border-radius: 6px;
+      background: #fafafa; border: 1px solid #f1f5f9;
+      transition: background 0.15s; cursor: pointer;
+    }
+    .q-item:hover { background: #f8fafc; border-color: #e2e8f0; }
+    .q-stem { font-size: 12pt; line-height: 1.42; color: #0f172a; }
+    .q-num { font-weight: bold; color: #0284c7; margin-right: 4px; }
+    .q-options {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 2.5px 12px; margin-top: 3px; font-size: 11pt; color: #334155;
+      padding-left: 6px;
+    }
+    .q-options.stacked {
+      display: flex; flex-direction: column; gap: 2px;
+    }
+    .q-opt { line-height: 1.35; }
+
+    /* 互動填空與顯答 */
+    .ans-word {
+      color: transparent !important; border-bottom: 1.5px solid #0284c7;
+      padding: 0 4px; cursor: pointer; user-select: none;
+      transition: color 0.15s; display: inline-block; min-width: 22px; text-align: center;
+    }
+    .ans-word:hover { border-bottom-color: #ef4444; }
+    .ans-word.revealed, body.show-all-answers .ans-word {
+      color: #dc2626 !important; font-weight: bold;
+    }
+
+    /* 選擇題括號顯答 */
+    .qa-bracket {
+      cursor: pointer; user-select: none; font-weight: bold;
+      color: #0f172a; padding: 0 2px;
+    }
+    .qa-bracket .ans-text {
+      color: transparent; min-width: 14px; display: inline-block;
+      text-align: center; transition: color 0.15s;
+    }
+    .qa-bracket:hover .ans-text { color: #f87171; }
+    .qa-bracket.revealed .ans-text, body.show-all-answers .qa-bracket .ans-text {
+      color: #dc2626 !important; font-weight: bold;
+    }
+
+    /* 題目解析區塊 */
+    .calc-workspace {
+      margin-top: 3px; padding: 4px 8px; border-radius: 4px;
+      background: #fff; border: 1px dashed #cbd5e1; cursor: pointer;
+      user-select: none;
+    }
+    .calc-solution {
+      font-size: 10pt; line-height: 1.4;
+      color: transparent !important;
+      transition: color 0.15s;
+    }
+    .calc-solution.revealed, body.show-all-answers .calc-solution {
+      color: #b91c1c !important;
+    }
+
+    /* 圖示容器樣式 */
+    .figure-container {
+      text-align: center; margin: 4px 0;
+    }
+    .figure-container img {
+      max-width: 100%; height: auto; border-radius: 6px;
+      border: 1px solid #cbd5e1; box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    }
+    .figure-caption {
+      font-size: 10pt; font-weight: bold; color: #475569; margin-top: 3px;
+    }
+
+    /* 列印樣式 (純淨學生學習單) */
+    @media print {
+      html, body {
+        width: 100% !important; height: auto !important;
+        background: #fff !important; padding: 0 !important; margin: 0 !important;
+      }
+      .no-print, .classroom-toolbar, .drawing-canvas, .toc-menu, .pen-options {
+        display: none !important;
+      }
+      .pages-container { padding: 0 !important; gap: 0 !important; }
+      .page {
+        width: 100% !important; height: auto !important;
+        max-height: none !important; min-height: 275mm !important;
+        box-shadow: none !important; border-radius: 0 !important;
+        page-break-after: always; break-after: page;
+        padding: 8mm 12mm 6mm 12mm !important;
+      }
+      .ans-word {
+        color: transparent !important; border-bottom: 1px solid #475569 !important;
+      }
+      .qa-bracket .ans-text { color: transparent !important; }
+      .calc-solution { display: none !important; }
+      .calc-workspace { display: none !important; }
+      .q-item { background: transparent !important; border: none !important; padding: 2px 0 !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 課堂懸浮工具列 -->
+  <div class="classroom-toolbar no-print">
+    <!-- 回電子書目錄 -->
+    <a class="tool-btn" href="../index.html" title="回電子書目錄">🏠</a>
+    <!-- 目錄跳轉選單 -->
+    <div style="position: relative;">
+      <button class="tool-btn" id="tocBtn" onclick="toggleTocMenu(event)" title="單元章節目錄">📑</button>
+      <div class="toc-menu" id="tocMenu">
+        <div class="toc-menu-title">📖 1-2 細胞及能量 目錄 (全 16 頁)</div>
+        <div class="toc-menu-item" onclick="jumpTo('page1')"><span>1-2.1 細胞內的代謝作用（觀念一）</span><span class="toc-page-badge">P.1</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page2')"><span>1-2.1 腺苷三磷酸 ATP 結構與轉換（觀念二）</span><span class="toc-page-badge">P.2</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page3')"><span>1-2.1 ATP 重要性與生理功能（觀念三）</span><span class="toc-page-badge">P.3</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page4')"><span>1-2.1 隨堂實戰評量（基礎練習 3 題）</span><span class="toc-page-badge">P.4</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page5')"><span>1-2.2 能量獲得與轉換（觀念一）</span><span class="toc-page-badge">P.5</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page6')"><span>1-2.2 光合作用歷程與場所（觀念二）</span><span class="toc-page-badge">P.6</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page7')"><span>1-2.2 光反應 vs 固碳反應與影響因素（觀念三）</span><span class="toc-page-badge">P.7</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page8')"><span>1-2.2 呼吸作用與有氧呼吸兩階段（觀念四）</span><span class="toc-page-badge">P.8</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page9')"><span>1-2.2 發酵作用與呼吸作用綜合比較（觀念五）</span><span class="toc-page-badge">P.9</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page10')"><span>1-2.2 隨堂實戰評量（基礎練習 3 題）</span><span class="toc-page-badge">P.10</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page11')"><span>課後實戰演練 · 單選題（一）(Q1～Q4)</span><span class="toc-page-badge">P.11</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page12')"><span>課後實戰演練 · 單選題（二）(Q5～Q8)</span><span class="toc-page-badge">P.12</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page13')"><span>課後實戰演練 · 多選題（一）(Q1～Q3)</span><span class="toc-page-badge">P.13</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page14')"><span>課後實戰演練 · 多選題（二）(Q4～Q5)</span><span class="toc-page-badge">P.14</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page15')"><span>課後實戰演練 · 多選題（三）(Q6～Q7)</span><span class="toc-page-badge">P.15</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page16')"><span>1-2 全章核心思維導圖與重點觀念精華</span><span class="toc-page-badge">P.16</span></div>
+      </div>
+    </div>
+    <!-- 一鍵全顯/隱藏答案 -->
+    <button class="tool-btn btn-toggle-ans" id="toggleAllAnsBtn" onclick="toggleAllAnswers()" title="一鍵開合全部答案">
+      <span id="ansIcon">👁️</span>
+    </button>
+    <!-- 螢光筆/畫筆 -->
+    <button class="tool-btn" id="penBtn" onclick="togglePenMode()" title="課堂螢光筆批註模式">✏️</button>
+    <!-- 清除筆跡 -->
+    <button class="tool-btn" onclick="clearAllDrawings()" title="清除本頁畫筆痕跡">🗑️</button>
+    <!-- 列印 -->
+    <button class="tool-btn" onclick="window.print()" title="列印純淨學習單">🖨️</button>
+  </div>
+
+  <!-- 螢光筆選項盤 -->
+  <div class="pen-options no-print" id="penOptions">
+    <span style="font-size: 12px; font-weight: bold; color: #475569;">畫筆顏色：</span>
+    <div class="color-dot active" style="background: #facc15;" onclick="setPenColor('rgba(250, 204, 21, 0.45)', this)" title="螢光黃"></div>
+    <div class="color-dot" style="background: #f87171;" onclick="setPenColor('rgba(248, 113, 113, 0.45)', this)" title="螢光紅"></div>
+    <div class="color-dot" style="background: #60a5fa;" onclick="setPenColor('rgba(96, 165, 250, 0.45)', this)" title="螢光藍"></div>
+    <div class="color-dot" style="background: #4ade80;" onclick="setPenColor('rgba(74, 222, 128, 0.45)', this)" title="螢光綠"></div>
+    <span style="font-size: 12px; font-weight: bold; color: #475569; margin-left: 4px;">粗細：</span>
+    <button class="size-btn active" onclick="setPenSize(3, this)">細</button>
+    <button class="size-btn" onclick="setPenSize(6, this)">中</button>
+    <button class="size-btn" onclick="setPenSize(12, this)">粗</button>
+  </div>
+
+  <div class="pages-container">
+
+    <!-- ==================== Page 1 ==================== -->
+    <div class="page" id="page1">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物（全）講義</span>
+        <span>第 1 章 細胞的構造與功能 · 1-2 細胞及能量</span>
+        <span>P. 1</span>
+      </div>
+
+      <div class="section-title">
+        <span>1-2.1　細胞中能量的獲得與轉換（一）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">焦點：細胞代謝作用的定義、同化代謝與異化代謝</span>
+      </div>
+
+      <div style="background: #f0fdf4; border-left: 4px solid #16a34a; padding: 5px 10px; margin: 4px 0 6px 0; font-size: 11.5pt; color: #166534; border-radius: 0 4px 4px 0;">
+        💡 <strong>單元前導思維：</strong>細胞獲得能量後，才得以進行各種生理作用，但細胞中的能量是從何而來的呢？
+      </div>
+
+      <div class="task-title">一、細胞內的代謝作用</div>
+      <div class="item-line"><strong>1. 定義：</strong>細胞中化學反應的進行，常伴隨著能量的轉換。</div>
+      <div class="item-line"><strong>2. 分類：</strong>可分為 <span class="ans-word" onclick="toggleAns(this, event)">同化代謝</span> 與 <span class="ans-word" onclick="toggleAns(this, event)">異化代謝</span>。</div>
+
+      <div class="task-title" style="margin-top: 4px;">3. 代謝作用的比較</div>
+      <table class="concept-table" style="margin: 3px 0 6px 0;">
+        <thead>
+          <tr>
+            <th style="width: 15%;">種類</th>
+            <th style="width: 32%;">說明</th>
+            <th style="width: 23%;">能量變化</th>
+            <th style="width: 30%;">生化實例</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="text-align: center; font-weight: bold; color: #0369a1;"><span class="ans-word" onclick="toggleAns(this, event)">同化代謝</span><br><span style="font-size: 9.5pt; color: #64748b;">(合成作用)</span></td>
+            <td>細胞將較簡單分子合成為較複雜分子</td>
+            <td style="text-align: center;">需加入能量<br><strong style="color: #0284c7;">(需能反應 / 吸能)</strong></td>
+            <td>葡萄糖＋果糖＋能量<br>→ 蔗糖＋水</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-weight: bold; color: #b91c1c;"><span class="ans-word" onclick="toggleAns(this, event)">異化代謝</span><br><span style="font-size: 9.5pt; color: #64748b;">(分解作用)</span></td>
+            <td>細胞將較複雜分子分解成較簡單分子</td>
+            <td style="text-align: center;">有能量釋出<br><strong style="color: #dc2626;">(釋能反應 / 放能)</strong></td>
+            <td>葡萄糖＋氧<br>→ 二氧化碳＋水＋能量</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="task-title" style="margin-top: 4px;">4. 人體的醣類代謝實例</div>
+      <div class="item-line">(1) 攝食含澱粉的食物 → 澱粉被消化成葡萄糖 → 葡萄糖經細胞吸收。</div>
+      <div class="item-line">(2) 細胞藉 <span class="ans-word" onclick="toggleAns(this, event)">異化代謝</span> 將葡萄糖分解成較小分子的二氧化碳及水，並釋出能量。</div>
+      <div class="item-line">(3) 肝細胞及肌肉細胞可將葡萄糖經由 <span class="ans-word" onclick="toggleAns(this, event)">同化代謝</span> 合成較大分子的肝醣，過程需要消耗能量。</div>
+
+      <!-- 圖 1-24 細胞的代謝作用 -->
+      <div class="figure-container" style="margin-top: 4px;">
+        <img src="../images/biology-10-1-2-handout/細胞的代謝作用.png" alt="細胞的代謝作用" style="max-height: 200px; width: auto;">
+        <div class="figure-caption">▲ 圖 1-24　細胞的代謝作用（葡萄糖分解釋能 vs 肝醣合成需能）</div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 高中生物（全）</span>
+        <span>1-2.1 細胞代謝作用</span>
+        <span>第 1 頁 / 共 16 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 2 ==================== -->
+    <div class="page" id="page2">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物（全）講義</span>
+        <span>第 1 章 細胞的構造與功能 · 1-2 細胞及能量</span>
+        <span>P. 2</span>
+      </div>
+
+      <div class="section-title">
+        <span>1-2.1　細胞中能量的獲得與轉換（二）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">焦點：腺苷三磷酸（ATP）的結構組成與水解合成轉換</span>
+      </div>
+
+      <div class="task-title">二、腺苷三磷酸（ATP）</div>
+      <div class="item-line"><strong>1. 組成：</strong><span class="ans-word" onclick="toggleAns(this, event)">核苷酸</span> 的一種，由 <span class="ans-word" onclick="toggleAns(this, event)">腺嘌呤</span>、<span class="ans-word" onclick="toggleAns(this, event)">核糖</span> 和 <span class="ans-word" onclick="toggleAns(this, event)">三個磷酸基</span> 所組成。</div>
+      <div class="item-line" style="padding-left: 18px;">(1) 若由腺嘌呤、核糖和兩個磷酸基所組成，稱為 <span class="ans-word" onclick="toggleAns(this, event)">腺苷二磷酸（ADP）</span>。</div>
+      <div class="item-line" style="padding-left: 18px;">(2) ATP 與 ADP 的轉換伴隨著能量的儲存或釋放，兩者之間的轉換可協助細胞能量的使用。</div>
+
+      <!-- 圖 1-25 ATP 與 ADP 的結構 -->
+      <div style="display: flex; gap: 12px; align-items: center; margin: 4px 0;">
+        <div style="flex: 1.3; text-align: center;">
+          <img src="../images/biology-10-1-2-handout/ATP結構.png" alt="ATP與ADP的結構" style="max-height: 125px; width: auto; border-radius: 4px; border: 1px solid #cbd5e1;">
+          <div class="figure-caption">▲ 圖 1-25　ATP 與 ADP 的結構比較</div>
+        </div>
+        <div style="flex: 1; background: #fefce8; border: 1px solid #fef08a; border-radius: 6px; padding: 6px 10px; font-size: 10.5pt; color: #713f12;">
+          <div style="font-weight: bold; margin-bottom: 2px;">💡 延伸補充：AMP</div>
+          核糖上若僅接一個磷酸基時，稱為<strong>腺苷單磷酸（AMP）</strong>。<br>
+          腺嘌呤＋核糖 ＝ 腺苷（Adenosine）<br>
+          腺苷＋1磷酸＝AMP；＋2磷酸＝ADP；＋3磷酸＝ATP。
+        </div>
+      </div>
+
+      <div class="task-title" style="margin-top: 4px;">2. ATP 的合成與水解</div>
+      <div class="item-line">(1) 細胞內的需能反應（合成）或釋能反應（分解），過程中有能量的投入或釋出，因此細胞內 ATP 的分解與合成常伴隨其他物質的需能或釋能反應一起進行。</div>
+      <div class="item-line">(2) ATP 的分解本身為 <span class="ans-word" onclick="toggleAns(this, event)">釋能反應</span>，可釋出能量，因此常伴隨胞內物質的 <span class="ans-word" onclick="toggleAns(this, event)">需能反應</span> 一起進行。</div>
+      <div class="item-line">(3) ATP 的合成本身為 <span class="ans-word" onclick="toggleAns(this, event)">需能反應</span>，需要能量的提供才可進行，因此常伴隨胞內物質的 <span class="ans-word" onclick="toggleAns(this, event)">釋能反應</span> 一起進行。</div>
+
+      <!-- 反應比較表 -->
+      <table class="concept-table" style="margin: 3px 0 5px 0;">
+        <thead>
+          <tr>
+            <th style="width: 20%;">項目</th>
+            <th style="width: 40%;">需能反應（合成伴隨）</th>
+            <th style="width: 40%;">釋能反應（分解伴隨）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>ATP 變化</strong></td>
+            <td>ATP 的分解：<br>ATP ＋ H₂O → ADP ＋ Pi ＋ 能量</td>
+            <td>ATP 的合成：<br>ADP ＋ Pi ＋ 能量 → ATP ＋ H₂O</td>
+          </tr>
+          <tr>
+            <td><strong>ATP 本身能量變化</strong></td>
+            <td><strong style="color: #dc2626;">釋能反應</strong>（放出能量供反應利用）</td>
+            <td><strong style="color: #0284c7;">需能反應</strong>（吸收反應釋出之能量）</td>
+          </tr>
+          <tr>
+            <td><strong>伴隨之胞內反應</strong></td>
+            <td>ATP 的分解促使胞內其他物質合成</td>
+            <td>胞內其他物質分解促使 ATP 的合成</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- 圖 1-27 細胞內 ATP 與 ADP 的轉換 -->
+      <div class="figure-container" style="margin-top: 3px;">
+        <img src="../images/biology-10-1-2-handout/ATP轉換.png" alt="細胞內 ATP 與 ADP 的轉換" style="max-height: 120px; width: auto;">
+        <div class="figure-caption">▲ 圖 1-27　細胞內 ATP 與 ADP 的能量耦聯轉換</div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 高中生物（全）</span>
+        <span>1-2.1 ATP結構與水解合成</span>
+        <span>第 2 頁 / 共 16 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 3 ==================== -->
+    <div class="page" id="page3">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物（全）講義</span>
+        <span>第 1 章 細胞的構造與功能 · 1-2 細胞及能量</span>
+        <span>P. 3</span>
+      </div>
+
+      <div class="section-title">
+        <span>1-2.1　細胞中能量的獲得與轉換（三）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">焦點：ATP 的重要性、能量貨幣概念與生理功能應用</span>
+      </div>
+
+      <div class="task-title">三、ATP 的重要性</div>
+      <div class="item-line"><strong>1. 細胞所需能量的直接來源：</strong>可作為細胞內通用的 <span class="ans-word" onclick="toggleAns(this, event)">能量貨幣</span>（能量代幣）。</div>
+      <div class="item-line" style="padding-left: 18px;">(1) 細胞進行各種生理作用所需的能量，<strong style="color: #b91c1c;">無法</strong> 由葡萄糖分解直接提供。</div>
+      <div class="item-line" style="padding-left: 18px;">(2) 必須先將葡萄糖中的能量轉移至 <span class="ans-word" onclick="toggleAns(this, event)">ATP</span>，再藉由 ATP 水解釋出能量，才能提供細胞利用。</div>
+      <div class="item-line"><strong>2. 提供同化代謝所需的能量：</strong>如胺基酸合成蛋白質、單醣合成肝醣或澱粉等。</div>
+      <div class="item-line"><strong>3. 提供細胞運動與運輸能量：</strong>物質的 <span class="ans-word" onclick="toggleAns(this, event)">主動運輸</span>、肌肉收縮，以及鞭毛、纖毛運動等生理作用能量。</div>
+
+      <div class="tip-box" style="margin: 8px 0;">
+        <div class="tip-title">⚡ 觀念釐清：為什麼細胞需要「能量貨幣」ATP？</div>
+        <div style="font-size: 11pt; line-height: 1.5; color: #334155;">
+          一分子葡萄糖徹底分解所釋放的能量極為巨大（約 686 kcal/mol），若直接一次性釋放，會使細胞局部劇烈升溫而破壞蛋白質與膜結構；而一分子 ATP 水解為 ADP 約釋放 7.3 kcal/mol，大小適中，隨取隨用，如同將大面額鈔票兌換成「零錢」，精準供應細胞微細生化反應。
+        </div>
+      </div>
+
+      <div class="task-title" style="margin-top: 6px;">4. ATP-ADP 循環的生理調節機制</div>
+      <table class="concept-table" style="margin: 4px 0 8px 0;">
+        <thead>
+          <tr>
+            <th style="width: 25%;">細胞內狀態</th>
+            <th style="width: 35%;">代表意義</th>
+            <th style="width: 40%;">促成之生理調節反應</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="font-weight: bold; color: #15803d;">ATP 多而 ADP 少<br><span style="font-size: 9.5pt; color: #64748b;">(ADP / ATP 比值低)</span></td>
+            <td>表示細胞內<strong>能量較充裕</strong></td>
+            <td>生物傾向進行<strong>需能反應</strong>：<br>如運動、肌肉收縮、物質合成（同化代謝）等。</td>
+          </tr>
+          <tr>
+            <td style="font-weight: bold; color: #b91c1c;">ATP 少而 ADP 多<br><span style="font-size: 9.5pt; color: #64748b;">(ADP / ATP 比值高)</span></td>
+            <td>表示細胞內<strong>能量較缺乏</strong></td>
+            <td>生物體需加速進行<strong>產能反應</strong>：<br>加速呼吸作用以分解葡萄糖，促進 ATP 合成。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="tip-box" style="background: #eff6ff; border-color: #93c5fd; margin-top: 8px;">
+        <div class="tip-title" style="color: #1e40af;">📌 ATP 提供能量之生理功能範疇（圖 1-28 核心）：</div>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; text-align: center; margin-top: 4px; font-size: 10.5pt;">
+          <div style="background: #fff; padding: 6px; border-radius: 4px; border: 1px solid #bfdbfe;">
+            <strong>① 物質跨膜運輸</strong><br><span style="color: #475569;">消耗 ATP 逆濃度梯度進行主動運輸（如鈉鉀幫浦）</span>
+          </div>
+          <div style="background: #fff; padding: 6px; border-radius: 4px; border: 1px solid #bfdbfe;">
+            <strong>② 機械運動</strong><br><span style="color: #475569;">骨骼肌肌原纖維滑動收縮、精子鞭毛與呼吸道纖毛擺動</span>
+          </div>
+          <div style="background: #fff; padding: 6px; border-radius: 4px; border: 1px solid #bfdbfe;">
+            <strong>③ 生物合成</strong><br><span style="color: #475569;">DNA 複製、轉錄、蛋白質轉譯及各類多醣合成</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 高中生物（全）</span>
+        <span>1-2.1 ATP 重要性與能量貨幣</span>
+        <span>第 3 頁 / 共 16 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 4 ==================== -->
+    <div class="page" id="page4">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物（全）講義</span>
+        <span>第 1 章 細胞的構造與功能 · 1-2 細胞及能量</span>
+        <span>P. 4</span>
+      </div>
+
+      <div class="section-title">
+        <span>1-2.1　隨堂實戰評量</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">基礎練習（1-2.1 代謝與 ATP 評量題組）</span>
+      </div>
+
+      <div class="task-title">基礎練習（點擊題目可開合全題答案與解析）</div>
+
+      <!-- Q1 -->
+      <div class="q-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">D</span> ）</span>
+          <span class="q-num">1.</span>下列有關 ATP 的敘述，何者正確？
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 是一種核酸</div>
+          <div class="q-opt">(B) 有兩個磷酸根</div>
+          <div class="q-opt">(C) 以淨能量變化來說，ATP → ADP ＋ Pi 本身為需能反應</div>
+          <div class="q-opt">(D) ATP 所釋出的能量可使許多生理作用得以進行</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div style="font-size: 9.5pt; color: #64748b; font-weight: bold;">💡 解析展開（點擊顯示 / 隱藏）：</div>
+          <div class="calc-solution">
+            (A) ATP 是一種核苷酸（含有核糖、腺嘌呤及三個磷酸基），並非聚合成鏈的核酸；<br>
+            (B) ATP 具有三個磷酸根（ADP 才有兩個）；<br>
+            (C) 以淨能量變化來說，ATP → ADP ＋ Pi 為水解釋放能量的「釋能反應」；<br>
+            (D) 正確，ATP 為細胞能量貨幣，水解釋能可驅動各類需能生理作用。
+          </div>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="q-item" onclick="toggleItemAnswers(this, event)" style="margin-top: 10px;">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">B</span> ）</span>
+          <span class="q-num">2.</span>請問下列何種細胞生理反應的進行不需伴隨著 ATP 的分解？
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 胞內醣類的同化代謝</div>
+          <div class="q-opt">(B) 胞內醣類的異化代謝</div>
+          <div class="q-opt">(C) 肌肉收縮</div>
+          <div class="q-opt">(D) 胞內細胞質的流動</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div style="font-size: 9.5pt; color: #64748b; font-weight: bold;">💡 解析展開（點擊顯示 / 隱藏）：</div>
+          <div class="calc-solution">
+            細胞內醣類的異化代謝（如葡萄糖的有氧呼吸或發酵分解）本身為「釋能反應」，不需要分解 ATP 來提供能量，其釋出的化學能反而可用來推動 ADP ＋ Pi 合成 ATP。而 (A)同化合成、(C)肌肉收縮、(D)細胞質流動均屬消耗能量的生理活動，皆須伴隨 ATP 分解。
+          </div>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="q-item" onclick="toggleItemAnswers(this, event)" style="margin-top: 10px;">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">A</span> ）</span>
+          <span class="q-num">3.</span>下列哪一個化學反應可以和 ATP 的合成伴隨一起進行？
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 葡萄糖 → 二氧化碳＋水</div>
+          <div class="q-opt">(B) 甘油＋脂肪酸 → 脂質</div>
+          <div class="q-opt">(C) 胺基酸 → 蛋白質</div>
+          <div class="q-opt">(D) 葡萄糖 → 澱粉</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div style="font-size: 9.5pt; color: #64748b; font-weight: bold;">💡 解析展開（點擊顯示 / 隱藏）：</div>
+          <div class="calc-solution">
+            ATP 的合成本身需要吸收能量（需能反應），因此必須伴隨著某個「物質分解釋能（異化代謝）」的反應一起進行（能量耦聯）。(A)葡萄糖分解為二氧化碳和水為放能的呼吸作用，可伴隨 ATP 合成；(B)、(C)、(D)皆為小分子合成大分子的吸能反應，需伴隨 ATP 的分解。
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 高中生物（全）</span>
+        <span>1-2.1 隨堂實戰評量</span>
+        <span>第 4 頁 / 共 16 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 5 ==================== -->
+    <div class="page" id="page5">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物（全）講義</span>
+        <span>第 1 章 細胞的構造與功能 · 1-2 細胞及能量</span>
+        <span>P. 5</span>
+      </div>
+
+      <div class="section-title">
+        <span>1-2.2　光合作用與呼吸作用（一）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">焦點：生態系能量流動、光能轉換與呼吸作用能量釋出</span>
+      </div>
+
+      <div class="task-title">一、能量的獲得與轉換</div>
+      <div class="item-line"><strong>1. 能量的獲得：</strong></div>
+      <div class="item-line" style="padding-left: 18px;">(1) 生命世界的能量大部分直接或間接來自 <span class="ans-word" onclick="toggleAns(this, event)">光能</span>（太陽光輻射能）。</div>
+      <div class="item-line" style="padding-left: 18px;">(2) 部分生物體（如植物與藻類、藍綠菌）能進行 <span class="ans-word" onclick="toggleAns(this, event)">光合作用</span>，將光能轉換成 <span class="ans-word" onclick="toggleAns(this, event)">化學能</span>，儲存在醣類等有機物中以供本身或其他生物使用。</div>
+
+      <div class="item-line" style="margin-top: 4px;"><strong>2. 能量的轉換：</strong></div>
+      <div class="item-line" style="padding-left: 18px;">(1) 植物體內儲存的養分以醣類、脂質和蛋白質等大分子形式存在，當植物發育需要能量時，這些大分子便先分解為葡萄糖等小分子，再進行 <span class="ans-word" onclick="toggleAns(this, event)">呼吸作用</span> 將有機物分解以釋出能量。</div>
+      <div class="item-line" style="padding-left: 18px;">(2) 呼吸作用產生的能量，部分釋出的能量用來合成 <span class="ans-word" onclick="toggleAns(this, event)">ATP</span>，部分則以 <span class="ans-word" onclick="toggleAns(this, event)">熱能</span> 形式散失。</div>
+      <div class="item-line" style="padding-left: 18px;">(3) ATP 的化學能可再轉換成為光能、熱能、機械能、電能等不同能量形式，以提供生物生理作用所需。</div>
+
+      <!-- 能量轉換圖解 -->
+      <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 10px 14px; margin: 8px 0;">
+        <div style="font-weight: bold; color: #0284c7; margin-bottom: 6px; font-size: 11pt; text-align: center;">
+          🔄 生態世界能量流動與胞器能量轉換全貌（圖 1-29 觀念核心）
+        </div>
+        <div style="display: flex; align-items: center; justify-content: space-around; text-align: center; font-size: 10.5pt;">
+          <div style="background: #fef08a; padding: 8px 12px; border-radius: 6px; border: 1px solid #facc15;">
+            ☀️ <strong>太陽光（光能）</strong><br>生態系能量最終來源
+          </div>
+          <div style="font-size: 14pt; color: #0284c7; font-weight: bold;">➔ 葉綠體行光合作用 ➔</div>
+          <div style="background: #dcfce7; padding: 8px 12px; border-radius: 6px; border: 1px solid #86efac;">
+            🌿 <strong>醣類＋O₂（化學能）</strong><br>儲存於有機物化學鍵
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: space-around; text-align: center; font-size: 10.5pt; margin-top: 10px;">
+          <div style="background: #dcfce7; padding: 8px 12px; border-radius: 6px; border: 1px solid #86efac;">
+            🌿 <strong>醣類＋O₂</strong>
+          </div>
+          <div style="font-size: 14pt; color: #b91c1c; font-weight: bold;">➔ 粒線體行呼吸作用 ➔</div>
+          <div style="background: #fee2e2; padding: 8px 12px; border-radius: 6px; border: 1px solid #fca5a5;">
+            ⚡ <strong>ATP（化學能）＋ H₂O＋CO₂</strong><br>＋ 熱能散失
+          </div>
+        </div>
+      </div>
+
+      <div class="tip-box" style="margin-top: 8px;">
+        <div class="tip-title">💡 深度整合思考：</div>
+        <div style="font-size: 11pt; line-height: 1.45; color: #334155;">
+          ● <strong>物質循環：</strong>光合作用的產物（醣類與氧）恰為有氧呼吸的原料；有氧呼吸的產物（水與二氧化碳）恰為光合作用的原料，物質在生態系中可不斷循環運轉。<br>
+          ● <strong>能量單向流動：</strong>能量在轉化過程中會以「熱能」形式不斷向太空發散，無法 100% 循環回收，因此生命世界必須持續仰賴太陽光能的注入。
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 高中生物（全）</span>
+        <span>1-2.2 能量獲得與轉換</span>
+        <span>第 5 頁 / 共 16 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 6 ==================== -->
+    <div class="page" id="page6">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物（全）講義</span>
+        <span>第 1 章 細胞的構造與功能 · 1-2 細胞及能量</span>
+        <span>P. 6</span>
+      </div>
+
+      <div class="section-title">
+        <span>1-2.2　光合作用與呼吸作用（二）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">焦點：光合作用定義、葉綠體構造與光反應／固碳反應歷程</span>
+      </div>
+
+      <div class="task-title">二、光合作用的定義與場所</div>
+      <div class="item-line"><strong>1. 定義：</strong>生物體利用光能將二氧化碳和水合成醣類，並產生氧的過程。</div>
+      <div class="item-line"><strong>2. 代謝種類：</strong><span class="ans-word" onclick="toggleAns(this, event)">同化代謝</span>（吸能合成作用）。</div>
+      <div class="item-line"><strong>3. 進行生物：</strong>植物、藻類、<span class="ans-word" onclick="toggleAns(this, event)">藍綠菌</span>（原核生物，無葉綠體但具光合色素膜片）。</div>
+      <div class="item-line"><strong>4. 植物光合作用簡式：</strong>水 ＋ 二氧化碳 ――(光能 / 葉綠體)――→ 醣類 ＋ 氧 ＋ 水</div>
+
+      <div class="task-title" style="margin-top: 4px;">5. 光合作用的兩大反應階段</div>
+      <div class="item-line">(1) <span class="ans-word" onclick="toggleAns(this, event)">光反應</span>：吸收光能並將光能轉換成化學能（ATP、NADPH），以提供給固碳反應，過程中伴隨著<strong>水分子分解</strong>並釋出 <span class="ans-word" onclick="toggleAns(this, event)">氧氣（O₂）</span>。</div>
+      <div class="item-line">(2) <span class="ans-word" onclick="toggleAns(this, event)">固碳反應</span>：將 <span class="ans-word" onclick="toggleAns(this, event)">二氧化碳（CO₂）</span> 固定以合成醣類的反應，過程中以光反應產生的化學能作為能量來源。</div>
+
+      <!-- 圖 1-30 光合作用的過程 -->
+      <div class="figure-container" style="margin-top: 4px;">
+        <img src="../images/biology-10-1-2-handout/光合作用過程.png" alt="光合作用過程" style="max-height: 195px; width: auto;">
+        <div class="figure-caption">▲ 圖 1-30　光合作用的反應歷程（光反應於類囊體膜 vs 固碳反應於基質）</div>
+      </div>
+
+      <div class="task-title" style="margin-top: 4px;">6. 葉綠體構造與反應場所對應</div>
+      <div class="item-line">(1) <strong>葉綠體：</strong>雙層膜胞器，內含由扁平囊狀構造疊合而成的<strong>葉綠餅</strong>以及充填其間的<strong>基質</strong>。</div>
+      <div class="item-line">(2) <strong>類囊體膜：</strong>膜上含有葉綠素、類胡蘿蔔素等光合色素，可吸收光能，是進行 <span class="ans-word" onclick="toggleAns(this, event)">光反應</span> 的場所。</div>
+      <div class="item-line">(3) <strong>基質：</strong>葉綠餅外至內膜間的液態基質，富含多種酵素以固定二氧化碳合成醣類，是進行 <span class="ans-word" onclick="toggleAns(this, event)">固碳反應</span> 的場所。</div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 高中生物（全）</span>
+        <span>1-2.2 光合作用歷程</span>
+        <span>第 6 頁 / 共 16 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 7 ==================== -->
+    <div class="page" id="page7">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物（全）講義</span>
+        <span>第 1 章 細胞的構造與功能 · 1-2 細胞及能量</span>
+        <span>P. 7</span>
+      </div>
+
+      <div class="section-title">
+        <span>1-2.2　光合作用與呼吸作用（三）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">焦點：光反應與固碳反應詳細比較、NADPH 與影響光合作用因素</span>
+      </div>
+
+      <div class="task-title">三、光反應與固碳反應深度比較</div>
+      <table class="concept-table" style="margin: 3px 0 6px 0;">
+        <thead>
+          <tr>
+            <th style="width: 18%;">項目</th>
+            <th style="width: 41%;">光反應</th>
+            <th style="width: 41%;">固碳反應（卡爾文循環）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>反應目的</strong></td>
+            <td>吸收光能轉換成化學能，儲存於 <span class="ans-word" onclick="toggleAns(this, event)">ATP</span> 及 <span class="ans-word" onclick="toggleAns(this, event)">NADPH</span> 中</td>
+            <td>利用 ATP 與 NADPH 提供之能量，將 <span class="ans-word" onclick="toggleAns(this, event)">CO₂</span> 固定以合成醣類</td>
+          </tr>
+          <tr>
+            <td><strong>反應條件</strong></td>
+            <td><strong>必須在光照下</strong>才能進行</td>
+            <td>依賴光反應能量，酵素活性受光刺激，<strong>主要於白天</strong>進行</td>
+          </tr>
+          <tr>
+            <td><strong>反應位置</strong></td>
+            <td>葉綠體的 <span class="ans-word" onclick="toggleAns(this, event)">類囊體膜</span></td>
+            <td>葉綠體的 <span class="ans-word" onclick="toggleAns(this, event)">基質</span></td>
+          </tr>
+          <tr>
+            <td><strong>反應過程</strong></td>
+            <td>葉綠素吸收光能，水分子裂解產生 <span class="ans-word" onclick="toggleAns(this, event)">O₂</span>、電子與 H⁺，生成 ATP 與 NADPH</td>
+            <td>利用 ATP 與 NADPH 提供的能量，將 CO₂ 還原固定，合成 <span class="ans-word" onclick="toggleAns(this, event)">醣類</span></td>
+          </tr>
+          <tr>
+            <td><strong>能量轉換</strong></td>
+            <td>光能 → <span class="ans-word" onclick="toggleAns(this, event)">ATP 與 NADPH 的化學能</span></td>
+            <td>ATP 與 NADPH 的化學能 → <span class="ans-word" onclick="toggleAns(this, event)">醣類中的化學能</span></td>
+          </tr>
+          <tr>
+            <td><strong>反應簡式</strong></td>
+            <td>H₂O ＋ ADP ＋ Pi ＋ NADP⁺<br>→ <strong style="color: #0369a1;">O₂ ＋ ATP ＋ NADPH</strong></td>
+            <td>CO₂ ＋ ATP ＋ NADPH<br>→ <strong style="color: #b91c1c;">醣類 ＋ ADP ＋ Pi ＋ NADP⁺</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="tip-box" style="background: #fdf4ff; border-color: #f0abfc; margin: 4px 0;">
+        <div class="tip-title" style="color: #a21caf;">💡 延伸補充：光反應中的高能分子 NADPH</div>
+        <div style="font-size: 10.5pt; line-height: 1.45; color: #4c1d95;">
+          NADPH 是一種核苷酸輔酶衍生物，其低能量氧化態為 <strong>NADP⁺</strong>。在光反應中接收水裂解釋放的電子與 H⁺ 還原為高能態的 <strong>NADPH</strong>，進入基質提供固碳反應合成醣類所需的「高能電子與還原力」，之後變回 NADP⁺ 再循環利用，並無淨消耗。
+        </div>
+      </div>
+
+      <div class="task-title" style="margin-top: 5px;">四、影響光合作用速率的四大環境因素</div>
+      <div class="item-line"><strong>1. 光照強度：</strong>在一定範圍內，光愈強速率愈快；但光照過強時會造成光抑制，葉綠素遭強光破壞，速率反而下降。</div>
+      <div class="item-line"><strong>2. 溫度：</strong>在最適溫度範圍內，溫度愈高酵素活性愈高；若溫度過高，類囊體膜與固碳酵素會變性破壞，速率驟降。</div>
+      <div class="item-line"><strong>3. 二氧化碳濃度：</strong>CO₂ 為固碳反應原料，在一定範圍內，CO₂ 濃度愈高，速率愈快，達到飽和點後維持定值。</div>
+      <div class="item-line"><strong>4. 水分含量：</strong>水為光反應原料，土壤缺水會導致植物保衛細胞失水關閉氣孔，阻礙 CO₂ 進入，大幅抑制光合作用。</div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 高中生物（全）</span>
+        <span>1-2.2 光反應固碳反應比較與影響因子</span>
+        <span>第 7 頁 / 共 16 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 8 ==================== -->
+    <div class="page" id="page8">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物（全）講義</span>
+        <span>第 1 章 細胞的構造與功能 · 1-2 細胞及能量</span>
+        <span>P. 8</span>
+      </div>
+
+      <div class="section-title">
+        <span>1-2.2　光合作用與呼吸作用（四）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">焦點：呼吸作用定義類型、有氧呼吸兩階段歷程（糖解與粒線體反應）</span>
+      </div>
+
+      <div class="task-title">五、呼吸作用定義與類型</div>
+      <div class="item-line"><strong>1. 定義：</strong>細胞藉由一系列酵素的催化，將葡萄糖等有機化合物逐步分解，釋出能量合成 ATP 的過程。</div>
+      <div class="item-line"><strong>2. 類型：</strong></div>
+      <div class="item-line" style="padding-left: 18px;">(1) <strong>需要氧：</strong>細胞利用氧氣進行的 <span class="ans-word" onclick="toggleAns(this, event)">有氧呼吸</span>，能徹底分解葡萄糖產生大量 ATP，為多數細胞首選。</div>
+      <div class="item-line" style="padding-left: 18px;">(2) <strong>無需氧：</strong>在缺氧或無氧環境中進行的 <span class="ans-word" onclick="toggleAns(this, event)">發酵作用</span>，僅產生少量 ATP，維持細胞短期生理需求。</div>
+
+      <div class="task-title" style="margin-top: 4px;">六、有氧呼吸（Aerobic Respiration）</div>
+      <div class="item-line"><strong>1. 代謝種類：</strong><span class="ans-word" onclick="toggleAns(this, event)">異化代謝</span>（放能分解作用）。</div>
+      <div class="item-line"><strong>2. 能量轉換：</strong>釋出的能量一部份用以合成 ATP，另一大部分則以熱能散失。</div>
+      <div class="item-line"><strong>3. 有氧呼吸總反應簡式：</strong><strong style="color: #0369a1;">葡萄糖 ＋ 氧 → 水 ＋ 二氧化碳 ＋ 能量（多量 ATP）</strong></div>
+      <div class="item-line"><strong>4. 進行的兩大階段過程：</strong></div>
+      <div class="item-line" style="padding-left: 18px;">
+        (1) 第一階段（<strong>糖解作用</strong>）：在 <span class="ans-word" onclick="toggleAns(this, event)">細胞質</span> 中進行，將 1 分子葡萄糖初步分解成 2 分子 <span class="ans-word" onclick="toggleAns(this, event)">丙酮酸</span>，並釋出 <span class="ans-word" onclick="toggleAns(this, event)">少量 ATP</span>（淨產 2 ATP）。此步驟不需氧氣參與。<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;反應簡式：葡萄糖 ――(糖解作用)――→ 丙酮酸 ＋ 少量 ATP
+      </div>
+      <div class="item-line" style="padding-left: 18px;">
+        (2) 第二階段（<strong>粒線體反應</strong>）：在氧氣充足時，丙酮酸進入 <span class="ans-word" onclick="toggleAns(this, event)">粒線體</span>，經酵素催化徹底分解，產生 <span class="ans-word" onclick="toggleAns(this, event)">二氧化碳</span> 和 <span class="ans-word" onclick="toggleAns(this, event)">水</span>，並釋出 <span class="ans-word" onclick="toggleAns(this, event)">多量 ATP</span>。<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;反應簡式：丙酮酸 ――(粒線體 / 需氧)――→ 二氧化碳 ＋ 水 ＋ 多量 ATP
+      </div>
+
+      <!-- 圖 1-31 有氧呼吸的過程 -->
+      <div class="figure-container" style="margin-top: 4px;">
+        <img src="../images/biology-10-1-2-handout/有氧呼吸.png" alt="有氧呼吸的過程" style="max-height: 185px; width: auto;">
+        <div class="figure-caption">▲ 圖 1-31　有氧呼吸的兩階段歷程（細胞質糖解 → 粒線體徹底氧化產能）</div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 高中生物（全）</span>
+        <span>1-2.2 呼吸作用與有氧呼吸</span>
+        <span>第 8 頁 / 共 16 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 9 ==================== -->
+    <div class="page" id="page9">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物（全）講義</span>
+        <span>第 1 章 細胞的構造與功能 · 1-2 細胞及能量</span>
+        <span>P. 9</span>
+      </div>
+
+      <div class="section-title">
+        <span>1-2.2　光合作用與呼吸作用（五）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">焦點：發酵作用定義場所、酒精發酵 vs 乳酸發酵</span>
+      </div>
+
+      <div class="task-title">七、發酵作用（Fermentation）</div>
+      <div class="item-line"><strong>1. 定義：</strong>某些細胞在 <span class="ans-word" onclick="toggleAns(this, event)">氧氣不足</span> 情況下仍可進行發酵作用，將醣類不完全分解產生少量的 ATP，以暫時維持細胞生理功能。</div>
+      <div class="item-line"><strong>2. 場所：</strong>全過程皆在 <span class="ans-word" onclick="toggleAns(this, event)">細胞質</span> 中進行，不進入粒線體。</div>
+      <div class="item-line"><strong>3. 過程特性：</strong></div>
+      <div class="item-line" style="padding-left: 18px;">(1) 先在細胞質中進行糖解作用，將葡萄糖分解成丙酮酸，並釋出少量的 ATP（淨產 2 ATP）。</div>
+      <div class="item-line" style="padding-left: 18px;">(2) 丙酮酸留在細胞質中再轉變成酒精（酒精發酵）或乳酸（乳酸發酵）。</div>
+      <div class="item-line" style="padding-left: 18px;">(3) <strong style="color: #b91c1c;">關鍵注意：</strong>丙酮酸變為酒精或乳酸的過程 <span class="ans-word" onclick="toggleAns(this, event)">不產生能量</span>，因此發酵作用釋出的能量比有氧呼吸少得多。</div>
+
+      <div class="task-title" style="margin-top: 4px;">4. 兩大發酵反應簡式</div>
+      <div class="item-line" style="padding-left: 18px;">
+        (1) <span class="ans-word" onclick="toggleAns(this, event)">酒精發酵</span>：葡萄糖 → <strong style="color: #0369a1;">酒精 ＋ 二氧化碳 ＋ 能量（少量 ATP）</strong>（酵母菌、缺氧浸水之植物根細胞）
+      </div>
+      <div class="item-line" style="padding-left: 18px;">
+        (2) <span class="ans-word" onclick="toggleAns(this, event)">乳酸發酵</span>：葡萄糖 → <strong style="color: #b91c1c;">乳酸 ＋ 能量（少量 ATP）</strong>（乳酸菌、劇烈運動缺氧時之人類骨骼肌細胞）
+      </div>
+
+      <!-- 圖 1-32 發酵作用的過程 -->
+      <div class="figure-container" style="margin-top: 4px;">
+        <img src="../images/biology-10-1-2-handout/發酵作用.png" alt="發酵作用的過程" style="max-height: 155px; width: auto;">
+        <div class="figure-caption">▲ 圖 1-32　發酵作用的反應途徑（丙酮酸於細胞質分別轉化為乳酸或酒精＋CO₂）</div>
+      </div>
+
+      <div class="task-title" style="margin-top: 4px;">5. 呼吸作用過程統整比較</div>
+      <table class="concept-table" style="margin: 3px 0 4px 0;">
+        <thead>
+          <tr>
+            <th style="width: 14%;">步驟名稱</th>
+            <th style="width: 16%;">發生部位</th>
+            <th style="width: 32%;">發生的細胞類型</th>
+            <th style="width: 38%;">主要反應歷程</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="text-align: center; font-weight: bold;">分解葡萄糖<br>(糖解作用)</td>
+            <td style="text-align: center;">細胞質</td>
+            <td>所有活細胞（普遍存在）</td>
+            <td>葡萄糖分解成丙酮酸，並產生少量 ATP</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-weight: bold; color: #0369a1;">產生酒精</td>
+            <td style="text-align: center;">細胞質</td>
+            <td>酵母菌與植物細胞（缺氧時）</td>
+            <td>丙酮酸 → 酒精 ＋ <span class="ans-word" onclick="toggleAns(this, event)">二氧化碳</span></td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-weight: bold; color: #b91c1c;">產生乳酸</td>
+            <td style="text-align: center;">細胞質</td>
+            <td>人類骨骼肌細胞與乳酸菌</td>
+            <td>丙酮酸 → 乳酸（<span class="ans-word" onclick="toggleAns(this, event)">不產生 CO₂</span>）</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="page-footer">
+        <span>自製電子書 · 高中生物（全）</span>
+        <span>1-2.2 發酵作用與歷程比較</span>
+        <span>第 9 頁 / 共 16 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 10 ==================== -->
+    <div class="page" id="page10">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物（全）講義</span>
+        <span>第 1 章 細胞的構造與功能 · 1-2 細胞及能量</span>
+        <span>P. 10</span>
+      </div>
+
+      <div class="section-title">
+        <span>1-2.2　隨堂實戰評量</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">光合作用與呼吸作用綜合比較 & 基礎練習題組</span>
+      </div>
+
+      <div class="task-title">八、光合作用和呼吸作用綜合比較</div>
+      <table class="concept-table" style="margin: 3px 0 6px 0;">
+        <thead>
+          <tr>
+            <th style="width: 18%;">比較種類</th>
+            <th style="width: 41%;">光合作用</th>
+            <th style="width: 41%;">呼吸作用</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>進行生物</strong></td>
+            <td>植物、藻類和藍綠菌</td>
+            <td><span class="ans-word" onclick="toggleAns(this, event)">所有活細胞</span> 皆會進行</td>
+          </tr>
+          <tr>
+            <td><strong>進行場所</strong></td>
+            <td>真核於 <span class="ans-word" onclick="toggleAns(this, event)">葉綠體</span></td>
+            <td>真核於 <span class="ans-word" onclick="toggleAns(this, event)">細胞質與粒線體</span></td>
+          </tr>
+          <tr>
+            <td><strong>進行時間</strong></td>
+            <td>主要在<strong>有光的時候</strong>進行</td>
+            <td>活細胞<strong>隨時隨地（日夜皆可）</strong>進行</td>
+          </tr>
+          <tr>
+            <td><strong>能量變化</strong></td>
+            <td>光能 → 化學能（儲存於醣類中）</td>
+            <td>化學能（有機物）→ 化學能（ATP）＋ 熱能</td>
+          </tr>
+          <tr>
+            <td><strong>代謝種類</strong></td>
+            <td><strong style="color: #0369a1;"><span class="ans-word" onclick="toggleAns(this, event)">同化代謝</span></strong>（吸能合成）</td>
+            <td><strong style="color: #b91c1c;"><span class="ans-word" onclick="toggleAns(this, event)">異化代謝</span></strong>（放能分解）</td>
+          </tr>
+          <tr>
+            <td><strong>反應原料與產物</strong></td>
+            <td>原料：CO₂、H₂O<br>產物：<span class="ans-word" onclick="toggleAns(this, event)">醣類、O₂</span>、H₂O</td>
+            <td>原料：葡萄糖（及 O₂）<br>產物：有氧(CO₂+H₂O+大量ATP)；發酵(少量ATP)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="task-title" style="margin-top: 4px;">基礎練習（點擊題目可開合全題答案與解析）</div>
+
+      <!-- Q1 -->
+      <div class="q-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">A</span> ）</span>
+          <span class="q-num">1.</span>下列哪一物質與植物光合作用的固碳反應無直接相關？
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 氧</div>
+          <div class="q-opt">(B) 二氧化碳</div>
+          <div class="q-opt">(C) 酵素</div>
+          <div class="q-opt">(D) ATP</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div style="font-size: 9.5pt; color: #64748b; font-weight: bold;">💡 解析展開：</div>
+          <div class="calc-solution">
+            固碳反應是以二氧化碳為原料，利用光反應提供的 ATP 和 NADPH 作為能量與還原力，在基質酵素催化下合成醣類與水。而「氧氣（O₂）」是光反應中水分子光解時產生的副產物，直接釋出至細胞外，與固碳反應無直接相關。
+          </div>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="q-item" onclick="toggleItemAnswers(this, event)" style="margin-top: 6px;">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">C</span> ）</span>
+          <span class="q-num">2.</span>光合作用包括下列步驟：(甲)產生 ATP；(乙)水分子被分解；(丙)葉綠素吸收光能；(丁)合成醣類；(戊)ATP 和 NADPH 釋出能量。請問正確步驟依序為何？
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 甲乙丙丁戊</div>
+          <div class="q-opt">(B) 丙乙甲丁戊</div>
+          <div class="q-opt">(C) 丙乙甲戊丁</div>
+          <div class="q-opt">(D) 乙甲丙戊丁</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div style="font-size: 9.5pt; color: #64748b; font-weight: bold;">💡 解析展開：</div>
+          <div class="calc-solution">
+            光合作用完整歷程步驟：(丙)葉綠素吸收光能 → (乙)水分子被光解分解並釋出氧氣 → (甲)光反應產生高能分子 ATP 與 NADPH → (戊)進入固碳反應，ATP 和 NADPH 水解釋出能量與高能電子 → (丁)二氧化碳被還原合成醣類。故正確順序為 (丙)(乙)(甲)(戊)(丁)。
+          </div>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="q-item" onclick="toggleItemAnswers(this, event)" style="margin-top: 6px;">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">C</span> ）</span>
+          <span class="q-num">3.</span>下列對呼吸作用的敘述，何者不正確？
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 呼吸作用可釋出能量</div>
+          <div class="q-opt">(B) 有氧呼吸的主要場所在細胞質與粒線體內</div>
+          <div class="q-opt">(C) 呼吸作用能將葡萄糖內的能量完全轉移至 ATP</div>
+          <div class="q-opt">(D) 發酵作用亦是一種呼吸作用</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div style="font-size: 9.5pt; color: #64748b; font-weight: bold;">💡 解析展開：</div>
+          <div class="calc-solution">
+            (C) 呼吸作用分解有機物釋出的能量，只有大約 34%～40% 轉化儲存於 ATP 化學鍵中，其餘超過 60% 的能量皆以「熱能」形式散失至環境中（用以維持生物體溫），無法 100% 完全轉移至 ATP。
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 高中生物（全）</span>
+        <span>1-2.2 綜合比較與隨堂評量</span>
+        <span>第 10 頁 / 共 16 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 11 ==================== -->
+    <div class="page" id="page11">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物（全）講義</span>
+        <span>第 1 章 細胞的構造與功能 · 1-2 細胞及能量</span>
+        <span>P. 11</span>
+      </div>
+
+      <div class="section-title">
+        <span>課後實戰演練 · 單選題（一）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">基礎核心概念測驗（第 1～4 題）</span>
+      </div>
+
+      <div class="task-title">一、單選題（點選題號開合整題答案與詳細解析）</div>
+
+      <!-- Q1 -->
+      <div class="q-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">B</span> ）</span>
+          <span class="q-num">1.</span>請問下列何選項並非光合作用進行時所需要參與的？
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 水</div>
+          <div class="q-opt">(B) 氧氣</div>
+          <div class="q-opt">(C) 二氧化碳</div>
+          <div class="q-opt">(D) 葉綠素</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div style="font-size: 9.5pt; color: #64748b; font-weight: bold;">💡 解析展開：</div>
+          <div class="calc-solution">
+            氧氣（O₂）是光反應中水分子被光解後的「產物」，而非反應進行前所需要的參與物（反應物或色素）。水是光反應原料，二氧化碳是固碳反應原料，葉綠素是吸收光能的光合色素。
+          </div>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="q-item" onclick="toggleItemAnswers(this, event)" style="margin-top: 10px;">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">D</span> ）</span>
+          <span class="q-num">2.</span>ATP 是細胞內的能量代幣，在細胞內扮演能量傳遞的角色，因此細胞內有多種反應都可產生 ATP，但下列哪一項反應並不會產生 ATP 分子？
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 發酵作用</div>
+          <div class="q-opt">(B) 蛋白質的分解</div>
+          <div class="q-opt">(C) 粒線體內進行的呼吸作用</div>
+          <div class="q-opt">(D) 葉綠體內的固碳反應</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div style="font-size: 9.5pt; color: #64748b; font-weight: bold;">💡 解析展開：</div>
+          <div class="calc-solution">
+            (D) 葉綠體基質內的固碳反應為「需能合成作用」，過程中會消耗（水解）光反應產生的 ATP 與 NADPH 來將 CO₂ 合成醣類，反應過程本身絕不會產生 ATP；(A)發酵作用經由糖解淨產生 2 ATP；(B)蛋白質水解分解有機物釋能可伴隨 ATP 合成；(C)粒線體內氧化磷酸化會產生大量 ATP。
+          </div>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="q-item" onclick="toggleItemAnswers(this, event)" style="margin-top: 10px;">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">A</span> ）</span>
+          <span class="q-num">3.</span>下列哪個因素最有可能同時影響光合與呼吸作用的進行？
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 溫度</div>
+          <div class="q-opt">(B) 二氧化碳濃度</div>
+          <div class="q-opt">(C) 氧的濃度</div>
+          <div class="q-opt">(D) 光照</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div style="font-size: 9.5pt; color: #64748b; font-weight: bold;">💡 解析展開：</div>
+          <div class="calc-solution">
+            光合作用與呼吸作用均為細胞內高度仰賴「酵素催化」的一連串複雜生化反應，而「溫度」會直接改變酵素分子的構形與活性（低溫活性受抑、過高溫酵素變性失活），故溫度必然同時顯著影響光合作用與呼吸作用的進行。二氧化碳與光照主要影響光合作用；氧濃度主要影響呼吸作用。
+          </div>
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="q-item" onclick="toggleItemAnswers(this, event)" style="margin-top: 10px;">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">D</span> ）</span>
+          <span class="q-num">4.</span>下列有關植物細胞光合作用的敘述何者正確？
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 類囊體的酵素負責進行光能的收集</div>
+          <div class="q-opt">(B) 過程中不會有氧氣的產生</div>
+          <div class="q-opt">(C) 光反應產生的二氧化碳可做為固碳反應的原料</div>
+          <div class="q-opt">(D) 其主要產物為葡萄糖</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div style="font-size: 9.5pt; color: #64748b; font-weight: bold;">💡 解析展開：</div>
+          <div class="calc-solution">
+            (A) 類囊體膜上的「光合色素（葉綠素、類胡蘿蔔素等）」負責吸收與收集光能，酵素主要催化化學反應；<br>
+            (B) 光反應中水分子光解會產生氧氣釋出；<br>
+            (C) 二氧化碳由氣孔自外界大氣擴散進入，光反應產生的是 ATP 與 NADPH；<br>
+            (D) 正確，光合作用固碳反應主要合成分子為三碳醣，進而在胞內轉化為葡萄糖、澱粉與蔗糖。
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 高中生物（全）</span>
+        <span>課後實戰演練 · 單選題（一）</span>
+        <span>第 11 頁 / 共 16 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 12 ==================== -->
+    <div class="page" id="page12">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物（全）講義</span>
+        <span>第 1 章 細胞的構造與功能 · 1-2 細胞及能量</span>
+        <span>P. 12</span>
+      </div>
+
+      <div class="section-title">
+        <span>課後實戰演練 · 單選題（二）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">進階呼吸發酵比較與能量循環題組（第 5～8 題）</span>
+      </div>
+
+      <div class="task-title">一、單選題（續）</div>
+
+      <!-- Q5 -->
+      <div class="q-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">A</span> ）</span>
+          <span class="q-num">5.</span>下列關於植物細胞的有氧呼吸和發酵作用的比較，何者正確？
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 產物均有二氧化碳</div>
+          <div class="q-opt">(B) 有氧呼吸均在粒線體進行；發酵作用均在細胞質進行</div>
+          <div class="q-opt">(C) 發酵作用能產生較多 ATP</div>
+          <div class="q-opt">(D) 有氧呼吸與發酵作用皆為同化作用</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div style="font-size: 9.5pt; color: #64748b; font-weight: bold;">💡 解析展開：</div>
+          <div class="calc-solution">
+            (A) 正確，植物細胞在缺氧時進行酒精發酵，產物為酒精與二氧化碳；而有氧呼吸徹底氧化葡萄糖產物亦有二氧化碳；<br>
+            (B) 有氧呼吸第一階段（糖解）是在細胞質進行，第二階段才在粒線體進行；<br>
+            (C) 有氧呼吸徹底分解可產生約 30～32 ATP，發酵作用僅淨產生 2 ATP；<br>
+            (D) 兩者皆為分解有機物釋能的「異化代謝」。
+          </div>
+        </div>
+      </div>
+
+      <!-- Q6 -->
+      <div class="q-item" onclick="toggleItemAnswers(this, event)" style="margin-top: 8px;">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">C</span> ）</span>
+          <span class="q-num">6.</span>下列有關酒精發酵和乳酸發酵的比較，何者正確？
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 兩者皆產生二氧化碳</div>
+          <div class="q-opt">(B) 兩者皆不產生二氧化碳</div>
+          <div class="q-opt">(C) 前者產生二氧化碳，後者則無</div>
+          <div class="q-opt">(D) 後者產生二氧化碳，前者則無</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div style="font-size: 9.5pt; color: #64748b; font-weight: bold;">💡 解析展開：</div>
+          <div class="calc-solution">
+            酒精發酵總反應：葡萄糖(C₆) → 2 酒精(C₂) ＋ 2 CO₂ ＋ 2 ATP；乳酸發酵總反應：葡萄糖(C₆) → 2 乳酸(C₃) ＋ 2 ATP。因此酒精發酵有產生 CO₂（使發酵麵糰膨脹、酒類產生氣泡），而乳酸發酵不產生 CO₂。
+          </div>
+        </div>
+      </div>
+
+      <!-- Q7 -->
+      <div class="q-item" onclick="toggleItemAnswers(this, event)" style="margin-top: 8px;">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">A</span> ）</span>
+          <span class="q-num">7.</span>下列何者為酒精發酵與乳酸發酵的共同特徵？
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 均以葡萄糖做為原料</div>
+          <div class="q-opt">(B) 均會產生二氧化碳</div>
+          <div class="q-opt">(C) 一個葡萄糖分子產生的 ATP 量不同</div>
+          <div class="q-opt">(D) 一個屬於同化代謝，另一個屬於異化代謝</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div style="font-size: 9.5pt; color: #64748b; font-weight: bold;">💡 解析展開：</div>
+          <div class="calc-solution">
+            (A) 正確，兩者第一階段均是以葡萄糖為原料進行糖解作用；<br>
+            (B) 只有酒精發酵會產生二氧化碳；<br>
+            (C) 兩者分解一分子葡萄糖均僅在糖解步驟淨生成 2 分子 ATP，其餘丙酮酸轉化步驟不產能，故產生 ATP 量相同；<br>
+            (D) 兩者皆屬分解有機物的異化代謝。
+          </div>
+        </div>
+      </div>
+
+      <!-- Q8 附向量圖 -->
+      <div class="q-item" onclick="toggleItemAnswers(this, event)" style="margin-top: 8px;">
+        <div style="display: flex; gap: 14px; align-items: flex-start;">
+          <div style="flex: 1;">
+            <div class="q-stem">
+              <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">B</span> ）</span>
+              <span class="q-num">8.</span>附圖中，如果 Ⅰ 代表水和二氧化碳，則下列敘述何者正確？
+            </div>
+            <div class="q-options stacked" style="margin-top: 4px;">
+              <div class="q-opt">(A) 甲是呼吸作用，Ⅱ 是醣類、氧和水，乙是光合作用</div>
+              <div class="q-opt">(B) 甲是光合作用，Ⅱ 是醣類、氧和水，乙是呼吸作用</div>
+              <div class="q-opt">(C) 甲是呼吸作用，Ⅱ 是二氧化碳和水，乙是光合作用</div>
+              <div class="q-opt">(D) 甲是光合作用，Ⅱ 是二氧化碳和水，乙是呼吸作用</div>
+            </div>
+          </div>
+          <!-- 向量附圖 -->
+          <div style="width: 140px; text-align: center; flex-shrink: 0; background: #fff; border: 1px solid #cbd5e1; border-radius: 6px; padding: 6px;">
+            <svg width="125" height="105" viewBox="0 0 160 140" style="display: block; margin: 0 auto;">
+              <!-- Node I -->
+              <rect x="55" y="8" width="50" height="26" rx="4" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+              <text x="80" y="26" font-size="14" font-weight="bold" fill="#0369a1" text-anchor="middle">Ⅰ</text>
+              
+              <!-- Arrow Right: 甲 (I -> II) -->
+              <path d="M 110 22 C 145 40, 145 90, 110 108" fill="none" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrowBlue)"/>
+              <text x="145" y="70" font-size="13" font-weight="bold" fill="#1d4ed8">甲</text>
+              
+              <!-- Node II -->
+              <rect x="55" y="98" width="50" height="26" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+              <text x="80" y="116" font-size="14" font-weight="bold" fill="#15803d" text-anchor="middle">Ⅱ</text>
+              
+              <!-- Arrow Left: 乙 (II -> I) -->
+              <path d="M 50 108 C 15 90, 15 40, 50 22" fill="none" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrowRed)"/>
+              <text x="12" y="70" font-size="13" font-weight="bold" fill="#b91c1c">乙</text>
+
+              <!-- Markers -->
+              <defs>
+                <marker id="arrowBlue" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                  <path d="M 0 0 L 6 3 L 0 6 z" fill="#2563eb"/>
+                </marker>
+                <marker id="arrowRed" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                  <path d="M 0 0 L 6 3 L 0 6 z" fill="#dc2626"/>
+                </marker>
+              </defs>
+            </svg>
+            <div style="font-size: 8.5pt; color: #64748b; margin-top: 2px;">▲ 循環示意圖</div>
+          </div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div style="font-size: 9.5pt; color: #64748b; font-weight: bold;">💡 解析展開：</div>
+          <div class="calc-solution">
+            Ⅰ 為水和二氧化碳，經過「甲反應」合成出 Ⅱ（醣類、氧和水），此過程為植物吸收光能進行的「光合作用」；Ⅱ 物質再經過「乙反應」氧化分解釋能，生成水和二氧化碳（Ⅰ），此反應為「呼吸作用」。故甲為光合作用、乙為呼吸作用，正確選項為 (B)。
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 高中生物（全）</span>
+        <span>課後實戰演練 · 單選題（二）</span>
+        <span>第 12 頁 / 共 16 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 13 ==================== -->
+    <div class="page" id="page13">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物（全）講義</span>
+        <span>第 1 章 細胞的構造與功能 · 1-2 細胞及能量</span>
+        <span>P. 13</span>
+      </div>
+
+      <div class="section-title">
+        <span>課後實戰演練 · 多選題（一）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">能量調控與生化反應機轉題組（第 1～3 題）</span>
+      </div>
+
+      <div class="task-title">二、多選題（點選題號開合整題答案與詳細解析）</div>
+
+      <!-- Q1 附向量圖 -->
+      <div class="q-item" onclick="toggleItemAnswers(this, event)">
+        <div style="display: flex; gap: 12px; align-items: flex-start;">
+          <div style="flex: 1;">
+            <div class="q-stem">
+              <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">CD</span> ）</span>
+              <span class="q-num">1.</span>附圖為 ATP 循環，請問下列何種細胞生理機制會促進甲反應的發生？（應選 2 項）
+            </div>
+            <div class="q-options stacked" style="margin-top: 4px;">
+              <div class="q-opt">(A) 骨骼肌的有氧呼吸</div>
+              <div class="q-opt">(B) 骨骼肌的發酵作用</div>
+              <div class="q-opt">(C) 骨骼肌的收縮</div>
+              <div class="q-opt">(D) 葉綠體的固碳反應</div>
+              <div class="q-opt">(E) 葉綠體的光反應</div>
+            </div>
+          </div>
+          <!-- 向量附圖 -->
+          <div style="width: 175px; text-align: center; flex-shrink: 0; background: #fff; border: 1px solid #cbd5e1; border-radius: 6px; padding: 6px;">
+            <svg width="165" height="120" viewBox="0 0 200 145" style="display: block; margin: 0 auto;">
+              <!-- ATP Box -->
+              <rect x="8" y="55" width="56" height="32" rx="4" fill="#fef08a" stroke="#ca8a04" stroke-width="1.8"/>
+              <text x="36" y="76" font-size="13" font-weight="bold" fill="#854d0e" text-anchor="middle">ATP</text>
+              
+              <!-- ADP+Pi Box -->
+              <rect x="125" y="55" width="68" height="32" rx="4" fill="#e2e8f0" stroke="#64748b" stroke-width="1.8"/>
+              <text x="159" y="76" font-size="12" font-weight="bold" fill="#334155" text-anchor="middle">ADP+Pi</text>
+              
+              <!-- Top Curve: 甲反應 (ATP -> ADP + Pi, 釋能) -->
+              <path d="M 45 48 C 65 15, 120 15, 145 48" fill="none" stroke="#dc2626" stroke-width="2" marker-end="url(#arrM1)"/>
+              <text x="96" y="26" font-size="11.5" font-weight="bold" fill="#dc2626" text-anchor="middle">甲反應</text>
+              <text x="155" y="24" font-size="10" font-weight="bold" fill="#b91c1c">➔ 放出能量</text>
+              
+              <!-- Bottom Curve: 乙反應 (ADP + Pi -> ATP, 需能) -->
+              <path d="M 145 95 C 120 130, 65 130, 45 95" fill="none" stroke="#0284c7" stroke-width="2" marker-end="url(#arrM2)"/>
+              <text x="96" y="125" font-size="11.5" font-weight="bold" fill="#0284c7" text-anchor="middle">乙反應</text>
+              <text x="155" y="128" font-size="10" font-weight="bold" fill="#0369a1">吸收能量 ➔</text>
+
+              <defs>
+                <marker id="arrM1" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                  <path d="M 0 0 L 6 3 L 0 6 z" fill="#dc2626"/>
+                </marker>
+                <marker id="arrM2" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                  <path d="M 0 0 L 6 3 L 0 6 z" fill="#0284c7"/>
+                </marker>
+              </defs>
+            </svg>
+            <div style="font-size: 8.5pt; color: #64748b; margin-top: 2px;">▲ 圖 1-ATP循環</div>
+          </div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div style="font-size: 9.5pt; color: #64748b; font-weight: bold;">💡 解析展開：</div>
+          <div class="calc-solution">
+            由圖可知，甲反應是「ATP 水解為 ADP ＋ Pi 並釋出能量」的釋能過程，常伴隨「需能反應（如物質合成、肌肉運動）」進行。選項中：<br>
+            ● (C)骨骼肌收縮需要消耗 ATP 水解釋放之機械能；<br>
+            ● (D)葉綠體的固碳反應為合成醣類的同化代謝，需消耗 ATP 能量。兩者皆會促使甲反應進行。<br>
+            而 (A)有氧呼吸、(B)發酵作用、(E)光反應均為促使 ADP ＋ Pi 合成 ATP 的產能反應（促進乙反應）。
+          </div>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="q-item" onclick="toggleItemAnswers(this, event)" style="margin-top: 10px;">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">CDE</span> ）</span>
+          <span class="q-num">2.</span>植物進行光合作用固碳反應的反應物和產物包括下列哪些？（應選 3 項）
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 氧</div>
+          <div class="q-opt">(B) 水</div>
+          <div class="q-opt">(C) ATP</div>
+          <div class="q-opt">(D) 二氧化碳</div>
+          <div class="q-opt">(E) NADPH</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div style="font-size: 9.5pt; color: #64748b; font-weight: bold;">💡 解析展開：</div>
+          <div class="calc-solution">
+            固碳反應（卡爾文循環）的反應原料包括來自大氣的二氧化碳 (D)，以及來自光反應提供的高能量分子 ATP (C) 與 NADPH (E)；反應後產物包含醣類、ADP、Pi、NADP⁺ 以及水。氧氣 (A) 則是光反應中水裂解的副產物，不參與固碳反應。故選 (C)(D)(E)。
+          </div>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="q-item" onclick="toggleItemAnswers(this, event)" style="margin-top: 10px;">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">ABC</span> ）</span>
+          <span class="q-num">3.</span>當細胞內 ADP ／ ATP 比值太低時，可能會促使細胞進行下列哪些反應？（應選 3 項）
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 葡萄糖的合成</div>
+          <div class="q-opt">(B) 肝醣的合成</div>
+          <div class="q-opt">(C) 醣類轉化成脂質</div>
+          <div class="q-opt">(D) 蛋白質分解成眾多胺基酸</div>
+          <div class="q-opt">(E) 脂質的分解</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div style="font-size: 9.5pt; color: #64748b; font-weight: bold;">💡 解析展開：</div>
+          <div class="calc-solution">
+            ADP ／ ATP 比值太低，代表細胞內 ATP 濃度極高、能量充裕！此時細胞不再急需分解有機物產能，而是傾向消耗多餘能量進行「同化合成」與養分儲存：<br>
+            ● (A)葡萄糖的合成（吸能反應）；<br>
+            ● (B)肝醣的合成儲存（需能合成）；<br>
+            ● (C)過剩醣類轉化為脂質儲存（需能反應）。<br>
+            選項 (D)與 (E) 均為大分子分解釋能之異化代謝，只會在細胞能量匱乏（ADP/ATP 比值高）時才會被加速活化。
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 高中生物（全）</span>
+        <span>課後實戰演練 · 多選題（一）</span>
+        <span>第 13 頁 / 共 16 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 14 ==================== -->
+    <div class="page" id="page14">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物（全）講義</span>
+        <span>第 1 章 細胞的構造與功能 · 1-2 細胞及能量</span>
+        <span>P. 14</span>
+      </div>
+
+      <div class="section-title">
+        <span>課後實戰演練 · 多選題（二）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">ATP 結構特性與發酵 vs 有氧呼吸深度表格比較（第 4～5 題）</span>
+      </div>
+
+      <div class="task-title">二、多選題（續）</div>
+
+      <!-- Q4 -->
+      <div class="q-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">BDE</span> ）</span>
+          <span class="q-num">4.</span>下列有關 ATP 的敘述，哪些正確？（應選 3 項）
+        </div>
+        <div class="q-options stacked" style="margin-top: 4px;">
+          <div class="q-opt">(A) 是一種含有高能量的核酸</div>
+          <div class="q-opt">(B) 中文名稱為腺苷三磷酸</div>
+          <div class="q-opt">(C) 由去氧核糖、腺嘌呤和三個磷酸所構成</div>
+          <div class="q-opt">(D) 可分解成 ADP 和一個磷酸</div>
+          <div class="q-opt">(E) 當細胞內 ATP 較多時，有利於進行合成反應</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div style="font-size: 9.5pt; color: #64748b; font-weight: bold;">💡 解析展開：</div>
+          <div class="calc-solution">
+            (A) ATP 是一種單個的「核苷酸」，並非由核苷酸聚合而成的大分子聚合物「核酸（如 DNA、RNA）」；<br>
+            (B) 正確，ATP 全名為 Adenosine Triphosphate（腺苷三磷酸）；<br>
+            (C) ATP 所包含的五碳醣為「核糖（Ribose）」，而非去氧核糖；<br>
+            (D) 正確，ATP 水解時斷裂末端高能磷酸鍵，生成 ADP 與一個無機磷酸（Pi）；<br>
+            (E) 正確，細胞內 ATP 充足時能量富餘，能驅動同化合成反應進行。故選 (B)(D)(E)。
+          </div>
+        </div>
+      </div>
+
+      <!-- Q5 表格題 -->
+      <div class="q-item" onclick="toggleItemAnswers(this, event)" style="margin-top: 14px;">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">ADE</span> ）</span>
+          <span class="q-num">5.</span>發酵作用和有氧呼吸的比較，哪些選項正確？（應選 3 項）
+        </div>
+        <table class="concept-table" style="margin: 6px 0; font-size: 10.5pt;">
+          <thead>
+            <tr>
+              <th style="width: 25%;">選項／比較項目</th>
+              <th style="width: 37%;">發酵作用</th>
+              <th style="width: 38%;">有氧呼吸</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>(A) 原料</strong></td>
+              <td>葡萄糖</td>
+              <td>葡萄糖</td>
+            </tr>
+            <tr>
+              <td><strong>(B) 作用場所</strong></td>
+              <td>細胞質</td>
+              <td>粒線體</td>
+            </tr>
+            <tr>
+              <td><strong>(C) 產物</strong></td>
+              <td>二氧化碳、水</td>
+              <td>酒精、二氧化碳</td>
+            </tr>
+            <tr>
+              <td><strong>(D) 有無產生 ATP</strong></td>
+              <td>有</td>
+              <td>有</td>
+            </tr>
+            <tr>
+              <td><strong>(E) ATP 數量</strong></td>
+              <td>少</td>
+              <td>多</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div style="font-size: 9.5pt; color: #64748b; font-weight: bold;">💡 解析展開：</div>
+          <div class="calc-solution">
+            (A) 正確，兩者第一步皆是以葡萄糖為起始原料進行糖解；<br>
+            (B) 錯誤，有氧呼吸並非全部在粒線體進行，第一階段（糖解）是在細胞質進行，第二階段才在粒線體進行；<br>
+            (C) 錯誤，表格產物標示顛倒，發酵作用產物為酒精＋CO₂或乳酸，有氧呼吸產物才是 CO₂ 與水；<br>
+            (D) 正確，兩者皆能分解有機物釋放能量合成 ATP；<br>
+            (E) 正確，發酵作用僅產生少量 ATP（淨產 2 ATP），有氧呼吸徹底分解產生大量 ATP（約 30～32 ATP）。故正確選項為 (A)(D)(E)。
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 高中生物（全）</span>
+        <span>課後實戰演練 · 多選題（二）</span>
+        <span>第 14 頁 / 共 16 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 15 ==================== -->
+    <div class="page" id="page15">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物（全）講義</span>
+        <span>第 1 章 細胞的構造與功能 · 1-2 細胞及能量</span>
+        <span>P. 15</span>
+      </div>
+
+      <div class="section-title">
+        <span>課後實戰演練 · 多選題（三）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">固碳反應機轉與光合 vs 有氧呼吸全方位比較（第 6～7 題）</span>
+      </div>
+
+      <div class="task-title">二、多選題（續）</div>
+
+      <!-- Q6 -->
+      <div class="q-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">BCD</span> ）</span>
+          <span class="q-num">6.</span>下列有關植物固碳反應的敘述哪些正確？（應選 3 項）
+        </div>
+        <div class="q-options stacked" style="margin-top: 4px;">
+          <div class="q-opt">(A) 在黑暗中效率較高</div>
+          <div class="q-opt">(B) 在有光的情況下效率較高</div>
+          <div class="q-opt">(C) 可將二氧化碳合成為醣類</div>
+          <div class="q-opt">(D) 在葉綠體的基質中進行</div>
+          <div class="q-opt">(E) 需要 ATP 與 NADP⁺ 的參與</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div style="font-size: 9.5pt; color: #64748b; font-weight: bold;">💡 解析展開：</div>
+          <div class="calc-solution">
+            (A)(B) 固碳反應雖不直接吸收光能，但其反應極度依賴光反應所產生的化學能（ATP）與還原力（NADPH），且基質中部分關鍵酵素（如 Rubisco）需要光的間接活化，因此「在有光情況下效率較高」，在持續黑暗中很快會因缺乏 ATP 與 NADPH 而停擺；<br>
+            (C) 正確，固碳反應核心就是固定 CO₂ 合成為醣類；<br>
+            (D) 正確，反應在葉綠體的基質中由多種溶解態酵素催化；<br>
+            (E) 固碳反應消耗的是「高能量還原態的 NADPH」，而非氧化態的 NADP⁺。故正確選項為 (B)(C)(D)。
+          </div>
+        </div>
+      </div>
+
+      <!-- Q7 表格題 -->
+      <div class="q-item" onclick="toggleItemAnswers(this, event)" style="margin-top: 14px;">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">ADE</span> ）</span>
+          <span class="q-num">7.</span>有關真核生物的光合作用和有氧呼吸的比較，下列哪些正確？（應選 3 項）
+        </div>
+        <table class="concept-table" style="margin: 6px 0; font-size: 10.5pt;">
+          <thead>
+            <tr>
+              <th style="width: 25%;">選項／比較項目</th>
+              <th style="width: 37%;">光合作用</th>
+              <th style="width: 38%;">有氧呼吸</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>(A) 化學反應</strong></td>
+              <td>同化代謝</td>
+              <td>異化代謝</td>
+            </tr>
+            <tr>
+              <td><strong>(B) 進行生物</strong></td>
+              <td>植物與藻類</td>
+              <td>只有動物</td>
+            </tr>
+            <tr>
+              <td><strong>(C) 進行時間</strong></td>
+              <td>只在白天進行</td>
+              <td>只在夜間進行</td>
+            </tr>
+            <tr>
+              <td><strong>(D) 能量變化</strong></td>
+              <td>光能 → 化學能</td>
+              <td>化學能 → 化學能</td>
+            </tr>
+            <tr>
+              <td><strong>(E) 進行場所</strong></td>
+              <td>葉綠體</td>
+              <td>細胞質及粒線體</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div style="font-size: 9.5pt; color: #64748b; font-weight: bold;">💡 解析展開：</div>
+          <div class="calc-solution">
+            (A) 正確，光合作用為吸能合成的同化代謝，有氧呼吸為放能分解的異化代謝；<br>
+            (B) 錯誤，植物與藻類等真核光合自營生物體內的活細胞，同樣必須隨時進行有氧呼吸以獲得維持生命的 ATP；<br>
+            (C) 錯誤，呼吸作用是活細胞維持生命的基礎，隨時隨地（白天與夜晚）皆持續進行，並非只在夜間；<br>
+            (D) 正確，光合作用將光能轉變為醣類化學能，呼吸作用將醣類化學能轉化為 ATP 化學能（伴隨熱能散失）；<br>
+            (E) 正確，真核細胞光合作用於葉綠體進行，有氧呼吸則跨越細胞質（糖解）與粒線體。故正確為 (A)(D)(E)。
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 高中生物（全）</span>
+        <span>課後實戰演練 · 多選題（三）</span>
+        <span>第 15 頁 / 共 16 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 16 ==================== -->
+    <div class="page" id="page16">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物（全）講義</span>
+        <span>第 1 章 細胞的構造與功能 · 1-2 細胞及能量</span>
+        <span>P. 16</span>
+      </div>
+
+      <div class="section-title">
+        <span>1-2　全章核心重點整理與思維導圖</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">結構體系化網絡 · 大考觀念避坑指南</span>
+      </div>
+
+      <div class="task-title">一、細胞能量流動核心網絡全景</div>
+      <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 8px 12px; margin-bottom: 8px; font-size: 11pt; line-height: 1.45;">
+        <div style="display: flex; align-items: center; justify-content: space-between; text-align: center;">
+          <div style="flex: 1; background: #fef9c3; border: 1px solid #eab308; padding: 6px; border-radius: 4px;">
+            ☀️ <strong>太陽光能</strong>
+          </div>
+          <div style="padding: 0 4px; font-weight: bold; color: #0284c7;">➔ 光合作用 ➔</div>
+          <div style="flex: 1.2; background: #dcfce7; border: 1px solid #22c55e; padding: 6px; border-radius: 4px;">
+            🌱 <strong>葡萄糖化學能</strong>
+          </div>
+          <div style="padding: 0 4px; font-weight: bold; color: #dc2626;">➔ 呼吸作用 ➔</div>
+          <div style="flex: 1.2; background: #fee2e2; border: 1px solid #ef4444; padding: 6px; border-radius: 4px;">
+            ⚡ <strong>ATP 能量貨幣</strong>
+          </div>
+          <div style="padding: 0 4px; font-weight: bold; color: #7c3aed;">➔ 生理作用 ➔</div>
+          <div style="flex: 1.2; background: #ede9fe; border: 1px solid #a855f7; padding: 6px; border-radius: 4px;">
+            🏃 <strong>生理功＋熱能</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="task-title">二、重要常考概念對照與避坑清單</div>
+      <table class="concept-table" style="margin: 4px 0 6px 0; font-size: 10pt;">
+        <thead>
+          <tr>
+            <th style="width: 22%;">常見迷思觀念</th>
+            <th style="width: 38%;">正確觀念剖析</th>
+            <th style="width: 40%;">大考關鍵提場點</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>「ATP 是一種核酸」</strong></td>
+            <td>ATP 是含有一個核糖、一個腺嘌呤與三個磷酸基的<strong>「單個核苷酸」</strong>，並非核酸。</td>
+            <td>核酸（DNA/RNA）是由成千上萬個核苷酸聚合而成的大分子鏈。</td>
+          </tr>
+          <tr>
+            <td><strong>「植物白天光合、晚上呼吸」</strong></td>
+            <td>植物活細胞<strong>白天與夜晚隨時都在進行呼吸作用</strong>！只是白天光合作用速率大於呼吸作用。</td>
+            <td>若呼吸作用停止，細胞無法產生 ATP 維持生命，會立刻死亡。</td>
+          </tr>
+          <tr>
+            <td><strong>「固碳反應只在黑暗中進行」</strong></td>
+            <td>固碳反應不需要直接吸收光能，但依賴光反應的產物（ATP 與 NADPH），<strong>白天效率最高</strong>。</td>
+            <td>長時間處於黑暗，光反應停擺導致缺乏 ATP，固碳反應亦會停滯。</td>
+          </tr>
+          <tr>
+            <td><strong>「發酵作用也能在粒線體進行」</strong></td>
+            <td>發酵作用的所有步驟（糖解及丙酮酸轉化）<strong>全部在細胞質</strong>進行，絕不進入粒線體。</td>
+            <td>只有在氧氣充足時，丙酮酸才會穿過粒線體膜進行徹底氧化。</td>
+          </tr>
+          <tr>
+            <td><strong>「發酵轉化丙酮酸能產生 ATP」</strong></td>
+            <td>發酵作用中，丙酮酸轉化成酒精或乳酸的過程<strong>不產生任何能量</strong>！</td>
+            <td>發酵所獲得的少量 ATP（淨產 2 ATP）全來自第一步的「糖解作用」。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="task-title" style="margin-top: 4px;">三、細胞代謝決策速查矩陣</div>
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-top: 2px;">
+        <div style="background: #eff6ff; border: 1.2px solid #bfdbfe; border-radius: 6px; padding: 6px 8px; font-size: 10pt;">
+          <strong style="color: #1e40af;">📌 當細胞內 ADP/ATP 比值過低時（能量充裕）：</strong>
+          <ul style="margin: 2px 0 0 16px; padding: 0;">
+            <li>同化合成作用增強（葡萄糖合成、蛋白質合成、肝醣合成）</li>
+            <li>過剩養分轉化為脂質儲存</li>
+            <li>異化分解作用受到抑制，減緩不必要的有機物氧化</li>
+          </ul>
+        </div>
+        <div style="background: #fef2f2; border: 1.2px solid #fecaca; border-radius: 6px; padding: 6px 8px; font-size: 10pt;">
+          <strong style="color: #991b1b;">📌 當細胞內 ADP/ATP 比值過高時（能量匱乏）：</strong>
+          <ul style="margin: 2px 0 0 16px; padding: 0;">
+            <li>異化代謝分解作用活化（促進肝醣分解、糖解作用）</li>
+            <li>呼吸作用電子傳遞與氧化磷酸化加速運轉</li>
+            <li>暫停大規模物質合成，集中能量優先供應基礎生理運作</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 高中生物（全）</span>
+        <span>1-2 全章核心思維導圖總整理</span>
+        <span>第 16 頁 / 共 16 頁</span>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    let allRevealed = false;
+    let penMode = false;
+    let penColor = 'rgba(250, 204, 21, 0.45)';
+    let penSize = 3;
+
+    // Toggle single answer word
+    function toggleAns(el, e) {
+      if (e) e.stopPropagation();
+      el.classList.toggle('revealed');
+    }
+
+    // Toggle QA bracket
+    function toggleBracket(el, e) {
+      if (e) e.stopPropagation();
+      el.classList.toggle('revealed');
+    }
+
+    // Toggle solution box
+    function toggleSolution(el, e) {
+      if (e) e.stopPropagation();
+      const sol = el.querySelector('.calc-solution');
+      if (sol) sol.classList.toggle('revealed');
+    }
+
+    // Clicking question item toggles all its answers
+    function toggleItemAnswers(item, e) {
+      if (e.target.closest('.ans-word') || e.target.closest('.qa-bracket') || e.target.closest('.calc-workspace')) {
+        return;
+      }
+      const bracket = item.querySelector('.qa-bracket');
+      const sol = item.querySelector('.calc-solution');
+      const blanks = item.querySelectorAll('.ans-word');
+
+      const isRev = bracket ? bracket.classList.contains('revealed') : (sol ? sol.classList.contains('revealed') : false);
+      if (bracket) bracket.classList.toggle('revealed', !isRev);
+      if (sol) sol.classList.toggle('revealed', !isRev);
+      blanks.forEach(b => b.classList.toggle('revealed', !isRev));
+    }
+
+    // Toggle all answers across document
+    function toggleAllAnswers() {
+      allRevealed = !allRevealed;
+      document.body.classList.toggle('show-all-answers', allRevealed);
+      const btn = document.getElementById('toggleAllAnsBtn');
+      const icon = document.getElementById('ansIcon');
+      if (btn) btn.classList.toggle('revealed', allRevealed);
+      if (icon) icon.innerText = allRevealed ? '🙈' : '👁️';
+    }
+
+    // TOC dropdown
+    function toggleTocMenu(e) {
+      if (e) e.stopPropagation();
+      const m = document.getElementById('tocMenu');
+      if (m) m.classList.toggle('show');
+    }
+
+    function jumpTo(pageId) {
+      const el = document.getElementById(pageId);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+      const m = document.getElementById('tocMenu');
+      if (m) m.classList.remove('show');
+    }
+
+    // Pen mode
+    function togglePenMode() {
+      penMode = !penMode;
+      document.body.classList.toggle('pen-active', penMode);
+      const btn = document.getElementById('penBtn');
+      const pop = document.getElementById('penOptions');
+      if (btn) btn.classList.toggle('active', penMode);
+      if (pop) pop.classList.toggle('show', penMode);
+    }
+
+    function setPenColor(col, dot) {
+      penColor = col;
+      document.querySelectorAll('.color-dot').forEach(d => d.classList.remove('active'));
+      if (dot) dot.classList.add('active');
+    }
+
+    function setPenSize(sz, btn) {
+      penSize = sz;
+      document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+    }
+
+    // Close popups on outer click
+    window.addEventListener('click', e => {
+      if (!e.target.closest('#tocBtn') && !e.target.closest('#tocMenu')) {
+        const m = document.getElementById('tocMenu');
+        if (m) m.classList.remove('show');
+      }
+    });
+
+    // Canvas drawing setup
+    const canvases = document.querySelectorAll('.drawing-canvas');
+    function resizeCanvases() {
+      canvases.forEach(c => {
+        const rect = c.parentElement.getBoundingClientRect();
+        c.width = rect.width; c.height = rect.height;
+      });
+    }
+    window.addEventListener('resize', resizeCanvases);
+    window.addEventListener('load', resizeCanvases);
+
+    let drawing = false;
+    let currentCanvas = null;
+    let ctx = null;
+
+    function getPos(e, c) {
+      const rect = c.getBoundingClientRect();
+      const x = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left;
+      const y = (e.touches ? e.touches[0].clientY : e.clientY) - rect.top;
+      return { x, y };
+    }
+
+    canvases.forEach(canvas => {
+      canvas.addEventListener('mousedown', e => {
+        if (!penMode) return;
+        drawing = true; currentCanvas = canvas;
+        ctx = canvas.getContext('2d');
+        ctx.strokeStyle = penColor; ctx.lineWidth = penSize;
+        ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+        const p = getPos(e, canvas); ctx.beginPath(); ctx.moveTo(p.x, p.y);
+      });
+      canvas.addEventListener('mousemove', e => {
+        if (!drawing || currentCanvas !== canvas) return;
+        const p = getPos(e, canvas); ctx.lineTo(p.x, p.y); ctx.stroke();
+      });
+      canvas.addEventListener('mouseup', () => { drawing = false; });
+      canvas.addEventListener('touchstart', e => {
+        if (!penMode) return; e.preventDefault();
+        drawing = true; currentCanvas = canvas;
+        ctx = canvas.getContext('2d');
+        ctx.strokeStyle = penColor; ctx.lineWidth = penSize;
+        ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+        const p = getPos(e, canvas); ctx.beginPath(); ctx.moveTo(p.x, p.y);
+      }, { passive: false });
+      canvas.addEventListener('touchmove', e => {
+        if (!drawing) return; e.preventDefault();
+        const p = getPos(e, canvas); ctx.lineTo(p.x, p.y); ctx.stroke();
+      }, { passive: false });
+      canvas.addEventListener('touchend', () => { drawing = false; });
+    });
+
+    function clearAllDrawings() {
+      canvases.forEach(c => { const ctx2 = c.getContext('2d'); ctx2.clearRect(0,0,c.width,c.height); });
+    }
+  </script>
+</body>
+</html>
