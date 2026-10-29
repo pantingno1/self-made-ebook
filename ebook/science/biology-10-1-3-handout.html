@@ -1,0 +1,2009 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>高中生物（全）1-3 細胞週期與細胞分裂 互動電子書</title>
+  <!-- 電子書目錄身分標記（見 SKILL.md §11 與 AGENTS.md） -->
+  <meta name="ebook:subject" content="science">
+  <meta name="ebook:grade" content="10">
+  <meta name="ebook:unit" content="1-3">
+  <meta name="ebook:title" content="高中生物（全）1-3 細胞週期與細胞分裂 互動電子書">
+  <meta name="ebook:type" content="handout">
+  <meta name="ebook:pages" content="17">
+  <meta name="ebook:level" content="std">
+  <meta name="ebook:summary" content="高中生物（全）1-3細胞週期與細胞分裂完整互動教學講義（全17頁寬裕舒展無截斷版），涵蓋：染色體發現與DNA+蛋白質化學組成、染色質與染色體形態轉變（中節與著絲點）、同源染色體與姊妹染色分體比較、二倍數(2n)與單倍數(n)、細胞週期分期（間期90%與分裂期10%）、有絲分裂各期特徵（前期、中期、後期、末期與質裂）、動植物細胞分裂差異（中心粒與細胞板）、減數分裂特性與兩階段歷程（聯會四分體、同源分離與分體分離）、有絲分裂與減數分裂全方位綜合比較、配子形成（精子形成與卵細胞質不均等分裂極體）、受精作用與受精卵細胞分化、基礎練習10題與課後實戰演練（單選11題+多選4題分頁舒展）精析題組，以及全章核心思維導圖總整理。">
+  <style>
+    @page { size: A4 portrait; margin: 10mm 12mm; }
+    * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body {
+      margin: 0; padding: 0; background-color: #f1f5f9;
+      font-family: "Times New Roman", "標楷體", "DFKai-SB", "BiauKai", serif;
+      font-size: 12.5pt; line-height: 1.5; color: #111;
+    }
+
+    /* 課堂懸浮工具列 */
+    .classroom-toolbar {
+      position: fixed; top: 14px; right: 20px; z-index: 9999;
+      display: flex; align-items: center; gap: 6px;
+      background: rgba(255, 255, 255, 0.96); padding: 5px 10px;
+      border-radius: 40px; box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      border: 1px solid #cbd5e1; backdrop-filter: blur(8px);
+    }
+    .tool-btn {
+      width: 36px; height: 36px; border-radius: 50%; border: 1px solid #cbd5e1;
+      background: #fff; color: #334155; font-size: 15px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.15s ease; outline: none; text-decoration: none;
+    }
+    .tool-btn:hover { background: #f8fafc; border-color: #94a3b8; transform: translateY(-1px); }
+    .tool-btn.active { background: #0284c7; color: #fff; border-color: #0284c7; }
+    .btn-toggle-ans { background: #eff6ff; border-color: #bfdbfe; color: #1d4ed8; font-weight: bold; }
+    .btn-toggle-ans.revealed { background: #fef2f2; border-color: #fecaca; color: #dc2626; }
+
+    /* 目錄跳轉選單 */
+    .toc-menu {
+      display: none; position: absolute; top: 46px; right: 0;
+      background: #fff; border: 1px solid #cbd5e1; border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15); width: 370px; max-height: 520px;
+      overflow-y: auto; z-index: 10000; padding: 6px 0; font-family: sans-serif;
+    }
+    .toc-menu.show { display: block; }
+    .toc-menu-title {
+      padding: 8px 16px; font-weight: bold; font-size: 13.5px;
+      color: #0f172a; border-bottom: 1px solid #e2e8f0; background: #f8fafc;
+    }
+    .toc-menu-item {
+      padding: 7px 16px; font-size: 12px; color: #334155; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center;
+      transition: background 0.1s;
+    }
+    .toc-menu-item:hover { background: #f0f9ff; color: #0284c7; font-weight: bold; }
+    .toc-page-badge {
+      background: #e2e8f0; color: #475569; font-size: 11px;
+      padding: 1px 6px; border-radius: 10px;
+    }
+
+    /* 螢光筆選項 */
+    .pen-options {
+      display: none; position: absolute; top: 46px; right: 130px;
+      background: #fff; border: 1px solid #cbd5e1; border-radius: 10px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12); padding: 8px 12px;
+      z-index: 10000; gap: 8px; align-items: center;
+    }
+    .pen-options.show { display: flex; }
+    .color-dot {
+      width: 20px; height: 20px; border-radius: 50%; cursor: pointer;
+      border: 2px solid transparent; transition: transform 0.1s;
+    }
+    .color-dot:hover { transform: scale(1.15); }
+    .color-dot.active { border-color: #0f172a; transform: scale(1.15); }
+    .size-btn {
+      padding: 2px 8px; border: 1px solid #cbd5e1; border-radius: 4px;
+      background: #fff; font-size: 12px; cursor: pointer;
+    }
+    .size-btn.active { background: #0284c7; color: #fff; border-color: #0284c7; }
+
+    /* 頁面整體排版 */
+    .pages-container {
+      display: flex; flex-direction: column; align-items: center;
+      padding: 24px 0 40px 0; gap: 24px;
+    }
+    .page {
+      position: relative; width: 210mm; min-height: 297mm; max-height: 297mm;
+      padding: 11mm 15mm 9mm 15mm; background: #fff;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06); border-radius: 4px;
+      display: flex; flex-direction: column; justify-content: flex-start;
+      overflow: hidden;
+    }
+    .drawing-canvas {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      pointer-events: none; z-index: 50;
+    }
+    body.pen-active .drawing-canvas { pointer-events: auto; cursor: crosshair; }
+
+    /* 頁首與頁尾 */
+    .page-header {
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 10.5pt; color: #64748b; border-bottom: 1.5px solid #0284c7;
+      padding-bottom: 4px; margin-bottom: 6px; font-weight: bold;
+    }
+    .page-footer {
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 9.5pt; color: #94a3b8; border-top: 1px solid #e2e8f0;
+      padding-top: 4px; margin-top: auto;
+    }
+
+    /* 大標題與副標題 */
+    .section-title {
+      font-size: 13.5pt; font-weight: bold; color: #0f172a;
+      display: flex; justify-content: space-between; align-items: baseline;
+      border-left: 4.5px solid #0284c7; padding-left: 8px; margin: 3px 0 6px 0;
+    }
+    .task-title {
+      font-size: 12pt; font-weight: bold; color: #0369a1;
+      margin: 5px 0 3px 0; display: flex; align-items: center; gap: 4px;
+    }
+
+    /* 表格設計 */
+    .concept-table {
+      width: 100%; border-collapse: collapse; margin: 4px 0;
+      font-size: 10.5pt; line-height: 1.4;
+    }
+    .concept-table th {
+      background: #f0f9ff; color: #0369a1; font-weight: bold;
+      border: 1px solid #cbd5e1; padding: 4px 6px; text-align: center;
+    }
+    .concept-table td {
+      border: 1px solid #cbd5e1; padding: 4px 6px; vertical-align: middle;
+    }
+
+    /* 列表與行高 */
+    .item-line { margin: 2.5px 0; line-height: 1.45; font-size: 12pt; }
+
+    /* 提示與重點外框 */
+    .tip-box {
+      background: #f8fafc; border: 1.2px solid #bae6fd; border-radius: 6px;
+      padding: 6px 10px; margin-top: 6px;
+    }
+    .tip-title {
+      font-size: 10.5pt; font-weight: bold; color: #0284c7; margin-bottom: 2px;
+    }
+
+    /* 題目排版 */
+    .q-item {
+      margin: 5px 0; padding: 5px 8px; border-radius: 6px;
+      background: #fafafa; border: 1px solid #f1f5f9;
+      transition: background 0.15s; cursor: pointer;
+    }
+    .q-item:hover { background: #f8fafc; border-color: #e2e8f0; }
+    .q-stem { font-size: 12pt; line-height: 1.42; color: #0f172a; }
+    .q-num { font-weight: bold; color: #0284c7; margin-right: 4px; }
+    .q-options {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 2.5px 12px; margin-top: 3px; font-size: 11pt; color: #334155;
+      padding-left: 6px;
+    }
+    .q-options.stacked {
+      display: flex; flex-direction: column; gap: 2px;
+    }
+    .q-opt { line-height: 1.35; }
+
+    /* 互動填空與顯答 */
+    .ans-word {
+      color: transparent !important; border-bottom: 1.5px solid #0284c7;
+      padding: 0 4px; cursor: pointer; user-select: none;
+      transition: color 0.15s; display: inline-block; min-width: 22px; text-align: center;
+    }
+    .ans-word:hover { border-bottom-color: #ef4444; }
+    .ans-word.revealed, body.show-all-answers .ans-word {
+      color: #dc2626 !important; font-weight: bold;
+    }
+
+    /* 選擇題括號顯答 */
+    .qa-bracket {
+      cursor: pointer; user-select: none; font-weight: bold;
+      color: #0f172a; padding: 0 2px;
+    }
+    .qa-bracket .ans-text {
+      color: transparent; min-width: 14px; display: inline-block;
+      text-align: center; transition: color 0.15s;
+    }
+    .qa-bracket:hover .ans-text { color: #f87171; }
+    .qa-bracket.revealed .ans-text, body.show-all-answers .qa-bracket .ans-text {
+      color: #dc2626 !important; font-weight: bold;
+    }
+
+    /* 題目解析區塊 */
+    .calc-workspace {
+      margin-top: 3px; padding: 4px 8px; border-radius: 4px;
+      background: #fff; border: 1px dashed #cbd5e1; cursor: pointer;
+      user-select: none;
+    }
+    .calc-solution {
+      font-size: 10pt; line-height: 1.4;
+      color: transparent !important;
+      transition: color 0.15s;
+    }
+    .calc-solution.revealed, body.show-all-answers .calc-solution {
+      color: #b91c1c !important;
+    }
+
+    /* 圖示容器樣式 */
+    .figure-container {
+      text-align: center; margin: 4px 0;
+    }
+    .figure-container img {
+      max-width: 100%; height: auto; border-radius: 6px;
+      border: 1px solid #cbd5e1; box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    }
+    .figure-caption {
+      font-size: 9.5pt; font-weight: bold; color: #475569; margin-top: 2px;
+    }
+
+    /* 列印樣式 (純淨學生學習單) */
+    @media print {
+      html, body {
+        width: 100% !important; height: auto !important;
+        background: #fff !important; padding: 0 !important; margin: 0 !important;
+      }
+      .no-print, .classroom-toolbar, .drawing-canvas, .toc-menu, .pen-options {
+        display: none !important;
+      }
+      .pages-container { padding: 0 !important; gap: 0 !important; }
+      .page {
+        width: 100% !important; height: auto !important;
+        max-height: none !important; min-height: 275mm !important;
+        box-shadow: none !important; border-radius: 0 !important;
+        page-break-after: always; break-after: page;
+        padding: 8mm 12mm 6mm 12mm !important;
+      }
+      .ans-word {
+        color: transparent !important; border-bottom: 1px solid #475569 !important;
+      }
+      .qa-bracket .ans-text { color: transparent !important; }
+      .calc-solution { display: none !important; }
+      .calc-workspace { display: none !important; }
+      .q-item { background: transparent !important; border: none !important; padding: 2px 0 !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 課堂懸浮工具列 -->
+  <div class="classroom-toolbar no-print">
+    <!-- 回電子書目錄 -->
+    <a class="tool-btn" href="../index.html" title="回電子書目錄">🏠</a>
+    <!-- 目錄跳轉選單 -->
+    <div style="position: relative;">
+      <button class="tool-btn" id="tocBtn" onclick="toggleTocMenu(event)" title="單元章節目錄">📑</button>
+      <div class="toc-menu" id="tocMenu">
+        <div class="toc-menu-title">📖 1-3 細胞週期與細胞分裂 目錄 (全 17 頁)</div>
+        <div class="toc-menu-item" onclick="jumpTo('page1')"><span>1-3.1 染色體發現與組成形態（觀念一）</span><span class="toc-page-badge">P.1</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page2')"><span>1-3.1 染色體構造與同源染色體（觀念二）</span><span class="toc-page-badge">P.2</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page3')"><span>1-3.1 染色體套數與名詞深度比較（觀念三）</span><span class="toc-page-badge">P.3</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page4')"><span>1-3.1 隨堂實戰評量（基礎練習 3 題）</span><span class="toc-page-badge">P.4</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page5')"><span>1-3.2 細胞週期與分期意義（觀念一）</span><span class="toc-page-badge">P.5</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page6')"><span>1-3.2 有絲分裂各期特徵（觀念二）</span><span class="toc-page-badge">P.6</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page7')"><span>1-3.2 動植物分裂差異與隨堂評量（觀念三）</span><span class="toc-page-badge">P.7</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page8')"><span>1-3.3 減數分裂歷程與意義（觀念一）</span><span class="toc-page-badge">P.8</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page9')"><span>1-3.3 有絲與減數分裂全方位比較（觀念二）</span><span class="toc-page-badge">P.9</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page10')"><span>1-3.3 配子形成過程與隨堂評量（觀念三）</span><span class="toc-page-badge">P.10</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page11')"><span>1-3.4 受精卵發育與細胞分化（觀念一）</span><span class="toc-page-badge">P.11</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page12')"><span>課後實戰演練 · 單選題（一）(Q1～Q4)</span><span class="toc-page-badge">P.12</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page13')"><span>課後實戰演練 · 單選題（二）(Q5～Q7)</span><span class="toc-page-badge">P.13</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page14')"><span>課後實戰演練 · 單選題（三）(Q8～Q11)</span><span class="toc-page-badge">P.14</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page15')"><span>課後實戰演練 · 多選題（一）(Q1～Q2)</span><span class="toc-page-badge">P.15</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page16')"><span>課後實戰演練 · 多選題（二）(Q3～Q4)</span><span class="toc-page-badge">P.16</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page17')"><span>1-3 全章核心思維導圖與重點觀念精華</span><span class="toc-page-badge">P.17</span></div>
+      </div>
+    </div>
+    <!-- 一鍵全顯/隱藏答案 -->
+    <button class="tool-btn btn-toggle-ans" id="toggleAllAnsBtn" onclick="toggleAllAnswers()" title="一鍵開合全部答案">
+      <span id="ansIcon">👁️</span>
+    </button>
+    <!-- 螢光筆/畫筆 -->
+    <button class="tool-btn" id="penBtn" onclick="togglePenMode()" title="課堂螢光筆批註模式">✏️</button>
+    <!-- 清除筆跡 -->
+    <button class="tool-btn" onclick="clearAllDrawings()" title="清除本頁畫筆痕跡">🗑️</button>
+    <!-- 列印 -->
+    <button class="tool-btn" onclick="window.print()" title="列印純淨學習單">🖨️</button>
+  </div>
+
+  <!-- 螢光筆選項盤 -->
+  <div class="pen-options no-print" id="penOptions">
+    <span style="font-size: 12px; font-weight: bold; color: #475569;">畫筆顏色：</span>
+    <div class="color-dot active" style="background: #facc15;" onclick="setPenColor('rgba(250, 204, 21, 0.45)', this)" title="螢光黃"></div>
+    <div class="color-dot" style="background: #f87171;" onclick="setPenColor('rgba(248, 113, 113, 0.45)', this)" title="螢光紅"></div>
+    <div class="color-dot" style="background: #60a5fa;" onclick="setPenColor('rgba(96, 165, 250, 0.45)', this)" title="螢光藍"></div>
+    <div class="color-dot" style="background: #4ade80;" onclick="setPenColor('rgba(74, 222, 128, 0.45)', this)" title="螢光綠"></div>
+    <span style="font-size: 12px; font-weight: bold; color: #475569; margin-left: 4px;">粗細：</span>
+    <button class="size-btn active" onclick="setPenSize(3, this)">細</button>
+    <button class="size-btn" onclick="setPenSize(6, this)">中</button>
+    <button class="size-btn" onclick="setPenSize(12, this)">粗</button>
+  </div>
+
+  <div class="pages-container">
+
+    <!-- ==================== Page 1 ==================== -->
+    <div class="page" id="page1">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物（全）講義</span>
+        <span>第 1 章 細胞的構造與功能 · 1-3 細胞週期與細胞分裂</span>
+        <span>P. 1</span>
+      </div>
+
+      <div class="section-title">
+        <span>1-3.1　染色體與染色質（一）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">焦點：染色體的發現歷史、真核細胞染色體化學組成與形態</span>
+      </div>
+
+      <div style="background: #f0fdf4; border-left: 4px solid #16a34a; padding: 5px 10px; margin: 4px 0 6px 0; font-size: 11.5pt; color: #166534; border-radius: 0 4px 4px 0;">
+        💡 <strong>單元前導思維：</strong>細胞分裂進行時，染色體的變化最為關鍵，因為染色體必須平均分配給子細胞，才能確保親代的遺傳訊息得以延續給子代。究竟，細胞分裂的過程中染色體有什麼變化呢？
+      </div>
+
+      <div class="task-title">一、染色體的發現</div>
+      <div class="item-line"><strong>1. 發現的科學家：</strong>德國生物學家 <span class="ans-word" onclick="toggleAns(this, event)">弗萊明</span>（Walther Flemming）。</div>
+      <div class="item-line"><strong>2. 發現歷程：</strong>1879 年，弗萊明利用特殊染劑將動物胚胎細胞染色，發現細胞分裂時細胞核內有絲狀物出現。</div>
+      <div class="item-line"><strong>3. 命名：</strong>這些容易被鹼性染劑染色的絲狀物後來被稱為 <span class="ans-word" onclick="toggleAns(this, event)">染色體</span>（Chromosome）。</div>
+
+      <div class="task-title" style="margin-top: 4px;">二、真核細胞的染色體</div>
+      <div class="item-line"><strong>1. 所在位置：</strong>真核細胞的 <span class="ans-word" onclick="toggleAns(this, event)">細胞核</span> 內。</div>
+      <div class="item-line"><strong>2. 化學組成：</strong>主要由 <span class="ans-word" onclick="toggleAns(this, event)">DNA</span> 和 <span class="ans-word" onclick="toggleAns(this, event)">蛋白質</span>（主要是組蛋白）共同組成。</div>
+      <div class="item-line"><strong>3. 存在形態的轉變：</strong></div>
+      <div class="item-line" style="padding-left: 18px;">
+        (1) <strong>非細胞分裂期（間期）：</strong>細絲狀的 DNA 纏繞在蛋白質周圍，呈現鬆散細長絲狀，此時稱為 <span class="ans-word" onclick="toggleAns(this, event)">染色質</span>（Chromatin）。便於進行基因轉錄與複製。
+      </div>
+      <div class="item-line" style="padding-left: 18px;">
+        (2) <strong>細胞分裂期：</strong>染色質會高度螺旋化，更加緊密纏繞成粗棒短絲狀，此時稱為 <span class="ans-word" onclick="toggleAns(this, event)">染色體</span>（Chromosome）。便於在分裂時精確平均分配。
+      </div>
+
+      <!-- 圖 1-33 染色體與染色質的構造示意圖 -->
+      <div class="figure-container" style="margin-top: 5px;">
+        <img src="../images/biology-10-1-3-handout/染色體與染色質.png" alt="染色體與染色質的構造示意圖" style="max-height: 180px; width: auto;">
+        <div class="figure-caption">▲ 圖 1-33　染色體與染色質的構造層級（DNA 雙螺旋 ➔ 纏繞組蛋白 ➔ 染色質絲 ➔ 緻密染色體）</div>
+      </div>
+
+      <div class="tip-box" style="background: #fefce8; border-color: #fef08a; margin-top: 5px;">
+        <div class="tip-title" style="color: #854d0e;">💡 延伸補充：原核生物的細胞分裂</div>
+        <div style="font-size: 10.5pt; color: #713f12; line-height: 1.45;">
+          細菌等原核生物沒有細胞核膜，其遺傳物質為單一環狀 DNA 分子（不含組蛋白），進行繁殖時係利用<strong>「二分裂法（Binary fission）」</strong>直接向內凹陷分裂，分裂過程中並不會出現由紡錘絲牽引的「絲狀染色體」。
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 高中生物（全）</span>
+        <span>1-3.1 染色體發現與組成</span>
+        <span>第 1 頁 / 共 17 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 2 ==================== -->
+    <div class="page" id="page2">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物（全）講義</span>
+        <span>第 1 章 細胞的構造與功能 · 1-3 細胞週期與細胞分裂</span>
+        <span>P. 2</span>
+      </div>
+
+      <div class="section-title">
+        <span>1-3.1　染色體與染色質（二）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">焦點：染色體複製與形態變化、中節與著絲點、同源染色體特性</span>
+      </div>
+
+      <div class="task-title">4. 染色體的形態變化歷程</div>
+      <div class="item-line">
+        細胞分裂前（間期），染色質進行 <span class="ans-word" onclick="toggleAns(this, event)">複製</span> 形成雙份 DNA；進入分裂期時，複製後的染色質緊密纏繞，形成由中節相連的兩條 <span class="ans-word" onclick="toggleAns(this, event)">姊妹染色分體</span>（此結構稱為<strong>二分體</strong>）。
+      </div>
+
+      <!-- 圖 1-34 染色質與染色體的形態 -->
+      <div class="figure-container" style="margin: 4px 0;">
+        <img src="../images/biology-10-1-3-handout/染色質變化過程.png" alt="染色質變化過程" style="max-height: 135px; width: auto;">
+        <div class="figure-caption">▲ 圖 1-34　染色質經複製與緻密纏繞形成二分體染色體（含中節與著絲點）</div>
+      </div>
+
+      <div class="task-title">5. 染色體的細部構造</div>
+      <div class="item-line">(1) <strong>中節（著絲粒，Centromere）：</strong>染色體上較狹窄凹陷的區域，為姊妹染色分體互相緊密連接處。</div>
+      <div class="item-line">(2) <strong>著絲點（Kinetochore）：</strong>中節外側能與 <span class="ans-word" onclick="toggleAns(this, event)">紡錘絲</span> 結合的特殊蛋白質複合體，引導染色體移動與分離。</div>
+      <div class="item-line">(3) 中節與著絲點不一定位在染色體中央正中，故染色體的長臂與短臂不一定等長。</div>
+
+      <div class="task-title" style="margin-top: 4px;">6. 染色體的基本特性與同源染色體</div>
+      <div class="item-line">(1) <strong>物種恆定性：</strong>每種生物體細胞內各有其一定的染色體數目。例如：人類體細胞有 <span class="ans-word" onclick="toggleAns(this, event)">23 對</span>（46 條）；黑猩猩有 24 對（48 條）；果蠅有 4 對（8 條）。</div>
+      <div class="item-line">(2) <strong>同源染色體（Homologous chromosomes）：</strong></div>
+      <div class="item-line" style="padding-left: 18px;">
+        ① 真核體細胞中的染色體大多成對存在，凡大小、形狀相同，且相對位置具有控制同種性狀對應等位基因的一對染色體，稱為 <span class="ans-word" onclick="toggleAns(this, event)">同源染色體</span>。
+      </div>
+      <div class="item-line" style="padding-left: 18px;">
+        ② 成對的同源染色體中，其中一條來自<strong>父方</strong>（經精子傳遞），另一條來自<strong>母方</strong>（經卵細胞傳遞）。
+      </div>
+
+      <!-- 圖 1-35 側邊或居中展示 -->
+      <div style="display: flex; gap: 12px; align-items: center; margin-top: 4px;">
+        <div style="flex: 1.2;">
+          <table class="concept-table" style="font-size: 10pt;">
+            <thead>
+              <tr>
+                <th>細胞種類</th>
+                <th>染色體條數</th>
+                <th>成對狀態</th>
+                <th>倍數（套數）</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>體細胞</strong></td>
+                <td>46 條</td>
+                <td>同源染色體成對出現</td>
+                <td><strong>二倍數（2n，雙套）</strong></td>
+              </tr>
+              <tr>
+                <td><strong>生殖細胞（配子）</strong></td>
+                <td>23 條</td>
+                <td>不成對（僅含每對中之一條）</td>
+                <td><strong>單倍數（n，單套）</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="width: 130px; text-align: center; flex-shrink: 0;">
+          <img src="../images/biology-10-1-3-handout/同源染色體與非同源染色體.png" alt="同源染色體與非同源染色體" style="max-height: 110px; width: auto; border: 1px solid #cbd5e1; border-radius: 4px;">
+          <div style="font-size: 8.5pt; color: #64748b; margin-top: 2px;">▲ 圖 1-35 同源與非同源</div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 高中生物（全）</span>
+        <span>1-3.1 染色體構造與同源染色體</span>
+        <span>第 2 頁 / 共 17 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 3 ==================== -->
+    <div class="page" id="page3">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物（全）講義</span>
+        <span>第 1 章 細胞的構造與功能 · 1-3 細胞週期與細胞分裂</span>
+        <span>P. 3</span>
+      </div>
+
+      <div class="section-title">
+        <span>1-3.1　染色體與染色質（三）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">焦點：同源染色體 vs 姊妹染色分體、二倍數與單倍數、世代傳遞模式</span>
+      </div>
+
+      <div class="task-title">三、染色體的關鍵名詞比較</div>
+      <div class="item-line"><strong>1. 同源染色體 vs 姊妹染色分體：</strong></div>
+
+      <!-- 同源染色體與姊妹染色分體比較圖 -->
+      <div class="figure-container" style="margin: 3px 0;">
+        <img src="../images/biology-10-1-3-handout/同源染色體與姊妹染色分體比較.png" alt="同源染色體與姊妹染色分體比較" style="max-height: 125px; width: auto;">
+        <div class="figure-caption">▲ 同源染色體（分別源自父母親） vs 姊妹染色分體（同一條 DNA 複製生成）</div>
+      </div>
+
+      <table class="concept-table" style="margin: 4px 0 6px 0;">
+        <thead>
+          <tr>
+            <th style="width: 18%;">名稱</th>
+            <th style="width: 41%;">同源染色體（Homologous Chromosomes）</th>
+            <th style="width: 41%;">姊妹染色分體（Sister Chromatids）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>形態特徵</strong></td>
+            <td>形狀大小相似的一對染色體，可進行配對聯會</td>
+            <td>同一條染色體複製後以中節相連的左右兩半條</td>
+          </tr>
+          <tr>
+            <td><strong>來源與遺傳</strong></td>
+            <td>一條來自<strong>父方</strong>，一條來自<strong>母方</strong>；基因組合不完全相同</td>
+            <td>來自<strong>同一親代同一模板 DNA</strong> 的半保留複製；遺傳訊息完全相同</td>
+          </tr>
+          <tr>
+            <td><strong>分離時期</strong></td>
+            <td>發生於 <span class="ans-word" onclick="toggleAns(this, event)">減數分裂第一階段（I）</span> 後期</td>
+            <td>發生於 <span class="ans-word" onclick="toggleAns(this, event)">有絲分裂</span> 及 <span class="ans-word" onclick="toggleAns(this, event)">減數分裂第二階段（II）</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="task-title" style="margin-top: 4px;">2. 染色體倍數（套數）的定義比較</div>
+      <!-- 染色體倍數比較圖 -->
+      <div class="figure-container" style="margin: 3px 0;">
+        <img src="../images/biology-10-1-3-handout/染色體倍數的比較.png" alt="染色體倍數的比較" style="max-height: 95px; width: auto;">
+        <div class="figure-caption">▲ 二倍數（2n，成對出現） vs 單倍數（n，不成對出現）模式圖</div>
+      </div>
+
+      <div class="task-title" style="margin-top: 4px;">3. 人類世代交替染色體數目恆定機制（圖 1-36）</div>
+      <!-- 生殖母細胞與生殖細胞染色體變化 -->
+      <div class="figure-container" style="margin: 3px 0;">
+        <img src="../images/biology-10-1-3-handout/生殖母細胞與生殖細胞染色體變化.png" alt="人類生殖母細胞與生殖細胞染色體的變化" style="max-height: 120px; width: auto;">
+        <div class="figure-caption">▲ 圖 1-36　父(2n)母(2n)經減數分裂產生配子(n)，受精結合為受精卵(2n)，維持代代套數恆定</div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 高中生物（全）</span>
+        <span>1-3.1 染色體套數與名詞比較</span>
+        <span>第 3 頁 / 共 17 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 4 ==================== -->
+    <div class="page" id="page4">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物（全）講義</span>
+        <span>第 1 章 細胞的構造與功能 · 1-3 細胞週期與細胞分裂</span>
+        <span>P. 4</span>
+      </div>
+
+      <div class="section-title">
+        <span>1-3.1　隨堂實戰評量</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">基礎練習題組（染色體組成、型態轉變與同源染色體辨識）</span>
+      </div>
+
+      <div class="task-title">基礎練習（點擊題號可展開答案與詳細解析）</div>
+
+      <!-- Q1 -->
+      <div class="q-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">B</span> ）</span>
+          <span class="q-num">1.</span>下列何者為人類染色體的成分？
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) DNA＋RNA</div>
+          <div class="q-opt">(B) DNA＋蛋白質</div>
+          <div class="q-opt">(C) 只有蛋白質</div>
+          <div class="q-opt">(D) 只有 DNA</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div style="font-size: 9.5pt; color: #64748b; font-weight: bold;">💡 解析展開：</div>
+          <div class="calc-solution">
+            真核細胞（如人類細胞）的染色質與染色體，化學成分主要由「去氧核糖核酸（DNA）」與「蛋白質（主要是富含鹼性胺基酸的組蛋白 Histone）」共同組成，DNA 纏繞在組蛋白八聚體上形成核小體構造。故正確選項為 (B)。
+          </div>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="q-item" onclick="toggleItemAnswers(this, event)" style="margin-top: 10px;">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">C</span> ）</span>
+          <span class="q-num">2.</span>下列有關細胞內染色質與染色體的敘述，何者錯誤？
+        </div>
+        <div class="q-options stacked" style="margin-top: 4px;">
+          <div class="q-opt">(A) 染色體為細胞在分裂時觀察到的絲狀物</div>
+          <div class="q-opt">(B) 體細胞內同源染色體皆為成對出現</div>
+          <div class="q-opt">(C) 細絲狀的染色質在細胞進行分裂時會緊密地纏繞，形成粗絲狀的染色質</div>
+          <div class="q-opt">(D) 染色體內的蛋白質可協助 DNA 的纏繞</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div style="font-size: 9.5pt; color: #64748b; font-weight: bold;">💡 解析展開：</div>
+          <div class="calc-solution">
+            (C) 錯誤，在非分裂期（間期）呈現細長鬆散狀的稱為「染色質」；而在細胞進行分裂時，染色質會經高度螺旋化而緊密纏繞，形成粗棒短絲狀的構造，此時應稱為「染色體」而非染色質。
+          </div>
+        </div>
+      </div>
+
+      <!-- Q3 附向量圖 -->
+      <div class="q-item" onclick="toggleItemAnswers(this, event)" style="margin-top: 10px;">
+        <div style="display: flex; gap: 14px; align-items: flex-start;">
+          <div style="flex: 1;">
+            <div class="q-stem">
+              <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">C</span> ）</span>
+              <span class="q-num">3.</span>某生物有 4 條染色體（如附圖），分別以甲、乙、丙、丁表示，下列哪一選項中的染色體可能互為同源染色體？
+            </div>
+            <div class="q-options" style="margin-top: 4px;">
+              <div class="q-opt">(A) 甲、乙</div>
+              <div class="q-opt">(B) 丙、丁</div>
+              <div class="q-opt">(C) 甲、丁</div>
+              <div class="q-opt">(D) 乙、丁</div>
+            </div>
+          </div>
+          <!-- 向量附圖 -->
+          <div style="width: 140px; text-align: center; flex-shrink: 0; background: #fff; border: 1px solid #cbd5e1; border-radius: 6px; padding: 6px;">
+            <svg width="120" height="110" viewBox="0 0 140 130" style="display: block; margin: 0 auto;">
+              <!-- Cell boundary -->
+              <ellipse cx="70" cy="65" rx="65" ry="58" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.8"/>
+              
+              <!-- Chromosome 甲: Long straight (Blue) -->
+              <line x1="45" y1="28" x2="45" y2="92" stroke="#2563eb" stroke-width="6" stroke-linecap="round"/>
+              <text x="32" y="65" font-size="13" font-weight="bold" fill="#1d4ed8">甲</text>
+              
+              <!-- Chromosome 乙: Short (Orange) -->
+              <line x1="68" y1="35" x2="68" y2="65" stroke="#ea580c" stroke-width="5" stroke-linecap="round"/>
+              <text x="75" y="48" font-size="12" font-weight="bold" fill="#c2410c">乙</text>
+
+              <!-- Chromosome 丙: Short (Green) -->
+              <line x1="100" y1="42" x2="100" y2="72" stroke="#16a34a" stroke-width="5" stroke-linecap="round"/>
+              <text x="112" y="58" font-size="12" font-weight="bold" fill="#15803d">丙</text>
+
+              <!-- Chromosome 丁: Long straight (Red) -->
+              <line x1="88" y1="55" x2="88" y2="118" stroke="#dc2626" stroke-width="6" stroke-linecap="round"/>
+              <text x="100" y="100" font-size="13" font-weight="bold" fill="#b91c1c">丁</text>
+            </svg>
+            <div style="font-size: 8.5pt; color: #64748b; margin-top: 2px;">▲ 染色體形態圖</div>
+          </div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div style="font-size: 9.5pt; color: #64748b; font-weight: bold;">💡 解析展開：</div>
+          <div class="calc-solution">
+            「同源染色體」的定義為成對且大小、長度與外觀形狀相同的一對染色體。由附圖觀察可知：<br>
+            ● 甲與丁為兩條長度相等、大小一致的較長染色體，彼此互為一對同源染色體；<br>
+            ● 乙與丙為兩條長度較短的染色體，彼此互為另一對同源染色體。<br>
+            因此甲、丁可能互為同源染色體，正確選項為 (C)。
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 高中生物（全）</span>
+        <span>1-3.1 隨堂實戰評量</span>
+        <span>第 4 頁 / 共 17 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 5 ==================== -->
+    <div class="page" id="page5">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物（全）講義</span>
+        <span>第 1 章 細胞的構造與功能 · 1-3 細胞週期與細胞分裂</span>
+        <span>P. 5</span>
+      </div>
+
+      <div class="section-title">
+        <span>1-3.2　細胞週期與有絲分裂（一）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">焦點：細胞週期定義意義、不同細胞的分裂特性、間期與分裂期</span>
+      </div>
+
+      <div class="task-title">一、細胞週期（Cell Cycle）</div>
+      <div class="item-line"><strong>1. 定義：</strong>具有分裂能力的細胞，由母細胞分裂形成後，經生長、複製到再分裂為兩個子細胞的完整生命週期過程。</div>
+      <div class="item-line"><strong>2. 意義：</strong>產生更多遺傳物質相同的細胞，以提供生物體的生長發育、組織修復與無性繁殖。</div>
+
+      <div class="task-title" style="margin-top: 4px;">2. 生物體內不同細胞的細胞週期差異</div>
+      <div class="item-line">(1) <strong>持續分裂的細胞：</strong>終生維持高度分裂能力，例如植物根尖與莖頂的形成層、生長點細胞，以及人體表皮基底層幹細胞、骨髓造血幹細胞。</div>
+      <div class="item-line">(2) <strong>依需求分裂的細胞：</strong>平時處於靜止期（G₀期），受到損傷或特殊生長因子刺激時才重啟分裂，例如人體肝臟幹細胞在受損切除時會迅速分裂再生。</div>
+      <div class="item-line">(3) <strong>高度分化不再分裂的細胞：</strong>完全分化成熟後即永久退出細胞週期，不再進行分裂，例如高度特化的人體成熟神經元、骨骼肌纖維細胞。</div>
+
+      <div class="task-title" style="margin-top: 4px;">3. 細胞週期的分期（圖 1-37）</div>
+      <div class="item-line">細胞週期主要劃分為 <span class="ans-word" onclick="toggleAns(this, event)">間期</span> 與 <span class="ans-word" onclick="toggleAns(this, event)">分裂期（M期）</span> 兩大階段：</div>
+      <div class="item-line" style="padding-left: 18px;">
+        (1) <span class="ans-word" onclick="toggleAns(this, event)">間期（Interphase）</span>：<br>
+        ① 細胞的生長期與準備期：細胞合成大量酵素與蛋白質、複製合成胞器、進行 <strong>DNA（染色質）複製</strong>，為分裂做好充份準備。<br>
+        ② 時間比例：約占整個細胞週期長度的 <strong style="color: #0284c7;">90%</strong> 以上時間。
+      </div>
+      <div class="item-line" style="padding-left: 18px;">
+        (2) <span class="ans-word" onclick="toggleAns(this, event)">分裂期（Mitotic phase，M期）</span>：<br>
+        ① 包括<strong>細胞核分裂（有絲分裂）</strong>與<strong>細胞質分裂</strong>兩大連續事件。<br>
+        ② 時間比例：僅占細胞週期約 <strong style="color: #b91c1c;">10%</strong> 的短暫時間。
+      </div>
+
+      <!-- 圖 1-37 真核細胞的細胞週期 -->
+      <div class="figure-container" style="margin-top: 4px;">
+        <img src="../images/biology-10-1-3-handout/真核細胞的細胞週期.png" alt="真核細胞的細胞週期" style="max-height: 195px; width: auto;">
+        <div class="figure-caption">▲ 圖 1-37　真核細胞的細胞週期歷程（間期生長與複製 90% ➔ 分裂期核裂與質裂 10%）</div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 高中生物（全）</span>
+        <span>1-3.2 細胞週期與分期</span>
+        <span>第 5 頁 / 共 17 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 6 ==================== -->
+    <div class="page" id="page6">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物（全）講義</span>
+        <span>第 1 章 細胞的構造與功能 · 1-3 細胞週期與細胞分裂</span>
+        <span>P. 6</span>
+      </div>
+
+      <div class="section-title">
+        <span>1-3.2　細胞週期與有絲分裂（二）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">焦點：有絲分裂目的意義、動物細胞有絲分裂各期特徵（核裂與質裂）</span>
+      </div>
+
+      <div class="task-title">二、有絲分裂與細胞質分裂</div>
+      <div class="item-line"><strong>1. 目的與意義：</strong>母細胞分裂為 2 個染色體數目、套數與母細胞完全相同的子細胞（2n → 2n），維持遺傳物質的穩定延續性。</div>
+      <div class="item-line"><strong>2. 複製與分裂次數：</strong>染色體（DNA）<strong style="color: #0284c7;">複製 1 次</strong>，細胞 <strong style="color: #b91c1c;">分裂 1 次</strong>。</div>
+
+      <!-- 動物細胞有絲分裂大圖示 -->
+      <div class="figure-container" style="margin: 4px 0;">
+        <img src="../images/biology-10-1-3-handout/有絲分裂.png" alt="動物細胞有絲分裂" style="max-height: 230px; width: auto;">
+        <div class="figure-caption">▲ 動物細胞有絲分裂與細胞質分裂歷程（間期 ➔ 前期 ➔ 中期 ➔ 後期 ➔ 末期）</div>
+      </div>
+
+      <div class="task-title" style="margin-top: 2px;">3. 分裂階段詳細特徵（以動物細胞為例）</div>
+      <table class="concept-table" style="font-size: 10pt; margin: 3px 0;">
+        <thead>
+          <tr>
+            <th style="width: 20%;">階段</th>
+            <th style="width: 80%;">關鍵生化特徵與細胞形態轉變</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="text-align: center; font-weight: bold;">間期</td>
+            <td>DNA 完成複製（仍呈鬆散染色質），中心粒複製，核膜與核仁清楚可見。</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-weight: bold; color: #0284c7;">核分裂：前期</td>
+            <td>染色質緊密纏繞縮短，出現二分體染色體；核膜、核仁逐漸解體消失；兩組中心粒向兩極移動並釋出紡錘絲。</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-weight: bold; color: #0284c7;">核分裂：中期</td>
+            <td>紡錘絲附著於染色體中節著絲點，牽引所有染色體排列在細胞中央的<strong>赤道板</strong>上（此期染色體形態最清晰）。</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-weight: bold; color: #0284c7;">核分裂：後期</td>
+            <td>著絲點分裂，紡錘絲牽引<strong>姊妹染色分體分離</strong>成兩條獨立染色體，分別移向細胞兩極。</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-weight: bold; color: #b91c1c;">末期與質裂</td>
+            <td>染色體到達兩極並鬆散為染色質，核膜核仁重新形成，紡錘絲解體消失。動物細胞中央質膜向內凹陷形成<strong>分裂溝</strong>，縊裂為 2 個子細胞。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="page-footer">
+        <span>自製電子書 · 高中生物（全）</span>
+        <span>1-3.2 有絲分裂各期特徵</span>
+        <span>第 6 頁 / 共 17 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 7 ==================== -->
+    <div class="page" id="page7">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物（全）講義</span>
+        <span>第 1 章 細胞的構造與功能 · 1-3 細胞週期與細胞分裂</span>
+        <span>P. 7</span>
+      </div>
+
+      <div class="section-title">
+        <span>1-3.2　細胞週期與有絲分裂（三）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">焦點：動植物細胞分裂差異 & 1-3.2 隨堂實戰評量</span>
+      </div>
+
+      <div class="task-title">三、動、植物細胞在細胞分裂上的關鍵差異</div>
+      <div class="item-line"><strong>1. 中心粒的有無：</strong>動物細胞具有中心粒協助紡錘體形成；高等植物細胞 <strong style="color: #b91c1c;">一般不具中心粒</strong>，但細胞分裂時兩極仍會發出微管形成紡錘絲。</div>
+      <div class="item-line"><strong>2. 細胞質分裂方式：</strong></div>
+      <div class="item-line" style="padding-left: 18px;">
+        (1) <strong>動物細胞：</strong>由微絲組成的收縮環牽引，使細胞中央細胞膜向內凹陷形成 <span class="ans-word" onclick="toggleAns(this, event)">分裂溝</span>，最終由外向內縊裂分開。
+      </div>
+      <div class="item-line" style="padding-left: 18px;">
+        (2) <strong>植物細胞：</strong>因具堅硬細胞壁無法向內凹陷，由高基氏體囊泡在細胞中央融合聚集形成 <span class="ans-word" onclick="toggleAns(this, event)">細胞板</span>，由內向外延伸形成新的細胞膜與細胞壁。
+      </div>
+
+      <!-- 圖 1-38 動、植物細胞分裂期的差異 -->
+      <div class="figure-container" style="margin: 4px 0;">
+        <img src="../images/biology-10-1-3-handout/動、植物細胞分裂期差異.png" alt="動植物細胞分裂期的差異" style="max-height: 140px; width: auto;">
+        <div class="figure-caption">▲ 圖 1-38　動、植物細胞分裂期差異（動物：中心粒＋分裂溝 vs 植物：無中心粒＋細胞板）</div>
+      </div>
+
+      <div class="task-title" style="margin-top: 4px;">基礎練習（點選題號開合整題答案與詳細解析）</div>
+
+      <!-- Q1 -->
+      <div class="q-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">C</span> ）</span>
+          <span class="q-num">1.</span>下列何種情形下，生物體會進行有絲分裂？
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 睪丸產生精子</div>
+          <div class="q-opt">(B) 細菌的增殖</div>
+          <div class="q-opt">(C) 血球母細胞產生紅血球</div>
+          <div class="q-opt">(D) 卵巢產生卵細胞</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div style="font-size: 9.5pt; color: #64748b; font-weight: bold;">💡 解析展開：</div>
+          <div class="calc-solution">
+            有絲分裂是真核生物用以產生「體細胞」以進行增殖、生長與組織修復的機制，(C)造血母細胞分裂產生紅血球為體細胞增殖，屬於有絲分裂；(A)與(D)產生生殖細胞（精子、卵細胞）必須進行「減數分裂」；(B)細菌等原核生物是以「二分裂法」進行增殖。
+          </div>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="q-item" onclick="toggleItemAnswers(this, event)" style="margin-top: 6px;">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">A</span> ）</span>
+          <span class="q-num">2.</span>植物細胞的有絲分裂會發生下列何種現象？
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 複製的染色分體分離</div>
+          <div class="q-opt">(B) 細胞中央部位向內凹陷</div>
+          <div class="q-opt">(C) 中心粒向兩側移動</div>
+          <div class="q-opt">(D) 同源染色體分離</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div style="font-size: 9.5pt; color: #64748b; font-weight: bold;">💡 解析展開：</div>
+          <div class="calc-solution">
+            (A) 有絲分裂後期，著絲點斷裂，複製的姊妹染色分體分離並移向兩極，此現象在動植物皆會發生；(B) 植物細胞具有細胞壁，質裂時係形成細胞板，不會向內凹陷；(C) 高等植物細胞不具中心粒；(D) 同源染色體分離只發生於減數分裂 I。故選 (A)。
+          </div>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="q-item" onclick="toggleItemAnswers(this, event)" style="margin-top: 6px;">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">C</span> ）</span>
+          <span class="q-num">3.</span>(甲)染色體排列於紡錘體中央；(乙)細胞中央向內凹陷；(丙)染色體複製產生兩條染色分體；(丁)中心粒分裂為二，向細胞兩端移動。關於有絲分裂的順序何者正確？
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 甲乙丙丁</div>
+          <div class="q-opt">(B) 丙甲丁乙</div>
+          <div class="q-opt">(C) 丙丁甲乙</div>
+          <div class="q-opt">(D) 甲丁乙丙</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div style="font-size: 9.5pt; color: #64748b; font-weight: bold;">💡 解析展開：</div>
+          <div class="calc-solution">
+            有絲分裂及相關週期的正確先後順序為：(丙)間期染色體複製形成雙染色分體 → (丁)前期中心粒複製分開並向兩極移動釋出紡錘絲 → (甲)中期染色體排列於赤道板中央 → 後期分離後進入 (乙)末期與細胞質分裂，細胞膜向內凹陷縊裂。故順序為 (丙)(丁)(甲)(乙)。
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 高中生物（全）</span>
+        <span>1-3.2 動植物差異與隨堂評量</span>
+        <span>第 7 頁 / 共 17 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 8 ==================== -->
+    <div class="page" id="page8">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物（全）講義</span>
+        <span>第 1 章 細胞的構造與功能 · 1-3 細胞週期與細胞分裂</span>
+        <span>P. 8</span>
+      </div>
+
+      <div class="section-title">
+        <span>1-3.3　減數分裂與配子形成（一）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">焦點：減數分裂特性意義、聯會四分體、減數分裂兩階段歷程</span>
+      </div>
+
+      <div class="task-title">一、減數分裂（Meiosis）的特性與意義</div>
+      <div class="item-line"><strong>1. 特性：</strong>生殖母細胞產生配子時，染色體 <strong style="color: #0284c7;">複製 1 次</strong>，細胞 <strong style="color: #b91c1c;">連續分裂 2 次</strong>，每個配子的染色體數目僅有母細胞的一半（2n → n）。</div>
+      <div class="item-line"><strong>2. 演化意義：</strong></div>
+      <div class="item-line" style="padding-left: 18px;">(1) 配子染色體數目減半為單倍體（n），受精後恢復為二倍體（2n），確保物種<strong>代代相傳染色體套數維持恆定</strong>。</div>
+      <div class="item-line" style="padding-left: 18px;">(2) 減數分裂時非同源染色體自由組合及基因重組，可產生多樣化基因組合的配子，<strong>增加遺傳多樣性以利物種演化</strong>。</div>
+
+      <div class="task-title" style="margin-top: 4px;">3. 二分體與四分體的形態差異</div>
+      <div class="figure-container" style="margin: 3px 0;">
+        <img src="../images/biology-10-1-3-handout/二分體與四分體比較.png" alt="二分體與四分體比較" style="max-height: 80px; width: auto;">
+        <div class="figure-caption">▲ 二分體（複製後含2條姊妹分體） vs 四分體（同源二分體聯會，共含4條分體）</div>
+      </div>
+
+      <div class="task-title" style="margin-top: 4px;">4. 減數分裂兩階段歷程（以動物細胞為例）</div>
+      <!-- 減數分裂大圖 -->
+      <div class="figure-container" style="margin: 3px 0;">
+        <img src="../images/biology-10-1-3-handout/減數分裂.png" alt="減數分裂歷程" style="max-height: 200px; width: auto;">
+        <div class="figure-caption">▲ 減數分裂全歷程（減數分裂 I 同源染色體分離 ➔ 減數分裂 II 姊妹染色分體分離）</div>
+      </div>
+
+      <table class="concept-table" style="font-size: 10pt; margin: 3px 0;">
+        <thead>
+          <tr>
+            <th style="width: 20%;">分期</th>
+            <th style="width: 40%;">減數分裂第一階段（減數分裂 Ⅰ）</th>
+            <th style="width: 40%;">減數分裂第二階段（減數分裂 Ⅱ）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>前期特徵</strong></td>
+            <td>同源染色體成對並排緊密靠攏，稱為 <span class="ans-word" onclick="toggleAns(this, event)">聯會</span>，形成 <span class="ans-word" onclick="toggleAns(this, event)">四分體</span></td>
+            <td>染色質不再複製，核膜再度消失，紡錘絲出現</td>
+          </tr>
+          <tr>
+            <td><strong>中期特徵</strong></td>
+            <td>四分體成對排列在赤道板中央</td>
+            <td>各二分體獨立排列在赤道板中央</td>
+          </tr>
+          <tr>
+            <td><strong>後期特徵</strong></td>
+            <td><strong style="color: #b91c1c;"><span class="ans-word" onclick="toggleAns(this, event)">同源染色體分離</span></strong>，姊妹分體不分開</td>
+            <td>著絲點分裂，<strong style="color: #0284c7;"><span class="ans-word" onclick="toggleAns(this, event)">姊妹染色分體分離</span></strong></td>
+          </tr>
+          <tr>
+            <td><strong>染色體倍數</strong></td>
+            <td><strong>2n → n</strong>（同源分開，套數減半）</td>
+            <td><strong>n → n</strong>（分體分開，倍數不變）</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="page-footer">
+        <span>自製電子書 · 高中生物（全）</span>
+        <span>1-3.3 減數分裂歷程</span>
+        <span>第 8 頁 / 共 17 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 9 ==================== -->
+    <div class="page" id="page9">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物（全）講義</span>
+        <span>第 1 章 細胞的構造與功能 · 1-3 細胞週期與細胞分裂</span>
+        <span>P. 9</span>
+      </div>
+
+      <div class="section-title">
+        <span>1-3.3　減數分裂與配子形成（二）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">焦點：有絲分裂 vs 減數分裂全方位綜合深度對照比較</span>
+      </div>
+
+      <div class="task-title">二、有絲分裂與減數分裂綜合比較大表</div>
+
+      <!-- 圖解：有絲分裂與減數分裂的比較 -->
+      <div class="figure-container" style="margin: 3px 0;">
+        <img src="../images/biology-10-1-3-handout/有絲分裂與減數分裂的比較.png" alt="有絲分裂與減數分裂的比較" style="max-height: 200px; width: auto;">
+        <div class="figure-caption">▲ 有絲分裂（體細胞增殖，2n➔2n） vs 減數分裂（產生配子，2n➔n）</div>
+      </div>
+
+      <table class="concept-table" style="font-size: 10pt; margin: 4px 0 6px 0;">
+        <thead>
+          <tr>
+            <th style="width: 22%;">比較項目</th>
+            <th style="width: 39%;">有絲分裂（Mitosis）</th>
+            <th style="width: 39%;">減數分裂（Meiosis）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>細胞分裂目的</strong></td>
+            <td>體細胞增殖、生長發育、組織修復</td>
+            <td>產生生殖細胞（配子 / 孢子）</td>
+          </tr>
+          <tr>
+            <td><strong>染色體複製次數</strong></td>
+            <td><strong style="color: #0284c7;">1 次</strong>（於分裂前的間期）</td>
+            <td><strong style="color: #0284c7;">1 次</strong>（於減數分裂 Ⅰ 前之問期）</td>
+          </tr>
+          <tr>
+            <td><strong>細胞分裂次數</strong></td>
+            <td><strong style="color: #16a34a;">1 次</strong></td>
+            <td><strong style="color: #dc2626;">連續 2 次</strong>（減數分裂 Ⅰ 與 Ⅱ）</td>
+          </tr>
+          <tr>
+            <td><strong>同源染色體配對(聯會)</strong></td>
+            <td><span class="ans-word" onclick="toggleAns(this, event)">無</span> 配對聯會現象</td>
+            <td><span class="ans-word" onclick="toggleAns(this, event)">有</span>（發生於減數分裂 Ⅰ 前期，形成四分體）</td>
+          </tr>
+          <tr>
+            <td><strong>同源染色體分離</strong></td>
+            <td><span class="ans-word" onclick="toggleAns(this, event)">無</span>（同源不分離）</td>
+            <td><span class="ans-word" onclick="toggleAns(this, event)">有</span>（發生於減數分裂 Ⅰ 後期）</td>
+          </tr>
+          <tr>
+            <td><strong>姊妹染色分體分離</strong></td>
+            <td><span class="ans-word" onclick="toggleAns(this, event)">有</span>（後期著絲點分裂）</td>
+            <td><span class="ans-word" onclick="toggleAns(this, event)">有</span>（發生於減數分裂 Ⅱ 後期）</td>
+          </tr>
+          <tr>
+            <td><strong>產生子細胞數目</strong></td>
+            <td>產生 <strong style="color: #0284c7;">2 個</strong> 子細胞</td>
+            <td>產生 <strong style="color: #b91c1c;">4 個</strong> 子細胞</td>
+          </tr>
+          <tr>
+            <td><strong>染色體倍數（套數）變化</strong></td>
+            <td><strong style="color: #16a34a;">2n → 2n</strong>（倍數維持不變）</td>
+            <td><strong style="color: #dc2626;">2n → n</strong>（套數減半）</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="tip-box" style="margin-top: 5px;">
+        <div class="tip-title">⚡ 大考關鍵破題秘訣：</div>
+        <div style="font-size: 10.5pt; color: #334155; line-height: 1.45;">
+          ● 只要看到<strong>「同源染色體成對排列在中央」</strong>或<strong>「同源染色體分開」</strong>，必為 <strong>減數分裂 Ⅰ</strong>！<br>
+          ● 看到<strong>「無同源成對」且單列排中央、著絲點分開</strong>，若細胞內為單套 (n) 則為 <strong>減數分裂 Ⅱ</strong>；若細胞內為雙套 (2n) 則為 <strong>有絲分裂</strong>。
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 高中生物（全）</span>
+        <span>1-3.3 有絲與減數分裂比較</span>
+        <span>第 9 頁 / 共 17 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 10 ==================== -->
+    <div class="page" id="page10">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物（全）講義</span>
+        <span>第 1 章 細胞的構造與功能 · 1-3 細胞週期與細胞分裂</span>
+        <span>P. 10</span>
+      </div>
+
+      <div class="section-title">
+        <span>1-3.3　減數分裂與配子形成（三）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">焦點：精子形成 vs 卵細胞形成、極體功能與 1-3.3 隨堂評量</span>
+      </div>
+
+      <div class="task-title">三、人體配子的形成與比較</div>
+      <div class="item-line"><strong>1. 精子形成（Spermatogenesis）：</strong>精原細胞(2n) ➔ 初級精母細胞(2n) ➔ 次級精母細胞(n) ➔ 精細胞(n) ➔ 變態特化為 <strong style="color: #0284c7;">4 個具鞭毛的精子(n)</strong>。質均等分裂。</div>
+      <div class="item-line"><strong>2. 卵細胞形成（Oogenesis）：</strong>卵原細胞(2n) ➔ 初級卵母細胞(2n) ➔ 次級卵母細胞(n)＋第1極體 ➔ <strong style="color: #b91c1c;">1 個成熟卵細胞(n)</strong>＋第2極體。細胞質高度<strong>不均等分裂</strong>，確保卵細胞儲備充沛養分以供胚胎發育；極體隨後退化。</div>
+
+      <!-- 精子與卵細胞的形成 -->
+      <div class="figure-container" style="margin: 3px 0;">
+        <img src="../images/biology-10-1-3-handout/精子與卵細胞的形成.png" alt="精子與卵細胞的形成" style="max-height: 155px; width: auto;">
+        <div class="figure-caption">▲ 圖 1-39　精子與卵細胞的形成過程比較（精子產生 4 個 vs 卵細胞產生 1 個＋極體）</div>
+      </div>
+
+      <div class="task-title" style="margin-top: 4px;">基礎練習（點選題號開合整題答案與詳細解析）</div>
+
+      <!-- Q1 -->
+      <div class="q-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">A</span> ）</span>
+          <span class="q-num">1.</span>下列何敘述只會出現在動物精子形成的過程中，而不會出現在動物皮膚細胞的增生？
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 同源染色體的分離</div>
+          <div class="q-opt">(B) 姊妹染色體的分離</div>
+          <div class="q-opt">(C) DNA 的複製</div>
+          <div class="q-opt">(D) 中心體的複製</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div style="font-size: 9.5pt; color: #64748b; font-weight: bold;">💡 解析展開：</div>
+          <div class="calc-solution">
+            皮膚細胞增生為「有絲分裂」，精子形成為「減數分裂」。(B)姊妹染色分體分離、(C)DNA複製與(D)中心體複製在有絲分裂與減數分裂兩者皆會發生；唯獨「同源染色體聯會配對與分離」專屬於減數分裂 Ⅰ。故選 (A)。
+          </div>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="q-item" onclick="toggleItemAnswers(this, event)" style="margin-top: 5px;">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">C</span> ）</span>
+          <span class="q-num">2.</span>下列有關細胞分裂的比較，何者正確？
+        </div>
+        <table class="concept-table" style="font-size: 9.5pt; margin: 3px 0;">
+          <tr><th>選項</th><th>比較項目</th><th>有絲分裂</th><th>減數分裂</th></tr>
+          <tr><td>(A)</td><td>染色體複製</td><td>有，一次</td><td>有，二次</td></tr>
+          <tr><td>(B)</td><td>子細胞數量</td><td>4 個</td><td>4 個</td></tr>
+          <tr><td>(C)</td><td>姊妹染色體的分離</td><td>有</td><td>有</td></tr>
+          <tr><td>(D)</td><td>染色體倍數變化</td><td>2n → 2n</td><td>n → 2n</td></tr>
+        </table>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div style="font-size: 9.5pt; color: #64748b; font-weight: bold;">💡 解析展開：</div>
+          <div class="calc-solution">
+            (A) 減數分裂染色體只複製 1 次；(B) 有絲分裂產生 2 個子細胞；(D) 減數分裂倍數變化為 2n → n；(C) 兩者皆會發生姊妹染色分體分離（有絲分裂後期、減數分裂 Ⅱ 後期），故 (C) 正確。
+          </div>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="q-item" onclick="toggleItemAnswers(this, event)" style="margin-top: 5px;">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">A</span> ）</span>
+          <span class="q-num">3.</span>下列何項敘述為減數分裂對多數生物體的主要意義？
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 可維持子代的染色體倍數固定</div>
+          <div class="q-opt">(B) 分裂產生的細胞皆可生長成獨立個體</div>
+          <div class="q-opt">(C) 可產生和母細胞染色體倍數相同的配子</div>
+          <div class="q-opt">(D) 降低子細胞的染色體數目</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div style="font-size: 9.5pt; color: #64748b; font-weight: bold;">💡 解析展開：</div>
+          <div class="calc-solution">
+            減數分裂使配子染色體減半為 n，雌雄配子受精結合後使受精卵恢復為 2n，從而確保物種「子代與親代的染色體倍數代代維持固定恆定」，避免倍數逐代倍增。故正確為 (A)。
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 高中生物（全）</span>
+        <span>1-3.3 配子形成與隨堂評量</span>
+        <span>第 10 頁 / 共 17 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 11 ==================== -->
+    <div class="page" id="page11">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物（全）講義</span>
+        <span>第 1 章 細胞的構造與功能 · 1-3 細胞週期與細胞分裂</span>
+        <span>P. 11</span>
+      </div>
+
+      <div class="section-title">
+        <span>1-3.4　受精卵的發育與細胞分化</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">焦點：受精染色體數目恢復、細胞分化意義與 1-3.4 隨堂評量</span>
+      </div>
+
+      <div class="task-title">一、染色體數目與發育過程</div>
+      <div class="item-line"><strong>1. 受精過程染色體數目的變化：</strong>人體生殖母細胞經減數分裂產生的精子(23條)與卵細胞(23條)皆為單倍數(n)，受精結合後形成受精卵，即恢復為 <strong style="color: #0284c7;">二倍數的 46 條染色體（2n）</strong>。</div>
+
+      <div class="task-title" style="margin-top: 4px;">2. 後代染色體數目的維持與細胞分化</div>
+      <div class="item-line">(1) <strong>有絲分裂增殖：</strong>單一受精卵經無數次有絲分裂增生，所產生的所有體細胞均帶有<strong>完全相同</strong>的成對染色體與遺傳密碼。</div>
+      <div class="item-line">(2) <strong>細胞分化（Cell Differentiation）：</strong>原本基因完全相同的體細胞，在發育過程中因「基因選擇性表現」，形成不同形態構造與專一機能的細胞（如上皮細胞、肌肉細胞、神經細胞、紅血球、骨細胞等），進而構築組織、器官與系統。</div>
+      <div class="item-line">(3) <strong>生殖母細胞傳承：</strong>個體發育成熟後，性腺內的生殖母細胞可再次進行減數分裂產生配子，代代相傳使染色體數目維持恆定。</div>
+
+      <!-- 圖 1-40 受精卵的細胞分化 -->
+      <div class="figure-container" style="margin: 5px 0;">
+        <img src="../images/biology-10-1-3-handout/受精卵的細胞分化.png" alt="受精卵的細胞分化" style="max-height: 195px; width: auto;">
+        <div class="figure-caption">▲ 圖 1-40　受精卵經有絲分裂增生與細胞分化，發育成各類功能特化組織細胞與生殖母細胞</div>
+      </div>
+
+      <div class="task-title" style="margin-top: 4px;">基礎練習（點選題號開合答案與解析）</div>
+
+      <!-- Q1 -->
+      <div class="q-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">D</span> ）</span>
+          <span class="q-num">1.</span>有關細胞分化的敘述，何者正確？
+        </div>
+        <div class="q-options stacked" style="margin-top: 4px;">
+          <div class="q-opt">(A) 生物經分化後，會產生相同形態和功能的細胞</div>
+          <div class="q-opt">(B) 同一個體的不同細胞，其所含的基因都不相同</div>
+          <div class="q-opt">(C) 對多細胞生物而言，分化不能算是生長</div>
+          <div class="q-opt">(D) 分化程度愈高的生物，其細胞間的協調就愈重要</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div style="font-size: 9.5pt; color: #64748b; font-weight: bold;">💡 解析展開：</div>
+          <div class="calc-solution">
+            (A) 分化會產生「形態構造與生理功能相異」的特化細胞；(B) 同一個體的所有體細胞皆源自同一受精卵的有絲分裂，因此各細胞核內所攜帶的基因組完全相同，差異源自基因的選擇性表現；(C) 對多細胞生物而言，個體由受精卵長成成體包含「細胞分裂（數目增加）」、「細胞生長（體積增大）」與「細胞分化（功能特化）」，三者皆屬於生長發育的一環；(D) 正確，細胞功能愈高度特化，各細胞各司其職，彼此間的神經與激素協調調控就愈不可或缺。故選 (D)。
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 高中生物（全）</span>
+        <span>1-3.4 受精卵發育與細胞分化</span>
+        <span>第 11 頁 / 共 17 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 12 ==================== -->
+    <div class="page" id="page12">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物（全）講義</span>
+        <span>第 1 章 細胞的構造與功能 · 1-3 細胞週期與細胞分裂</span>
+        <span>P. 12</span>
+      </div>
+
+      <div class="section-title">
+        <span>課後實戰演練 · 單選題（一）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">減數分裂特徵與核型分析題組（第 1～4 題）</span>
+      </div>
+
+      <div class="task-title">一、單選題（點選題號開合整題答案與詳細解析）</div>
+
+      <!-- Q1 -->
+      <div class="q-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">D</span> ）</span>
+          <span class="q-num">1.</span>下列哪一過程需進行減數分裂？
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 受精卵的分裂</div>
+          <div class="q-opt">(B) 細胞的分化</div>
+          <div class="q-opt">(C) 皮膚細胞的增生</div>
+          <div class="q-opt">(D) 生殖細胞形成時</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div style="font-size: 9.5pt; color: #64748b; font-weight: bold;">💡 解析展開：</div>
+          <div class="calc-solution">
+            (D) 只有生殖母細胞在產生單倍體生殖細胞（精子、卵）時，需要進行減數分裂以使染色體套數減半；(A)受精卵卵裂、(B)分化過程增殖與(C)皮膚細胞修復增生，皆為維持染色體數目不變的「有絲分裂」。故選 (D)。
+          </div>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="q-item" onclick="toggleItemAnswers(this, event)" style="margin-top: 10px;">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">A</span> ）</span>
+          <span class="q-num">2.</span>在減數分裂過程中，同源染色體的分離與姊妹染色分體的分離各發生於何時？
+        </div>
+        <div class="q-options stacked" style="margin-top: 4px;">
+          <div class="q-opt">(A) 前者發生於減數分裂 Ⅰ，後者發生於減數分裂 Ⅱ</div>
+          <div class="q-opt">(B) 前者發生於減數分裂 Ⅱ，後者發生於減數分裂 Ⅰ</div>
+          <div class="q-opt">(C) 兩者均發生於減數分裂 Ⅰ</div>
+          <div class="q-opt">(D) 兩者均發生於減數分裂 Ⅱ</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div style="font-size: 9.5pt; color: #64748b; font-weight: bold;">💡 解析展開：</div>
+          <div class="calc-solution">
+            減數分裂分為兩階段：第一階段（減數分裂 Ⅰ）後期進行「同源染色體分離」，導致染色體倍數減半（2n → n）；第二階段（減數分裂 Ⅱ）後期著絲點分裂，進行「姊妹染色分體分離」，染色體倍數維持不變（n → n）。故正確選項為 (A)。
+          </div>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="q-item" onclick="toggleItemAnswers(this, event)" style="margin-top: 10px;">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">A</span> ）</span>
+          <span class="q-num">3.</span>人體哪一個細胞染色體最不可能為「22 ＋ X」？
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 女性的初級卵母細胞</div>
+          <div class="q-opt">(B) 女性的次級卵母細胞</div>
+          <div class="q-opt">(C) 女性的卵</div>
+          <div class="q-opt">(D) 男性的精子</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div style="font-size: 9.5pt; color: #64748b; font-weight: bold;">💡 解析展開：</div>
+          <div class="calc-solution">
+            「22 條體染色體 ＋ 1 條 X 染色體」代表的是總數 23 條的「單倍數（n）」細胞！(A)女性初級卵母細胞剛完成 DNA 複製，仍處於「雙倍體二分體狀態（44 ＋ XX，總數 46 條）」，尚未完成同源染色體分離，絕不可能為單套 22＋X；(B)次級卵母細胞(n=22+X)、(C)卵細胞(n=22+X)、(D)攜帶X的精子(n=22+X)皆為單倍數。故選 (A)。
+          </div>
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="q-item" onclick="toggleItemAnswers(this, event)" style="margin-top: 10px;">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">B</span> ）</span>
+          <span class="q-num">4.</span>下列有關減數分裂的敘述，何者正確？
+        </div>
+        <div class="q-options stacked" style="margin-top: 4px;">
+          <div class="q-opt">(A) 減數分裂時僅發生性染色體的分離</div>
+          <div class="q-opt">(B) 減數分裂時會發生性染色體的分離與體染色體的分離</div>
+          <div class="q-opt">(C) 姊妹染色分體在減數分裂 Ⅰ 時相互分離</div>
+          <div class="q-opt">(D) 減數分裂 Ⅱ 產生的子細胞含成對的同源染色體</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div style="font-size: 9.5pt; color: #64748b; font-weight: bold;">💡 解析展開：</div>
+          <div class="calc-solution">
+            (B) 正確，在減數分裂 Ⅰ 後期，所有 22 對體染色體與 1 對性染色體均會進行同源染色體分離；(A)體染色體與性染色體皆會分離；(C)姊妹染色分體是在減數分裂 Ⅱ 後期分離；(D)減數分裂 Ⅰ 即已將同源染色體拆開，減數分裂 Ⅱ 所產生的配子子細胞皆為單倍數（n），不具有成對同源染色體。故選 (B)。
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 高中生物（全）</span>
+        <span>課後實戰演練 · 單選題（一）</span>
+        <span>第 12 頁 / 共 17 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 13 ==================== -->
+    <div class="page" id="page13">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物（全）講義</span>
+        <span>第 1 章 細胞的構造與功能 · 1-3 細胞週期與細胞分裂</span>
+        <span>P. 13</span>
+      </div>
+
+      <div class="section-title">
+        <span>課後實戰演練 · 單選題（二）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">倍數變化、動植物差異與分裂週期比較（第 5～7 題）</span>
+      </div>
+
+      <div class="task-title">一、單選題（續）</div>
+
+      <!-- Q5 -->
+      <div class="q-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">B</span> ）</span>
+          <span class="q-num">5.</span>下列何者最能表示減數分裂的過程中染色體倍數的變化？（母細胞的染色體倍數 → 完成減數分裂 Ⅰ 之細胞的染色體倍數 → 完成減數分裂 Ⅱ 之細胞的染色體倍數）
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 2n → 2n → n</div>
+          <div class="q-opt">(B) 2n → n → n</div>
+          <div class="q-opt">(C) n → n → n</div>
+          <div class="q-opt">(D) 2n → n → 2n</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div style="font-size: 9.5pt; color: #64748b; font-weight: bold;">💡 解析展開：</div>
+          <div class="calc-solution">
+            生殖母細胞最初為雙倍體（2n）；減數分裂 Ⅰ 後期同源染色體分離，產生的次級母細胞中同源染色體已不再成對，套數減半為單倍體（n）；減數分裂 Ⅱ 進行的是姊妹染色分體的分離，子細胞染色體套數維持不變（n）。因此全程套數變化為 <strong>2n → n → n</strong>，正確選項為 (B)。
+          </div>
+        </div>
+      </div>
+
+      <!-- Q6 -->
+      <div class="q-item" onclick="toggleItemAnswers(this, event)" style="margin-top: 14px;">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">B</span> ）</span>
+          <span class="q-num">6.</span>下列何者為動、植物細胞有絲分裂的差異？
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 核膜是否消失</div>
+          <div class="q-opt">(B) 是否有中心粒的參與</div>
+          <div class="q-opt">(C) 紡錘絲是否出現</div>
+          <div class="q-opt">(D) 著絲點、染色分體是否分離</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div style="font-size: 9.5pt; color: #64748b; font-weight: bold;">💡 解析展開：</div>
+          <div class="calc-solution">
+            動植物細胞有絲分裂的主要差異有二：<br>
+            ① <strong>中心粒的有無：</strong>動物細胞由中心粒發出星狀絲形成紡錘體；高等植物細胞「不具中心粒」，係由兩極直接發出微管形成紡錘體；<br>
+            ② <strong>細胞質分裂方式：</strong>動物細胞產生分裂溝向內縊裂；植物細胞形成細胞板。<br>
+            (A)核膜皆會在前期解體消失；(C)兩者皆會出現紡錘絲；(D)後期著絲點皆會斷裂讓染色分體分離。故選 (B)。
+          </div>
+        </div>
+      </div>
+
+      <!-- Q7 -->
+      <div class="q-item" onclick="toggleItemAnswers(this, event)" style="margin-top: 14px;">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">B</span> ）</span>
+          <span class="q-num">7.</span>在有絲分裂和減數分裂的過程，下列何者相同？
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 染色體分離的次數</div>
+          <div class="q-opt">(B) 染色體複製的次數</div>
+          <div class="q-opt">(C) 產生子細胞的數目</div>
+          <div class="q-opt">(D) 子細胞內染色體的數目</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div style="font-size: 9.5pt; color: #64748b; font-weight: bold;">💡 解析展開：</div>
+          <div class="calc-solution">
+            (B) 正確，兩者在分裂啟動前，染色體（DNA）皆僅進行<strong>「1 次複製」</strong>；<br>
+            (A) 分離次數：有絲分裂只進行 1 次染色體分離（姊妹分體分離）；減數分裂進行 2 次分離（同源分離＋分體分離）；<br>
+            (C) 子細胞數：有絲分裂產生 2 個；減數分裂產生 4 個；<br>
+            (D) 染色體數目：有絲分裂子細胞數目與母細胞相同（2n）；減數分裂子細胞數目減半（n）。故選 (B)。
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 高中生物（全）</span>
+        <span>課後實戰演練 · 單選題（二）</span>
+        <span>第 13 頁 / 共 17 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 14 ==================== -->
+    <div class="page" id="page14">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物（全）講義</span>
+        <span>第 1 章 細胞的構造與功能 · 1-3 細胞週期與細胞分裂</span>
+        <span>P. 14</span>
+      </div>
+
+      <div class="section-title">
+        <span>課後實戰演練 · 單選題（三）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">細胞週期概念與染色體圖像分析題組（第 8～11 題）</span>
+      </div>
+
+      <div class="task-title">一、單選題（續）</div>
+
+      <!-- Q8 -->
+      <div class="q-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">A</span> ）</span>
+          <span class="q-num">8.</span>有關細胞週期的敘述，何者正確？
+        </div>
+        <div class="q-options stacked" style="margin-top: 3px;">
+          <div class="q-opt">(A) 間期占大部分的時間</div>
+          <div class="q-opt">(B) 間期為細胞休養期，不進行生長</div>
+          <div class="q-opt">(C) 細胞週期在不同種類細胞間的時間皆固定相同</div>
+          <div class="q-opt">(D) 間期染色體複製並形成染色體</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div style="font-size: 9.5pt; color: #64748b; font-weight: bold;">💡 解析展開：</div>
+          <div class="calc-solution">
+            (A) 正確，間期約占細胞週期 90% 以上時間；(B) 間期是細胞生長最旺盛的準備期；(C) 不同細胞週期長度差異懸殊（皮膚幹細胞約一天，早期胚胎僅數十分鐘）；(D) 間期進行 DNA 複製，但遺傳物質仍維持細長「染色質」形態，進入分裂期後才纏繞形成「染色體」。
+          </div>
+        </div>
+      </div>
+
+      <!-- Q9 -->
+      <div class="q-item" onclick="toggleItemAnswers(this, event)" style="margin-top: 6px;">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">A</span> ）</span>
+          <span class="q-num">9.</span>有關人類配子的形成與細胞分化的敘述，下列何者錯誤？
+        </div>
+        <div class="q-options stacked" style="margin-top: 3px;">
+          <div class="q-opt">(A) 卵細胞與精子的形成皆經歷細胞質的不等分</div>
+          <div class="q-opt">(B) 精細胞會進一步分化成精子</div>
+          <div class="q-opt">(C) 減數分裂最終產生一個卵細胞</div>
+          <div class="q-opt">(D) 減數分裂最終產生四個精子</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div style="font-size: 9.5pt; color: #64748b; font-weight: bold;">💡 解析展開：</div>
+          <div class="calc-solution">
+            (A) 錯誤，精子形成過程中兩次細胞分裂皆為細胞質「等分」分裂，產生 4 個大小均等之精細胞；只有卵細胞形成時經歷劇烈的細胞質「不對稱不等分」分裂，產生 1 個巨大卵細胞與小型極體。故選 (A)。
+          </div>
+        </div>
+      </div>
+
+      <!-- Q10 附圖 -->
+      <div class="q-item" onclick="toggleItemAnswers(this, event)" style="margin-top: 6px;">
+        <div style="display: flex; gap: 10px; align-items: flex-start;">
+          <div style="flex: 1;">
+            <div class="q-stem">
+              <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">C</span> ）</span>
+              <span class="q-num">10.</span>附圖為人類兩對染色體經複製後的示意圖，關於圖中所示，下列敘述何者錯誤？
+            </div>
+            <div class="q-options stacked" style="margin-top: 3px; font-size: 10.5pt;">
+              <div class="q-opt">(A) 1甲與 1乙互稱為姊妹染色分體</div>
+              <div class="q-opt">(B) 減數分裂第一階段後 1甲1乙與 3甲3乙可能會分開</div>
+              <div class="q-opt">(C) 1甲若來自父親，則與 1乙來自母親</div>
+              <div class="q-opt">(D) 1甲1乙與 2甲2乙互稱為同源染色體</div>
+            </div>
+          </div>
+          <!-- 向量附圖 Q10 -->
+          <div style="width: 145px; text-align: center; flex-shrink: 0; background: #fff; border: 1px solid #cbd5e1; border-radius: 6px; padding: 4px;">
+            <svg width="135" height="85" viewBox="0 0 170 100" style="display: block; margin: 0 auto;">
+              <!-- Chromosome Pair 1 (Blue) -->
+              <g stroke="#2563eb" stroke-width="4" stroke-linecap="round">
+                <line x1="20" y1="15" x2="30" y2="45"/><line x1="30" y1="45" x2="20" y2="85"/>
+                <line x1="36" y1="15" x2="30" y2="45"/><line x1="30" y1="45" x2="36" y2="85"/>
+              </g>
+              <circle cx="30" cy="45" r="3" fill="#1e40af"/>
+              <text x="18" y="10" font-size="9" fill="#1e40af" font-weight="bold">1甲</text>
+              <text x="36" y="10" font-size="9" fill="#1e40af" font-weight="bold">1乙</text>
+
+              <!-- Chromosome Pair 2 (Pink) -->
+              <g stroke="#e11d48" stroke-width="4" stroke-linecap="round">
+                <line x1="60" y1="15" x2="70" y2="45"/><line x1="70" y1="45" x2="60" y2="85"/>
+                <line x1="76" y1="15" x2="70" y2="45"/><line x1="70" y1="45" x2="76" y2="85"/>
+              </g>
+              <circle cx="70" cy="45" r="3" fill="#9f1239"/>
+              <text x="58" y="10" font-size="9" fill="#9f1239" font-weight="bold">2甲</text>
+              <text x="76" y="10" font-size="9" fill="#9f1239" font-weight="bold">2乙</text>
+
+              <!-- Chromosome Pair 3 (Short Blue) -->
+              <g stroke="#2563eb" stroke-width="3.5" stroke-linecap="round">
+                <line x1="105" y1="28" x2="112" y2="52"/><line x1="112" y1="52" x2="105" y2="78"/>
+                <line x1="117" y1="28" x2="112" y2="52"/><line x1="112" y1="52" x2="117" y2="78"/>
+              </g>
+              <circle cx="112" cy="52" r="2.5" fill="#1e40af"/>
+              <text x="103" y="24" font-size="8.5" fill="#1e40af" font-weight="bold">3甲</text>
+              <text x="117" y="24" font-size="8.5" fill="#1e40af" font-weight="bold">3乙</text>
+
+              <!-- Chromosome Pair 4 (Short Pink) -->
+              <g stroke="#e11d48" stroke-width="3.5" stroke-linecap="round">
+                <line x1="140" y1="28" x2="147" y2="52"/><line x1="147" y1="52" x2="140" y2="78"/>
+                <line x1="152" y1="28" x2="147" y2="52"/><line x1="147" y1="52" x2="152" y2="78"/>
+              </g>
+              <circle cx="147" cy="52" r="2.5" fill="#9f1239"/>
+              <text x="138" y="24" font-size="8.5" fill="#9f1239" font-weight="bold">4甲</text>
+              <text x="152" y="24" font-size="8.5" fill="#9f1239" font-weight="bold">4乙</text>
+            </svg>
+            <div style="font-size: 8pt; color: #64748b;">▲ 染色體複製示意圖</div>
+          </div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div style="font-size: 9.5pt; color: #64748b; font-weight: bold;">💡 解析展開：</div>
+          <div class="calc-solution">
+            (C) 錯誤，1甲與 1乙是由「同一條染色體經半保留複製」形成的姊妹染色分體，其遺傳物質完全相同，必然源自同一個親代（同為父方或同為母方）。同源染色體（1 與 2）才會是一條來自父親、一條來自母親。故選 (C)。
+          </div>
+        </div>
+      </div>
+
+      <!-- Q11 附圖 -->
+      <div class="q-item" onclick="toggleItemAnswers(this, event)" style="margin-top: 6px;">
+        <div style="display: flex; gap: 10px; align-items: flex-start;">
+          <div style="flex: 1;">
+            <div class="q-stem">
+              <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">C</span> ）</span>
+              <span class="q-num">11.</span>附圖為細胞分裂過程中的特定時期，甲～丁代表不同染色體，請選出下列正確敘述？
+            </div>
+            <div class="q-options stacked" style="margin-top: 3px; font-size: 10.5pt;">
+              <div class="q-opt">(A) 此細胞正在進行有絲分裂</div>
+              <div class="q-opt">(B) 染色體甲、乙為姊妹染色分體</div>
+              <div class="q-opt">(C) 染色體丙、丁配對的現象稱為聯會</div>
+              <div class="q-opt">(D) 染色體甲、丁為同源染色體</div>
+            </div>
+          </div>
+          <!-- 向量附圖 Q11 -->
+          <div style="width: 110px; text-align: center; flex-shrink: 0; background: #fff; border: 1px solid #cbd5e1; border-radius: 6px; padding: 4px;">
+            <svg width="100" height="85" viewBox="0 0 120 105" style="display: block; margin: 0 auto;">
+              <!-- Ellipse Cell -->
+              <ellipse cx="60" cy="52" rx="55" ry="48" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
+              
+              <!-- Tetrad 1: 甲 (Blue) & 乙 (Pink) paired -->
+              <g stroke="#2563eb" stroke-width="3" stroke-linecap="round">
+                <line x1="42" y1="18" x2="48" y2="40"/><line x1="48" y1="40" x2="42" y2="62"/>
+                <line x1="52" y1="18" x2="48" y2="40"/><line x1="48" y1="40" x2="52" y2="62"/>
+              </g>
+              <text x="35" y="32" font-size="9" fill="#1e40af" font-weight="bold">甲</text>
+              <g stroke="#e11d48" stroke-width="3" stroke-linecap="round">
+                <line x1="68" y1="18" x2="74" y2="40"/><line x1="74" y1="40" x2="68" y2="62"/>
+                <line x1="78" y1="18" x2="74" y2="40"/><line x1="74" y1="40" x2="78" y2="62"/>
+              </g>
+              <text x="82" y="32" font-size="9" fill="#9f1239" font-weight="bold">乙</text>
+
+              <!-- Tetrad 2: 丙 (Pink-short) & 丁 (Blue-short) paired -->
+              <g stroke="#e11d48" stroke-width="2.5" stroke-linecap="round">
+                <line x1="48" y1="68" x2="53" y2="84"/><line x1="53" y1="84" x2="48" y2="98"/>
+                <line x1="56" y1="68" x2="53" y2="84"/><line x1="53" y1="84" x2="56" y2="98"/>
+              </g>
+              <text x="38" y="85" font-size="8.5" fill="#9f1239" font-weight="bold">丙</text>
+              <g stroke="#2563eb" stroke-width="2.5" stroke-linecap="round">
+                <line x1="68" y1="68" x2="73" y2="84"/><line x1="73" y1="84" x2="68" y2="98"/>
+                <line x1="76" y1="68" x2="73" y2="84"/><line x1="73" y1="84" x2="76" y2="98"/>
+              </g>
+              <text x="80" y="85" font-size="8.5" fill="#1e40af" font-weight="bold">丁</text>
+            </svg>
+            <div style="font-size: 8pt; color: #64748b;">▲ 聯會四分體</div>
+          </div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div style="font-size: 9.5pt; color: #64748b; font-weight: bold;">💡 解析展開：</div>
+          <div class="calc-solution">
+            由圖可知同源染色體成對並排緊密靠攏（四分體），為「減數分裂 Ⅰ 前期之聯會現象」。甲與乙互為同源染色體，丙與丁互為同源染色體。(A)此細胞為減數分裂；(B)甲與乙各為一個完整的二分體染色體，彼此互為同源染色體；(C)丙與丁配對之現象即為「聯會」；(D)甲（較長）與丁（較短）為大小不同的非同源染色體。故選 (C)。
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 高中生物（全）</span>
+        <span>課後實戰演練 · 單選題（三）</span>
+        <span>第 14 頁 / 共 17 頁</span>
+      </div>
+    </div>
+
+    
+    <!-- ==================== Page 15 ==================== -->
+    <div class="page" id="page15">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物（全）講義</span>
+        <span>第 1 章 細胞的構造與功能 · 1-3 細胞週期與細胞分裂</span>
+        <span>P. 15</span>
+      </div>
+
+      <div class="section-title">
+        <span>課後實戰演練 · 多選題（一）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">染色體套數變化與減數分裂演化意義（第 1～2 題）</span>
+      </div>
+
+      <div class="task-title">二、多選題（點選題號開合整題答案與詳細解析）</div>
+
+      <!-- Q1 -->
+      <div class="q-item" onclick="toggleItemAnswers(this, event)" style="margin-top: 14px; padding: 12px 14px;">
+        <div class="q-stem" style="font-size: 12.5pt; line-height: 1.5;">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">CE</span> ）</span>
+          <span class="q-num">1.</span>下列哪些情形會有染色體套數的變化？（應選 2 項）
+        </div>
+        <div class="q-options stacked" style="margin-top: 8px; font-size: 11.5pt; gap: 4px;">
+          <div class="q-opt">(A) 動物生殖中，精細胞分化成精子</div>
+          <div class="q-opt">(B) 有絲分裂</div>
+          <div class="q-opt">(C) 減數分裂 Ⅰ</div>
+          <div class="q-opt">(D) 減數分裂 Ⅱ</div>
+          <div class="q-opt">(E) 受精作用</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)" style="margin-top: 10px; padding: 8px 12px;">
+          <div style="font-size: 10.5pt; color: #64748b; font-weight: bold; margin-bottom: 4px;">💡 詳細解題剖析（點擊展開 / 收合）：</div>
+          <div class="calc-solution" style="font-size: 10.5pt; line-height: 1.55;">
+            ● <strong>(C) 減數分裂 Ⅰ：</strong>在減數分裂第一階段後期，同源染色體彼此分離移向兩極，形成的次級精母/卵母細胞中已無成對的同源染色體，染色體套數由雙套減半為單套（<strong>2n → n</strong>），套數發生改變；<br>
+            ● <strong>(E) 受精作用：</strong>由單倍體的雄配子（n）與單倍體的雌配子（n）互相結合成受精卵，同源染色體重新配對成雙，染色體套數由單套恢復為雙套（<strong>n ＋ n → 2n</strong>），套數發生改變；<br>
+            ● (A)精細胞特化變態為具鞭毛的精子過程中，僅進行細胞質形態改變，染色體套數維持為單套（n → n）；<br>
+            ● (B)有絲分裂母細胞與子細胞套數恆定（2n → 2n）；<br>
+            ● (D)減數分裂 Ⅱ 進行的是姊妹染色分體分離，著絲點分裂前後細胞套數均為單套（n → n）。<br>
+            故正確選項為 <strong>(C)(E)</strong>。
+          </div>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="q-item" onclick="toggleItemAnswers(this, event)" style="margin-top: 20px; padding: 12px 14px;">
+        <div class="q-stem" style="font-size: 12.5pt; line-height: 1.5;">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">AB</span> ）</span>
+          <span class="q-num">2.</span>有關減數分裂意義的敘述，下列哪些正確？（應選 2 項）
+        </div>
+        <div class="q-options stacked" style="margin-top: 8px; font-size: 11.5pt; gap: 4px;">
+          <div class="q-opt">(A) 維持子代和親代染色體數目相同</div>
+          <div class="q-opt">(B) 產生多種染色體組合的配子</div>
+          <div class="q-opt">(C) 保留親代優良的性狀</div>
+          <div class="q-opt">(D) 避免染色體產生突變</div>
+          <div class="q-opt">(E) 增加生殖細胞的數目以讓個體成長</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)" style="margin-top: 10px; padding: 8px 12px;">
+          <div style="font-size: 10.5pt; color: #64748b; font-weight: bold; margin-bottom: 4px;">💡 詳細解題剖析（點擊展開 / 收合）：</div>
+          <div class="calc-solution" style="font-size: 10.5pt; line-height: 1.55;">
+            ● <strong>(A) 維持世代染色體數目恆定：</strong>減數分裂使配子染色體數目減半，配合受精作用恢復二倍體，確保多細胞有性生殖生物代代相傳染色體套數維持一致，避免代代翻倍；<br>
+            ● <strong>(B) 增加遺傳多樣性促進演化：</strong>減數分裂 Ⅰ 前期同源染色體聯會互換（基因重組）以及後期非同源染色體自由組合分離，能隨機組合出天文數字般多樣化的配子類型，為自然選擇提供演化原料；<br>
+            ● (C)有性生殖透過減數分裂打破親代等位基因組合，會產生性狀變異，若欲穩定「保留親代優良性狀」應採用無性繁殖（如扦插、組織培養、有絲分裂克隆）；<br>
+            ● (D)減數分裂過程中有 DNA 複製與染色體分離，依然可能發生複製失誤或染色體無分離突變，無法「避免突變」；<br>
+            ● (E)個體生長發育是由體細胞進行「有絲分裂」增加細胞數目達成，減數分裂只負責產生生殖細胞。<br>
+            故正確選項為 <strong>(A)(B)</strong>。
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 高中生物（全）</span>
+        <span>課後實戰演練 · 多選題（一）</span>
+        <span>第 15 頁 / 共 17 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 16 ==================== -->
+    <div class="page" id="page16">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物（全）講義</span>
+        <span>第 1 章 細胞的構造與功能 · 1-3 細胞週期與細胞分裂</span>
+        <span>P. 16</span>
+      </div>
+
+      <div class="section-title">
+        <span>課後實戰演練 · 多選題（二）</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">子細胞自由組合型式與分裂後期圖像分析（第 3～4 題）</span>
+      </div>
+
+      <div class="task-title">二、多選題（續，點選題號開合整題答案與詳細解析）</div>
+
+      <!-- Q3 附組合圖 -->
+      <div class="q-item" onclick="toggleItemAnswers(this, event)" style="margin-top: 8px; padding: 10px 12px;">
+        <div class="q-stem" style="font-size: 12pt; line-height: 1.45;">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">BCDE</span> ）</span>
+          <span class="q-num">3.</span>某生物體具有兩對同源染色體，下列哪些選項可能是此生物減數分裂 Ⅰ 後子細胞的染色體型式？（應選 4 項）
+        </div>
+        <!-- 向量子細胞型式展示 -->
+        <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; text-align: center; margin: 6px 0 8px 0; font-size: 10pt;">
+          <div style="background: #fff; border: 1.5px solid #cbd5e1; border-radius: 6px; padding: 4px;">
+            <svg width="52" height="52" viewBox="0 0 60 60">
+              <circle cx="30" cy="30" r="26" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
+              <line x1="22" y1="12" x2="22" y2="48" stroke="#2563eb" stroke-width="4.5" stroke-linecap="round"/>
+              <line x1="38" y1="12" x2="38" y2="48" stroke="#e11d48" stroke-width="4.5" stroke-linecap="round"/>
+            </svg>
+            <div><strong>(A)</strong></div>
+          </div>
+          <div style="background: #fff; border: 1.5px solid #cbd5e1; border-radius: 6px; padding: 4px;">
+            <svg width="52" height="52" viewBox="0 0 60 60">
+              <circle cx="30" cy="30" r="26" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
+              <line x1="24" y1="12" x2="24" y2="48" stroke="#2563eb" stroke-width="4.5" stroke-linecap="round"/>
+              <line x1="38" y1="20" x2="38" y2="40" stroke="#2563eb" stroke-width="3.8" stroke-linecap="round"/>
+            </svg>
+            <div><strong>(B)</strong></div>
+          </div>
+          <div style="background: #fff; border: 1.5px solid #cbd5e1; border-radius: 6px; padding: 4px;">
+            <svg width="52" height="52" viewBox="0 0 60 60">
+              <circle cx="30" cy="30" r="26" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
+              <line x1="24" y1="12" x2="24" y2="48" stroke="#e11d48" stroke-width="4.5" stroke-linecap="round"/>
+              <line x1="38" y1="20" x2="38" y2="40" stroke="#e11d48" stroke-width="3.8" stroke-linecap="round"/>
+            </svg>
+            <div><strong>(C)</strong></div>
+          </div>
+          <div style="background: #fff; border: 1.5px solid #cbd5e1; border-radius: 6px; padding: 4px;">
+            <svg width="52" height="52" viewBox="0 0 60 60">
+              <circle cx="30" cy="30" r="26" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
+              <line x1="24" y1="12" x2="24" y2="48" stroke="#e11d48" stroke-width="4.5" stroke-linecap="round"/>
+              <line x1="38" y1="20" x2="38" y2="40" stroke="#2563eb" stroke-width="3.8" stroke-linecap="round"/>
+            </svg>
+            <div><strong>(D)</strong></div>
+          </div>
+          <div style="background: #fff; border: 1.5px solid #cbd5e1; border-radius: 6px; padding: 4px;">
+            <svg width="52" height="52" viewBox="0 0 60 60">
+              <circle cx="30" cy="30" r="26" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
+              <line x1="24" y1="12" x2="24" y2="48" stroke="#2563eb" stroke-width="4.5" stroke-linecap="round"/>
+              <line x1="38" y1="20" x2="38" y2="40" stroke="#e11d48" stroke-width="3.8" stroke-linecap="round"/>
+            </svg>
+            <div><strong>(E)</strong></div>
+          </div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div style="font-size: 10pt; color: #64748b; font-weight: bold; margin-bottom: 2px;">💡 詳細解題剖析（點擊展開 / 收合）：</div>
+          <div class="calc-solution" style="font-size: 10pt; line-height: 1.5;">
+            該生物體具有兩對同源染色體（即 1 對長染色體＋1 對短染色體，共 4 條，2n=4）。<br>
+            ● 減數分裂 Ⅰ 的關鍵特徵是<strong>「同源染色體彼此分離」</strong>，非同源染色體進行自由組合，因此分裂後產生的次級精母/卵母細胞中，每一對同源染色體只能挑選其中一條進入子細胞（套數減半為 n=2）；<br>
+            ● 子細胞必定為「一條長二分體 ＋ 一條短二分體」的組合型式！<br>
+            ● 選項 (A) 包含兩條長染色體（同源染色體未分離），此為不正常的染色體無分離現象，非正常減數分裂 Ⅰ 子細胞；<br>
+            ● 選項 (B)大藍小藍、(C)大紅小紅、(D)大紅小藍、(E)大藍小紅，皆為「一長一短」且顏色組合符合非同源自由組合的四種可能子細胞型式。<br>
+            故正確選項為 <strong>(B)(C)(D)(E)</strong>。
+          </div>
+        </div>
+      </div>
+
+      <!-- Q4 附圖 -->
+      <div class="q-item" onclick="toggleItemAnswers(this, event)" style="margin-top: 10px; padding: 10px 12px;">
+        <div style="display: flex; gap: 14px; align-items: flex-start;">
+          <div style="flex: 1;">
+            <div class="q-stem" style="font-size: 12pt; line-height: 1.45;">
+              <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">BDE</span> ）</span>
+              <span class="q-num">4.</span>附圖是某種細胞分裂的圖示，有關此圖的描述，下列哪些是正確的？（應選 3 項）
+            </div>
+            <div class="q-options stacked" style="margin-top: 6px; font-size: 11pt; gap: 3px;">
+              <div class="q-opt">(A) 此圖的染色體套數是 4n</div>
+              <div class="q-opt">(B) 此圖屬減數分裂 Ⅰ 的後期</div>
+              <div class="q-opt">(C) 此圖正在進行姊妹染色分體分離</div>
+              <div class="q-opt">(D) 此步驟會造成染色體套數減半</div>
+              <div class="q-opt">(E) 此圖不可能發生在高等植物細胞中</div>
+            </div>
+          </div>
+          <!-- 向量附圖 Q4 -->
+          <div style="width: 140px; text-align: center; flex-shrink: 0; background: #fff; border: 1.5px solid #cbd5e1; border-radius: 6px; padding: 6px;">
+            <svg width="125" height="105" viewBox="0 0 130 110" style="display: block; margin: 0 auto;">
+              <!-- Outer membrane indented (Anaphase I) -->
+              <path d="M 30 15 C 65 30, 65 80, 30 95 C 10 75, 10 35, 30 15 Z" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
+              <path d="M 100 15 C 65 30, 65 80, 100 95 C 120 75, 120 35, 100 15 Z" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
+              
+              <!-- Centrosomes -->
+              <circle cx="15" cy="55" r="3.5" fill="#ea580c"/>
+              <circle cx="115" cy="55" r="3.5" fill="#ea580c"/>
+
+              <!-- Left pole: Moving Dyad -->
+              <g stroke="#dc2626" stroke-width="3.5" stroke-linecap="round">
+                <line x1="35" y1="35" x2="25" y2="55"/><line x1="35" y1="75" x2="25" y2="55"/>
+              </g>
+              <g stroke="#2563eb" stroke-width="3" stroke-linecap="round">
+                <line x1="42" y1="42" x2="34" y2="55"/><line x1="42" y1="68" x2="34" y2="55"/>
+              </g>
+
+              <!-- Right pole: Moving Dyad -->
+              <g stroke="#2563eb" stroke-width="3.5" stroke-linecap="round">
+                <line x1="95" y1="35" x2="105" y2="55"/><line x1="95" y1="75" x2="105" y2="55"/>
+              </g>
+              <g stroke="#dc2626" stroke-width="3" stroke-linecap="round">
+                <line x1="88" y1="42" x2="96" y2="55"/><line x1="88" y1="68" x2="96" y2="55"/>
+              </g>
+            </svg>
+            <div style="font-size: 8.5pt; color: #64748b; margin-top: 2px;">▲ 減數分裂後期圖</div>
+          </div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)" style="margin-top: 8px;">
+          <div style="font-size: 10pt; color: #64748b; font-weight: bold; margin-bottom: 2px;">💡 詳細解題剖析（點擊展開 / 收合）：</div>
+          <div class="calc-solution" style="font-size: 10pt; line-height: 1.5;">
+            由圖中可清晰觀察到移向細胞兩極的染色體每一條皆具有「雙染色分體（X字型二分體）」，且成對的長、短同源染色體被紡錘絲分別牽引拉向兩端，這是有性生殖細胞進行<strong>「減數分裂 Ⅰ 後期（Anaphase Ⅰ）」</strong>的典型特徵！<br>
+            ● <strong>(B)正確：</strong>此圖正處於同源染色體分離的減數分裂 Ⅰ 後期；<br>
+            ● <strong>(D)正確：</strong>當減數分裂 Ⅰ 完成質裂後，同源染色體不再成對共處於同一子細胞，染色體套數由雙套減半為單套（2n → n）；<br>
+            ● <strong>(E)正確：</strong>圖中兩極明顯具有動物細胞特有的「中心粒」，且細胞中央質膜向內凹陷形成分裂溝；高等植物細胞「不具中心粒」，且質裂時係在細胞中央形成「細胞板」，因此圖中現象絕不可能出現在高等植物細胞中；<br>
+            ● (A)錯誤，此時細胞核內的同源染色體仍在同一細胞質中，染色體套數仍為 2n（尚未分裂為 2 個細胞），非 4n；<br>
+            ● (C)錯誤，姊妹染色分體直到減數分裂 Ⅱ 後期著絲點斷裂時才會分離，此時二分體的著絲點尚未分開。<br>
+            故正確選項為 <strong>(B)(D)(E)</strong>。
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 高中生物（全）</span>
+        <span>課後實戰演練 · 多選題（二）</span>
+        <span>第 16 頁 / 共 17 頁</span>
+      </div>
+    </div>
+
+    <!-- ==================== Page 17 ==================== -->
+    <div class="page" id="page17">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物（全）講義</span>
+        <span>第 1 章 細胞的構造與功能 · 1-3 細胞週期與細胞分裂</span>
+        <span>P. 17</span>
+      </div>
+
+      <div class="section-title">
+        <span>1-3　全章核心重點整理與思維導圖</span>
+        <span style="font-size: 11pt; font-weight: normal; color: #0284c7;">結構體系化網絡 · 大考觀念避坑指南</span>
+      </div>
+
+      <div class="task-title">一、細胞分裂遺傳變化全景速查矩陣</div>
+      <table class="concept-table" style="margin: 4px 0 6px 0; font-size: 10pt;">
+        <thead>
+          <tr>
+            <th style="width: 20%;">比較維度</th>
+            <th style="width: 25%;">間期（G₁-S-G₂）</th>
+            <th style="width: 27%;">有絲分裂（M期）</th>
+            <th style="width: 28%;">減數分裂（Ⅰ ＋ Ⅱ）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>DNA 含量變化</strong></td>
+            <td>2C ➔ 4C（S期複製）</td>
+            <td>4C ➔ 2C（分給兩子細胞）</td>
+            <td>4C ➔ 2C ➔ 1C（連續兩次減半）</td>
+          </tr>
+          <tr>
+            <td><strong>染色體條數變化</strong></td>
+            <td>46 條（呈染色質絲）</td>
+            <td>46 ➔ 92(後期) ➔ 46</td>
+            <td>46 ➔ 23(分體二分體) ➔ 23</td>
+          </tr>
+          <tr>
+            <td><strong>染色體套數變化</strong></td>
+            <td>2n（雙套）</td>
+            <td><strong>2n → 2n</strong>（恆定不變）</td>
+            <td><strong>2n → n → n</strong>（同源分離減半）</td>
+          </tr>
+          <tr>
+            <td><strong>同源聯會與四分體</strong></td>
+            <td>無</td>
+            <td>無</td>
+            <td><strong>有</strong>（減數分裂 Ⅰ 前期聯會）</td>
+          </tr>
+          <tr>
+            <td><strong>著絲點斷裂時期</strong></td>
+            <td>無</td>
+            <td>有絲分裂後期</td>
+            <td>減數分裂 Ⅱ 後期</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="task-title">二、常考易混淆概念避坑指南</div>
+      <table class="concept-table" style="margin: 4px 0 6px 0; font-size: 9.5pt;">
+        <thead>
+          <tr>
+            <th style="width: 24%;">常見迷思觀念</th>
+            <th style="width: 38%;">正確觀念剖析</th>
+            <th style="width: 38%;">大考關鍵記憶點</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>「染色體複製 2 次所以分 2 次」</strong></td>
+            <td>減數分裂染色體<strong>僅複製 1 次</strong>，因連續分裂 2 次才導致套數減半！</td>
+            <td>DNA 複製只有一次（減數分裂 Ⅰ 前的間期），減數分裂 Ⅱ 不複製。</td>
+          </tr>
+          <tr>
+            <td><strong>「同源染色體必長得完全一模一樣」</strong></td>
+            <td>常染色體長度形狀相同，但男性的 <strong>X 與 Y 性染色體亦為同源染色體</strong>，形態大小卻不同！</td>
+            <td>X 較長，Y 較短，但減數分裂時仍會配對聯會並分離。</td>
+          </tr>
+          <tr>
+            <td><strong>「植物細胞也有中心粒」</strong></td>
+            <td>被子植物等高等植物<strong>完全沒有中心粒</strong>，由兩極直接發出微管！</td>
+            <td>動物具有中心粒形成星狀絲；植物質裂形成細胞板。</td>
+          </tr>
+          <tr>
+            <td><strong>「分化後細胞遺傳密碼改變」</strong></td>
+            <td>同一個體所有細胞的 <strong>DNA 遺傳密碼完全相同</strong>！</td>
+            <td>細胞功能特化是「基因選擇性表現（表現型不同）」的結果。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="task-title" style="margin-top: 4px;">三、細胞世代傳承閉環思考圖示</div>
+      <div style="background: #eff6ff; border: 1.2px solid #bfdbfe; border-radius: 6px; padding: 6px 10px; font-size: 10pt; line-height: 1.45;">
+        <div style="text-align: center; font-weight: bold; color: #1e40af; margin-bottom: 2px;">
+          👨‍👩‍👧 親代(2n) ➔ 減數分裂 ➔ 配子(n) ➔ 受精作用 ➔ 受精卵(2n) ➔ 有絲分裂與分化 ➔ 子代個體(2n)
+        </div>
+        <div style="color: #475569;">
+          ● <strong>減數分裂：</strong>確保配子染色體數目減半，並藉由非同源染色體自由組合及基因重組創造遺傳多樣性。<br>
+          ● <strong>受精作用：</strong>使染色體數目恢復為二倍體（2n），維持物種代代染色體套數恆定。<br>
+          ● <strong>有絲分裂：</strong>使受精卵增殖成百兆細胞，並在基因調控下分化為不同特化組織器官。
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>自製電子書 · 高中生物（全）</span>
+        <span>1-3 全章核心思維導圖總整理</span>
+        <span>第 17 頁 / 共 17 頁</span>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    let allRevealed = false;
+    let penMode = false;
+    let penColor = 'rgba(250, 204, 21, 0.45)';
+    let penSize = 3;
+
+    // Toggle single answer word
+    function toggleAns(el, e) {
+      if (e) e.stopPropagation();
+      el.classList.toggle('revealed');
+    }
+
+    // Toggle QA bracket
+    function toggleBracket(el, e) {
+      if (e) e.stopPropagation();
+      el.classList.toggle('revealed');
+    }
+
+    // Toggle solution box
+    function toggleSolution(el, e) {
+      if (e) e.stopPropagation();
+      const sol = el.querySelector('.calc-solution');
+      if (sol) sol.classList.toggle('revealed');
+    }
+
+    // Clicking question item toggles all its answers
+    function toggleItemAnswers(item, e) {
+      if (e.target.closest('.ans-word') || e.target.closest('.qa-bracket') || e.target.closest('.calc-workspace')) {
+        return;
+      }
+      const bracket = item.querySelector('.qa-bracket');
+      const sol = item.querySelector('.calc-solution');
+      const blanks = item.querySelectorAll('.ans-word');
+
+      const isRev = bracket ? bracket.classList.contains('revealed') : (sol ? sol.classList.contains('revealed') : false);
+      if (bracket) bracket.classList.toggle('revealed', !isRev);
+      if (sol) sol.classList.toggle('revealed', !isRev);
+      blanks.forEach(b => b.classList.toggle('revealed', !isRev));
+    }
+
+    // Toggle all answers across document
+    function toggleAllAnswers() {
+      allRevealed = !allRevealed;
+      document.body.classList.toggle('show-all-answers', allRevealed);
+      const btn = document.getElementById('toggleAllAnsBtn');
+      const icon = document.getElementById('ansIcon');
+      if (btn) btn.classList.toggle('revealed', allRevealed);
+      if (icon) icon.innerText = allRevealed ? '🙈' : '👁️';
+    }
+
+    // TOC dropdown
+    function toggleTocMenu(e) {
+      if (e) e.stopPropagation();
+      const m = document.getElementById('tocMenu');
+      if (m) m.classList.toggle('show');
+    }
+
+    function jumpTo(pageId) {
+      const el = document.getElementById(pageId);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+      const m = document.getElementById('tocMenu');
+      if (m) m.classList.remove('show');
+    }
+
+    // Pen mode
+    function togglePenMode() {
+      penMode = !penMode;
+      document.body.classList.toggle('pen-active', penMode);
+      const btn = document.getElementById('penBtn');
+      const pop = document.getElementById('penOptions');
+      if (btn) btn.classList.toggle('active', penMode);
+      if (pop) pop.classList.toggle('show', penMode);
+    }
+
+    function setPenColor(col, dot) {
+      penColor = col;
+      document.querySelectorAll('.color-dot').forEach(d => d.classList.remove('active'));
+      if (dot) dot.classList.add('active');
+    }
+
+    function setPenSize(sz, btn) {
+      penSize = sz;
+      document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+    }
+
+    // Close popups on outer click
+    window.addEventListener('click', e => {
+      if (!e.target.closest('#tocBtn') && !e.target.closest('#tocMenu')) {
+        const m = document.getElementById('tocMenu');
+        if (m) m.classList.remove('show');
+      }
+    });
+
+    // Canvas drawing setup
+    const canvases = document.querySelectorAll('.drawing-canvas');
+    function resizeCanvases() {
+      canvases.forEach(c => {
+        const rect = c.parentElement.getBoundingClientRect();
+        c.width = rect.width; c.height = rect.height;
+      });
+    }
+    window.addEventListener('resize', resizeCanvases);
+    window.addEventListener('load', resizeCanvases);
+
+    let drawing = false;
+    let currentCanvas = null;
+    let ctx = null;
+
+    function getPos(e, c) {
+      const rect = c.getBoundingClientRect();
+      const x = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left;
+      const y = (e.touches ? e.touches[0].clientY : e.clientY) - rect.top;
+      return { x, y };
+    }
+
+    canvases.forEach(canvas => {
+      canvas.addEventListener('mousedown', e => {
+        if (!penMode) return;
+        drawing = true; currentCanvas = canvas;
+        ctx = canvas.getContext('2d');
+        ctx.strokeStyle = penColor; ctx.lineWidth = penSize;
+        ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+        const p = getPos(e, canvas); ctx.beginPath(); ctx.moveTo(p.x, p.y);
+      });
+      canvas.addEventListener('mousemove', e => {
+        if (!drawing || currentCanvas !== canvas) return;
+        const p = getPos(e, canvas); ctx.lineTo(p.x, p.y); ctx.stroke();
+      });
+      canvas.addEventListener('mouseup', () => { drawing = false; });
+      canvas.addEventListener('touchstart', e => {
+        if (!penMode) return; e.preventDefault();
+        drawing = true; currentCanvas = canvas;
+        ctx = canvas.getContext('2d');
+        ctx.strokeStyle = penColor; ctx.lineWidth = penSize;
+        ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+        const p = getPos(e, canvas); ctx.beginPath(); ctx.moveTo(p.x, p.y);
+      }, { passive: false });
+      canvas.addEventListener('touchmove', e => {
+        if (!drawing) return; e.preventDefault();
+        const p = getPos(e, canvas); ctx.lineTo(p.x, p.y); ctx.stroke();
+      }, { passive: false });
+      canvas.addEventListener('touchend', () => { drawing = false; });
+    });
+
+    function clearAllDrawings() {
+      canvases.forEach(c => { const ctx2 = c.getContext('2d'); ctx2.clearRect(0,0,c.width,c.height); });
+    }
+  </script>
+</body>
+</html>
