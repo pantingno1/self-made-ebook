@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>高中生物(全) 第1章 實驗探討活動 互動講義</title>
+  <!-- 電子書目錄身分標記（見 SKILL.md §11 與 AGENTS.md） -->
+  <meta name="ebook:subject" content="science">
+  <meta name="ebook:grade" content="10">
+  <meta name="ebook:unit" content="1-exp">
+  <meta name="ebook:title" content="高中生物(全) 第1章 實驗探討活動 互動講義">
+  <meta name="ebook:type" content="handout">
+  <meta name="ebook:pages" content="8">
+  <meta name="ebook:level" content="std">
+  <meta name="ebook:summary" content="高中生物（全）第1章細胞的構造與功能實驗探討活動講義（全8頁舒展無截斷版），完整涵蓋：探討活動1-1顯微測量技術（目鏡測微器校正與細胞大小測量換算）、探討活動1-2細胞形態與構造的觀察（抹片法、折撕法、徒手切片法、壓片法製片原理與植物細胞觀察）、探討活動1-3有絲分裂過程中染色體的觀察（洋蔥根尖生長點、染色體變化歷程與顯微視野判讀），以及各單元基礎練習與素養探究實驗題組解析。">
+  <style>
+    @page { size: A4 portrait; margin: 10mm 12mm; }
+    * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body {
+      margin: 0; padding: 0; background-color: #f1f5f9;
+      font-family: "Times New Roman", "標楷體", "DFKai-SB", "BiauKai", serif;
+      font-size: 12.5pt; line-height: 1.5; color: #111;
+    }
+
+    /* 課堂懸浮工具列 */
+    .classroom-toolbar {
+      position: fixed; top: 14px; right: 20px; z-index: 9999;
+      display: flex; align-items: center; gap: 6px;
+      background: rgba(255, 255, 255, 0.96); padding: 5px 10px;
+      border-radius: 40px; box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      border: 1px solid #cbd5e1; backdrop-filter: blur(8px);
+    }
+    .tool-btn {
+      width: 36px; height: 36px; border-radius: 50%; border: 1px solid #cbd5e1;
+      background: #fff; color: #334155; font-size: 15px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.15s ease; outline: none; text-decoration: none;
+    }
+    .tool-btn:hover { background: #f8fafc; border-color: #94a3b8; transform: translateY(-1px); }
+    .tool-btn.active { background: #0284c7; color: #fff; border-color: #0284c7; }
+    .btn-toggle-ans { background: #eff6ff; border-color: #bfdbfe; color: #1d4ed8; font-weight: bold; }
+    .btn-toggle-ans.revealed { background: #fef2f2; border-color: #fecaca; color: #dc2626; }
+
+    /* 目錄跳轉選單 */
+    .toc-menu {
+      display: none; position: absolute; top: 46px; right: 0;
+      background: #ffffff; border: 1px solid #cbd5e1; border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.18); padding: 8px 0;
+      min-width: 300px; max-height: 500px; overflow-y: auto; z-index: 10000;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .toc-menu.show { display: block; animation: tocFadeIn 0.15s ease-out; }
+    @keyframes tocFadeIn { from { opacity:0; transform:translateY(-6px); } to { opacity:1; transform:translateY(0); } }
+    .toc-menu-title { padding: 6px 16px 8px 16px; font-size: 13px; font-weight: bold; color: #64748b; border-bottom: 1px solid #f1f5f9; }
+    .toc-menu-item { padding: 7px 16px; font-size: 13px; color: #334155; cursor: pointer; display: flex; align-items: center; justify-content: space-between; transition: background 0.12s, color 0.12s; }
+    .toc-menu-item:hover { background: #eff6ff; color: #2563eb; font-weight: bold; }
+    .toc-page-badge { font-size: 11.5px; color: #94a3b8; font-weight: normal; }
+    .toc-menu-item:hover .toc-page-badge { color: #2563eb; }
+
+    /* 螢光筆選項盤 */
+    .pen-options { display: none; align-items: center; gap: 6px; background: #f8fafc; padding: 3px 8px; border-radius: 20px; border: 1px solid #e2e8f0; margin-left: 2px; }
+    .color-picker { display: flex; align-items: center; gap: 5px; }
+    .color-dot { width: 16px; height: 16px; border-radius: 50%; cursor: pointer; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.2); }
+    .color-dot.active { transform: scale(1.2); box-shadow: 0 0 0 2px #0f172a; }
+    .size-picker { display: flex; align-items: center; gap: 3px; }
+    .size-btn { border: 1px solid #cbd5e1; background: #fff; color: #475569; font-size: 11px; font-weight: bold; padding: 2px 7px; border-radius: 10px; cursor: pointer; }
+    .size-btn.active { background: #0f172a; color: #fff; border-color: #0f172a; }
+
+    /* A4 頁面 */
+    .pages-container { padding: 20px 0 40px 0; }
+    .page {
+      width: 210mm; min-height: 297mm; padding: 12mm 15mm 14mm 15mm; margin: 0 auto 25px auto;
+      background: #ffffff; box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+      page-break-after: always; break-after: page; position: relative;
+    }
+    .drawing-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 20; pointer-events: none; }
+    body.pen-mode .drawing-canvas { pointer-events: auto; cursor: crosshair; }
+
+    /* 頁首與頁尾 */
+    .page-header {
+      display: flex; justify-content: space-between; align-items: center;
+      border-bottom: 2px solid #0284c7; padding-bottom: 4px; margin-bottom: 8px;
+      font-size: 11pt; color: #475569; font-weight: bold;
+    }
+    .page-footer {
+      position: absolute; bottom: 8mm; left: 15mm; right: 15mm;
+      border-top: 1px solid #e2e8f0; padding-top: 4px;
+      display: flex; justify-content: space-between; font-size: 10.5pt; color: #64748b;
+    }
+
+    /* 標題與版面元素 */
+    .main-title-block { text-align: center; margin-bottom: 8px; }
+    .main-title { font-size: 18pt; font-weight: 900; color: #0f172a; letter-spacing: 0.5px; }
+    .sub-title { font-size: 12pt; color: #0284c7; font-weight: bold; margin-top: 2px; }
+    .act-tag {
+      display: inline-block; background: #0284c7; color: #fff; font-size: 11.5pt;
+      font-weight: bold; padding: 2px 10px; border-radius: 4px; margin-right: 6px;
+    }
+    .section-title {
+      font-size: 14pt; font-weight: bold; color: #0f172a;
+      border-left: 5px solid #0284c7; padding-left: 8px; margin: 8px 0 6px 0;
+      background: #f0f9ff; padding-top: 3px; padding-bottom: 3px; border-radius: 0 4px 4px 0;
+    }
+    .subsection-title {
+      font-size: 13pt; font-weight: bold; color: #0369a1;
+      margin: 6px 0 4px 0; display: flex; align-items: center; gap: 4px;
+    }
+    .bullet-icon { color: #0284c7; font-size: 12pt; }
+
+    /* 思考與提問卡片 */
+    .thinking-card {
+      background: #fffbeb; border: 1.5px solid #fef3c7; border-left: 5px solid #f59e0b;
+      border-radius: 6px; padding: 6px 12px; margin: 6px 0 8px 0; font-size: 11.5pt; line-height: 1.45;
+    }
+    .thinking-title { font-weight: bold; color: #b45309; display: flex; align-items: center; gap: 4px; margin-bottom: 3px; }
+
+    /* 實驗重點條目 */
+    .point-box {
+      background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px;
+      padding: 6px 10px; margin-bottom: 8px;
+    }
+    .point-item { margin-bottom: 4px; line-height: 1.45; font-size: 12pt; }
+    .point-subitem { margin-left: 18px; margin-bottom: 3px; line-height: 1.4; font-size: 11.5pt; color: #1e293b; }
+
+    /* 表格樣式 */
+    table.custom-table {
+      width: 100%; border-collapse: collapse; margin: 6px 0 8px 0;
+      font-size: 11.5pt; line-height: 1.35;
+    }
+    table.custom-table th, table.custom-table td {
+      border: 1px solid #cbd5e1; padding: 4px 6px; text-align: center; vertical-align: middle;
+    }
+    table.custom-table th { background: #e0f2fe; color: #0369a1; font-weight: bold; }
+    table.custom-table tr:nth-child(even) td { background: #f8fafc; }
+    table.custom-table td.txt-left { text-align: left; padding-left: 8px; }
+    table.custom-table td.w-title { font-weight: bold; background: #f1f5f9; color: #334155; }
+
+    /* 流程圖步驟表格 */
+    table.flow-table {
+      width: 100%; border-collapse: collapse; margin: 6px 0 8px 0; font-size: 11pt; line-height: 1.35;
+    }
+    table.flow-table th, table.flow-table td {
+      border: 1px solid #cbd5e1; padding: 5px 8px; vertical-align: top;
+    }
+    table.flow-table th { background: #e0f2fe; color: #0369a1; font-weight: bold; text-align: center; }
+    table.flow-table td.step-col {
+      width: 48%; background: #f0fdf4; border-right: 2px dashed #86efac; text-align: left;
+    }
+    table.flow-table td.principle-col {
+      width: 52%; background: #fefce8; text-align: left;
+    }
+
+    /* 圖片容器 */
+    .fig-container {
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      margin: 6px 0; text-align: center;
+    }
+    .fig-img { max-width: 100%; height: auto; object-fit: contain; border-radius: 4px; }
+    .fig-caption { font-size: 10.5pt; font-weight: bold; color: #475569; margin-top: 3px; }
+
+    /* 雙圖並排容器 */
+    .fig-row {
+      display: flex; justify-content: space-around; align-items: flex-end; gap: 10px; margin: 6px 0;
+    }
+    .fig-col { display: flex; flex-direction: column; align-items: center; text-align: center; flex: 1; }
+
+    /* 題目與顯答結構：括號同行原則 */
+    .qa-item {
+      margin-bottom: 8px; padding: 4px 6px; border-radius: 6px;
+      cursor: pointer; transition: background 0.15s;
+    }
+    .qa-item:hover { background-color: #f8fafc; }
+    .q-stem { font-size: 12pt; line-height: 1.45; color: #0f172a; }
+    .q-num { font-weight: bold; color: #0284c7; margin-right: 4px; }
+    .qa-bracket {
+      cursor: pointer; user-select: none; font-weight: bold;
+      color: #0f172a; padding: 0 1px; display: inline;
+    }
+    .qa-bracket .ans-text {
+      color: transparent !important; min-width: 16px; display: inline-block;
+      text-align: center; transition: color 0.15s;
+    }
+    .qa-bracket:hover .ans-text { color: #fca5a5 !important; }
+    .qa-bracket.revealed .ans-text, body.show-all-answers .qa-bracket .ans-text {
+      color: #dc2626 !important; font-weight: bold !important;
+    }
+    .q-options {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 2.5px 12px; margin-top: 3px; font-size: 11.5pt; color: #334155;
+      padding-left: 20px;
+    }
+    .q-options.stacked { display: flex; flex-direction: column; gap: 2px; padding-left: 20px; }
+    .q-opt { line-height: 1.4; }
+
+    /* 題目解析區塊 */
+    .calc-workspace {
+      margin-top: 3px; padding: 4px 8px; border-radius: 4px;
+      background: #fff; border: 1px dashed #cbd5e1; cursor: pointer; user-select: none;
+    }
+    .calc-solution {
+      font-size: 10.5pt; line-height: 1.4; color: transparent !important; transition: color 0.15s;
+    }
+    .calc-solution.revealed, body.show-all-answers .calc-solution {
+      color: #b91c1c !important; font-weight: normal;
+    }
+
+    /* 互動填空文字 */
+    .ans-word {
+      color: transparent !important; border-bottom: 1.5px solid #0284c7;
+      padding: 0 3px; cursor: pointer; user-select: none; transition: color 0.15s;
+      display: inline-block; min-width: 20px; text-align: center;
+    }
+    .ans-word:hover { border-bottom-color: #ef4444; }
+    .ans-word.revealed, body.show-all-answers .ans-word {
+      color: #dc2626 !important; font-weight: bold;
+    }
+
+    /* 列印規則：強制白紙卷 */
+    @media print {
+      @page { size: A4 portrait; margin: 8mm 12mm; }
+      html, body { width: 100% !important; height: auto !important; background: transparent !important; padding: 0 !important; margin: 0 !important; }
+      .no-print, .classroom-toolbar, .toc-menu, .drawing-canvas { display: none !important; }
+      .pages-container { display: block !important; padding: 0 !important; margin: 0 !important; }
+      .page {
+        box-sizing: border-box !important; margin: 0 !important; box-shadow: none !important;
+        width: 100% !important; height: 280mm !important; max-height: 280mm !important; min-height: 0 !important;
+        padding: 0 !important; page-break-after: always !important; break-after: page !important; overflow: hidden !important;
+      }
+      .page:last-child { page-break-after: avoid !important; break-after: avoid !important; }
+      .qa-bracket .ans-text, .ans-word, .calc-solution { color: transparent !important; }
+      .page-footer { position: static !important; margin-top: auto !important; padding-top: 4px !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 課堂懸浮工具列 -->
+  <div class="classroom-toolbar no-print">
+    <a class="tool-btn" href="../index.html" title="回電子書目錄">🏠</a>
+    <div style="position: relative;">
+      <button class="tool-btn" id="tocBtn" onclick="toggleTocMenu(event)" title="章節目錄導覽">📑</button>
+      <div class="toc-menu" id="tocMenu">
+        <div class="toc-menu-title">📖 單元實驗目錄</div>
+        <div class="toc-menu-item" onclick="jumpTo('page1')"><span>P.1 探討活動 1-1 顯微測量技術：原理與測微器</span><span class="toc-page-badge">第 1 頁</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page2')"><span>P.2 探討活動 1-1 目鏡測微器校正換算與實作流程</span><span class="toc-page-badge">第 2 頁</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page3')"><span>P.3 探討活動 1-1 樣品大小測量與實戰練習題</span><span class="toc-page-badge">第 3 頁</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page4')"><span>P.4 探討活動 1-2 細胞形態觀察：抹片法實驗</span><span class="toc-page-badge">第 4 頁</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page5')"><span>P.5 探討活動 1-2 折撕法、徒手切片法與壓片法</span><span class="toc-page-badge">第 5 頁</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page6')"><span>P.6 探討活動 1-2 基礎練習題與探究實驗題組</span><span class="toc-page-badge">第 6 頁</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page7')"><span>P.7 探討活動 1-3 染色體觀察：洋蔥根尖生長點</span><span class="toc-page-badge">第 7 頁</span></div>
+        <div class="toc-menu-item" onclick="jumpTo('page8')"><span>P.8 探討活動 1-3 觀察重點與細胞週期分裂實戰題</span><span class="toc-page-badge">第 8 頁</span></div>
+      </div>
+    </div>
+    <button class="tool-btn btn-toggle-ans" id="toggleAllAnsBtn" onclick="toggleAllAnswers()" title="一鍵全開/全隱答案">
+      <span id="ansIcon">👁️</span>
+    </button>
+    <button class="tool-btn" id="penBtn" onclick="togglePenMode()" title="螢光筆/板書筆">✏️</button>
+    <div class="pen-options" id="penOptions">
+      <div class="color-picker">
+        <span class="color-dot active" style="background:#facc15;" onclick="setPenColor('rgba(250,204,21,0.45)',this)" title="螢光黃"></span>
+        <span class="color-dot" style="background:#ef4444;" onclick="setPenColor('rgba(239,68,68,0.8)',this)" title="紅筆"></span>
+        <span class="color-dot" style="background:#3b82f6;" onclick="setPenColor('rgba(37,99,235,0.8)',this)" title="藍筆"></span>
+        <span class="color-dot" style="background:#10b981;" onclick="setPenColor('rgba(16,185,129,0.8)',this)" title="綠筆"></span>
+      </div>
+      <div style="width:1px;height:16px;background:#cbd5e1;margin:0 2px;"></div>
+      <div class="size-picker">
+        <button class="size-btn active" onclick="setPenSize(3,this)">細</button>
+        <button class="size-btn" onclick="setPenSize(8,this)">中</button>
+        <button class="size-btn" onclick="setPenSize(16,this)">粗</button>
+      </div>
+    </div>
+    <button class="tool-btn" onclick="clearAllDrawings()" title="清除畫跡">🧹</button>
+    <div class="toolbar-divider"></div>
+    <button class="tool-btn" onclick="window.print()" title="列印純淨白紙卷">🖨️</button>
+  </div>
+
+  <div class="pages-container">
+
+    <!-- ═══════════════════════════════════ PAGE 1 ═══════════════════════════════════ -->
+    <div class="page" id="page1">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物(全) 實驗探討活動講義</span>
+        <span>第 1 章 細胞的構造與功能</span>
+      </div>
+
+      <div class="main-title-block">
+        <div class="main-title"><span class="act-tag">探討活動 1-1</span>如何測量生物的微小構造？</div>
+        <div class="sub-title">── 顯微測量技術 ──</div>
+      </div>
+
+      <div class="thinking-card">
+        <div class="thinking-title">💡 提問與思考</div>
+        生物的細胞及胞器等微小構造，大多需要藉助顯微鏡才能觀察，而顯微鏡下的微小構造要如何測量其長度、寬度等數據呢？
+      </div>
+
+      <div class="section-title">一、實驗目的</div>
+      <div class="point-box">
+        <div class="point-item">1. 學習校正 <span class="ans-word" onclick="toggleAns(this,event)">目鏡測微器</span> 的方式。</div>
+        <div class="point-item">2. 利用目鏡測微器測量生物的微小構造（如頭髮寬度、紅血球直徑）。</div>
+      </div>
+
+      <div class="section-title">二、實驗重點：顯微測微器種類與特性</div>
+      <div style="display:flex; gap:14px; align-items:flex-start;">
+        <div style="flex:1;">
+          <div class="subsection-title"><span class="bullet-icon">●</span> 1. 目鏡測微器（Ocular Micrometer）</div>
+          <div class="point-subitem">(1) 為<b>圓形玻片</b>，使用時需放置於 <span class="ans-word" onclick="toggleAns(this,event)">目鏡內</span>（兩鏡片之間）。</div>
+          <div class="point-subitem">(2) 實驗室中常利用目鏡測微器來量測細胞大小。刻度上方<b>有標註數字</b>。</div>
+          <div class="point-subitem">(3) 刻有 100 小格，每一小格的實際大小<b>未知</b>，必須利用 <span class="ans-word" onclick="toggleAns(this,event)">載物臺測微器</span> 來換算校正。</div>
+          <div class="point-subitem">(4) <b>放大倍率影響：</b>當更換不同倍率物鏡時，視野下的物體大小會隨之改變，但此時目鏡倍率並未改變，因此目鏡測微器在不同倍率視野下，雖然每格看起來大小相同，但<b>每格刻度所代表的實際大小不同</b>。</div>
+
+          <div class="subsection-title" style="margin-top:8px;"><span class="bullet-icon">●</span> 2. 載物臺測微器（Stage Micrometer）</div>
+          <div class="point-subitem">(1) 為<b>長方形玻片</b>，置於顯微鏡載物臺上。刻度上方<b>無數字</b>。</div>
+          <div class="point-subitem">(2) 中央刻有一段 <b>1 毫米 (mm)</b> 的直線，被均分為 100 小格，每小格實際大小固定為 <span class="ans-word" onclick="toggleAns(this,event)">0.01 mm</span>（即 <span class="ans-word" onclick="toggleAns(this,event)">10 μm</span>）。</div>
+          <div class="point-subitem">(3) <b>放大倍率影響：</b>更換不同物鏡時，載物臺測微器每格看起來大小不同，但<b>每格刻度所代表的實際大小相同</b>（永遠為 10 μm）。</div>
+        </div>
+        <div style="width:230px; flex-shrink:0;">
+          <div class="fig-container">
+            <img class="fig-img" src="../images/biology-10-1-exp-handout/顯微測微器.png" alt="顯微測微器">
+            <div class="fig-caption">▲ 圖 1-41 顯微測微器構造</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>第 1 頁 / 共 8 頁</span>
+        <span>高中生物(全) 探討活動 1-1</span>
+      </div>
+    </div><!-- /page1 -->
+
+    <!-- ═══════════════════════════════════ PAGE 2 ═══════════════════════════════════ -->
+    <div class="page" id="page2">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物(全) 實驗探討活動講義</span>
+        <span>第 1 章 細胞的構造與功能</span>
+      </div>
+
+      <div class="section-title">三、目鏡測微器的校正與測量原理</div>
+
+      <div class="subsection-title"><span class="bullet-icon">●</span> 1. 校正原理與換算方法</div>
+      <div style="display:flex; gap:16px; align-items:flex-start;">
+        <div style="flex:1;">
+          <div class="point-item">(1) <b>重疊基準線：</b>在特定倍率下，調整焦距並移動載物臺測微器，使載物臺測微器與目鏡測微器左側的「0」刻度重疊為一條線。</div>
+          <div class="point-item">(2) <b>尋找重疊刻度：</b>檢視並記錄兩測微器另一端線條完全重疊處之刻度數。</div>
+          <div class="point-item">(3) <b>比例換算公式：</b>
+            <div style="background:#eff6ff; border:1px solid #bfdbfe; border-radius:6px; padding:6px 12px; margin:4px 0; font-size:12pt;">
+              <b>目鏡測微器每小格代表大小</b> ＝ <span class="ans-word" onclick="toggleAns(this,event)">10 μm</span> ×
+              <span style="display:inline-flex; flex-direction:column; vertical-align:middle; text-align:center; margin:0 4px;">
+                <span style="border-bottom:1px solid #334155; padding:0 4px;">載物臺測微器格數</span>
+                <span>目鏡測微器格數</span>
+              </span>
+            </div>
+          </div>
+          <div class="point-item">(4) 如右圖範例：載物臺 5 小格對齊目鏡 20 小格，則此倍率下目鏡每格 ＝ 10 μm × (5 / 20) ＝ <span class="ans-word" onclick="toggleAns(this,event)">2.5 μm</span>。</div>
+        </div>
+        <div style="width:250px; flex-shrink:0;">
+          <div class="fig-container">
+            <img class="fig-img" src="../images/biology-10-1-exp-handout/校正目鏡測微器.png" alt="校正目鏡測微器">
+            <div class="fig-caption">▲ 圖 1-42 校正目鏡測微器刻度</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection-title" style="margin-top:6px;"><span class="bullet-icon">●</span> 2. 不同倍率視野下，目鏡測微器刻度大小變化關係</div>
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>目鏡倍率</th>
+            <th>物鏡倍率</th>
+            <th>總放大倍率</th>
+            <th>視野下目鏡測微器每格刻度代表實際大小</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>10X</td>
+            <td>4X</td>
+            <td>40X</td>
+            <td><span class="ans-word" onclick="toggleAns(this,event)">25 μm</span></td>
+          </tr>
+          <tr>
+            <td>10X</td>
+            <td>10X</td>
+            <td>100X</td>
+            <td><span class="ans-word" onclick="toggleAns(this,event)">10 μm</span></td>
+          </tr>
+          <tr>
+            <td>10X</td>
+            <td>40X</td>
+            <td>400X</td>
+            <td><span class="ans-word" onclick="toggleAns(this,event)">2.5 μm</span></td>
+          </tr>
+          <tr>
+            <td>10X</td>
+            <td>100X</td>
+            <td>1000X</td>
+            <td><span class="ans-word" onclick="toggleAns(this,event)">1 μm</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <div style="font-size:11pt; color:#475569; margin-bottom:6px;">
+        ※ <b>規律結論：</b>物鏡放大倍率放大 4 倍（10X→40X），目鏡每格所代表的實際長度變為原來的 <span class="ans-word" onclick="toggleAns(this,event)">1/4</span>（10 μm→2.5 μm）。
+      </div>
+
+      <div class="section-title">四、實驗步驟與原理對照（操作測微器）</div>
+      <table class="flow-table">
+        <thead>
+          <tr>
+            <th>實 驗 步 驟</th>
+            <th>實 驗 原 理</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="step-col"><b>步驟 1：</b>將目鏡測微器放入目鏡的兩鏡片之間。</td>
+            <td class="principle-col">目鏡測微器直接固定於目鏡內部，觀察時刻度與影像同時成像。</td>
+          </tr>
+          <tr>
+            <td class="step-col"><b>步驟 2：</b>將載物臺測微器置於顯微鏡載物臺上，先利用 4 倍物鏡將刻度看清楚。</td>
+            <td class="principle-col">載物臺測微器的功用為<b>提供已知刻度（每格 10 μm）</b>，故<b>僅在校正目鏡測微器時放置於載物臺上</b>。</td>
+          </tr>
+          <tr>
+            <td class="step-col"><b>步驟 3：</b>轉換不同物鏡（放大倍率 10 倍及 40 倍），觀察視野下兩測微器刻度的變化。</td>
+            <td class="principle-col">因目鏡測微器並不隨著載物臺移動而改變，所以可以<b>利用移動載物臺來確定哪個刻度為目鏡測微器</b>（會動者為載物臺測微器）。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="page-footer">
+        <span>第 2 頁 / 共 8 頁</span>
+        <span>高中生物(全) 探討活動 1-1</span>
+      </div>
+    </div><!-- /page2 -->
+
+    <!-- ═══════════════════════════════════ PAGE 3 ═══════════════════════════════════ -->
+    <div class="page" id="page3">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物(全) 實驗探討活動講義</span>
+        <span>第 1 章 細胞的構造與功能</span>
+      </div>
+
+      <div class="section-title">五、測量樣品的大小（頭髮與紅血球）</div>
+      <table class="flow-table">
+        <thead>
+          <tr>
+            <th>樣 品 與 步 驟</th>
+            <th>實 驗 原 理 與 操 作 要 領</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="step-col">
+              <b>1. 頭髮寬度的測量：</b><br>
+              隨機剪下同一個人的 3 根頭髮，在載玻片上滴一滴水，放上頭髮，蓋上蓋玻片製成水埋玻片。以目鏡測微器測量頭髮寬度，並記錄平均值。
+            </td>
+            <td class="principle-col">
+              <b>隨機取樣原則：</b>隨機測量 3 根頭髮之目的在於 <span class="ans-word" onclick="toggleAns(this,event)">減少實驗誤差</span>，求得代表性平均值。
+            </td>
+          </tr>
+          <tr>
+            <td class="step-col">
+              <b>2. 人類紅血球直徑測量：</b><br>
+              放置人類血液永久玻片於載物臺上，以目鏡測微器隨機測量 3 顆不同紅血球的直徑，並記錄平均值。
+            </td>
+            <td class="principle-col">
+              <b>實際大小計算：</b>物體實際大小 ＝ 此倍率下目鏡測微器每格大小 × 待測物占目鏡測微器之格數。人類紅血球直徑約為 <span class="ans-word" onclick="toggleAns(this,event)">7～8 μm</span>。
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="section-title">六、隨堂基礎練習題</div>
+      <div style="font-size:11.5pt; color:#475569; margin-bottom:4px;"><b>第 1 ～ 2 題為題組：</b>試根據顯微測量技術所學回答下列問題：</div>
+
+      <!-- 題 1 -->
+      <div class="qa-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">A</span> ）</span>
+          <span class="q-num">1.</span>以目鏡測微器測量人的口腔黏膜細胞大小，先用低倍物鏡進行觀察，所得視野如附圖，若改換用高倍鏡觀察，其所觀察到的視野應為下列何者？
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; margin:6px 0;">
+          <div style="display:flex; flex-direction:column; align-items:center;">
+            <img src="../images/biology-10-1-exp-handout/p3_q1_stem.png" alt="題幹附圖" style="height:90px;">
+            <span style="font-size:10.5pt; color:#64748b;">▲ 低倍鏡視野</span>
+          </div>
+          <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:10px; flex:1; margin-left:16px;">
+            <div style="display:flex; flex-direction:column; align-items:center;">
+              <span style="font-weight:bold; font-size:11pt;">(A)</span>
+              <img src="../images/biology-10-1-exp-handout/A.png" alt="(A)" style="height:85px;">
+            </div>
+            <div style="display:flex; flex-direction:column; align-items:center;">
+              <span style="font-weight:bold; font-size:11pt;">(B)</span>
+              <img src="../images/biology-10-1-exp-handout/B.png" alt="(B)" style="height:85px;">
+            </div>
+            <div style="display:flex; flex-direction:column; align-items:center;">
+              <span style="font-weight:bold; font-size:11pt;">(C)</span>
+              <img src="../images/biology-10-1-exp-handout/C.png" alt="(C)" style="height:85px;">
+            </div>
+            <div style="display:flex; flex-direction:column; align-items:center;">
+              <span style="font-weight:bold; font-size:11pt;">(D)</span>
+              <img src="../images/biology-10-1-exp-handout/D.png" alt="(D)" style="height:85px;">
+            </div>
+          </div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">
+            <b>【解析】</b>當物鏡由低倍鏡換為高倍鏡時，視野下的待測物體（口腔黏膜細胞）會被放大；但目鏡測微器位於目鏡內部，其每格刻度看起來的視覺大小<b>保持不變</b>，故細胞所占的格數會增加，選 (A)。
+          </div>
+        </div>
+      </div>
+
+      <!-- 題 2 -->
+      <div class="qa-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">B</span> ）</span>
+          <span class="q-num">2.</span>承上題，你在視野下看到的是何種測微器，每一格的大小（看起來的寬度）是否會隨放大倍率而改變？
+        </div>
+        <div class="q-options stacked">
+          <div class="q-opt">(A) 目鏡測微器，會隨放大倍率而改變</div>
+          <div class="q-opt">(B) 目鏡測微器，不會隨放大倍率而改變</div>
+          <div class="q-opt">(C) 載物臺測微器，會隨放大倍率而改變</div>
+          <div class="q-opt">(D) 載物臺測微器，不會隨放大倍率而改變</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">
+            <b>【解析】</b>測量細胞大小時置於視野內的是目鏡測微器（上有數字）；更換物鏡時，目鏡測微器本身並沒有被物鏡放大，所以每一小格看起來的視覺大小<b>不會隨放大倍率改變</b>（但每小格所代表的實際長度會變小）。
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>第 3 頁 / 共 8 頁</span>
+        <span>高中生物(全) 探討活動 1-1</span>
+      </div>
+    </div><!-- /page3 -->
+
+    <!-- ═══════════════════════════════════ PAGE 4 ═══════════════════════════════════ -->
+    <div class="page" id="page4">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物(全) 實驗探討活動講義</span>
+        <span>第 1 章 細胞的構造與功能</span>
+      </div>
+
+      <div class="main-title-block">
+        <div class="main-title"><span class="act-tag">探討活動 1-2</span>如何觀察生物的微小構造？</div>
+        <div class="sub-title">── 細胞形態與構造的觀察 ──</div>
+      </div>
+
+      <div class="thinking-card">
+        <div class="thinking-title">💡 提問與思考</div>
+        1. 有些生物特徵肉眼可見，但細微構造與細胞該如何觀察？<br>
+        2. 放大鏡可以觀察果蠅腹部，還有哪些工具能用來觀察細微構造？<br>
+        3. 觀察工具、方式會不會因不同的觀察對象與目的而有不同的實驗方法？<br>
+        4. 使用複式顯微鏡時，為何要將樣品製成水埋玻片標本？
+      </div>
+
+      <div class="section-title">一、實驗目的與製作玻片標本的原因</div>
+      <div class="point-box">
+        <div class="point-item"><b>1. 實驗目的：</b>學習簡易玻片標本製作方法；利用複式顯微鏡觀察動、植物細胞形態與構造。</div>
+        <div class="point-item"><b>2. 製作薄片標本的原因：</b>
+          <div class="point-subitem">・生物組織或器官通常由多層細胞構成，厚度較厚，顯微鏡光線<b>無法穿透</b>，較難直接觀察。</div>
+          <div class="point-subitem">・必須挑取只含單層或幾層細胞的組織薄片，滴加適當液體製成<b>水埋玻片標本（wet mount）</b>，使光線穿透。</div>
+        </div>
+      </div>
+
+      <div class="section-title">二、取樣方法 (一)：抹片法（人的口腔黏膜細胞）</div>
+      <table class="flow-table">
+        <thead>
+          <tr>
+            <th style="width:50%;">實 驗 步 驟</th>
+            <th style="width:50%;">實 驗 原 理 與 操 作 重 點</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="step-col"><b>步驟 1：</b>在載玻片中央滴 1 滴生理食鹽水。</td>
+            <td class="principle-col">
+              ① 保持標本溼潤，幫助標本展開。<br>
+              ② <b>等張溶液：</b>人類生理食鹽水（0.9% NaCl）可 <span class="ans-word" onclick="toggleAns(this,event)">維持滲透壓平衡</span>，保持動物細胞正常形態不破裂。
+            </td>
+          </tr>
+          <tr>
+            <td class="step-col"><b>步驟 2：</b>用牙籤鈍端在口腔兩側內壁輕輕刮取少許黏膜。</td>
+            <td class="principle-col">口腔黏膜細胞為覆蓋上皮，容易自表面脫落，<b>輕輕刮取即可</b>，切勿用力以免微血管破裂出血。</td>
+          </tr>
+          <tr>
+            <td class="step-col"><b>步驟 3：</b>將刮取的細胞塗抹於載玻片的生理食鹽水中。</td>
+            <td class="principle-col">口腔黏膜細胞堆疊與互相黏附的情形較不明顯，<b>塗抹即可使細胞均勻分散</b>，避免重疊阻礙觀察。</td>
+          </tr>
+          <tr>
+            <td class="step-col"><b>步驟 4：</b>於載玻片上滴 1 滴亞甲藍液，蓋上蓋玻片，以複式顯微鏡觀察。</td>
+            <td class="principle-col">
+              <b>細胞核染色：</b>亞甲藍液為鹼性染劑，可將呈酸性的 <span class="ans-word" onclick="toggleAns(this,event)">細胞核</span> 染成深藍色，提高對比以利觀察。
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="page-footer">
+        <span>第 4 頁 / 共 8 頁</span>
+        <span>高中生物(全) 探討活動 1-2</span>
+      </div>
+    </div><!-- /page4 -->
+
+    <!-- ═══════════════════════════════════ PAGE 5 ═══════════════════════════════════ -->
+    <div class="page" id="page5">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物(全) 實驗探討活動講義</span>
+        <span>第 1 章 細胞的構造與功能</span>
+      </div>
+
+      <div class="section-title">三、取樣方法 (二)～(四)：折撕法、徒手切片法與壓片法</div>
+
+      <div class="subsection-title"><span class="bullet-icon">●</span> 1. 折撕法（青江菜葉下表皮細胞）</div>
+      <table class="flow-table">
+        <tbody>
+          <tr>
+            <td class="step-col">
+              ① 載玻片上滴 1 滴水。<br>
+              ② 將葉片<b>上表皮向下對折</b>，然後輕輕斜撕，將下表皮撕出一薄層。<br>
+              ③ 鑷子取下表皮薄層置於水滴中，蓋上蓋玻片觀察。<br>
+              ④ <b>側邊染色法：</b>在蓋玻片一側滴亞甲藍液，另一側用吸水紙吸引，均勻著色後再次觀察。
+            </td>
+            <td class="principle-col">
+              ・<b>適用特性：</b>適用於由一整片平整且連接緊密的細胞組織。<br>
+              ・<b>對折方向原理：</b>若要取下表皮，<b>需將上表皮向下對折</b>；斜撕時拉力會沿著海綿組織撕裂，留下透明完整的單層下表皮。<br>
+              ・<b>側邊吸引法：</b>不掀開蓋玻片即可均勻染色，且不會擾動已固定平整之標本。
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="subsection-title" style="margin-top:6px;"><span class="bullet-icon">●</span> 2. 徒手切片法（甘蔗莖管狀的細胞、植物莖葉）</div>
+      <table class="flow-table">
+        <tbody>
+          <tr>
+            <td class="step-col">
+              ① 培養皿中加入適量水。<br>
+              ② 取一段甘蔗莖，單面刀片與莖保持水平，由上向下縱向切取甘蔗莖薄片（愈薄愈好）。<br>
+              ③ 切下之薄片置於水中，<b>選取浮在水面最薄者</b>。<br>
+              ④ 滴番紅液染色，蓋上蓋玻片以顯微鏡觀察。
+            </td>
+            <td class="principle-col">
+              ・<b>方法優點：</b>不需複雜包埋設備，能觀察天然色澤與活體立體切面結構。<br>
+              ・<b>切法方向：</b><b>縱切</b>可切出管狀完整長條結構（如導管）；<b>橫切</b>則能切出管狀切面的圓形或橢圓形輪廓。<br>
+              ・<b>浮水挑選：</b>最薄的組織碎片重量較輕，易浮於水面。番紅液可將木質化厚壁細胞壁及核染為紅色。
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="subsection-title" style="margin-top:6px;"><span class="bullet-icon">●</span> 3. 壓片法（梨果肉石細胞、植物根尖分生組織）</div>
+      <table class="flow-table">
+        <tbody>
+          <tr>
+            <td class="step-col">
+              ① 鑷子夾取少量梨果肉，放於載玻片水滴中。<br>
+              ② 用另一載玻片（或鑷子底部）慢慢用力擠壓果肉使稍微分散。<br>
+              ③ 蓋上蓋玻片，<b>大拇指垂直輕壓蓋玻片</b>使果肉散開，置於顯微鏡下觀察。
+            </td>
+            <td class="principle-col">
+              ・<b>適用特性：</b>適用於質地稍硬、細胞間容易分散之組織（包含組織內部所有細胞種類），不需在意切面的連續相對關係。<br>
+              ・<b>操作技巧：</b>垂直向下輕壓，<b>嚴禁側向滑動</b>以免壓碎蓋玻片或磨爛細胞構造。
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="page-footer">
+        <span>第 5 頁 / 共 8 頁</span>
+        <span>高中生物(全) 探討活動 1-2</span>
+      </div>
+    </div><!-- /page5 -->
+
+    <!-- ═══════════════════════════════════ PAGE 6 ═══════════════════════════════════ -->
+    <div class="page" id="page6">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物(全) 實驗探討活動講義</span>
+        <span>第 1 章 細胞的構造與功能</span>
+      </div>
+
+      <div class="section-title">四、隨堂基礎練習與探究實驗題組</div>
+
+      <!-- 基礎 1 -->
+      <div class="qa-item" onclick="toggleItemAnswers(this, event)">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px;">
+          <div style="flex:1;">
+            <div class="q-stem">
+              <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">C</span> ）</span>
+              <span class="q-num">1.</span>附圖甲、乙為動、植物細胞的繪圖，丙、丁為其細胞構造，下列敘述何者正確？
+            </div>
+            <div class="q-options stacked" style="margin-top:4px;">
+              <div class="q-opt">(A) 丙為兩細胞最外部的構造，應皆為細胞膜</div>
+              <div class="q-opt">(B) 丁為兩細胞內顆粒狀構造，應皆為細胞核</div>
+              <div class="q-opt">(C) 丙為兩細胞最外部的構造，在甲圖為細胞膜，乙圖為細胞壁</div>
+              <div class="q-opt">(D) 丁為兩細胞內顆粒狀構造，需染色才能方便觀察</div>
+            </div>
+          </div>
+          <div style="width:230px; flex-shrink:0; text-align:center;">
+            <img src="../images/biology-10-1-exp-handout/p6_q1_cells.png" alt="動植物細胞結構" style="max-width:100%; height:auto;">
+            <div style="font-size:10pt; color:#64748b;">▲ 甲：口腔細胞　乙：植物表皮</div>
+          </div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">
+            <b>【解析】</b>(A) 甲為動物細胞最外層為細胞膜；乙為植物細胞最外層為細胞壁。(B) 丁在甲圖中為細胞核，在乙圖中為葉綠體。(D) 葉綠體本身呈綠色，不需染色即可清楚觀察。選 (C)。
+          </div>
+        </div>
+      </div>
+
+      <!-- 基礎 2 -->
+      <div class="qa-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">A</span> ）</span>
+          <span class="q-num">2.</span>下列有關顯微鏡操作及觀察生物細胞的實驗探討活動，何者正確？
+        </div>
+        <div class="q-options stacked">
+          <div class="q-opt">(A) 以壓片法可見到梨子果肉的石細胞</div>
+          <div class="q-opt">(B) 以折撕法摘取青江菜下表皮製成玻片，可觀察到表皮細胞具有葉綠體</div>
+          <div class="q-opt">(C) 取口腔黏膜細胞時，若不慎刮到出血，將可同時觀察到扁平的口腔皮膜細胞與具核的紅血球細胞</div>
+          <div class="q-opt">(D) 以 10 倍物鏡看到口腔皮膜細胞後，欲改以 40 倍物鏡觀察，應先轉動粗調節輪使載物臺和物鏡距離拉遠，再轉動旋轉盤至 40 倍物鏡，以避免壓破玻片</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">
+            <b>【解析】</b>(B) 青江菜下表皮中僅保衛細胞具有葉綠體，一般表皮細胞無葉綠體。(C) 人類成熟紅血球無細胞核。(D) 換高倍物鏡時直接轉動旋轉盤即可（同焦顯微鏡設計），只需轉動<b>細調節輪</b>調焦，不可轉動粗調節輪。選 (A)。
+          </div>
+        </div>
+      </div>
+
+      <!-- 基礎 3 -->
+      <div class="qa-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">B</span> ）</span>
+          <span class="q-num">3.</span>關於各種取樣方法的比較和適用性，何者正確？
+        </div>
+        <div class="q-options stacked">
+          <div class="q-opt">(A) 折撕法適合本身很薄的樣本</div>
+          <div class="q-opt">(B) 將血液均勻塗抹於玻片上，是屬於抹片法</div>
+          <div class="q-opt">(C) 切片僅適用於植物樣本</div>
+          <div class="q-opt">(D) 取根尖壓片可見到染色體</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">
+            <b>【解析】</b>(A) 折撕法適合平整緊密相連之單層組織（如葉下表皮）。(C) 動植物組織皆可切片。(D) 根尖壓片需經解離與染色處理後才能清楚看見染色體。選 (B)。
+          </div>
+        </div>
+      </div>
+
+      <!-- 探究題組 -->
+      <div style="background:#f8fafc; border:1.5px solid #e2e8f0; border-radius:6px; padding:6px 10px; margin-top:4px;">
+        <div style="font-weight:bold; color:#0369a1; font-size:11.5pt; margin-bottom:3px;">
+          🔬 探究實驗題組【混合題】
+        </div>
+        <div style="font-size:11pt; color:#334155; line-height:1.4; margin-bottom:4px;">
+          某生想要觀察不同生物組織的細胞形態，課堂學過抹片法、折撕法、徒手切片法及壓片法，思考著材料適用方式：
+        </div>
+
+        <div class="qa-item" onclick="toggleItemAnswers(this, event)" style="margin-bottom:4px;">
+          <div class="q-stem">
+            <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">D</span> ）</span>
+            <span class="q-num">1.</span>某生使用香蕉皮為材料，其軟組織可透過揉的方式將內部細胞分散，欲觀察內部的維管束管狀細胞，該用何種方法製備水埋玻片最佳？
+          </div>
+          <div class="q-options" style="margin-top:2px;">
+            <div class="q-opt">(A) 抹片法</div>
+            <div class="q-opt">(B) 折撕法</div>
+            <div class="q-opt">(C) 徒手切片法</div>
+            <div class="q-opt">(D) 壓片法</div>
+          </div>
+          <div class="calc-workspace" onclick="toggleSolution(this, event)">
+            <div class="calc-solution">
+              <b>【解析】</b>香蕉果皮較厚且富含纖維，藉由擠壓揉散的壓片法可使細胞散開變薄，利於光線穿透觀察。
+            </div>
+          </div>
+        </div>
+
+        <div class="qa-item" onclick="toggleItemAnswers(this, event)">
+          <div class="q-stem">
+            <b>2.</b> 某生欲觀察香蕉果皮的維管束，發現經其中一種製作方式處理後，顯微鏡下可觀察到「眾多圓形或橢圓形排列其中」，請問最可能是使用何種製備方式？採用何種切法（縱切或橫切）？
+          </div>
+          <div style="padding-left:18px; margin-top:2px; font-size:11.5pt;">
+            答：<span class="ans-word" onclick="toggleAns(this,event)">徒手切片法</span>；<span class="ans-word" onclick="toggleAns(this,event)">橫切</span>
+          </div>
+          <div class="calc-workspace" onclick="toggleSolution(this, event)">
+            <div class="calc-solution">
+              <b>【解析】</b>維管束內的導管或管胞為縱向延伸之細長管狀細胞；當進行<b>橫切</b>時，刀口切過管腔斷面，視野下呈現眾多圓形或橢圓形輪廓。
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>第 6 頁 / 共 8 頁</span>
+        <span>高中生物(全) 探討活動 1-2</span>
+      </div>
+    </div><!-- /page6 -->
+
+    <!-- ═══════════════════════════════════ PAGE 7 ═══════════════════════════════════ -->
+    <div class="page" id="page7">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物(全) 實驗探討活動講義</span>
+        <span>第 1 章 細胞的構造與功能</span>
+      </div>
+
+      <div class="main-title-block">
+        <div class="main-title"><span class="act-tag">探討活動 1-3</span>有絲分裂過程中染色體如何變化呢？</div>
+        <div class="sub-title">── 染色體的觀察 ──</div>
+      </div>
+
+      <div class="thinking-card">
+        <div class="thinking-title">💡 提問與思考</div>
+        1. 該挑選哪一種組織才適合觀察有絲分裂？<br>
+        2. 所有細胞的染色體都可以在顯微鏡下被觀察到嗎？<br>
+        3. 有絲分裂過程中，染色體又是如何變化呢？
+      </div>
+
+      <div class="section-title">一、實驗目的</div>
+      <div class="point-box">
+        <div class="point-item">1. 了解植物根尖細胞的生長特性與分裂特點。</div>
+        <div class="point-item">2. 觀察洋蔥根尖生長點細胞有絲分裂過程染色體的變化情形。</div>
+      </div>
+
+      <div class="section-title">二、實驗重點：洋蔥根尖細胞的特點</div>
+      <div style="display:flex; gap:16px; align-items:flex-start;">
+        <div style="flex:1;">
+          <div class="subsection-title"><span class="bullet-icon">●</span> 1. 為何選擇植物根尖與莖頂？</div>
+          <div class="point-subitem">(1) 植物的根尖和莖頂具有 <span class="ans-word" onclick="toggleAns(this,event)">生長點（分生組織）</span>，細胞具有旺盛分裂能力。</div>
+          <div class="point-subitem">(2) 可以持續不斷地進行有絲分裂產生新細胞，促使根部向下延伸增長及植株增高。</div>
+
+          <div class="subsection-title" style="margin-top:8px;"><span class="bullet-icon">●</span> 2. 洋蔥根尖生長點細胞的顯微特徵</div>
+          <div class="point-subitem">(1) 細胞分裂旺盛，<b>較容易觀察到染色體分裂像</b>。</div>
+          <div class="point-subitem">(2) 細胞排列緊密，外形較為<b>方正</b>，細胞體積較小，液胞小或不明顯。</div>
+          <div class="point-subitem">(3) <b>細胞核相對比例大：</b>細胞核相對於細胞質所占比例較成熟分化細胞大。</div>
+          <div class="point-subitem">(4) <b>間期狀態：</b>處於間期時，可觀察到完整的核膜、核仁及絲狀的染色質。</div>
+          <div class="point-subitem">(5) <b>分裂期狀態：</b>進行有絲分裂時，核膜及核仁消失，染色質濃縮纏繞形成粗短明顯易見的染色體。</div>
+        </div>
+        <div style="width:230px; flex-shrink:0;">
+          <div class="fig-container">
+            <img class="fig-img" src="../images/biology-10-1-exp-handout/洋蔥根尖細胞的細胞週期.png" alt="洋蔥根尖細胞週期">
+            <div class="fig-caption">▲ 圖 1-49 洋蔥根尖生長點細胞</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-title">三、實驗原理與步驟</div>
+      <table class="flow-table">
+        <thead>
+          <tr>
+            <th style="width:48%;">實 驗 步 驟</th>
+            <th style="width:52%;">實 驗 原 理 與 操 作 要 領</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="step-col"><b>步驟 1：</b>將洋蔥根尖永久玻片標本置於載物臺上。</td>
+            <td class="principle-col">根尖標本已先經鹽酸解離（分離細胞壁）、染色（如醋酸洋紅）壓片固定。</td>
+          </tr>
+          <tr>
+            <td class="step-col"><b>步驟 2：</b>先以<b>低倍物鏡</b>觀察，移動玻片觀察整個根尖全貌，並找到生長點細胞位置。</td>
+            <td class="principle-col">
+              <b>定位生長點：</b>根尖最前端為保護構造<b>根帽</b>，生長點位於 <span class="ans-word" onclick="toggleAns(this,event)">根帽上方</span>，依其細胞緊密方正特徵定位。
+            </td>
+          </tr>
+          <tr>
+            <td class="step-col"><b>步驟 3：</b>轉換為<b>高倍物鏡</b>觀察生長點細胞，辨識有絲分裂進行情況與各期染色體動態。</td>
+            <td class="principle-col">
+              染色體結構微細，需使用高倍物鏡（400X）才能清晰看見染色體排列、分離與細胞板形成。
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="page-footer">
+        <span>第 7 頁 / 共 8 頁</span>
+        <span>高中生物(全) 探討活動 1-3</span>
+      </div>
+    </div><!-- /page7 -->
+
+    <!-- ═══════════════════════════════════ PAGE 8 ═══════════════════════════════════ -->
+    <div class="page" id="page8">
+      <canvas class="drawing-canvas"></canvas>
+      <div class="page-header">
+        <span>高中生物(全) 實驗探討活動講義</span>
+        <span>第 1 章 細胞的構造與功能</span>
+      </div>
+
+      <div class="section-title">四、洋蔥根尖觀察重點圖解</div>
+      <div class="fig-container" style="margin:4px 0 6px 0;">
+        <img class="fig-img" src="../images/biology-10-1-exp-handout/洋蔥根尖觀察重點.png" alt="洋蔥根尖觀察重點" style="max-height:160px;">
+        <div class="fig-caption">▲ 圖 1-51 洋蔥根尖觀察重點：(A) 100X 下尋找生長點　(B) 400X 下觀察染色體分裂動態</div>
+      </div>
+
+      <div class="section-title">五、隨堂實戰練習題</div>
+
+      <!-- 題 1 -->
+      <div class="qa-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">AE</span> ）</span>
+          <span class="q-num">1.</span>洋蔥根尖細胞適合做為觀察染色體的材料之原因為何？（應選 2 項）
+        </div>
+        <div class="q-options stacked">
+          <div class="q-opt">(A) 具有生長點</div>
+          <div class="q-opt">(B) 會不停細胞分裂產生根毛</div>
+          <div class="q-opt">(C) 能同時觀察到有絲分裂與減數分裂</div>
+          <div class="q-opt">(D) 因為只有此處會進行細胞分裂</div>
+          <div class="q-opt">(E) 此處細胞 DNA 進行複製後，在分裂前會纏繞形成染色體</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">
+            <b>【解析】</b>(B) 根毛是由表皮成熟區細胞向外突出所形成，非由分裂產生。(C) 根尖僅進行體細胞有絲分裂，無減數分裂。(D) 莖頂、形成層等分生組織亦會進行細胞分裂。選 (A)(E)。
+          </div>
+        </div>
+      </div>
+
+      <!-- 題 2 -->
+      <div class="qa-item" onclick="toggleItemAnswers(this, event)">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px;">
+          <div style="flex:1;">
+            <div class="q-stem">
+              <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">ACD</span> ）</span>
+              <span class="q-num">2.</span>附圖是某同學在觀察洋蔥生長點細胞染色體所見的部分視野，若將視野中的細胞區分為甲～丁種類，下列敘述哪些正確？（應選 3 項）
+            </div>
+            <div class="q-options stacked" style="margin-top:4px;">
+              <div class="q-opt">(A) 整體觀察到的細胞種類，乙的細胞數量會是最多</div>
+              <div class="q-opt">(B) 若依細胞分裂的順序排列，應為丁→甲→乙→丙</div>
+              <div class="q-opt">(C) 若依細胞分裂的順序排列，應為乙→丁→甲→丙</div>
+              <div class="q-opt">(D) 丙可見到細胞板，將完成細胞質分裂</div>
+              <div class="q-opt">(E) 洋蔥細胞分裂時看得到中心體和紡錘絲</div>
+            </div>
+          </div>
+          <div style="width:170px; flex-shrink:0; text-align:center;">
+            <img src="../images/biology-10-1-exp-handout/p8_q2_chromosomes.png" alt="洋蔥細胞分裂各期" style="max-width:100%; height:auto;">
+            <div style="font-size:10pt; color:#64748b;">▲ 視野各期細胞</div>
+          </div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">
+            <b>【解析】</b>各期判讀：甲為<b>後期</b>（染色分體分離移向兩極）；乙為<b>間期</b>（具核膜核仁）；丙為<b>末期</b>（形成細胞板）；丁為<b>中期</b>（染色體排列於中央赤道板）。<br>
+            (A) 細胞週期中<b>間期（乙）所占時間最長</b>（約90%），故視野下數量最多。<br>
+            (B)(C) 有絲分裂順序為：間期(乙) → 前期 → 中期(丁) → 後期(甲) → 末期(丙)，故為乙→丁→甲→丙。<br>
+            (E) 高等植物細胞<b>缺乏中心體</b>，但有紡錘絲協助染色體分離。選 (A)(C)(D)。
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>第 8 頁 / 共 8 頁</span>
+        <span>高中生物(全) 探討活動 1-3</span>
+      </div>
+    </div><!-- /page8 -->
+
+  </div><!-- /pages-container -->
+
+  <!-- 課堂互動腳本 -->
+  <script>
+    let allRevealed = false;
+    let penMode = false;
+    let penColor = 'rgba(250, 204, 21, 0.45)';
+    let penSize = 3;
+
+    // 單一填空開合
+    function toggleAns(el, e) {
+      if (e) e.stopPropagation();
+      el.classList.toggle('revealed');
+    }
+
+    // 選擇題括號顯答
+    function toggleBracket(el, e) {
+      if (e) e.stopPropagation();
+      el.classList.toggle('revealed');
+    }
+
+    // 解析方框顯答
+    function toggleSolution(el, e) {
+      if (e) e.stopPropagation();
+      const sol = el.querySelector('.calc-solution');
+      if (sol) sol.classList.toggle('revealed');
+    }
+
+    // 點擊整題開合該題所有解答
+    function toggleItemAnswers(item, e) {
+      if (e.target.closest('.ans-word') || e.target.closest('.qa-bracket') || e.target.closest('.calc-workspace')) {
+        return;
+      }
+      const bracket = item.querySelector('.qa-bracket');
+      const sol = item.querySelector('.calc-solution');
+      const blanks = item.querySelectorAll('.ans-word');
+
+      const isRev = bracket ? bracket.classList.contains('revealed') : (sol ? sol.classList.contains('revealed') : false);
+      if (bracket) bracket.classList.toggle('revealed', !isRev);
+      if (sol) sol.classList.toggle('revealed', !isRev);
+      blanks.forEach(b => b.classList.toggle('revealed', !isRev));
+    }
+
+    // 一鍵全顯/隱藏
+    function toggleAllAnswers() {
+      allRevealed = !allRevealed;
+      document.body.classList.toggle('show-all-answers', allRevealed);
+      const btn = document.getElementById('toggleAllAnsBtn');
+      const icon = document.getElementById('ansIcon');
+      if (btn) btn.classList.toggle('revealed', allRevealed);
+      if (icon) icon.innerText = allRevealed ? '🙈' : '👁️';
+    }
+
+    // 目錄導覽選單
+    function toggleTocMenu(e) {
+      if (e) e.stopPropagation();
+      const m = document.getElementById('tocMenu');
+      if (m) m.classList.toggle('show');
+    }
+
+    function jumpTo(pageId) {
+      const el = document.getElementById(pageId);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+        const m = document.getElementById('tocMenu');
+        if (m) m.classList.remove('show');
+      }
+    }
+
+    document.addEventListener('click', function(e) {
+      const m = document.getElementById('tocMenu');
+      const b = document.getElementById('tocBtn');
+      if (m && m.classList.contains('show') && !m.contains(e.target) && e.target !== b) {
+        m.classList.remove('show');
+      }
+    });
+
+    // 螢光筆/板書模式
+    function togglePenMode() {
+      penMode = !penMode;
+      document.body.classList.toggle('pen-mode', penMode);
+      const btn = document.getElementById('penBtn');
+      const opts = document.getElementById('penOptions');
+      if (btn) btn.classList.toggle('active', penMode);
+      if (opts) opts.style.display = penMode ? 'flex' : 'none';
+    }
+
+    function setPenColor(col, el) {
+      penColor = col;
+      document.querySelectorAll('.color-dot').forEach(d => d.classList.remove('active'));
+      if (el) el.classList.add('active');
+    }
+
+    function setPenSize(sz, el) {
+      penSize = sz;
+      document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+      if (el) el.classList.add('active');
+    }
+
+    function clearAllDrawings() {
+      document.querySelectorAll('.drawing-canvas').forEach(cv => {
+        const ctx = cv.getContext('2d');
+        ctx.clearRect(0, 0, cv.width, cv.height);
+      });
+    }
+
+    // 初始化畫布
+    function initCanvases() {
+      document.querySelectorAll('.page').forEach(page => {
+        const cv = page.querySelector('.drawing-canvas');
+        if (!cv) return;
+        const ctx = cv.getContext('2d');
+
+        function resize() {
+          cv.width = page.clientWidth;
+          cv.height = page.clientHeight;
+        }
+        resize();
+        window.addEventListener('resize', resize);
+
+        let drawing = false;
+        let lx = 0, ly = 0;
+
+        cv.addEventListener('mousedown', e => {
+          if (!penMode) return;
+          drawing = true;
+          const rect = cv.getBoundingClientRect();
+          lx = e.clientX - rect.left;
+          ly = e.clientY - rect.top;
+        });
+
+        cv.addEventListener('mousemove', e => {
+          if (!drawing || !penMode) return;
+          const rect = cv.getBoundingClientRect();
+          const cx = e.clientX - rect.left;
+          const cy = e.clientY - rect.top;
+
+          ctx.beginPath();
+          ctx.moveTo(lx, ly);
+          ctx.lineTo(cx, cy);
+          ctx.strokeStyle = penColor;
+          ctx.lineWidth = penSize;
+          ctx.lineCap = 'round';
+          ctx.lineJoin = 'round';
+          ctx.stroke();
+
+          lx = cx;
+          ly = cy;
+        });
+
+        window.addEventListener('mouseup', () => { drawing = false; });
+      });
+    }
+    window.addEventListener('load', initCanvases);
+  </script>
+</body>
+</html>
