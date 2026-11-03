@@ -1,0 +1,1469 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="ebook:subject" content="science">
+  <meta name="ebook:grade" content="10">
+  <meta name="ebook:unit" content="2-2">
+  <meta name="ebook:title" content="高中生物(全) 2-2 遺傳工程及其應用 互動講義">
+  <meta name="ebook:type" content="handout">
+  <meta name="ebook:pages" content="10">
+  <meta name="ebook:level" content="std">
+  <meta name="ebook:date" content="2026-11-03">
+  <meta name="ebook:tags" content="高中生物,遺傳工程,重組DNA,質體,限制酶,DNA連接酶,基因轉殖,基改生物,普通班,講義">
+  <meta name="ebook:summary" content="高中生物（全）2-2 遺傳工程及其應用完整互動教學講義（全10頁舒展大字版，題題空間充裕絕無截斷，支援圖片全螢幕高清燈箱放大檢視）。完整涵蓋：2-2.1 遺傳工程定義、重組DNA製備三大核心要素（目標基因、載體質體、限制酶與DNA連接酶）、重組DNA製作三步驟詳解、基因轉殖直接法與間接法、質體抗抗生素篩選機制；2-2.2 基因改造生物（GMO）定義、基改微生物（胰島素與纖維素）、基改動物（大西洋鮭與螢光魚）、基改植物（Bt抗蟲作物與黃金米）、基改作物的優勢效益與三大潛在風險省思；以及精選基礎練習2題、課後單選7題、課後多選4題、非選題四段DNA限制酶切位分析題組（內嵌超高清向量SVG圖表）全方位詳解。全書支援點擊顯答、括號同行顯答、圖片全螢幕高清燈箱放大檢視與螢光筆畫板互動功能。">
+  <title>高中生物(全) 2-2 遺傳工程及其應用 互動講義</title>
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f1f5f9;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+      color: #1e293b;
+      line-height: 1.5;
+    }
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      max-height: 297mm;
+      margin: 12px auto;
+      padding: 13mm 14mm 12mm 14mm;
+      background: #ffffff;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      page-break-after: always;
+    }
+    .page-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .page-header {
+      border-bottom: 2px solid #0284c7;
+      padding-bottom: 4px;
+      margin-bottom: 7px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    .page-header .title-main {
+      font-size: 14pt;
+      font-weight: bold;
+      color: #0369a1;
+      letter-spacing: 0.5px;
+    }
+    .page-header .subtitle {
+      font-size: 10.5pt;
+      color: #64748b;
+      font-weight: 500;
+    }
+    .page-footer {
+      border-top: 1px solid #cbd5e1;
+      padding-top: 4px;
+      margin-top: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 9.5pt;
+      color: #94a3b8;
+    }
+    .section-title {
+      font-size: 12.5pt;
+      font-weight: bold;
+      color: #0f172a;
+      background: #e0f2fe;
+      border-left: 5px solid #0284c7;
+      padding: 3px 10px;
+      margin: 6px 0 5px 0;
+      border-radius: 0 4px 4px 0;
+    }
+    .sub-title {
+      font-size: 11.5pt;
+      font-weight: bold;
+      color: #0369a1;
+      margin: 5px 0 3px 0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .badge {
+      font-size: 9pt;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+    .badge-primary { background: #0284c7; color: #fff; }
+    .badge-teal { background: #0d9488; color: #fff; }
+    .badge-amber { background: #d97706; color: #fff; }
+    .badge-indigo { background: #4f46e5; color: #fff; }
+    .badge-rose { background: #e11d48; color: #fff; }
+
+    .concept-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 7px 11px;
+      margin-bottom: 6px;
+      font-size: 11pt;
+      line-height: 1.55;
+    }
+    .highlight-card {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-left: 4px solid #f59e0b;
+      padding: 6px 11px;
+      border-radius: 4px;
+      margin: 5px 0;
+      font-size: 10.5pt;
+      line-height: 1.5;
+    }
+    .key-point-card {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-left: 4px solid #22c55e;
+      padding: 6px 11px;
+      border-radius: 4px;
+      margin: 5px 0;
+      font-size: 10.5pt;
+      line-height: 1.5;
+    }
+
+    /* Images */
+    .page img {
+      cursor: zoom-in;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      border-radius: 4px;
+    }
+    .page img:hover {
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+    }
+    .img-modal {
+      display: none;
+      position: fixed;
+      z-index: 100000;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(15, 23, 42, 0.88);
+      backdrop-filter: blur(6px);
+      justify-content: center;
+      align-items: center;
+      cursor: zoom-out;
+    }
+    .img-modal.active { display: flex; }
+    .img-modal-content {
+      position: relative;
+      max-width: 93vw;
+      max-height: 93vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .img-modal img {
+      max-width: 92vw;
+      max-height: 86vh;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.6);
+      background: #ffffff;
+      padding: 6px;
+    }
+    .img-modal-caption {
+      margin-top: 8px;
+      color: #f8fafc;
+      font-size: 12pt;
+      font-weight: bold;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+    }
+    .img-modal-close {
+      position: absolute;
+      top: -35px; right: -10px;
+      color: #ffffff;
+      font-size: 26pt;
+      font-weight: bold;
+      cursor: pointer;
+      user-select: none;
+      line-height: 1;
+    }
+
+    /* Answers */
+    .ans-word {
+      color: transparent !important;
+      border-bottom: 2px solid #0284c7;
+      padding: 0 5px;
+      cursor: pointer;
+      display: inline-block;
+      transition: color 0.15s, background-color 0.15s;
+      border-radius: 3px;
+      user-select: none;
+      font-size: 11pt;
+    }
+    .ans-word:hover {
+      background-color: #fef08a !important;
+      color: #92400e !important;
+    }
+    .ans-word.revealed, body.show-all-answers .ans-word {
+      color: #dc2626 !important;
+      background-color: #fee2e2 !important;
+      font-weight: bold !important;
+      border-bottom-color: #dc2626;
+    }
+
+    /* QA Item */
+    .qa-item {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 7px 11px;
+      margin-bottom: 7px;
+      cursor: pointer;
+      transition: border-color 0.15s, background-color 0.15s;
+    }
+    .qa-item:hover {
+      border-color: #38bdf8;
+      background-color: #f8fafc;
+    }
+    .q-stem {
+      font-size: 11pt;
+      line-height: 1.5;
+      font-weight: 500;
+      color: #1e293b;
+    }
+    .qa-bracket {
+      font-weight: bold;
+      color: #1e293b;
+      cursor: pointer;
+      padding: 0 1px;
+      display: inline;
+    }
+    .qa-bracket .ans-text {
+      color: transparent !important;
+      min-width: 18px;
+      display: inline-block;
+      text-align: center;
+      transition: color 0.15s;
+    }
+    .qa-bracket:hover .ans-text { color: #fca5a5 !important; }
+    .qa-bracket.revealed .ans-text, body.show-all-answers .qa-bracket .ans-text {
+      color: #dc2626 !important;
+      font-weight: bold !important;
+    }
+    .q-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px 14px;
+      margin-top: 4px;
+      font-size: 10.5pt;
+      color: #334155;
+    }
+    .q-options.stacked {
+      grid-template-columns: 1fr;
+    }
+    .q-opt {
+      padding: 1px 0;
+    }
+    .calc-workspace {
+      margin-top: 5px;
+      background: #f8fafc;
+      border: 1px dashed #cbd5e1;
+      border-radius: 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+    .calc-solution {
+      color: transparent !important;
+      font-size: 10pt;
+      line-height: 1.5;
+      user-select: none;
+    }
+    .calc-solution * { color: transparent !important; }
+    .calc-solution:hover { color: #94a3b8 !important; }
+    .calc-solution:hover * { color: #94a3b8 !important; }
+    .calc-solution.revealed, body.show-all-answers .calc-solution {
+      color: #1e293b !important;
+      user-select: text;
+    }
+    .calc-solution.revealed *, body.show-all-answers .calc-solution * {
+      color: inherit !important;
+    }
+    .calc-solution.revealed b, body.show-all-answers .calc-solution b {
+      color: #0284c7 !important;
+    }
+
+    /* Tables */
+    .table-custom {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 5px 0;
+      font-size: 10pt;
+    }
+    .table-custom th, .table-custom td {
+      border: 1px solid #cbd5e1;
+      padding: 5px 9px;
+      text-align: left;
+    }
+    .table-custom th {
+      background: #f1f5f9;
+      font-weight: bold;
+      color: #0f172a;
+      text-align: center;
+    }
+
+    /* Toolbar */
+    .top-toolbar {
+      position: fixed;
+      top: 10px;
+      right: 15px;
+      z-index: 9999;
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid #cbd5e1;
+      border-radius: 30px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+      padding: 4px 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      backdrop-filter: blur(8px);
+    }
+    .tb-btn {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 20px;
+      padding: 4px 11px;
+      font-size: 9.5pt;
+      font-weight: 500;
+      color: #334155;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.15s ease;
+      text-decoration: none;
+    }
+    .tb-btn:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+    .tb-btn.active {
+      background: #0284c7;
+      color: #ffffff;
+      border-color: #0284c7;
+    }
+    .pen-options {
+      display: none;
+      align-items: center;
+      gap: 5px;
+      padding-left: 5px;
+      border-left: 1px solid #cbd5e1;
+    }
+    .pen-color-dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      cursor: pointer;
+      border: 2px solid #ffffff;
+      box-shadow: 0 0 0 1px #94a3b8;
+    }
+    .pen-color-dot.active {
+      box-shadow: 0 0 0 2px #0284c7;
+    }
+    .drawing-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 100;
+    }
+    body.pen-active .drawing-canvas {
+      pointer-events: auto;
+      cursor: crosshair;
+    }
+    .toc-menu {
+      position: absolute;
+      top: 45px;
+      right: 0;
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+      padding: 6px 0;
+      min-width: 260px;
+      display: none;
+      max-height: 480px;
+      overflow-y: auto;
+      z-index: 10000;
+    }
+    .toc-menu.show { display: block; }
+    .toc-item {
+      padding: 5px 14px;
+      font-size: 9pt;
+      color: #334155;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    .toc-item:hover {
+      background: #f0fdf4;
+      color: #15803d;
+      font-weight: bold;
+    }
+
+    @media print {
+      body { background: #fff !important; }
+      .top-toolbar, .toc-menu, .drawing-canvas, .img-modal { display: none !important; }
+      .page {
+        margin: 0 !important;
+        box-shadow: none !important;
+        border: none !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 297mm !important;
+        page-break-after: always !important;
+      }
+      .qa-bracket .ans-text, .ans-word, .calc-solution {
+        color: transparent !important;
+        background-color: transparent !important;
+      }
+      .qa-bracket .ans-text * { color: transparent !important; }
+      .ans-word { border-bottom: 1px solid #000 !important; }
+      .calc-workspace { border: 1px dashed #ccc !important; }
+      .page img { cursor: default !important; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Lightbox Modal for Fullscreen Image Zoom -->
+  <div class="img-modal" id="imgModal" onclick="closeImageModal()">
+    <div class="img-modal-content" onclick="event.stopPropagation()">
+      <span class="img-modal-close" onclick="closeImageModal()">&times;</span>
+      <img id="imgModalSrc" src="" alt="">
+      <div class="img-modal-caption" id="imgModalCaption"></div>
+    </div>
+  </div>
+
+  <div class="top-toolbar">
+    <a href="../index.html" class="tb-btn" title="回電子書目錄">🏠 目錄</a>
+    <div style="position:relative;">
+      <button class="tb-btn" onclick="toggleTocMenu(event)">📑 跳至頁面 ▾</button>
+      <div class="toc-menu" id="tocMenu">
+        <div class="toc-item" onclick="jumpTo('p1')"><span>p.1 遺傳工程定義與三大核心要素</span><span style="color:#94a3b8;">p.1</span></div>
+        <div class="toc-item" onclick="jumpTo('p2')"><span>p.2 酵素雙雄：限制酶與連接酶</span><span style="color:#94a3b8;">p.2</span></div>
+        <div class="toc-item" onclick="jumpTo('p3')"><span>p.3 重組 DNA 製作三步驟詳解</span><span style="color:#94a3b8;">p.3</span></div>
+        <div class="toc-item" onclick="jumpTo('p4')"><span>p.4 基因轉殖方法與抗生素篩選</span><span style="color:#94a3b8;">p.4</span></div>
+        <div class="toc-item" onclick="jumpTo('p5')"><span>p.5 基因改造生物(GMO)三大應用</span><span style="color:#94a3b8;">p.5</span></div>
+        <div class="toc-item" onclick="jumpTo('p6')"><span>p.6 基改優劣省思與基礎練習</span><span style="color:#94a3b8;">p.6</span></div>
+        <div class="toc-item" onclick="jumpTo('p7')"><span>p.7 課後實戰演練：單選題(1~4題)</span><span style="color:#94a3b8;">p.7</span></div>
+        <div class="toc-item" onclick="jumpTo('p8')"><span>p.8 課後實戰演練：單選題(5~7題)</span><span style="color:#94a3b8;">p.8</span></div>
+        <div class="toc-item" onclick="jumpTo('p9')"><span>p.9 課後實戰演練：多選題(1~4題)</span><span style="color:#94a3b8;">p.9</span></div>
+        <div class="toc-item" onclick="jumpTo('p10')"><span>p.10 非選題：DNA限制酶切位題組</span><span style="color:#94a3b8;">p.10</span></div>
+      </div>
+    </div>
+    <button class="tb-btn" id="toggleAllAnsBtn" onclick="toggleAllAnswers()"><span id="ansIcon">👁️</span> 答案</button>
+    <button class="tb-btn" id="penBtn" onclick="togglePenMode()">✏️ 螢光筆</button>
+    <div class="pen-options" id="penOptions">
+      <div class="pen-color-dot active" style="background:#fde047;" onclick="setPenColor('rgba(250,204,21,0.45)', this)" title="螢光黃"></div>
+      <div class="pen-color-dot" style="background:#4ade80;" onclick="setPenColor('rgba(74,222,128,0.45)', this)" title="螢光綠"></div>
+      <div class="pen-color-dot" style="background:#f472b6;" onclick="setPenColor('rgba(244,114,182,0.45)', this)" title="螢光粉"></div>
+      <button class="tb-btn" style="padding:2px 7px; font-size:8pt;" onclick="clearCurrentCanvas()">清除</button>
+    </div>
+    <button class="tb-btn" onclick="window.print()">🖨️ 列印</button>
+  </div>
+
+  <!-- ==================== 第 1 頁 ==================== -->
+  <div class="page" id="p1">
+    <canvas class="drawing-canvas"></canvas>
+    <div class="page-content">
+      <div class="page-header">
+        <div>
+          <span class="title-main">高中生物（全） 2-2 遺傳工程及其應用</span>
+          <span class="badge badge-primary" style="margin-left:6px;">觀念精講(一)</span>
+        </div>
+        <div class="subtitle">遺傳工程定義與重組 DNA 準備（第 1/10 頁）</div>
+      </div>
+
+      <!-- 章節引言 -->
+      <div class="highlight-card" style="margin-top:2px; margin-bottom:6px;">
+        <b>💡 單元引言：</b>
+        隨著分子生物學與現代生物技術的蓬勃發展，人類對基因如何調控生物性狀表現有了透徹的認識。有沒有可能透過人為技術精準操控或改造生物的基因，使生物展現出自然界中原本未曾具備的嶄新性狀，進而造福人類醫療與農業？這就是「遺傳工程」的劃時代使命！
+      </div>
+
+      <!-- 一、定義 -->
+      <div class="section-title">一、遺傳工程（Genetic Engineering）的核心定義</div>
+      <div class="concept-box">
+        <b>1. 定義：</b>透過人為操控、修改或改造生物的遺傳物質（DNA），使受體生物可以獲得外源遺傳訊息，進而表現出全新的性狀或生產特定生化產物。<br>
+        <b>2. 別稱：</b>遺傳工程在實務與應用技術上亦常通稱為「<span class="ans-word" onclick="toggleAns(this, event)">基因工程</span>」。
+      </div>
+
+      <!-- 二、製備重組 DNA 與基因轉殖 -->
+      <div class="section-title">二、製備重組 DNA 與基因轉殖技術</div>
+      <div class="sub-title">📌 (一) 製備重組 DNA 的三大核心準備</div>
+      <div class="concept-box" style="margin-bottom:6px;">
+        進行重組 DNA 技術前，研究人員必須預先備妥三大要素：<b>目標基因</b>、<b>載體</b>與<b>特定酵素</b>。
+        <div style="margin-top:4px;">
+          <b>1. <span class="ans-word" onclick="toggleAns(this, event)">目標基因</span>（Target Gene）：</b><br>
+          &nbsp;&nbsp;① 欲改造、表現或轉殖送入某一生物體內的特定功能基因。<br>
+          &nbsp;&nbsp;② 科學家必須對該目標基因的核苷酸序列、調控機轉與轉譯產物具有清楚的了解。<br>
+          &nbsp;&nbsp;③ <b>實例：</b>若想利用細菌大量生產人類胰島素，則人類細胞染色體上的「人類胰島素基因」即為目標基因。
+        </div>
+        <div style="margin-top:5px;">
+          <b>2. <span class="ans-word" onclick="toggleAns(this, event)">載體</span>（Vector）：</b><br>
+          &nbsp;&nbsp;① 通常為具有自主複製能力的 <span class="ans-word" onclick="toggleAns(this, event)">DNA</span> 分子，能攜帶目標基因進入宿主細胞並維持穩定表現。<br>
+          &nbsp;&nbsp;② 最常用的載體是微生物的「<span class="ans-word" onclick="toggleAns(this, event)">質體</span>（Plasmid）」。
+        </div>
+      </div>
+
+      <!-- 質體特性與圖片 -->
+      <div class="key-point-card" style="margin-bottom:6px;">
+        <b>🔍 質體（Plasmid）的結構特性與操作優勢：</b><br>
+        • <b>結構型態：</b>質體常見於細菌等微生物，是獨立於擬核染色體以外的小段<span class="ans-word" onclick="toggleAns(this, event)">雙股環狀 DNA</span>。<br>
+        • <b>操作便利：</b>質體分子量小、結構緊湊，在實驗室離心萃取與試管操作時<span class="ans-word" onclick="toggleAns(this, event)">不易斷裂</span>，比龐大脆弱的染色體 DNA 方便操控得多。<br>
+        • <b>自主複製：</b>質體帶有獨立的複製起點（Ori），在宿主細胞內能<span class="ans-word" onclick="toggleAns(this, event)">獨立自行複製</span>，使細菌分裂後子代皆能均勻帶有該質體。<br>
+        • <b>基因表現：</b>質體能順利利用宿主細胞的機制進行<span class="ans-word" onclick="toggleAns(this, event)">轉錄</span>與<span class="ans-word" onclick="toggleAns(this, event)">轉譯</span>，表現外源目標基因並合成目標蛋白質。
+      </div>
+
+      <div style="text-align:center; margin:4px 0 2px 0;">
+        <img src="../images/biology-10-2-2-handout/細菌質體DNA.png" alt="圖 2-34 細菌的質體 DNA" title="點擊放大圖片" style="max-height:220px; max-width:85%; object-fit:contain; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+        <div style="font-size:9pt; color:#64748b; margin-top:2px;">▲ 圖 2-34 細菌的質體 DNA（獨立於擬核染色體外的小型雙股環狀 DNA，🔍 點擊可放大檢視）</div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>高中生物(全) 講義 2-2 遺傳工程及其應用</span>
+      <span>第 1 頁 / 共 10 頁</span>
+      <span>普通高中 適用</span>
+    </div>
+  </div>
+
+  <!-- ==================== 第 2 頁 ==================== -->
+  <div class="page" id="p2">
+    <canvas class="drawing-canvas"></canvas>
+    <div class="page-content">
+      <div class="page-header">
+        <div>
+          <span class="title-main">高中生物（全） 2-2 遺傳工程及其應用</span>
+          <span class="badge badge-teal" style="margin-left:6px;">觀念精講(二)</span>
+        </div>
+        <div class="subtitle">限制酶與 DNA 連接酶的分子機制（第 2/10 頁）</div>
+      </div>
+
+      <div class="section-title">製備重組 DNA 的兩大核心酵素（工具酶）</div>
+      <div class="concept-box" style="margin-bottom:6px;">
+        要將外源目標基因精準拼接到載體質體上，必須依賴兩大不可或缺的工具酵素：<b>限制酶</b>（分子手術刀）與 <b>DNA 連接酶</b>（分子膠水）。
+        <div style="margin-top:5px;">
+          <b>(1) <span class="ans-word" onclick="toggleAns(this, event)">限制酶</span>（Restriction Enzyme，限制性核酸內切酶）：</b><br>
+          &nbsp;&nbsp;① <b>功能定位：</b>分子手術刀（Molecular Scissors）。<br>
+          &nbsp;&nbsp;② <b>辨識特異性：</b>能精準辨識特定的雙股 DNA 核苷酸序列，並在此特定位置精確切斷兩股的<span class="ans-word" onclick="toggleAns(this, event)">磷酸二酯鍵</span>。<br>
+          &nbsp;&nbsp;③ <b>命名與起源：</b>最初由細菌中發現，是細菌抵抗噬菌體入侵的防禦機制，能「限制」外來病毒 DNA 在細菌體內複製。
+        </div>
+        <div style="margin-top:5px;">
+          <b>(2) <span class="ans-word" onclick="toggleAns(this, event)">DNA 連接酶</span>（DNA Ligase）：</b><br>
+          &nbsp;&nbsp;① <b>功能定位：</b>分子膠水（Molecular Glue）。<br>
+          &nbsp;&nbsp;② <b>作用機制：</b>消耗能量，催化相鄰兩核苷酸的磷酸基與去氧核糖之間形成<span class="ans-word" onclick="toggleAns(this, event)">磷酸二酯鍵</span>，將不同來源的 DNA 骨架完整縫合。
+        </div>
+      </div>
+
+      <!-- 配圖：圖 2-35 限制酶 -->
+      <div style="text-align:center; margin:5px 0 3px 0;">
+        <img src="../images/biology-10-2-2-handout/限製酶.png" alt="圖 2-35 限制酶 EcoRI 切割的序列" title="點擊放大圖片" style="max-height:230px; max-width:88%; object-fit:contain; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+        <div style="font-size:9pt; color:#64748b; margin-top:2px;">▲ 圖 2-35 限制酶 EcoRI 切割的迴文序列與黏性末端形成（🔍 點擊可放大檢視）</div>
+      </div>
+
+      <!-- 延伸補充：序列辨識能力與黏性末端 -->
+      <div class="highlight-card" style="margin-top:5px;">
+        <b>💡 深度延伸補充：限制酶的序列辨識能力與末端型態</b><br>
+        • <b>迴文序列（Palindromic Sequence）：</b><br>
+        &nbsp;&nbsp;限制酶所辨識的序列通常為 4～8 個鹼基對長，且具有旋轉對稱性，即雙股在 5' → 3' 方向上的讀序完全相同。例如大腸桿菌限制酶 <i>Eco</i>RI 辨識的序列為：<br>
+        &nbsp;&nbsp;<code style="background:#f1f5f9; padding:1px 5px; border-radius:3px; font-weight:bold; color:#0369a1;">5'- G ↓ A A T T C -3'</code><br>
+        &nbsp;&nbsp;<code style="background:#f1f5f9; padding:1px 5px; border-radius:3px; font-weight:bold; color:#0369a1;">3'- C T T A A ↑ G -5'</code><br>
+        • <b>黏性末端（Sticky Ends）：</b><br>
+        &nbsp;&nbsp;如 <i>Eco</i>RI 在兩股交錯切割，會露出帶有單股凸出的互補鹼基（<code>5'-AATT-3'</code>），此種末端稱為「<span class="ans-word" onclick="toggleAns(this, event)">黏性末端</span>」，極易與相同切口透過氫鍵自發互補配對；少數限制酶採垂直切割兩股，則產生沒有單股延伸的「平端（Blunt Ends）」。
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>高中生物(全) 講義 2-2 遺傳工程及其應用</span>
+      <span>第 2 頁 / 共 10 頁</span>
+      <span>普通高中 適用</span>
+    </div>
+  </div>
+
+  <!-- ==================== 第 3 頁 ==================== -->
+  <div class="page" id="p3">
+    <canvas class="drawing-canvas"></canvas>
+    <div class="page-content">
+      <div class="page-header">
+        <div>
+          <span class="title-main">高中生物（全） 2-2 遺傳工程及其應用</span>
+          <span class="badge badge-amber" style="margin-left:6px;">實驗流程</span>
+        </div>
+        <div class="subtitle">重組 DNA 製作流程三步驟詳解（第 3/10 頁）</div>
+      </div>
+
+      <div class="section-title">📌 (二) 重組 DNA 的製作三部曲流程</div>
+      <div class="concept-box" style="margin-bottom:5px;">
+        重組 DNA 是指將來自兩個（或以上）不同生物來源的 DNA 片段，在試管內以酵素精確切割與重組拼接而成的雜合 DNA 分子。製作流程包含三大標準步驟：
+        <div style="margin-top:4px;">
+          <b>步驟 1：DNA 的獲取與精確切割（<span style="color:#dc2626;">相同限制酶原則</span>）</b><br>
+          &nbsp;&nbsp;• 從人體細胞染色體分離出目標基因（如胰島素基因），並從細菌細胞萃取出質體載體。<br>
+          &nbsp;&nbsp;• <b>關鍵鐵律：</b>必須使用「<span class="ans-word" onclick="toggleAns(this, event)">相同的限制酶</span>」分別切割目標基因與載體質體，使其切口兩端露出能互相<span class="ans-word" onclick="toggleAns(this, event)">鹼基互補配對</span>的單股黏性末端。
+        </div>
+        <div style="margin-top:4px;">
+          <b>步驟 2：DNA 片段的混合與黏合接合（<span style="color:#0284c7;">DNA 連接酶作用</span>）</b><br>
+          &nbsp;&nbsp;• 將切開的目標基因與質體載體依適當比例混合，兩者的黏性末端透過鹼基氫鍵自發互補靠攏。<br>
+          &nbsp;&nbsp;• 加入「<span class="ans-word" onclick="toggleAns(this, event)">DNA 連接酶</span>」，消耗能量催化磷酸二酯鍵生成，將兩段 DNA 骨架缺口牢固縫合。
+        </div>
+        <div style="margin-top:4px;">
+          <b>步驟 3：完成重組 DNA 分子（Recombinant DNA）</b><br>
+          &nbsp;&nbsp;• 成功拼接後形成帶有外源目標基因的環狀質體，即稱為「<span class="ans-word" onclick="toggleAns(this, event)">重組 DNA</span>」或重組質體。
+        </div>
+      </div>
+
+      <!-- 配圖：圖 2-36 處理與連接 DNA -->
+      <div style="text-align:center; margin:4px 0 2px 0;">
+        <img src="../images/biology-10-2-2-handout/處理及連接DNA.png" alt="圖 2-36 處理與連接 DNA" title="點擊放大圖片" style="max-height:250px; max-width:92%; object-fit:contain; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+        <div style="font-size:9pt; color:#64748b; margin-top:2px;">▲ 圖 2-36 處理與連接 DNA 完整操作流程（目標基因與細菌質體重組，🔍 點擊可放大檢視）</div>
+      </div>
+
+      <!-- 核心觀念解析 -->
+      <div class="key-point-card" style="margin-top:4px;">
+        <b>🎯 考試必考核心解析：為什麼切割目標基因與質體必須使用「同一種限制酶」？</b><br>
+        限制酶具有嚴格的序列特異性。若使用不同限制酶切割，兩者切出的單股末端序列將互不匹配，無法藉由氫鍵進行鹼基互補對齊。唯有使用「相同限制酶」，質體開口處與目標基因兩側才能形成<b>鏡像對稱且互補的黏性末端</b>，進而順利由 DNA 連接酶共價接合！
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>高中生物(全) 講義 2-2 遺傳工程及其應用</span>
+      <span>第 3 頁 / 共 10 頁</span>
+      <span>普通高中 適用</span>
+    </div>
+  </div>
+
+  <!-- ==================== 第 4 頁 ==================== -->
+  <div class="page" id="p4">
+    <canvas class="drawing-canvas"></canvas>
+    <div class="page-content">
+      <div class="page-header">
+        <div>
+          <span class="title-main">高中生物（全） 2-2 遺傳工程及其應用</span>
+          <span class="badge badge-indigo" style="margin-left:6px;">轉殖與選殖</span>
+        </div>
+        <div class="subtitle">基因轉殖方法與抗生素篩選機制（第 4/10 頁）</div>
+      </div>
+
+      <div class="section-title">📌 (三) 基因轉殖與抗生素篩選兩大階段</div>
+      <div class="concept-box" style="margin-bottom:5px;">
+        重組 DNA 在試管中完成後，必須送入宿主活體細胞中才能複製與表現蛋白質，包含<b>轉殖</b>與<b>篩選</b>兩個關鍵步驟：
+        <div style="margin-top:4px;">
+          <b>1. 轉殖階段（Transformation）：將重組 DNA 送入受體宿主細胞內</b><br>
+          &nbsp;&nbsp;• <b>直接導入法：</b>透過物理或化學手段直接克服細胞屏障：<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;① <span class="ans-word" onclick="toggleAns(this, event)">基因槍法</span>（Gene gun）：用微米級金粉或鎢粉包裹重組 DNA，利用高壓氣體射入植物細胞壁。<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;② <span class="ans-word" onclick="toggleAns(this, event)">顯微注射法</span>（Microinjection）：在顯微鏡下以玻璃毛細管直接將 DNA 注入動物受精卵中。<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;③ <b>化學/熱休克法：</b>利用氯化鈣（CaCl<sub>2</sub>）結合 42°C 熱休克短暫改變細菌細胞膜通透性，使質體進入。<br>
+          &nbsp;&nbsp;• <b>間接導入法：</b>利用天然病原體的感染機制，如改裝無害的<span class="ans-word" onclick="toggleAns(this, event)">病毒</span>或土壤中的農桿菌（<i>Agrobacterium</i>）攜帶外源 DNA 轉殖入宿主。
+        </div>
+        <div style="margin-top:4px;">
+          <b>2. 篩選階段（Selection）：精準挑選成功轉殖重組 DNA 的細胞</b><br>
+          &nbsp;&nbsp;• <b>質體載體的標記功能：</b>轉殖效率通常低於 1%，絕大多數細菌未吸納質體。因此質體上常帶有「<span class="ans-word" onclick="toggleAns(this, event)">抗抗生素基因</span>」（如抗安比西林 Amp<sup>r</sup>、抗四環素 Tet<sup>r</sup>），作為篩選標記。<br>
+          &nbsp;&nbsp;• <b>篩選與選殖：</b>將細菌塗布在含有特定抗生素的固態培養基上，未轉殖質體的細菌無法生長而死亡；唯有成功轉殖質體的耐藥細菌才能分裂生長，形成肉眼可見的單一菌落（選殖）。
+        </div>
+      </div>
+
+      <!-- 配圖：圖 2-37 轉殖與篩選 -->
+      <div style="text-align:center; margin:4px 0 2px 0;">
+        <img src="../images/biology-10-2-2-handout/轉殖與篩選.png" alt="圖 2-37 轉殖與篩選" title="點擊放大圖片" style="max-height:220px; max-width:95%; object-fit:contain; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+        <div style="font-size:9pt; color:#64748b; margin-top:2px;">▲ 圖 2-37 質體轉殖到細菌、抗生素培養基篩選與胰島素大規模醱酵量產（🔍 點擊可放大檢視）</div>
+      </div>
+
+      <div class="highlight-card" style="margin-top:4px;">
+        <b>💡 工廠化大量生產：</b>
+        篩選獲得帶有目標基因（如人類胰島素基因）的細菌菌株後，將其置入大型工業醱酵槽中給予充足養分培養，細菌迅速分裂增殖，質體同步大量自行複製並持續轉錄轉譯，大量合成人類胰島素蛋白質，經由純化後即可製成臨床高純度胰島素藥劑！
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>高中生物(全) 講義 2-2 遺傳工程及其應用</span>
+      <span>第 4 頁 / 共 10 頁</span>
+      <span>普通高中 適用</span>
+    </div>
+  </div>
+
+  <!-- ==================== 第 5 頁 ==================== -->
+  <div class="page" id="p5">
+    <canvas class="drawing-canvas"></canvas>
+    <div class="page-content">
+      <div class="page-header">
+        <div>
+          <span class="title-main">高中生物（全） 2-2 遺傳工程及其應用</span>
+          <span class="badge badge-rose" style="margin-left:6px;">基改應用</span>
+        </div>
+        <div class="subtitle">基因改造生物（GMO）與三大領域實例（第 5/10 頁）</div>
+      </div>
+
+      <div class="section-title">2-2.2 遺傳工程的應用與省思：基因改造生物</div>
+      <div class="concept-box" style="margin-bottom:6px;">
+        <b>一、基因改造生物的核心定義</b><br>
+        凡是透過現代遺傳工程（基因轉殖）技術，人為改變或導入外源遺傳物質，使其表現出原本所不具備之新性狀的生物，統稱為「<span class="ans-word" onclick="toggleAns(this, event)">基因改造生物</span>」（Genetically Modified Organism，簡稱 <span class="ans-word" onclick="toggleAns(this, event)">GMO</span> 或基改生物）。
+      </div>
+
+      <!-- 基改生物應用全方位比較表 -->
+      <div class="sub-title">📌 二、基改生物在三大領域的具體應用實例全覽</div>
+      <table class="table-custom" style="margin-bottom:6px;">
+        <thead>
+          <tr>
+            <th style="width:20%;">生物類型</th>
+            <th style="width:42%;">核心技術與代表實例</th>
+            <th style="width:38%;">主要效益與應用價值</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="font-weight:bold; color:#0369a1; text-align:center;">
+              基因改造<br>微生物
+            </td>
+            <td>
+              • <b>生產人類胰島素：</b>將人類胰島素基因轉殖入大腸桿菌或酵母菌中培養量產。<br>
+              • <b>分解纖維素：</b>將纖維素分解酵素基因轉殖入酵母菌中。
+            </td>
+            <td>
+              • 大規模工廠化生產純度極高之<span class="ans-word" onclick="toggleAns(this, event)">人類胰島素</span>，取代早期萃取自牛、豬之異種胰島素，避免過敏反應。<br>
+              • 高效分解農業廢棄物纖維素，加速生產生質酒精綠色能源。
+            </td>
+          </tr>
+          <tr>
+            <td style="font-weight:bold; color:#0d9488; text-align:center;">
+              基因改造<br>動物
+            </td>
+            <td>
+              • <b>速生大西洋鮭：</b>轉入大洋鱈魚抗凍蛋白啟動子＋大鱗鮭魚<span class="ans-word" onclick="toggleAns(this, event)">生長激素</span>基因。<br>
+              • <b>發光觀賞魚：</b>將水母綠色螢光蛋白（GFP）基因轉殖入斑馬魚中。
+            </td>
+            <td>
+              • 克服野生鮭魚在寒冬停止生長的限制，在低溫下全年持續生長，大幅縮短養殖上市時間。<br>
+              • 培育出能在暗處發出美麗螢光的<span class="ans-word" onclick="toggleAns(this, event)">螢光魚</span>，應用於水族觀賞與環境水質重金屬毒素監測。
+            </td>
+          </tr>
+          <tr>
+            <td style="font-weight:bold; color:#15803d; text-align:center;">
+              基因改造<br>植物
+            </td>
+            <td>
+              • <b>Bt 抗蟲作物：</b>將蘇雲金芽孢桿菌的<span class="ans-word" onclick="toggleAns(this, event)">抗蟲基因</span>（Bt 毒蛋白）轉殖入玉米、大豆與棉花。<br>
+              • <b>黃金米（Golden Rice）：</b>將合成 β-胡蘿蔔素的多種酵素基因轉入水稻胚乳。
+            </td>
+            <td>
+              • 害蟲取食植物組織後腸道穿孔死亡，賦予作物自主防禦力，大幅降低化學農藥噴灑成本與殘留。<br>
+              • 生產富含<span class="ans-word" onclick="toggleAns(this, event)">胡蘿蔔素</span>的金黃色稻米，可改善發展中國家主食缺乏維生素 A 引起的夜盲症與失明。
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- 傳統育種 vs 基改技術比較 -->
+      <div class="highlight-card" style="margin-top:4px;">
+        <b>💡 觀念深度剖析：傳統雜交育種 vs. 現代基因改造技術</b><br>
+        • <b>傳統育種：</b>僅能在同種或近緣物種間進行有性生殖雜交，需經歷漫長的子代篩選與多代回交，且難以排除非目標的劣質基因。<br>
+        • <b>基因轉殖（基改）：</b>能夠打破物種之間的<span class="ans-word" onclick="toggleAns(this, event)">生殖隔離</span>屏障（如將細菌的 Bt 基因導入植物玉米中），精確引入單一目標性狀，極具針對性與高效率！
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>高中生物(全) 講義 2-2 遺傳工程及其應用</span>
+      <span>第 5 頁 / 共 10 頁</span>
+      <span>普通高中 適用</span>
+    </div>
+  </div>
+
+  <!-- ==================== 第 6 頁 ==================== -->
+  <div class="page" id="p6">
+    <canvas class="drawing-canvas"></canvas>
+    <div class="page-content">
+      <div class="page-header">
+        <div>
+          <span class="title-main">高中生物（全） 2-2 遺傳工程及其應用</span>
+          <span class="badge badge-amber" style="margin-left:6px;">優劣省思</span>
+        </div>
+        <div class="subtitle">基改作物優點、潛在風險省思與基礎練習（第 6/10 頁）</div>
+      </div>
+
+      <div class="section-title">三、基改作物的優點與潛在風險省思</div>
+      <div class="concept-box" style="margin-bottom:6px;">
+        <b>1. 基改作物的顯著優點：</b><br>
+        • <b>減少化學農藥用量：</b>抗殺草劑或抗蟲大豆可減少噴藥次數，大幅減輕化學藥劑對土壤與地下水生態的毒性汙染。<br>
+        • <b>增加單位面積產量：</b>抗蟲、耐旱或抗病作物能顯著減少農作耗損，提高收成量以因應全球人口增長之糧食危機。<br>
+        • <b>提升作物營養價值：</b>如富含胡蘿蔔素的黃金米，能補充人體必需微量營養素。<br>
+        • <b>開創病蟲害綜合防治法：</b>如轉入外鞘蛋白基因之抗輪點病毒木瓜，提供傳統農法難以企及之生物防護力。<br>
+        <div style="margin-top:4px; border-top:1px dashed #cbd5e1; padding-top:4px;">
+          <b>2. 基改作物的潛在風險與深層省思（三大層面）：</b><br>
+          • <b>生態層面：</b>① 抗蟲作物可能殺死以害蟲或花粉為食的非目標益蟲（如蜜蜂、蝴蝶）；② 加速害蟲篩選演化出抗藥性；③ 轉殖基因可能透過花粉雜交散布至野生近緣種，衍生難以根除之「<span class="ans-word" onclick="toggleAns(this, event)">超級雜草</span>」，危害生物多樣性。<br>
+          • <b>食品安全與健康層面：</b>外源基因代謝產物可能引發人體免疫系統過敏反應（如轉殖巴西堅果蛋白的大豆）；基改食品之長期慢性安全性仍受廣泛關注。<br>
+          • <b>社會倫理與法律層面：</b>人類是否有權利操控跨物種基因？跨國種子企業對基改專利的壟斷，造成農民無法自行留種等經濟不對等議題。
+        </div>
+      </div>
+
+      <!-- 基礎練習 -->
+      <div class="section-title" style="margin-top:6px;">四、單元基礎實力檢測（第 1 ～ 2 題）</div>
+
+      <!-- 基礎 1 -->
+      <div class="qa-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">ACD</span> ）</span>
+          <span class="q-num">1.</span>下列關於質體的敘述，哪些為正確？（應選 3 項）
+        </div>
+        <div class="q-options stacked">
+          <div class="q-opt">(A) 在宿主細胞內能進行轉錄和轉譯　(B) 在宿主細胞內無法自行複製　(C) 能轉移外來基因至宿主細胞中</div>
+          <div class="q-opt">(D) 能攜帶目標基因　(E) 線狀 DNA 分子</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">
+            <b>【解析】</b><br>
+            • (B) 質體帶有獨立的複製起點（Ori），在宿主細胞內具有「獨立自行複製」的能力。<br>
+            • (E) 質體是小型「雙股環狀」DNA 分子，而非線狀 DNA。<br>
+            • (A)(C)(D) 質體分子量小、不易斷裂，能攜帶目標基因轉殖入宿主細胞中，並利用宿主系統進行轉錄與轉譯表現蛋白質，敘述均正確。<br>
+            故選 <b>(A)(C)(D)</b>。
+          </div>
+        </div>
+      </div>
+
+      <!-- 基礎 2 -->
+      <div class="qa-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">D</span> ）</span>
+          <span class="q-num">2.</span>重組 DNA 需要使用限制酶，限制酶的作用為何？
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 限制基因的轉錄作用</div>
+          <div class="q-opt">(B) 限制 DNA 的複製</div>
+          <div class="q-opt">(C) 隨機切割 DNA</div>
+          <div class="q-opt">(D) 能將特定序列的 DNA 做切割</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">
+            <b>【解析】</b><br>
+            限制酶最初在細菌中被發現，用以切割降解外來噬菌體 DNA，從而「限制」噬菌體的入侵與繁殖。在遺傳工程中，限制酶充當分子手術刀，能高度精準地辨識特定的雙股核苷酸序列（通常為迴文對稱序列），並在特定位置水解磷酸二酯鍵加以切割，而非隨機切割。<br>
+            故選 <b>(D)</b>。
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>高中生物(全) 講義 2-2 遺傳工程及其應用</span>
+      <span>第 6 頁 / 共 10 頁</span>
+      <span>普通高中 適用</span>
+    </div>
+  </div>
+
+  <!-- ==================== 第 7 頁 ==================== -->
+  <div class="page" id="p7">
+    <canvas class="drawing-canvas"></canvas>
+    <div class="page-content">
+      <div class="page-header">
+        <div>
+          <span class="title-main">高中生物（全） 2-2 遺傳工程及其應用</span>
+          <span class="badge badge-primary" style="margin-left:6px;">課後單選(一)</span>
+        </div>
+        <div class="subtitle">課後實戰演練：單選題 1 ～ 4 題精析（第 7/10 頁）</div>
+      </div>
+
+      <div class="section-title">五、課後實戰演練：單選題（第 1 ～ 4 題）</div>
+
+      <!-- 單選 1 -->
+      <div class="qa-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">C</span> ）</span>
+          <span class="q-num">1.</span>欲使細菌生產人類胰島素，下列哪個材料不需準備？
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 限制酶</div>
+          <div class="q-opt">(B) 人類胰島素基因</div>
+          <div class="q-opt">(C) RNA</div>
+          <div class="q-opt">(D) DNA 連接酶</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">
+            <b>【解析】</b><br>
+            利用遺傳工程製備能生產胰島素的工程菌，基本材料包含：目標基因（人類胰島素基因 DNA）、載體（細菌質體 DNA）、限制酶（切割酵素）與 DNA 連接酶（連接酵素）。整個重組 DNA 與質體建構過程均在 DNA 層次進行，不需額外準備 RNA。故選 <b>(C)</b>。
+          </div>
+        </div>
+      </div>
+
+      <!-- 單選 2 -->
+      <div class="qa-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">A</span> ）</span>
+          <span class="q-num">2.</span>以大腸桿菌大量生產人類胰島素而拯救許多糖尿病患者為例，基因轉殖已在許多領域貢獻良多，請問下列相關敘述何者錯誤？
+        </div>
+        <div class="q-options stacked">
+          <div class="q-opt">(A) 需有合適的載體與酵素才得以將胰島素送入大腸桿菌中</div>
+          <div class="q-opt">(B) 在進行載體與目標基因的切割時須使用相同的限制酶</div>
+          <div class="q-opt">(C) 載體本身須能在細菌體內自行複製</div>
+          <div class="q-opt">(D) 部分疫苗亦用此種方式生產</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">
+            <b>【解析】</b><br>
+            • (A) 基因轉殖技術是利用載體將「人類胰島素基因（DNA）」送入大腸桿菌體內，再由大腸桿菌表現合成胰島素蛋白質，而非直接運送胰島素蛋白質，故 (A) 敘述錯誤。<br>
+            • (B) 質體與目標基因必須使用相同限制酶切割，才能產出互補黏性末端。<br>
+            • (C) 載體質體必須具備複製起點，方能在菌體內自主複製遺傳給子代。<br>
+            • (D) 疫苗成分為病原體抗原蛋白質（如 B 肝表面抗原），可藉基因轉殖方式由酵母菌或細菌大量生產蛋白質次單元疫苗，敘述正確。<br>
+            故選 <b>(A)</b>。
+          </div>
+        </div>
+      </div>
+
+      <!-- 題組 3~4 -->
+      <div style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:6px; padding:6px 10px; margin-bottom:6px;">
+        <div style="font-weight:bold; color:#0369a1; font-size:10.5pt; margin-bottom:2px;">第 3 ～ 4 題為題組：</div>
+        <div style="font-size:10pt; color:#475569; line-height:1.45;">
+          美國聯邦食品藥物管理局於 2015 年核准通過一種經生物技術所產生的鮭魚上市，此類鮭魚產生的過程簡述如下：科學家在大西洋鮭中，加入了大洋鱈魚抗凍蛋白基因的<b>啟動子</b>及大鱗鮭魚的<b>生長激素基因</b>，利用大洋鱈魚的抗凍蛋白基因啟動子（如同基因表現的開關，可讓鮭魚在低溫時亦能表現其後方基因）來啟動大鱗鮭魚的生長激素基因產生生長激素（此激素是一種蛋白質類激素）。經過改良後的大西洋鮭，其生長速度大幅加快。
+        </div>
+
+        <!-- 單選 3 -->
+        <div class="qa-item" style="margin-top:5px; margin-bottom:4px;" onclick="toggleItemAnswers(this, event)">
+          <div class="q-stem">
+            <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">D</span> ）</span>
+            <span class="q-num">3.</span>有關改良後所產生的大西洋鮭，下列敘述何者正確？【106 指考】
+          </div>
+          <div class="q-options stacked">
+            <div class="q-opt">(A) 其體內來自於大洋鱈魚的抗凍蛋白會增加</div>
+            <div class="q-opt">(B) 此種基因編排的目的主要是增加鮭魚抗低溫能力</div>
+            <div class="q-opt">(C) 改良後的鮭魚會產生具有抗凍能力的生長激素</div>
+            <div class="q-opt">(D) 改良後的鮭魚長得快速是因為大鱗鮭魚生長激素所造成的結果</div>
+          </div>
+          <div class="calc-workspace" onclick="toggleSolution(this, event)">
+            <div class="calc-solution">
+              <b>【解析】</b><br>
+              • (A) 科學家僅轉入抗凍蛋白基因的「啟動子（表現開關）」，並未轉入抗凍蛋白的編碼結構基因，故體內不會產生抗凍蛋白。<br>
+              • (B)(C) 實驗目的並非使魚身抗凍或讓激素具備抗凍功能，而是利用該低溫開關讓大鱗鮭魚生長激素在寒冷環境下依然持續釋放。<br>
+              • (D) 改良後鮭魚快速成長的根本原因，正是大鱗鮭魚生長激素在魚體內發揮促進生長作用的結果。故選 <b>(D)</b>。
+            </div>
+          </div>
+        </div>
+
+        <!-- 單選 4 -->
+        <div class="qa-item" style="margin-bottom:0;" onclick="toggleItemAnswers(this, event)">
+          <div class="q-stem">
+            <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">B</span> ）</span>
+            <span class="q-num">4.</span>承上題，試推論其生長速度加快的真正原因為何？
+          </div>
+          <div class="q-options stacked">
+            <div class="q-opt">(A) 生長激素基因加速複製　(B) 生長激素基因在低溫時亦能被轉錄和轉譯出生長激素</div>
+            <div class="q-opt">(C) 生長激素的抗凍能力增加　(D) 能同時表現抗凍蛋白與生長激素</div>
+          </div>
+          <div class="calc-workspace" onclick="toggleSolution(this, event)">
+            <div class="calc-solution">
+              <b>【解析】</b><br>
+              野生大西洋鮭在冬季低溫時生長激素表現暫停，生長停滯；透過串接大洋鱈魚抗凍蛋白的啟動子，使得大鱗鮭魚生長激素基因在「低溫環境下依然能持續進行轉錄與轉譯」，使生長激素在寒冬不間斷產生，因而整年持續快速成長。故選 <b>(B)</b>。
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>高中生物(全) 講義 2-2 遺傳工程及其應用</span>
+      <span>第 7 頁 / 共 10 頁</span>
+      <span>普通高中 適用</span>
+    </div>
+  </div>
+
+  <!-- ==================== 第 8 頁 ==================== -->
+  <div class="page" id="p8">
+    <canvas class="drawing-canvas"></canvas>
+    <div class="page-content">
+      <div class="page-header">
+        <div>
+          <span class="title-main">高中生物（全） 2-2 遺傳工程及其應用</span>
+          <span class="badge badge-primary" style="margin-left:6px;">課後單選(二)</span>
+        </div>
+        <div class="subtitle">課後實戰演練：單選題 5 ～ 7 題精析（第 8/10 頁）</div>
+      </div>
+
+      <div class="section-title">課後實戰演練：單選題（第 5 ～ 7 題）</div>
+
+      <!-- 單選 5 -->
+      <div class="qa-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">B</span> ）</span>
+          <span class="q-num">5.</span>欲透過基因工程技術讓細菌生產一植物性蛋白質，以重組 DNA 將調控生產植物蛋白質的基因置入細菌體內，且該重組 DNA 成功在細菌體內被複製和轉錄，卻沒有生產出目標的植物性蛋白質，試推測原因為何？
+        </div>
+        <div class="q-options stacked">
+          <div class="q-opt">(A) 該細菌可能不具有核糖體　(B) 該細菌可能不具有組成該植物性蛋白質的部分胺基酸</div>
+          <div class="q-opt">(C) 該細菌可能不具有 RNA 聚合酶　(D) 該細菌可能不含組成該植物性蛋白質的部分核酸</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">
+            <b>【解析】</b><br>
+            • (A) 細菌為原核生物，其細胞質中普遍含有核糖體以進行蛋白質轉譯合成。<br>
+            • (C) 題幹提及重組 DNA「成功被複製和轉錄」，說明細菌體內必定含有發揮功能的 RNA 聚合酶。<br>
+            • (B)(D) 蛋白質合成的直接原料單體為「胺基酸」（而非核酸）。既然已成功轉錄出 mRNA 卻無法轉譯出完整蛋白質，最可能的限制因素即為細菌體內缺乏合成該植物性蛋白質所需的特定必需胺基酸原料。故選 <b>(B)</b>。
+          </div>
+        </div>
+      </div>
+
+      <!-- 單選 6 -->
+      <div class="qa-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">D</span> ）</span>
+          <span class="q-num">6.</span>關於基因改造生物可能達到的優缺點或風險，何者有誤？
+        </div>
+        <div class="q-options stacked">
+          <div class="q-opt">(A) 目標基因被轉移到其他物種，可能產生對環境適應力特別強的物種</div>
+          <div class="q-opt">(B) 增加作物的營養價值或產量</div>
+          <div class="q-opt">(C) 若作物具抗蟲能力，可能減少化學藥劑的使用</div>
+          <div class="q-opt">(D) 基改食品將取代傳統食品，壟斷市場</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">
+            <b>【解析】</b><br>
+            各國政府針對基改食品均訂有嚴謹的安全審查、環境評估與強制標示法規。基改食品上市後與傳統食品共同流通於自由市場，由消費者依個人意願選購，並不會也未被允許全面取代傳統食品壟斷市場。故 (D) 敘述有誤。選 <b>(D)</b>。
+          </div>
+        </div>
+      </div>
+
+      <!-- 單選 7 -->
+      <div class="qa-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">C</span> ）</span>
+          <span class="q-num">7.</span>如果想利用重組 DNA 的技術，將胰島素基因轉殖入細菌的質體中，試問胰島素基因與質體的 DNA 如何處理？
+        </div>
+        <div class="q-options stacked">
+          <div class="q-opt">(A) 利用不同限制酶切割，再以連接酶連接　(B) 利用限制酶切割胰島素基因，連接酶切割質體 DNA</div>
+          <div class="q-opt">(C) 利用相同限制酶切割，再以連接酶連接　(D) 利用連接酶切割胰島素基因，限制酶切割細菌質體</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">
+            <b>【解析】</b><br>
+            製備重組 DNA 時，必須使用「相同的限制酶」同時切割目標基因（胰島素基因）與載體質體，使其切口露出具有互相補鹼基序列的單股黏性末端，再加入「DNA 連接酶」修復骨架上的磷酸二酯鍵缺口。故選 <b>(C)</b>。
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>高中生物(全) 講義 2-2 遺傳工程及其應用</span>
+      <span>第 8 頁 / 共 10 頁</span>
+      <span>普通高中 適用</span>
+    </div>
+  </div>
+
+  <!-- ==================== 第 9 頁 ==================== -->
+  <div class="page" id="p9">
+    <canvas class="drawing-canvas"></canvas>
+    <div class="page-content">
+      <div class="page-header">
+        <div>
+          <span class="title-main">高中生物（全） 2-2 遺傳工程及其應用</span>
+          <span class="badge badge-teal" style="margin-left:6px;">課後多選</span>
+        </div>
+        <div class="subtitle">課後實戰演練：多選題 1 ～ 4 題精析（第 9/10 頁）</div>
+      </div>
+
+      <div class="section-title">課後實戰演練：多選題（第 1 ～ 4 題）</div>
+
+      <!-- 多選 1 -->
+      <div class="qa-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">BC</span> ）</span>
+          <span class="q-num">1.</span>現欲生產一整株帶有抗蟲能力的馬鈴薯，以下生產方式或流程，哪些正確？（應選 2 項）
+        </div>
+        <div class="q-options stacked">
+          <div class="q-opt">(A) 將抗蟲基因轉殖至野生種馬鈴薯植株中即可變成</div>
+          <div class="q-opt">(B) 將抗蟲基因轉植入植物細胞，再篩選組織培養而得</div>
+          <div class="q-opt">(C) 帶有抗蟲能力的馬鈴薯可能是透過轉錄轉譯出抗蟲蛋白而帶有抗蟲能力</div>
+          <div class="q-opt">(D) 將蟲的基因製成疫苗注射入馬鈴薯，誘導其產生抗蟲抗體</div>
+          <div class="q-opt">(E) 將抗蟲蛋白顯微注射入馬鈴薯植株而得</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">
+            <b>【解析】</b><br>
+            • (A) 植物植株包含數十億個細胞，無法直接對成株進行全株基因轉殖。<br>
+            • (D) 植物不具備脊椎動物的特異性免疫系統，不會產生抗體。<br>
+            • (E) 直接注射外源蛋白質會在短時間內被分解代謝，無法讓後續組織持續產生抗蟲性。<br>
+            • (B)(C) 正確流程是將抗蟲基因轉殖入單一植物細胞，經抗生素篩選成功轉殖的細胞後，利用植物細胞全能性進行「植物組織培養」誘導分化為完整植株 (B)，植物體各細胞透過持續轉錄與轉譯合成抗蟲蛋白質達到終生抗蟲效果 (C)。選 <b>(B)(C)</b>。
+          </div>
+        </div>
+      </div>
+
+      <!-- 多選 2 -->
+      <div class="qa-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">ABDE</span> ）</span>
+          <span class="q-num">2.</span>第二代 B 型肝炎疫苗，是將 B 型肝炎表面抗原的基因轉殖入酵母菌中所生產而成，請推測生產第二代 B 型肝炎疫苗，需要經過哪些手續？（應選 4 項）
+        </div>
+        <div class="q-options stacked">
+          <div class="q-opt">(A) 找到生產 B 型肝炎抗原的調控基因　(B) 選擇能在酵母菌體內完成基因表現的載體</div>
+          <div class="q-opt">(C) 使用 DNA 聚合酶製備重組 DNA　(D) 將重組 DNA 送入酵母菌的細胞核中　(E) 篩選轉殖成功的個體</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">
+            <b>【解析】</b><br>
+            • (C) 製備重組 DNA 是利用「限制酶」切割與「DNA 連接酶」連接，DNA 聚合酶係用於催化 DNA 複製或 PCR，不具拼接片段功能。<br>
+            • (A)(B)(D)(E) 皆為利用酵母菌（真核生物）生產蛋白質次單元疫苗之必經步驟：獲取目標抗原基因 (A)、選用能在酵母菌中表現之載體 (B)、將重組質體送入細胞核中 (D)，最後進行抗藥性篩選 (E)。選 <b>(A)(B)(D)(E)</b>。
+          </div>
+        </div>
+      </div>
+
+      <!-- 多選 3 -->
+      <div class="qa-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">ACE</span> ）</span>
+          <span class="q-num">3.</span>關於質體的描述，哪些正確？（應選 3 項）
+        </div>
+        <div class="q-options stacked">
+          <div class="q-opt">(A) 是小型的環狀 DNA 分子　(B) 帶有控制細菌維生所需的基因　(C) 能作為載體</div>
+          <div class="q-opt">(D) 能嵌入人體的染色體 DNA 中　(E) 是雙股的 DNA 分子</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">
+            <b>【解析】</b><br>
+            • (B) 控制細菌生長分裂與維生所必需的核心基因位於擬核的大型染色體上，質體僅攜帶抗藥性等額外性狀基因。<br>
+            • (D) 細菌質體在自然狀態下無法嵌入人體的染色體 DNA 中。<br>
+            • (A)(C)(E) 質體為小型的雙股環狀 DNA 分子，分子量小且不易斷裂，廣泛作為基因工程載體。選 <b>(A)(C)(E)</b>。
+          </div>
+        </div>
+      </div>
+
+      <!-- 多選 4 -->
+      <div class="qa-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">ACD</span> ）</span>
+          <span class="q-num">4.</span>在重組 DNA 的操作過程中相關物質的功能，哪些選項正確？（應選 3 項）
+        </div>
+        <div class="q-options stacked">
+          <div class="q-opt">(A) 細菌質體：載體　(B) 細菌染色體：載體　(C) 限制酶：切割 DNA</div>
+          <div class="q-opt">(D) DNA 連接酶：連接兩段 DNA　(E) DNA 聚合酶：連接兩段 DNA</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">
+            <b>【解析】</b><br>
+            • (B) 細菌染色體分子量極大、結構脆弱易斷裂，且為菌體生存所必需，無法作為載體。<br>
+            • (E) DNA 聚合酶之功能為催化 DNA 新股之合成，缺口之連接係由 DNA 連接酶催化。選 <b>(A)(C)(D)</b>。
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>高中生物(全) 講義 2-2 遺傳工程及其應用</span>
+      <span>第 9 頁 / 共 10 頁</span>
+      <span>普通高中 適用</span>
+    </div>
+  </div>
+
+  <!-- ==================== 第 10 頁 ==================== -->
+  <div class="page" id="p10">
+    <canvas class="drawing-canvas"></canvas>
+    <div class="page-content">
+      <div class="page-header">
+        <div>
+          <span class="title-main">高中生物（全） 2-2 遺傳工程及其應用</span>
+          <span class="badge badge-indigo" style="margin-left:6px;">非選題組</span>
+        </div>
+        <div class="subtitle">非選題：DNA 限制酶切位分析題組精析（第 10/10 頁）</div>
+      </div>
+
+      <div class="section-title">六、非選題實戰題組：限制酶切位分析（第 1 ～ 4 小題）</div>
+      <div style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:6px; padding:7px 11px; margin-bottom:5px;">
+        <div style="font-size:10.5pt; color:#334155; line-height:1.5; margin-bottom:5px;">
+          <b>題幹情境：</b>附圖為四段 DNA 序列（甲、乙、丙、丁），均包含 2500 鹼基對 (bp)，bp 代表 DNA 的長度單位。<i>Eco</i>RI、<i>Bam</i>HI、<i>Kpn</i>I 及 <i>Xba</i>I 分別代表四種不同的限制酶，其相對應的切位標示於圖上；附表是將四個 DNA 片段以<b>某兩種限制酶</b>作用後，再分析產物的 DNA 片段長度。請依據附圖與附表回答下列問題：
+        </div>
+
+        <!-- 向量 SVG 切位圖與附表對照 -->
+        <div style="display:flex; gap:12px; align-items:center; margin:6px 0;">
+          <div style="flex:1;">
+            <svg viewBox="0 0 620 185" style="width:100%; height:auto; background:#ffffff; border:1px solid #cbd5e1; border-radius:6px; padding:6px 10px; display:block;">
+              <!-- Ruler title -->
+              <text x="10" y="16" font-size="11" font-weight="bold" fill="#0f172a">DNA 長度尺標 (bp)</text>
+              <line x1="60" y1="32" x2="560" y2="32" stroke="#475569" stroke-width="1.8"/>
+              <!-- Ruler ticks -->
+              <line x1="60" y1="27" x2="60" y2="32" stroke="#475569" stroke-width="1.8"/>
+              <text x="60" y="24" font-size="9.5" text-anchor="middle" fill="#475569">0</text>
+              <line x1="160" y1="27" x2="160" y2="32" stroke="#475569" stroke-width="1.8"/>
+              <text x="160" y="24" font-size="9.5" text-anchor="middle" fill="#475569">500</text>
+              <line x1="260" y1="27" x2="260" y2="32" stroke="#475569" stroke-width="1.8"/>
+              <text x="260" y="24" font-size="9.5" text-anchor="middle" fill="#475569">1000</text>
+              <line x1="360" y1="27" x2="360" y2="32" stroke="#475569" stroke-width="1.8"/>
+              <text x="360" y="24" font-size="9.5" text-anchor="middle" fill="#475569">1500</text>
+              <line x1="460" y1="27" x2="460" y2="32" stroke="#475569" stroke-width="1.8"/>
+              <text x="460" y="24" font-size="9.5" text-anchor="middle" fill="#475569">2000</text>
+              <line x1="560" y1="27" x2="560" y2="32" stroke="#475569" stroke-width="1.8"/>
+              <text x="560" y="24" font-size="9.5" text-anchor="middle" fill="#475569">2500</text>
+
+              <!-- Guide lines -->
+              <line x1="160" y1="32" x2="160" y2="175" stroke="#e2e8f0" stroke-dasharray="2,3" stroke-width="1"/>
+              <line x1="310" y1="32" x2="310" y2="175" stroke="#e2e8f0" stroke-dasharray="2,3" stroke-width="1"/>
+              <line x1="460" y1="32" x2="460" y2="175" stroke="#e2e8f0" stroke-dasharray="2,3" stroke-width="1"/>
+
+              <!-- Row 1: 甲 -->
+              <text x="30" y="58" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">甲</text>
+              <rect x="60" y="50" width="500" height="11" rx="2" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.2"/>
+              <line x1="160" y1="43" x2="160" y2="64" stroke="#dc2626" stroke-width="2"/>
+              <text x="160" y="41" font-size="9" font-weight="bold" text-anchor="middle" fill="#dc2626">EcoRI</text>
+              <line x1="310" y1="43" x2="310" y2="64" stroke="#16a34a" stroke-width="2"/>
+              <text x="310" y="41" font-size="9" font-weight="bold" text-anchor="middle" fill="#16a34a">BamHI</text>
+              <line x1="460" y1="43" x2="460" y2="64" stroke="#d97706" stroke-width="2"/>
+              <text x="460" y="41" font-size="9" font-weight="bold" text-anchor="middle" fill="#d97706">KpnI</text>
+
+              <!-- Row 2: 乙 -->
+              <text x="30" y="93" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">乙</text>
+              <rect x="60" y="85" width="500" height="11" rx="2" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.2"/>
+              <line x1="310" y1="78" x2="310" y2="99" stroke="#16a34a" stroke-width="2"/>
+              <text x="310" y="76" font-size="9" font-weight="bold" text-anchor="middle" fill="#16a34a">BamHI</text>
+              <line x1="460" y1="78" x2="460" y2="99" stroke="#9333ea" stroke-width="2"/>
+              <text x="460" y="76" font-size="9" font-weight="bold" text-anchor="middle" fill="#9333ea">XbaI</text>
+
+              <!-- Row 3: 丙 -->
+              <text x="30" y="128" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">丙</text>
+              <rect x="60" y="120" width="500" height="11" rx="2" fill="#fef3c7" stroke="#d97706" stroke-width="1.2"/>
+              <line x1="160" y1="113" x2="160" y2="134" stroke="#dc2626" stroke-width="2"/>
+              <text x="160" y="111" font-size="9" font-weight="bold" text-anchor="middle" fill="#dc2626">EcoRI</text>
+              <line x1="460" y1="113" x2="460" y2="134" stroke="#d97706" stroke-width="2"/>
+              <text x="460" y="111" font-size="9" font-weight="bold" text-anchor="middle" fill="#d97706">KpnI</text>
+
+              <!-- Row 4: 丁 -->
+              <text x="30" y="163" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">丁</text>
+              <rect x="60" y="155" width="500" height="11" rx="2" fill="#f3e8ff" stroke="#9333ea" stroke-width="1.2"/>
+              <line x1="310" y1="148" x2="310" y2="169" stroke="#16a34a" stroke-width="2"/>
+              <text x="310" y="146" font-size="9" font-weight="bold" text-anchor="middle" fill="#16a34a">BamHI</text>
+              <line x1="460" y1="148" x2="460" y2="169" stroke="#9333ea" stroke-width="2"/>
+              <text x="460" y="146" font-size="9" font-weight="bold" text-anchor="middle" fill="#9333ea">XbaI</text>
+            </svg>
+          </div>
+          <div style="width:200px;">
+            <table class="table-custom" style="margin:0; font-size:9.5pt;">
+              <thead>
+                <tr>
+                  <th>DNA 片段</th>
+                  <th>產物長度 (bp)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td style="text-align:center; font-weight:bold;">甲</td><td style="text-align:center;">500、2000</td></tr>
+                <tr><td style="text-align:center; font-weight:bold;">乙</td><td style="text-align:center;">500、2000</td></tr>
+                <tr><td style="text-align:center; font-weight:bold;">丙</td><td style="text-align:center;">500、2000</td></tr>
+                <tr><td style="text-align:center; font-weight:bold;">丁</td><td style="text-align:center;">500、2000</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 4 個小題 -->
+        <div style="margin-top:6px; font-size:10pt; line-height:1.55;">
+          <div style="margin-bottom:5px;">
+            <b>1. 限制酶的功能為何？</b><br>
+            答：<span class="ans-word" onclick="toggleAns(this, event)">辨識特定的 DNA 序列並切割 DNA</span>
+          </div>
+          <div style="margin-bottom:5px;">
+            <b>2. 附表最可能是同時使用了哪兩種限制酶作用的結果？</b><br>
+            答：<span class="ans-word" onclick="toggleAns(this, event)">EcoRI、XbaI</span><br>
+            <span style="color:#64748b; font-size:9pt;">【破題關鍵】：<i>Eco</i>RI 切割甲與丙於 500 bp 處，產生 500 bp 與 2000 bp 片段；<i>Xba</i>I 切割乙與丁於 2000 bp 處，產生 2000 bp 與 500 bp 片段。兩者共同作用時，四條 DNA 產物恰皆為 500 與 2000 bp。</span>
+          </div>
+          <div style="margin-bottom:5px;">
+            <b>3. 承上題，若想將附表中經兩種限制酶作用後的片段相接合：丙 DNA 經切割後的片段最可能跟其他哪一條 DNA 經切割後的 DNA 片段接合？</b><br>
+            答：<span class="ans-word" onclick="toggleAns(this, event)">甲 DNA</span><br>
+            <span style="color:#64748b; font-size:9pt;">【破題關鍵】：甲 DNA 與丙 DNA 均由 <i>Eco</i>RI 切割，能切出相同且能互補配對的單股黏性末端，故能由 DNA 連接酶進行接合。</span>
+          </div>
+          <div>
+            <b>4. 若在附圖中乙的 DNA 片段中加入足量的 <i>Eco</i>RI、<i>Bam</i>HI 及 <i>Xba</i>I 三種限制酶，並完全作用後，請寫出切割後會產生幾段 DNA，並註明各片段長度。</b><br>
+            答：<span class="ans-word" onclick="toggleAns(this, event)">共產生 3 段 DNA，長度分別為 1250 bp、750 bp、500 bp</span><br>
+            <span style="color:#64748b; font-size:9pt;">【破題關鍵】：乙 DNA 上無 <i>Eco</i>RI 切位；經 <i>Bam</i>HI 於 1250 bp 與 <i>Xba</i>I 於 2000 bp 兩處完全切割，分切為：① 0～1250 bp（長 1250 bp）；② 1250～2000 bp（長 750 bp）；③ 2000～2500 bp（長 500 bp）。</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>高中生物(全) 講義 2-2 遺傳工程及其應用</span>
+      <span>第 10 頁 / 共 10 頁</span>
+      <span>普通高中 適用</span>
+    </div>
+  </div>
+
+  <script>
+    let allRevealed = false;
+    let penMode = false;
+    let penColor = 'rgba(250, 204, 21, 0.45)';
+    let penSize = 3;
+
+    // 單一填空開合
+    function toggleAns(el, e) {
+      if (e) e.stopPropagation();
+      el.classList.toggle('revealed');
+    }
+
+    // 選擇題括號顯答
+    function toggleBracket(el, e) {
+      if (e) e.stopPropagation();
+      el.classList.toggle('revealed');
+    }
+
+    // 解析方框顯答
+    function toggleSolution(el, e) {
+      if (e) e.stopPropagation();
+      const sol = el.querySelector('.calc-solution');
+      if (sol) sol.classList.toggle('revealed');
+    }
+
+    // 點擊整題開合該題所有解答
+    function toggleItemAnswers(item, e) {
+      if (e.target.closest('.ans-word') || e.target.closest('.qa-bracket') || e.target.closest('.calc-workspace')) {
+        return;
+      }
+      const bracket = item.querySelector('.qa-bracket');
+      const sol = item.querySelector('.calc-solution');
+      const blanks = item.querySelectorAll('.ans-word');
+
+      const isRev = bracket ? bracket.classList.contains('revealed') : (sol ? sol.classList.contains('revealed') : false);
+      if (bracket) bracket.classList.toggle('revealed', !isRev);
+      if (sol) sol.classList.toggle('revealed', !isRev);
+      blanks.forEach(b => b.classList.toggle('revealed', !isRev));
+    }
+
+    // 全局解答開關
+    function toggleAllAnswers() {
+      allRevealed = !allRevealed;
+      document.body.classList.toggle('show-all-answers', allRevealed);
+      const btn = document.getElementById('toggleAllAnsBtn');
+      const icon = document.getElementById('ansIcon');
+      if (btn) btn.classList.toggle('revealed', allRevealed);
+      if (icon) icon.innerText = allRevealed ? '🙈' : '👁️';
+    }
+
+    // 目錄下拉選單
+    function toggleTocMenu(e) {
+      if (e) e.stopPropagation();
+      const m = document.getElementById('tocMenu');
+      if (m) m.classList.toggle('show');
+    }
+
+    function jumpTo(pageId) {
+      const el = document.getElementById(pageId);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+      const m = document.getElementById('tocMenu');
+      if (m) m.classList.remove('show');
+    }
+
+    // 圖片燈箱放大檢視
+    function openImageModal(src, alt) {
+      const modal = document.getElementById('imgModal');
+      const img = document.getElementById('imgModalSrc');
+      const cap = document.getElementById('imgModalCaption');
+      if (modal && img) {
+        img.src = src;
+        img.alt = alt || '';
+        if (cap) cap.innerText = alt || '';
+        modal.classList.add('active');
+      }
+    }
+
+    function closeImageModal() {
+      const modal = document.getElementById('imgModal');
+      if (modal) modal.classList.remove('active');
+    }
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeImageModal();
+    });
+
+    // 螢光筆塗鴉模式
+    function togglePenMode() {
+      penMode = !penMode;
+      document.body.classList.toggle('pen-active', penMode);
+      const btn = document.getElementById('penBtn');
+      const pop = document.getElementById('penOptions');
+      if (btn) btn.classList.toggle('active', penMode);
+      if (pop) pop.style.display = penMode ? 'flex' : 'none';
+    }
+
+    function setPenColor(color, dot) {
+      penColor = color;
+      document.querySelectorAll('.pen-color-dot').forEach(d => d.classList.remove('active'));
+      if (dot) dot.classList.add('active');
+    }
+
+    function clearCurrentCanvas() {
+      document.querySelectorAll('.drawing-canvas').forEach(canvas => {
+        const ctx = canvas.getContext('2d');
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+      });
+    }
+
+    // 初始化畫板
+    function initCanvases() {
+      document.querySelectorAll('.page').forEach(page => {
+        const canvas = page.querySelector('.drawing-canvas');
+        if (!canvas) return;
+
+        function resize() {
+          const rect = page.getBoundingClientRect();
+          canvas.width = rect.width;
+          canvas.height = rect.height;
+        }
+        resize();
+        window.addEventListener('resize', resize);
+
+        const ctx = canvas.getContext('2d');
+        let isDrawing = false;
+        let lastX = 0;
+        let lastY = 0;
+
+        canvas.addEventListener('mousedown', e => {
+          if (!penMode) return;
+          isDrawing = true;
+          const rect = canvas.getBoundingClientRect();
+          lastX = e.clientX - rect.left;
+          lastY = e.clientY - rect.top;
+        });
+
+        canvas.addEventListener('mousemove', e => {
+          if (!isDrawing || !penMode) return;
+          const rect = canvas.getBoundingClientRect();
+          const curX = e.clientX - rect.left;
+          const curY = e.clientY - rect.top;
+
+          ctx.beginPath();
+          ctx.strokeStyle = penColor;
+          ctx.lineWidth = penSize * 4;
+          ctx.lineCap = 'round';
+          ctx.lineJoin = 'round';
+          ctx.moveTo(lastX, lastY);
+          ctx.lineTo(curX, curY);
+          ctx.stroke();
+
+          lastX = curX;
+          lastY = curY;
+        });
+
+        window.addEventListener('mouseup', () => { isDrawing = false; });
+      });
+    }
+
+    document.addEventListener('click', e => {
+      const m = document.getElementById('tocMenu');
+      if (m && !e.target.closest('#tocMenu') && !e.target.closest('.tb-btn')) {
+        m.classList.remove('show');
+      }
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+      initCanvases();
+
+      // 為全書圖片綁定放大檢視功能
+      document.querySelectorAll('.page img').forEach(img => {
+        img.addEventListener('click', e => {
+          if (penMode) return;
+          e.stopPropagation();
+          openImageModal(img.src, img.alt);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
