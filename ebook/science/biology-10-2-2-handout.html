@@ -1,0 +1,1987 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="ebook:subject" content="science">
+  <meta name="ebook:grade" content="10">
+  <meta name="ebook:unit" content="2-2">
+  <meta name="ebook:title" content="高中生物(全) 2-2 遺傳物質 互動講義">
+  <meta name="ebook:type" content="handout">
+  <meta name="ebook:pages" content="19">
+  <meta name="ebook:level" content="std">
+  <meta name="ebook:date" content="2026-11-03">
+  <meta name="ebook:tags" content="高中生物,遺傳物質,染色體學說,DNA結構,雙股螺旋,中心法則,DNA複製,半保留複製,轉錄,轉譯,遺傳變異,CRISPR,普通班,講義">
+  <meta name="ebook:summary" content="高中生物（全）2-2 遺傳物質完整互動教學講義（全19頁舒展大字版，字級全面升級加大、排版寬裕舒展、題題空間充裕絕無截斷，全書圖片支援點擊全螢幕高清燈箱放大檢視）。完整涵蓋：2-2.1 遺傳的染色體學說（薩登與包法利推論歷程、減數分裂染色體動態、受精恢復成對）；2-2.2 染色體、DNA與基因（DNA構造、華生與克立克雙股螺旋模型、鹼基互補配對原則、DNA與RNA全面對比）；2-2.3 DNA的複製與基因表現（中心法則、DNA半保留複製、RNA轉錄、核糖體轉譯、三大RNA種類深度解析）；2-2.4 遺傳變異與環境因子影響性狀表現（有性生殖、基因突變、豌豆花色、鐮刀型血球貧血、繡球花酸鹼鋁離子、喜瑪拉雅兔溫度毛色）；以及隨堂基礎練習6題、課後單選12題（含15N指考題與CRISPR/Cas9基因編輯題組）、課後多選3題與全單元核心思維架構導圖全方位詳解。全書支援點擊顯答、括號同行顯答、圖片全螢幕高清燈箱放大檢視與螢光筆畫板互動功能。">
+  <title>高中生物(全) 2-2 遺傳物質 互動講義</title>
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f1f5f9;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+      color: #1e293b;
+      line-height: 1.55;
+    }
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      max-height: 297mm;
+      margin: 14px auto;
+      padding: 13mm 15mm 12mm 15mm;
+      background: #ffffff;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      page-break-after: always;
+    }
+    .page-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .page-header {
+      border-bottom: 2px solid #0284c7;
+      padding-bottom: 4px;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    .page-header .title-main {
+      font-size: 14.5pt;
+      font-weight: bold;
+      color: #0369a1;
+      letter-spacing: 0.5px;
+    }
+    .page-header .subtitle {
+      font-size: 11pt;
+      color: #64748b;
+      font-weight: 500;
+    }
+    .page-footer {
+      border-top: 1px solid #cbd5e1;
+      padding-top: 4px;
+      margin-top: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 9.5pt;
+      color: #94a3b8;
+    }
+    .section-title {
+      font-size: 13pt;
+      font-weight: bold;
+      color: #0f172a;
+      background: #e0f2fe;
+      border-left: 5px solid #0284c7;
+      padding: 4px 11px;
+      margin: 6px 0 5px 0;
+      border-radius: 0 4px 4px 0;
+    }
+    .sub-title {
+      font-size: 12pt;
+      font-weight: bold;
+      color: #0369a1;
+      margin: 5px 0 3px 0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .badge {
+      font-size: 9pt;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+    .badge-primary { background: #0284c7; color: #fff; }
+    .badge-teal { background: #0d9488; color: #fff; }
+    .badge-amber { background: #d97706; color: #fff; }
+    .badge-indigo { background: #4f46e5; color: #fff; }
+    .badge-rose { background: #e11d48; color: #fff; }
+
+    .concept-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 7px 12px;
+      margin-bottom: 6px;
+      font-size: 11.5pt;
+      line-height: 1.58;
+    }
+    .highlight-card {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-left: 4px solid #f59e0b;
+      padding: 7px 12px;
+      border-radius: 4px;
+      margin: 5px 0;
+      font-size: 11pt;
+      line-height: 1.55;
+    }
+    .key-point-card {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-left: 4px solid #22c55e;
+      padding: 7px 12px;
+      border-radius: 4px;
+      margin: 5px 0;
+      font-size: 11pt;
+      line-height: 1.55;
+    }
+
+    /* Images */
+    .page img {
+      cursor: zoom-in;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      border-radius: 4px;
+    }
+    .page img:hover {
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.28);
+    }
+    .img-modal {
+      display: none;
+      position: fixed;
+      z-index: 100000;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(15, 23, 42, 0.88);
+      backdrop-filter: blur(6px);
+      justify-content: center;
+      align-items: center;
+      cursor: zoom-out;
+    }
+    .img-modal.active { display: flex; }
+    .img-modal-content {
+      position: relative;
+      max-width: 93vw;
+      max-height: 93vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .img-modal img {
+      max-width: 92vw;
+      max-height: 86vh;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.6);
+      background: #ffffff;
+      padding: 6px;
+    }
+    .img-modal-caption {
+      margin-top: 8px;
+      color: #f8fafc;
+      font-size: 12pt;
+      font-weight: bold;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+    }
+    .img-modal-close {
+      position: absolute;
+      top: -35px; right: -10px;
+      color: #ffffff;
+      font-size: 26pt;
+      font-weight: bold;
+      cursor: pointer;
+      user-select: none;
+      line-height: 1;
+    }
+
+    /* Answers */
+    .ans-word {
+      color: transparent !important;
+      border-bottom: 2px solid #0284c7;
+      padding: 0 5px;
+      cursor: pointer;
+      display: inline-block;
+      transition: color 0.15s, background-color 0.15s;
+      border-radius: 3px;
+      user-select: none;
+      font-size: 11.5pt;
+    }
+    .ans-word:hover {
+      background-color: #fef08a !important;
+      color: #92400e !important;
+    }
+    .ans-word.revealed, body.show-all-answers .ans-word {
+      color: #dc2626 !important;
+      background-color: #fee2e2 !important;
+      font-weight: bold !important;
+      border-bottom-color: #dc2626;
+    }
+
+    /* QA Item */
+    .qa-item {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 8px 12px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      transition: border-color 0.15s, background-color 0.15s;
+    }
+    .qa-item:hover {
+      border-color: #38bdf8;
+      background-color: #f8fafc;
+    }
+    .q-stem {
+      font-size: 11.5pt;
+      line-height: 1.58;
+      font-weight: 500;
+      color: #1e293b;
+    }
+    .qa-bracket {
+      font-weight: bold;
+      color: #1e293b;
+      cursor: pointer;
+      padding: 0 1px;
+      display: inline;
+    }
+    .qa-bracket .ans-text {
+      color: transparent !important;
+      min-width: 20px;
+      display: inline-block;
+      text-align: center;
+      transition: color 0.15s;
+    }
+    .qa-bracket:hover .ans-text { color: #fca5a5 !important; }
+    .qa-bracket.revealed .ans-text, body.show-all-answers .qa-bracket .ans-text {
+      color: #dc2626 !important;
+      font-weight: bold !important;
+    }
+    .q-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px 14px;
+      margin-top: 4px;
+      font-size: 11pt;
+      color: #334155;
+    }
+    .q-options.stacked {
+      grid-template-columns: 1fr;
+    }
+    .q-opt {
+      padding: 1.5px 0;
+    }
+    .calc-workspace {
+      margin-top: 5px;
+      background: #f8fafc;
+      border: 1px dashed #cbd5e1;
+      border-radius: 5px;
+      padding: 6px 11px;
+      cursor: pointer;
+    }
+    .calc-solution {
+      color: transparent !important;
+      font-size: 10.5pt;
+      line-height: 1.52;
+      user-select: none;
+    }
+    .calc-solution * { color: transparent !important; }
+    .calc-solution:hover { color: #94a3b8 !important; }
+    .calc-solution:hover * { color: #94a3b8 !important; }
+    .calc-solution.revealed, body.show-all-answers .calc-solution {
+      color: #1e293b !important;
+      user-select: text;
+    }
+    .calc-solution.revealed *, body.show-all-answers .calc-solution * {
+      color: inherit !important;
+    }
+    .calc-solution.revealed b, body.show-all-answers .calc-solution b {
+      color: #0284c7 !important;
+    }
+
+    /* Tables */
+    .table-custom {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 5px 0;
+      font-size: 10.5pt;
+    }
+    .table-custom th, .table-custom td {
+      border: 1px solid #cbd5e1;
+      padding: 5px 10px;
+      text-align: left;
+    }
+    .table-custom th {
+      background: #f1f5f9;
+      font-weight: bold;
+      color: #0f172a;
+      text-align: center;
+    }
+
+    /* Toolbar */
+    .top-toolbar {
+      position: fixed;
+      top: 10px;
+      right: 15px;
+      z-index: 9999;
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid #cbd5e1;
+      border-radius: 30px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+      padding: 4px 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      backdrop-filter: blur(8px);
+    }
+    .tb-btn {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 20px;
+      padding: 4px 11px;
+      font-size: 9.5pt;
+      font-weight: 500;
+      color: #334155;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.15s ease;
+      text-decoration: none;
+    }
+    .tb-btn:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+    .tb-btn.active {
+      background: #0284c7;
+      color: #ffffff;
+      border-color: #0284c7;
+    }
+    .pen-options {
+      display: none;
+      align-items: center;
+      gap: 5px;
+      padding-left: 5px;
+      border-left: 1px solid #cbd5e1;
+    }
+    .pen-color-dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      cursor: pointer;
+      border: 2px solid #ffffff;
+      box-shadow: 0 0 0 1px #94a3b8;
+    }
+    .pen-color-dot.active {
+      box-shadow: 0 0 0 2px #0284c7;
+    }
+    .drawing-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 100;
+    }
+    body.pen-active .drawing-canvas {
+      pointer-events: auto;
+      cursor: crosshair;
+    }
+    .toc-menu {
+      position: absolute;
+      top: 45px;
+      right: 0;
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+      padding: 6px 0;
+      min-width: 280px;
+      display: none;
+      max-height: 520px;
+      overflow-y: auto;
+      z-index: 10000;
+    }
+    .toc-menu.show { display: block; }
+    .toc-item {
+      padding: 5px 14px;
+      font-size: 9pt;
+      color: #334155;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    .toc-item:hover {
+      background: #f0fdf4;
+      color: #15803d;
+      font-weight: bold;
+    }
+
+    @media print {
+      body { background: #fff !important; }
+      .top-toolbar, .toc-menu, .drawing-canvas, .img-modal { display: none !important; }
+      .page {
+        margin: 0 !important;
+        box-shadow: none !important;
+        border: none !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 297mm !important;
+        page-break-after: always !important;
+      }
+      .qa-bracket .ans-text, .ans-word, .calc-solution {
+        color: transparent !important;
+        background-color: transparent !important;
+      }
+      .qa-bracket .ans-text * { color: transparent !important; }
+      .ans-word { border-bottom: 1px solid #000 !important; }
+      .calc-workspace { border: 1px dashed #ccc !important; }
+      .page img { cursor: default !important; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Lightbox Modal for Fullscreen Image Zoom -->
+  <div class="img-modal" id="imgModal" onclick="closeImageModal()">
+    <div class="img-modal-content" onclick="event.stopPropagation()">
+      <span class="img-modal-close" onclick="closeImageModal()">&times;</span>
+      <img id="imgModalSrc" src="" alt="">
+      <div class="img-modal-caption" id="imgModalCaption"></div>
+    </div>
+  </div>
+
+  <div class="top-toolbar">
+    <a href="../index.html" class="tb-btn" title="回電子書目錄">🏠 目錄</a>
+    <div style="position:relative;">
+      <button class="tb-btn" onclick="toggleTocMenu(event)">📑 跳至頁面 ▾</button>
+      <div class="toc-menu" id="tocMenu">
+        <div class="toc-item" onclick="jumpTo('p1')"><span>p.1 染色體學說的推論歷程</span><span style="color:#94a3b8;">p.1</span></div>
+        <div class="toc-item" onclick="jumpTo('p2')"><span>p.2 減數分裂染色體動態與重要性</span><span style="color:#94a3b8;">p.2</span></div>
+        <div class="toc-item" onclick="jumpTo('p3')"><span>p.3 隨堂檢測(一)與染色體DNA基因</span><span style="color:#94a3b8;">p.3</span></div>
+        <div class="toc-item" onclick="jumpTo('p4')"><span>p.4 核酸構造與雙股螺旋發現</span><span style="color:#94a3b8;">p.4</span></div>
+        <div class="toc-item" onclick="jumpTo('p5')"><span>p.5 鹼基互補配對與DNA/RNA比較</span><span style="color:#94a3b8;">p.5</span></div>
+        <div class="toc-item" onclick="jumpTo('p6')"><span>p.6 隨堂檢測(二)：序列分析與比較</span><span style="color:#94a3b8;">p.6</span></div>
+        <div class="toc-item" onclick="jumpTo('p7')"><span>p.7 分子中心法則與DNA半保留複製</span><span style="color:#94a3b8;">p.7</span></div>
+        <div class="toc-item" onclick="jumpTo('p8')"><span>p.8 基因表現：轉錄與轉譯機制</span><span style="color:#94a3b8;">p.8</span></div>
+        <div class="toc-item" onclick="jumpTo('p9')"><span>p.9 三大RNA種類與三大歷程比較</span><span style="color:#94a3b8;">p.9</span></div>
+        <div class="toc-item" onclick="jumpTo('p10')"><span>p.10 隨堂檢測(三)與遺傳變異機制</span><span style="color:#94a3b8;">p.10</span></div>
+        <div class="toc-item" onclick="jumpTo('p11')"><span>p.11 鐮刀型貧血與環境因子影響</span><span style="color:#94a3b8;">p.11</span></div>
+        <div class="toc-item" onclick="jumpTo('p12')"><span>p.12 課後演練單選題(第1～3題)</span><span style="color:#94a3b8;">p.12</span></div>
+        <div class="toc-item" onclick="jumpTo('p13')"><span>p.13 課後演練單選題(第4～5題)</span><span style="color:#94a3b8;">p.13</span></div>
+        <div class="toc-item" onclick="jumpTo('p14')"><span>p.14 基因編輯CRISPR題組(第6～8題)</span><span style="color:#94a3b8;">p.14</span></div>
+        <div class="toc-item" onclick="jumpTo('p15')"><span>p.15 課後演練單選題(第9～10題)</span><span style="color:#94a3b8;">p.15</span></div>
+        <div class="toc-item" onclick="jumpTo('p16')"><span>p.16 課後演練單選題(第11～12題)</span><span style="color:#94a3b8;">p.16</span></div>
+        <div class="toc-item" onclick="jumpTo('p17')"><span>p.17 課後演練多選題(第1～2題)</span><span style="color:#94a3b8;">p.17</span></div>
+        <div class="toc-item" onclick="jumpTo('p18')"><span>p.18 課後多選第3題與序列推導專題</span><span style="color:#94a3b8;">p.18</span></div>
+        <div class="toc-item" onclick="jumpTo('p19')"><span>p.19 全章核心架構圖與術語矩陣</span><span style="color:#94a3b8;">p.19</span></div>
+      </div>
+    </div>
+    <button class="tb-btn" id="toggleAllAnsBtn" onclick="toggleAllAnswers()"><span id="ansIcon">👁️</span> 答案</button>
+    <button class="tb-btn" id="penBtn" onclick="togglePenMode()">✏️ 螢光筆</button>
+    <div class="pen-options" id="penOptions">
+      <div class="pen-color-dot active" style="background:#fde047;" onclick="setPenColor('rgba(250,204,21,0.45)', this)" title="螢光黃"></div>
+      <div class="pen-color-dot" style="background:#4ade80;" onclick="setPenColor('rgba(74,222,128,0.45)', this)" title="螢光綠"></div>
+      <div class="pen-color-dot" style="background:#f472b6;" onclick="setPenColor('rgba(244,114,182,0.45)', this)" title="螢光粉"></div>
+      <button class="tb-btn" style="padding:2px 7px; font-size:8pt;" onclick="clearCurrentCanvas()">清除</button>
+    </div>
+    <button class="tb-btn" onclick="window.print()">🖨️ 列印</button>
+  </div>
+
+  <!-- ==================== 第 1 頁 ==================== -->
+  <div class="page" id="p1">
+    <canvas class="drawing-canvas"></canvas>
+    <div class="page-content">
+      <div class="page-header">
+        <div>
+          <span class="title-main">高中生物（全） 2-2 遺傳物質</span>
+          <span class="badge badge-primary" style="margin-left:6px;">學說推論</span>
+        </div>
+        <div class="subtitle">2-2.1 遺傳的染色體學說推論歷程（第 1/19 頁）</div>
+      </div>
+
+      <!-- 單元引言 -->
+      <div class="highlight-card" style="margin-top:2px; margin-bottom:6px;">
+        <b>💡 單元引言：</b>
+        孟德爾透過豌豆雜交實驗推論生物性狀是由「遺傳因子」所控制。然而，遺傳因子究竟位在細胞的哪裡？又是如何發揮作用的？20 世紀初，科學家發現遺傳因子位於染色體上，而染色體是由 DNA 和蛋白質共同構成。那麼，真正承載生命遺傳密碼的物質，究竟是結構複雜的蛋白質，還是去氧核糖核酸（DNA）呢？
+      </div>
+
+      <div class="section-title">一、學說的推論與重要性</div>
+      <div class="sub-title">📌 (一) 遺傳的染色體學說推論歷程</div>
+      <div class="concept-box" style="margin-bottom:6px;">
+        • <b>提出者：</b>1902～1903 年，由美國科學家<b>薩登</b>（Sutton）與德國科學家<b>包法利</b>（Boveri）各自獨立提出。<br>
+        • <b>歷史背景補充：</b>德國生物學家<b>佛萊明</b>（Flemming）利用苯胺染料將動物胚胎細胞染色，觀察到細胞分裂時有絲狀物質會倍增並分配至子細胞，此絲狀構造即為我們今日所稱的「染色體」。
+      </div>
+
+      <!-- 配圖：圖 2-24 染色體學說的推論歷程 -->
+      <div style="text-align:center; margin:4px 0 3px 0;">
+        <img src="../images/biology-10-2-2-handout/染色體學說.png" alt="圖 2-24 染色體學說的推論歷程" title="點擊放大圖片" style="max-height:230px; max-width:94%; object-fit:contain; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+        <div style="font-size:9.5pt; color:#64748b; margin-top:3px;">▲ 圖 2-24 染色體學說的推論與結果印證歷程（🔍 點擊可放大檢視）</div>
+      </div>
+
+      <!-- 推論歷程核心整理 -->
+      <div class="key-point-card" style="margin-top:4px;">
+        <b>🔍 染色體學說四大邏輯推論：</b><br>
+        1. <b>子代由精卵結合而來：</b>親代透過配子遺傳性狀 → 推論遺傳因子存在於親代的<span class="ans-word" onclick="toggleAns(this, event)">精卵</span>中。<br>
+        2. <b>精卵對子代貢獻相等：</b>精子幾乎僅含細胞核（細胞質極少） → 推論遺傳因子必位於<span class="ans-word" onclick="toggleAns(this, event)">細胞核</span>內。<br>
+        3. <b>減數分裂染色體動態平行對應孟德爾法則：</b>減數分裂同源染色體分離印證「分離律」；非同源染色體自由組合印證「獨立分配律」；受精後恢復成對 → 總結推論遺傳因子位於細胞核內的「<span class="ans-word" onclick="toggleAns(this, event)">染色體</span>」上。<br>
+        4. <b>性狀數量遠大於染色體條數：</b>生物性狀成千上萬，染色體卻僅有數對 → 推論每條染色體必定帶有<span class="ans-word" onclick="toggleAns(this, event)">許多遺傳因子</span>（基因）。
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>高中生物(全) 講義 2-2 遺傳物質</span>
+      <span>第 1 頁 / 共 19 頁</span>
+      <span>普通高中 適用</span>
+    </div>
+  </div>
+
+  <!-- ==================== 第 2 頁 ==================== -->
+  <div class="page" id="p2">
+    <canvas class="drawing-canvas"></canvas>
+    <div class="page-content">
+      <div class="page-header">
+        <div>
+          <span class="title-main">高中生物（全） 2-2 遺傳物質</span>
+          <span class="badge badge-teal" style="margin-left:6px;">染色體動態</span>
+        </div>
+        <div class="subtitle">減數分裂染色體動態與學說重要性（第 2/19 頁）</div>
+      </div>
+
+      <div class="section-title">減數分裂與受精作用的染色體動態</div>
+      <div class="concept-box" style="margin-bottom:6px;">
+        薩登細緻觀察蝗蟲精巢細胞的減數分裂歷程，發現染色體在配子形成時的行為與孟德爾所假想的遺傳因子行為完全吻合（平行假說）：
+      </div>
+
+      <!-- 圖 2-25 減數分裂時的染色體動態 -->
+      <div style="text-align:center; margin:3px 0;">
+        <img src="../images/biology-10-2-2-handout/減數分裂染色體動態.png" alt="圖 2-25 減數分裂時的染色體動態" title="點擊放大圖片" style="max-height:205px; max-width:94%; object-fit:contain; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+        <div style="font-size:9.5pt; color:#64748b; margin-top:2px;">▲ 圖 2-25 減數分裂時同源染色體分離與非同源染色體自由組合（🔍 點擊可放大檢視）</div>
+      </div>
+
+      <!-- 圖 2-26 受精後恢復成對染色體 -->
+      <div style="text-align:center; margin:5px 0 3px 0;">
+        <img src="../images/biology-10-2-2-handout/精卵結合.png" alt="圖 2-26 受精後恢復成對染色體" title="點擊放大圖片" style="max-height:130px; max-width:88%; object-fit:contain; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+        <div style="font-size:9.5pt; color:#64748b; margin-top:2px;">▲ 圖 2-26 精卵結合時，同源染色體恢復為成對狀態（🔍 點擊可放大檢視）</div>
+      </div>
+
+      <div class="sub-title">📌 (二) 染色體學說的劃時代重要性</div>
+      <div class="key-point-card" style="margin-top:3px;">
+        1. <b>具體實體化：</b>使孟德爾遺傳定律中原本純粹抽象的「數學符號與概率假說」，轉化為細胞內客觀存在的「<span class="ans-word" onclick="toggleAns(this, event)">具象實體構造</span>」（染色體）。<br>
+        2. <b>奠定分子生物學基石：</b>將遺傳學與細胞學完美結合（細胞遺傳學），為後續尋找遺傳物質分子本體（DNA 或蛋白質）提供了精確的研究導向。
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>高中生物(全) 講義 2-2 遺傳物質</span>
+      <span>第 2 頁 / 共 19 頁</span>
+      <span>普通高中 適用</span>
+    </div>
+  </div>
+
+  <!-- ==================== 第 3 頁 ==================== -->
+  <div class="page" id="p3">
+    <canvas class="drawing-canvas"></canvas>
+    <div class="page-content">
+      <div class="page-header">
+        <div>
+          <span class="title-main">高中生物（全） 2-2 遺傳物質</span>
+          <span class="badge badge-amber" style="margin-left:6px;">基礎檢測(一)</span>
+        </div>
+        <div class="subtitle">隨堂檢測(一)與染色體、DNA、基因定位（第 3/19 頁）</div>
+      </div>
+
+      <!-- 基礎練習 1 -->
+      <div class="section-title">隨堂基礎實力檢測（染色體學說觀察與推論）</div>
+      <div class="qa-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">D</span> ）</span>
+          <span class="q-num">1.</span>以下為遺傳學上的一些觀察結果，正確配對的推論選項為何？<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;甲：子代由精卵結合而來　乙：精子細胞質少，與卵相當的構造在細胞核<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;丙：減數分裂時，非同源染色體的分離互不干擾　丁：減數分裂時，同源染色體互相分離
+        </div>
+        <div class="q-options stacked">
+          <div class="q-opt">(A) 甲可推論遺傳因子在細胞核中　(B) 乙可推論遺傳物質為 DNA</div>
+          <div class="q-opt">(C) 丙可與孟德爾的第一遺傳法則相對應　(D) 丁可推論同源染色體的分離與孟德爾遺傳的分離律內容相符</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">
+            <b>【解析】</b><br>
+            • (A) 甲僅可推論遺傳因子位於親代的精卵中。<br>
+            • (B) 乙可知精卵對子代遺傳貢獻相當，推知遺傳因子位於細胞核中，當時尚未確定為 DNA。<br>
+            • (C) 丙非同源染色體自由組合，印證孟德爾「第二遺傳法則（獨立分配律）」。<br>
+            • (D) 丁減數分裂時同源染色體分離，與孟德爾「第一法則（分離律）」成對遺傳因子分離完全對應。選 <b>(D)</b>。
+          </div>
+        </div>
+      </div>
+
+      <div class="section-title" style="margin-top:6px;">2-2.2 染色體、DNA 與基因的階層關係</div>
+      <div class="concept-box" style="margin-bottom:5px;">
+        <b>一、從染色體到核酸的結構階層：</b><br>
+        1. <b>染色體的構造：</b>真核生物的染色體由 <span class="ans-word" onclick="toggleAns(this, event)">DNA</span> 纏繞<span class="ans-word" onclick="toggleAns(this, event)">組織蛋白</span>（組蛋白）高度濃縮摺疊而成。分裂期每條複製好的染色體包含兩條姊妹染色分體，共含 2 個 DNA 分子。<br>
+        2. <b>基因的定義：</b>DNA 上具有特定核苷酸序列、能轉錄並轉譯表現出特定產物（蛋白質或功能性 RNA）的片段，稱為「<span class="ans-word" onclick="toggleAns(this, event)">基因</span>（Gene）」。
+      </div>
+
+      <!-- 配圖：圖 2-27 染色體與基因 -->
+      <div style="text-align:center; margin:3px 0 2px 0;">
+        <img src="../images/biology-10-2-2-handout/染色體與基因.png" alt="圖 2-27 染色體與基因" title="點擊放大圖片" style="max-height:175px; max-width:94%; object-fit:contain; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+        <div style="font-size:9.5pt; color:#64748b; margin-top:2px;">▲ 圖 2-27 染色體、DNA 與基因片段的包裝階層關係（🔍 點擊可放大檢視）</div>
+      </div>
+
+      <div class="highlight-card" style="margin-top:3px;">
+        <b>💡 延伸史實補充：DNA 是遺傳物質的證實歷程</b><br>
+        • <b>格里夫茲（Griffith）轉形實驗（1928）：</b>發現加熱殺死的 S 型肺炎雙球菌能使活 R 型菌「轉形」為具致病力的 S 型菌。<br>
+        • <b>艾佛利（Avery）團隊實驗（1944）：</b>萃取轉形物質，加入蛋白質酶不影響轉形，唯有加入 DNA 水解酶時轉形能力喪失，正式證實「<span class="ans-word" onclick="toggleAns(this, event)">DNA 為遺傳物質</span>」！
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>高中生物(全) 講義 2-2 遺傳物質</span>
+      <span>第 3 頁 / 共 19 頁</span>
+      <span>普通高中 適用</span>
+    </div>
+  </div>
+
+  <!-- ==================== 第 4 頁 ==================== -->
+  <div class="page" id="p4">
+    <canvas class="drawing-canvas"></canvas>
+    <div class="page-content">
+      <div class="page-header">
+        <div>
+          <span class="title-main">高中生物（全） 2-2 遺傳物質</span>
+          <span class="badge badge-indigo" style="margin-left:6px;">分子結構</span>
+        </div>
+        <div class="subtitle">核酸基本構造與雙股螺旋模型發現（第 4/19 頁）</div>
+      </div>
+
+      <div class="section-title">二、核酸的化學組成與核苷酸單元</div>
+      <div class="concept-box" style="margin-bottom:5px;">
+        • <b>組成元素：</b>C、H、O、N、P。<br>
+        • <b>基本單位：</b><span class="ans-word" onclick="toggleAns(this, event)">核苷酸</span>（Nucleotide）＝ <b>五碳醣</b> ＋ <b>含氮鹼基</b> ＋ <b>磷酸基</b>。<br>
+        • <b>兩大核酸種類：</b>去氧核糖核酸（<b>DNA</b>）與核糖核酸（<b>RNA</b>）。
+      </div>
+
+      <!-- 圖 2-28 組成 DNA 與 RNA 的核苷酸 -->
+      <div style="text-align:center; margin:3px 0 5px 0;">
+        <img src="../images/biology-10-2-2-handout/DNA與RNA的核苷酸.png" alt="圖 2-28 組成 DNA 與 RNA 的核苷酸" title="點擊放大圖片" style="max-height:160px; max-width:94%; object-fit:contain; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+        <div style="font-size:9.5pt; color:#64748b; margin-top:2px;">▲ 圖 2-28 組成 DNA 與 RNA 的去氧核糖核苷酸與核糖核苷酸構造（🔍 點擊可放大檢視）</div>
+      </div>
+
+      <div class="section-title" style="margin-top:6px;">三、DNA 雙股螺旋結構的劃時代發現</div>
+      <div style="display:flex; gap:12px; align-items:center; margin:4px 0;">
+        <div style="flex:1;">
+          <div class="concept-box" style="margin:0; font-size:11pt; line-height:1.55;">
+            • <b>發表者：</b>1953 年，<b>華生</b>（Watson）與<b>克立克</b>（Crick）提出 DNA 雙股螺旋模型。<br>
+            • <b>結構特徵：</b><br>
+            &nbsp;&nbsp;① 由兩股平行、<span class="ans-word" onclick="toggleAns(this, event)">方向相反</span>（反向平行）的聚核苷酸鏈纏繞成右旋雙螺旋。<br>
+            &nbsp;&nbsp;② <b>骨架（Backbone）：</b>由五碳醣與磷酸基交替以共價鍵（磷酸二酯鍵）連接構成外側。<br>
+            &nbsp;&nbsp;③ <b>內側核心：</b>兩股的含氮鹼基朝向內側，透過<span class="ans-word" onclick="toggleAns(this, event)">氫鍵</span>進行鹼基互補配對。
+          </div>
+        </div>
+        <div style="width:160px; text-align:center;">
+          <img src="../images/biology-10-2-2-handout/華生與克立克.png" alt="圖 2-29 華生與克立克" title="點擊放大圖片" style="max-height:130px; max-width:100%; object-fit:contain; border-radius:4px; box-shadow:0 2px 6px rgba(0,0,0,0.1);">
+          <div style="font-size:8.5pt; color:#64748b; margin-top:2px;">▲ 華生與克立克模型</div>
+        </div>
+      </div>
+
+      <div class="highlight-card" style="margin-top:4px;">
+        <b>💡 弗蘭克林（Rosalind Franklin）的關鍵貢獻：</b>
+        女科學家弗蘭克林利用 X 光晶體繞射技術拍出極其清晰的「第 51 號相片」，明確揭示 DNA 呈對稱大型雙螺旋結構且磷酸骨架位於外側，為華生與克立克成功搭建雙螺旋模型提供了決定性依據！
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>高中生物(全) 講義 2-2 遺傳物質</span>
+      <span>第 4 頁 / 共 19 頁</span>
+      <span>普通高中 適用</span>
+    </div>
+  </div>
+
+  <!-- ==================== 第 5 頁 ==================== -->
+  <div class="page" id="p5">
+    <canvas class="drawing-canvas"></canvas>
+    <div class="page-content">
+      <div class="page-header">
+        <div>
+          <span class="title-main">高中生物（全） 2-2 遺傳物質</span>
+          <span class="badge badge-rose" style="margin-left:6px;">鹼基配對</span>
+        </div>
+        <div class="subtitle">鹼基互補配對原則與 DNA/RNA 全方位對比（第 5/19 頁）</div>
+      </div>
+
+      <div class="section-title">鹼基互補配對原則（Chargaff 查戈夫法則）</div>
+      <div style="display:flex; gap:12px; align-items:center; margin:3px 0;">
+        <div style="flex:1;">
+          <div class="concept-box" style="margin:0; font-size:11pt; line-height:1.55;">
+            • <b>配對原則：</b>雙股 DNA 內側鹼基恆以「一嘌呤配一嘧啶」配對：<br>
+            &nbsp;&nbsp;• <b>腺嘌呤（A）</b> 與 <b>胸腺嘧啶（T）</b> 配對，形成 <span class="ans-word" onclick="toggleAns(this, event)">2 條氫鍵</span>（A＝T）。<br>
+            &nbsp;&nbsp;• <b>胞嘧啶（C）</b> 與 <b>鳥糞嘌呤（G）</b> 配對，形成 <span class="ans-word" onclick="toggleAns(this, event)">3 條氫鍵</span>（C≡G）。<br>
+            • <b>重要推論：</b>雙股 DNA 中，<b>A＝T</b>，<b>G＝C</b>，故「<b>嘌呤總數 ＝ 嘧啶總數</b>」；只要得知其中一股序列，即可完全推知互補股序列！
+          </div>
+        </div>
+        <div style="width:250px; text-align:center;">
+          <img src="../images/biology-10-2-2-handout/DNA鹼基配對.png" alt="圖 2-30 DNA 鹼基配對原則" title="點擊放大圖片" style="max-height:130px; max-width:100%; object-fit:contain; box-shadow:0 2px 6px rgba(0,0,0,0.08);">
+          <div style="font-size:9pt; color:#64748b; margin-top:2px;">▲ 圖 2-30 DNA 鹼基配對與氫鍵（🔍 點擊放大）</div>
+        </div>
+      </div>
+
+      <div class="sub-title" style="margin-top:6px;">📌 DNA 與 RNA 全方位對比表格</div>
+      <table class="table-custom" style="margin-bottom:6px;">
+        <thead>
+          <tr>
+            <th style="width:18%;">比較項目</th>
+            <th style="width:41%;">去氧核糖核酸（DNA）</th>
+            <th style="width:41%;">核糖核酸（RNA）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="text-align:center; font-weight:bold;">五碳醣</td>
+            <td><b>去氧核糖</b>（2號碳接 -H，少一個氧原子）</td>
+            <td><b>核糖</b>（2號碳接 -OH 羥基）</td>
+          </tr>
+          <tr>
+            <td style="text-align:center; font-weight:bold;">含氮鹼基</td>
+            <td>A、G、C、<span style="color:#dc2626; font-weight:bold;">T（胸腺嘧啶）</span></td>
+            <td>A、G、C、<span style="color:#0284c7; font-weight:bold;">U（尿嘧啶）</span></td>
+          </tr>
+          <tr>
+            <td style="text-align:center; font-weight:bold;">分子構造</td>
+            <td>多為<b>雙股螺旋</b>（反向平行，嚴格互補配對）</td>
+            <td>多為<b>單股</b>（局部折疊可能形成短暫配對）</td>
+          </tr>
+          <tr>
+            <td style="text-align:center; font-weight:bold;">主要功能</td>
+            <td><b>儲存、複製與攜帶</b>生物體全部遺傳訊息</td>
+            <td><b>傳遞遺傳訊息</b>，協助蛋白質合成（mRNA/tRNA/rRNA）</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="key-point-card" style="margin-top:4px;">
+        <b>🔍 快速記憶核心：</b>DNA 與 RNA 的三大關鍵不同點——「去氧核糖 vs. 核糖」、「胸腺嘧啶 T vs. 尿嘧啶 U」、「雙股螺旋 vs. 單股鏈」，這是分子生物學辨析核酸身份的黃金基準！
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>高中生物(全) 講義 2-2 遺傳物質</span>
+      <span>第 5 頁 / 共 19 頁</span>
+      <span>普通高中 適用</span>
+    </div>
+  </div>
+
+  <!-- ==================== 第 6 頁 ==================== -->
+  <div class="page" id="p6">
+    <canvas class="drawing-canvas"></canvas>
+    <div class="page-content">
+      <div class="page-header">
+        <div>
+          <span class="title-main">高中生物（全） 2-2 遺傳物質</span>
+          <span class="badge badge-amber" style="margin-left:6px;">基礎檢測(二)</span>
+        </div>
+        <div class="subtitle">隨堂基礎實力檢測：DNA 序列分析與分子比較（第 6/19 頁）</div>
+      </div>
+
+      <div class="section-title">隨堂基礎實力檢測（第 1 ～ 3 題）</div>
+
+      <!-- 題 1 -->
+      <div class="qa-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">C</span> ）</span>
+          <span class="q-num">1.</span>若 DNA 一股其含氮鹼基順序為 GAAACTG，請問其互補 DNA 的含氮鹼基順序為何？
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) CTTTGAG</div>
+          <div class="q-opt">(B) CUUUGAC</div>
+          <div class="q-opt">(C) CTTTGAC</div>
+          <div class="q-opt">(D) CUUUGAC</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">
+            <b>【解析】</b><br>
+            DNA 雙股間依鹼基互補配對原則（A 與 T 配對、G 與 C 配對）：<br>
+            • 原 DNA 股：G - A - A - A - C - T - G<br>
+            • 互補 DNA 股：C - T - T - T - G - A - C<br>
+            注意題目詢問的是「互補 DNA」而非 RNA，故含氮鹼基為 T 而非 U。選 <b>(C)</b>。
+          </div>
+        </div>
+      </div>
+
+      <!-- 題 2 -->
+      <div class="qa-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">A</span> ）</span>
+          <span class="q-num">2.</span>關於一個基因、一條染色體、一條 DNA、一個核苷酸分子的大小比較，何者正確？
+        </div>
+        <div class="q-options stacked">
+          <div class="q-opt">(A) 一個核苷酸最小　(B) 複製好的一條染色體由一條 DNA 組成</div>
+          <div class="q-opt">(C) 一基因由一核苷酸組成　(D) 一條 DNA 有一個基因</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">
+            <b>【解析】</b><br>
+            • 分子結構大小階層：染色體 ＞ DNA ＞ 基因 ＞ 核苷酸。<br>
+            • (B) 複製完成的染色體包含 2 條姊妹染色分體，共由 2 條 DNA 分子組成。<br>
+            • (C) 一個基因通常由數百至數千個核苷酸組成，至少 3 個核苷酸構成 1 個密碼子對應 1 個胺基酸。<br>
+            • (D) 一條 DNA 分子上包含成百上千個不同的基因。故選 <b>(A)</b>。
+          </div>
+        </div>
+      </div>
+
+      <!-- 題 3 -->
+      <div class="qa-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">A</span> ）</span>
+          <span class="q-num">3.</span>若將一段雙股 DNA 進行序列分析，以下敘述何者正確？
+        </div>
+        <div class="q-options stacked">
+          <div class="q-opt">(A) 嘌呤數量必等於嘧啶數量</div>
+          <div class="q-opt">(B) 將其水解成單股後，單股上的嘌呤數量等於嘧啶數量</div>
+          <div class="q-opt">(C) 將其水解成單股後，單股上 A 與 T 的數量相等</div>
+          <div class="q-opt">(D) 將其水解成單股後，單股上 C 與 G 的數量相等</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">
+            <b>【解析】</b><br>
+            • 依查戈夫法則，雙股 DNA 中 A＝T 且 G＝C，故嘌呤總數（A＋G）必恆等於嘧啶總數（T＋C），故 (A) 正確。<br>
+            • (B)(C)(D) 若水解拆解為單股 DNA，則單股鏈上的含氮鹼基排列由遺傳密碼決定，單股內 A 不必然等於 T，G 亦不必然等於 C，嘌呤數也不一定等於嘧啶數。選 <b>(A)</b>。
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>高中生物(全) 講義 2-2 遺傳物質</span>
+      <span>第 6 頁 / 共 19 頁</span>
+      <span>普通高中 適用</span>
+    </div>
+  </div>
+
+  <!-- ==================== 第 7 頁 ==================== -->
+  <div class="page" id="p7">
+    <canvas class="drawing-canvas"></canvas>
+    <div class="page-content">
+      <div class="page-header">
+        <div>
+          <span class="title-main">高中生物（全） 2-2 遺傳物質</span>
+          <span class="badge badge-primary" style="margin-left:6px;">中心法則</span>
+        </div>
+        <div class="subtitle">2-2.3 分子中心法則與 DNA 半保留複製（第 7/19 頁）</div>
+      </div>
+
+      <div class="section-title">一、分子生物學的中心法則（Central Dogma）</div>
+      <div class="concept-box" style="margin-bottom:6px;">
+        1. <b>遺傳物質 DNA：</b>在細胞分裂前必須進行 DNA 複製，以確保親代的遺傳指令精確無誤地傳遞至子細胞。<br>
+        2. <b>基因表現（Gene Expression）：</b>以 DNA 為模板合成 RNA（<span class="ans-word" onclick="toggleAns(this, event)">轉錄</span>），再以 RNA 為模板合成多肽鏈蛋白質（<span class="ans-word" onclick="toggleAns(this, event)">轉譯</span>），最終藉由結構蛋白或酵素調控生物性狀。<br>
+        3. <b>中心法則架構：</b>DNA 複製、轉錄成 RNA、轉譯成蛋白質，為生命科學最核心的運作樞紐。
+      </div>
+
+      <!-- 配圖：圖 2-31 中心法則 -->
+      <div style="text-align:center; margin:3px 0 6px 0;">
+        <img src="../images/biology-10-2-2-handout/中心法則.png" alt="圖 2-31 分子生物學的中心法則" title="點擊放大圖片" style="max-height:95px; max-width:94%; object-fit:contain; box-shadow:0 2px 6px rgba(0,0,0,0.08);">
+        <div style="font-size:9pt; color:#64748b; margin-top:2px;">▲ 圖 2-31 分子生物學的中心法則：複製 → 轉錄 → 轉譯（🔍 點擊放大）</div>
+      </div>
+
+      <div class="section-title">二、DNA 的半保留複製（DNA Replication）</div>
+      <div class="concept-box" style="margin-bottom:5px;">
+        • <b>時機：</b>細胞分裂前（細胞週期的間期 S 期）。<br>
+        • <b>場所：</b>真核細胞於<b>細胞核</b>進行（粒線體與葉綠體內亦可獨立進行複製）；原核細胞於細胞質進行。<br>
+        • <b>原料：</b>細胞核中游離的四種去氧核糖核苷酸（dATP, dTTP, dCTP, dGTP）。<br>
+        • <b>主要酵素：</b><span class="ans-word" onclick="toggleAns(this, event)">DNA 聚合酶</span>（DNA polymerase）。<br>
+        • <b>複製模式：</b><span class="ans-word" onclick="toggleAns(this, event)">半保留複製</span>（Semi-conservative replication）。
+      </div>
+
+      <!-- 配圖：圖 2-32 DNA 複製 -->
+      <div style="text-align:center; margin:3px 0 2px 0;">
+        <img src="../images/biology-10-2-2-handout/DNA複製.png" alt="圖 2-32 DNA 的複製" title="點擊放大圖片" style="max-height:155px; max-width:94%; object-fit:contain; box-shadow:0 2px 6px rgba(0,0,0,0.08);">
+        <div style="font-size:9pt; color:#64748b; margin-top:2px;">▲ 圖 2-32 DNA 的半保留複製歷程（一條舊模板股＋一條新合成股，🔍 點擊放大）</div>
+      </div>
+
+      <div class="key-point-card" style="margin-top:4px;">
+        <b>🔍 複製三步驟：</b>① <b>解開與結合：</b>雙螺旋解開，DNA 聚合酶結合以兩股舊鏈為模版；② <b>鹼基互補延伸：</b>依 A-T、C-G 配對依序聚合新核苷酸；③ <b>完成複製：</b>產生兩條完全相同的 DNA 雙螺旋，各含一股舊股與一股新股。
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>高中生物(全) 講義 2-2 遺傳物質</span>
+      <span>第 7 頁 / 共 19 頁</span>
+      <span>普通高中 適用</span>
+    </div>
+  </div>
+
+  <!-- ==================== 第 8 頁 ==================== -->
+  <div class="page" id="p8">
+    <canvas class="drawing-canvas"></canvas>
+    <div class="page-content">
+      <div class="page-header">
+        <div>
+          <span class="title-main">高中生物（全） 2-2 遺傳物質</span>
+          <span class="badge badge-teal" style="margin-left:6px;">基因表現</span>
+        </div>
+        <div class="subtitle">從 DNA 到蛋白質：轉錄與轉譯機制（第 8/19 頁）</div>
+      </div>
+
+      <div class="section-title">三、從 DNA 到蛋白質（基因表現兩部曲）</div>
+      <div class="concept-box" style="margin-bottom:5px;">
+        <b>(一) DNA 轉錄成 RNA（Transcription）：</b><br>
+        • <b>時機：</b>細胞欲表現特定基因產物時。<br>
+        • <b>場所：</b>真核細胞於<span class="ans-word" onclick="toggleAns(this, event)">細胞核</span>進行。<br>
+        • <b>模板與酵素：</b>以基因的<b>一股 DNA</b> 為模板，由 <span class="ans-word" onclick="toggleAns(this, event)">RNA 聚合酶</span> 沿模板依序加入游離核糖核苷酸，遵循互補原則（<b>A 配 U</b>、<b>T 配 A</b>、<b>C 配 G</b>、<b>G 配 C</b>）合成單股 RNA。<br>
+        <div style="margin-top:4px; border-top:1px dashed #cbd5e1; padding-top:4px;">
+          <b>(二) RNA 轉譯成蛋白質（Translation）：</b><br>
+          • <b>時機：</b>轉錄完成的 mRNA 經核孔穿出進入細胞質後。<br>
+          • <b>場所：</b>細胞質中的「<span class="ans-word" onclick="toggleAns(this, event)">核糖體</span>（Ribosome）」。<br>
+          • <b>材料：</b>以 mRNA 為訊息模板、游離<b>胺基酸</b>為原料，由 tRNA 搬運胺基酸至核糖體依序連接成多肽鏈。
+        </div>
+      </div>
+
+      <!-- 配圖：圖 2-33 真核細胞基因表現 -->
+      <div style="text-align:center; margin:3px 0 2px 0;">
+        <img src="../images/biology-10-2-2-handout/真核細胞基因表現.png" alt="圖 2-33 真核細胞的基因表現" title="點擊放大圖片" style="max-height:205px; max-width:94%; object-fit:contain; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+        <div style="font-size:9.5pt; color:#64748b; margin-top:2px;">▲ 圖 2-33 真核細胞基因表現動態：細胞核內轉錄 → mRNA 穿出核孔 → 核糖體轉譯成蛋白質（🔍 點擊放大）</div>
+      </div>
+
+      <div class="highlight-card" style="margin-top:4px;">
+        <b>💡 真核 vs. 原核基因表現的空間差異：</b><br>
+        • <b>真核生物：</b>具有核膜分隔，轉錄在<b>細胞核</b>，轉譯在<b>細胞質核糖體</b>，兩者時間與空間分開進行。<br>
+        • <b>原核生物（如細菌）：</b>無核膜構造，DNA 複製、轉錄與轉譯皆在<b>細胞質</b>進行，轉錄尚未結束時即可同時進行轉譯（轉錄轉譯偶聯）。
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>高中生物(全) 講義 2-2 遺傳物質</span>
+      <span>第 8 頁 / 共 19 頁</span>
+      <span>普通高中 適用</span>
+    </div>
+  </div>
+
+  <!-- ==================== 第 9 頁 ==================== -->
+  <div class="page" id="p9">
+    <canvas class="drawing-canvas"></canvas>
+    <div class="page-content">
+      <div class="page-header">
+        <div>
+          <span class="title-main">高中生物（全） 2-2 遺傳物質</span>
+          <span class="badge badge-amber" style="margin-left:6px;">RNA與歷程</span>
+        </div>
+        <div class="subtitle">三大 RNA 種類功能與三大歷程全面對比（第 9/19 頁）</div>
+      </div>
+
+      <div class="section-title">三大功能性 RNA 種類深度解析</div>
+      <!-- 配圖：RNA 種類表格 -->
+      <div style="text-align:center; margin:3px 0 4px 0;">
+        <img src="../images/biology-10-2-2-handout/RNA種類.png" alt="RNA 種類說明與圖示" title="點擊放大圖片" style="max-height:185px; max-width:94%; object-fit:contain; box-shadow:0 2px 6px rgba(0,0,0,0.08);">
+        <div style="font-size:9pt; color:#64748b; margin-top:2px;">▲ 參與轉譯的三大 RNA：傳訊 mRNA（密碼子）、核糖體 rRNA（催化胜肽鍵）、轉送 tRNA（攜帶胺基酸）</div>
+      </div>
+
+      <div class="sub-title" style="margin-top:4px;">📌 DNA 複製、轉錄與轉譯三大歷程綜合比較</div>
+      <table class="table-custom" style="margin-bottom:5px;">
+        <thead>
+          <tr>
+            <th style="width:16%;">比較項目</th>
+            <th style="width:28%;">DNA 複製</th>
+            <th style="width:28%;">轉錄（Transcription）</th>
+            <th style="width:28%;">轉譯（Translation）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="text-align:center; font-weight:bold;">模板</td>
+            <td>DNA <b>雙股</b>皆為模板</td>
+            <td>DNA <b>單股</b>（模板股）</td>
+            <td><b>mRNA</b> 密碼子序列</td>
+          </tr>
+          <tr>
+            <td style="text-align:center; font-weight:bold;">主要參與者</td>
+            <td><span class="ans-word" onclick="toggleAns(this, event)">DNA 聚合酶</span></td>
+            <td><span class="ans-word" onclick="toggleAns(this, event)">RNA 聚合酶</span></td>
+            <td><span class="ans-word" onclick="toggleAns(this, event)">核糖體</span>、tRNA</td>
+          </tr>
+          <tr>
+            <td style="text-align:center; font-weight:bold;">原料</td>
+            <td>四種去氧核糖核苷酸 (dNTP)</td>
+            <td>四種核糖核苷酸 (NTP)</td>
+            <td>20 種游離<b>胺基酸</b></td>
+          </tr>
+          <tr>
+            <td style="text-align:center; font-weight:bold;">產物</td>
+            <td>2 個雙股 DNA 分子</td>
+            <td>單股 RNA（mRNA/tRNA/rRNA）</td>
+            <td>多肽鏈 → <b>蛋白質</b></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- 隨堂基礎練習 1 -->
+      <div class="section-title" style="margin-top:4px;">隨堂基礎檢測</div>
+      <div class="qa-item" style="margin:0;" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">B</span> ）</span>
+          <span class="q-num">1.</span>人體的胰島細胞會不斷地合成激素並分泌到循環系統中，其過程敘述如下，下列何者正確？
+        </div>
+        <div class="q-options stacked">
+          <div class="q-opt">(A) 以胰島細胞特有的胰島素基因進行轉錄　(B) 轉錄出的 RNA 攜帶胰島素的遺傳訊息離開細胞核</div>
+          <div class="q-opt">(C) RNA 於核內的核糖體進行轉譯　(D) 轉譯產生的激素由內質網分泌到胞外</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">
+            <b>【解析】</b>(A) 同一個體的所有體細胞均含有全套相同 DNA（皆有胰島素基因）；(C) 核糖體位於細胞質與粗糙內質網表面，細胞核內無核糖體；(D) 蛋白質激素經由內質網修飾、高基氏體包裝形成分泌囊泡後排至胞外。故選 <b>(B)</b>。
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>高中生物(全) 講義 2-2 遺傳物質</span>
+      <span>第 9 頁 / 共 19 頁</span>
+      <span>普通高中 適用</span>
+    </div>
+  </div>
+
+  <!-- ==================== 第 10 頁 ==================== -->
+  <div class="page" id="p10">
+    <canvas class="drawing-canvas"></canvas>
+    <div class="page-content">
+      <div class="page-header">
+        <div>
+          <span class="title-main">高中生物（全） 2-2 遺傳物質</span>
+          <span class="badge badge-indigo" style="margin-left:6px;">變異機制</span>
+        </div>
+        <div class="subtitle">中心法則隨堂練習與遺傳變異機制（第 10/19 頁）</div>
+      </div>
+
+      <!-- 隨堂基礎 2 & 3 -->
+      <div class="section-title">隨堂基礎檢測（中心法則概念應用）</div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:5px;">
+        <!-- 題 2 -->
+        <div class="qa-item" style="margin:0;" onclick="toggleItemAnswers(this, event)">
+          <div class="q-stem">
+            <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">C</span> ）</span>
+            <span class="q-num">2.</span>若將細胞核比喻為圖書館，遺傳密碼為百科全書，核糖體為核外的翻譯工具，細胞僅要表現某一段基因時會怎麼做？
+          </div>
+          <div class="q-options stacked">
+            <div class="q-opt">(A) 將整套百科全書搬到館外查閱</div>
+            <div class="q-opt">(B) 將翻譯工具移到圖書館內查閱</div>
+            <div class="q-opt">(C) 將要了解的篇章內容在核內轉錄形成 RNA 印下來，再到核外用翻譯工具製造蛋白質</div>
+            <div class="q-opt">(D) 送出細胞核在細胞質轉錄</div>
+          </div>
+          <div class="calc-workspace" onclick="toggleSolution(this, event)">
+            <div class="calc-solution">
+              <b>【解析】</b>DNA 保留在細胞核內，轉錄形成 mRNA 後出核孔至細胞質核糖體進行轉譯。選 <b>(C)</b>。
+            </div>
+          </div>
+        </div>
+
+        <!-- 題 3 -->
+        <div class="qa-item" style="margin:0;" onclick="toggleItemAnswers(this, event)">
+          <div class="q-stem">
+            <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">A</span> ）</span>
+            <span class="q-num">3.</span>分子生物學中心法則中，甲分子轉錄為乙分子，乙分子再直接參與合成丙分子，何者正確？
+          </div>
+          <div class="q-options stacked">
+            <div class="q-opt">(A) 甲、乙、丙三種分子均為重複出現的單元所組成的聚合物</div>
+            <div class="q-opt">(B) 甲是組成乙的單元，乙是組成丙的單元</div>
+            <div class="q-opt">(C) 轉錄是 DNA 聚合酶的功能</div>
+            <div class="q-opt">(D) 乙合成丙是 RNA 聚合酶功能</div>
+          </div>
+          <div class="calc-workspace" onclick="toggleSolution(this, event)">
+            <div class="calc-solution">
+              <b>【解析】</b>甲(DNA)、乙(RNA)由核苷酸單元聚合，丙(蛋白質)由胺基酸單元聚合，三者均為高分子聚合物。選 <b>(A)</b>。
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-title">2-2.4 遺傳變異與環境因子影響性狀表現</div>
+      <div class="concept-box" style="margin-bottom:4px;">
+        <b>一、遺傳變異對性狀的影響：</b><br>
+        1. <b>遺傳變異的來源：</b>生物性狀表現之差異主要源自遺傳變異，產生機制包括 <span class="ans-word" onclick="toggleAns(this, event)">有性生殖</span>（非同源染色體自由組合與互換造成基因重組）與 <span class="ans-word" onclick="toggleAns(this, event)">基因突變</span>（DNA 序列改變產生新等位基因）。<br>
+        2. <b>實例一：豌豆花色的基因變異機制</b><br>
+        • 由等位基因 <i>P</i> 與 <i>p</i> 決定：顯性 <i>P</i> 基因可轉譯出活性酵素，催化合成紫色色素形成<b>紫花</b>；隱性 <i>p</i> 基因因鹼基突變，無法產生具功能之酵素，因而呈現<b>白花</b>。
+      </div>
+
+      <!-- 配圖：遺傳變異 -->
+      <div style="text-align:center; margin:3px 0 2px 0;">
+        <img src="../images/biology-10-2-2-handout/遺傳變異.png" alt="等位基因核苷酸序列差異與紫花色素合成" title="點擊放大圖片" style="max-height:130px; max-width:94%; object-fit:contain; box-shadow:0 2px 6px rgba(0,0,0,0.08);">
+        <div style="font-size:9pt; color:#64748b; margin-top:2px;">▲ 豌豆紫花 (P) 與白花 (p) 的等位基因核苷酸序列差異與色素酵素合成（🔍 點擊放大）</div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>高中生物(全) 講義 2-2 遺傳物質</span>
+      <span>第 10 頁 / 共 19 頁</span>
+      <span>普通高中 適用</span>
+    </div>
+  </div>
+
+  <!-- ==================== 第 11 頁 ==================== -->
+  <div class="page" id="p11">
+    <canvas class="drawing-canvas"></canvas>
+    <div class="page-content">
+      <div class="page-header">
+        <div>
+          <span class="title-main">高中生物（全） 2-2 遺傳物質</span>
+          <span class="badge badge-teal" style="margin-left:6px;">遺傳與環境</span>
+        </div>
+        <div class="subtitle">2-2.4 遺傳變異與環境因子（第 11/19 頁）</div>
+      </div>
+
+      <div class="section-title">2-2.4 遺傳變異之突變機制與環境因子對性狀的影響</div>
+
+      <div class="sub-title">🧬 二、基因突變之經典實例：鐮刀型紅血球貧血症</div>
+      <div class="concept-box" style="margin-bottom:6px; font-size:11pt; line-height:1.55;">
+        1. <b>突變本質</b>：單一鹼基置換的點突變。<br>
+        2. <b>DNA 序列改變</b>：β-血紅素基因模板股 DNA 序列由原本的 <span class="ans-word" onclick="toggleAns(this, event)">CTC</span> 突變為 <span class="ans-word" onclick="toggleAns(this, event)">CAC</span>。<br>
+        3. <b>mRNA 密碼子改變</b>：轉錄出的 mRNA 第 6 個密碼子由 <span class="ans-word" onclick="toggleAns(this, event)">GAG</span> 變為 <span class="ans-word" onclick="toggleAns(this, event)">GUG</span>。<br>
+        4. <b>多胜肽鏈結構改變</b>：轉譯形成的 β-血紅素胜肽鏈第 6 位胺基酸，由帶電荷的親水性 <span class="ans-word" onclick="toggleAns(this, event)">麩胺酸 (Glu)</span> 置換為非極性的疏水性 <span class="ans-word" onclick="toggleAns(this, event)">纈胺酸 (Val)</span>。<br>
+        5. <b>生理與病理結果</b>：紅血球在低氧環境下易發生結晶聚集，使細胞由雙凹圓盤狀變形為鐮刀狀，容易破裂溶血引起嚴重貧血，並容易阻塞微血管導致組織壞死。
+      </div>
+
+      <div class="sub-title">🌱 三、環境因子對性狀表現的關鍵影響（表現型 ＝ 基因型 ＋ 環境因子）</div>
+      <div class="concept-box" style="margin-bottom:6px; font-size:11pt; line-height:1.55;">
+        1. <b>繡球花花色的環境調控</b>：<br>
+        • 同一品種植株，在<b>酸性土壤</b>中，根部容易吸收土壤中溶解的<b>鋁離子 (Al<sup>3+</sup>)</b>，花青素與鋁離子結合後花色呈現 <span class="ans-word" onclick="toggleAns(this, event)">藍色</span>。<br>
+        • 在<b>中性或鹼性土壤</b>中，鋁離子形成沉澱無法被根系吸收，花色呈現 <span class="ans-word" onclick="toggleAns(this, event)">粉紅色或紅色</span>。<br>
+        2. <b>喜瑪拉雅兔與暹羅貓毛色的溫度調控</b>：<br>
+        • 體內調控黑色素生成的酵素具有<b>溫度敏感性</b>（溫度過高活性即喪失）。<br>
+        • 身體末端（耳尖、鼻端、足爪）散熱快、<b>溫度較低</b>，酵素維持高活性，能催化黑色素生成而顯現 <span class="ans-word" onclick="toggleAns(this, event)">黑色或深色毛</span>。<br>
+        • 身體軀幹核心<b>溫度較高</b>，酵素失去活性無法產生黑色素，毛色維持 <span class="ans-word" onclick="toggleAns(this, event)">白色或淺色毛</span>。
+      </div>
+
+      <div style="background:#eff6ff; border-left:4px solid #3b82f6; border-radius:6px; padding:7px 12px; margin-top:4px;">
+        <div style="font-weight:bold; color:#1d4ed8; font-size:11pt; margin-bottom:2px;">💡 大考核心觀念整合卡：表現型是由基因與環境共同決定的</div>
+        <div style="font-size:10.5pt; color:#1e3a8a; line-height:1.5;">
+          • 基因型（Genotype）提供個體性狀發展的<b>潛在可能性（藍圖）</b>。<br>
+          • 環境因子（Environment，如溫度、日照、養分、pH 等）調控基因表現的程度，決定最終展現的<b>表現型（Phenotype）</b>。<br>
+          • 結論：<b>基因型相同之個體，在不同環境下可能展現完全不同的表現型！</b>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>高中生物(全) 講義 2-2 遺傳物質</span>
+      <span>第 11 頁 / 共 19 頁</span>
+      <span>普通高中 適用</span>
+    </div>
+  </div>
+
+  <!-- ==================== 第 12 頁 ==================== -->
+  <div class="page" id="p12">
+    <canvas class="drawing-canvas"></canvas>
+    <div class="page-content">
+      <div class="page-header">
+        <div>
+          <span class="title-main">高中生物（全） 2-2 遺傳物質</span>
+          <span class="badge badge-primary" style="margin-left:6px;">課後單選(一)</span>
+        </div>
+        <div class="subtitle">課後實戰演練：單選題 1 ～ 3 題（第 12/19 頁）</div>
+      </div>
+
+      <div class="section-title">課後實戰演練：單選題（第 1 ～ 3 題）</div>
+
+      <!-- 單選 1 -->
+      <div class="qa-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">A</span> ）</span>
+          <span class="q-num">1.</span>請問下列何選項為基因轉錄時可能會使用到的原料？
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 核糖核苷酸</div>
+          <div class="q-opt">(B) 去氧核糖核苷酸</div>
+          <div class="q-opt">(C) 胺基酸</div>
+          <div class="q-opt">(D) 核糖核酸</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">
+            <b>【解析】</b>轉錄（Transcription）是以單股 DNA 為模板合成 RNA 的過程，合成產物 RNA 的單體原料為<b>核糖核苷酸</b>（NTP：ATP, UTP, CTP, GTP）。(B) 去氧核糖核苷酸為 DNA 複製原料；(C) 胺基酸為轉譯原料；(D) 核糖核酸是聚合物產物。故選 <b>(A)</b>。
+          </div>
+        </div>
+      </div>
+
+      <!-- 單選 2 -->
+      <div class="qa-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">B</span> ）</span>
+          <span class="q-num">2.</span>已知 DNA 雙股之 A、T 間以兩個氫鍵相連結；C、G 之間以三個氫鍵相連結；現有幾段 DNA 雙股片段，欲以人為方式加熱將雙股解開，請問何者所需提供的熱能最高才能將其解開？
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) CCAGAATT / GGTCTTAA (8bp, 4CG+4AT = 20氫鍵)</div>
+          <div class="q-opt">(B) ACAGCCAT / TGTCGGTA (8bp, 5CG+3AT = 21氫鍵)</div>
+          <div class="q-opt">(C) CCTTCG / GGAAGC (6bp, 4CG+2AT = 16氫鍵)</div>
+          <div class="q-opt">(D) AAATTTTT / TTTAAAAA (8bp, 0CG+8AT = 16氫鍵)</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">
+            <b>【解析】</b>C 與 G 之間有 3 個氫鍵，A 與 T 之間有 2 個氫鍵。各片段氫鍵總數：<br>
+            • (A) 4×3 ＋ 4×2 ＝ 20 個氫鍵。<br>
+            • (B) 5×3 ＋ 3×2 ＝ <b>21 個氫鍵</b>。<br>
+            • (C) 4×3 ＋ 2×2 ＝ 16 個氫鍵。<br>
+            • (D) 0×3 ＋ 8×2 ＝ 16 個氫鍵。<br>
+            (B) 選項 CG 含量最高且總氫鍵數最多（21 個），雙螺旋結合最為緊密穩定，需要最高熱能才能將其解開（熔解溫度 Tm 最高）。選 <b>(B)</b>。
+          </div>
+        </div>
+      </div>
+
+      <!-- 單選 3 -->
+      <div class="qa-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">D</span> ）</span>
+          <span class="q-num">3.</span>DNA 分子上的某一段含有 5000 個五碳醣分子，則關於此段 DNA 的描述，何者有誤？
+        </div>
+        <div class="q-options stacked">
+          <div class="q-opt">(A) 有 5000 個磷酸根</div>
+          <div class="q-opt">(B) 大於 5000 個氫鍵</div>
+          <div class="q-opt">(C) 由 5000 個核苷酸組成</div>
+          <div class="q-opt">(D) 有 5000 個基因</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">
+            <b>【解析】</b>5000 個去氧核糖表示該雙股 DNA 共有 5000 個核苷酸 (C)，每個核苷酸有 1 個磷酸基，故有 5000 個磷酸根 (A)。雙股 DNA 共 2500 個鹼基對，若全為 A-T 則有 2500×2＝5000 個氫鍵，只要含有 C-G 鹼基對，總氫鍵數必大於 5000 個 (B)。而一個基因通常由數百至數千個鹼基對組成，5000 個核苷酸最多僅能容納數個基因，絕不可能有 5000 個基因。故選 <b>(D)</b>。
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>高中生物(全) 講義 2-2 遺傳物質</span>
+      <span>第 12 頁 / 共 19 頁</span>
+      <span>普通高中 適用</span>
+    </div>
+  </div>
+
+  <!-- ==================== 第 13 頁 ==================== -->
+  <div class="page" id="p13">
+    <canvas class="drawing-canvas"></canvas>
+    <div class="page-content">
+      <div class="page-header">
+        <div>
+          <span class="title-main">高中生物（全） 2-2 遺傳物質</span>
+          <span class="badge badge-primary" style="margin-left:6px;">課後單選(二)</span>
+        </div>
+        <div class="subtitle">課後實戰演練：單選題 4 ～ 5 題（第 13/19 頁）</div>
+      </div>
+
+      <div class="section-title">課後實戰演練：單選題（第 4 ～ 5 題）</div>
+
+      <!-- 單選 4 -->
+      <div class="qa-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">C</span> ）</span>
+          <span class="q-num">4.</span>下列有關 DNA 分子的敘述，何者正確？
+        </div>
+        <div class="q-options stacked">
+          <div class="q-opt">(A) 同一生物個體中，多數體細胞的 DNA 具有不同的鹼基序列</div>
+          <div class="q-opt">(B) 若一股上的 A：T：G：C ＝ 1：2：3：4，則另一股上的 A：T：G：C ＝ 1：2：3：4</div>
+          <div class="q-opt">(C) 若一股上的 A：T：G：C ＝ 1：2：3：4，則整個 DNA 的 A：T：G：C ＝ 3：3：7：7</div>
+          <div class="q-opt">(D) 胰臟 β 細胞能合成出胰島素但無法產生血紅素，乃因 β 細胞有胰島素基因但無血紅素基因</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">
+            <b>【解析】</b><br>
+            • (A) 同一個體多數體細胞均來自受精卵的有絲分裂，除免疫細胞（B、T 細胞受體基因重組）外，其餘體細胞的 DNA 序列完全相同。<br>
+            • (B) 互補股的 A 配對第一股的 T(2)、T 配對 A(1)、G 配對 C(4)、C 配對 G(3)，故另一股的 A：T：G：C ＝ 2：1：4：3。<br>
+            • (C) 整個雙股 DNA 中：A 總量 ＝ 1＋2 ＝ 3；T 總量 ＝ 2＋1 ＝ 3；G 總量 ＝ 3＋4 ＝ 7；C 總量 ＝ 4＋3 ＝ 7。故整體比例為 <b>3：3：7：7</b>，敘述完全正確。<br>
+            • (D) 體細胞皆帶有全套基因，β 細胞同樣帶有血紅素基因，只是該基因未開啟表現。選 <b>(C)</b>。
+          </div>
+        </div>
+      </div>
+
+      <!-- 單選 5 -->
+      <div class="qa-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">C</span> ）</span>
+          <span class="q-num">5.</span>關於真核生物進行 DNA 複製的時機及流程說明，下列敘述何者正確？
+        </div>
+        <div class="q-options stacked">
+          <div class="q-opt">(A) DNA 複製開始前，核膜及核仁會暫時瓦解消失</div>
+          <div class="q-opt">(B) DNA 複製過程中，DNA 聚合酶以鹼基配對原則進行核糖核酸的聚合</div>
+          <div class="q-opt">(C) DNA 複製完成後，形成一股新、一股舊的 DNA 分子，稱為半保留複製</div>
+          <div class="q-opt">(D) 可依 DNA 複製次數的差異，分辨出細胞進行有絲分裂或減數分裂</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">
+            <b>【解析】</b><br>
+            • (A) DNA 複製發生於細胞週期的間期（S 期），此時間期細胞具有完整核膜與核仁；進入分裂期前期核膜核仁才瓦解。<br>
+            • (B) DNA 聚合酶催化的是<b>去氧核糖核苷酸 (dNTP)</b> 的聚合，合成出 DNA 鏈。<br>
+            • (C) 華生與克立克提出之<b>半保留複製</b>：每個新生成的雙螺旋分子均保留一股來自母分子的舊股，另一股為新合成股。<br>
+            • (D) 有絲分裂與減數分裂在分裂前皆僅進行「一次」DNA 複製。選 <b>(C)</b>。
+          </div>
+        </div>
+      </div>
+
+      <div style="background:#f1f5f9; border-left:4px solid #64748b; border-radius:6px; padding:7px 12px; margin-top:6px;">
+        <div style="font-weight:bold; color:#334155; font-size:11pt; margin-bottom:2px;">📌 觀念速記：基因表現的選擇性</div>
+        <div style="font-size:10.5pt; color:#475569; line-height:1.5;">
+          同一個體內不同的體細胞（例如神經細胞、肌肉細胞、胰島細胞），其細胞核內的 <b>DNA 遺傳訊息完全相同</b>。細胞間形態與功能差異的原因，在於不同細胞中<b>被表現的基因種類不同</b>（差異化基因表現），而非 DNA 序列本身不同！
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>高中生物(全) 講義 2-2 遺傳物質</span>
+      <span>第 13 頁 / 共 19 頁</span>
+      <span>普通高中 適用</span>
+    </div>
+  </div>
+
+  <!-- ==================== 第 14 頁 ==================== -->
+  <div class="page" id="p14">
+    <canvas class="drawing-canvas"></canvas>
+    <div class="page-content">
+      <div class="page-header">
+        <div>
+          <span class="title-main">高中生物（全） 2-2 遺傳物質</span>
+          <span class="badge badge-teal" style="margin-left:6px;">CRISPR題組</span>
+        </div>
+        <div class="subtitle">素養題組：CRISPR 基因編輯題組（第 14/19 頁）</div>
+      </div>
+
+      <div class="section-title">素養題組：CRISPR/Cas9 基因編輯技術（第 6 ～ 8 題）</div>
+
+      <!-- 導讀背景框 -->
+      <div style="background:#f0fdfa; border:1px solid #99f6e4; border-radius:6px; padding:7px 11px; margin-bottom:5px;">
+        <div style="font-weight:bold; color:#0f766e; font-size:10.5pt; margin-bottom:2px;">【閱讀導讀】第 6 ～ 8 題為題組：</div>
+        <div style="font-size:10pt; color:#134e4a; line-height:1.5;">
+          研究特定基因所扮演的角色，過往可透過基因剔除技術，但其工序複雜、門檻高昂。早期工具為 ZFN 與 TALEN，兩者皆利用人工合成蛋白質標定目標 DNA，再利用 FokI 核酸酶剪斷。但這兩種用來辨識 DNA 的蛋白質非常難以製作。近年革命性的 <b>CRISPR/Cas9</b> 技術源自細菌抵抗噬菌體入侵的免疫系統，Cas9 蛋白是一種 DNA 內切酶，可藉由科學家人工合成的<b>導引 RNA</b>（gRNA）精準辨識目標基因並進行剪切。合成短鏈 RNA 成本極低且快速，大幅降低基因編輯門檻，已廣泛應用於原核與真核模式生物！
+        </div>
+      </div>
+
+      <!-- 題 6 -->
+      <div class="qa-item" style="margin-bottom:4px;" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">B</span> ）</span>
+          <span class="q-num">6.</span>下列有關基因編輯的相關敘述，何者錯誤？
+        </div>
+        <div class="q-options stacked">
+          <div class="q-opt">(A) DNA 編輯系統包含 CRISPR 和 Cas9　(B) CRISPR 和 Cas9 皆為一段特定序列的 DNA</div>
+          <div class="q-opt">(C) Cas9 利用導引 RNA 得到辨認目標 DNA 序列的能力　(D) CRISPR 和 Cas9 為細菌抵抗外界攻擊的免疫系統</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">
+            <b>【解析】</b>CRISPR 是細菌染色體上重複的回文 DNA 片段；而 Cas9 則是一種蛋白質（核酸內切酶），非 DNA。選 <b>(B)</b>。
+          </div>
+        </div>
+      </div>
+
+      <!-- 題 7 -->
+      <div class="qa-item" style="margin-bottom:4px;" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">D</span> ）</span>
+          <span class="q-num">7.</span>下列本文的相關敘述，何者正確？
+        </div>
+        <div class="q-options stacked">
+          <div class="q-opt">(A) CRISPR 和 Cas9 限制用在原核生物　(B) CRISPR 和 Cas9 雖方便使用但其價格昂貴</div>
+          <div class="q-opt">(C) 若使用修改胎兒基因產生愛滋免疫寶寶對人類百利無一害　(D) 只需修改導引 RNA 序列便可改變基因編輯目標序列</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">
+            <b>【解析】</b>(A) 真核生物亦廣泛應用；(B) 成本低廉廉價；(C) 涉及重大基因脫靶風險與不可逆的人類倫理法律爭議；(D) 只需更換合成導引 RNA 即能靶向任意 DNA。選 <b>(D)</b>。
+          </div>
+        </div>
+      </div>
+
+      <!-- 題 8 -->
+      <div class="qa-item" style="margin-bottom:0;" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">C</span> ）</span>
+          <span class="q-num">8.</span>過往基因研究所遇到的困境，下列何者錯誤？
+        </div>
+        <div class="q-options stacked">
+          <div class="q-opt">(A) TALEN 辨識蛋白質不易製作　(B) ZFN 辨識蛋白質不易製作</div>
+          <div class="q-opt">(C) ZFN 和 TALEN 僅能用於真核生物的基因研究　(D) 複雜的工序和過高的技術門檻</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">
+            <b>【解析】</b>文中提及「即便可運用於各種生物（包含原核與真核）」，故 (C) 稱「僅能用於真核生物」錯誤。選 <b>(C)</b>。
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>高中生物(全) 講義 2-2 遺傳物質</span>
+      <span>第 14 頁 / 共 19 頁</span>
+      <span>普通高中 適用</span>
+    </div>
+  </div>
+
+  <!-- ==================== 第 15 頁 ==================== -->
+  <div class="page" id="p15">
+    <canvas class="drawing-canvas"></canvas>
+    <div class="page-content">
+      <div class="page-header">
+        <div>
+          <span class="title-main">高中生物（全） 2-2 遺傳物質</span>
+          <span class="badge badge-amber" style="margin-left:6px;">課後單選(三)</span>
+        </div>
+        <div class="subtitle">課後實戰演練：單選題 9 ～ 10 題（第 15/19 頁）</div>
+      </div>
+
+      <div class="section-title">課後實戰演練：單選題（第 9 ～ 10 題）</div>
+
+      <!-- 單選 9 -->
+      <div class="qa-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">D</span> ）</span>
+          <span class="q-num">9.</span>細菌 DNA 分子複製時，培養基中若含有 <sup>15</sup>N 的鹼基，則 <sup>15</sup>N 會被合成入 DNA 中。一科學家將細菌在 <sup>15</sup>N 培養基中繁殖很多代後，再接種於含 <sup>14</sup>N 的新培養基中培養。下列有關細菌在新培養基中進行細胞分裂的敘述，何者正確？【98 指考】
+        </div>
+        <div class="q-options stacked">
+          <div class="q-opt">(A) 經過一次分裂後，1/4 的細菌具有 <sup>15</sup>N 的 DNA</div>
+          <div class="q-opt">(B) 經過一次分裂後，半數的細菌具有 <sup>15</sup>N 的 DNA</div>
+          <div class="q-opt">(C) 經過二次分裂後，1/4 的細菌具有 <sup>15</sup>N 的 DNA</div>
+          <div class="q-opt">(D) 經過二次分裂後，半數的細菌具有 <sup>15</sup>N 的 DNA</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">
+            <b>【解析】</b>本題考查梅瑟生與史達之 DNA 半保留複製實驗模型：<br>
+            • <b>親代細菌</b>：於 <sup>15</sup>N 培養基培育多代，雙股皆為重鏈 <sup>15</sup>N-<sup>15</sup>N（100% 具有 <sup>15</sup>N）。<br>
+            • <b>轉入 <sup>14</sup>N 培養基分裂一次</b>：產出 2 個 DNA 分子，皆由一條舊 <sup>15</sup>N 股與一條新 <sup>14</sup>N 股組成（雜合中間鏈 <sup>15</sup>N-<sup>14</sup>N），故此時<b>全數（100%）</b>細菌皆具有 <sup>15</sup>N。<br>
+            • <b>轉入 <sup>14</sup>N 培養基分裂二次</b>：產出 4 個 DNA 分子，其中 2 個仍為雜合鏈 <sup>15</sup>N-<sup>14</sup>N，另 2 個為純輕鏈 <sup>14</sup>N-<sup>14</sup>N。因此具有 <sup>15</sup>N 的細菌比例為 2/4 ＝ <b>半數（50%）</b>。故選 <b>(D)</b>。
+          </div>
+        </div>
+      </div>
+
+      <!-- 單選 10 -->
+      <div class="qa-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">B</span> ）</span>
+          <span class="q-num">10.</span>下列有關雙股 DNA 與單股 RNA 的敘述，何者正確？
+        </div>
+        <div class="q-options stacked">
+          <div class="q-opt">(A) DNA 只存於細胞核中</div>
+          <div class="q-opt">(B) DNA 的含氮鹼基中嘧啶和嘌呤的比例接近 1:1</div>
+          <div class="q-opt">(C) RNA 的含氮鹼基中嘧啶和嘌呤的比例必定不為 1:1</div>
+          <div class="q-opt">(D) DNA 控制 RNA 的合成，RNA 控制蛋白質的修飾</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">
+            <b>【解析】</b><br>
+            • (A) 真核細胞的半自主胞器（粒線體與葉綠體）內亦含有環狀 DNA 分子。<br>
+            • (B) 雙股 DNA 嚴格遵循查戈夫鹼基互補配對原則（A＝T, C≡G），因此嘌呤總數（A＋G）恆等於嘧啶總數（T＋C），比例必定為 1:1。<br>
+            • (C) RNA 為單股分子，沒有固定配對比例限制，但在機率統計上偶爾可能恰好為 1:1，不能說「必定不為」。<br>
+            • (D) DNA 轉錄合成 RNA，RNA 指導蛋白質合成（轉譯）；蛋白質的後續修飾主要由內質網與高基氏體酵素執行。選 <b>(B)</b>。
+          </div>
+        </div>
+      </div>
+
+      <div style="background:#fef3c7; border-left:4px solid #f59e0b; border-radius:6px; padding:7px 12px; margin-top:6px;">
+        <div style="font-weight:bold; color:#b45309; font-size:11pt; margin-bottom:2px;">📊 半保留複製大考通用計算公式</div>
+        <div style="font-size:10.5pt; color:#78350f; line-height:1.5;">
+          一帶有標記（如 <sup>15</sup>N）的雙股 DNA 親代分子，置於普通原料（如 <sup>14</sup>N）中複製 <i>n</i> 代後：<br>
+          • 總分子數 ＝ <b>2<sup><i>n</i></sup></b> 個。<br>
+          • 含有原始標記股（<sup>15</sup>N）的 DNA 分子數恆等於 <b>2 個</b>（每分子各帶一股 <sup>15</sup>N）。<br>
+          • 含有標記之 DNA 分子佔全體比例 ＝ <b>2 / 2<sup><i>n</i></sup> ＝ 1 / 2<sup><i>n</i>-1</sup></b>。
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>高中生物(全) 講義 2-2 遺傳物質</span>
+      <span>第 15 頁 / 共 19 頁</span>
+      <span>普通高中 適用</span>
+    </div>
+  </div>
+
+  <!-- ==================== 第 16 頁 ==================== -->
+  <div class="page" id="p16">
+    <canvas class="drawing-canvas"></canvas>
+    <div class="page-content">
+      <div class="page-header">
+        <div>
+          <span class="title-main">高中生物（全） 2-2 遺傳物質</span>
+          <span class="badge badge-amber" style="margin-left:6px;">課後單選(四)</span>
+        </div>
+        <div class="subtitle">課後實戰演練：單選題 11 ～ 12 題（第 16/19 頁）</div>
+      </div>
+
+      <div class="section-title">課後實戰演練：單選題（第 11 ～ 12 題）</div>
+
+      <!-- 單選 11 -->
+      <div class="qa-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">C</span> ）</span>
+          <span class="q-num">11.</span>關於真核生物進行基因表現的相關敘述，下列敘述何者正確？
+        </div>
+        <div class="q-options stacked">
+          <div class="q-opt">(A) DNA 上的許多基因皆透過相同的核苷酸序列來攜帶遺傳訊息</div>
+          <div class="q-opt">(B) 一條 DNA 上的眾多基因皆有著相似的長度</div>
+          <div class="q-opt">(C) 基因的轉錄不全然只發生在細胞核</div>
+          <div class="q-opt">(D) 基因表現依序經過轉譯和轉錄的過程</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">
+            <b>【解析】</b><br>
+            • (A) 不同的基因具有獨特且特定的核苷酸排列序列。<br>
+            • (B) 基因長度自數百至數萬個鹼基對不等，彼此長度差異甚大。<br>
+            • (C) 半自主胞器（粒線體與葉綠體）擁有自身獨立的環狀 DNA 與核糖體，能於胞器內部基質自行進行基因轉錄與轉譯，故轉錄不全然只在細胞核。選 <b>(C)</b>。<br>
+            • (D) 基因表現順序為「先轉錄（DNA → RNA），後轉譯（RNA → 蛋白質）」。
+          </div>
+        </div>
+      </div>
+
+      <!-- 單選 12 -->
+      <div class="qa-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">B</span> ）</span>
+          <span class="q-num">12.</span>HIV 病毒的中心核酸是 RNA，將其中心核酸水解後分析其成分，何者正確？
+        </div>
+        <div class="q-options">
+          <div class="q-opt">(A) 可見到八種核苷酸</div>
+          <div class="q-opt">(B) 可見到 A、U、C、G 四種含氮鹼基</div>
+          <div class="q-opt">(C) 可見到去氧核糖</div>
+          <div class="q-opt">(D) 可見到具兩個磷酸基的核苷酸</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">
+            <b>【解析】</b>HIV 為 RNA 病毒，其中心核酸為單股 RNA：<br>
+            • 徹底水解後可得到：4 種核糖核苷酸（AMP, UMP, CMP, GMP）、核糖分子、磷酸基，以及 A、U、C、G 四種含氮鹼基。<br>
+            • RNA 不含去氧核糖，亦不含胸腺嘧啶 (T)；而核苷酸單體均僅具單一磷酸基（具兩磷酸者為核苷二磷酸如 ADP，非核酸組成單體）。故選 <b>(B)</b>。
+          </div>
+        </div>
+      </div>
+
+      <div style="background:#f0fdf4; border-left:4px solid #16a34a; border-radius:6px; padding:7px 12px; margin-top:6px;">
+        <div style="font-weight:bold; color:#15803d; font-size:11pt; margin-bottom:2px;">🔬 真核細胞各胞器遺傳特徵對比表</div>
+        <div style="font-size:10.5pt; color:#166534; line-height:1.5;">
+          • <b>細胞核</b>：含主基因體（線狀 DNA 結合組蛋白成染色質），進行主要 DNA 複製與轉錄。<br>
+          • <b>粒線體與葉綠體</b>：內共生起源，擁有環狀雙股 DNA 與 70S 原核型核糖體，能獨立複製自身 DNA 並進行轉錄與轉譯，合成部分自身所需酵素與呼吸/光合作用蛋白。
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>高中生物(全) 講義 2-2 遺傳物質</span>
+      <span>第 16 頁 / 共 19 頁</span>
+      <span>普通高中 適用</span>
+    </div>
+  </div>
+
+  <!-- ==================== 第 17 頁 ==================== -->
+    <!-- ==================== 第 17 頁 ==================== -->
+  <div class="page" id="p17">
+    <canvas class="drawing-canvas"></canvas>
+    <div class="page-content">
+      <div class="page-header">
+        <div>
+          <span class="title-main">高中生物（全） 2-2 遺傳物質</span>
+          <span class="badge badge-rose" style="margin-left:6px;">課後多選(一)</span>
+        </div>
+        <div class="subtitle">課後實戰演練：多選題 1 ～ 2 題（第 17/19 頁）</div>
+      </div>
+
+      <div class="section-title">課後實戰演練：多選題（第 1 ～ 2 題）</div>
+
+      <!-- 多選 1 -->
+      <div class="qa-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">BE</span> ）</span>
+          <span class="q-num">1.</span>關於複製、轉錄與轉譯的比較，哪些正確？（應選 2 項）
+        </div>
+        <div class="q-options stacked">
+          <div class="q-opt">(A) 真核生物複製發生在細胞核，轉錄與轉譯發生在核糖體</div>
+          <div class="q-opt">(B) 真核生物複製以兩股 DNA 為模版，轉錄以一股 DNA 為模版</div>
+          <div class="q-opt">(C) 真核生物複製需要 DNA 聚合酶，轉譯需要 RNA 聚合酶</div>
+          <div class="q-opt">(D) 原核生物複製為半保留模式，真核生物轉錄為半保留模式</div>
+          <div class="q-opt">(E) 複製與轉錄的原料為核苷酸；轉譯的原料為胺基酸</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">
+            <b>【解析】</b><br>
+            • (A) 轉錄發生於細胞核內，轉譯才發生於細胞質核糖體。<br>
+            • (C) 轉錄需要 RNA 聚合酶；轉譯是由核糖體、tRNA 及胜肽轉移酶等協同完成。<br>
+            • (D) 轉錄係以單股 DNA 轉錄出單股 RNA，DNA 雙螺旋在轉錄後重新靠攏，非半保留模式。<br>
+            • (B)(E) 複製以雙股為模版，轉錄以單股為模版；前二者以核苷酸為原料，轉譯以胺基酸為原料合成蛋白質。選 <b>(B)(E)</b>。
+          </div>
+        </div>
+      </div>
+
+      <!-- 多選 2 -->
+      <div class="qa-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">BDE</span> ）</span>
+          <span class="q-num">2.</span>食物中的 DNA 和 RNA 分子會在人體消化道進行分解，請問下列相關敘述哪些正確？（應選 3 項）
+        </div>
+        <div class="q-options stacked">
+          <div class="q-opt">(A) DNA 和 RNA 最多可被分解為 5 種核苷酸</div>
+          <div class="q-opt">(B) DNA 和 RNA 最多可被分解為 8 種核苷酸</div>
+          <div class="q-opt">(C) DNA 為核酸的聚合物</div>
+          <div class="q-opt">(D) 核苷酸會被分解為含氮鹼基、五碳醣、磷酸基</div>
+          <div class="q-opt">(E) 組成核酸的含氮鹼基一共有 5 種</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">
+            <b>【解析】</b><br>
+            • (A)(B) DNA 水解得 4 種去氧核糖核苷酸 (dAMP, dTMP, dCMP, dGMP)，RNA 水解得 4 種核糖核苷酸 (AMP, UMP, CMP, GMP)，因五碳醣不同（去氧核糖 vs 核糖），兩者合計共有 <b>8 種核苷酸</b>。<br>
+            • (C) DNA 本身即為一種核酸（高分子聚合物），是由核苷酸聚合而成。<br>
+            • (D) 核苷酸由小腸核苷酸酶與磷酸酶進一步分解為<b>含氮鹼基、五碳醣及磷酸基</b>。<br>
+            • (E) 組成生物體核酸的鹼基共有 A、T、C、G、U 共 <b>5 種</b>。選 <b>(B)(D)(E)</b>。
+          </div>
+        </div>
+      </div>
+
+      <div style="background:#eff6ff; border-left:4px solid #3b82f6; border-radius:6px; padding:8px 12px; margin-top:8px;">
+        <div style="font-weight:bold; color:#1d4ed8; font-size:11pt; margin-bottom:2px;">🔬 大考必背：核酸水解與消化分解產物層級對照</div>
+        <div style="font-size:10.5pt; color:#1e3a8a; line-height:1.5;">
+          • <b>大分子多聚體</b>：DNA（去氧核糖核酸）與 RNA（核糖核酸）。<br>
+          • <b>一級水解產物（單體單元）</b>：共有 <b>8 種核苷酸</b>（4 種 dNTP 前驅單元 ＋ 4 種 NTP 單元）。<br>
+          • <b>完全水解小分子產物</b>：共有 <b>2 種五碳醣</b>（核糖、去氧核糖）＋ <b>1 種磷酸基</b> ＋ <b>5 種含氮鹼基</b>（A, T, C, G, U）。
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>高中生物(全) 講義 2-2 遺傳物質</span>
+      <span>第 17 頁 / 共 19 頁</span>
+      <span>普通高中 適用</span>
+    </div>
+  </div>
+
+  <!-- ==================== 第 18 頁 ==================== -->
+  <div class="page" id="p18">
+    <canvas class="drawing-canvas"></canvas>
+    <div class="page-content">
+      <div class="page-header">
+        <div>
+          <span class="title-main">高中生物（全） 2-2 遺傳物質</span>
+          <span class="badge badge-rose" style="margin-left:6px;">課後多選(二)</span>
+        </div>
+        <div class="subtitle">課後實戰演練：多選第 3 題與核酸序列推導專題（第 18/19 頁）</div>
+      </div>
+
+      <div class="section-title">課後實戰演練：多選題（第 3 題）</div>
+
+      <!-- 多選 3 -->
+      <div class="qa-item" onclick="toggleItemAnswers(this, event)">
+        <div class="q-stem">
+          <span class="qa-bracket" onclick="toggleBracket(this, event)">（ <span class="ans-text">AD</span> ）</span>
+          <span class="q-num">3.</span>甲序列：ACTGCATG 為基因表現所使用的模版股，與乙序列共同形成 DNA 雙股，經轉錄所形成的序列為丙，請問乙和丙的序列，哪些正確（不考慮其方向）？（應選 2 項）
+        </div>
+        <div class="q-options stacked">
+          <div class="q-opt">(A) 乙序列：TGACGTAC</div>
+          <div class="q-opt">(B) 乙序列：CATGCAGT</div>
+          <div class="q-opt">(C) 丙序列：CAUGCAGU</div>
+          <div class="q-opt">(D) 丙序列：UGACGUAC</div>
+          <div class="q-opt">(E) 乙序列和丙序列鹼基互補</div>
+        </div>
+        <div class="calc-workspace" onclick="toggleSolution(this, event)">
+          <div class="calc-solution">
+            <b>【完整深度解析】</b><br>
+            • <b>給定已知條件</b>：甲序列（模板股 DNA）為：<code>A - C - T - G - C - A - T - G</code>。<br>
+            • <b>推導乙序列（DNA 另一股 / 編碼股）</b>：<br>
+            　依 DNA 鹼基互補配對原則（A 與 T 配對、C 與 G 配對）：<br>
+            　甲序列：<code>A - C - T - G - C - A - T - G</code><br>
+            　互補乙：<code><b>T - G - A - C - G - T - A - C</b></code>。<br>
+            　故乙序列為 <b>TGACGTAC</b>。(A) 選項正確，(B) 選項錯誤。<br>
+            • <b>推導丙序列（轉錄產物 mRNA）</b>：<br>
+            　轉錄是以甲序列（模板股）為模版，依 RNA 鹼基配對規則（A 配 U、T 配 A、C 配 G、G 配 C）：<br>
+            　甲序列：<code>A - C - T - G - C - A - T - G</code><br>
+            　轉錄丙：<code><b>U - G - A - C - G - U - A - C</b></code>。<br>
+            　故丙序列為 <b>UGACGUAC</b>。(D) 選項正確，(C) 選項錯誤。<br>
+            • <b>(E) 選項辨析</b>：<br>
+            　對比乙序列 <code>TGACGTAC</code> 與丙序列 <code>UGACGUAC</code> 可發現：兩者的含氮鹼基排列<b>完全相同</b>（僅因 RNA 不含 T，而將 T 對應置換為 U）。<br>
+            　乙序列與丙序列之間<b>並非鹼基互補關係</b>，而是序列對應相同！故選 <b>(A)(D)</b>。
+          </div>
+        </div>
+      </div>
+
+      <!-- 序列推導大考專題卡片 -->
+      <div style="background:#fefce8; border-left:4px solid #eab308; border-radius:6px; padding:8px 12px; margin-top:8px;">
+        <div style="font-weight:bold; color:#854d0e; font-size:11pt; margin-bottom:3px;">💡 解題速記口訣：DNA 模板股、編碼股與 mRNA 序列對應關係</div>
+        <div style="font-size:10.5pt; color:#713f12; line-height:1.55;">
+          1. <b>模板股（Template Strand）</b>：轉錄時直接與 RNA 聚合酶結合、提供鹼基互補配對的單股 DNA。<br>
+          2. <b>編碼股（Coding Strand，非模板股）</b>：DNA 雙股中未作為模板的另一股。其序列與轉錄出來的 <b>mRNA 序列完全一致</b>，唯一的差異僅為 <b>T 置換為 U</b>！<br>
+          3. <b>考試快速得分技巧</b>：看到求轉錄 mRNA 序列時，若已知 DNA 互補股（非模板股），直接將該股中的 <b>T 全部換成 U</b> 即可秒殺答案！
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>高中生物(全) 講義 2-2 遺傳物質</span>
+      <span>第 18 頁 / 共 19 頁</span>
+      <span>普通高中 適用</span>
+    </div>
+  </div>
+
+<div class="page" id="p19">
+    <canvas class="drawing-canvas"></canvas>
+    <div class="page-content">
+      <div class="page-header">
+        <div>
+          <span class="title-main">高中生物（全） 2-2 遺傳物質</span>
+          <span class="badge badge-indigo" style="margin-left:6px;">思維導圖</span>
+        </div>
+        <div class="subtitle">全章核心架構思維導圖與關鍵術語速查（第 19/19 頁）</div>
+      </div>
+
+      <div class="section-title">全章核心邏輯架構思維導圖</div>
+      <div style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:6px; padding:8px 12px; margin-bottom:6px;">
+        <svg viewBox="0 0 620 205" style="width:100%; height:auto; display:block; margin:auto;">
+          <!-- Node 1: 染色體學說 -->
+          <rect x="10" y="15" width="130" height="55" rx="5" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"/>
+          <text x="75" y="36" font-size="11" font-weight="bold" fill="#0369a1" text-anchor="middle">染色體學說</text>
+          <text x="75" y="53" font-size="9" fill="#475569" text-anchor="middle">薩登＆包法利 (1902)</text>
+          <text x="75" y="64" font-size="8" fill="#64748b" text-anchor="middle">基因位於染色體上</text>
+
+          <!-- Arrow 1 to 2 -->
+          <line x1="140" y1="42" x2="165" y2="42" stroke="#0284c7" stroke-width="1.5"/>
+
+          <!-- Node 2: 確立遺傳物質 -->
+          <rect x="165" y="15" width="135" height="55" rx="5" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+          <text x="232" y="36" font-size="11" font-weight="bold" fill="#15803d" text-anchor="middle">DNA為遺傳物質</text>
+          <text x="232" y="53" font-size="9" fill="#475569" text-anchor="middle">格里夫茲轉形實驗</text>
+          <text x="232" y="64" font-size="8" fill="#64748b" text-anchor="middle">艾佛利證實 DNA 本體</text>
+
+          <!-- Arrow 2 to 3 -->
+          <line x1="300" y1="42" x2="325" y2="42" stroke="#16a34a" stroke-width="1.5"/>
+
+          <!-- Node 3: 雙螺旋模型 -->
+          <rect x="325" y="15" width="140" height="55" rx="5" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+          <text x="395" y="36" font-size="11" font-weight="bold" fill="#b45309" text-anchor="middle">DNA 雙股螺旋</text>
+          <text x="395" y="53" font-size="9" fill="#475569" text-anchor="middle">華生＆克立克 (1953)</text>
+          <text x="395" y="64" font-size="8" fill="#64748b" text-anchor="middle">A=T, C≡G 反向平行</text>
+
+          <!-- Arrow 3 to 4 -->
+          <line x1="465" y1="42" x2="490" y2="42" stroke="#d97706" stroke-width="1.5"/>
+
+          <!-- Node 4: 中心法則 -->
+          <rect x="490" y="15" width="120" height="55" rx="5" fill="#fce7f3" stroke="#e11d48" stroke-width="1.5"/>
+          <text x="550" y="36" font-size="11" font-weight="bold" fill="#be123c" text-anchor="middle">中心法則</text>
+          <text x="550" y="53" font-size="9" fill="#475569" text-anchor="middle">DNA 複製 (半保留)</text>
+          <text x="550" y="64" font-size="8" fill="#64748b" text-anchor="middle">轉錄(核) → 轉譯(質)</text>
+
+          <!-- Down arrow from Node 4 to Lower row -->
+          <line x1="550" y1="70" x2="550" y2="92" stroke="#be123c" stroke-width="1.5"/>
+
+          <!-- Lower row box: 表現型調控外框 -->
+          <rect x="10" y="92" width="600" height="102" rx="6" fill="#ffffff" stroke="#64748b" stroke-width="1.5"/>
+          <text x="310" y="112" font-size="11.5" font-weight="bold" fill="#0f172a" text-anchor="middle">生物性狀的決定機轉：表現型 ＝ 基因型 ＋ 環境因子</text>
+          <line x1="20" y1="120" x2="600" y2="120" stroke="#e2e8f0" stroke-width="1"/>
+
+          <!-- 左子框：遺傳因子（基因型） -->
+          <rect x="20" y="127" width="280" height="58" rx="4" fill="#f0f9ff" stroke="#bae6fd" stroke-width="1"/>
+          <text x="30" y="145" font-size="10" font-weight="bold" fill="#0284c7">【遺傳因子（基因型）】</text>
+          <text x="30" y="161" font-size="8.5" fill="#334155">• 有性生殖：同源染色體獨立分配、減數分裂互換</text>
+          <text x="30" y="174" font-size="8.5" fill="#334155">• 基因突變：鐮刀型貧血 (Glu→Val)、豌豆花色</text>
+
+          <!-- 右子框：環境因子（性狀調控） -->
+          <rect x="315" y="127" width="285" height="58" rx="4" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1"/>
+          <text x="325" y="145" font-size="10" font-weight="bold" fill="#15803d">【環境因子（性狀調控）】</text>
+          <text x="325" y="161" font-size="8.5" fill="#334155">• 土壤酸鹼與鋁離子：繡球花色（酸藍／鹼粉紅）</text>
+          <text x="325" y="174" font-size="8.5" fill="#334155">• 體溫與酵素活性：喜瑪拉雅兔／暹羅貓末端深色毛</text>
+        </svg>
+      </div>
+
+      <div class="section-title">高頻考點關鍵核心名詞記憶速查表</div>
+      <table class="table-custom" style="margin-bottom:0; font-size:9.5pt;">
+        <thead>
+          <tr>
+            <th style="width:20%;">核心名詞</th>
+            <th style="width:40%;">重要生化機制與生理角色</th>
+            <th style="width:40%;">常見考試陷阱與辨析關鍵</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>半保留複製</b></td>
+            <td>新合成的雙股 DNA 各含一股母模板股與一股新合成股。</td>
+            <td>經 <i>n</i> 次分裂後，含原始 <sup>15</sup>N 母股的 DNA 分子恆為 2 個。</td>
+          </tr>
+          <tr>
+            <td><b>轉錄 vs 轉譯</b></td>
+            <td>轉錄以單股 DNA 模板合成 mRNA；轉譯以 mRNA 密碼子合成蛋白質。</td>
+            <td>真核轉錄在細胞核，轉譯在核糖體；原核兩者偶聯同時進行。</td>
+          </tr>
+          <tr>
+            <td><b>查戈夫配對法則</b></td>
+            <td>雙股 DNA 中，A＝T（2 氫鍵）、C≡G（3 氫鍵），嘌呤數＝嘧啶數。</td>
+            <td>僅適用於「雙股 DNA」；單股 DNA 與單股 RNA 不受此比例限制！</td>
+          </tr>
+          <tr>
+            <td><b>CRISPR/Cas9</b></td>
+            <td>細菌抗噬菌體免疫機制，以導引 RNA 辨識靶序列，Cas9 蛋白執行剪切。</td>
+            <td>Cas9 是核酸內切酶（蛋白質），而非一段 DNA 序列。</td>
+          </tr>
+          <tr>
+            <td><b>表現型決定</b></td>
+            <td>表現型受基因型藍圖與外在環境條件（pH、溫度等）共同交互作用決定。</td>
+            <td>基因型相同的個體（如同卵雙胞胎），表現型不必然完全一致。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="page-footer">
+      <span>高中生物(全) 講義 2-2 遺傳物質</span>
+      <span>第 19 頁 / 共 19 頁</span>
+      <span>普通高中 適用</span>
+    </div>
+  </div>
+
+  <script>
+    let allRevealed = false;
+    let penMode = false;
+    let penColor = 'rgba(250, 204, 21, 0.45)';
+    let penSize = 3;
+
+    // 單一填空開合
+    function toggleAns(el, e) {
+      if (e) e.stopPropagation();
+      el.classList.toggle('revealed');
+    }
+
+    // 選擇題括號顯答
+    function toggleBracket(el, e) {
+      if (e) e.stopPropagation();
+      el.classList.toggle('revealed');
+    }
+
+    // 解析方框顯答
+    function toggleSolution(el, e) {
+      if (e) e.stopPropagation();
+      const sol = el.querySelector('.calc-solution');
+      if (sol) sol.classList.toggle('revealed');
+    }
+
+    // 點擊整題開合該題所有解答
+    function toggleItemAnswers(item, e) {
+      if (e.target.closest('.ans-word') || e.target.closest('.qa-bracket') || e.target.closest('.calc-workspace')) {
+        return;
+      }
+      const bracket = item.querySelector('.qa-bracket');
+      const sol = item.querySelector('.calc-solution');
+      const blanks = item.querySelectorAll('.ans-word');
+
+      const isRev = bracket ? bracket.classList.contains('revealed') : (sol ? sol.classList.contains('revealed') : false);
+      if (bracket) bracket.classList.toggle('revealed', !isRev);
+      if (sol) sol.classList.toggle('revealed', !isRev);
+      blanks.forEach(b => b.classList.toggle('revealed', !isRev));
+    }
+
+    // 全局解答開關
+    function toggleAllAnswers() {
+      allRevealed = !allRevealed;
+      document.body.classList.toggle('show-all-answers', allRevealed);
+      const btn = document.getElementById('toggleAllAnsBtn');
+      const icon = document.getElementById('ansIcon');
+      if (btn) btn.classList.toggle('revealed', allRevealed);
+      if (icon) icon.innerText = allRevealed ? '🙈' : '👁️';
+    }
+
+    // 目錄下拉選單
+    function toggleTocMenu(e) {
+      if (e) e.stopPropagation();
+      const m = document.getElementById('tocMenu');
+      if (m) m.classList.toggle('show');
+    }
+
+    function jumpTo(pageId) {
+      const el = document.getElementById(pageId);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+      const m = document.getElementById('tocMenu');
+      if (m) m.classList.remove('show');
+    }
+
+    // 圖片燈箱放大檢視
+    function openImageModal(src, alt) {
+      const modal = document.getElementById('imgModal');
+      const img = document.getElementById('imgModalSrc');
+      const cap = document.getElementById('imgModalCaption');
+      if (modal && img) {
+        img.src = src;
+        img.alt = alt || '';
+        if (cap) cap.innerText = alt || '';
+        modal.classList.add('active');
+      }
+    }
+
+    function closeImageModal() {
+      const modal = document.getElementById('imgModal');
+      if (modal) modal.classList.remove('active');
+    }
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeImageModal();
+    });
+
+    // 螢光筆塗鴉模式
+    function togglePenMode() {
+      penMode = !penMode;
+      document.body.classList.toggle('pen-active', penMode);
+      const btn = document.getElementById('penBtn');
+      const pop = document.getElementById('penOptions');
+      if (btn) btn.classList.toggle('active', penMode);
+      if (pop) pop.style.display = penMode ? 'flex' : 'none';
+    }
+
+    function setPenColor(color, dot) {
+      penColor = color;
+      document.querySelectorAll('.pen-color-dot').forEach(d => d.classList.remove('active'));
+      if (dot) dot.classList.add('active');
+    }
+
+    function clearCurrentCanvas() {
+      document.querySelectorAll('.drawing-canvas').forEach(canvas => {
+        const ctx = canvas.getContext('2d');
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+      });
+    }
+
+    // 初始化畫板
+    function initCanvases() {
+      document.querySelectorAll('.page').forEach(page => {
+        const canvas = page.querySelector('.drawing-canvas');
+        if (!canvas) return;
+
+        function resize() {
+          const rect = page.getBoundingClientRect();
+          canvas.width = rect.width;
+          canvas.height = rect.height;
+        }
+        resize();
+        window.addEventListener('resize', resize);
+
+        const ctx = canvas.getContext('2d');
+        let isDrawing = false;
+        let lastX = 0;
+        let lastY = 0;
+
+        canvas.addEventListener('mousedown', e => {
+          if (!penMode) return;
+          isDrawing = true;
+          const rect = canvas.getBoundingClientRect();
+          lastX = e.clientX - rect.left;
+          lastY = e.clientY - rect.top;
+        });
+
+        canvas.addEventListener('mousemove', e => {
+          if (!isDrawing || !penMode) return;
+          const rect = canvas.getBoundingClientRect();
+          const curX = e.clientX - rect.left;
+          const curY = e.clientY - rect.top;
+
+          ctx.beginPath();
+          ctx.strokeStyle = penColor;
+          ctx.lineWidth = penSize * 4;
+          ctx.lineCap = 'round';
+          ctx.lineJoin = 'round';
+          ctx.moveTo(lastX, lastY);
+          ctx.lineTo(curX, curY);
+          ctx.stroke();
+
+          lastX = curX;
+          lastY = curY;
+        });
+
+        window.addEventListener('mouseup', () => { isDrawing = false; });
+      });
+    }
+
+    document.addEventListener('click', e => {
+      const m = document.getElementById('tocMenu');
+      if (m && !e.target.closest('#tocMenu') && !e.target.closest('.tb-btn')) {
+        m.classList.remove('show');
+      }
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+      initCanvases();
+
+      // 為全書圖片綁定放大檢視功能
+      document.querySelectorAll('.page img').forEach(img => {
+        img.addEventListener('click', e => {
+          if (penMode) return;
+          e.stopPropagation();
+          openImageModal(img.src, img.alt);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
